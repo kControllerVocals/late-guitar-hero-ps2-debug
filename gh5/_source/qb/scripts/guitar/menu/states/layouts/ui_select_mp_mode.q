@@ -1,0 +1,25 @@
+
+script ui_create_select_mp_mode 
+	destroy_loading_screen
+	change \{respond_to_signin_changed = 1}
+	change \{respond_to_signin_changed_all_players = 1}
+	change \{respond_to_signin_changed_func = none}
+	cas_reset_random_human_picking
+	change \{band_mode_menu_tags = none}
+	make_menu_frontend \{title = qs("Mode")
+		screen = Drummer
+		use_all_controllers}
+	add_menu_frontend_item \{text = qs("PRO FACE-OFF")
+		pad_choose_script = mp_select_mode_menu_select_mode
+		pad_choose_params = {
+			mode = p2_pro_faceoff
+			friendly
+		}}
+	clean_up_user_control_helpers
+	cleanup_cas_menu_handlers
+	ui_return_game_mode
+endscript
+
+script ui_destroy_select_mp_mode 
+	generic_ui_destroy
+endscript

@@ -1,0 +1,429 @@
+
+script ui_init_win_song 
+	spawnscriptnow \{kill_gem_scroller}
+endscript
+
+script ui_create_win_song 
+	set_focus_color
+	set_unfocus_color
+	CreateScreenElement \{parent = root_window
+		id = MyInterfaceElement
+		type = DescInterface
+		desc = 'win_song'}
+	MyInterfaceElement :Desc_CheckVersion \{desired = 3
+		AssertIf = Mismatch}
+	MyInterfaceElement :SE_GetProps
+	my_song = ($current_song)
+	if NOT ($old_song = none)
+		my_song = ($old_song)
+		change \{old_song = none}
+	endif
+	get_song_title song = <my_song>
+	get_song_artist song = <my_song>
+	get_difficulty_text difficulty = ($player1_status.difficulty)
+	score = ($player1_status.score)
+	CastToInteger \{score}
+	FormatText TextName = score_text qs("\L%s") s = <score> DecimalPlaces = 0 usecommas
+	MyInterfaceElement :SetProps {
+		song_name_text = <song_title>
+		band_name_text = <song_artist>
+		difficulty_text = <difficulty_text>
+		score_text = <score_text>
+	}
+	if ($game_mode = p1_quickplay)
+		menu_top_rockers_check_for_new_top_score \{nowrite = 1}
+	endif
+	stars = ($player1_status.stars)
+	if (<stars> < 3)
+		stars = 3
+	endif
+	ResolveScreenElementId \{id = {
+			MyInterfaceElement
+			child = {
+				win_container
+				child = star_container
+			}
+		}}
+	DestroyScreenElement id = <resolved_id> preserve_parent
+	i = 0
+	begin
+	rgba2 = [200 200 200 255]
+	rgba = [0 0 0 255]
+	if (<i> >= <stars>)
+		rgba2 = [64 64 64 255]
+		rgba = [32 32 32 255]
+	endif
+	CreateScreenElement {
+		type = ContainerElement
+		parent = <resolved_id>
+		dims = (50.0, 50.0)
+		just = [center center]
+		child_anchor = [center center]
+	}
+	container = <id>
+	rot_angle = RandomInteger (0.0, 360.0)
+	CreateScreenElement {
+		type = SpriteElement
+		parent = <container>
+		texture = song_summary_score_star
+		rot_angle = <rot_angle>
+		rgba = <rgba>
+	}
+	CreateScreenElement {
+		type = SpriteElement
+		parent = <container>
+		texture = song_summary_score_star
+		rot_angle = <rot_angle>
+		scale = 2.0
+		rgba = <rgba2>
+	}
+	i = (<i> + 1)
+	repeat 5
+	i = 0
+	p = 1
+	begin
+	ResolveScreenElementId id = {MyInterfaceElement child = {win_container child = {note_streak_container child = <i>}}}
+	if (<i> >= ($current_num_players))
+		<resolved_id> :Die
+	else
+		<status> = ($player_status_array [<p>])
+		max_notes = ($<status>.max_notes)
+		if (<max_notes> = 0)
+			max_notes = 1.0
+		endif
+		FormatText TextName = streak_text qs("\L%s") s = ($<status>.best_run)
+		if ($<status>.<part> = Vocals)
+			vocal_phrase_max_qual = $<status>.vocal_phrase_max_qual
+			vocal_phrase_quality = $<status>.vocal_phrase_quality
+			vocal_phrase_pct = 0
+			if (<vocal_phrase_max_qual> > 0)
+				vocal_phrase_pct = (((<vocal_phrase_quality>) / <vocal_phrase_max_qual>) * 100.0)
+				FormatText TextName = percent_text qs("%p\%") p = <vocal_phrase_pct> DecimalPlaces = 0
+			else
+				<percent_text> = qs("NA")
+			endif
+		else
+			FormatText TextName = percent_text qs("%p\%") p = ((($<status>.notes_hit) / (<max_notes> * 1.0)) * 100.0) DecimalPlaces = 0
+		endif
+		switch ($<status>.part)
+			case guitar
+			instrument_text = qs("Guitar")
+			case Bass
+			instrument_text = qs("Bass")
+			case drum
+			instrument_text = qs("Drums")
+			case Vocals
+			instrument_text = qs("Vocals")
+		endswitch
+		SetScreenElementProps id = {<resolved_id> child = 0} text = <instrument_text>
+		SetScreenElementProps id = {<resolved_id> child = 1} text = <streak_text>
+		SetScreenElementProps id = {<resolved_id> child = 2} text = <percent_text>
+		i = (<i> + 1)
+	endif
+	p = (<p> + 1)
+	repeat 4
+	ResolveScreenElementId \{id = {
+			MyInterfaceElement
+			child = {
+				win_container
+				child = menu
+			}
+		}}
+	continue_script = ui_win_song_career_continue
+	GameMode_GetType
+	if ((GotParam for_practice) || <type> = quickplay)
+		<continue_script> = ui_win_song_continue
+	endif
+	if ($game_mode = p2_pro_faceoff)
+		<continue_script> = ui_win_song_continue
+	endif
+	if ($came_to_practice_from = main_menu)
+		text = qs("NEW SONG")
+	else
+		if ($came_to_practice_from = gh4_p1_career)
+			<text> = qs("BACK TO CAREER")
+		else
+			<text> = qs("BACK TO QUICKPLAY")
+		endif
+	endif
+	CreateScreenElement {
+		parent = <resolved_id>
+		type = TextElement
+		font = fontgrid_text_a8
+		text = <text>
+		rgba = ($menu_unfocus_color)
+		event_handlers = [
+			{focus retail_menu_focus}
+			{unfocus retail_menu_unfocus}
+			{pad_choose <continue_script>}
+		]
+	}
+	if (($is_network_game = 1) && ($net_new_matchmaking_ui_flag = 0))
+		if NOT (IsHost)
+			<id> :SE_SetProps not_focusable
+		endif
+	endif
+	CreateScreenElement {
+		parent = <resolved_id>
+		type = TextElement
+		font = fontgrid_text_a8
+		text = qs("detailed stats")
+		rgba = ($menu_unfocus_color)
+		event_handlers = [
+			{focus retail_menu_focus}
+			{unfocus retail_menu_unfocus}
+			{pad_choose generic_event_choose params = {state = uistate_detailed_stats}}
+		]
+	}
+	if ($is_network_game = 1)
+		<id> :SE_SetProps not_focusable
+	endif
+	if GotParam \{for_practice}
+		CreateScreenElement {
+			parent = <resolved_id>
+			type = TextElement
+			font = fontgrid_text_a8
+			text = qs("replay song")
+			rgba = ($menu_unfocus_color)
+			event_handlers = [
+				{focus retail_menu_focus}
+				{unfocus retail_menu_unfocus}
+				{pad_choose practice_restart_song}
+			]
+		}
+		CreateScreenElement {
+			parent = <resolved_id>
+			type = TextElement
+			font = fontgrid_text_a8
+			text = qs("select speed")
+			rgba = ($menu_unfocus_color)
+			event_handlers = [
+				{focus retail_menu_focus}
+				{unfocus retail_menu_unfocus}
+				{pad_choose generic_event_back params = {state = uistate_practice_select_speed}}
+			]
+		}
+		CreateScreenElement {
+			parent = <resolved_id>
+			type = TextElement
+			font = fontgrid_text_a8
+			text = qs("select section")
+			rgba = ($menu_unfocus_color)
+			event_handlers = [
+				{focus retail_menu_focus}
+				{unfocus retail_menu_unfocus}
+				{pad_choose generic_event_back params = {state = uistate_select_song_section}}
+			]
+		}
+	else
+		CreateScreenElement {
+			parent = <resolved_id>
+			type = TextElement
+			font = fontgrid_text_a8
+			text = qs("replay song")
+			rgba = ($menu_unfocus_color)
+			event_handlers = [
+				{focus retail_menu_focus}
+				{unfocus retail_menu_unfocus}
+				{pad_choose restart_warning_select_restart}
+			]
+		}
+		if ($is_network_game = 1)
+			<id> :SE_SetProps not_focusable
+		endif
+	endif
+	AssignAlias id = <resolved_id> alias = current_menu
+	current_menu :obj_spawnscript \{menu_music_on}
+	if ((($is_network_game = 1) && IsHost) || ($is_network_game = 0))
+		add_user_control_helper \{text = qs("SELECT")
+			button = green
+			z = 100000
+			all_buttons}
+	endif
+endscript
+
+script ui_destroy_win_song 
+	if ScreenElementExists \{id = MyInterfaceElement}
+		MyInterfaceElement :Die
+	endif
+	clean_up_user_control_helpers
+endscript
+
+script ui_create_win_song_spawn 
+	Wait \{1
+		seconds}
+	create_newspaper_menu <...>
+	LaunchEvent \{target = current_menu
+		type = focus}
+endscript
+
+script ui_win_song_continue 
+	spawnscriptnow ui_win_song_continue_spawned params = <...>
+endscript
+
+script ui_win_song_continue_spawned 
+	if CD
+		ui_event_get_stack
+		i = 0
+		begin
+		if ((<stack> [<i>].base_name) = 'debug')
+			generic_event_back state = uistate_debug player = <player>
+			return
+		endif
+		i = (<i> + 1)
+		repeat <stack_size>
+	endif
+	ui_win_song_continue_next_menu
+endscript
+
+script ui_win_song_continue_next_menu 
+	SetSpawnInstanceLimits \{max = 1
+		management = ignore_spawn_request}
+	if IsObjectScript
+		SE_SetProps \{block_events}
+	endif
+	switch ($game_mode)
+		case p1_quickplay
+		case p2_quickplay
+		case p3_quickplay
+		case p4_quickplay
+		if ($current_song = jamsession)
+			if NOT GotParam \{no_sound}
+				generic_menu_pad_choose_sound
+			endif
+			generic_menu_pad_choose_sound
+			jam_ratesong_check_for_rating
+		else
+			if NOT GotParam \{no_sound}
+				generic_menu_pad_choose_sound
+			endif
+			ui_memcard_autosave \{state = uistate_setlist
+				data = {
+					all_active_players = true
+					need_loading_screen
+				}}
+		endif
+		case gh4_p1_career
+		case gh4_p2_career
+		case gh4_p3_career
+		case gh4_p4_career
+		ui_win_song_career_continue
+		case p2_pro_faceoff
+		case p2_coop
+		generic_event_back \{state = uistate_setlist
+			data = {
+				no_jamsession
+			}}
+		case practice
+		if ($came_to_practice_from = main_menu)
+			generic_event_back \{state = uistate_setlist}
+		else
+			song_ended_menu_select_back_to_game
+		endif
+	endswitch
+endscript
+
+script ui_win_song_career_continue 
+	spawnscriptnow \{ui_win_song_career_continue_spawned}
+endscript
+
+script ui_win_song_career_continue_spawned 
+
+	unlock_guitar = ($progression_unlocked_guitar)
+	unlock_guitar2 = ($progression_unlocked_guitar2)
+	progression_get_new_unlocks
+	GetArraySize <new_unlocks>
+	if CD
+		if ($is_in_debug = 1)
+			generic_event_back \{state = uistate_debug}
+			return
+		endif
+	endif
+	if NOT (<unlock_guitar2> = -1)
+		generic_event_choose \{data = {
+				state = uistate_unlock
+				num_guitars_unlocked = 2
+			}}
+	elseif NOT (<unlock_guitar> = -1)
+		generic_event_choose \{data = {
+				state = uistate_unlock
+				num_guitars_unlocked = 1
+			}}
+	elseif (<array_size> > 0)
+		generic_event_choose \{state = uistate_rewards}
+	elseif progression_should_show_credits
+		venue = load_z_cube
+		part = Band
+		if ($current_num_players = 1)
+			GetPlayerInfo \{1
+				part}
+		endif
+		FormatText checksumname = venue_checksum '%s_%i' s = ($LevelZones.<venue>.name) i = ($instrument_list.<part>.text_nl)
+		SetGlobalTags <venue_checksum> all_active_players = 1 params = {unlocked = 1}
+		SpawnScript \{ui_win_song_play_career_ending}
+	else
+		if NOT ($current_gig_number = 0)
+			if progression_set_new_song_in_gig_list
+				change \{gameplay_restart_song = 1}
+				generic_menu_pad_choose_sound
+				ui_memcard_autosave \{event = menu_back
+					state = uistate_gameplay
+					data = {
+						all_active_players = true
+						need_loading_screen
+					}}
+			else
+				generic_menu_pad_choose_sound
+				ui_memcard_autosave \{event = menu_back
+					state = uistate_gig_posters
+					data = {
+						all_active_players = true
+						need_loading_screen
+					}}
+			endif
+		else
+			generic_menu_pad_choose_sound
+			ui_memcard_autosave \{event = menu_back
+				state = uistate_setlist
+				data = {
+					all_active_players = true
+					need_loading_screen
+				}}
+		endif
+	endif
+endscript
+
+script ui_win_song_play_career_ending 
+	ui_event_wait_for_safe
+	Menu_Music_Off
+	PlayMovieAndWait \{movie = 'career_ending'
+		noblack
+		focus_no_block}
+	get_movie_id_by_name \{movie = 'career_ending'}
+	SetGlobalTags <id> params = {unlocked = 1} all_active_players = 1
+	menu_music_on
+	ui_memcard_autosave \{event = menu_change
+		state = uistate_end_credits
+		data = {
+			all_active_players = true
+			need_loading_screen
+		}}
+endscript
+
+script net_career_next_song 
+
+	GetGlobalTags \{user_options}
+	if progression_set_new_song_in_gig_list
+		ui_memcard_autosave \{event = menu_back
+			state = uistate_gameplay
+			data = {
+				all_active_players = true
+			}}
+		change \{gameplay_restart_song = 1}
+		change \{net_ready_to_start = 0}
+		($default_loading_screen.create)
+		load_and_sync_timing
+	else
+
+	endif
+endscript

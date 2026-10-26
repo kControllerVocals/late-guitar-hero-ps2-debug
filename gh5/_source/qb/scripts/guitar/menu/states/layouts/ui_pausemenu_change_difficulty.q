@@ -1,0 +1,137 @@
+
+script ui_create_pausemenu_change_difficulty \{vocalist_without_controller = -1}
+	player_device = ($last_start_pressed_device)
+	ui_pausemenu_create_bg \{title_text = qs("DIFFICULTY")}
+	if pausemenu_bg :Desc_ResolveAlias \{name = alias_menu}
+		<parent> = <resolved_id>
+	endif
+	make_menu {
+		parent = <parent>
+		centered_offset = (445.0, -40.0)
+		exclusive_device = <player_device>
+		extra_z = 600
+		centered
+		noBG
+		color_scheme = ($default_color_scheme)
+		highlight_bar
+	}
+	pausemenu_change_difficulty_get_current_index vocalist_without_controller = <vocalist_without_controller>
+	pausemenu_change_difficulty_get_current_player
+	GetPlayerInfo <player> part
+	if (<part> = drum)
+		GetPlayerInfo <player> double_kick_drum
+	else
+		double_kick_drum = 0
+	endif
+	diff_index = 0
+	GetArraySize \{$difficulty_list}
+	difficulty_icon_array = [
+		icon_difficulty_beginner
+		icon_difficulty_easy
+		icon_difficulty_medium
+		icon_difficulty_hard
+		icon_difficulty_expert
+	]
+	begin
+	<text> = ($difficulty_list_props.($difficulty_list [<diff_index>]).text)
+	if (<difficulty_index> = <diff_index> && <double_kick_drum> = 0)
+		<text> = (<text> + qs(" *"))
+	endif
+	add_icon_menu_item {
+		text = <text>
+		rgba = ($default_color_scheme.text_color)
+		text_offset = (110.0, 7.0)
+		icon = (<difficulty_icon_array> [<diff_index>])
+		icon_offset = (-185.0, -7.0)
+		icon_dims = (128.0, 128.0)
+		pad_choose_script = pausemenu_change_difficulty_choose
+		pad_choose_params = {<...> difficulty = ($difficulty_list [<diff_index>]) double_kick = 0}
+	}
+	<diff_index> = (<diff_index> + 1)
+	repeat <array_size>
+	if (<part> = drum)
+		includes_double_kick = 0
+		GameMode_GetType
+		if (<type> = career)
+			<includes_double_kick> = 1
+		elseif (<type> = pro_faceoff)
+			if ($permanent_songlist_props.($current_song).double_kick = 1)
+				<includes_double_kick> = 1
+			endif
+		else
+			if ($permanent_songlist_props.($current_song).double_kick = 1)
+				<includes_double_kick> = 1
+			endif
+		endif
+		if (<includes_double_kick> = 1)
+			if (<difficulty_index> = (<diff_index> -1) && <double_kick_drum> = 1)
+				<text> = qs("EXPERT+ *")
+			else
+				<text> = qs("EXPERT+")
+			endif
+			add_icon_menu_item {
+				text = <text>
+				rgba = ($default_color_scheme.text_color)
+				text_offset = (110.0, 7.0)
+				icon = setlist_B_db_icon
+				icon_offset = (-185.0, -7.0)
+				icon_dims = (128.0, 128.0)
+				pad_choose_script = pausemenu_change_difficulty_choose
+				pad_choose_params = {<...> difficulty = ($difficulty_list [<diff_index> -1]) double_kick = 1}
+			}
+		endif
+	endif
+	menu_finish
+endscript
+
+script ui_destroy_pausemenu_change_difficulty 
+	generic_ui_destroy
+	ui_pausemenu_destroy_bg
+endscript
+
+script pausemenu_change_difficulty_choose \{double_kick = 0}
+	RemoveParameter \{base_name}
+	if GotParam \{no_warning}
+		generic_event_choose state = UIstate_pausemenu_change_difficulty_confirm data = {<...> difficulty = <difficulty>}
+	else
+		generic_event_choose state = UIstate_pausemenu_change_difficulty_warning data = {<...> difficulty = <difficulty>}
+	endif
+endscript
+
+script pausemenu_change_difficulty_get_current_index \{vocalist_without_controller = -1}
+	pausemenu_change_difficulty_get_current_player
+	if NOT (<vocalist_without_controller> = -1)
+		<player> = (<vocalist_without_controller> + 1)
+	endif
+	GetPlayerInfo <player> difficulty
+	switch <difficulty>
+		case beginner
+		<difficulty_index> = 0
+		case easy
+		<difficulty_index> = 1
+		case medium
+		<difficulty_index> = 2
+		case hard
+		<difficulty_index> = 3
+		case expert
+		<difficulty_index> = 4
+	endswitch
+	return difficulty_index = <difficulty_index>
+endscript
+
+script pausemenu_change_difficulty_get_current_player 
+	<player> = 1
+	if ($current_num_players > 1)
+		<player_device> = ($last_start_pressed_device)
+		<i> = 1
+		begin
+		GetPlayerInfo <i> controller
+		if (<controller> = <player_device>)
+			<player> = <i>
+			break
+		endif
+		<i> = (<i> + 1)
+		repeat ($current_num_players)
+	endif
+	return player = <player>
+endscript
