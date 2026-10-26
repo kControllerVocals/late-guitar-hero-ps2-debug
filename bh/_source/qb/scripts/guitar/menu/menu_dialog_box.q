@@ -1,0 +1,434 @@
+g_dlg_event_handlers_options = [
+	{
+		pad_up
+		generic_menu_up_or_down_sound
+		params = {
+			up
+		}
+	}
+	{
+		pad_down
+		generic_menu_up_or_down_sound
+		params = {
+			down
+		}
+	}
+]
+helpers_hidden_by_warning = 0
+
+script create_popup_warning_menu player_device = ($primary_controller) popup_event_handlers = ($g_dlg_event_handlers_options) header_offset = (0.0, 0.0) dlg_z_priority = 500 parent = root_window
+	heading_text = <title>
+	body_text = (<textblock>.text)
+	dlg_event_handlers_options = <popup_event_handlers>
+	create_dialog_box <...>
+endscript
+
+script create_dialog_box {
+		Template = standard
+		player_device = ($primary_controller)
+		dlg_event_handlers_options = ($g_dlg_event_handlers_options)
+		dlg_z_priority = 500
+		parent = root_window
+	}
+	if ScreenElementExists \{id = dialog_box_container}
+		debug_ScriptAssert \{'Attempted to create popup warning when one already existed.'}
+		return
+	endif
+	change menu_flow_locked = ($menu_flow_locked + 1)
+	if NOT GotParam \{options}
+		if (<Template> = standard)
+			<Template> = no_options
+		endif
+	endif
+	if GotParam \{use_all_controllers}
+		RemoveParameter \{player_device}
+		get_all_exclusive_devices
+		player_device = <exclusive_device>
+	endif
+	CreateScreenElement {
+		type = ContainerElement
+		parent = <parent>
+		id = dialog_box_container
+		pos = (0.0, 0.0)
+		just = [left top]
+	}
+	dialog_box_get_desc_type_text Template = <Template>
+	CreateScreenElement {
+		parent = dialog_box_container
+		id = dialog_box_desc_id
+		type = DescInterface
+		desc = <desc_type_text>
+		z_priority = <dlg_z_priority>
+		exclusive_device = <player_device>
+	}
+	dialog_box_setup_physics_elements desc_type_text = <desc_type_text>
+	dialog_box_create_all_text <...>
+	if GotParam \{restore_helpers}
+		change \{helpers_hidden_by_warning = 1}
+		hide_user_control_helpers
+	else
+		clean_up_user_control_helpers
+	endif
+	if (<Template> = no_options)
+		dialog_box_desc_id :SE_SetProps \{dlog_body_no_options_alpha = 1.0
+			dlog_body_alpha = 0.0}
+		<id> :obj_spawnscript dialog_box_heading_fade
+		change menu_flow_locked = ($menu_flow_locked - 1)
+		return
+	elseif NOT GotParam \{options}
+		debug_ScriptAssert \{'Template is not no_options, but no options were passed in.'}
+	endif
+	GetArraySize \{options}
+	barrel_menu = 1
+	if (<array_size> < 3)
+		barrel_menu = 0
+	endif
+	if GotParam \{no_barrel}
+		barrel_menu = 0
+	endif
+	AddParams (<barrel_menu>)
+	if (<barrel_menu> = 1)
+		dialog_box_desc_id :SE_SetProps \{arrows_alpha = 0.0}
+		if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_dlog_vmenu_container}
+			AssignAlias id = <resolved_id> alias = dlog_vmenu_container
+			<resolved_id> :SE_GetProps
+			<z> = <z_priority>
+		else
+
+		endif
+		if (<Template> = fail_song)
+			<menu_pos> = (450.0, 250.0)
+		else
+			<menu_pos> = (510.0, 260.0)
+		endif
+		<menu_params> = {
+			parent = dlog_vmenu_container
+			exclusive_device = <player_device>
+			centered = 1
+			pos = <menu_pos>
+			max_expansion = 3
+			scale = 0.8
+			z_priority = (<z> + 1)
+		}
+		if GotParam \{back_button_script}
+			if GotParam \{back_button_params}
+				make_generic_barrel_menu {
+					<menu_params>
+					pad_back_script = <back_button_script>
+					pad_back_params = <back_button_params>
+					no_highlight_bar
+				}
+			else
+				make_generic_barrel_menu {
+					<menu_params>
+					pad_back_script = <back_button_script>
+					no_highlight_bar
+				}
+			endif
+		else
+			make_generic_barrel_menu {
+				<menu_params>
+				pad_back_script = nullscript
+				pad_back_sound = nullscript
+				no_highlight_bar
+			}
+		endif
+		AssignAlias id = <vmenu_id> alias = dialog_box_vmenu
+	else
+		if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_dlog_vmenu}
+			AssignAlias id = <resolved_id> alias = dialog_box_vmenu
+			if (<array_size> = 1)
+				dialog_box_vmenu :SE_SetProps {
+					exclusive_device = <player_device>
+				}
+			else
+				dialog_box_vmenu :SE_SetProps {
+					exclusive_device = <player_device>
+					event_handlers = <dlg_event_handlers_options>
+				}
+			endif
+		endif
+	endif
+	dialog_box_create_menu_options <...>
+	if (<barrel_menu> = 1)
+		generic_barrel_menu_finish \{no_helper_pills = 1}
+	endif
+	if GotParam \{no_focus}
+		LaunchEvent \{type = unfocus
+			target = dialog_box_vmenu}
+	else
+		LaunchEvent \{type = focus
+			target = dialog_box_vmenu}
+	endif
+	if NOT GotParam \{no_helpers}
+		add_user_control_helper \{text = qs("SELECT")
+			button = green
+			z = 100000}
+		if GotParam \{back_button_script}
+
+			add_user_control_helper \{text = qs("BACK")
+				button = red
+				z = 100000}
+		endif
+	endif
+	change menu_flow_locked = ($menu_flow_locked - 1)
+	return \{menu_id = dialog_box_vmenu}
+endscript
+
+script dialog_box_setup_physics_elements 
+	if (<desc_type_text> = 'dialog_box_standard' || <desc_type_text> = 'dialog_box_alternate' || <desc_type_text> = 'dialog_box_standard_musicstudio')
+		create_2D_spring_system \{desc_id = dialog_box_desc_id
+			num_springs = 2
+			stiffness = 50
+			rest_length = 1}
+	endif
+	if (<desc_type_text> = 'dialog_box_alternate')
+		if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_skullborder_animate
+				param = skullborder_id}
+			<skullborder_id> :obj_spawnscript ui_frazzmatazz
+		else
+
+		endif
+		if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_skull_frame
+				param = skull_frame_id}
+			<skullborder_id> :obj_spawnscript ui_shakey
+		else
+
+		endif
+		if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_flame2_container
+				param = flame2_id}
+			<flame2_id> :obj_spawnscript ui_shakey
+		else
+
+		endif
+	endif
+	if (<desc_type_text> = 'dialog_box_standard_musicstudio')
+		if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_dialog_frame_animate
+				param = dialog_frame_anim_id}
+			<dialog_frame_anim_id> :obj_spawnscript ui_shakey
+		else
+
+		endif
+	endif
+endscript
+
+script destroy_popup_warning_menu 
+	destroy_dialog_box <...>
+endscript
+
+script destroy_dialog_box 
+	if ($helpers_hidden_by_warning = 0)
+		clean_up_user_control_helpers
+	endif
+	DestroyScreenElement \{id = dialog_box_desc_id}
+	destroy_menu \{menu_id = dialog_box_container}
+	if ($helpers_hidden_by_warning = 1)
+		change \{helpers_hidden_by_warning = 0}
+		restore_user_control_helpers
+	endif
+	set_focus_color
+	set_unfocus_color
+endscript
+
+script dialog_box_get_desc_type_text 
+	switch <Template>
+		case standard
+		return \{desc_type_text = 'dialog_box_standard'}
+		case no_options
+		return \{desc_type_text = 'dialog_box_standard'}
+		case large_body
+		return \{desc_type_text = 'dialog_box_standard'}
+		case fail_song
+		return \{desc_type_text = 'dialog_box_alternate'}
+		case MusicStudio
+		return \{desc_type_text = 'dialog_box_standard_musicstudio'}
+	endswitch
+endscript
+
+script dialog_box_heading_fade 
+	if Desc_ResolveAlias \{name = alias_dialog_text
+			param = cont}
+		Wait \{2
+			seconds}
+		begin
+		if NOT ScreenElementExists id = <cont>
+			return
+		endif
+		<cont> :SE_SetProps alpha = 0.5 time = 1.0 motion = ease_in
+		<cont> :SE_WaitProps
+		if NOT ScreenElementExists id = <cont>
+			return
+		endif
+		<cont> :SE_SetProps alpha = 1.0 time = 1.0 motion = ease_out
+		<cont> :SE_WaitProps
+		repeat
+	endif
+endscript
+
+script dialog_box_create_all_text \{heading_text = qs("WARNING")}
+	dialog_box_desc_id :SetProps {
+		dlog_heading_text = <heading_text>
+	}
+	if GotParam \{body_text}
+		dialog_box_desc_id :SetProps {
+			dlog_body_text = <body_text>
+		}
+	endif
+	if GotParam \{fail_song_props}
+		dialog_box_desc_id :SetProps {
+			dlog_body_alpha = 0.0
+			dlog_fail_song_info_alpha = 1.0
+			dlog_fail_song_title_text = (<fail_song_props>.song_title)
+			dlog_fail_song_section_text = (<fail_song_props>.section_name_text)
+			dlog_fail_song_percent_text = (<fail_song_props>.percent_text)
+			dlog_fail_song_difficulty_text = (<fail_song_props>.difficulty_text)
+		}
+	endif
+	if GotParam \{fail_song_props_prac}
+		dialog_box_desc_id :SetProps {
+			dlog_fail_song_info_prac_alpha = 1
+			dlog_fail_song_info_alpha = 0
+			dlog_fail_song_title_text = (<fail_song_props_prac>.song_title)
+			dlog_fail_song_percent_prac_text = (<fail_song_props_prac>.percent_text)
+			dlog_fail_song_difficulty_prac_text = (<fail_song_props_prac>.difficulty_text)
+		}
+	endif
+	if GotParam \{fail_song_props_faceoff}
+		dialog_box_desc_id :SetProps {
+			dlog_fail_song_info_faceoff_alpha = 1
+			dlog_fail_song_info_alpha = 0
+			dlog_fail_song_title_text = (<fail_song_props_faceoff>.song_title)
+			dlog_fail_song_percent_faceoff_text = (<fail_song_props_faceoff>.percent_text)
+		}
+	endif
+endscript
+
+script dialog_box_create_menu_option_singular 
+	if StructureContains Structure = <option> func_params
+		<func_params> = (<option>.func_params)
+	endif
+	sound_func = generic_menu_pad_choose_sound
+	if StructureContains Structure = <option> sound_func
+		sound_func = (<option>.sound_func)
+	endif
+	if StructureContains Structure = <option> no_sound
+		sound_func = nullscript
+	endif
+	if StructureContains Structure = <option> screenelementprops
+		extra_props = (<option>.screenelementprops)
+	endif
+	if StructureContains Structure = <option> focus_script_params
+		focus_script_params = (<option>.focus_script_params)
+	endif
+	set_unfocus_color
+	if (<barrel_menu> = 1)
+		if StructureContains Structure = <option> not_focusable
+			add_generic_barrel_menu_text_item {
+				text = (<option>.text)
+				pad_choose_script = (<option>.func)
+				pad_choose_params = <func_params>
+				pad_choose_sound = <sound_func>
+				not_focusable
+				extra_props = <extra_props>
+				focus_script_params = <focus_script_params>
+			}
+		else
+			add_generic_barrel_menu_text_item {
+				text = (<option>.text)
+				pad_choose_script = (<option>.func)
+				pad_choose_params = <func_params>
+				pad_choose_sound = <sound_func>
+				extra_props = <extra_props>
+				focus_script_params = <focus_script_params>
+			}
+		endif
+	else
+		menurow_dims_mult_y = 1.0
+		if (<array_size> > 1)
+			menurow_dims_mult_y = ((0.3 / <array_size>) + 0.7)
+		endif
+		menurow_dims_mult = ((1.0, 0.0) + ((0.0, 1.0) * <menurow_dims_mult_y>))
+		menurow_dims = ((400.0, 50.0) * <menurow_dims_mult>)
+		event_handlers = [
+			{focus dialog_box_focus}
+			{unfocus dialog_box_unfocus}
+			{pad_choose <sound_func>}
+			{pad_choose (<option>.func) params = <func_params>}
+		]
+		if GotParam \{back_button_script}
+			<event> = {pad_back generic_menu_pad_choose_sound}
+			AddArrayElement array = <event_handlers> element = <event>
+			if GotParam \{back_button_params}
+				<event> = {pad_back <back_button_script> params = {<back_button_params>}}
+			else
+				<event> = {pad_back <back_button_script>}
+			endif
+			AddArrayElement array = <event_handlers> element = <event>
+			<event_handlers> = <array>
+		endif
+		CreateScreenElement {
+			type = DescInterface
+			parent = <parent>
+			desc = 'menurow_txt_desc'
+			dims = <menurow_dims>
+			menurow_just = [center center]
+			menurow_internal_just = [center center]
+			menurow_txt_item_dims = <menurow_dims>
+			menurow_txt_item_font = fontgrid_title_a1
+			menurow_txt_item_rgba = ($menu_unfocus_color)
+			autoSizeDims = false
+			menurow_txt_item_text = (<option>.text)
+			event_handlers = <event_handlers>
+		}
+	endif
+endscript
+
+script dialog_box_create_menu_options 
+	<parent> = dialog_box_vmenu
+	GetArraySize <options>
+	<i> = 0
+	begin
+	dialog_box_create_menu_option_singular {
+		option = (<options> [<i>])
+		z = <z>
+		num_options = <array_size>
+		parent = <parent>
+		Template = <Template>
+		barrel_menu = <barrel_menu>
+		array_size = <array_size>
+		index = <i>
+		back_button_script = <back_button_script>
+		back_button_params = <back_button_params>
+	}
+	<i> = (<i> + 1)
+	repeat <array_size>
+endscript
+
+script dialog_box_focus \{time = 0.05
+		grow_scale = 1.5}
+	if NOT GotParam \{id}
+		Obj_GetID
+		<id> = <ObjID>
+	endif
+	<id> :SE_SetProps {
+		menurow_scale = <grow_scale>
+		menurow_txt_item_font = fontgrid_title_a1
+		menurow_txt_item_rgba = ($menu_focus_color)
+		motion = ease_in
+		time = <time>
+	}
+endscript
+
+script dialog_box_unfocus \{time = 0.05}
+	if NOT GotParam \{id}
+		Obj_GetID
+		<id> = <ObjID>
+	endif
+	<id> :SE_SetProps {
+		menurow_scale = 1.0
+		menurow_txt_item_font = fontgrid_title_a1
+		menurow_txt_item_rgba = ($menu_unfocus_color)
+		motion = ease_in
+		time = <time>
+	}
+endscript

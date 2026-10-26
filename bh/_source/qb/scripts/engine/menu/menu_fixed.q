@@ -1,0 +1,11 @@
+make_fixed_menu = ASSERT_ON_USE
+destroy_fixed_menu = ASSERT_ON_USE
+fixed_menu_reset_tags = ASSERT_ON_USE
+add_fixed_menu_item = ASSERT_ON_USE
+fixed_menu_item_focus = ASSERT_ON_USE
+fixed_menu_item_unfocus = ASSERT_ON_USE
+finish_fixed_menu = ASSERT_ON_USE
+fixed_menu_scroll = ASSERT_ON_USE
+fixed_menu_reposition = ASSERT_ON_USE
+fixed_menu_morph = ASSERT_ON_USE
+fixed_menu_item_morph = ASSERT_ON_USE

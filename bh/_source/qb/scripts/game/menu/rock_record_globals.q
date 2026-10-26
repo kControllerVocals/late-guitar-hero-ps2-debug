@@ -1,0 +1,1 @@
+rock_record_main_stats = ASSERT_ON_USE

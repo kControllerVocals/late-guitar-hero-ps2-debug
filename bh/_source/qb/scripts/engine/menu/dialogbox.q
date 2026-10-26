@@ -1,0 +1,13 @@
+create_snazzy_dialog_box = ASSERT_ON_USE
+old_create_dialog_box = ASSERT_ON_USE
+button_choose_script = ASSERT_ON_USE
+create_dialog_button = ASSERT_ON_USE
+old_destroy_dialog_box = ASSERT_ON_USE
+dialog_box_exit = ASSERT_ON_USE
+dialog_box_delay_input = ASSERT_ON_USE
+speech_box_exit = ASSERT_ON_USE
+speech_box_input_debounce = ASSERT_ON_USE
+hide_speech_text = ASSERT_ON_USE
+speech_box_style_scale_text = ASSERT_ON_USE
+animate_dialog_box_in = ASSERT_ON_USE
+create_test_dialog = ASSERT_ON_USE

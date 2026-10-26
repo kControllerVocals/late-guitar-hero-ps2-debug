@@ -1,0 +1,268 @@
+
+script create_song_ended_menu \{player = 1}
+	GMan_SongTool_GetCurrentSong
+	StopSoundsByBuss \{Encore_Events}
+	if IsMoviePlaying \{TextureSlot = 1}
+		PauseMovie \{TextureSlot = 1}
+	endif
+	disable_pause
+	completion = 0
+	get_song_end_time song = <current_song>
+	GetSongTimeMs
+	if (<time> < 0)
+		time = 0
+	elseif (<time> > <total_end_time>)
+		time = <total_end_time>
+	endif
+	if ($game_mode = practice)
+		get_player_num_from_controller controller_index = ($primary_controller)
+		if NOT PlayerInfoEquals <player_num> part = Vocals
+			GetPlayerInfo <player_num> total_notes
+			GetPlayerInfo <player_num> notes_hit
+
+			if (<total_notes> > 0)
+				completion = (((<notes_hit> * 1.0) / <total_notes>) * 100.0)
+			else
+				completion = 0
+			endif
+		else
+			GetPlayerInfo <player_num> vocal_phrase_quality
+			GetPlayerInfo <player_num> vocal_phrase_max_qual
+			if (<vocal_phrase_max_qual> > 0)
+				completion = (((<vocal_phrase_quality>) / <vocal_phrase_max_qual>) * 100.0)
+			else
+				completion = 0
+			endif
+		endif
+	else
+		if (<total_end_time> > 0)
+			completion = (100.0 * <time> / <total_end_time>)
+		endif
+	endif
+	CastToInteger \{completion}
+	get_band_difficulty
+	get_difficulty_text_upper difficulty = <band_difficulty>
+	get_song_title song = <current_song>
+	GetUpperCaseString <song_title>
+	<title> = qs("SONG ENDED")
+	if ($game_mode = practice)
+		FormatText TextName = completion_text qs("\L%d") d = <completion>
+		<text> = qs("PRACTICE AGAIN")
+	else
+		FormatText TextName = completion_text qs("\L%d\%") d = <completion>
+		<text> = qs("RETRY SONG")
+	endif
+	if NOT InInternetMode
+		popup_options = [
+			{
+				func = fail_song_menu_select_retry_song
+				text = <text>
+			}
+		]
+	else
+		popup_options = []
+	endif
+	GameMode_GetType
+	if ($game_mode = practice)
+		if ($came_to_practice_from = main_menu)
+			<new_song_option> = {
+				func = song_ended_menu_select_new_song
+				text = qs("NEW SONG")
+			}
+			AddArrayElement array = <popup_options> element = <new_song_option>
+			<popup_options> = <array>
+		else
+			if ($came_to_practice_from = p1_quickplay)
+				<new_song_option> = {
+					func = song_ended_menu_select_back_to_game
+					text = qs("BACK TO QUICKPLAY")
+				}
+				AddArrayElement array = <popup_options> element = <new_song_option>
+				<popup_options> = <array>
+			else
+				<new_song_option> = {
+					func = song_ended_menu_select_back_to_game
+					text = qs("BACK TO CAREER")
+				}
+				AddArrayElement array = <popup_options> element = <new_song_option>
+				<popup_options> = <array>
+			endif
+		endif
+	else
+		if (<type> = career)
+			<new_song_option> = {
+				func = song_ended_menu_select_new_song
+				text = qs("NEW GIG")
+			}
+		else
+			<new_song_option> = {
+				func = song_ended_menu_select_new_song
+				text = qs("NEW SONG")
+			}
+		endif
+		AddArrayElement array = <popup_options> element = <new_song_option>
+		<popup_options> = <array>
+	endif
+	GameMode_GetType
+	if (<type> = quickplay)
+		if NOT ui_event_exists_in_stack \{name = 'jam'}
+			if (($num_quickplay_song_list > 1) || ($is_partyplay_mode = 1))
+				<skip_song_option> = {
+					func = quickplay_skip_song
+					text = qs("SKIP SONG")
+				}
+				AddArrayElement array = <popup_options> element = <skip_song_option>
+				<popup_options> = <array>
+			endif
+		endif
+	endif
+	<quit_option> = {
+		func = song_ended_menu_select_quit
+		text = qs("MAIN MENU")
+	}
+	AddArrayElement array = <popup_options> element = <quit_option>
+	<popup_options> = <array>
+	get_all_exclusive_devices
+	if ($game_mode = practice)
+		create_dialog_box {
+			Template = fail_song
+			heading_text = <title>
+			player_device = ($primary_controller)
+			no_background
+			options = <popup_options>
+			fail_song_props_prac = {
+				song_title = <UpperCaseString>
+				percent_text = <completion_text>
+				difficulty_text = <difficulty_text>
+			}
+		}
+	elseif (<type> = pro_faceoff)
+		create_dialog_box {
+			Template = fail_song
+			heading_text = <title>
+			player_device = <exclusive_device>
+			no_background
+			options = <popup_options>
+			fail_song_props_faceoff = {
+				song_title = <UpperCaseString>
+				percent_text = <completion_text>
+			}
+		}
+	else
+		create_dialog_box {
+			Template = fail_song
+			heading_text = <title>
+			player_device = <exclusive_device>
+			no_background
+			options = <popup_options>
+			fail_song_props = {
+				song_title = <UpperCaseString>
+				percent_text = <completion_text>
+				difficulty_text = <difficulty_text>
+			}
+		}
+	endif
+endscript
+
+script destroy_song_ended_menu 
+	StopAllSounds
+	GH3_SFX_fail_song_stop_sounds
+	if IsMoviePlaying \{TextureSlot = 1}
+		ResumeMovie \{TextureSlot = 1}
+	endif
+	destroy_dialog_box
+endscript
+
+script song_ended_menu_select_retry_song 
+	set_loading_screen \{full}
+	change \{ps2_gameplay_restart_song = 1}
+	generic_event_back \{state = uistate_gameplay}
+	spawnscriptnow \{restart_song}
+endscript
+
+script song_ended_menu_select_new_song 
+	set_loading_screen \{full}
+	if ($practice_enabled = 1)
+		generic_event_back state = uistate_setlist player = <player>
+		return
+	endif
+	if ($current_song = jamsession)
+		if ui_event_exists_in_stack \{name = 'jam'}
+			if NOT ($jam_view_cam_created = 1)
+				destroy_bg_viewport
+				setup_bg_viewport
+				PlayIGCCam \{name = jam_view_cam
+					viewport = bg_viewport
+					controlscript = jam_camera_script
+					params = {
+						start_camera = jam_song_select
+					}
+					Play_hold = 1}
+				change \{jam_view_cam_created = 1}
+				change \{target_jam_camera_prop = failed_song_cam}
+			endif
+			generic_event_back state = UIstate_jam_select_song player = <player> data = {show_popup = 0}
+		elseif ui_event_exists_in_stack \{name = 'setlist'}
+			create_loading_screen
+			generic_event_back state = uistate_setlist player = <player>
+		endif
+	else
+		if ui_event_exists_in_stack \{name = 'setlist'}
+			generic_event_back state = uistate_setlist player = <player>
+			return
+		endif
+		ui_memcard_autosave \{state = uistate_gig_posters
+			data = {
+				all_active_players = true
+				need_loading_screen
+			}}
+	endif
+endscript
+
+script song_ended_menu_select_quit 
+	set_loading_screen \{full}
+	change \{should_reset_gig_posters_selection = 1}
+	if ($game_mode = practice)
+		change \{practice_enabled = 0}
+		change game_mode = ($came_to_practice_from)
+		if NOT ($came_to_practice_from_progression = none)
+			change current_progression_flag = ($came_to_practice_from_progression)
+		endif
+		if NOT ($came_to_practice_character_id = EmptyGuy)
+			SetPlayerInfo 1 character_id = ($came_to_practice_character_id)
+		endif
+		change \{current_num_players = 1}
+		GameMode_UpdateNumPlayers \{num_players = 1}
+		unload_song_anims
+		destroy_band
+		create_loading_screen
+		generic_event_back \{state = UIstate_mainmenu}
+		return
+	endif
+	if ($is_network_game = 1)
+		quit_network_game
+	endif
+	GameMode_GetType
+	if (<type> = career)
+		career_song_ended_select_quit
+	endif
+	BG_Crowd_Front_End_Silence \{immediate = 1}
+	ui_memcard_autosave_replace \{state = UIstate_mainmenu
+		data = {
+			all_active_players = true
+			need_loading_screen
+		}}
+endscript
+
+script song_ended_menu_select_back_to_game 
+	set_loading_screen \{full}
+	change \{practice_enabled = 0}
+	change game_mode = ($came_to_practice_from)
+	change \{current_num_players = 1}
+	GameMode_UpdateNumPlayers \{num_players = 1}
+	unload_song_anims
+	destroy_band
+	ui_event_wait_for_safe
+	end_practice_song
+	spawnscriptnow \{return_to_quickplay_from_practice}
+endscript

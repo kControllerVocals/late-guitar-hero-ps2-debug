@@ -1,0 +1,15 @@
+create_newspaper_menu = ASSERT_ON_USE
+destroy_newspaper_menu = ASSERT_ON_USE
+np_scroll_text_horizontal = ASSERT_ON_USE
+np_create_text = ASSERT_ON_USE
+np_create_options_menu = ASSERT_ON_USE
+np_scroll_down = ASSERT_ON_USE
+np_scroll_up = ASSERT_ON_USE
+scale_textblock = ASSERT_ON_USE
+np_2p_hilite_sections = ASSERT_ON_USE
+np_set_section_color = ASSERT_ON_USE
+np_2p_flap_wings = ASSERT_ON_USE
+np_2p_thumb_zoom = ASSERT_ON_USE
+np_2p_fade_to_grey = ASSERT_ON_USE
+np_2p_hilites_p1 = ASSERT_ON_USE
+np_2p_hilites_p2 = ASSERT_ON_USE
