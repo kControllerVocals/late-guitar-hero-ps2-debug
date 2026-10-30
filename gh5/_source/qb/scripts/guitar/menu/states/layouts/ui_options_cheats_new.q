@@ -329,53 +329,5 @@ script ui_options_cheats_new_tv_glow
 endscript
 
 script ui_options_cheats_new_sound_events 
-	switch (<sound>)
-		case input
-		switch (<key>)
-			case green
-			soundevent \{event = menu_cheat_enter_green}
-			case red
-			soundevent \{event = menu_cheat_enter_red}
-			case yellow
-			soundevent \{event = menu_cheat_enter_yellow}
-			case blue
-			soundevent \{event = menu_cheat_enter_blue}
-		endswitch
-		case down
-		switch (<cheat>)
-			case unlocked
-			soundevent \{event = enter_band_name_finish}
-			case already_unlocked
-			soundevent \{event = menu_warning_sfx}
-			case incorrect
-			soundevent \{event = menu_warning_sfx}
-		endswitch
-		case shake
-		switch (<cheat>)
-			caseendswitch
-		case up
-		switch (<cheat>)
-			caseendswitch
-		case clear
-		switch (<key>)
-			case green
-			playsound \{menu_entername_scroll_1
-				vol = -1
-				buss = front_end}
-			case red
-			playsound \{menu_entername_scroll_1
-				vol = -1
-				buss = front_end}
-			case yellow
-			playsound \{menu_entername_scroll_1
-				vol = -1
-				buss = front_end}
-			case blue
-			playsound \{menu_entername_scroll_1
-				vol = -1
-				buss = front_end}
-		endswitch
-		case quit
-		generic_menu_pad_back_sound
-	endswitch
+	return
 endscript

@@ -1012,7 +1012,7 @@ lightshow_sharedprocessors = [
 script lightshow_iterator 
 	0x8dbdaee4 qs(0xc9557688) d = <time_offset>
 	lightshow_setactive \{active = false}
-	if NOT cd
+	if cd
 		destroyscreenelement \{id = lightshow_debuganchor}
 		destroyscreenelement \{id = lightshow_debugcycleanchor}
 		change \{lightshow_debugcycle_index = 0}

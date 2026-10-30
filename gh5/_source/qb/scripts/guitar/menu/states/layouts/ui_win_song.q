@@ -262,7 +262,7 @@ script ui_win_song_continue
 endscript
 
 script ui_win_song_continue_spawned 
-	if cd
+	if not cd
 		ui_event_get_stack
 		i = 0
 		begin
@@ -333,7 +333,7 @@ script ui_win_song_career_continue_spawned
 	unlock_guitar2 = ($progression_unlocked_guitar2)
 	progression_get_new_unlocks
 	getarraysize <new_unlocks>
-	if cd
+	if not cd
 		if ($is_in_debug = 1)
 			generic_event_back \{state = uistate_debug}
 			return

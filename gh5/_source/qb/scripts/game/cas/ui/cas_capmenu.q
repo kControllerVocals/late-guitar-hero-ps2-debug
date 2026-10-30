@@ -1471,7 +1471,7 @@ script getlayer
 	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT cd
+	if cd
 		getarraysize <cap>
 		if (<cap_index> > (<array_size> -1))
 

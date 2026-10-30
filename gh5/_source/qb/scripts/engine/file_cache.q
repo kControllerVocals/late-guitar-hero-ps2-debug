@@ -13,7 +13,7 @@ script cachefiles
 endscript
 
 script cachegamefiles 
-	if cd
+	if not cd
 		if gotparam \{force_clear}
 			initfilecache \{max_files = 1024
 				streambuff = 0

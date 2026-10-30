@@ -385,7 +385,7 @@ script gig_posters_setup_helpers
 	else
 		menu_finish
 	endif
-	if ((notcd) && ($enable_button_cheats = 1))
+	if ((cd) && ($enable_button_cheats = 1))
 		add_user_control_helper \{text = qs(0xb7802856)
 			button = blue
 			z = 100}

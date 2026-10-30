@@ -149,7 +149,7 @@ script userselecttriangle
 		}
 	endif
 	return
-	if notcd
+	if cd
 		switch $render_mode
 			case 0
 			change \{render_mode = 1}
@@ -224,7 +224,7 @@ script userselectcircle
 endscript
 
 script userselectstart 
-	if notcd
+	if cd
 		change \{render_mode = 0}
 		setrendermode \{mode = $render_mode}
 		togglepass \{pass = 0}

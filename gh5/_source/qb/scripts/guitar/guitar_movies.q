@@ -26,7 +26,7 @@ script playmovieandwait \{0x6d221ff1 = false}
 	endif
 	change \{g_skip_remaining_movies = 0}
 	screenfx_clearfxinstances \{viewport = bg_viewport}
-	if notcd
+	if cd
 		if ($show_movies = 0)
 			return
 		endif
