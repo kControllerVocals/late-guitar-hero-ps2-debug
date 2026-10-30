@@ -216,7 +216,7 @@ script gh3_start_pressed \{device_num = -1}
 			repeat <num_players>
 		endif
 		if (<found_device> = 0)
-			if NOT cd
+			if cd
 				if gotparam \{from_handler}
 					if globalexists \{name = debug_pause_control}
 						ui_event_wait_for_safe

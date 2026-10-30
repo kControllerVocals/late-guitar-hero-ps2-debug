@@ -17,7 +17,7 @@ script preload_song \{starttime = 0
 			0x22b8afbb = $current_speedfactor
 		endif
 		if NOT songload filename = <song_prefix> content_index = <content_index> position = <starttime> 0x22b8afbb = <0x22b8afbb>
-			if NOT cd
+			if cd
 
 			endif
 			destroy_loading_screen

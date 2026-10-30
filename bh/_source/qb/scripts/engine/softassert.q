@@ -2,7 +2,7 @@ enable_soft_asserts = 0
 soft_assert_active = 0
 
 script __soft_assert 
-	if cd
+	if not cd
 		return
 	endif
 	dumpheaps

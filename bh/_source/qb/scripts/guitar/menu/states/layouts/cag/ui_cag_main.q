@@ -132,7 +132,7 @@ script ui_create_cag_main_spawned
 			not_focusable = <not_focusable>
 		}
 	endif
-	if notcd
+	if cd
 		add_generic_menu_text_item {
 			text = qs(0x95f67c67)
 			choose_state = uistate_cag_custom

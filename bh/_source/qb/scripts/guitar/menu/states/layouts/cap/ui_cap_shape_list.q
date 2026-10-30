@@ -53,7 +53,7 @@ script add_shape_list_to_menu
 		repeat <array_size>
 	endif
 	if NOT gotparam \{catagory_added}
-		if NOT cd
+		if cd
 			add_generic_menu_text_item \{text = qs(0x720310b6)
 				choose_back}
 		endif

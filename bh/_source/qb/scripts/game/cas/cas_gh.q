@@ -59,7 +59,7 @@ script exit_to_customize_character
 endscript
 
 script verify_genre_data 
-	if NOT cd
+	if cd
 		foreachin \{$master_editable_list
 			do = verify_genre_data_foreach}
 	endif
@@ -168,7 +168,7 @@ script flush_cas_cache
 endscript
 
 script cas_artist_flush 
-	if NOT cd
+	if cd
 		if casartist
 			if NOT ($cas_heap_state = in_game)
 				stars
@@ -298,7 +298,7 @@ script cas_free_resources \{block_scripts = 0}
 endscript
 
 script refreshcasprofile 
-	if cd
+	if not cd
 		return
 	endif
 	if NOT casartist

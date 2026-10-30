@@ -13,7 +13,7 @@ script ui_destroy_debug
 endscript
 
 script ui_deinit_debug 
-	if NOT cd
+	if cd
 		ui_event_get_stack
 		i = 0
 		begin
