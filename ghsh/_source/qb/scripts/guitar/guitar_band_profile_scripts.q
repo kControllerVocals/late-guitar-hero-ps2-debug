@@ -378,7 +378,7 @@ script start_song_got_net_appearance
 endscript
 
 script check_for_dupe_profiles \{savegame = 0}
-	if cd
+	if not cd
 		return
 	endif
 	get_musician_profile_size savegame = <savegame>

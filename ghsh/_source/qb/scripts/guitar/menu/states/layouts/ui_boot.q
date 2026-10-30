@@ -13,7 +13,7 @@ script ui_destroy_boot_legal
 endscript
 
 script ui_boot_legal_wait 
-	if cd
+	if not cd
 		wait \{6.0
 			seconds
 			ignoreslomo}

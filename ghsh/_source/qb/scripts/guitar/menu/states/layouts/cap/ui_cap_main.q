@@ -193,7 +193,7 @@ script cas_load_graphic_data
 		match_layers_font prof_font = (<layers> [0].font) prof_text = (<layers> [0].text) sections = <sections> target = <target> material = <material>
 	endif
 	if NOT gotparam \{section_index}
-		if NOT cd
+		if cd
 			create_panel_message \{text = qs(0x03692b6c)
 				pos = (950.0, 600.0)
 				rgba = [

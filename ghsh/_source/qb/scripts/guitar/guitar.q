@@ -62,7 +62,7 @@ autolaunch_cas_artist = 0
 objviewer_light_test = 0
 autolaunch_jam = 0
 skip_signin = 0
-show_movies = 1
+show_movies = 0
 is_demo_mode = 0
 is_multiplayer_beta = 0
 downloadcontent_enabled = 0
@@ -419,7 +419,7 @@ script guitar_startup
 		launchviewer
 		change \{select_shift = 1}
 	endif
-	if NOT cd
+	if cd
 		change \{skip_boot_menu = 1}
 	endif
 
@@ -1007,7 +1007,7 @@ script are_replays_enabled
 endscript
 
 script runonqbr 
-	if cd
+	if not cd
 		return
 	endif
 	if (<file> = 'reloads\\guitar_band_preset_profiles.qb.xen')

@@ -1686,7 +1686,7 @@ script disable_bg_viewport_properties
 endscript
 
 script disable_highway 
-	if NOT cd
+	if cd
 		if ($alternate_viewer_hud_behavior = 1)
 			return
 		endif

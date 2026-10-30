@@ -360,7 +360,7 @@ endscript
 
 script fail_song_menu_select_new_song 
 	gh3_sfx_fail_song_stop_sounds
-	if NOT cd
+	if cd
 		if ($is_in_debug = 1)
 			generic_event_back \{state = uistate_debug}
 			return

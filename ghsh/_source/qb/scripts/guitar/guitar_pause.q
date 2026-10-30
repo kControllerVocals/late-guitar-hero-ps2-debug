@@ -211,7 +211,7 @@ script gh3_start_pressed \{device_num = -1}
 		i = (<i> + 1)
 		repeat $current_num_players
 		if ((<i> - 1) = $current_num_players)
-			if NOT cd
+			if cd
 				if gotparam \{from_handler}
 					if globalexists \{name = debug_pause_control}
 						ui_event_wait_for_safe

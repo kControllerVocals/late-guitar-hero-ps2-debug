@@ -42,7 +42,7 @@ script make_character_selection_menu {
 	else
 
 	endif
-	if NOT cd
+	if cd
 		setscreenelementprops \{id = current_menu
 			event_handlers = [
 				{

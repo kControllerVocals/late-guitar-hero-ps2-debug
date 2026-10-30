@@ -1,6 +1,6 @@
 
 script ui_create_song_unpause 
-	if NOT cd
+	if cd
 		if globalexists \{name = disable_unpause_countdown}
 			if ($disable_unpause_countdown = 1)
 				spawnscriptnow \{ui_song_unpause_done}

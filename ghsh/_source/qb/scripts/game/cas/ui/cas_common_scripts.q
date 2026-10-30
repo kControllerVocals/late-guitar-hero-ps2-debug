@@ -292,7 +292,7 @@ script cas_toggle_free_cam
 		change \{cas_free_cam_active = 0}
 	endif
 
-	if NOT cd
+	if cd
 		if NOT isguitarcontroller controller = <device_num>
 			change \{toggleviewmode_enabled = 1}
 			if ($view_mode = 0)

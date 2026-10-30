@@ -625,7 +625,7 @@ script show_hud
 endscript
 
 script hide_hud 
-	if NOT cd
+	if cd
 		if ($alternate_viewer_hud_behavior = 1)
 			return
 		endif
