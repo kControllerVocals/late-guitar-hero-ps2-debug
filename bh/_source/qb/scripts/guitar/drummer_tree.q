@@ -1,16 +1,16 @@
 drumdroid_animnode_ids = [
-	Body
-	BodyTimer
-	FacialTimer
-	Ik
-	LeftHandPartial
-	LeftArm
-	LeftHand
-	RightArm
-	Face
-	FemaleDiff
-	FemaleDiff_droid
-	DrumKit
+	body
+	bodytimer
+	facialtimer
+	ik
+	lefthandpartial
+	leftarm
+	lefthand
+	rightarm
+	face
+	femalediff
+	0xd7adf5e7
+	drumkit
 	moment_branch
 	moment_blend_inner
 	moment_blend
@@ -18,98 +18,98 @@ drumdroid_animnode_ids = [
 	faceoff_blend
 	faceoff_branch
 	faceoff_timer
-	TweakBonesNode
-	MirrorNode
-	Heel
-	Cycle_Drum_Loop_Body
-	Cycle_Drum_Arm_R
-	Cycle_Drum_Arm_L
-	Cycle_Drum_Foot_R
-	Cycle_Tempo_Drum_Body
-	Mod_Drum_Loop_Body
-	Mod_Drum_Arm_R
-	Mod_Drum_Arm_L
-	Mod_Kit_Cymbal_1
-	Mod_Kit_Cymbal_2
-	Mod_Kit_Cymbal_3
-	Mod_Kit_HH
-	Add_Drum_Kit
-	Blend_Drum_Arm_R
-	Blend_Drum_Arm_L
-	Blend_Drum_Foot_R
-	Blend_Kit_HH
-	Apply_Drum_Foot_R
-	Apply_Drum_Fingers
-	Apply_Drum_Base_Arm
-	Apply_Drum_Base_IK
-	Apply_Drum_Kit
-	IK_Drum_Hand_R
-	IK_Drum_Hand_L
-	IK_Drum_Feet
-	DB_Drum_Loop_Anim_Tempo
-	DB_Drum_QHit_R_Anim
-	DB_Drum_MHit_R_Anim
-	DB_Drum_SHit_R_Anim
-	DB_Drum_QHit_L_Anim
-	DB_Drum_MHit_L_Anim
-	DB_Drum_SHit_L_Anim
-	DB_Drum_Hit_Ant_L
-	DB_Drum_Hit_Ant_R
-	DB_Drum_Transition_Base_Anim
-	DB_Drum_Base_Anim_Old1
-	DB_Drum_Base_Anim_New1
-	DB_Drum_Base_Anim_Old2
-	DB_Drum_Base_Anim_New2
-	DB_Drum_Base_Anim_Old3
-	DB_Drum_Base_Anim_New3
-	DB_Drum_Base_Anim_Old4
-	DB_Drum_Base_Anim_New4
-	DB_Drum_Transition_BaseIK_Anim
-	DB_Drum_BaseIK_Anim_Old1
-	DB_Drum_BaseIK_Anim_New1
-	DB_Drum_BaseIK_Anim_Old2
-	DB_Drum_BaseIK_Anim_New2
-	DB_Drum_BaseIK_Anim_Old3
-	DB_Drum_BaseIK_Anim_New3
-	DB_Drum_BaseIK_Anim_Old4
-	DB_Drum_BaseIK_Anim_New4
-	DB_Drum_Base_Master1
-	DB_Drum_Base_Master2
-	DB_Drum_Base_Master3
-	DB_Drum_Base_Master4
-	DB_Drum_BaseIK_Master1
-	DB_Drum_BaseIK_Master2
-	DB_Drum_BaseIK_Master3
-	DB_Drum_BaseIK_Master4
-	DB_Drum_Ant_R_1
-	DB_Drum_Ant_R_2
-	DB_Drum_Ant_L_1
-	DB_Drum_Ant_L_2
-	DB_Drum_HH
-	DB_Drum_Cymbal_1
-	DB_Drum_Cymbal_2
-	DB_Drum_Cymbal_3
-	Source_Drum_Loop_Anim_Body
+	tweakbonesnode
+	mirrornode
+	heel
+	cycle_drum_loop_body
+	cycle_drum_arm_r
+	cycle_drum_arm_l
+	cycle_drum_foot_r
+	cycle_tempo_drum_body
+	mod_drum_loop_body
+	mod_drum_arm_r
+	mod_drum_arm_l
+	mod_kit_cymbal_1
+	mod_kit_cymbal_2
+	mod_kit_cymbal_3
+	mod_kit_hh
+	add_drum_kit
+	blend_drum_arm_r
+	blend_drum_arm_l
+	blend_drum_foot_r
+	blend_kit_hh
+	apply_drum_foot_r
+	apply_drum_fingers
+	apply_drum_base_arm
+	apply_drum_base_ik
+	apply_drum_kit
+	ik_drum_hand_r
+	ik_drum_hand_l
+	ik_drum_feet
+	db_drum_loop_anim_tempo
+	db_drum_qhit_r_anim
+	db_drum_mhit_r_anim
+	db_drum_shit_r_anim
+	db_drum_qhit_l_anim
+	db_drum_mhit_l_anim
+	db_drum_shit_l_anim
+	db_drum_hit_ant_l
+	db_drum_hit_ant_r
+	db_drum_transition_base_anim
+	db_drum_base_anim_old1
+	db_drum_base_anim_new1
+	db_drum_base_anim_old2
+	db_drum_base_anim_new2
+	db_drum_base_anim_old3
+	db_drum_base_anim_new3
+	db_drum_base_anim_old4
+	db_drum_base_anim_new4
+	db_drum_transition_baseik_anim
+	db_drum_baseik_anim_old1
+	db_drum_baseik_anim_new1
+	db_drum_baseik_anim_old2
+	db_drum_baseik_anim_new2
+	db_drum_baseik_anim_old3
+	db_drum_baseik_anim_new3
+	db_drum_baseik_anim_old4
+	db_drum_baseik_anim_new4
+	db_drum_base_master1
+	db_drum_base_master2
+	db_drum_base_master3
+	db_drum_base_master4
+	db_drum_baseik_master1
+	db_drum_baseik_master2
+	db_drum_baseik_master3
+	db_drum_baseik_master4
+	db_drum_ant_r_1
+	db_drum_ant_r_2
+	db_drum_ant_l_1
+	db_drum_ant_l_2
+	db_drum_hh
+	db_drum_cymbal_1
+	db_drum_cymbal_2
+	db_drum_cymbal_3
+	source_drum_loop_anim_body
 ]
 drumdroid_tree = {
 	type = ikonactivevalue
-	id = IK_Drum_Feet
-	two_bone_chains = drummer_IK_Feet_Params
-	active_value_source = AV_Drum_IK_Feet
+	id = ik_drum_feet
+	two_bone_chains = drummer_ik_feet_params
+	active_value_source = av_drum_ik_feet
 	active_value_lower_bound = 0.0
 	active_value_upper_bound = 1.0
-	update_skeleton = false
-	check_elbows = false
+	0xe601ad74 = false
+	0x44e0df74 = false
 	[
 		{
 			type = ikonactivevalue
-			id = IK_Drum_Hand_L
-			two_bone_chains = drummer_IK_Hand_L_Params
-			active_value_source = AV_Drum_IK_Hand_L
+			id = ik_drum_hand_l
+			two_bone_chains = drummer_ik_hand_l_params
+			active_value_source = av_drum_ik_hand_l
 			active_value_lower_bound = 0.0
 			active_value_upper_bound = 1.0
-			update_skeleton = false
-			check_elbows = false
+			0xe601ad74 = false
+			0x44e0df74 = false
 			active_value_curve = [
 				1.0
 				0.9975
@@ -136,12 +136,12 @@ drumdroid_tree = {
 			[
 				{
 					type = ikonactivevalue
-					id = IK_Drum_Hand_R
-					two_bone_chains = drummer_IK_Hand_R_Params
-					active_value_source = AV_Drum_IK_Hand_R
+					id = ik_drum_hand_r
+					two_bone_chains = drummer_ik_hand_r_params
+					active_value_source = av_drum_ik_hand_r
 					active_value_lower_bound = 0.0
 					active_value_upper_bound = 1.0
-					check_elbows = false
+					0x44e0df74 = false
 					active_value_curve = [
 						1.0
 						0.9975
@@ -167,56 +167,56 @@ drumdroid_tree = {
 					]
 					[
 						{
-							type = ApplyHeelDifference
-							id = Heel
+							type = applyheeldifference
+							id = heel
 							[
 								{
-									type = ApplyFemaleDrummerDifference
-									id = FemaleDiff
+									type = applyfemaledrummerdifference
+									id = femalediff
 									[
 										{
 											type = applydifference
-											id = Apply_Drum_Kit
+											id = apply_drum_kit
 											strength = 1.0
 											[
 												{
-													$Drum_Kit_Branch
+													$drum_kit_branch
 												}
 												{
 													type = applydifferenceonactivevalue
-													id = Apply_Drum_Foot_R
-													active_value_source = AV_Drum_Mod_Foot_R
+													id = apply_drum_foot_r
+													active_value_source = av_drum_mod_foot_r
 													active_value_lower_bound = 0.0
 													active_value_upper_bound = 1.0
 													[
 														{
 															type = cycleonactivevalue
-															id = Cycle_Drum_Foot_R
+															id = cycle_drum_foot_r
 															timing_track = standard
-															active_value_source = AV_Drum_Anim_Foot_R
+															active_value_source = av_drum_anim_foot_r
 															active_value_lower_bound = 0.0
 															active_value_upper_bound = 1.0
 															[
 																{
-																	type = blendNactive
-																	id = Blend_Drum_Foot_R
-																	active_value_source = AV_Drum_Blend_Foot_R
+																	type = blendnactive
+																	id = blend_drum_foot_r
+																	active_value_source = av_drum_blend_foot_r
 																	active_value_lower_bound = 0.0
 																	active_value_upper_bound = 1.0
 																	[
 																		{
-																			type = Source
-																			Anim = drum_foot_qhit_r
+																			type = source
+																			anim = drum_foot_qhit_r
 																			timing_track = standard
 																		}
 																		{
-																			type = Source
-																			Anim = drum_foot_mhit_r
+																			type = source
+																			anim = drum_foot_mhit_r
 																			timing_track = standard
 																		}
 																		{
-																			type = Source
-																			Anim = drum_foot_shit_r
+																			type = source
+																			anim = drum_foot_shit_r
 																			timing_track = standard
 																		}
 																	]
@@ -231,13 +231,13 @@ drumdroid_tree = {
 																	type = addn
 																	[
 																		{
-																			type = DegenerateBlend
-																			id = DB_Drum_Hit_Ant_R
+																			type = degenerateblend
+																			id = db_drum_hit_ant_r
 																			default_degeneration_duration = 0.0
 																		}
 																		{
-																			type = DegenerateBlend
-																			id = DB_Drum_Hit_Ant_L
+																			type = degenerateblend
+																			id = db_drum_hit_ant_l
 																			default_degeneration_duration = 0.0
 																		}
 																	]
@@ -251,37 +251,37 @@ drumdroid_tree = {
 																			[
 																				{
 																					type = modulateonactivevalue
-																					id = Mod_Drum_Arm_R
-																					active_value_source = AV_Drum_Mod_Hand_R
+																					id = mod_drum_arm_r
+																					active_value_source = av_drum_mod_hand_r
 																					active_value_lower_bound = 0.0
 																					active_value_upper_bound = 1.0
 																					[
 																						{
 																							type = cycleonactivevalue
-																							id = Cycle_Drum_Arm_R
+																							id = cycle_drum_arm_r
 																							timing_track = standard
-																							active_value_source = AV_Drum_Anim_Hand_R
+																							active_value_source = av_drum_anim_hand_r
 																							active_value_lower_bound = 0.0
 																							active_value_upper_bound = 1.0
 																							[
 																								{
-																									type = blendNactive
-																									id = Blend_Drum_Arm_R
-																									active_value_source = AV_Drum_Blend_Hand_R
+																									type = blendnactive
+																									id = blend_drum_arm_r
+																									active_value_source = av_drum_blend_hand_r
 																									active_value_lower_bound = 0.0
 																									active_value_upper_bound = 1.0
 																									[
 																										{
-																											type = DegenerateBlend
-																											id = DB_Drum_QHit_R_Anim
+																											type = degenerateblend
+																											id = db_drum_qhit_r_anim
 																										}
 																										{
-																											type = DegenerateBlend
-																											id = DB_Drum_MHit_R_Anim
+																											type = degenerateblend
+																											id = db_drum_mhit_r_anim
 																										}
 																										{
-																											type = DegenerateBlend
-																											id = DB_Drum_SHit_R_Anim
+																											type = degenerateblend
+																											id = db_drum_shit_r_anim
 																										}
 																									]
 																								}
@@ -291,37 +291,37 @@ drumdroid_tree = {
 																				}
 																				{
 																					type = modulateonactivevalue
-																					id = Mod_Drum_Arm_L
-																					active_value_source = AV_Drum_Mod_Hand_L
+																					id = mod_drum_arm_l
+																					active_value_source = av_drum_mod_hand_l
 																					active_value_lower_bound = 0.0
 																					active_value_upper_bound = 1.0
 																					[
 																						{
 																							type = cycleonactivevalue
-																							id = Cycle_Drum_Arm_L
+																							id = cycle_drum_arm_l
 																							timing_track = standard
-																							active_value_source = AV_Drum_Anim_Hand_L
+																							active_value_source = av_drum_anim_hand_l
 																							active_value_lower_bound = 0.0
 																							active_value_upper_bound = 1.0
 																							[
 																								{
-																									type = blendNactive
-																									id = Blend_Drum_Arm_L
-																									active_value_source = AV_Drum_Blend_Hand_L
+																									type = blendnactive
+																									id = blend_drum_arm_l
+																									active_value_source = av_drum_blend_hand_l
 																									active_value_lower_bound = 0.0
 																									active_value_upper_bound = 1.0
 																									[
 																										{
-																											type = DegenerateBlend
-																											id = DB_Drum_QHit_L_Anim
+																											type = degenerateblend
+																											id = db_drum_qhit_l_anim
 																										}
 																										{
-																											type = DegenerateBlend
-																											id = DB_Drum_MHit_L_Anim
+																											type = degenerateblend
+																											id = db_drum_mhit_l_anim
 																										}
 																										{
-																											type = DegenerateBlend
-																											id = DB_Drum_SHit_L_Anim
+																											type = degenerateblend
+																											id = db_drum_shit_l_anim
 																										}
 																									]
 																								}
@@ -331,14 +331,14 @@ drumdroid_tree = {
 																				}
 																				{
 																					type = modulateonactivevalue
-																					id = Mod_Drum_Loop_Body
-																					active_value_source = AV_Drum_Mod_Loop_Body
+																					id = mod_drum_loop_body
+																					active_value_source = av_drum_mod_loop_body
 																					active_value_lower_bound = 0.0
 																					active_value_upper_bound = 1.0
 																					[
 																						{
-																							type = DegenerateBlend
-																							id = DB_Drum_Loop_Anim_Tempo
+																							type = degenerateblend
+																							id = db_drum_loop_anim_tempo
 																						}
 																					]
 																				}
@@ -346,25 +346,25 @@ drumdroid_tree = {
 																		}
 																		{
 																			type = applypartial
-																			id = Apply_Drum_Fingers
+																			id = apply_drum_fingers
 																			strength = 1.0
 																			[
 																				{
-																					type = Source
-																					Anim = drum_fingers
+																					type = source
+																					anim = drum_fingers
 																				}
 																				{
 																					type = applypartial
 																					strength = 1.0
 																					[
 																						{
-																							type = DegenerateBlend
-																							id = DB_Drum_Transition_BaseIK_Anim
+																							type = degenerateblend
+																							id = db_drum_transition_baseik_anim
 																							default_degeneration_duration = 0.0
 																						}
 																						{
-																							type = DegenerateBlend
-																							id = DB_Drum_Transition_Base_Anim
+																							type = degenerateblend
+																							id = db_drum_transition_base_anim
 																							default_degeneration_duration = 0.0
 																						}
 																					]
@@ -389,301 +389,301 @@ drumdroid_tree = {
 		}
 	]
 }
-Sorce_Mod_Branch = {
+sorce_mod_branch = {
 	type = modulate
 	strength = strength
 	[
 		{
-			type = Source
-			Anim = Drum_T3T3_R
+			type = source
+			anim = drum_t3t3_r
 		}
 	]
 }
-Sorce_Mod_Branch_blank = {
-	type = Source
-	Anim = Drum_T3T3_R
+sorce_mod_branch_blank = {
+	type = source
+	anim = drum_t3t3_r
 }
-Drum_Ant_Branch_R_1 = {
-	type = DegenerateBlend
-	id = DB_Drum_Ant_R_1
+drum_ant_branch_r_1 = {
+	type = degenerateblend
+	id = db_drum_ant_r_1
 	default_degeneration_duration = 0.0
 }
-Drum_Ant_Branch_R_2 = {
-	type = DegenerateBlend
-	id = DB_Drum_Ant_R_2
+drum_ant_branch_r_2 = {
+	type = degenerateblend
+	id = db_drum_ant_r_2
 	default_degeneration_duration = 0.0
 }
-Drum_Ant_Branch_L_1 = {
-	type = DegenerateBlend
-	id = DB_Drum_Ant_L_1
+drum_ant_branch_l_1 = {
+	type = degenerateblend
+	id = db_drum_ant_l_1
 	default_degeneration_duration = 0.0
 }
-Drum_Ant_Branch_L_2 = {
-	type = DegenerateBlend
-	id = DB_Drum_Ant_L_2
+drum_ant_branch_l_2 = {
+	type = degenerateblend
+	id = db_drum_ant_l_2
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Master1 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Master1
+drum_base_branch_master1 = {
+	type = degenerateblend
+	id = db_drum_base_master1
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Master2 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Master2
+drum_base_branch_master2 = {
+	type = degenerateblend
+	id = db_drum_base_master2
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Master3 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Master3
+drum_base_branch_master3 = {
+	type = degenerateblend
+	id = db_drum_base_master3
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Master4 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Master4
+drum_base_branch_master4 = {
+	type = degenerateblend
+	id = db_drum_base_master4
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Old1 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_Old1
+drum_base_branch_old1 = {
+	type = degenerateblend
+	id = db_drum_base_anim_old1
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_New1 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_New1
+drum_base_branch_new1 = {
+	type = degenerateblend
+	id = db_drum_base_anim_new1
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Old2 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_Old2
+drum_base_branch_old2 = {
+	type = degenerateblend
+	id = db_drum_base_anim_old2
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_New2 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_New2
+drum_base_branch_new2 = {
+	type = degenerateblend
+	id = db_drum_base_anim_new2
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Old3 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_Old3
+drum_base_branch_old3 = {
+	type = degenerateblend
+	id = db_drum_base_anim_old3
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_New3 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_New3
+drum_base_branch_new3 = {
+	type = degenerateblend
+	id = db_drum_base_anim_new3
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_Old4 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_Old4
+drum_base_branch_old4 = {
+	type = degenerateblend
+	id = db_drum_base_anim_old4
 	default_degeneration_duration = 0.0
 }
-Drum_Base_Branch_New4 = {
-	type = DegenerateBlend
-	id = DB_Drum_Base_Anim_New4
+drum_base_branch_new4 = {
+	type = degenerateblend
+	id = db_drum_base_anim_new4
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Master1 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Master1
+drum_baseik_branch_master1 = {
+	type = degenerateblend
+	id = db_drum_baseik_master1
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Master2 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Master2
+drum_baseik_branch_master2 = {
+	type = degenerateblend
+	id = db_drum_baseik_master2
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Master3 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Master3
+drum_baseik_branch_master3 = {
+	type = degenerateblend
+	id = db_drum_baseik_master3
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Master4 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Master4
+drum_baseik_branch_master4 = {
+	type = degenerateblend
+	id = db_drum_baseik_master4
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Old1 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_Old1
+drum_baseik_branch_old1 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_old1
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_New1 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_New1
+drum_baseik_branch_new1 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_new1
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Old2 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_Old2
+drum_baseik_branch_old2 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_old2
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_New2 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_New2
+drum_baseik_branch_new2 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_new2
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Old3 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_Old3
+drum_baseik_branch_old3 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_old3
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_New3 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_New3
+drum_baseik_branch_new3 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_new3
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_Old4 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_Old4
+drum_baseik_branch_old4 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_old4
 	default_degeneration_duration = 0.0
 }
-Drum_BaseIK_Branch_New4 = {
-	type = DegenerateBlend
-	id = DB_Drum_BaseIK_Anim_New4
+drum_baseik_branch_new4 = {
+	type = degenerateblend
+	id = db_drum_baseik_anim_new4
 	default_degeneration_duration = 0.0
 }
-Single_Source_tree = {
-	type = Source
-	Anim = Use_anim
+single_source_tree = {
+	type = source
+	anim = use_anim
 }
-Single_Source_Anim_Event_tree = {
-	type = Source
-	Anim = Use_anim
+single_source_anim_event_tree = {
+	type = source
+	anim = use_anim
 	timing_track = standard
 }
-Drum_Loop_Anim_Tempo = {
+drum_loop_anim_tempo = {
 	type = tempocycle
-	id = Cycle_Tempo_Drum_Body
+	id = cycle_tempo_drum_body
 	allow_beat_skipping = true
 	start = start
-	Anim = Loop_Tempo_Anim
+	anim = loop_tempo_anim
 	[
 		{
-			type = Source
-			id = Source_Drum_Loop_Anim_Body
-			Anim = Loop_Anim_Body
+			type = source
+			id = source_drum_loop_anim_body
+			anim = loop_anim_body
 		}
 	]
 }
-Drum_Loop_Anim_NoTempo = {
-	type = Cycle
+drum_loop_anim_notempo = {
+	type = cycle
 	start = start
-	Anim = Loop_Tempo_Anim
+	anim = loop_tempo_anim
 	[
 		{
-			type = Source
-			id = Source_Drum_Loop_Anim_Body
-			Anim = Loop_Anim_Body
+			type = source
+			id = source_drum_loop_anim_body
+			anim = loop_anim_body
 		}
 	]
 }
-Drum_Kit_Branch = {
+drum_kit_branch = {
 	type = addn
 	num_inputs = 4
 	[
 		{
-			type = DegenerateBlend
-			id = DB_Drum_Cymbal_1
+			type = degenerateblend
+			id = db_drum_cymbal_1
 			default_degeneration_duration = 0.2
 		}
 		{
-			type = DegenerateBlend
-			id = DB_Drum_Cymbal_2
+			type = degenerateblend
+			id = db_drum_cymbal_2
 			default_degeneration_duration = 0.2
 		}
 		{
-			type = DegenerateBlend
-			id = DB_Drum_Cymbal_3
+			type = degenerateblend
+			id = db_drum_cymbal_3
 			default_degeneration_duration = 0.2
 		}
 		{
-			type = DegenerateBlend
-			id = DB_Drum_HH
+			type = degenerateblend
+			id = db_drum_hh
 			default_degeneration_duration = 0.2
 		}
 	]
 }
-GH_Drum_Cymbal_1_Branch = {
-	type = Play
-	Anim = GH_Drum_Cymbal_1
+gh_drum_cymbal_1_branch = {
+	type = play
+	anim = gh_drum_cymbal_1
 	[
 		{
 			type = modulate
 			strength = strength
-			id = Mod_Kit_Cymbal_1
+			id = mod_kit_cymbal_1
 			[
 				{
-					type = Source
-					Anim = GH_Drum_Cymbal_1
+					type = source
+					anim = gh_drum_cymbal_1
 				}
 			]
 		}
 	]
 }
-GH_Drum_Cymbal_2_Branch = {
-	type = Play
-	Anim = GH_Drum_Cymbal_2
+gh_drum_cymbal_2_branch = {
+	type = play
+	anim = gh_drum_cymbal_2
 	[
 		{
 			type = modulate
 			strength = strength
-			id = Mod_Kit_Cymbal_2
+			id = mod_kit_cymbal_2
 			[
 				{
-					type = Source
-					Anim = GH_Drum_Cymbal_2
+					type = source
+					anim = gh_drum_cymbal_2
 				}
 			]
 		}
 	]
 }
-GH_Drum_Cymbal_3_Branch = {
-	type = Play
-	Anim = Anim
+gh_drum_cymbal_3_branch = {
+	type = play
+	anim = anim
 	[
 		{
 			type = modulate
 			strength = strength
-			id = Mod_Kit_Cymbal_3
+			id = mod_kit_cymbal_3
 			[
 				{
-					type = Source
-					Anim = Anim
+					type = source
+					anim = anim
 				}
 			]
 		}
 	]
 }
-GH_Drum_HH_Branch = {
+gh_drum_hh_branch = {
 	type = modulate
 	strength = strength
-	id = Mod_Kit_HH
+	id = mod_kit_hh
 	[
 		{
 			type = blendonactivevalue
-			id = Blend_Kit_HH
-			active_value_source = AV_Drum_Blend_HH_Kit
+			id = blend_kit_hh
+			active_value_source = av_drum_blend_hh_kit
 			active_value_lower_bound = 0.0
 			active_value_upper_bound = 1.0
 			[
 				{
-					type = Play
-					Anim = GH_Drum_Cymbal_HH_Closed
+					type = play
+					anim = gh_drum_cymbal_hh_closed
 					[
 						{
-							type = Source
-							Anim = GH_Drum_Cymbal_HH_Closed
+							type = source
+							anim = gh_drum_cymbal_hh_closed
 						}
 					]
 				}
 				{
-					type = Play
-					Anim = GH_Drum_Cymbal_HH_Open
+					type = play
+					anim = gh_drum_cymbal_hh_open
 					[
 						{
-							type = Source
-							Anim = GH_Drum_Cymbal_HH_Open
+							type = source
+							anim = gh_drum_cymbal_hh_open
 						}
 					]
 				}

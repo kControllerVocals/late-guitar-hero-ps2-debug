@@ -1,6 +1,6 @@
 
 script init_packed_structs \{globaltag_sets = 1}
-	GetArraySize ($gh5_songlist)
+	getarraysize ($gh5_songlist)
 	num_songs = <array_size>
 	num_parts = 5
 	num_diffs = 5
@@ -11,11 +11,11 @@ script init_packed_structs \{globaltag_sets = 1}
 	num_charactertags = 16
 	num_songtags_scores = (<num_songs> * <num_parts> * <num_diffs>)
 	num_songtags_lean = (<num_songs>)
-	GetArraySize ($Preset_Musician_Profiles_Modifiable)
+	getarraysize ($preset_musician_profiles_modifiable)
 	num_preset_profiles = <array_size>
 	packed_compression = 1.0
-	PushMemProfile \{'packedstructs'}
-	SetupPackedStructTypes {
+	pushmemprofile \{'packedstructs'}
+	setuppackedstructtypes {
 		types =
 		[
 			{
@@ -44,12 +44,12 @@ script init_packed_structs \{globaltag_sets = 1}
 				buffer_size = (358 * <packed_compression>)
 			}
 			{
-				name = Drums
+				name = drums
 				pool_size = (<globaltag_sets> * ($max_num_instrument_saves))
 				buffer_size = (134 * <packed_compression>)
 			}
 			{
-				name = Vocals
+				name = vocals
 				pool_size = (<globaltag_sets> * ($max_num_instrument_saves))
 				buffer_size = (52 * <packed_compression>)
 			}
@@ -210,5 +210,5 @@ script init_packed_structs \{globaltag_sets = 1}
 			}
 		]
 	}
-	PopMemProfile
+	popmemprofile
 endscript

@@ -1,12 +1,12 @@
 
 script ui_create_options_settings 
 	change \{ui_options_from_submenu = 1}
-	GetGlobalTags \{user_options}
-	if ScreenElementExists \{id = settings_submenu}
-		DestroyScreenElement \{id = settings_submenu}
+	getglobaltags \{user_options}
+	if screenelementexists \{id = settings_submenu}
+		destroyscreenelement \{id = settings_submenu}
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		desc = 'settings_submenu_big'
 		parent = <container_id>
 		id = settings_submenu
@@ -14,9 +14,9 @@ script ui_create_options_settings
 		scale = 1.2
 		just = [center center]
 	}
-	if <id> :Desc_ResolveAlias name = alias_menu
-		AssignAlias id = <resolved_id> alias = current_submenu
-		current_submenu :SE_SetProps \{event_handlers = [
+	if <id> :desc_resolvealias name = alias_menu
+		assignalias id = <resolved_id> alias = current_submenu
+		current_submenu :se_setprops \{event_handlers = [
 				{
 					pad_up
 					generic_menu_up_or_down_sound
@@ -39,9 +39,9 @@ script ui_create_options_settings
 					}
 				}
 			]}
-		GetScreenElementChildren \{id = current_submenu}
+		getscreenelementchildren \{id = current_submenu}
 		get_player_num_from_controller \{controller_index = $primary_controller}
-		GetPlayerInfo <player_num> lefty_flip
+		getplayerinfo <player_num> lefty_flip
 		if (<lefty_flip> = 1)
 			<check_alpha> = 1
 			<cross_alpha> = 0
@@ -49,9 +49,9 @@ script ui_create_options_settings
 			<check_alpha> = 0
 			<cross_alpha> = 1
 		endif
-		if isXenon
-			(<children> [0]) :SE_SetProps {
-				text_text = qs("Lefty Flip")
+		if isxenon
+			(<children> [0]) :se_setprops {
+				text_text = qs(0x83adf584)
 				check_alpha = <check_alpha>
 				cross_alpha = <cross_alpha>
 				event_handlers = [
@@ -61,8 +61,8 @@ script ui_create_options_settings
 				]
 			}
 		else
-			(<children> [0]) :SE_SetProps {
-				text_text = qs("Lefty Flip")
+			(<children> [0]) :se_setprops {
+				text_text = qs(0x83adf584)
 				check_alpha = <check_alpha>
 				cross_alpha = <cross_alpha>
 				event_handlers = [
@@ -71,7 +71,7 @@ script ui_create_options_settings
 					{unfocus ui_options_settings_unfocus}
 				]
 			}
-			current_menu :SetTags lefty_id = <item_id>
+			current_menu :settags lefty_id = <item_id>
 		endif
 		vocals_get_highway_view \{player = 1}
 		if (<highway_view> != static)
@@ -82,8 +82,8 @@ script ui_create_options_settings
 			<cross_alpha> = 1
 		endif
 		if ($vocal_enable_static_view = 1)
-			(<children> [1]) :SE_SetProps {
-				text_text = qs("Scrolling Vocals")
+			(<children> [1]) :se_setprops {
+				text_text = qs(0x804b43ff)
 				check_alpha = <check_alpha>
 				cross_alpha = <cross_alpha>
 				event_handlers = [
@@ -93,15 +93,15 @@ script ui_create_options_settings
 				]
 			}
 		else
-			(<children> [1]) :SE_SetProps {
-				text_text = qs("Scrolling Vocals")
+			(<children> [1]) :se_setprops {
+				text_text = qs(0x804b43ff)
 				check_alpha = <check_alpha>
 				cross_alpha = <cross_alpha>
 				not_focusable
 				rgba = [110 100 90 175]
 			}
 		endif
-		GetPlayerInfo <player_num> vocals_sp_clap
+		getplayerinfo <player_num> vocals_sp_clap
 		if (<vocals_sp_clap> = 1)
 			<check_alpha> = 1
 			<cross_alpha> = 0
@@ -109,8 +109,8 @@ script ui_create_options_settings
 			<check_alpha> = 0
 			<cross_alpha> = 1
 		endif
-		(<children> [2]) :SE_SetProps {
-			text_text = qs("Star Power Clap")
+		(<children> [2]) :se_setprops {
+			text_text = qs(0xd22e8941)
 			check_alpha = <check_alpha>
 			cross_alpha = <cross_alpha>
 			event_handlers = [
@@ -126,8 +126,8 @@ script ui_create_options_settings
 			<check_alpha> = 0
 			<cross_alpha> = 1
 		endif
-		(<children> [3]) :SE_SetProps {
-			text_text = qs("Countdown")
+		(<children> [3]) :se_setprops {
+			text_text = qs(0x8fdcfd13)
 			check_alpha = <check_alpha>
 			cross_alpha = <cross_alpha>
 			event_handlers = [
@@ -136,7 +136,7 @@ script ui_create_options_settings
 				{unfocus ui_options_settings_unfocus}
 			]
 		}
-		GetPlayerInfo <player_num> use_tilt_for_starpower
+		getplayerinfo <player_num> use_tilt_for_starpower
 		if (<use_tilt_for_starpower> = 1)
 			<check_alpha> = 1
 			<cross_alpha> = 0
@@ -144,8 +144,8 @@ script ui_create_options_settings
 			<check_alpha> = 0
 			<cross_alpha> = 1
 		endif
-		(<children> [4]) :SE_SetProps {
-			text_text = qs("Star Power Tilt")
+		(<children> [4]) :se_setprops {
+			text_text = qs(0x629b3d19)
 			check_alpha = <check_alpha>
 			cross_alpha = <cross_alpha>
 			event_handlers = [
@@ -154,7 +154,7 @@ script ui_create_options_settings
 				{unfocus ui_options_settings_unfocus}
 			]
 		}
-		GetPlayerInfo <player_num> enable_touch_strip
+		getplayerinfo <player_num> enable_touch_strip
 		if (<enable_touch_strip> = 1)
 			<check_alpha> = 1
 			<cross_alpha> = 0
@@ -162,8 +162,8 @@ script ui_create_options_settings
 			<check_alpha> = 0
 			<cross_alpha> = 1
 		endif
-		(<children> [5]) :SE_SetProps {
-			text_text = qs("Touch Strip")
+		(<children> [5]) :se_setprops {
+			text_text = qs(0xf4397d0c)
 			check_alpha = <check_alpha>
 			cross_alpha = <cross_alpha>
 			event_handlers = [
@@ -172,26 +172,26 @@ script ui_create_options_settings
 				{unfocus ui_options_settings_unfocus}
 			]
 		}
-		if NOT IsPAL
-			if ($PS2_ProgressiveScan = 1)
+		if NOT ispal
+			if ($ps2_progressivescan = 1)
 				<check_alpha> = 1
 				<cross_alpha> = 0
 			else
 				<check_alpha> = 0
 				<cross_alpha> = 1
 			endif
-			(<children> [6]) :SE_SetProps {
+			(<children> [6]) :se_setprops {
 				text_text = qs(0xaec6cab2)
 				check_alpha = <check_alpha>
 				cross_alpha = <cross_alpha>
 				event_handlers = [
-					{pad_choose ui_options_settings_progressive_scan_toggle}
+					{pad_choose 0x2cb6987e}
 					{focus ui_options_settings_focus}
 					{unfocus ui_options_settings_unfocus}
 				]
 			}
 		else
-			(<children> [6]) :SE_SetProps {
+			(<children> [6]) :se_setprops {
 				check_alpha = 0.0
 				cross_alpha = 0.0
 				alpha = 0.0
@@ -208,7 +208,7 @@ script ui_create_options_settings
 endscript
 
 script ui_destroy_options_settings 
-	if ScreenElementExists \{id = settings_submenu}
+	if screenelementexists \{id = settings_submenu}
 		settings_submenu :obj_spawnscript \{ui_options_settings_animate_out}
 	endif
 	clean_up_user_control_helpers
@@ -220,58 +220,58 @@ script ui_return_options_settings
 endscript
 
 script ui_options_settings_choose_count 
-	Obj_GetID
-	GetGlobalTags \{user_options
+	obj_getid
+	getglobaltags \{user_options
 		param = unpause_count}
 	if (<unpause_count> = 1)
 		<unpause_count> = 0
-		SoundEvent \{event = checkbox_sfx}
-		if GotParam \{popup}
-			<ObjID> :SE_SetProps check_alpha = 0
-			<ObjID> :SE_SetProps cross_alpha = 1
+		soundevent \{event = checkbox_sfx}
+		if gotparam \{popup}
+			<objid> :se_setprops check_alpha = 0
+			<objid> :se_setprops cross_alpha = 1
 		else
-			<ObjID> :SE_SetProps check_alpha = 0
-			<ObjID> :SE_SetProps cross_alpha = 1
+			<objid> :se_setprops check_alpha = 0
+			<objid> :se_setprops cross_alpha = 1
 		endif
 	else
 		<unpause_count> = 1
-		SoundEvent \{event = CheckBox_Check_SFX}
-		if GotParam \{popup}
-			<ObjID> :SE_SetProps check_alpha = 1
-			<ObjID> :SE_SetProps cross_alpha = 0
+		soundevent \{event = checkbox_check_sfx}
+		if gotparam \{popup}
+			<objid> :se_setprops check_alpha = 1
+			<objid> :se_setprops cross_alpha = 0
 		else
-			<ObjID> :SE_SetProps check_alpha = 1
-			<ObjID> :SE_SetProps cross_alpha = 0
+			<objid> :se_setprops check_alpha = 1
+			<objid> :se_setprops cross_alpha = 0
 		endif
 	endif
-	SetGlobalTags user_options params = {unpause_count = <unpause_count>}
+	setglobaltags user_options params = {unpause_count = <unpause_count>}
 endscript
 
 script ui_create_options_settings_lefty_warning 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = current_submenu}
-	create_dialog_box \{heading_text = qs("WARNING")
+	create_dialog_box \{heading_text = qs(0xaa163738)
 		body_text = qs(0x844b0500)
 		options = [
 			{
 				func = ui_destroy_options_settings_lefty_warning
-				text = qs("CONTINUE")
+				text = qs(0x182f0173)
 			}
 		]}
 endscript
 
 script ui_destroy_options_settings_lefty_warning 
-	Wait \{1
+	wait \{1
 		seconds}
 	destroy_dialog_box
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = current_submenu}
 endscript
 
 script ui_options_settings_lefty_warning 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	current_menu :GetSingleTag \{lefty_id}
+	current_menu :getsingletag \{lefty_id}
 	obj_spawnscript \{ui_options_controller_choose_lefty_flip
 		params = {
 			player_device = $primary_controller
@@ -280,157 +280,157 @@ script ui_options_settings_lefty_warning
 endscript
 
 script ui_options_settings_animate_in 
-	if ScreenElementExists \{id = current_menu_anchor}
-		current_menu_anchor :SE_SetProps \{GH5_logo_pos = {
+	if screenelementexists \{id = current_menu_anchor}
+		current_menu_anchor :se_setprops \{0x09197a7d = {
 				relative
 				(-500.0, 0.0)
 			}
 			time = 0.15
 			motion = linear}
 	endif
-	SE_SetProps \{pos = (-1200.0, -25.0)
+	se_setprops \{pos = (-1200.0, -25.0)
 		time = 0.15
 		motion = linear}
-	SE_SetProps \{darker_alpha = 0.4
+	se_setprops \{darker_alpha = 0.4
 		time = 0.15}
 endscript
 
 script ui_options_settings_animate_out 
-	if ScreenElementExists \{id = current_menu_anchor}
-		current_menu_anchor :SE_SetProps \{GH5_logo_pos = {
+	if screenelementexists \{id = current_menu_anchor}
+		current_menu_anchor :se_setprops \{0x09197a7d = {
 				relative
 				(500.0, 0.0)
 			}
 			time = 0.15
 			motion = linear}
 	endif
-	SE_SetProps \{pos = (-1600.0, 300.0)
+	se_setprops \{pos = (-1600.0, 300.0)
 		time = 0.15
 		motion = linear}
-	SE_SetProps \{darker_alpha = 0.0
+	se_setprops \{darker_alpha = 0.0
 		time = 0.15}
-	SE_WaitProps
-	if ScreenElementExists \{id = settings_submenu}
-		DestroyScreenElement \{id = settings_submenu}
+	se_waitprops
+	if screenelementexists \{id = settings_submenu}
+		destroyscreenelement \{id = settings_submenu}
 	endif
 endscript
 
 script ui_options_settings_focus 
-	Obj_GetID
-	if GotParam \{ObjID}
-		if <ObjID> :Desc_ResolveAlias name = alias_text
-			<resolved_id> :SE_SetProps rgba = (($default_color_scheme).text_focus_color)
+	obj_getid
+	if gotparam \{objid}
+		if <objid> :desc_resolvealias name = alias_text
+			<resolved_id> :se_setprops rgba = (($default_color_scheme).text_focus_color)
 		endif
 	endif
-	GetTags
-	if settings_submenu :Desc_ResolveAlias \{name = alias_highlight}
-		AssignAlias id = <resolved_id> alias = highlight
-		Wait \{2
+	gettags
+	if settings_submenu :desc_resolvealias \{name = alias_highlight}
+		assignalias id = <resolved_id> alias = highlight
+		wait \{2
 			gameframe}
-		if <ObjID> :Desc_ResolveAlias name = alias_text
-			GetScreenElementChildren id = <resolved_id>
-			GetScreenElementDims id = (<children> [0])
+		if <objid> :desc_resolvealias name = alias_text
+			getscreenelementchildren id = <resolved_id>
+			getscreenelementdims id = (<children> [0])
 			scale = (((1.0, 0.0) * (((<width> + 25.0) / 256.0))) + (0.0, 1.5))
-			GetScreenElementPosition id = (<children> [0]) summed
-			highlight :SE_SetProps pos = {absolute (<screenelementpos>)} scale = <scale>
-			highlight :SE_WaitProps
-			GetScreenElementPosition id = (<children> [0]) summed
-			highlight :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
-			highlight :SE_WaitProps
-			GetScreenElementPosition id = (<children> [0]) summed
-			highlight :SE_SetProps pos = {absolute (<screenelementpos>)} scale = <scale> time = 0.05
-			highlight :SE_WaitProps
+			getscreenelementposition id = (<children> [0]) summed
+			highlight :se_setprops pos = {absolute (<screenelementpos>)} scale = <scale>
+			highlight :se_waitprops
+			getscreenelementposition id = (<children> [0]) summed
+			highlight :se_setprops pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
+			highlight :se_waitprops
+			getscreenelementposition id = (<children> [0]) summed
+			highlight :se_setprops pos = {absolute (<screenelementpos>)} scale = <scale> time = 0.05
+			highlight :se_waitprops
 		endif
 	endif
 endscript
 
 script ui_options_settings_unfocus 
-	Obj_GetID
-	if GotParam \{ObjID}
-		if <ObjID> :Desc_ResolveAlias name = alias_text
-			<resolved_id> :SE_SetProps rgba = (($default_color_scheme).text_color)
+	obj_getid
+	if gotparam \{objid}
+		if <objid> :desc_resolvealias name = alias_text
+			<resolved_id> :se_setprops rgba = (($default_color_scheme).text_color)
 		endif
 	endif
 endscript
 
-script ui_options_settings_progressive_scan_toggle 
-	if ($PS2_ProgressiveScan = 1)
-		change \{PS2_ProgressiveScan = 0}
-		SetProgressive \{on = 0}
+script 0x2cb6987e 
+	if ($ps2_progressivescan = 1)
+		change \{ps2_progressivescan = 0}
+		setprogressive \{on = 0}
 		ui_event \{event = menu_refresh}
 	else
-		ui_create_progressive_scan_warning
+		0xb966ebc9
 	endif
 endscript
 
-script ui_create_progressive_scan_warning 
-	LaunchEvent \{type = unfocus
+script 0xb966ebc9 
+	launchevent \{type = unfocus
 		target = current_submenu}
-	create_dialog_box \{heading_text = qs("WARNING")
+	create_dialog_box \{heading_text = qs(0xaa163738)
 		body_text = qs(0x7cedf58b)
 		options = [
 			{
-				func = ps2_progressive_scan_ok
-				text = qs("OK")
+				func = 0xc66462bb
+				text = qs(0x0e41fe46)
 			}
 			{
-				func = ui_destroy_progressive_scan_warning
-				text = qs("CANCEL")
+				func = 0xdcb1d1d7
+				text = qs(0xf7723015)
 			}
 		]
-		back_button_script = ui_destroy_progressive_scan_warning}
-	add_user_control_helper \{text = qs("BACK")
+		back_button_script = 0xdcb1d1d7}
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red}
 endscript
 
-script ps2_progressive_scan_ok 
+script 0xc66462bb 
 	destroy_dialog_box
-	change \{PS2_ProgressiveScan = 1}
-	SetProgressive \{on = 1}
-	create_dialog_box \{heading_text = qs("CONFIRM")
+	change \{ps2_progressivescan = 1}
+	setprogressive \{on = 1}
+	create_dialog_box \{heading_text = qs(0x326e2d2f)
 		body_text = qs(0xcac12143)
 		options = [
 			{
-				func = ps2_confirm_progressive_mode
-				text = qs("OK")
+				func = 0xa252dfe6
+				text = qs(0x0e41fe46)
 			}
 			{
-				func = ps2_cancel_progressive_mode
-				text = qs("CANCEL")
+				func = 0xb3aac927
+				text = qs(0xf7723015)
 			}
 		]
-		back_button_script = ps2_cancel_progressive_mode}
-	if dialog_box_desc_id :Desc_ResolveAlias \{name = alias_dlog_vmenu}
-		<resolved_id> :Menu_ChangeSelection
+		back_button_script = 0xb3aac927}
+	if dialog_box_desc_id :desc_resolvealias \{name = alias_dlog_vmenu}
+		<resolved_id> :menu_changeselection
 	endif
-	spawnscriptnow \{ps2_wait_for_progressive_ok}
+	spawnscriptnow \{0xc8201a39}
 endscript
 
-script ps2_wait_for_progressive_ok 
-	Wait \{15
+script 0xc8201a39 
+	wait \{15
 		seconds}
-	spawnscriptnow \{ps2_cancel_progressive_mode}
+	spawnscriptnow \{0xb3aac927}
 endscript
 
-script ps2_confirm_progressive_mode 
-	KillSpawnedScript \{name = ps2_wait_for_progressive_ok}
-	GetScreenElementChildren \{id = current_submenu}
-	(<children> [6]) :SE_SetProps {
+script 0xa252dfe6 
+	killspawnedscript \{name = 0xc8201a39}
+	getscreenelementchildren \{id = current_submenu}
+	(<children> [6]) :se_setprops {
 		check_alpha = 1
 		cross_alpha = 0
 	}
-	ui_destroy_progressive_scan_warning
+	0xdcb1d1d7
 endscript
 
-script ps2_cancel_progressive_mode 
-	KillSpawnedScript \{name = ps2_wait_for_progressive_ok}
-	change \{PS2_ProgressiveScan = 0}
-	SetProgressive \{on = 0}
-	ui_destroy_progressive_scan_warning
+script 0xb3aac927 
+	killspawnedscript \{name = 0xc8201a39}
+	change \{ps2_progressivescan = 0}
+	setprogressive \{on = 0}
+	0xdcb1d1d7
 endscript
 
-script ui_destroy_progressive_scan_warning 
+script 0xdcb1d1d7 
 	destroy_dialog_box
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = current_submenu}
 endscript

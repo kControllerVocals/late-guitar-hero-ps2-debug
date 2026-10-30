@@ -1,68 +1,68 @@
-DefaultLodDist1 = 20
-DefautSuspendDistance = 65
-DefaultRenderDistance = 65
+defaultloddist1 = 20
+defautsuspenddistance = 65
+defaultrenderdistance = 65
 human_creation_params = {
-	SkeletonName = GH3_ped
-	SuspendDistance = $DefautSuspendDistance
-	lod_dist1 = $DefaultLodDist1
-	lod_dist2 = $DefaultRenderDistance
-	behavior_style = Bv_Agent
+	skeletonname = gh3_ped
+	suspenddistance = $defautsuspenddistance
+	lod_dist1 = $defaultloddist1
+	lod_dist2 = $defaultrenderdistance
+	behavior_style = bv_agent
 	agent_stats = stats_civilian
 	targeting = $targeting_human
 	navigation = $nav_ped
-	char_collision = Agent
+	char_collision = agent
 	char_collision_height = 1.8
 	char_collision_radius = 0.3
 	anim_class = human
 	species = human
 	inventory = $inventory_fist
-	MaxBonePriority = 9
-	voice_profile = TeenMaleSkater1
+	maxbonepriority = 9
+	voice_profile = teenmaleskater1
 	faction = $faction_human
-	sex = Male
+	sex = male
 	notice_radius = 6.0
-	AnimLODInterleave2 = 6
-	PS3_AnimLODInterleave2 = 10
-	Xenon_AnimLODInterleave2 = 10
+	animlodinterleave2 = 6
+	ps3_animlodinterleave2 = 10
+	xenon_animlodinterleave2 = 10
 }
-obj_Ped_Skinny_creation_params = {
-	SkeletonName = GH3_ped_skinny
-	Tree = $GameObj_AnimTree
-	AnimTargets = [
-		Body
-		BodyTimer
+obj_ped_skinny_creation_params = {
+	skeletonname = gh3_ped_skinny
+	tree = $gameobj_animtree
+	animtargets = [
+		body
+		bodytimer
 	]
 	zones = [
 		global
 	]
 }
 obj_testlevel_creation_params = {
-	Tree = $GameObj_AnimTree
-	AnimTargets = [
-		Body
-		BodyTimer
+	tree = $gameobj_animtree
+	animtargets = [
+		body
+		bodytimer
 	]
 	zones = [
 		global
 	]
 }
-obj_Ven_Camera_creation_params = {
-	SkeletonName = GH3_Camera
-	Tree = $GameObj_AnimTree
-	AnimTargets = [
-		Body
-		BodyTimer
+obj_ven_camera_creation_params = {
+	skeletonname = gh3_camera
+	tree = $gameobj_animtree
+	animtargets = [
+		body
+		bodytimer
 	]
 	zones = [
 		global
 	]
 }
-obj_Ven_Record_creation_params = {
-	SkeletonName = Skel_Encore_Record
-	Tree = $GameObj_AnimTree
-	AnimTargets = [
-		Body
-		BodyTimer
+obj_ven_record_creation_params = {
+	skeletonname = skel_encore_record
+	tree = $gameobj_animtree
+	animtargets = [
+		body
+		bodytimer
 	]
 	zones = [
 		global

@@ -1,79 +1,79 @@
 
 script ui_create_customize_character_outfit 
 	make_generic_menu \{vmenu_id = create_customize_character_outfit_vmenu
-		title = qs("OUTFIT")
+		title = qs(0xa946c7b7)
 		num_icons = 1
 		show_history}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	get_frontend_venue_player_start_checksums
-	cas_set_object_node_pos player = ($cas_current_player) node = <Drum_Start>
-	GetGlobalTags savegame = ($cas_current_savegame) cas_helper_dialogue param = visit_outfit
-	spawnscriptnow ui_create_customize_character_outfit_spawned params = {<...>}
+	0xce0505af
+	cas_set_object_node_pos player = ($cas_current_player) node = <0xb07e72b1>
+	getglobaltags savegame = ($cas_current_savegame) cas_helper_dialogue param = visit_outfit
+	spawnscriptnow 0x842a6618 params = {<...>}
 endscript
 
-script ui_create_customize_character_outfit_spawned 
+script 0x842a6618 
 	clean_up_user_control_helpers
 	add_generic_menu_text_item {
-		text = qs("TORSO")
-		choose_state = UIstate_popout_select_part
+		text = qs(0xb3283b80)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("SELECT TOP")
+			text = qs(0x782bf118)
 			cam_name = 'customize_torso'
 			camera_list = ['customize_torso' 'customize_torso_R' 'customize_torso_B' 'customize_torso_L']
 			zoom_camera = 'customize_torso_zoom'
-			part = CAS_Torso
+			part = cas_torso
 			purchase_menu
 			num_icons = 2
-			hist_tex = Outfit_Torso
+			hist_tex = outfit_torso
 			is_popup
 			icon_offset = (0.0, 20.0)
 			list_offset = (0.0, 55.0)
 			color_wheel = ($clothing_colorwheel)
-			stance = Stance_Select_Torso}
+			stance = stance_select_torso}
 	}
 	add_generic_menu_text_item {
-		text = qs("PANTS")
-		choose_state = UIstate_popout_select_part
+		text = qs(0xa0fd2ecc)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("SELECT PANTS")
+			text = qs(0xf9412531)
 			cam_name = 'customize_pants'
 			camera_list = ['customize_pants' 'customize_pants_R' 'customize_pants_B' 'customize_pants_L']
 			zoom_camera = 'customize_character_Zoom'
-			part = CAS_Legs
+			part = cas_legs
 			purchase_menu
 			num_icons = 2
 			hist_tex = pants
 			is_popup
 			color_wheel = ($clothing_colorwheel)
-			stance = Stance_Select_Pants}
+			stance = stance_select_pants}
 	}
 	add_generic_menu_text_item {
-		text = qs("SHOES")
-		choose_state = UIstate_popout_select_part
+		text = qs(0x777c6dbb)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("SELECT SHOES")
+			text = qs(0x2ec06646)
 			cam_name = 'customize_shoes'
 			camera_list = ['customize_shoes' 'customize_shoes_R' 'customize_shoes_B' 'customize_shoes_L']
 			zoom_camera = 'customize_character_Zoom'
-			part = CAS_Shoes
+			part = cas_shoes
 			purchase_menu
 			num_icons = 2
 			hist_tex = shoes
 			is_popup
 			color_wheel = ($clothing_colorwheel)
-			stance = Stance_Select_Shoes}
+			stance = stance_select_shoes}
 	}
-	add_generic_menu_text_item \{text = qs("ACCESSORIES")
-		choose_state = UIstate_customize_character_outfit_accessories}
+	add_generic_menu_text_item \{text = qs(0x69fb513a)
+		choose_state = uistate_customize_character_outfit_accessories}
 	setup_cas_menu_handlers \{vmenu_id = create_customize_character_outfit_vmenu
 		camera_list = [
 			'customize_character_outfit'
@@ -86,24 +86,24 @@ script ui_create_customize_character_outfit_spawned
 endscript
 
 script ui_return_customize_character_outfit 
-	create_customize_character_outfit_vmenu :SE_SetProps \{unblock_events}
-	spawnscriptnow \{ui_create_customize_character_outfit_spawned}
+	create_customize_character_outfit_vmenu :se_setprops \{unblock_events}
+	spawnscriptnow \{0x842a6618}
 endscript
 
 script ui_destroy_customize_character_outfit 
 	destroy_generic_menu
 endscript
 
-script ui_init_customize_character_outfit 
-	load_part_desc_pak_list part_list = ($part_def_clusters.ui_customize_character_outfit)
-	GetArraySize <parts_loaded>
+script 0xe62c76cf 
+	0xbe6e9296 part_list = ($0x44007ccb.0x658a2d2c)
+	getarraysize <0x63cedf49>
 	if (<array_size> > 0)
-		ui_event_add_params part_unload_list = <parts_loaded>
+		ui_event_add_params 0x9ae842e9 = <0x63cedf49>
 	endif
 endscript
 
-script ui_deinit_customize_character_outfit 
-	if GotParam \{part_unload_list}
-		unload_part_desc_pak_list part_list = <part_unload_list>
+script 0x55c5ee14 
+	if gotparam \{0x9ae842e9}
+		0x9219fac2 part_list = <0x9ae842e9>
 	endif
 endscript

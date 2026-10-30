@@ -1,27 +1,27 @@
 
 script ui_init_band_mode 
-	push_num_players \{num = 0}
+	0xfd22d1e7 \{num = 0}
 endscript
 
 script ui_deinit_band_mode 
-	pop_num_players
+	0x88e84c31
 endscript
 
 script ui_create_band_mode 
-	change_num_players \{num = 0}
-	GameMode_GetType
+	0x04d11dea \{num = 0}
+	gamemode_gettype
 	if (<type> = career)
-		register_new_progression_atoms \{Career_Band}
+		register_new_progression_atoms \{career_band}
 	endif
-	spawnscriptnow \{qi_initialize
+	spawnscriptnow \{0xf2d3e5f3
 		params = {
 			mode = band_mode
 		}}
 endscript
 
 script ui_destroy_band_mode 
-	KillSkaterCamAnim \{name = Bandmode_camera}
-	qi_destroy
+	killskatercamanim \{name = 0x716ccbe1}
+	0x981ef6bf
 endscript
 
 script sanity_check_fix_deleted_characters 
@@ -32,7 +32,7 @@ script sanity_check_fix_deleted_characters
 endscript
 
 script fix_deleted_character_player_status 
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	get_savegame_from_player_status player_status = <player_status>
 	if NOT profile_exists id = ($<player_status>.character_id) savegame = <savegame>
 		change structurename = <player_status> character_id = judy
@@ -43,29 +43,29 @@ script ui_get_controller_parts_allowed
 
 	if (($allow_controller_for_all_instruments) = 0)
 		allowed = {}
-		if IsGuitarController controller = <controller>
-			allowed = {guitar Bass}
-		elseif IsDrumController controller = <controller>
+		if isguitarcontroller controller = <controller>
+			allowed = {guitar bass}
+		elseif isdrumcontroller controller = <controller>
 			allowed = {drum}
-		elseif IsMicrophonePluggedIn
-			allowed = {Vocals}
+		elseif ismicrophonepluggedin
+			allowed = {vocals}
 		endif
 	else
-		allowed = {guitar Bass drum Vocals}
-		if IsGuitarController controller = <controller>
-			allowed = {guitar Bass}
-		elseif IsDrumController controller = <controller>
+		allowed = {guitar bass drum vocals}
+		if isguitarcontroller controller = <controller>
+			allowed = {guitar bass}
+		elseif isdrumcontroller controller = <controller>
 			allowed = {drum}
-		elseif IsMicrophonePluggedIn
-			allowed = {guitar Bass drum Vocals}
+		elseif ismicrophonepluggedin
+			allowed = {guitar bass drum vocals}
 		endif
 	endif
 	if is_regular_controller controller = <controller>
 		if controller_has_headset controller = <controller>
-			allowed = {<allowed> Vocals}
+			allowed = {<allowed> vocals}
 		endif
 	endif
-	if GotParam \{filter_by_character}
+	if gotparam \{filter_by_character}
 		filter_allowed_parts_by_character_type allowed = <allowed> controller = <controller>
 	endif
 	return allowed = <allowed>
@@ -73,26 +73,26 @@ endscript
 
 script get_controller_part 
 
-	if IsGuitarController controller = <controller>
+	if isguitarcontroller controller = <controller>
 		return \{controller_part = guitar}
-	elseif IsDrumController controller = <controller>
+	elseif isdrumcontroller controller = <controller>
 		return \{controller_part = drum}
 	else
-		return \{controller_part = Vocals}
+		return \{controller_part = vocals}
 	endif
 endscript
 
 script ui_band_mode_highlight_motion 
-	if Desc_ResolveAlias \{name = alias_highlight}
-		if GetScreenElementChildren id = <resolved_id>
-			GetArraySize <children>
+	if desc_resolvealias \{name = alias_highlight}
+		if getscreenelementchildren id = <resolved_id>
+			getarraysize <children>
 			prev = 0
 			curr = 1
 			begin
 			prev_id = (<children> [<prev>])
 			curr_id = (<children> [<curr>])
-			<prev_id> :SE_SetProps alpha = 0.0
-			<curr_id> :SE_SetProps alpha = 1
+			<prev_id> :se_setprops alpha = 0.0
+			<curr_id> :se_setprops alpha = 1
 			prev = <curr>
 			next = RandomInteger (0.0, 2.0)
 			if (<next> = <prev>)
@@ -105,17 +105,17 @@ script ui_band_mode_highlight_motion
 			endif
 			rand = Random (@ 0 @ 1 )
 			if (<rand> = 1)
-				<curr_id> :SE_SetProps flip_v = true
+				<curr_id> :se_setprops flip_v = true
 			else
-				<curr_id> :SE_SetProps flip_v = false
+				<curr_id> :se_setprops flip_v = false
 			endif
 			rand = Random (@ 0 @ 1 )
 			if (<rand> = 1)
-				<curr_id> :SE_SetProps flip_h = true
+				<curr_id> :se_setprops flip_h = true
 			else
-				<curr_id> :SE_SetProps flip_h = false
+				<curr_id> :se_setprops flip_h = false
 			endif
-			Wait \{0.1
+			wait \{0.1
 				second}
 			repeat
 		endif
@@ -125,22 +125,22 @@ endscript
 script ui_band_mode_focus \{offset = (0.0, 34.0)
 		start_pos = (0.0, -120.0)}
 	retail_menu_focus
-	Obj_GetID
-	<ObjID> :SE_GetParentId
-	<parent_id> :GetTags
-	MyInterfaceElement :GetTags
-	if GotParam \{descs}
+	obj_getid
+	<objid> :se_getparentid
+	<parent_id> :gettags
+	myinterfaceelement :gettags
+	if gotparam \{descs}
 		current_desc = (<descs> [<index>])
-		if <current_desc> :Desc_ResolveAlias name = alias_highlight
-			GetScreenElementDims id = <ObjID>
+		if <current_desc> :desc_resolvealias name = alias_highlight
+			getscreenelementdims id = <objid>
 			scale = (((0.9, 0.0) * (((<width> + 100.0) / 256.0))) + (0.0, 1.0))
 			screenelementpos = (<start_pos> + (<offset> * <tag_selected_index>))
-			<resolved_id> :SE_SetProps pos = <screenelementpos> scale = <scale>
-			<resolved_id> :SE_WaitProps
-			<resolved_id> :SE_SetProps pos = (<screenelementpos> + (0.0, -10.0)) time = 0.05
-			<resolved_id> :SE_WaitProps
-			<resolved_id> :SE_SetProps pos = <screenelementpos> scale = <scale> time = 0.05
-			<resolved_id> :SE_WaitProps
+			<resolved_id> :se_setprops pos = <screenelementpos> scale = <scale>
+			<resolved_id> :se_waitprops
+			<resolved_id> :se_setprops pos = (<screenelementpos> + (0.0, -10.0)) time = 0.05
+			<resolved_id> :se_waitprops
+			<resolved_id> :se_setprops pos = <screenelementpos> scale = <scale> time = 0.05
+			<resolved_id> :se_waitprops
 		endif
 	endif
 endscript

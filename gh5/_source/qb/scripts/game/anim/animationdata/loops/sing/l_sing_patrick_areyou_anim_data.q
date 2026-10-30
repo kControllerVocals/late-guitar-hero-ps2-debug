@@ -1,37 +1,37 @@
-L_SING_Patrick_AreYou_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_patrick_areyou_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					sing_Patrick_AreYou_150_01
+				slow = [
+					sing_patrick_areyou_150_01
 				]
-				Med = [
-					sing_Patrick_AreYou_100_01
+				med = [
+					sing_patrick_areyou_100_01
 				]
-				Fast = [
-					sing_Patrick_AreYou_120_01
-				]
-			}
-			Normal = {
-				Slow = [
-					sing_Patrick_AreYou_150_01
-				]
-				Med = [
-					sing_Patrick_AreYou_100_01
-				]
-				Fast = [
-					sing_Patrick_AreYou_120_01
+				fast = [
+					sing_patrick_areyou_120_01
 				]
 			}
-			Bad = {
-				Slow = [
-					sing_Patrick_AreYou_150_01
+			normal = {
+				slow = [
+					sing_patrick_areyou_150_01
 				]
-				Med = [
-					sing_Patrick_AreYou_100_01
+				med = [
+					sing_patrick_areyou_100_01
 				]
-				Fast = [
-					sing_Patrick_AreYou_120_01
+				fast = [
+					sing_patrick_areyou_120_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_patrick_areyou_150_01
+				]
+				med = [
+					sing_patrick_areyou_100_01
+				]
+				fast = [
+					sing_patrick_areyou_120_01
 				]
 			}
 		}

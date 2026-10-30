@@ -8,150 +8,150 @@ cinematic_camera_default_lerp_params = {
 	lerp_dropoff = 16.0
 }
 cinematic_camera_default_handcam_params = {
-	motionX = {
+	motionx = {
 		amplitude = 0.033999998
 		center = 0.0
-		periodBase = 0.012999999
-		periodMultiples = [
+		periodbase = 0.012999999
+		periodmultiples = [
 			1
 			3
 			4
 		]
 	}
-	motionY = {
+	motiony = {
 		amplitude = 0.04
 		center = 0.0
-		periodBase = 0.016999999
-		periodMultiples = [
+		periodbase = 0.016999999
+		periodmultiples = [
 			1
 			3
 			4
 		]
 	}
-	amplitudePosition = {
+	amplitudeposition = {
 		amplitude = 0.2
 		center = 0.0
-		periodBase = 0.0023
-		periodMultiples = [
+		periodbase = 0.0023
+		periodmultiples = [
 			1
 			16
 		]
 	}
-	amplitudeRotation = {
+	amplituderotation = {
 		amplitude = -0.3
 		center = 0.0
-		periodBase = 0.0023
-		periodMultiples = [
+		periodbase = 0.0023
+		periodmultiples = [
 			1
 		]
 	}
-	zoomStabilityMap = [
+	zoomstabilitymap = [
 		(1.3, 0.7)
 		(30.0, 100.0)
 	]
-	driftSlerpMap = [
+	driftslerpmap = [
 		(0.0, 0.8)
 		(0.05, 1.0)
 	]
-	zoomDriftMap = [
+	zoomdriftmap = [
 		(1.2, 0.6)
 		(30.0, 100.0)
 	]
-	driftAllowedAmplitude = {
+	driftallowedamplitude = {
 		amplitude = 0.4
 		center = 1.0
-		periodBase = 0.02
-		periodMultiples = [
+		periodbase = 0.02
+		periodmultiples = [
 			1
 		]
 	}
 }
 
-script IGC_RunCameraScript 
-	CCam_On
-	if GotParam \{controlscript}
+script igc_runcamerascript 
+	ccam_on
+	if gotparam \{controlscript}
 		<controlscript> <params>
 	else
-		CCam_SetSmoothing \{type = all
+		ccam_setsmoothing \{type = all
 			on = 1
 			fast_lerp_factor = 0.6}
 		<cam_params> = <...>
-		RemoveComponent \{structure_name = cam_params
+		removecomponent \{structure_name = cam_params
 			name = time}
-		CCam_DoMorph <cam_params>
-		if GotParam \{frames}
+		ccam_domorph <cam_params>
+		if gotparam \{frames}
 
 		endif
-		if GotParam \{time}
-			Wait <time> seconds
+		if gotparam \{time}
+			wait <time> seconds
 		endif
 	endif
-	if GotParam \{Play_hold}
-		play_hold_value = <Play_hold>
-		if GotParam \{play_hold_value}
+	if gotparam \{play_hold}
+		play_hold_value = <play_hold>
+		if gotparam \{play_hold_value}
 			if NOT (<play_hold_value> = 1)
-				RemoveParameter \{Play_hold}
+				removeparameter \{play_hold}
 			endif
 		endif
-		if GotParam \{Play_hold}
+		if gotparam \{play_hold}
 			begin
-			WaitOneGameFrame
+			waitonegameframe
 			repeat
 		endif
 	endif
 endscript
 
 script igc_camera_update_frame_count 
-	if NOT ScreenElementExists \{id = igc_camera_frame_info}
-		SetScreenElementLock \{id = root_window
+	if NOT screenelementexists \{id = igc_camera_frame_info}
+		setscreenelementlock \{id = root_window
 			off}
-		GetDebugFont
-		CreateScreenElement \{parent = root_window
+		getdebugfont
+		createscreenelement \{parent = root_window
 			id = igc_camera_frame_info
-			type = ContainerElement
+			type = containerelement
 			z_priority = 10000}
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = igc_camera_frame_info
 			local_id = counter1
 			pos = (25.0, 400.0)
-			text = qs("\L")
+			text = qs(0x03ac90f0)
 			font = <debug_font>
 			rgba = [60 60 100 100]
 			just = [left center]
 			scale = 0.8
 		}
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = igc_camera_frame_info
 			local_id = counter2
 			pos = (25.0, 418.0)
-			text = qs("\L")
+			text = qs(0x03ac90f0)
 			font = <debug_font>
 			rgba = [60 60 100 100]
 			just = [left center]
 			scale = 0.8
 		}
 	endif
-	FormatText {
-		TextName = text1
-		qs("\LFrame %f")
+	formattext {
+		textname = text1
+		qs(0x8aba2455)
 		f = <frames>
 	}
-	FormatText {
-		TextName = text2
-		qs("\L%m:%s:%p")
+	formattext {
+		textname = text2
+		qs(0x6e90806a)
 		m = <minutes>
 		s = <seconds>
 		p = <pct>
 		integer_width = 2
 	}
-	SetScreenElementProps id = {igc_camera_frame_info child = counter1} text = <text1>
-	SetScreenElementProps id = {igc_camera_frame_info child = counter2} text = <text2>
+	setscreenelementprops id = {igc_camera_frame_info child = counter1} text = <text1>
+	setscreenelementprops id = {igc_camera_frame_info child = counter2} text = <text2>
 endscript
 
 script igc_camera_frame_counter_kill 
-	if ScreenElementExists \{id = igc_camera_frame_info}
-		DestroyScreenElement \{id = igc_camera_frame_info}
+	if screenelementexists \{id = igc_camera_frame_info}
+		destroyscreenelement \{id = igc_camera_frame_info}
 	endif
 endscript

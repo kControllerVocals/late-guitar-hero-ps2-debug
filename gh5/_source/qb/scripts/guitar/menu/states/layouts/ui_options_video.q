@@ -1,8 +1,8 @@
 
-script ui_create_options_video 
+script 0xcd955595 
 	create_video_settings_menu <...>
 endscript
 
-script ui_destroy_options_video 
+script 0xe8e87724 
 	destroy_video_settings_menu
 endscript

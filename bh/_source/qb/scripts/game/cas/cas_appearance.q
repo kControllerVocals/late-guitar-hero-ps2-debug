@@ -1,73 +1,73 @@
 
-script GetCurrentCASObject 
+script getcurrentcasobject 
 	if cas_player_has_character_object player = ($cas_current_player)
 		return true cas_object = <character_object>
 	endif
 	return \{false}
 endscript
 
-script GetCASAppearance 
+script getcasappearance 
 	return true appearance = ($cas_current_appearance)
 endscript
 
-script GetCASAppearancePart 
-	ResolveBodySpecificPartInAppearance part = <part>
-	if StructureContains Structure = ($cas_current_appearance) <part>
+script getcasappearancepart 
+	resolvebodyspecificpartinappearance part = <part>
+	if structurecontains structure = ($cas_current_appearance) <part>
 		app_struct = (($cas_current_appearance).<part>)
-		if StructureContains Structure = <app_struct> desc_id
+		if structurecontains structure = <app_struct> desc_id
 			return true {<app_struct>}
 		endif
 	endif
 	return \{false}
 endscript
 
-script GetCASAppearancePartInstance 
+script getcasappearancepartinstance 
 
-	ResolveBodySpecificPartInAppearance part = <part>
-	if StructureContains Structure = ($cas_current_appearance) <part>
+	resolvebodyspecificpartinappearance part = <part>
+	if structurecontains structure = ($cas_current_appearance) <part>
 		app_struct = (($cas_current_appearance).<part>)
-		if StructureContains Structure = <app_struct> desc_id
+		if structurecontains structure = <app_struct> desc_id
 			return true part_instance = (<app_struct>)
 		endif
 	endif
 	return \{false}
 endscript
 
-script SetCASAppearancePartInstance 
+script setcasappearancepartinstance 
 
-	ResolveBodySpecificPartInAppearance part = <part>
-	if StructureContains Structure = (<part_instance>) desc_id
-		if ps2_GetActualCASOptionStruct_as_struct part = <part> desc_id = (<part_instance>.desc_id)
+	resolvebodyspecificpartinappearance part = <part>
+	if structurecontains structure = (<part_instance>) desc_id
+		if ps2_getactualcasoptionstruct_as_struct part = <part> desc_id = (<part_instance>.desc_id)
 			part_instance = {<ps2_part_struct> <part_instance>}
 		endif
 	endif
-	AddParam name = <part> structure_name = part_struct value = <part_instance>
+	addparam name = <part> structure_name = part_struct value = <part_instance>
 	change cas_current_appearance = {($cas_current_appearance)
 		<part_struct>}
 endscript
 
-script EditCASAppearance 
-	CheckModelBuilderLock
-	if ChecksumEquals a = <target> b = SetGenre
-		change cas_current_appearance = {($cas_current_appearance) genre = (<targetParams>.genre)}
+script editcasappearance 
+	checkmodelbuilderlock
+	if checksumequals a = <target> b = setgenre
+		change cas_current_appearance = {($cas_current_appearance) genre = (<targetparams>.genre)}
 	else
-		part = (<targetParams>.part)
-		ResolveBodySpecificPartInAppearance part = <part>
-		if ChecksumEquals a = <target> b = SetPart
-			newstruct = {desc_id = (<targetParams>.desc_id)}
+		part = (<targetparams>.part)
+		resolvebodyspecificpartinappearance part = <part>
+		if checksumequals a = <target> b = setpart
+			newstruct = {desc_id = (<targetparams>.desc_id)}
 			add_chosen_materials_to_part part = <part> newstruct = <newstruct>
-			UpdateStructElement struct = $cas_current_appearance element = <part> value = <newstruct>
+			updatestructelement struct = $cas_current_appearance element = <part> value = <newstruct>
 			change cas_current_appearance = <newstruct>
-		elseif ChecksumEquals a = <target> b = ClearPart
+		elseif checksumequals a = <target> b = clearpart
 			loc_appearance = ($cas_current_appearance)
-			RemoveComponent structure_name = loc_appearance name = <part>
+			removecomponent structure_name = loc_appearance name = <part>
 			change cas_current_appearance = <loc_appearance>
-		elseif ChecksumEquals a = <target> b = HideGeom
-			hide_geom = (<targetParams>.hide_geom)
-			if StructureContains Structure = ($cas_current_appearance) <part>
+		elseif checksumequals a = <target> b = hidegeom
+			hide_geom = (<targetparams>.hide_geom)
+			if structurecontains structure = ($cas_current_appearance) <part>
 				newstruct = {(($cas_current_appearance).<part>)
 					hide_geom = <hide_geom>}
-				UpdateStructElement struct = $cas_current_appearance element = <part> value = <newstruct>
+				updatestructelement struct = $cas_current_appearance element = <part> value = <newstruct>
 				change cas_current_appearance = <newstruct>
 			endif
 		else
@@ -78,47 +78,47 @@ endscript
 
 script add_chosen_materials_to_part 
 
-	if NOT GetActualCASOptionStruct part = <part> desc_id = (<newstruct>.desc_id)
+	if NOT getactualcasoptionstruct part = <part> desc_id = (<newstruct>.desc_id)
 
 	endif
-	if GotParam \{chosen_materials}
+	if gotparam \{chosen_materials}
 		newstruct = {<newstruct>
 			chosen_materials = <chosen_materials>}
 		return newstruct = <newstruct>
 	endif
 endscript
 
-script RebuildCurrentCASModel instrument = ($cas_current_instrument)
+script rebuildcurrentcasmodel instrument = ($cas_current_instrument)
 	if NOT ($cas_heap_state = in_cas)
 	endif
 	cas_queue_add_request appearance = ($cas_current_appearance) player = ($cas_current_player) instrument = <instrument> in_cas force_update = <force_update>
 endscript
 
-script UpdateCurrentCASModel instrument = ($cas_current_instrument)
+script updatecurrentcasmodel instrument = ($cas_current_instrument)
 
 	if cas_queue_is_busy \{in_queue_too}
 
-		RebuildCurrentCASModel instrument = <instrument>
+		rebuildcurrentcasmodel instrument = <instrument>
 		return
 	endif
-	UpdateCurrentCASModelSpawned <...>
+	updatecurrentcasmodelspawned <...>
 endscript
 
-script UpdateCurrentCASModelSpawned 
-	CASBlockForLoading
-	CASWaitForComposite
+script updatecurrentcasmodelspawned 
+	casblockforloading
+	caswaitforcomposite
 	if NOT ($cas_override_object = none)
 		cas_object = ($cas_override_object)
 	else
-		GetCurrentCASObject
+		getcurrentcasobject
 	endif
-	if GotParam \{cas_object}
-		if CompositeObjectExists name = <cas_object>
-			<cas_object> :GetSingleTag lightgroup
+	if gotparam \{cas_object}
+		if compositeobjectexists name = <cas_object>
+			<cas_object> :getsingletag lightgroup
 			get_hat_hair_choice appearance = ($cas_current_appearance)
-			<cas_object> :ModelBuilder_Build {
+			<cas_object> :modelbuilder_build {
 				appearance = ($cas_current_appearance)
-				buildScript = <buildScript>
+				buildscript = <buildscript>
 				buildscriptparams = {
 					<buildscriptparams>
 					temporary_heap = heap_cas
@@ -129,40 +129,40 @@ script UpdateCurrentCASModelSpawned
 			}
 			ps2_get_musician_context_data name = <cas_object>
 			if (<instrument> = drum)
-				FormatText checksumname = skeleton 'drummer_skeleton%am' a = <asset_slot_num>
+				formattext checksumname = skeleton 'drummer_skeleton%am' a = <asset_slot_num>
 				get_is_female_from_appearance appearance = ($cas_current_appearance)
 				if (<is_female> = 1)
-					<cas_object> :Anim_Command target = FemaleDiff command = ApplyFemaleDrummerDifference_SetAnim params = {Anim = GH_Rocker_Female_Drummer_D}
-					<cas_object> :Anim_Command target = FemaleDiff_droid command = ApplyFemaleDrummerDifference_SetAnim params = {Anim = GH_Rocker_Female_Drummer_D}
-					FormatText checksumname = skeleton 'drummer_skeleton%af' a = <asset_slot_num>
+					<cas_object> :anim_command target = femalediff command = applyfemaledrummerdifference_setanim params = {anim = gh_rocker_female_drummer_d}
+					<cas_object> :anim_command target = 0xd7adf5e7 command = applyfemaledrummerdifference_setanim params = {anim = gh_rocker_female_drummer_d}
+					formattext checksumname = skeleton 'drummer_skeleton%af' a = <asset_slot_num>
 				endif
 				if get_key_from_appearance key = drummer_skeleton appearance = ($cas_current_appearance)
-					FormatText checksumname = skeleton '%a' a = <drummer_skeleton>
+					formattext checksumname = skeleton '%a' a = <drummer_skeleton>
 				endif
 				if ((<skeleton> = gh_drummer_lars_1))
-					<name> :Anim_Command target = FemaleDiff command = ApplyFemaleDrummerDifference_SetAnim params = {Anim = GH_Rocker_Lars_Drummer_D}
+					<name> :anim_command target = femalediff command = applyfemaledrummerdifference_setanim params = {anim = gh_rocker_lars_drummer_d}
 				endif
-				if ((<skeleton> = gh_drummer_axel_1) || (<skeleton> = gh_drummer_rocktopus))
-					<name> :Anim_Command target = FemaleDiff command = ApplyFemaleDrummerDifference_SetAnim params = {Anim = GH_Rocker_Axel_Drummer_D}
+				if ((<skeleton> = gh_drummer_axel_1) || (<skeleton> = 0xd0ef43ee))
+					<name> :anim_command target = femalediff command = applyfemaledrummerdifference_setanim params = {anim = gh_rocker_axel_drummer_d}
 				endif
-				<cas_object> :cas_drum_stick_bake_transforms part = cas_drums_sticks_l SkeletonName = <skeleton> material_index = 0
-				<cas_object> :cas_drum_stick_bake_transforms part = cas_drums_sticks_r SkeletonName = <skeleton> material_index = 1
+				<cas_object> :cas_drum_stick_bake_transforms part = cas_drums_sticks_l skeletonname = <skeleton> material_index = 0
+				<cas_object> :cas_drum_stick_bake_transforms part = cas_drums_sticks_r skeletonname = <skeleton> material_index = 1
 			endif
 		endif
 	endif
 endscript
 
 script printcurrentappearance 
-	ReorderStructForCAS struct = ($cas_current_appearance)
+	reorderstructforcas struct = ($cas_current_appearance)
 	printcompactstruct <out>
 endscript
 
-script GetCASMaterialValue 
+script getcasmaterialvalue 
 
-	if StructureContains Structure = ($cas_current_appearance) <part>
+	if structurecontains structure = ($cas_current_appearance) <part>
 		str = (($cas_current_appearance).<part>)
-		if StructureContains Structure = <str> chosen_materials
-			if StructureContains Structure = (<str>.chosen_materials) <material>
+		if structurecontains structure = <str> chosen_materials
+			if structurecontains structure = (<str>.chosen_materials) <material>
 				return true value = ((<str>.chosen_materials).<material>)
 			endif
 		endif
@@ -170,80 +170,80 @@ script GetCASMaterialValue
 	return \{false}
 endscript
 
-script SetCASAppearanceColor 
-	CheckModelBuilderLock
-	ResolveBodySpecificPartInAppearance part = <part>
-	if GotParam \{h}
-		CastToInteger \{h}
+script setcasappearancecolor 
+	checkmodelbuilderlock
+	resolvebodyspecificpartinappearance part = <part>
+	if gotparam \{h}
+		casttointeger \{h}
 	endif
-	if GotParam \{s}
-		CastToInteger \{s}
+	if gotparam \{s}
+		casttointeger \{s}
 	endif
-	if GotParam \{v}
-		CastToInteger \{v}
+	if gotparam \{v}
+		casttointeger \{v}
 	endif
-	if StructureContains Structure = ($cas_current_appearance) <part>
+	if structurecontains structure = ($cas_current_appearance) <part>
 		str = (($cas_current_appearance).<part>)
-		AppendStruct struct = cas_current_appearance field = <part> params = {<str> h = <h> s = <s> v = <v> use_default_diffuse = <use_default_diffuse>} globalstruct
+		appendstruct struct = cas_current_appearance field = <part> params = {<str> h = <h> s = <s> v = <v> use_default_diffuse = <use_default_diffuse>} globalstruct
 	endif
 endscript
 
-script SetCASAppearanceMaterial 
+script setcasappearancematerial 
 
-	CheckModelBuilderLock
-	if StructureContains Structure = ($cas_current_appearance) <part>
+	checkmodelbuilderlock
+	if structurecontains structure = ($cas_current_appearance) <part>
 		str = (($cas_current_appearance).<part>)
-		if StructureContains Structure = <str> chosen_materials
+		if structurecontains structure = <str> chosen_materials
 			chosen_materials = (<str>.chosen_materials)
 		else
 			chosen_materials = {}
 		endif
-		UpdateStructElement struct = <chosen_materials> element = <material> value = <value>
+		updatestructelement struct = <chosen_materials> element = <material> value = <value>
 		chosen_materials = {
 			<chosen_materials> <newstruct>
 		}
-		AppendStruct struct = cas_current_appearance field = <part> params = {<str> chosen_materials = <chosen_materials>} globalstruct
+		appendstruct struct = cas_current_appearance field = <part> params = {<str> chosen_materials = <chosen_materials>} globalstruct
 	endif
 endscript
 
-script GetCASPartMaterials 
-	if NOT GetCASAppearancePart part = <part>
+script getcaspartmaterials 
+	if NOT getcasappearancepart part = <part>
 		return \{false}
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 		return \{false}
 	endif
-	if GotParam \{materials}
-		GetArraySize <materials>
+	if gotparam \{materials}
+		getarraysize <materials>
 		if (<array_size> > 0)
 			array = []
 			i = 0
 			begin
-			FormatText checksumname = desc_id 'material%d' d = (<i> + 1)
-			AddArrayElement array = <array> element = <desc_id>
+			formattext checksumname = desc_id 'material%d' d = (<i> + 1)
+			addarrayelement array = <array> element = <desc_id>
 			i = (<i> + 1)
 			repeat <array_size>
 			return true part_materials = <array>
 		endif
 	else
-		if GotParam \{material_groups}
-			GetArraySize <material_groups>
+		if gotparam \{material_groups}
+			getarraysize <material_groups>
 			if (<array_size> > 0)
 				array = []
 				i = 0
 				begin
-				if StructureContains Structure = (<material_groups> [<i>]) desc_id
+				if structurecontains structure = (<material_groups> [<i>]) desc_id
 					desc_id = ((<material_groups> [<i>]).desc_id)
 				else
-					FormatText checksumname = desc_id 'material%d' d = (<i> + 1)
+					formattext checksumname = desc_id 'material%d' d = (<i> + 1)
 				endif
-				AddArrayElement array = <array> element = <desc_id>
+				addarrayelement array = <array> element = <desc_id>
 				i = (<i> + 1)
 				repeat <array_size>
 				return true part_materials = <array>
 			endif
 		else
-			if GotParam \{modify_all_materials}
+			if gotparam \{modify_all_materials}
 				return \{true
 					part_materials = [
 						material1
@@ -254,45 +254,45 @@ script GetCASPartMaterials
 	endif
 endscript
 
-script SetCASAppearanceBones 
-	CheckModelBuilderLock
-	if StructureContains Structure = ($cas_current_appearance) <part>
+script setcasappearancebones 
+	checkmodelbuilderlock
+	if structurecontains structure = ($cas_current_appearance) <part>
 		str = (($cas_current_appearance).<part>)
-		AppendStruct struct = cas_current_appearance field = <part> params = {<str> bones = <bones>} globalstruct
+		appendstruct struct = cas_current_appearance field = <part> params = {<str> bones = <bones>} globalstruct
 	endif
 endscript
 
-script SetCASAppearanceAdditionalBones 
-	CheckModelBuilderLock
-	if StructureContains Structure = ($cas_current_appearance) <part>
+script setcasappearanceadditionalbones 
+	checkmodelbuilderlock
+	if structurecontains structure = ($cas_current_appearance) <part>
 		str = (($cas_current_appearance).<part>)
-		AppendStruct struct = cas_current_appearance field = <part> params = {<str> additional_bone_transforms = <additional_bone_transforms>} globalstruct
+		appendstruct struct = cas_current_appearance field = <part> params = {<str> additional_bone_transforms = <additional_bone_transforms>} globalstruct
 	endif
 endscript
 
-script SetCASAppearanceCAP 
-	CheckModelBuilderLock
-	if StructureContains Structure = ($cas_current_appearance) <part>
+script setcasappearancecap 
+	checkmodelbuilderlock
+	if structurecontains structure = ($cas_current_appearance) <part>
 		str = (($cas_current_appearance).<part>)
-		if GotParam \{cap}
-			AppendStruct struct = cas_current_appearance field = <part> params = {<str> cap = <cap>} globalstruct
+		if gotparam \{cap}
+			appendstruct struct = cas_current_appearance field = <part> params = {<str> cap = <cap>} globalstruct
 		else
-			RemoveComponent \{name = cap
+			removecomponent \{name = cap
 				structure_name = str}
-			AppendStruct struct = cas_current_appearance field = <part> params = {<str>} globalstruct
+			appendstruct struct = cas_current_appearance field = <part> params = {<str>} globalstruct
 		endif
 	endif
 endscript
 
-script SetCASAppearance 
-	CheckModelBuilderLock
+script setcasappearance 
+	checkmodelbuilderlock
 	change cas_current_appearance = {<appearance>}
 endscript
 
-script ResolveBodySpecificPart 
-	if GetActualCASOptionStruct part = <body_part> desc_id = <desc_id> no_resolve
-		if GotParam \{body_specific_parts}
-			if StructureContains Structure = <body_specific_parts> <part>
+script resolvebodyspecificpart 
+	if getactualcasoptionstruct part = <body_part> desc_id = <desc_id> no_resolve
+		if gotparam \{body_specific_parts}
+			if structurecontains structure = <body_specific_parts> <part>
 				return true part = (<body_specific_parts>.<part>)
 			endif
 		endif
@@ -300,42 +300,42 @@ script ResolveBodySpecificPart
 	return \{false}
 endscript
 
-script ResolveBodySpecificPartInAppearance appearance = ($cas_current_appearance)
-	if StructureContains Structure = <appearance> CAS_Body
-		if ResolveBodySpecificPart part = <part> desc_id = ((<appearance>.CAS_Body).desc_id) body_part = CAS_Body
+script resolvebodyspecificpartinappearance appearance = ($cas_current_appearance)
+	if structurecontains structure = <appearance> cas_body
+		if resolvebodyspecificpart part = <part> desc_id = ((<appearance>.cas_body).desc_id) body_part = cas_body
 			return true part = <part>
 		endif
-	elseif StructureContains Structure = <appearance> CAS_Full_Body
-		if ResolveBodySpecificPart part = <part> desc_id = ((<appearance>.CAS_Full_Body).desc_id) body_part = CAS_Full_Body
+	elseif structurecontains structure = <appearance> cas_full_body
+		if resolvebodyspecificpart part = <part> desc_id = ((<appearance>.cas_full_body).desc_id) body_part = cas_full_body
 			return true part = <part>
 		endif
 	endif
 	return false part = <part>
 endscript
 
-script RememberTemporaryCASAppearance 
+script remembertemporarycasappearance 
 	change cas_temporary_appearance = ($cas_current_appearance)
 endscript
 
-script RestoreTemporaryCASAppearance 
+script restoretemporarycasappearance 
 	change cas_current_appearance = ($cas_temporary_appearance)
 endscript
 
-script RememberSecondTemporaryCASAppearance 
+script remembersecondtemporarycasappearance 
 	change cas_second_temporary_appearance = ($cas_current_appearance)
 endscript
 
-script RestoreSecondTemporaryCASAppearance 
-	ChangeAppearancePaks current_appearance = ($cas_current_appearance) new_appearance = ($cas_second_temporary_appearance) heap = heap_musician1
+script restoresecondtemporarycasappearance 
+	changeappearancepaks current_appearance = ($cas_current_appearance) new_appearance = ($cas_second_temporary_appearance) heap = heap_musician1
 	change cas_current_appearance = ($cas_second_temporary_appearance)
 endscript
 
-script RememberTemporaryCAPAppearance 
+script remembertemporarycapappearance 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if GotParam \{cap}
+	if gotparam \{cap}
 		change cap_temporary_appearance = <cap>
 	else
 		change \{cap_temporary_appearance = [
@@ -343,17 +343,17 @@ script RememberTemporaryCAPAppearance
 	endif
 endscript
 
-script RestoreTemporaryCAPAppearance 
+script restoretemporarycapappearance 
 
-	SetCASAppearanceCAP part = <part> cap = ($cap_temporary_appearance)
+	setcasappearancecap part = <part> cap = ($cap_temporary_appearance)
 endscript
 
-script RememberTemporaryBoneAppearance 
+script remembertemporaryboneappearance 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if GotParam \{bones}
+	if gotparam \{bones}
 		change bone_temporary_appearance = <bones>
 	else
 		change \{bone_temporary_appearance = {
@@ -361,52 +361,52 @@ script RememberTemporaryBoneAppearance
 	endif
 endscript
 
-script RestoreTemporaryBoneAppearance 
+script restoretemporaryboneappearance 
 
-	SetCASAppearanceBones part = <part> bones = ($bone_temporary_appearance)
+	setcasappearancebones part = <part> bones = ($bone_temporary_appearance)
 endscript
 
-script HideInstrument 
-	ForEachIn (($instrument_part_sets).guitar) do = HideInstrument_Foreach
-	ForEachIn (($instrument_part_sets).Bass) do = HideInstrument_Foreach
-	ForEachIn (($instrument_part_sets).drum) do = HideInstrument_Foreach
-	ForEachIn (($instrument_part_sets).Vocals) do = HideInstrument_Foreach
+script hideinstrument 
+	foreachin (($instrument_part_sets).guitar) do = hideinstrument_foreach
+	foreachin (($instrument_part_sets).bass) do = hideinstrument_foreach
+	foreachin (($instrument_part_sets).drum) do = hideinstrument_foreach
+	foreachin (($instrument_part_sets).vocals) do = hideinstrument_foreach
 endscript
 
-script HideInstrument_Foreach 
-	SwitchOffAtomic <checksum>
+script hideinstrument_foreach 
+	switchoffatomic <checksum>
 endscript
 
-script UnHideInstrument 
-	ForEachIn (($instrument_part_sets).guitar) do = UnhideInstrument_Foreach
-	ForEachIn (($instrument_part_sets).Bass) do = UnhideInstrument_Foreach
-	ForEachIn (($instrument_part_sets).drum) do = UnhideInstrument_Foreach
-	ForEachIn (($instrument_part_sets).Vocals) do = UnhideInstrument_Foreach
+script unhideinstrument 
+	foreachin (($instrument_part_sets).guitar) do = unhideinstrument_foreach
+	foreachin (($instrument_part_sets).bass) do = unhideinstrument_foreach
+	foreachin (($instrument_part_sets).drum) do = unhideinstrument_foreach
+	foreachin (($instrument_part_sets).vocals) do = unhideinstrument_foreach
 endscript
 
-script UnhideInstrument_Foreach 
-	SwitchOnAtomic <checksum>
+script unhideinstrument_foreach 
+	switchonatomic <checksum>
 endscript
 
-script HideMusician 
-	ForEachIn \{$body_parts
-		do = HideMusician_Foreach}
-	ForEachIn \{$body_parts
-		do = HideMusician_Foreach}
-	ForEachIn \{$body_parts
-		do = HideMusician_Foreach}
-	ForEachIn \{$body_parts
-		do = HideMusician_Foreach}
+script hidemusician 
+	foreachin \{$body_parts
+		do = hidemusician_foreach}
+	foreachin \{$body_parts
+		do = hidemusician_foreach}
+	foreachin \{$body_parts
+		do = hidemusician_foreach}
+	foreachin \{$body_parts
+		do = hidemusician_foreach}
 endscript
 
-script HideMusician_Foreach 
-	SwitchOffAtomic <checksum>
+script hidemusician_foreach 
+	switchoffatomic <checksum>
 endscript
 
 script get_hat_hair_choice 
-	if ResolveBodySpecificPartInAppearance appearance = <appearance> part = CAS_Hat_Hair
-		if StructureContains Structure = <appearance> <part>
-			if StructureContains Structure = (<appearance>.<part>) desc_id
+	if resolvebodyspecificpartinappearance appearance = <appearance> part = cas_hat_hair
+		if structurecontains structure = <appearance> <part>
+			if structurecontains structure = (<appearance>.<part>) desc_id
 				return \{hat_hair_choice = hat_hair}
 			endif
 		endif
@@ -414,48 +414,48 @@ script get_hat_hair_choice
 	return \{hat_hair_choice = hair}
 endscript
 
-script CASWaitForComposite 
+script caswaitforcomposite 
 
 endscript
 
-script CasBlockForComposite 
-	if ModelBuilderIsCompositingActive
-		ModelBuilderBlockForCompositing
+script casblockforcomposite 
+	if modelbuilderiscompositingactive
+		modelbuilderblockforcompositing
 	endif
 endscript
 
-script PushTemporaryCASAppearance 
-	AddArrayElement array = ($cas_temporary_appearance_stack) element = ($cas_current_appearance)
+script pushtemporarycasappearance 
+	addarrayelement array = ($cas_temporary_appearance_stack) element = ($cas_current_appearance)
 	change cas_temporary_appearance_stack = <array>
 endscript
 
-script PrintTemporaryCASAppearanceStack 
+script printtemporarycasappearancestack 
 	printcompactstruct ($cas_temporary_appearance_stack)
 endscript
 
-script PopTemporaryCASAppearance 
-	GetArraySize ($cas_temporary_appearance_stack)
+script poptemporarycasappearance 
+	getarraysize ($cas_temporary_appearance_stack)
 	if (<array_size> > 0)
-		RemoveArrayElement array = ($cas_temporary_appearance_stack) index = (<array_size> -1)
+		removearrayelement array = ($cas_temporary_appearance_stack) index = (<array_size> -1)
 		change cas_temporary_appearance_stack = <array>
 	endif
 endscript
 
-script RestoreTopTemporaryCASAppearance 
-	GetArraySize ($cas_temporary_appearance_stack)
+script restoretoptemporarycasappearance 
+	getarraysize ($cas_temporary_appearance_stack)
 	if (<array_size> > 0)
 		change cas_current_appearance = (($cas_temporary_appearance_stack) [(<array_size> -1)])
 	endif
-	undo_parts = [
-		CAS_Torso_Art , CAS_Right_Arm_Art , CAS_Left_Arm_Art , CAS_Eye_Makeup ,
-		CAS_Bass_Body_Detail , cas_bass_body_fade , CAS_Bass_Finish , CAS_Bass_Head_Detail , CAS_Bass_Head_Finish , cas_bass_head_fade , CAS_Bass_Neck_Finish , cas_bass_pickguard_finish ,
-		CAS_Guitar_Body_Detail , cas_guitar_body_fade , CAS_Guitar_Finish , CAS_Guitar_Head_Detail , CAS_Guitar_Head_Finish , cas_guitar_head_fade , CAS_Guitar_Neck_Finish , CAS_Guitar_Pickguard_Finish ,
+	0xe351fbef = [
+		cas_torso_art , cas_right_arm_art , cas_left_arm_art , cas_eye_makeup ,
+		cas_bass_body_detail , cas_bass_body_fade , cas_bass_finish , cas_bass_head_detail , cas_bass_head_finish , cas_bass_head_fade , cas_bass_neck_finish , cas_bass_pickguard_finish ,
+		cas_guitar_body_detail , cas_guitar_body_fade , cas_guitar_finish , cas_guitar_head_detail , cas_guitar_head_finish , cas_guitar_head_fade , cas_guitar_neck_finish , cas_guitar_pickguard_finish ,
 	]
-	GetArraySize <undo_parts>
+	getarraysize <0xe351fbef>
 	x = 0
 	begin
-	undo = (<undo_parts> [<x>])
-	if NOT GetCASAppearancePart part = <undo>
+	undo = (<0xe351fbef> [<x>])
+	if NOT getcasappearancepart part = <undo>
 		cas_add_item_to_appearance {
 			part = <undo>
 			desc_id = none
@@ -464,45 +464,45 @@ script RestoreTopTemporaryCASAppearance
 	endif
 	x = (<x> + 1)
 	repeat <array_size>
-	RebuildCurrentCASModel force_update = <force_update>
+	rebuildcurrentcasmodel force_update = <force_update>
 endscript
 
-script MergePartIntoTemporaryCASAppearance 
+script mergepartintotemporarycasappearance 
 
 	part_list_instances = []
-	GetArraySize <part_list>
+	getarraysize <part_list>
 	i = 0
 	begin
-	if GetCASAppearancePartInstance part = (<part_list> [<i>])
-		AddArrayElement array = <part_list_instances> element = <part_instance>
+	if getcasappearancepartinstance part = (<part_list> [<i>])
+		addarrayelement array = <part_list_instances> element = <part_instance>
 		part_list_instances = <array>
 	else
-		RemoveArrayElement array = <part_list> index = <i>
+		removearrayelement array = <part_list> index = <i>
 		part_list = <array>
 		i = (<i> -1)
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	GetArraySize ($cas_temporary_appearance_stack)
+	getarraysize ($cas_temporary_appearance_stack)
 	if (<array_size> > 0)
 		change cas_current_appearance = (($cas_temporary_appearance_stack) [(<array_size> -1)])
-		RemoveArrayElement array = ($cas_temporary_appearance_stack) index = (<array_size> -1)
+		removearrayelement array = ($cas_temporary_appearance_stack) index = (<array_size> -1)
 		change cas_temporary_appearance_stack = <array>
-		GetArraySize <part_list>
+		getarraysize <part_list>
 		if (<array_size> > 0)
 			i = 0
 			begin
-			SetCASAppearancePartInstance part = (<part_list> [<i>]) part_instance = (<part_list_instances> [<i>])
+			setcasappearancepartinstance part = (<part_list> [<i>]) part_instance = (<part_list_instances> [<i>])
 			i = (<i> + 1)
 			repeat <array_size>
 		endif
-		spawnscriptnow \{trigger_CAS_rebuild_loop}
+		spawnscriptnow \{trigger_cas_rebuild_loop}
 	endif
 endscript
 
-script CompareTopTemporaryCASAppearance 
-	GetArraySize ($cas_temporary_appearance_stack)
-	if CompareStructs struct1 = (($cas_temporary_appearance_stack) [(<array_size> -1)]) struct2 = ($cas_current_appearance)
+script comparetoptemporarycasappearance 
+	getarraysize ($cas_temporary_appearance_stack)
+	if comparestructs struct1 = (($cas_temporary_appearance_stack) [(<array_size> -1)]) struct2 = ($cas_current_appearance)
 		return \{true}
 	else
 		return \{false}
@@ -510,35 +510,35 @@ script CompareTopTemporaryCASAppearance
 endscript
 
 script generic_exit_restore 
-	if ScreenElementExists \{id = create_popout_select_part_vmenu}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = create_popout_select_part_vmenu}
+		launchevent \{type = unfocus
 			target = create_popout_select_part_vmenu}
 	endif
 	cancel_all_cas_loads
-	RestoreTopTemporaryCASAppearance force_update = <force_update>
-	if GotParam \{part}
-		if (<part> = CAS_Select_A_Logo)
-			if GetCASAppearancePart \{part = CAS_Select_A_Logo}
-				if GetActualCASOptionStruct part = CAS_Select_A_Logo desc_id = <desc_id>
-					GenerateCAGTexture single_texture = (<with1>)
-					RebuildCurrentCASModel
+	restoretoptemporarycasappearance force_update = <force_update>
+	if gotparam \{part}
+		if (<part> = 0x197f6b46)
+			if getcasappearancepart \{part = 0x197f6b46}
+				if getactualcasoptionstruct part = 0x197f6b46 desc_id = <desc_id>
+					generatecagtexture single_texture = (<with1>)
+					rebuildcurrentcasmodel
 				endif
 			endif
 		endif
 	endif
-	KillSpawnedScript \{name = select_part_focus_change_spawned}
+	killspawnedscript \{name = select_part_focus_change_spawned}
 	cas_queue_wait
 	ui_event \{event = menu_back}
 endscript
 
 script list_exit_restore 
 	generic_list_destroy
-	RestoreTopTemporaryCASAppearance
+	restoretoptemporarycasappearance
 	ui_event \{event = menu_back}
 endscript
 
 script generic_exit_restore_refresh 
-	RestoreTopTemporaryCASAppearance
+	restoretoptemporarycasappearance
 	ui_event \{event = menu_back
 		data = {
 			refresh_previous_state
@@ -549,7 +549,7 @@ script get_best_heap_for_appearance \{exclusions = [
 		]}
 	best_heap = none
 	best_score = -1.0
-	GetArraySize \{$musician_heaps}
+	getarraysize \{$musician_heaps}
 	i = 0
 	begin
 	heap_name = ($musician_heaps [<i>])
@@ -564,18 +564,18 @@ script get_best_heap_for_appearance \{exclusions = [
 	if (<best_score> < 0.0)
 
 	endif
-	if CASIsAssetStorageUsed name = <best_heap>
+	if casisassetstorageused name = <best_heap>
 
 	endif
 	return best_heap = <best_heap>
 endscript
 
 script get_appearance_heap_score 
-	if CASIsAssetStorageUsed name = <heap_name>
+	if casisassetstorageused name = <heap_name>
 
 		return \{score = -1.0}
 	else
-		CASCompareAssetStorage name = <heap_name> appearance = <appearance>
+		cascompareassetstorage name = <heap_name> appearance = <appearance>
 		return score = <comparevalue>
 	endif
 endscript

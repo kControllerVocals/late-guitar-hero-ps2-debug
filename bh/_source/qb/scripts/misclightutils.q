@@ -1,61 +1,61 @@
 
-script SafeCreate 
-	if IsInNodeArray <nodeName>
-		if NOT IsCreated <nodeName>
-			create name = <nodeName>
+script safecreate 
+	if isinnodearray <nodename>
+		if NOT iscreated <nodename>
+			create name = <nodename>
 		endif
 	endif
 endscript
 
-script SafeKill 
-	if IsCreated <nodeName>
-		kill name = <nodeName>
+script safekill 
+	if iscreated <nodename>
+		kill name = <nodename>
 	endif
 endscript
 
-script ScreenFlash \{time = 1}
-	KillSpawnedScript \{id = ScreenFlash}
-	SpawnScriptLater ScreenFlashOn id = ScreenFlash params = {time = <time>}
+script screenflash \{time = 1}
+	killspawnedscript \{id = screenflash}
+	spawnscriptlater screenflashon id = screenflash params = {time = <time>}
 endscript
 
-script ScreenFlashOn 
-	if NOT ScreenFX_FxInstanceExists \{viewport = bg_viewport
-			name = FlashBS}
-		ScreenFX_AddFXInstance {
+script screenflashon 
+	if NOT screenfx_fxinstanceexists \{viewport = bg_viewport
+			name = flashbs}
+		screenfx_addfxinstance {
 			viewport = bg_viewport
-			name = FlashBS
-			($ScreenFlash_TOD_Manager.screen_fx [0])
+			name = flashbs
+			($screenflash_tod_manager.screen_fx [0])
 		}
 	else
-		ScreenFX_UpdateFXInstanceParams {
+		screenfx_updatefxinstanceparams {
 			viewport = bg_viewport
-			name = FlashBS
-			($ScreenFlash_TOD_Manager.screen_fx [0])
+			name = flashbs
+			($screenflash_tod_manager.screen_fx [0])
 		}
 	endif
-	Wait (0.1 * <time>) seconds
-	if ScreenFX_FxInstanceExists \{viewport = bg_viewport
-			name = FlashBS}
-		ScreenFX_UpdateFXInstanceParams {
+	wait (0.1 * <time>) seconds
+	if screenfx_fxinstanceexists \{viewport = bg_viewport
+			name = flashbs}
+		screenfx_updatefxinstanceparams {
 			viewport = bg_viewport
-			name = FlashBS
+			name = flashbs
 			time = <time>
-			($ScreenFlash_TOD_Manager.screen_fx [0])
+			($screenflash_tod_manager.screen_fx [0])
 			contrast = 1
 			brightness = 1.5
 		}
 	endif
-	Wait <time> seconds
-	SpawnScriptLater \{ScreenFlashOff
-		id = ScreenFlash}
+	wait <time> seconds
+	spawnscriptlater \{screenflashoff
+		id = screenflash}
 endscript
 
-script ScreenFlashOff 
-	if ViewportExists \{id = bg_viewport}
-		if ScreenFX_FxInstanceExists \{viewport = bg_viewport
-				name = FlashBS}
-			ScreenFX_RemoveFXInstance \{viewport = bg_viewport
-				name = FlashBS}
+script screenflashoff 
+	if viewportexists \{id = bg_viewport}
+		if screenfx_fxinstanceexists \{viewport = bg_viewport
+				name = flashbs}
+			screenfx_removefxinstance \{viewport = bg_viewport
+				name = flashbs}
 		endif
 	endif
 endscript

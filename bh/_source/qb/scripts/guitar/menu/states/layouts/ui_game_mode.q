@@ -1,14 +1,14 @@
 
-script ui_init_game_mode 
-	push_num_players \{num = 1}
+script 0x6776bbc8 
+	0xfd22d1e7 \{num = 1}
 endscript
 
-script ui_deinit_game_mode 
-	pop_num_players
+script 0x93700c16 
+	0x88e84c31
 endscript
 
 script ui_create_game_mode \{mode = career}
-	if loading_screen_exists
+	if 0x8658e568
 		destroy_loading_screen
 	endif
 	cas_destroy_all_characters
@@ -26,77 +26,77 @@ script ui_create_game_mode \{mode = career}
 	change \{band_mode_mode = none}
 	i = 1
 	begin
-	GetPlayerInfo <i> controller
-	GetPlayerInfo <i> part
-	if (<part> = Band)
-		SetPlayerInfo <i> part = guitar
-		GetPlayerInfo <i> part
+	getplayerinfo <i> controller
+	getplayerinfo <i> part
+	if (<part> = band)
+		setplayerinfo <i> part = guitar
+		getplayerinfo <i> part
 	endif
-	GetSavegameFromController controller = <controller>
+	getsavegamefromcontroller controller = <controller>
 	cas_get_random_preset_character savegame = <savegame> part = <part>
-	SetPlayerInfo <i> character_id = <character_id>
+	setplayerinfo <i> character_id = <character_id>
 	i = (<i> + 1)
 	repeat 4
 	if (<mode> = career)
 		choose_script = game_mode_select_career
-		text = qs("CAREER")
-	elseif (<mode> = partyplay)
-		choose_script = game_mode_select_partyplay
-		text = qs("PARTY PLAY")
+		text = qs(0xde7ec8b3)
+	elseif (<mode> = 0x955f856c)
+		choose_script = 0xde1174ba
+		text = qs(0x8a778398)
 	elseif (<mode> = freeplay)
-		choose_script = game_mode_select_freeplay
+		choose_script = 0xcbadbeff
 		text = qs(0x2406ab68)
 	else
 		choose_script = game_mode_select_quickplay
-		text = qs("QUICKPLAY")
+		text = qs(0xfabdce2b)
 	endif
-	make_generic_stripe_menu {
+	0x5e1a3a04 {
 		pad_back_script = ui_game_mode_back
 		title = <text>
 		use_all_controllers
 	}
-	add_generic_stripe_menu_item text = qs("SINGLE") pad_choose_script = <choose_script>
-	if ((<mode> = quickplay) || (<mode> = partyplay) || (<mode> = freeplay))
+	0x9d0992fe text = qs(0xdfe62bc8) pad_choose_script = <choose_script>
+	if ((<mode> = quickplay) || (<mode> = 0x955f856c) || (<mode> = freeplay))
 		if are_multiple_controllers_connected
-			add_generic_stripe_menu_item text = qs("BAND") pad_choose_script = <choose_script> pad_choose_params = {Band}
+			0x9d0992fe text = qs(0xdabf99c0) pad_choose_script = <choose_script> pad_choose_params = {band}
 			<window_id> :obj_spawnscript ui_game_mode_poll_for_band_mode params = {band_mode_allowed = 1 mode = <mode>}
 		else
-			add_generic_stripe_menu_item text = qs("BAND") pad_choose_script = <choose_script> pad_choose_params = {Band}
+			0x9d0992fe text = qs(0xdabf99c0) pad_choose_script = <choose_script> pad_choose_params = {band}
 		endif
-		<desc_id> :Obj_SpawnScriptNow career_menu_jaw_anim
+		<desc_id> :obj_spawnscriptnow career_menu_jaw_anim
 	else
 		if has_enough_controllers_for_band
-			add_generic_stripe_menu_item {
-				text = qs("BAND")
-				pad_choose_script = <choose_script> pad_choose_params = {Band}
+			0x9d0992fe {
+				text = qs(0xdabf99c0)
+				pad_choose_script = <choose_script> pad_choose_params = {band}
 			}
 		else
-			add_generic_stripe_menu_item {
-				text = qs("BAND")
-				pad_choose_script = <choose_script> pad_choose_params = {Band}
+			0x9d0992fe {
+				text = qs(0xdabf99c0)
+				pad_choose_script = <choose_script> pad_choose_params = {band}
 			}
 		endif
-		add_generic_stripe_menu_item \{text = qs("TUTORIALS")
+		0x9d0992fe \{text = qs(0xc6510dd1)
 			pad_choose_script = ui_select_practice_mode_choose}
-		<desc_id> :Obj_SpawnScriptNow career_menu_jaw_anim
+		<desc_id> :obj_spawnscriptnow career_menu_jaw_anim
 	endif
-	ui_create_particle_circle \{z_offset = 700.0}
+	0x87679bf6 \{z_offset = 700.0}
 	ui_return_game_mode
 endscript
 
 script career_menu_jaw_anim 
-	if ScreenElementExists \{id = movie_handler}
+	if screenelementexists \{id = movie_handler}
 		begin
-		Wait \{2
+		wait \{2
 			frame}
-		if NOT ScreenElementExists \{id = movie_handler}
+		if NOT screenelementexists \{id = movie_handler}
 			break
 		endif
 		repeat
 	endif
-	if Desc_ResolveAlias \{name = alias_projection_glow
-			param = projection_glow_id}
-		<projection_glow_id> :obj_spawnscript ui_flicker_highlight params = {glow_dimly}
+	if desc_resolvealias \{name = 0xd389b1ff
+			param = 0xb9ea5094}
+		<0xb9ea5094> :obj_spawnscript 0xd5b5a21b params = {0xc2c7c0e4}
 	else
 
 	endif
@@ -111,42 +111,42 @@ script game_mode_anim_out
 endscript
 
 script ui_destroy_game_mode 
-	KillSpawnedScript \{name = career_menu_jaw_anim}
-	ui_destroy_particle_circle
+	killspawnedscript \{name = career_menu_jaw_anim}
+	0xafd96096
 	generic_ui_destroy
 endscript
 
 script ui_return_game_mode 
-	add_user_control_helper \{text = qs("SELECT")
+	add_user_control_helper \{text = qs(0xc18d5e76)
 		button = green
 		z = 100000
 		all_buttons}
-	add_user_control_helper \{text = qs("BACK")
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red
 		z = 100000
 		all_buttons}
 endscript
 
 script game_mode_select_career 
-	if NOT IsGuitarController controller = <device_num>
-		if NOT IsDrumController controller = <device_num>
-			if NOT IsMicrophonePluggedIn
+	if NOT isguitarcontroller controller = <device_num>
+		if NOT isdrumcontroller controller = <device_num>
+			if NOT ismicrophonepluggedin
 				if ($allow_controller_for_all_instruments = 0)
-					ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs(0x67b7ef20) player_device = <device_num>}
+					ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0x67b7ef20) player_device = <device_num>}
 					return
 				endif
 			endif
 		endif
 	endif
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	if ScriptIsRunning \{menu_transition_in_spawned}
-		KillSpawnedScript \{name = menu_transition_in_spawned}
+	if scriptisrunning \{menu_transition_in_spawned}
+		killspawnedscript \{name = menu_transition_in_spawned}
 	endif
-	if ScriptIsRunning \{menu_transition_in}
-		KillSpawnedScript \{name = menu_transition_in}
+	if scriptisrunning \{menu_transition_in}
+		killspawnedscript \{name = menu_transition_in}
 	endif
-	if NOT GotParam \{Band}
+	if NOT gotparam \{band}
 		change \{game_mode = gh4_p1_career}
 		change \{current_num_players = 1}
 		change \{structurename = player1_status
@@ -169,38 +169,38 @@ script game_mode_select_career
 		change \{respond_to_signin_changed = 1}
 		change \{respond_to_signin_changed_func = none}
 		if (($allow_controller_for_all_instruments) = 0)
-			if NOT IsGuitarController controller = <device_num>
-				if IsDrumController controller = <device_num>
+			if NOT isguitarcontroller controller = <device_num>
+				if isdrumcontroller controller = <device_num>
 					ui_select_instrument_done instrument = drum device_num = <device_num> skip
 					return
 				else
-					ui_select_instrument_done instrument = Vocals device_num = <device_num> skip
+					ui_select_instrument_done instrument = vocals device_num = <device_num> skip
 					return
 				endif
 			endif
 		endif
 		set_primary_controller device_num = <device_num> state = uistate_select_instrument
 	elseif ($band_mode_mode = career)
-		set_primary_controller device_num = <device_num> state = UIstate_band_mode
+		set_primary_controller device_num = <device_num> state = uistate_band_mode
 	endif
 endscript
 
-script game_mode_select_freeplay 
+script 0xcbadbeff 
 	game_mode_select_quickplay freeplay <...>
 endscript
 
-script game_mode_select_partyplay 
-	game_mode_select_quickplay partyplay <...>
+script 0xde1174ba 
+	game_mode_select_quickplay 0x955f856c <...>
 endscript
 
 script game_mode_select_quickplay 
-	if ScriptIsRunning \{menu_transition_in_spawned}
-		KillSpawnedScript \{name = menu_transition_in_spawned}
+	if scriptisrunning \{menu_transition_in_spawned}
+		killspawnedscript \{name = menu_transition_in_spawned}
 	endif
-	if ScriptIsRunning \{menu_transition_in}
-		KillSpawnedScript \{name = menu_transition_in}
+	if scriptisrunning \{menu_transition_in}
+		killspawnedscript \{name = menu_transition_in}
 	endif
-	if NOT GotParam \{Band}
+	if NOT gotparam \{band}
 		change \{game_mode = p1_quickplay}
 		change \{current_num_players = 1}
 		change primary_controller = <device_num>
@@ -208,23 +208,23 @@ script game_mode_select_quickplay
 		change globalname = player1_device newvalue = <device_num>
 		change \{respond_to_signin_changed = 1}
 		change \{respond_to_signin_changed_func = none}
-		if NOT IsGuitarController controller = <device_num>
-			if NOT IsDrumController controller = <device_num>
-				if NOT IsMicrophonePluggedIn
+		if NOT isguitarcontroller controller = <device_num>
+			if NOT isdrumcontroller controller = <device_num>
+				if NOT ismicrophonepluggedin
 					if ($allow_controller_for_all_instruments = 0)
-						ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs(0x67b7ef20) player_device = <device_num>}
+						ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0x67b7ef20) player_device = <device_num>}
 						return
 					endif
 				endif
 			endif
 		endif
 		if (($allow_controller_for_all_instruments) = 0)
-			if NOT IsGuitarController controller = <device_num>
-				if IsDrumController controller = <device_num>
+			if NOT isguitarcontroller controller = <device_num>
+				if isdrumcontroller controller = <device_num>
 					ui_select_instrument_done instrument = drum device_num = <device_num> skip
 					return
 				else
-					ui_select_instrument_done instrument = Vocals device_num = <device_num> skip
+					ui_select_instrument_done instrument = vocals device_num = <device_num> skip
 					return
 				endif
 			endif
@@ -248,15 +248,15 @@ script ui_game_mode_poll_for_band_mode
 	if NOT are_multiple_controllers_connected
 		if (<band_mode_allowed> = 1)
 			ui_event event = menu_replace data = {state = uistate_game_mode mode = <mode>}
-			Block
+			block
 		endif
 	else
 		if (<band_mode_allowed> = 0)
 			ui_event event = menu_replace data = {state = uistate_game_mode mode = <mode>}
-			Block
+			block
 		endif
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript

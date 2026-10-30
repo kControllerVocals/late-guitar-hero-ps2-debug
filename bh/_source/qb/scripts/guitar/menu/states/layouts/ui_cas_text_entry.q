@@ -1,45 +1,45 @@
 
 script ui_create_cas_text_entry 
 	change \{num_name_size = 14}
-	if NOT GotParam \{no_show_history}
+	if NOT gotparam \{no_show_history}
 		show_history = {show_history}
 	endif
-	if English
+	if english
 		hist_tex = icon_name
-	elseif German
+	elseif german
 		hist_tex = icon_name_german
-	elseif French
+	elseif french
 		hist_tex = icon_name_french
-	elseif Italian
+	elseif italian
 		hist_tex = icon_name_italian
-	elseif Spanish
+	elseif spanish
 		hist_tex = icon_name_spanish
 	endif
 	make_generic_menu {
-		title = qs("ENTER NAME")
+		title = qs(0x17f49e18)
 		num_icons = <num_icons>
 		hist_tex = <hist_tex>
 		<show_history>
 	}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		desc = 'generic_menu_name'
 		parent = root_window
 		id = name_entry
 		exclusive_device = ($primary_controller)
 	}
-	<id> :Desc_ResolveAlias name = alias_vmenu_entry
-	AssignAlias id = <resolved_id> alias = current_menu
+	<id> :desc_resolvealias name = alias_vmenu_entry
+	assignalias id = <resolved_id> alias = current_menu
 	focus_color = [255 255 255 255]
 	unfocus_color = [0 0 0 255]
 	text_entry_add_item {
@@ -50,48 +50,48 @@ script ui_create_cas_text_entry
 		font = fontgrid_text_a11
 		dims = (400.0, 55.0)
 		text_focus_color = <focus_color>
-		marker_focus_color = <focus_color>
+		0xb90ddda6 = <focus_color>
 		text_unfocus_color = <unfocus_color>
-		marker_unfocus_color = <unfocus_color>
+		0xbcd8ee4c = <unfocus_color>
 		pos = (45.0, 15.0)
 		marker_offset = (-7.0, -10.0)
 	}
 	ui_cas_text_entry_helper_text
 	lock_to_text_entry
 	ui_event_add_params \{hist_tex = icon_name}
-	if GotParam \{save_cap}
-		create_menu_backdrop \{texture = song_summary_bg_lo_z}
-		save_slots_create_logo_preview
-		CreateScreenElement \{type = SpriteElement
-			parent = image_preview_container
+	if gotparam \{save_cap}
+		create_menu_backdrop \{texture = 0x6a4c3519}
+		0x37c74dec
+		createscreenelement \{type = spriteelement
+			parent = 0x7c19d7b6
 			dims = (222.0, 222.0)
 			pos = (100.0, 100.0)
 			texture = logo_bg
 			alpha = 0.3
 			z_priority = 0.5
-			rgba = GH51_red_lt}
+			rgba = 0x8d470aac}
 	endif
-	if GotParam \{cam_name}
+	if gotparam \{cam_name}
 		spawnscriptnow task_menu_default_anim_in params = {base_name = <cam_name>}
 	endif
 endscript
 
 script ui_cas_text_entry_helper_text 
-	add_user_control_helper \{text = qs("ACCEPT")
+	add_user_control_helper \{text = qs(0xb73cb78f)
 		button = green
 		z = 100000
 		all_buttons}
-	add_user_control_helper \{text = qs("CANCEL")
+	add_user_control_helper \{text = qs(0xf7723015)
 		button = red
 		z = 100000}
-	add_user_control_helper \{text = qs("ADD LETTER")
-		button = Yellow
+	add_user_control_helper \{text = qs(0x09758c70)
+		button = yellow
 		z = 100000}
-	add_user_control_helper \{text = qs("BACKSPACE")
-		button = Blue
+	add_user_control_helper \{text = qs(0x1c2cd639)
+		button = blue
 		z = 100000}
-	add_user_control_helper \{text = qs("CAPS")
-		button = Orange
+	add_user_control_helper \{text = qs(0xa3503d64)
+		button = orange
 		z = 100000}
 endscript
 
@@ -100,22 +100,22 @@ script ui_return_cas_text_entry
 endscript
 
 script ui_destroy_cas_text_entry 
-	if ScreenElementExists \{id = generic_menu}
-		DestroyScreenElement \{id = generic_menu}
+	if screenelementexists \{id = generic_menu}
+		destroyscreenelement \{id = generic_menu}
 	endif
 	generic_ui_destroy
-	if ScreenElementExists \{id = name_entry}
-		DestroyScreenElement \{id = name_entry}
+	if screenelementexists \{id = name_entry}
+		destroyscreenelement \{id = name_entry}
 	endif
-	save_slots_destroy_logo_preview
+	0xa00c6b0d
 	destroy_menu_backdrop
 endscript
 
 script lock_to_text_entry 
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = current_menu
 		data = {
 			child_index = 0
 		}}
-	LaunchEvent \{type = pad_choose}
+	launchevent \{type = pad_choose}
 endscript

@@ -1,4 +1,4 @@
-ui_band_mode_controllers_remaped = 0
+0x2ab1f1ab = 0
 band_mode_mode = none
 band_mode_actual_devices = [
 	0
@@ -37,8 +37,8 @@ players_in_uistate = [
 	0
 	0
 ]
-band_mode_vocalist_num = -1
-vocalist_using_guitar = 0
-vocalist_controlling_menu = -1
-band_mode_vocalist_menu = 0
+0xf8aac4ed = -1
+0xa53d906e = 0
+0x81bfdc7e = -1
+0xdb92eeef = 0
 ui_band_mode_hit_force_completion = 0

@@ -1,7 +1,7 @@
 
 script create_video_settings_menu \{popup = 0}
 	kill_start_key_binding
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = current_menu_anchor
 		pos = (0.0, 0.0)}
@@ -14,7 +14,7 @@ script create_video_settings_menu \{popup = 0}
 			spacing = 8
 			text_left
 			no_focus = 0}
-		current_menu :SetProps \{event_handlers = [
+		current_menu :setprops \{event_handlers = [
 				{
 					pad_back
 					generic_event_back
@@ -33,7 +33,7 @@ script create_video_settings_menu \{popup = 0}
 				135
 				255
 			]}
-		displayText \{parent = current_menu_anchor
+		displaytext \{parent = current_menu_anchor
 			pos = (800.0, 550.0)
 			just = [
 				center
@@ -49,13 +49,13 @@ script create_video_settings_menu \{popup = 0}
 			]
 			font = $video_settings_menu_font
 			noshadow}
-		GetScreenElementDims id = <id>
+		getscreenelementdims id = <id>
 		if (<width> > 375)
-			SetScreenElementProps id = <id> scale = 1
-			fit_text_in_rectangle id = <id> dims = ((400.0, 0.0) + <Height> * (0.0, 1.0))
+			setscreenelementprops id = <id> scale = 1
+			fit_text_in_rectangle id = <id> dims = ((400.0, 0.0) + <height> * (0.0, 1.0))
 		endif
 		create_menu_backdrop \{texture = menu_venue_bg}
-		displaySprite \{parent = current_menu_anchor
+		displaysprite \{parent = current_menu_anchor
 			tex = options_video_poster
 			pos = (640.0, 360.0)
 			dims = (1024.0, 512.0)
@@ -65,8 +65,8 @@ script create_video_settings_menu \{popup = 0}
 			]
 			z = 1
 			font = $video_settings_menu_font}
-		GetGlobalTags \{user_options}
-		displaySprite \{parent = current_menu_anchor
+		getglobaltags \{user_options}
+		displaysprite \{parent = current_menu_anchor
 			id = vom_hilite
 			tex = white
 			pos = (285.0, 415.0)
@@ -78,19 +78,19 @@ script create_video_settings_menu \{popup = 0}
 			]
 			dims = (280.0, 40.0)
 			z = 2}
-		add_user_control_helper \{text = qs("SELECT")
+		add_user_control_helper \{text = qs(0xc18d5e76)
 			button = green
 			z = 100
 			all_buttons}
-		add_user_control_helper \{text = qs("BACK")
+		add_user_control_helper \{text = qs(0xaf4d5dd2)
 			button = red
 			z = 100}
-		add_user_control_helper \{text = qs("UP/DOWN")
+		add_user_control_helper \{text = qs(0x643800a7)
 			button = strumbar
 			z = 100}
 		text_params = {
 			parent = current_menu
-			type = TextElement
+			type = textelement
 			font = $video_settings_menu_font
 			rgba = ($menu_unfocus_color)
 			scale = 0.85
@@ -100,21 +100,21 @@ script create_video_settings_menu \{popup = 0}
 	else
 		z = 100
 		new_menu scrollid = current_scroll vmenuid = current_menu menu_pos = (0.0, 340.0) exclusive_device = ($last_start_pressed_device)
-		current_menu :SetProps \{event_handlers = [
+		current_menu :setprops \{event_handlers = [
 				{
 					pad_back
 					generic_event_back
 				}
 			]
 			replace_handlers}
-		SetScreenElementProps \{id = current_menu
+		setscreenelementprops \{id = current_menu
 			dims = (1280.0, 720.0)
 			internal_just = [
 				center
 				top
 			]}
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			font = ($video_settings_menu_font)
 			parent = current_scroll
 			pos = (640.0, -90.0)
@@ -125,43 +125,43 @@ script create_video_settings_menu \{popup = 0}
 			z_priority = <z>
 		}
 		create_pause_menu_frame z = (<z> - 10)
-		calibrate_text = qs("CALIBRATE LAG")
-		text_params = {parent = current_vmenu type = TextElement font = ($audio_settings_menu_font) rgba = ($menu_unfocus_color) scale = 1 z_priority = <z>}
+		calibrate_text = qs(0x550b8c8e)
+		text_params = {parent = current_vmenu type = textelement font = ($audio_settings_menu_font) rgba = ($menu_unfocus_color) scale = 1 z_priority = <z>}
 		<exclusive_params> = {exclusive_device = ($last_start_pressed_device)}
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			parent = current_menu_anchor
 			texture = menu_pause_frame_banner
 			pos = (640.0, 540.0)
 			just = [center center]
 			z_priority = (<z> + 100)
 		}
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = <id>
-			text = qs("PAUSED")
+			text = qs(0x662aaaf7)
 			font = text_a6
 			pos = (125.0, 53.0)
 			rgba = [170 90 30 255]
 			scale = 0.8
 		}
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		<text_params>
-		text = qs("Calibrate Lag")
+		text = qs(0xdc79581d)
 		event_handlers = [
 			{focus vom_focus params = {item = calibrate popup = <popup>}}
 			{unfocus vom_unfocus params = {item = calibrate popup = <popup>}}
-			{pad_choose generic_event_choose params = {state = UIstate_options_calibrate_lag}}
+			{pad_choose generic_event_choose params = {state = uistate_options_calibrate_lag}}
 		]
 		<exclusive_params>
 	}
-	<id> :SetTags hilite_pos = (285.0, 407.0)
-	GetScreenElementDims id = <id>
-	<id> :SetTags hilite_dims = (<width> * (1.1, 0.0) + (55.0, 40.0))
+	<id> :settags hilite_pos = (285.0, 407.0)
+	getscreenelementdims id = <id>
+	<id> :settags hilite_dims = (<width> * (1.1, 0.0) + (55.0, 40.0))
 	if isps2
 		get_string_ps2 \{message = widescreen_string}
-		CreateScreenElement {
+		createscreenelement {
 			<text_params>
 			text = <localized_string>
 			event_handlers = [
@@ -170,27 +170,27 @@ script create_video_settings_menu \{popup = 0}
 				{pad_choose menu_video_settings_select_widescreen}
 			]
 		}
-		<id> :SetTags hilite_pos = (285.0, 448.0)
-		GetScreenElementDims id = <id>
-		<id> :SetTags hilite_dims = (<width> * (1.1, 0.0) + (55.0, 40.0))
+		<id> :settags hilite_pos = (285.0, 448.0)
+		getscreenelementdims id = <id>
+		<id> :settags hilite_dims = (<width> * (1.1, 0.0) + (55.0, 40.0))
 		if (<ps2_widescreen> = 1)
-			displaySprite \{parent = current_menu_anchor
+			displaysprite \{parent = current_menu_anchor
 				id = widescrn_check
 				tex = options_video_on
 				pos = (300.0, 450.0)
 				dims = (32.0, 32.0)
 				z = 6}
 		else
-			displaySprite \{parent = current_menu_anchor
+			displaysprite \{parent = current_menu_anchor
 				id = widescrn_check
 				tex = options_video_off
 				pos = (300.0, 450.0)
 				dims = (32.0, 32.0)
 				z = 6}
 		endif
-		if NOT IsPAL
+		if NOT ispal
 			get_string_ps2 \{message = progressivescan_string}
-			CreateScreenElement {
+			createscreenelement {
 				<text_params>
 				text = <localized_string>
 				event_handlers = [
@@ -199,18 +199,18 @@ script create_video_settings_menu \{popup = 0}
 					{pad_choose menu_video_settings_select_progressive_scan}
 				]
 			}
-			<id> :SetTags hilite_pos = (285.0, 489.0)
-			GetScreenElementDims id = <id>
-			<id> :SetTags hilite_dims = (<width> * (1.1, 0.0) + (55.0, 40.0))
-			if ($PS2_ProgressiveScan = 1)
-				displaySprite \{parent = current_menu_anchor
+			<id> :settags hilite_pos = (285.0, 489.0)
+			getscreenelementdims id = <id>
+			<id> :settags hilite_dims = (<width> * (1.1, 0.0) + (55.0, 40.0))
+			if ($ps2_progressivescan = 1)
+				displaysprite \{parent = current_menu_anchor
 					id = prgscn_check
 					tex = options_video_on
 					pos = (300.0, 490.0)
 					dims = (32.0, 32.0)
 					z = 6}
 			else
-				displaySprite \{parent = current_menu_anchor
+				displaysprite \{parent = current_menu_anchor
 					id = prgscn_check
 					tex = options_video_off
 					pos = (300.0, 490.0)
@@ -233,11 +233,11 @@ endscript
 script vom_focus 
 	retail_menu_focus
 	if (<popup> = 0)
-		GetTags
-		<id> :GetTags
-		if ScreenElementExists \{id = vom_hilite}
-			vom_hilite :SE_SetProps pos = <hilite_pos>
-			vom_hilite :SE_SetProps dims = <hilite_dims>
+		gettags
+		<id> :gettags
+		if screenelementexists \{id = vom_hilite}
+			vom_hilite :se_setprops pos = <hilite_pos>
+			vom_hilite :se_setprops dims = <hilite_dims>
 		endif
 	endif
 endscript
@@ -254,69 +254,69 @@ script menu_video_settings_select_calibrate_lag
 endscript
 
 script menu_video_settings_select_progressive_scan 
-	if ($PS2_ProgressiveScan = 1)
-		SetScreenElementProps \{id = prgscn_check
+	if ($ps2_progressivescan = 1)
+		setscreenelementprops \{id = prgscn_check
 			texture = options_video_off
 			dims = (32.0, 32.0)}
-		change \{PS2_ProgressiveScan = 0}
-		SetProgressive \{on = 0}
+		change \{ps2_progressivescan = 0}
+		setprogressive \{on = 0}
 	else
 		current_flow_state_name = ($ui_flow_manager_state [0])
 		change ps2_saveload_successor = <current_flow_state_name>
-		HACK_ps2_set_saveload_successor_checksum <current_flow_state_name>
+		hack_ps2_set_saveload_successor_checksum <current_flow_state_name>
 		previous_flow_state_name = ($previous_flow_manager_state [0])
-		ui_flow_HACK_previous_state = <previous_flow_state_name>
+		ui_flow_hack_previous_state = <previous_flow_state_name>
 		ui_flow_manager_respond_to_action \{action = select_progressive_scan}
 	endif
 endscript
 
 script menu_video_settings_select_widescreen 
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<ps2_widescreen> = 1)
-		SetScreenElementProps \{id = widescrn_check
+		setscreenelementprops \{id = widescrn_check
 			texture = options_video_off
 			dims = (32.0, 32.0)}
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				ps2_widescreen = 0
 			}}
-		SetScreen \{widescreen = 0}
+		setscreen \{widescreen = 0}
 	else
-		SetScreenElementProps \{id = widescrn_check
+		setscreenelementprops \{id = widescrn_check
 			texture = options_video_on}
-		SetScreenElementProps \{id = widescrn_check
+		setscreenelementprops \{id = widescrn_check
 			texture = options_video_on
 			dims = (32.0, 32.0)}
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				ps2_widescreen = 1
 			}}
-		SetScreen \{widescreen = 1}
+		setscreen \{widescreen = 1}
 	endif
 endscript
 ps2_waiting_on_progressive_scan = 0
 
 script ps2_cancel_progressive_scan 
 	change \{ps2_waiting_on_progressive_scan = 0}
-	change \{PS2_ProgressiveScan = 0}
-	SetProgressive \{on = 0}
+	change \{ps2_progressivescan = 0}
+	setprogressive \{on = 0}
 	ui_flow_manager_respond_to_action \{action = leave_warning_flow}
 endscript
 
 script ps2_try_progressive_scan 
 	change \{ps2_waiting_on_progressive_scan = 1}
-	change \{PS2_ProgressiveScan = 1}
-	SetProgressive \{on = 1}
+	change \{ps2_progressivescan = 1}
+	setprogressive \{on = 1}
 	refresh_ps2_trc_menu <...>
 	spawnscriptnow \{ps2_progressive_scan_timer}
 endscript
 
 script ps2_progressive_scan_timer 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = kill_oldest}
 	ps2_prog_timer = 0
 	begin
-	WaitOneGameFrame
+	waitonegameframe
 	if NOT ($ps2_waiting_on_progressive_scan = 1)
 		return
 	endif
@@ -329,7 +329,7 @@ script ps2_progressive_scan_timer
 endscript
 
 script ps2_accept_progressive_scan 
-	KillSpawnedScript \{name = ps2_progressive_scan_timer}
+	killspawnedscript \{name = ps2_progressive_scan_timer}
 	change \{ps2_waiting_on_progressive_scan = 0}
 	ui_flow_manager_respond_to_action \{action = leave_warning_flow}
 endscript

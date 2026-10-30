@@ -10,14 +10,14 @@ endscript
 script create_pausemenu_change_difficulty_confirm 
 	player_device = ($last_start_pressed_device)
 	create_dialog_box {
-		body_text = qs("Your difficulty has now been changed permanently until you change it again.")
+		body_text = qs(0xd3a2145f)
 		player_device = <player_device>
 		no_background
 		options = [
 			{
 				func = pausemenu_change_difficulty_confirm_ok
 				func_params = {<...>}
-				text = qs("OK")
+				text = qs(0x0e41fe46)
 			}
 		]
 	}
@@ -29,7 +29,7 @@ script pausemenu_change_difficulty_confirm_ok
 		player_device = ($last_start_pressed_device)
 		i = 1
 		begin
-		GetPlayerInfo <i> controller
+		getplayerinfo <i> controller
 		if (<controller> = <player_device>)
 			player = <i>
 			break
@@ -37,13 +37,13 @@ script pausemenu_change_difficulty_confirm_ok
 		i = (<i> + 1)
 		repeat ($current_num_players)
 	endif
-	if NOT (<vocalist_without_controller> = -1)
-		player = (<vocalist_without_controller> + 1)
+	if NOT (<0x3e8a7a4d> = -1)
+		player = (<0x3e8a7a4d> + 1)
 	endif
-	SetPlayerInfo <player> difficulty = <difficulty>
-	SetPlayerInfo <player> double_kick_drum = <double_kick>
-	if (<vocalist_without_controller> = -1)
-		SetArrayElement ArrayName = default_difficulty GlobalArray index = ($last_start_pressed_device) newvalue = <difficulty>
+	setplayerinfo <player> difficulty = <difficulty>
+	setplayerinfo <player> double_kick_drum = <double_kick>
+	if (<0x3e8a7a4d> = -1)
+		setarrayelement arrayname = default_difficulty globalarray index = ($last_start_pressed_device) newvalue = <difficulty>
 	endif
 	change \{should_reset_gig_posters_selection = 1}
 	restart_warning_select_restart player = <player>

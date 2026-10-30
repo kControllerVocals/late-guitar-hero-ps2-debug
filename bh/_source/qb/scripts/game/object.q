@@ -1,1 +1,1 @@
-DefaultMovingObjectSuspendDistance = 24
+defaultmovingobjectsuspenddistance = 24

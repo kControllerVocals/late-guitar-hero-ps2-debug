@@ -1,15 +1,15 @@
 
 script menu_soundevent_in 
-	if NOT GotParam \{base_name}
+	if NOT gotparam \{base_name}
 		return
 	endif
 	switch <base_name>
 		case 'setlist'
-		change \{crowd_in_Front_End_state = 1}
+		change \{crowd_in_front_end_state = 1}
 		case 'gig_posters'
-		change \{crowd_in_Front_End_state = 1}
+		change \{crowd_in_front_end_state = 1}
 		case 'select_instrument'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist_quit_warning'
 				case 'setlist'
@@ -17,38 +17,38 @@ script menu_soundevent_in
 			endswitch
 		endif
 		case 'select_difficulty'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'character_selection'
-				Menu_Music_Panning_Vol \{reset}
+				menu_music_panning_vol \{reset}
 				case 'singleplayer_character_hub'
-				Menu_Music_Panning_Vol \{reset}
+				menu_music_panning_vol \{reset}
 			endswitch
 		endif
 		case 'character_selection'
-		Menu_Music_Panning_Vol \{panandlowervol}
+		menu_music_panning_vol \{panandlowervol}
 		case 'singleplayer_character_hub'
-		Menu_Music_Panning_Vol \{panandlowervol}
+		menu_music_panning_vol \{panandlowervol}
 		case 'options_audio'
 		menu_music_fade \{out
 			volume = 10
 			time = 0.5}
 		case 'band_mode'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist'
 				spawnscriptnow \{menu_music_on}
 			endswitch
 		endif
 		case 'character_hub'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist'
 				spawnscriptnow \{menu_music_on}
 			endswitch
 		endif
 		case 'online'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'online_quit_warning'
 				spawnscriptnow \{menu_music_on}
@@ -56,10 +56,10 @@ script menu_soundevent_in
 		endif
 		case 'play_song'
 		if NOT ($game_mode = practice || $game_mode = tutorial || $game_mode = practice)
-			spawnscriptnow \{Loading_Screen_Crowd_Swell}
+			spawnscriptnow \{loading_screen_crowd_swell}
 		endif
 		case 'leaderboard_instrument'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist'
 				spawnscriptnow \{menu_music_on}
@@ -70,7 +70,7 @@ script menu_soundevent_in
 endscript
 
 script menu_soundevent_out 
-	if NOT GotParam \{base_name}
+	if NOT gotparam \{base_name}
 		return
 	endif
 	switch (<base_name>)
@@ -97,7 +97,7 @@ script menu_soundevent_out
 		return
 		case 'select_difficulty'
 
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
 		ui_event_get_stack
@@ -113,7 +113,7 @@ script menu_soundevent_out
 					return
 				endif
 			else
-				Menu_Music_Off
+				menu_music_off
 				return
 			endif
 		endif
@@ -132,12 +132,12 @@ script menu_soundevent_out
 
 		return
 		case 'cag_main'
-		if GotParam \{back}
+		if gotparam \{back}
 			if (<back> = 1)
 				if ((<instrument_info>.desc_id) = guitar)
-					SoundEvent \{event = Guitar_Affirmation}
-				elseif ((<instrument_info>.desc_id) = Bass)
-					SoundEvent \{event = Bass_Affirmation}
+					soundevent \{event = guitar_affirmation}
+				elseif ((<instrument_info>.desc_id) = bass)
+					soundevent \{event = bass_affirmation}
 				else
 
 				endif
@@ -147,20 +147,20 @@ script menu_soundevent_out
 
 		return
 		case 'gig_posters'
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
-		Menu_Music_Off
+		menu_music_off
 		case 'cadrm_main'
-		if GotParam \{back}
+		if gotparam \{back}
 			if (<back> = 1)
-				SoundEvent \{event = Drum_Affirmation}
+				soundevent \{event = drum_affirmation}
 			endif
 		endif
 		case 'customize_character_mic'
-		if GotParam \{back}
+		if gotparam \{back}
 			if (<back> = 1)
-				SoundEvent \{event = Mic_Affirmation}
+				soundevent \{event = mic_affirmation}
 			endif
 		endif
 		case 'options_audio'

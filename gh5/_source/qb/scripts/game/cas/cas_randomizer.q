@@ -1,69 +1,69 @@
 cas_randomized_parts = [
 	{
-		part = CAS_Torso
+		part = cas_torso
 	}
 	{
-		part = CAS_Legs
+		part = cas_legs
 	}
 	{
-		part = CAS_Shoes
+		part = cas_shoes
 	}
 	{
-		part = CAS_Hat
+		part = cas_hat
 	}
 	{
-		part = CAS_Hair
+		part = cas_hair
 	}
 	{
-		part = CAS_Facial_Hair
+		part = cas_facial_hair
 	}
 	{
-		part = CAS_Acc_Left
+		part = cas_acc_left
 	}
 	{
-		part = CAS_Acc_Right
+		part = cas_acc_right
 	}
 	{
-		part = CAS_Acc_Face
+		part = cas_acc_face
 	}
 	{
-		part = CAS_Acc_Ears
+		part = cas_acc_ears
 	}
 	{
-		part = CAS_Intro_Anim
+		part = cas_intro_anim
 	}
 	{
-		part = CAS_Win_Anim
+		part = cas_win_anim
 	}
 	{
-		part = CAS_Lose_Anim
+		part = cas_lose_anim
 	}
 	{
-		part = CAS_Teeth
+		part = cas_teeth
 	}
 	{
-		part = CAS_Eyes
+		part = cas_eyes
 	}
 	{
-		part = CAS_Drums_Highway
+		part = cas_drums_highway
 	}
 	{
-		part = CAS_Guitar_Highway
+		part = cas_guitar_highway
 	}
 	{
-		part = CAS_Bass_Highway
+		part = cas_bass_highway
 	}
 ]
 cas_randomized_presets_car = [
 	{
-		part = CAS_Body
+		part = cas_body
 		female_array = cas_preset_face_skin_female
 		male_array = cas_preset_face_skin_male
 	}
 ]
 cas_randomized_presets_cpu_band = [
 	{
-		part = CAS_Body
+		part = cas_body
 		female_array = cas_preset_face_skin_female
 		male_array = cas_preset_face_skin_male
 	}
@@ -73,7 +73,7 @@ cas_randomized_presets_cpu_band = [
 		male_array = cas_preset_body_male
 	}
 	{
-		part = CAS_Body
+		part = cas_body
 		female_array = cas_preset_tattoo_female
 		male_array = cas_preset_tattoo_male
 	}
@@ -82,13 +82,13 @@ cas_randomized_instruments = {
 	guitar = {
 		array = cas_preset_guitars
 	}
-	Bass = {
+	bass = {
 		array = cas_preset_basses
 	}
 	drum = {
 		array = cas_preset_drums
 	}
-	Vocals = {
+	vocals = {
 		male_array = cas_preset_male_vocals
 		female_array = cas_preset_female_vocals
 	}
@@ -100,14 +100,14 @@ randomize_from_cai_menu = 0
 
 script cas_set_random_appearance 
 
-	if GotParam \{make_unique_band}
+	if gotparam \{make_unique_band}
 		band_builder_get_used_parts make_unique_band = <make_unique_band>
 		change cas_band_used_parts = <used_parts>
 	else
 		change \{cas_band_used_parts = {
 			}}
 	endif
-	if GotParam \{cpu_band}
+	if gotparam \{cpu_band}
 		change \{cpu_random_character = 1}
 	else
 		change \{cpu_random_character = 0}
@@ -115,13 +115,13 @@ script cas_set_random_appearance
 	stars
 
 	stars
-	GetArraySize \{$cas_randomized_parts}
+	getarraysize \{$cas_randomized_parts}
 	i = 0
 	begin
 	cas_set_random_appearance_part part_struct = ($cas_randomized_parts [<i>]) genre = <genre>
 	i = (<i> + 1)
 	repeat <array_size>
-	GetArraySize \{$cas_randomized_parts}
+	getarraysize \{$cas_randomized_parts}
 	i = 0
 	begin
 	cas_set_random_color_part part_struct = ($cas_randomized_parts [<i>]) genre = <genre>
@@ -130,45 +130,45 @@ script cas_set_random_appearance
 	cas_propogate_hair_color
 	get_is_female_from_appearance \{appearance = $cas_current_appearance}
 	if (<is_female> = 1)
-		unload_pak_after = 0
-		if NOT load_part_desc_pak \{part_type = CAS_Female_Base_Torso}
-			unload_pak_after = 1
+		0x5a95f6d5 = 0
+		if NOT load_part_desc_pak \{part_type = cas_female_base_torso}
+			0x5a95f6d5 = 1
 		endif
-		EditCASAppearance \{target = SetPart
-			targetParams = {
-				part = CAS_Female_Base_Torso
+		editcasappearance \{target = setpart
+			targetparams = {
+				part = cas_female_base_torso
 				desc_id = female_full
 			}}
-		cas_set_random_appearance_part part_struct = {part = CAS_Eye_Makeup} genre = <genre>
-		cas_set_random_appearance_part part_struct = {part = CAS_Lip_Makeup} genre = <genre>
-		cas_set_random_color_part part_struct = {part = CAS_Lip_Makeup} genre = <genre>
+		cas_set_random_appearance_part part_struct = {part = cas_eye_makeup} genre = <genre>
+		cas_set_random_appearance_part part_struct = {part = cas_lip_makeup} genre = <genre>
+		cas_set_random_color_part part_struct = {part = cas_lip_makeup} genre = <genre>
 	else
-		unload_pak_after = 0
-		if NOT load_part_desc_pak \{part_type = CAS_Male_Base_Torso}
-			unload_pak_after = 1
+		0x5a95f6d5 = 0
+		if NOT load_part_desc_pak \{part_type = cas_male_base_torso}
+			0x5a95f6d5 = 1
 		endif
-		EditCASAppearance \{target = SetPart
-			targetParams = {
-				part = CAS_Male_Base_Torso
+		editcasappearance \{target = setpart
+			targetparams = {
+				part = cas_male_base_torso
 				desc_id = male_full
 			}}
-		if (<unload_pak_after> = 1)
-			unload_part_desc_pak \{part_type = CAS_Male_Base_Torso}
+		if (<0x5a95f6d5> = 1)
+			unload_part_desc_pak \{part_type = cas_male_base_torso}
 		endif
 	endif
-	if GotParam \{cpu_band}
-		ForEachIn $cas_randomized_presets_cpu_band do = cas_do_randomize_presets params = {is_female = <is_female> genre = <genre>}
+	if gotparam \{cpu_band}
+		foreachin $cas_randomized_presets_cpu_band do = cas_do_randomize_presets params = {is_female = <is_female> genre = <genre>}
 		cas_set_random_physique
-	elseif GotParam \{new_car_character}
-		ForEachIn $cas_randomized_presets_car do = cas_do_randomize_presets params = {is_female = <is_female> genre = <genre>}
+	elseif gotparam \{new_car_character}
+		foreachin $cas_randomized_presets_car do = cas_do_randomize_presets params = {is_female = <is_female> genre = <genre>}
 	endif
-	cas_propogate_color_to_other_parts \{part = CAS_Body
+	cas_propogate_color_to_other_parts \{part = cas_body
 		other_parts = $ps2_fleshy_parts_array}
-	if GotParam \{random_instruments}
+	if gotparam \{random_instruments}
 		cas_merge_in_random_entry entry = ($cas_randomized_instruments.guitar) is_female = <is_female> genre = <genre>
-		cas_merge_in_random_entry entry = ($cas_randomized_instruments.Bass) is_female = <is_female> genre = <genre>
+		cas_merge_in_random_entry entry = ($cas_randomized_instruments.bass) is_female = <is_female> genre = <genre>
 		cas_merge_in_random_entry entry = ($cas_randomized_instruments.drum) is_female = <is_female> genre = <genre>
-		cas_merge_in_random_entry entry = ($cas_randomized_instruments.Vocals) is_female = <is_female> genre = <genre>
+		cas_merge_in_random_entry entry = ($cas_randomized_instruments.vocals) is_female = <is_female> genre = <genre>
 	endif
 	old_appearance = ($cas_current_appearance)
 	change cas_current_appearance = {<old_appearance> genre = <genre>}
@@ -176,51 +176,51 @@ endscript
 
 script cas_set_random_appearance_part 
 	part = (<part_struct>.part)
-	if NOT ResolveBodySpecificPartInAppearance part = <part>
-		if NOT FilterPartByInstrument part = <part> instrument = none
+	if NOT resolvebodyspecificpartinappearance part = <part>
+		if NOT filterpartbyinstrument part = <part> instrument = none
 			return
 		endif
 	endif
 	if cas_pick_random_part part_name = <part> genre = <genre> category = <category>
 		desc_id = (<random_part>.desc_id)
 		cas_handle_disqualifications part = <part> desc_id = <desc_id>
-		if GotParam \{new_desc_id}
+		if gotparam \{new_desc_id}
 			desc_id = <new_desc_id>
 		endif
-		EditCASAppearance target = SetPart targetParams = {part = <part> desc_id = <desc_id>}
+		editcasappearance target = setpart targetparams = {part = <part> desc_id = <desc_id>}
 	endif
 endscript
 
 script cas_random_should_include_part 
-	if GotParam \{category}
+	if gotparam \{category}
 		if (<category> = esp)
-			if NOT StructureContains Structure = ($<part_name> [<i>]) is_esp
+			if NOT structurecontains structure = ($<part_name> [<i>]) is_esp
 				return \{false}
 			endif
-			if StructureContains Structure = ($<part_name> [<i>]) Is_Metallica
+			if structurecontains structure = ($<part_name> [<i>]) is_metallica
 				return \{false}
 			endif
 		elseif (<category> = gh)
-			if StructureContains Structure = ($<part_name> [<i>]) is_esp
+			if structurecontains structure = ($<part_name> [<i>]) is_esp
 				return \{false}
 			endif
-			if StructureContains Structure = ($<part_name> [<i>]) Is_Metallica
+			if structurecontains structure = ($<part_name> [<i>]) is_metallica
 				return \{false}
 			endif
 		endif
 	endif
-	if StructureContains Structure = ($<part_name> [<i>]) exclusive
+	if structurecontains structure = ($<part_name> [<i>]) exclusive
 		return \{false}
 	endif
-	if StructureContains Structure = ($<part_name> [<i>]) hidden
+	if structurecontains structure = ($<part_name> [<i>]) hidden
 		return \{false}
 	endif
 	random_weight = 1.0
-	if StructureContains Structure = ($<part_name> [<i>]) random_weight
+	if structurecontains structure = ($<part_name> [<i>]) random_weight
 		random_weight = (($<part_name> [<i>]).random_weight)
 	endif
 	if ($cpu_random_character = 1)
-		if StructureContains Structure = ($<part_name> [<i>]) random_weight_cpu
+		if structurecontains structure = ($<part_name> [<i>]) random_weight_cpu
 			random_weight = (($<part_name> [<i>]).random_weight_cpu)
 		endif
 	endif
@@ -228,8 +228,8 @@ script cas_random_should_include_part
 		return \{false}
 	endif
 	if NOT (<genre> = any)
-		if StructureContains Structure = ($<part_name> [<i>]) genre
-			if NOT ArrayContains array = (($<part_name> [<i>]).genre) contains = <genre>
+		if structurecontains structure = ($<part_name> [<i>]) genre
+			if NOT arraycontains array = (($<part_name> [<i>]).genre) contains = <genre>
 				return \{false}
 			endif
 		endif
@@ -244,9 +244,9 @@ script cas_random_should_include_part
 		endif
 	endif
 	if (<make_unique> = 1)
-		if StructureContains Structure = $cas_band_used_parts <part_name>
+		if structurecontains structure = $cas_band_used_parts <part_name>
 			if NOT (<desc_id> = none)
-				if ArrayContains array = ($cas_band_used_parts.<part_name>) contains = <desc_id>
+				if arraycontains array = ($cas_band_used_parts.<part_name>) contains = <desc_id>
 					return \{false}
 				endif
 			endif
@@ -261,7 +261,7 @@ endscript
 script cas_create_filtered_parts_array 
 
 	filtered_array = []
-	GetArraySize $<part_name>
+	getarraysize $<part_name>
 	i = 0
 	begin
 	if cas_random_should_include_part {
@@ -281,10 +281,10 @@ endscript
 
 script cas_pick_random_part 
 	cas_create_filtered_parts_array part_name = <part_name> genre = <genre> make_unique = 1 category = <category>
-	GetArraySize <filtered_array>
+	getarraysize <filtered_array>
 	if (<array_size> = 0)
 		cas_create_filtered_parts_array part_name = <part_name> genre = <genre> make_unique = 0
-		GetArraySize <filtered_array>
+		getarraysize <filtered_array>
 		if (<array_size> = 0)
 			cas_create_filtered_parts_array part_name = <part_name> genre = any make_unique = 0
 		endif
@@ -296,13 +296,13 @@ script cas_pick_random_part
 endscript
 
 script cas_pick_from_weighted_array 
-	GetArraySize <weighted_array>
+	getarraysize <weighted_array>
 	if (<array_size> > 0)
 		cas_get_total_random_weight array = <weighted_array> cas_pieces = <cas_pieces>
-		GetRandomValue name = rand_val a = 0.0 b = <total_weight> resolution = 10000
+		getrandomvalue name = rand_val a = 0.0 b = <total_weight> resolution = 10000
 		i = 0
 		begin
-		if GotParam \{cas_pieces}
+		if gotparam \{cas_pieces}
 			random_weight = ((<weighted_array> [<i>]).random_weight)
 		else
 			cas_get_random_weight part = (<weighted_array> [<i>])
@@ -325,12 +325,12 @@ endscript
 
 script cas_get_random_weight 
 	if ($cpu_random_character = 1)
-		if StructureContains Structure = <part> random_weight_cpu
+		if structurecontains structure = <part> random_weight_cpu
 
 			return random_weight = (<part>.random_weight_cpu)
 		endif
 	endif
-	if StructureContains Structure = <part> random_weight
+	if structurecontains structure = <part> random_weight
 		return random_weight = (<part>.random_weight)
 	endif
 	return \{random_weight = 1.0}
@@ -338,9 +338,9 @@ endscript
 
 script cas_get_total_random_weight 
 	total = 0.0
-	GetArraySize <array>
+	getarraysize <array>
 	i = 0
-	if GotParam \{cas_pieces}
+	if gotparam \{cas_pieces}
 		begin
 		total = (<total> + ((<array> [<i>]).random_weight))
 		i = (<i> + 1)
@@ -357,19 +357,19 @@ endscript
 
 script cas_set_random_color_part 
 	part = (<part_struct>.part)
-	if (<part> = CAS_Facial_Hair)
+	if (<part> = cas_facial_hair)
 		return
 	endif
-	ResolveBodySpecificPartInAppearance part = <part>
-	if GetCASAppearancePart part = <part>
-		if GetCASPartMaterials part = <part>
-			GetArraySize <part_materials>
+	resolvebodyspecificpartinappearance part = <part>
+	if getcasappearancepart part = <part>
+		if getcaspartmaterials part = <part>
+			getarraysize <part_materials>
 			i = 0
 			begin
 			if cas_pick_random_color part = <part> desc_id = <desc_id> genre = <genre>
-				SetCASAppearanceMaterial part = <part> material = (<part_materials> [<i>]) value = <color>
-				if (<part> = CAS_Male_Hair)
-					set_facial_hair_color part = CAS_Male_Facial_Hair color = <color>
+				setcasappearancematerial part = <part> material = (<part_materials> [<i>]) value = <color>
+				if (<part> = cas_male_hair)
+					set_facial_hair_color part = cas_male_facial_hair color = <color>
 				endif
 			endif
 			i = (<i> + 1)
@@ -379,12 +379,12 @@ script cas_set_random_color_part
 endscript
 
 script set_facial_hair_color 
-	if GetCASAppearancePart part = <part>
-		if GetCASPartMaterials part = <part>
-			GetArraySize <part_materials>
+	if getcasappearancepart part = <part>
+		if getcaspartmaterials part = <part>
+			getarraysize <part_materials>
 			i = 0
 			begin
-			SetCASAppearanceMaterial part = <part> material = (<part_materials> [<i>]) value = <color>
+			setcasappearancematerial part = <part> material = (<part_materials> [<i>]) value = <color>
 			i = (<i> + 1)
 			repeat <array_size>
 		endif
@@ -392,16 +392,16 @@ script set_facial_hair_color
 endscript
 
 script cas_can_pick_random_color 
-	if GotParam \{desc_id}
-		GetActualCASOptionStruct part = <part> desc_id = <desc_id>
-		if GotParam \{random_colors}
+	if gotparam \{desc_id}
+		getactualcasoptionstruct part = <part> desc_id = <desc_id>
+		if gotparam \{random_colors}
 			return true rand_colors = (<random_colors>)
-		elseif GotParam \{force_random}
-			GetArraySize \{$cas_randomized_parts}
+		elseif gotparam \{force_random}
+			getarraysize \{$cas_randomized_parts}
 			i = 0
 			begin
-			if ChecksumEquals a = (($cas_randomized_parts [<i>]).part) b = <part>
-				if StructureContains Structure = ($cas_randomized_parts [<i>]) force_random_colors
+			if checksumequals a = (($cas_randomized_parts [<i>]).part) b = <part>
+				if structurecontains structure = ($cas_randomized_parts [<i>]) force_random_colors
 					return true rand_colors = (($cas_randomized_parts [<i>]).force_random_colors)
 				endif
 				return \{false}
@@ -418,7 +418,7 @@ script cas_pick_random_color
 		cas_filter_random_presets_by_genre array = <rand_colors> genre = <genre>
 		if cas_pick_from_weighted_array weighted_array = <filtered_array>
 			color_entry = (<filtered_array> [<random_index>])
-			if StructureContains Structure = <color_entry> color
+			if structurecontains structure = <color_entry> color
 
 				return true color = (<color_entry>.color)
 			endif
@@ -438,11 +438,11 @@ endscript
 
 script cas_filter_random_presets_by_category 
 
-	if StructureContains Structure = <entry> array
+	if structurecontains structure = <entry> array
 		if (<entry>.array = cas_preset_guitars)
-			part = CAS_Guitar_Body
+			part = cas_guitar_body
 		elseif (<entry>.array = cas_preset_basses)
-			part = CAS_Bass_Body
+			part = cas_bass_body
 		else
 			return filtered_array = <array>
 		endif
@@ -450,29 +450,29 @@ script cas_filter_random_presets_by_category
 		return filtered_array = <array>
 	endif
 	filtered_array = []
-	GetArraySize <array>
+	getarraysize <array>
 	if (<array_size> > 0)
-		unload_pak_after = 0
+		0x5a95f6d5 = 0
 		if NOT load_part_desc_pak part_type = <part>
-			unload_pak_after = 1
+			0x5a95f6d5 = 1
 		endif
 		i = 0
 		begin
 		okay = 1
 		<desc_id> = (<array> [<i>])
 		if (<category> = esp)
-			if NOT StructureContains Structure = (<desc_id>) is_esp
+			if NOT structurecontains structure = (<desc_id>) is_esp
 				<okay> = 0
 			endif
 		elseif (<category> = metallica)
-			if NOT StructureContains Structure = (<desc_id>) Is_Metallica
+			if NOT structurecontains structure = (<desc_id>) is_metallica
 				<okay> = 0
 			endif
 		else
-			if StructureContains Structure = (<desc_id>) is_esp
+			if structurecontains structure = (<desc_id>) is_esp
 				<okay> = 0
 			endif
-			if StructureContains Structure = (<desc_id>) Is_Metallica
+			if structurecontains structure = (<desc_id>) is_metallica
 				<okay> = 0
 			endif
 		endif
@@ -485,7 +485,7 @@ script cas_filter_random_presets_by_category
 				<okay> = 0
 			endif
 		endif
-		if StructureContains Structure = (<desc_id>) exclusive
+		if structurecontains structure = (<desc_id>) exclusive
 			<okay> = 0
 		endif
 		if (<okay> = 1)
@@ -495,7 +495,7 @@ script cas_filter_random_presets_by_category
 		endif
 		i = (<i> + 1)
 		repeat <array_size>
-		if (<unload_pak_after> = 1)
+		if (<0x5a95f6d5> = 1)
 			unload_part_desc_pak part_type = <part>
 		endif
 	endif
@@ -505,14 +505,14 @@ endscript
 script cas_filter_random_presets_by_genre 
 
 	filtered_array = []
-	GetArraySize <array>
+	getarraysize <array>
 	if (<array_size> > 0)
 		i = 0
 		begin
 		okay = 1
 		if NOT (<genre> = any)
-			if StructureContains Structure = (<array> [<i>]) genre
-				if NOT ArrayContains array = ((<array> [<i>]).genre) contains = <genre>
+			if structurecontains structure = (<array> [<i>]) genre
+				if NOT arraycontains array = ((<array> [<i>]).genre) contains = <genre>
 					okay = 0
 				endif
 			endif
@@ -537,47 +537,47 @@ script cas_do_randomize_presets
 	cas_filter_random_presets_by_genre array = $<array_name> genre = <genre>
 	if cas_pick_from_weighted_array weighted_array = <filtered_array>
 		existing_part = {}
-		if StructureContains Structure = $cas_current_appearance <part>
+		if structurecontains structure = $cas_current_appearance <part>
 			existing_part = ($cas_current_appearance.<part>)
 		endif
 		merge_in = (<filtered_array> [<random_index>])
-		if StructureContains Structure = <merge_in> cap_merge
+		if structurecontains structure = <merge_in> cap_merge
 			cas_merge_in_cap existing_part = <existing_part> cap_merge = (<merge_in>.cap_merge)
 		endif
 		existing_part = {<existing_part> <merge_in>}
-		UpdateStructElement struct = $cas_current_appearance element = <part> value = <existing_part>
+		updatestructelement struct = $cas_current_appearance element = <part> value = <existing_part>
 		change cas_current_appearance = <newstruct>
 	endif
 endscript
 
 script cas_merge_in_cap 
 	existing_cap = []
-	if StructureContains Structure = <existing_part> cap
+	if structurecontains structure = <existing_part> cap
 		existing_cap = (<existing_part>.cap)
 	endif
 	i = 0
-	GetArraySize <cap_merge>
+	getarraysize <cap_merge>
 	if (<array_size> > 0)
 		begin
 		cas_merge_in_cap_foreach existing_cap = <existing_cap> cap_entry = (<cap_merge> [<i>])
 		i = (<i> + 1)
 		repeat <array_size>
 	endif
-	GetArraySize <existing_cap>
+	getarraysize <existing_cap>
 	if (<array_size> = 0)
-		RemoveParameter \{existing_cap}
+		removeparameter \{existing_cap}
 	endif
 	return merge_in = {<existing_part> cap = <existing_cap>}
 endscript
 
 script cas_merge_in_cap_foreach 
-	if StructureContains Structure = <cap_entry> base_tex
+	if structurecontains structure = <cap_entry> base_tex
 		new_base_tex = (<cap_entry>.base_tex)
 		i = 0
-		GetArraySize <existing_cap>
+		getarraysize <existing_cap>
 		if (<array_size> > 0)
 			begin
-			if StructureContains Structure = (<existing_cap> [<i>]) base_tex
+			if structurecontains structure = (<existing_cap> [<i>]) base_tex
 				if ((<existing_cap> [<i>].base_tex) = <new_base_tex>)
 					return
 				endif
@@ -585,13 +585,13 @@ script cas_merge_in_cap_foreach
 			i = (<i> + 1)
 			repeat <array_size>
 		endif
-		AddArrayElement array = <existing_cap> element = <cap_entry>
+		addarrayelement array = <existing_cap> element = <cap_entry>
 		return existing_cap = <array>
 	endif
 endscript
 
 script cas_merge_in_random_entry 
-	if StructureContains Structure = <entry> female_array
+	if structurecontains structure = <entry> female_array
 		if (<is_female> = 1)
 			chosen_array = (<entry>.female_array)
 		else
@@ -600,47 +600,47 @@ script cas_merge_in_random_entry
 	else
 		chosen_array = (<entry>.array)
 	endif
-	if NOT GotParam \{category}
+	if NOT gotparam \{category}
 		category = Random (@ gh @ esp @ metallica )
 	endif
 	cas_filter_random_presets_by_category array = $<chosen_array> category = <category> entry = <entry>
 	cas_filter_random_presets_by_genre array = <filtered_array> genre = <genre>
 	if cas_pick_from_weighted_array weighted_array = <filtered_array>
 		merge_in = (<filtered_array> [<random_index>])
-		RemoveComponent \{structure_name = merge_in
+		removecomponent \{structure_name = merge_in
 			name = random_weight}
-		RemoveComponent \{structure_name = merge_in
+		removecomponent \{structure_name = merge_in
 			name = random_weight_cpu}
-		RemoveComponent \{structure_name = merge_in
+		removecomponent \{structure_name = merge_in
 			name = genre}
-		RemoveParameter \{struct_name = merge_in
+		removeparameter \{struct_name = merge_in
 			is_esp}
-		RemoveParameter \{struct_name = merge_in
-			Is_Metallica}
-		RemoveComponent \{structure_name = merge_in
+		removeparameter \{struct_name = merge_in
+			is_metallica}
+		removecomponent \{structure_name = merge_in
 			name = is_esp}
-		RemoveComponent \{structure_name = merge_in
-			name = Is_Metallica}
+		removecomponent \{structure_name = merge_in
+			name = is_metallica}
 		old_appearance = ($cas_current_appearance)
 		change cas_current_appearance = {<old_appearance> <merge_in>}
 	endif
 endscript
 
 script cas_random_band_name 
-	GetRandomArrayElement ($gh_random_band_names)
+	getrandomarrayelement ($gh_random_band_names)
 	return random_name = <element>
 endscript
 
 script cas_set_random_physique 
-	if NOT GetCASAppearancePart \{part = cas_physique}
+	if NOT getcasappearancepart \{part = cas_physique}
 
 	endif
-	if NOT GetActualCASOptionStruct part = cas_physique desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = cas_physique desc_id = <desc_id>
 
 	endif
 	cas_pick_from_weighted_array weighted_array = <preset_builds>
 	chosen = (<preset_builds> [<random_index>])
-	SetCASAppearanceAdditionalBones part = cas_physique additional_bone_transforms = (<chosen>.additional_bone_transforms)
+	setcasappearanceadditionalbones part = cas_physique additional_bone_transforms = (<chosen>.additional_bone_transforms)
 endscript
 
 script generate_random_instrument 
@@ -649,71 +649,71 @@ script generate_random_instrument
 	endif
 	ui_menu_select_sfx
 	cas_start_loading_anim \{player_index = 0}
-	Wait \{0.5
+	wait \{0.5
 		seconds}
 	change \{cpu_random_character = 0}
 	change \{cas_band_used_parts = {
 		}}
-	Randomize
+	randomize
 	switch <type>
 		case guitar
 		array = [
-			{part = CAS_Guitar_Body}
-			{part = CAS_Guitar_Strings}
-			{part = CAS_Guitar_Neck inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Head inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Pickguards inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Bridges inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Knobs inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Pickups inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Finish inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Body_Detail inc = CAS_Guitar_Body}
-			{part = cas_guitar_body_fade inc = CAS_Guitar_Body}
-			{part = CAS_Guitar_Neck_Finish inc = CAS_Guitar_Neck}
-			{part = CAS_Guitar_Head_Finish inc = CAS_Guitar_Head}
-			{part = CAS_Guitar_Head_Detail inc = CAS_Guitar_Head}
-			{part = cas_guitar_head_fade inc = CAS_Guitar_Head}
-			{part = CAS_Guitar_Pickguard_Finish inc = CAS_Guitar_Pickguards}
-			{part = cas_guitar_logo inc = CAS_Guitar_Body}
+			{part = cas_guitar_body}
+			{part = cas_guitar_strings}
+			{part = cas_guitar_neck inc = cas_guitar_body}
+			{part = cas_guitar_head inc = cas_guitar_body}
+			{part = cas_guitar_pickguards inc = cas_guitar_body}
+			{part = cas_guitar_bridges inc = cas_guitar_body}
+			{part = cas_guitar_knobs inc = cas_guitar_body}
+			{part = cas_guitar_pickups inc = cas_guitar_body}
+			{part = cas_guitar_finish inc = cas_guitar_body}
+			{part = cas_guitar_body_detail inc = cas_guitar_body}
+			{part = cas_guitar_body_fade inc = cas_guitar_body}
+			{part = cas_guitar_neck_finish inc = cas_guitar_neck}
+			{part = cas_guitar_head_finish inc = cas_guitar_head}
+			{part = cas_guitar_head_detail inc = cas_guitar_head}
+			{part = cas_guitar_head_fade inc = cas_guitar_head}
+			{part = cas_guitar_pickguard_finish inc = cas_guitar_pickguards}
+			{part = cas_guitar_logo inc = cas_guitar_body}
 		]
-		case Bass
+		case bass
 		array = [
-			{part = CAS_Bass_Body}
-			{part = CAS_Bass_Strings}
-			{part = CAS_Bass_Neck inc = CAS_Bass_Body}
-			{part = CAS_Bass_Head inc = CAS_Bass_Body}
-			{part = CAS_Bass_Pickguards inc = CAS_Bass_Body}
-			{part = CAS_Bass_Bridges inc = CAS_Bass_Body}
-			{part = CAS_Bass_Knobs inc = CAS_Bass_Body}
-			{part = CAS_Bass_Pickups inc = CAS_Bass_Body}
-			{part = CAS_Bass_Finish inc = CAS_Bass_Body}
-			{part = CAS_Bass_Body_Detail inc = CAS_Bass_Body}
-			{part = cas_bass_body_fade inc = CAS_Bass_Body}
-			{part = CAS_Bass_Neck_Finish inc = CAS_Bass_Neck}
-			{part = CAS_Bass_Head_Finish inc = CAS_Bass_Head}
-			{part = CAS_Bass_Head_Detail inc = CAS_Bass_Head}
-			{part = cas_bass_head_fade inc = CAS_Bass_Head}
-			{part = cas_bass_pickguard_finish inc = CAS_Bass_Pickguards}
-			{part = cas_guitar_logo inc = CAS_Bass_Body}
+			{part = cas_bass_body}
+			{part = cas_bass_strings}
+			{part = cas_bass_neck inc = cas_bass_body}
+			{part = cas_bass_head inc = cas_bass_body}
+			{part = cas_bass_pickguards inc = cas_bass_body}
+			{part = cas_bass_bridges inc = cas_bass_body}
+			{part = cas_bass_knobs inc = cas_bass_body}
+			{part = cas_bass_pickups inc = cas_bass_body}
+			{part = cas_bass_finish inc = cas_bass_body}
+			{part = cas_bass_body_detail inc = cas_bass_body}
+			{part = cas_bass_body_fade inc = cas_bass_body}
+			{part = cas_bass_neck_finish inc = cas_bass_neck}
+			{part = cas_bass_head_finish inc = cas_bass_head}
+			{part = cas_bass_head_detail inc = cas_bass_head}
+			{part = cas_bass_head_fade inc = cas_bass_head}
+			{part = cas_bass_pickguard_finish inc = cas_bass_pickguards}
+			{part = cas_guitar_logo inc = cas_bass_body}
 		]
 		case drum
 		array = [
-			{part = CAS_Drums}
-			{part = CAS_Drums_Sticks}
+			{part = cas_drums}
+			{part = cas_drums_sticks}
 			{part = cas_drums_sticks_l}
 			{part = cas_drums_sticks_r}
-			{part = CAS_Drum_Finish}
-			{part = CAS_Drum_Detail}
+			{part = cas_drum_finish}
+			{part = cas_drum_detail}
 		]
-		case Vocals
+		case vocals
 		array = [
-			{part = CAS_Mic}
-			{part = CAS_Mic_Stand}
+			{part = cas_mic}
+			{part = cas_mic_stand}
 		]
 	endswitch
-	ForEachIn <array> do = random_instrument_piece
-	if GotParam \{rebuild}
-		RebuildCurrentCASModel
+	foreachin <array> do = random_instrument_piece
+	if gotparam \{rebuild}
+		rebuildcurrentcasmodel
 	endif
 	cas_stop_loading_anim \{player_index = 0}
 endscript
@@ -723,10 +723,10 @@ script random_instrument_piece
 	<category> = gh
 	if ($randomize_from_cai_menu = 0)
 		if ($cag_instrument_type = guitar)
-			GetGlobalTags savegame = ($cas_current_savegame) cas_helper_dialogue param = guitar_category
+			getglobaltags savegame = ($cas_current_savegame) cas_helper_dialogue param = guitar_category
 			<category> = <guitar_category>
-		elseif ($cag_instrument_type = Bass)
-			GetGlobalTags savegame = ($cas_current_savegame) cas_helper_dialogue param = bass_category
+		elseif ($cag_instrument_type = bass)
+			getglobaltags savegame = ($cas_current_savegame) cas_helper_dialogue param = bass_category
 			<category> = <bass_category>
 		endif
 	else
@@ -735,17 +735,17 @@ script random_instrument_piece
 	if NOT random_instrument_piece_do_inclusions inc = <inc> part = <part>
 		cas_set_random_appearance_part part_struct = {part = <part>} genre = any category = <category>
 	endif
-	GetCASAppearancePart part = <part>
-	GetActualCASOptionStruct part = <part> desc_id = <desc_id>
-	if GotParam \{sections}
+	getcasappearancepart part = <part>
+	getactualcasoptionstruct part = <part> desc_id = <desc_id>
+	if gotparam \{sections}
 		num_found = 0
 
-		GetArraySize <sections>
+		getarraysize <sections>
 		if (<array_size> > 0)
 			i = 0
 			begin
 			desc_id = (<sections> [<i>].desc_id)
-			if ((<desc_id> = Finishes) || (<desc_id> = Details))
+			if ((<desc_id> = finishes) || (<desc_id> = details))
 				num_found = (<num_found> + 1)
 				if (<num_found> > 2)
 
@@ -754,19 +754,19 @@ script random_instrument_piece
 				mask = (<sections> [<i>].mask)
 				if cas_pick_from_weighted_array weighted_array = <mask>
 
-					FormatText checksumname = base_tex '%s' s = (<sections> [<i>].base_tex)
+					formattext checksumname = base_tex '%s' s = (<sections> [<i>].base_tex)
 					chosen_mask = (<mask> [<random_index>])
 
-					if NOT StructureContains Structure = (<sections> [<i>]) diffuse
+					if NOT structurecontains structure = (<sections> [<i>]) diffuse
 
 					endif
-					if NOT StructureContains Structure = (<sections> [<i>]) pre_userlayer
+					if NOT structurecontains structure = (<sections> [<i>]) pre_userlayer
 
 					endif
-					FixImagePath path = (<chosen_mask>.pattern)
+					fiximagepath path = (<chosen_mask>.pattern)
 					material = (<sections> [<i>].material)
 					new_cap_entry = 1
-					if GotParam \{last_base_tex}
+					if gotparam \{last_base_tex}
 						if (<last_base_tex> = <base_tex>)
 							new_cap_entry = 0
 							if NOT (<last_material> = <material>)
@@ -774,8 +774,8 @@ script random_instrument_piece
 							endif
 						endif
 					endif
-					if StructureContains Structure = <chosen_mask> no_color
-						RemoveParameter \{color}
+					if structurecontains structure = <chosen_mask> no_color
+						removeparameter \{color}
 					else
 						cas_pick_random_colorwheel
 					endif
@@ -786,7 +786,7 @@ script random_instrument_piece
 						color = <color>
 					}
 					if (<new_cap_entry> = 0)
-						CAP_array = [
+						cap_array = [
 							{
 								base_tex = <base_tex>
 								material = <material>
@@ -814,10 +814,10 @@ script random_instrument_piece
 								]
 							}
 						]
-						if GotParam \{CAP_array}
-							CAP_array = (<CAP_array> + <cap_entry>)
+						if gotparam \{cap_array}
+							cap_array = (<cap_array> + <cap_entry>)
 						else
-							CAP_array = <cap_entry>
+							cap_array = <cap_entry>
 						endif
 					endif
 					last_base_tex = <base_tex>
@@ -829,21 +829,21 @@ script random_instrument_piece
 			repeat <array_size>
 		endif
 	endif
-	if GotParam \{CAP_array}
-		SetCASAppearanceCAP part = <part> cap = <CAP_array>
+	if gotparam \{cap_array}
+		setcasappearancecap part = <part> cap = <cap_array>
 	else
-		SetCASAppearanceCAP part = <part>
+		setcasappearancecap part = <part>
 	endif
 
 endscript
 
 script random_instrument_piece_do_inclusions 
-	if GotParam \{inc}
-		GetCASAppearancePart part = <inc>
-		GetActualCASOptionStruct part = <inc> desc_id = <desc_id>
-		if GotParam \{inclusion}
+	if gotparam \{inc}
+		getcasappearancepart part = <inc>
+		getactualcasoptionstruct part = <inc> desc_id = <desc_id>
+		if gotparam \{inclusion}
 
-			GetArraySize <inclusion>
+			getarraysize <inclusion>
 			if (<array_size> > 0)
 				i = 0
 				begin
@@ -852,7 +852,7 @@ script random_instrument_piece_do_inclusions
 					array = (<inclusion> [<i>].valid)
 					trim_inclusion_array inclusion_array = <array> part = <part>
 					if random_instrument_pick_from_array array = <array>
-						EditCASAppearance target = SetPart targetParams = {part = <part> desc_id = <element>}
+						editcasappearance target = setpart targetparams = {part = <part> desc_id = <element>}
 						return \{true}
 					endif
 				endif
@@ -865,16 +865,16 @@ script random_instrument_piece_do_inclusions
 endscript
 
 script random_instrument_pick_from_array 
-	GetArraySize <array>
+	getarraysize <array>
 	if (<array_size> = 0)
 		return \{false}
 	endif
-	GetRandomArrayElement <array>
+	getrandomarrayelement <array>
 	return true element = <element>
 endscript
 
 script cas_piece_exists 
-	if GetActualCASOptionStruct part = <part> desc_id = <desc_id> dont_assert
+	if getactualcasoptionstruct part = <part> desc_id = <desc_id> dont_assert
 		return \{true}
 	endif
 	return \{false}
@@ -882,7 +882,7 @@ endscript
 
 script trim_inclusion_array 
 	array = []
-	GetArraySize <inclusion_array>
+	getarraysize <inclusion_array>
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -890,11 +890,11 @@ script trim_inclusion_array
 		if cas_piece_exists part = <part> desc_id = <valid_part>
 			if is_part_unlocked part = <part> desc_id = <valid_part> savegame = ($cas_current_savegame)
 				if is_part_purchased part = <part> desc_id = <valid_part> savegame = ($cas_current_savegame)
-					if ps2_GetActualCASOptionStruct_as_struct part = <part> desc_id = <valid_part>
-						if NOT (StructureContains Structure = <ps2_part_struct> hidden)
+					if ps2_getactualcasoptionstruct_as_struct part = <part> desc_id = <valid_part>
+						if NOT (structurecontains structure = <ps2_part_struct> hidden)
 							cas_get_random_weight part = <ps2_part_struct>
 							if (<random_weight> > 0.0)
-								AddArrayElement array = <array> element = <valid_part>
+								addarrayelement array = <array> element = <valid_part>
 							endif
 						endif
 					endif
@@ -908,9 +908,9 @@ script trim_inclusion_array
 endscript
 
 script cas_pick_random_colorwheel \{wheel = $guitar_colorwheel}
-	GetArraySize <wheel>
-	GetRandomValue name = index Integer a = 0 b = (<array_size> -1)
+	getarraysize <wheel>
+	getrandomvalue name = index integer a = 0 b = (<array_size> -1)
 	wheel_entry = (<wheel> [<index>])
-	GetRandomArrayElement <wheel_entry>
+	getrandomarrayelement <wheel_entry>
 	return color = <element>
 endscript

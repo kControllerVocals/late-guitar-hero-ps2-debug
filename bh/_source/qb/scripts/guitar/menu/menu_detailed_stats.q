@@ -31,11 +31,11 @@ script create_detailed_stats_menu
 	change right_column_y_end = ($initial_column_y_end)
 	change \{relative_screen_y_position = 0}
 	change center_column_x = (($left_column_x) + (0.5 * ($right_column_x - $left_column_x)))
-	notes_ratio = [qs("\L") qs("\L")]
-	sp_ratio = [qs("\L") qs("\L")]
-	avg_multiplier = [qs("\L") qs("\L")]
-	lead_percentage = [qs("\L") qs("\L")]
-	attacks_thrown = [qs("\L") qs("\L")]
+	notes_ratio = [qs(0x03ac90f0) qs(0x03ac90f0)]
+	sp_ratio = [qs(0x03ac90f0) qs(0x03ac90f0)]
+	avg_multiplier = [qs(0x03ac90f0) qs(0x03ac90f0)]
+	lead_percentage = [qs(0x03ac90f0) qs(0x03ac90f0)]
+	attacks_thrown = [qs(0x03ac90f0) qs(0x03ac90f0)]
 	p1_notes_hit = ($player1_status.notes_hit)
 	p1_notes_max = ($player1_status.total_notes)
 	p1_sp_phrases_hit = ($player1_status.sp_phrases_hit)
@@ -64,12 +64,12 @@ script create_detailed_stats_menu
 			endif
 		endif
 	endif
-	FormatText TextName = p1_notes_ratio qs("\L%a/%b") a = <p1_notes_hit> b = <p1_notes_max>
-	SetArrayElement ArrayName = notes_ratio index = 0 newvalue = <p1_notes_ratio>
-	FormatText TextName = p1_sp_ratio qs("\L%a/%b") a = <p1_sp_phrases_hit> b = <p1_sp_phrases_max>
-	SetArrayElement ArrayName = sp_ratio index = 0 newvalue = <p1_sp_ratio>
-	FormatText TextName = p1_avg_multiplier qs("\L%d X") d = <p1_avg_multiplier_val>
-	SetArrayElement ArrayName = avg_multiplier index = 0 newvalue = <p1_avg_multiplier>
+	formattext textname = p1_notes_ratio qs(0x953baf82) a = <p1_notes_hit> b = <p1_notes_max>
+	setarrayelement arrayname = notes_ratio index = 0 newvalue = <p1_notes_ratio>
+	formattext textname = p1_sp_ratio qs(0x953baf82) a = <p1_sp_phrases_hit> b = <p1_sp_phrases_max>
+	setarrayelement arrayname = sp_ratio index = 0 newvalue = <p1_sp_ratio>
+	formattext textname = p1_avg_multiplier qs(0xc97e902f) d = <p1_avg_multiplier_val>
+	setarrayelement arrayname = avg_multiplier index = 0 newvalue = <p1_avg_multiplier>
 	if NOT ($game_mode = gh4_p2_career || $game_mode = p2_quickplay)
 		if ($current_num_players = 2)
 			p1_time_in_lead = 0
@@ -77,11 +77,11 @@ script create_detailed_stats_menu
 			total_time = ($player1_status.time_in_lead + $player2_status.time_in_lead)
 			if (<total_time> > 0)
 				p1_time_in_lead = ((100 * $player1_status.time_in_lead / <total_time>) + 0.5)
-				CastToInteger \{p1_time_in_lead}
+				casttointeger \{p1_time_in_lead}
 				p2_time_in_lead = (100 - <p1_time_in_lead>)
 			endif
-			FormatText TextName = p1_lead_percent qs("\L%d\%") d = <p1_time_in_lead>
-			SetArrayElement ArrayName = lead_percentage index = 0 newvalue = <p1_lead_percent>
+			formattext textname = p1_lead_percent qs(0x720688b0) d = <p1_time_in_lead>
+			setarrayelement arrayname = lead_percentage index = 0 newvalue = <p1_lead_percent>
 			p2_notes_hit = ($player2_status.notes_hit)
 			p2_notes_max = ($player2_status.total_notes)
 			p2_sp_phrases_hit = ($player2_status.sp_phrases_hit)
@@ -94,14 +94,14 @@ script create_detailed_stats_menu
 			else
 				p2_avg_multiplier_val = 1.0
 			endif
-			FormatText TextName = p2_notes_ratio qs("\L%a/%b") a = <p2_notes_hit> b = <p2_notes_max>
-			SetArrayElement ArrayName = notes_ratio index = 1 newvalue = <p2_notes_ratio>
-			FormatText TextName = p2_sp_ratio qs("\L%a/%b") a = <p2_sp_phrases_hit> b = <p2_sp_phrases_max>
-			SetArrayElement ArrayName = sp_ratio index = 1 newvalue = <p2_sp_ratio>
-			FormatText TextName = p2_avg_multiplier qs("\L%d X") d = <p2_avg_multiplier_val>
-			SetArrayElement ArrayName = avg_multiplier index = 1 newvalue = <p2_avg_multiplier>
-			FormatText TextName = p2_lead_percent qs("\L%d\%") d = <p2_time_in_lead>
-			SetArrayElement ArrayName = lead_percentage index = 1 newvalue = <p2_lead_percent>
+			formattext textname = p2_notes_ratio qs(0x953baf82) a = <p2_notes_hit> b = <p2_notes_max>
+			setarrayelement arrayname = notes_ratio index = 1 newvalue = <p2_notes_ratio>
+			formattext textname = p2_sp_ratio qs(0x953baf82) a = <p2_sp_phrases_hit> b = <p2_sp_phrases_max>
+			setarrayelement arrayname = sp_ratio index = 1 newvalue = <p2_sp_ratio>
+			formattext textname = p2_avg_multiplier qs(0xc97e902f) d = <p2_avg_multiplier_val>
+			setarrayelement arrayname = avg_multiplier index = 1 newvalue = <p2_avg_multiplier>
+			formattext textname = p2_lead_percent qs(0x720688b0) d = <p2_time_in_lead>
+			setarrayelement arrayname = lead_percentage index = 1 newvalue = <p2_lead_percent>
 		endif
 	endif
 	left_margin = 400
@@ -124,36 +124,36 @@ script create_detailed_stats_menu
 	if NOT ($game_mode = gh4_p2_career || $game_mode = p2_quickplay)
 		if ($current_num_players = 2)
 			add_text_to_column \{column = 'left'
-				text = qs("PLAYER ONE")}
+				text = qs(0x6eb7eda9)}
 			add_text_to_column \{column = 'right'
-				text = qs("PLAYER TWO")}
+				text = qs(0xd058ef6e)}
 			add_text_to_column \{column = 'center'
-				text = qs("\L")}
+				text = qs(0x03ac90f0)}
 			add_text_to_column \{column = 'left'
-				text = qs("\L")}
+				text = qs(0x03ac90f0)}
 			add_text_to_column \{column = 'center'
-				text = qs("\L")}
+				text = qs(0x03ac90f0)}
 			add_text_to_column \{column = 'right'
-				text = qs("\L")}
+				text = qs(0x03ac90f0)}
 		endif
 	endif
 	add_basic_stats_desc
 	add_basic_stats notes_ratio = <notes_ratio> sp_ratio = <sp_ratio> lead_percentage = <lead_percentage> avg_multiplier = <avg_multiplier> attacks_thrown = <attacks_thrown>
 	add_text_to_column \{column = 'left'
-		text = qs("\L")}
+		text = qs(0x03ac90f0)}
 	add_text_to_column \{column = 'center'
-		text = qs("\L")}
+		text = qs(0x03ac90f0)}
 	add_text_to_column \{column = 'right'
-		text = qs("\L")}
+		text = qs(0x03ac90f0)}
 	add_text_to_column \{column = 'left'
-		text = qs("\L")}
+		text = qs(0x03ac90f0)}
 	add_text_to_column \{column = 'center'
-		text = qs("\L")}
+		text = qs(0x03ac90f0)}
 	add_text_to_column \{column = 'right'
-		text = qs("\L")}
+		text = qs(0x03ac90f0)}
 	add_divider_graphic
 	get_song_section_array player = <player>
-	GetArraySize <song_section_array>
+	getarraysize <song_section_array>
 	section_index = 0
 	highlight = 1
 	if (<array_size> > 0)
@@ -192,24 +192,24 @@ script create_detailed_stats_menu
 				<tie> = 1
 			endif
 			if (<tie> = 0)
-				FormatText checksumname = entry_id '%c_column_%d' c = <c> d = 0
-				GetScreenElementProps id = <entry_id>
-				GetScreenElementDims id = <entry_id>
-				CreateScreenElement {
-					type = SpriteElement
+				formattext checksumname = entry_id '%c_column_%d' c = <c> d = 0
+				getscreenelementprops id = <entry_id>
+				getscreenelementdims id = <entry_id>
+				createscreenelement {
+					type = spriteelement
 					parent = ds_container
 					pos = (<circle_pos> [<better_player>])
 					texture = circle_pen
 					just = [center center]
-					dims = ((1.8, 0.0) * <width> + (0.0, 4.25) * <Height>)
+					dims = ((1.8, 0.0) * <width> + (0.0, 4.25) * <height>)
 					rgba = [60 70 115 100]
 					z_priority = 7
 				}
-				CreateScreenElement {
-					type = TextElement
+				createscreenelement {
+					type = textelement
 					parent = ds_container
 					pos = (<best_pos> [<better_player>])
-					text = qs("BEST!")
+					text = qs(0xa5ad7bd2)
 					font = fontgrid_text_a3
 					rot_angle = (<rot_vals> [<better_player>])
 					id = best_text
@@ -220,10 +220,10 @@ script create_detailed_stats_menu
 			endif
 		endif
 	endif
-	add_user_control_helper \{text = qs("BACK")
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red
 		z = 100}
-	add_user_control_helper \{text = qs("CONTINUE")
+	add_user_control_helper \{text = qs(0x182f0173)
 		button = green
 		z = 100}
 endscript
@@ -243,12 +243,12 @@ script add_basic_stats_desc
 	else
 		desc_column = 'center'
 	endif
-	add_text_to_column column = <desc_column> text = qs("NOTES HIT") dims = (400.0, 0.0)
-	add_text_to_column column = <desc_column> text = qs("SP PHRASES") dims = (400.0, 0.0)
-	add_text_to_column column = <desc_column> text = qs("AVG MULTIPLIER") dims = (400.0, 0.0)
+	add_text_to_column column = <desc_column> text = qs(0x7d221f06) dims = (400.0, 0.0)
+	add_text_to_column column = <desc_column> text = qs(0xf75837da) dims = (400.0, 0.0)
+	add_text_to_column column = <desc_column> text = qs(0xff3216c6) dims = (400.0, 0.0)
 	if ($current_num_players = 2)
 		if ($game_mode = p2_pro_faceoff)
-			add_text_to_column column = <desc_column> text = qs("TIME IN LEAD") dims = (400.0, 0.0)
+			add_text_to_column column = <desc_column> text = qs(0x2db115e5) dims = (400.0, 0.0)
 		endif
 	endif
 endscript
@@ -293,16 +293,16 @@ script get_highest_lowest_stats
 	player = 0
 	begin
 	if (<section_index> = 0)
-		SetArrayElement ArrayName = g_players_lowest_stat GlobalArray index = <player> newvalue = 99.9
-		SetArrayElement ArrayName = g_players_highest_stat GlobalArray index = <player> newvalue = 0.1
+		setarrayelement arrayname = g_players_lowest_stat globalarray index = <player> newvalue = 99.9
+		setarrayelement arrayname = g_players_highest_stat globalarray index = <player> newvalue = 0.1
 	endif
 	if (<notes_max> [<player>] > 0)
 		hit_percent = ((100 * (<notes_hit> [<player>])) / (<notes_max> [<player>]))
 		if (<hit_percent> < $g_players_lowest_stat [<player>])
-			SetArrayElement ArrayName = g_players_lowest_stat GlobalArray index = <player> newvalue = <hit_percent>
+			setarrayelement arrayname = g_players_lowest_stat globalarray index = <player> newvalue = <hit_percent>
 		endif
 		if (<hit_percent> > $g_players_highest_stat [<player>])
-			SetArrayElement ArrayName = g_players_highest_stat GlobalArray index = <player> newvalue = <hit_percent>
+			setarrayelement arrayname = g_players_highest_stat globalarray index = <player> newvalue = <hit_percent>
 		endif
 	endif
 	<player> = (<player> + 1)
@@ -319,7 +319,7 @@ script add_section_stats_and_desc \{section_index = 0
 		desc_column = 'center'
 	endif
 	add_text_to_column column = <desc_column> text = <section_name> for_practice = <for_practice> dims = (500.0, 0.0)
-	GetArraySize <notes_max>
+	getarraysize <notes_max>
 	if (<array_size> < $current_num_players)
 
 		return
@@ -337,7 +337,7 @@ script add_section_stats_and_desc \{section_index = 0
 	endif
 	if (<notes_max> [<player>] > 0)
 		hit_percent = ((100 * (<notes_hit> [<player>])) / (<notes_max> [<player>]))
-		FormatText TextName = section_percent qs("\L%d \%") d = <hit_percent>
+		formattext textname = section_percent qs(0x858225e7) d = <hit_percent>
 		if (<hit_percent> = 100)
 			add_text_to_column column = <stat_column> text = <section_percent> rgba = [20 165 0 255] highlight = <highlight> for_practice = <for_practice>
 		elseif (<hit_percent> = $g_players_lowest_stat [<player>])
@@ -347,8 +347,8 @@ script add_section_stats_and_desc \{section_index = 0
 		endif
 	else
 		hit_percent = 0
-		FormatText \{TextName = section_percent
-			qs("N/A")}
+		formattext \{textname = section_percent
+			qs(0x6a5cf46c)}
 		add_text_to_column column = <stat_column> text = <section_percent> highlight = <highlight> for_practice = <for_practice>
 	endif
 	if ($game_mode = gh4_p2_career || $game_mode = p2_quickplay)
@@ -365,14 +365,14 @@ script detailed_stats_create_container \{for_practice = 0}
 		if ($game_mode = gh4_p2_career ||
 				$game_mode = p2_pro_faceoff ||
 				$game_mode = p2_quickplay)
-			RemoveParameter \{exclusive_device}
+			removeparameter \{exclusive_device}
 			get_all_exclusive_devices
 		else
 			exclusive_device = ($primary_controller)
 		endif
 	endif
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = root_window
 		id = ds_container
 		pos = (0.0, 0.0)
@@ -380,8 +380,8 @@ script detailed_stats_create_container \{for_practice = 0}
 	}
 	pad_back_script = nullscript
 	<pad_back_script> = generic_event_back
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = root_window
 		id = continue_text
 		scale = 0.8
@@ -399,10 +399,10 @@ script detailed_stats_create_container \{for_practice = 0}
 		]
 	}
 	if (<for_practice> = 0)
-		LaunchEvent \{type = focus
+		launchevent \{type = focus
 			target = continue_text}
 	endif
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		id = detailed_stats_paper_top
 		parent = ds_container
 		texture = song_summary_detail_sheet_top
@@ -414,10 +414,10 @@ script detailed_stats_create_container \{for_practice = 0}
 			top
 		]
 		z_priority = 1}
-	practice_title = qs("PRACTICE SECTIONS")
+	practice_title = qs(0x66fbc84d)
 	if (<for_practice> = 1)
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = ds_container
 			pos = ((1.0, 0.0) * ($left_column_x) + (0.0, 125.0))
 			just = [left top]
@@ -428,34 +428,34 @@ script detailed_stats_create_container \{for_practice = 0}
 			scale = (1.7, 2.25)
 		}
 	else
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = ds_container
 			pos = ((1.0, 0.0) * ($left_column_x) + (0.0, 125.0))
 			just = [left top]
 			z_priority = 2
 			font = ($detailed_stats_font)
-			text = qs("DETAILED")
+			text = qs(0x1483ab79)
 			rgba = [118 29 30 255]
 			scale = 2.75
 		}
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = ds_container
 			pos = ((1.0, 0.0) * ($left_column_x) + (0.0, 215.0))
 			just = [left top]
 			z_priority = 2
 			font = ($detailed_stats_font)
-			text = qs("BREAKDOWN")
+			text = qs(0x0b3b793c)
 			rgba = [118 29 30 255]
 			scale = 2.75
 		}
 	endif
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		id = detailed_stats_bg_container
 		parent = root_window
 		pos = (0.0, 0.0)}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		id = detailed_stats_bg0
 		parent = detailed_stats_bg_container
 		texture = song_summary_detail_bg
@@ -472,7 +472,7 @@ script detailed_stats_create_container \{for_practice = 0}
 			top
 		]
 		z_priority = 0}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		id = detailed_stats_bg1
 		parent = detailed_stats_bg_container
 		texture = song_summary_detail_bg
@@ -489,7 +489,7 @@ script detailed_stats_create_container \{for_practice = 0}
 			top
 		]
 		z_priority = 0}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		id = detailed_stats_bg2
 		parent = detailed_stats_bg_container
 		texture = song_summary_detail_bg
@@ -506,7 +506,7 @@ script detailed_stats_create_container \{for_practice = 0}
 			top
 		]
 		z_priority = 0}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		id = detailed_stats_bg3
 		parent = detailed_stats_bg_container
 		texture = song_summary_detail_bg
@@ -527,7 +527,7 @@ endscript
 
 script add_text_to_column {
 		column = 'left'
-		text = qs("\LNo string")
+		text = qs(0x72913c21)
 		rgba = [75 75 75 255]
 		scale = ($detailed_stats_text_scale)
 		rot = 0
@@ -535,23 +535,23 @@ script add_text_to_column {
 		font = ($detailed_stats_font)
 		for_practice = 0
 	}
-	FormatText checksumname = column_x '%s_column_x' s = (<column>)
-	FormatText checksumname = column_y_end '%s_column_y_end' s = (<column>)
-	FormatText checksumname = column_just '%s_column_just' s = (<column>)
-	FormatText checksumname = column_elements '%s_column_num_elements' s = <column>
-	FormatText checksumname = entry_id '%s_column_%d' s = <column> d = ($<column_elements>)
-	GetUpperCaseString <text>
+	formattext checksumname = column_x '%s_column_x' s = (<column>)
+	formattext checksumname = column_y_end '%s_column_y_end' s = (<column>)
+	formattext checksumname = column_just '%s_column_just' s = (<column>)
+	formattext checksumname = column_elements '%s_column_num_elements' s = <column>
+	formattext checksumname = entry_id '%s_column_%d' s = <column> d = ($<column_elements>)
+	getuppercasestring <text>
 	if (<for_practice> = 1)
-		<UpperCaseString> = qs("\L")
+		<uppercasestring> = qs(0x03ac90f0)
 		font = fontgrid_text_a8
 	endif
-	if GotParam \{dont_force_caps}
+	if gotparam \{dont_force_caps}
 		<display_string> = <text>
 	else
-		<display_string> = <UpperCaseString>
+		<display_string> = <uppercasestring>
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = ds_container
 		id = <entry_id>
 		font = <font>
@@ -564,29 +564,29 @@ script add_text_to_column {
 		z_priority = 6
 		font_spacing = 1
 	}
-	if GotParam \{dims}
-		GetScreenElementDims id = <id>
+	if gotparam \{dims}
+		getscreenelementdims id = <id>
 		if NOT (<width> = 0)
-			fit_text_in_rectangle id = <id> only_if_larger_x = 1 dims = (((<dims>.(1.0, 0.0)) * (1.0, 0.0)) + <Height> * (0.0, 1.0))
+			fit_text_in_rectangle id = <id> only_if_larger_x = 1 dims = (((<dims>.(1.0, 0.0)) * (1.0, 0.0)) + <height> * (0.0, 1.0))
 		endif
 	endif
-	GetScreenElementDims id = <entry_id>
+	getscreenelementdims id = <entry_id>
 	if (<for_practice> = 1)
-		Height = (<Height> - 1)
+		height = (<height> - 1)
 	endif
 	highlight_width = ($right_column_x - $left_column_x + 50)
 	if (<highlight> = 1)
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			parent = ds_container
 			pos = ((1.0, 0.0) * ($left_column_x - 25) + (0.0, 1.0) * ($<column_y_end> - 4))
-			dims = ((1.0, 0.0) * <highlight_width> + (0.0, 1.0) * <Height>)
+			dims = ((1.0, 0.0) * <highlight_width> + (0.0, 1.0) * <height>)
 			rgba = [0 0 0 25]
 			just = [left top]
 			z_priority = 3
 		}
 	endif
-	new_column_y_end = ($<column_y_end> + <Height>)
+	new_column_y_end = ($<column_y_end> + <height>)
 	new_num_column_elements = ($<column_elements> + 1)
 	change globalname = <column_y_end> newvalue = <new_column_y_end>
 	change globalname = <column_elements> newvalue = <new_num_column_elements>
@@ -596,13 +596,13 @@ script get_section_stats \{section_index = 0}
 	notes_hit = [0 0]
 	notes_max = [1 1]
 	if ($game_mode = gh4_p2_career || $game_mode = p2_quickplay)
-		SetArrayElement ArrayName = notes_hit index = 0 newvalue = (($p1_last_song_detailed_stats [<section_index>]) + ($p2_last_song_detailed_stats [<section_index>]))
-		SetArrayElement ArrayName = notes_max index = 0 newvalue = (($p1_last_song_detailed_stats_max [<section_index>]) + ($p2_last_song_detailed_stats_max [<section_index>]))
+		setarrayelement arrayname = notes_hit index = 0 newvalue = (($p1_last_song_detailed_stats [<section_index>]) + ($p2_last_song_detailed_stats [<section_index>]))
+		setarrayelement arrayname = notes_max index = 0 newvalue = (($p1_last_song_detailed_stats_max [<section_index>]) + ($p2_last_song_detailed_stats_max [<section_index>]))
 	else
-		SetArrayElement ArrayName = notes_hit index = 0 newvalue = ($p1_last_song_detailed_stats [<section_index>])
-		SetArrayElement ArrayName = notes_hit index = 1 newvalue = ($p2_last_song_detailed_stats [<section_index>])
-		SetArrayElement ArrayName = notes_max index = 0 newvalue = ($p1_last_song_detailed_stats_max [<section_index>])
-		SetArrayElement ArrayName = notes_max index = 1 newvalue = ($p2_last_song_detailed_stats_max [<section_index>])
+		setarrayelement arrayname = notes_hit index = 0 newvalue = ($p1_last_song_detailed_stats [<section_index>])
+		setarrayelement arrayname = notes_hit index = 1 newvalue = ($p2_last_song_detailed_stats [<section_index>])
+		setarrayelement arrayname = notes_max index = 0 newvalue = ($p1_last_song_detailed_stats_max [<section_index>])
+		setarrayelement arrayname = notes_max index = 1 newvalue = ($p2_last_song_detailed_stats_max [<section_index>])
 	endif
 	section_name = ((<section_array> [<section_index>]).marker)
 	return <...>
@@ -615,19 +615,19 @@ script menu_detailed_stats_move_screen_down
 	else
 		change \{relative_screen_y_position = 0}
 	endif
-	SetScreenElementProps id = ds_container pos = ((0.0, 1.0) * ($relative_screen_y_position))
+	setscreenelementprops id = ds_container pos = ((0.0, 1.0) * ($relative_screen_y_position))
 	menu_ds_scroll_all
 endscript
 
 script menu_detailed_stats_move_screen_up 
 	stats_end = ($relative_screen_y_position + $left_column_y_end)
-	GetScreenElementDims \{id = root_window}
-	bottom_end = (<Height> - $bottom_gap + 300)
+	getscreenelementdims \{id = root_window}
+	bottom_end = (<height> - $bottom_gap + 300)
 	if ((<stats_end> - $up_down_y_change) > <bottom_end>)
 		change relative_screen_y_position = ($relative_screen_y_position - $up_down_y_change)
 		generic_menu_up_or_down_sound \{up}
 	endif
-	SetScreenElementProps id = ds_container pos = ((0.0, 1.0) * ($relative_screen_y_position))
+	setscreenelementprops id = ds_container pos = ((0.0, 1.0) * ($relative_screen_y_position))
 	menu_ds_scroll_all
 endscript
 
@@ -639,16 +639,16 @@ script menu_ds_scroll_background
 	scroll_position = (-1 * ($relative_screen_y_position))
 
 	if (<scroll_position> < 240)
-		SetScreenElementProps id = detailed_stats_bg_container pos = ((0.0, -1.0) * <scroll_position>)
+		setscreenelementprops id = detailed_stats_bg_container pos = ((0.0, -1.0) * <scroll_position>)
 	else
-		Mod a = <scroll_position> b = 240
-		SetScreenElementProps id = detailed_stats_bg_container pos = ((0.0, -1.0) * <Mod>)
+		mod a = <scroll_position> b = 240
+		setscreenelementprops id = detailed_stats_bg_container pos = ((0.0, -1.0) * <mod>)
 	endif
 endscript
 
 script menu_detailed_stats_add_paper_sprites 
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = ds_container
 		pos = ((1.0, 0.0) * 129 + (0.0, 1.0) * ($left_column_y_end))
 		rot_angle = 2
@@ -662,8 +662,8 @@ script menu_detailed_stats_add_paper_sprites
 	total_desired_dim = ($left_column_y_end - $initial_column_y_end)
 	piecewise_desired_dim = ((<total_desired_dim> + 39) / <num_left_side_paper_repetitions>)
 	begin
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = ds_container
 		pos = ((1.0, 0.0) * 129 + (0.0, 1.0) * <y_position>)
 		dims = ((32.0, 0.0) + (0.0, 1.0) * <piecewise_desired_dim>)
@@ -677,8 +677,8 @@ script menu_detailed_stats_add_paper_sprites
 	y_position = 339
 	piecewise_desired_dim = ((<total_desired_dim> + 37) / <num_right_side_paper_repetitions>)
 	begin
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = ds_container
 		pos = ((1.0, 0.0) * 1087 + (0.0, 1.0) * <y_position>)
 		dims = ((64.0, 0.0) + (0.0, 1.0) * <piecewise_desired_dim>)
@@ -688,8 +688,8 @@ script menu_detailed_stats_add_paper_sprites
 	}
 	<y_position> = (<y_position> + <piecewise_desired_dim>)
 	repeat <num_right_side_paper_repetitions>
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = ds_container
 		pos = (139.0, 304.0)
 		dims = ((1.0, 0.0) * 976 + (0.0, 1.0) * (<total_desired_dim> + 70))
@@ -712,12 +712,12 @@ script add_divider_graphic
 			divider_element_num = 6
 		endif
 	endif
-	FormatText checksumname = entry_id '%c_column_%d' c = 'left' d = <divider_element_num>
-	GetScreenElementProps id = <entry_id>
+	formattext checksumname = entry_id '%c_column_%d' c = 'left' d = <divider_element_num>
+	getscreenelementprops id = <entry_id>
 	divider_y = (<pos> [1])
 
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = ds_container
 		pos = ((1.0, 0.0) * $center_column_x + (0.0, 1.0) * (<divider_y> - 8))
 		scale = (2.5, 1.4)

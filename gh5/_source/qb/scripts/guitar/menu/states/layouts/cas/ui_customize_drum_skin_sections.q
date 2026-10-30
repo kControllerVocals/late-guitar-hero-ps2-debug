@@ -1,4 +1,4 @@
-CAS_Drum_Skin_Sections = [
+cas_drum_skin_sections = [
 	{
 		text = qs(0x5e898d21)
 		parts = [
@@ -13,11 +13,11 @@ CAS_Drum_Skin_Sections = [
 			bass_skin_ds_75
 			bandlogosingle
 			bass_skin_ds_32
-			GH5_Skin_LD95
+			gh5_skin_ld95
 			bass_skin_ds_24
 			bass_skin_ds_38
 			gh5_skin_ld14
-			budcat01
+			0xa54e5e2e
 			gh5_skin_ld66
 			gh5_skin_ld40
 			gh5_skin_ld61
@@ -38,8 +38,8 @@ CAS_Drum_Skin_Sections = [
 			bass_skin_ds_77
 			gh5_skin_ld45
 			bass_skin_ds_80
-			GH5_Skin_LD42
-			GH5_Skin_LD57
+			gh5_skin_ld42
+			gh5_skin_ld57
 			gh5_skin_ld22
 			bass_skin_ds_40
 			bass_skin_gk_04
@@ -154,7 +154,7 @@ CAS_Drum_Skin_Sections = [
 		]
 	}
 	{
-		text = qs("\LPork Pie")
+		text = qs(0x086c055d)
 		parts = [
 			none
 			bass_skin_ds_pork1

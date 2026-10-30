@@ -1,37 +1,37 @@
-L_GUIT_PicToBurn_anims_set = {
-	Stance_A = {
-		Idle = {
+0x6cc7579d = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_PicToBurn_075
+				slow = [
+					0x901881e8
 				]
-				Med = [
-					Guit_PicToBurn_100
+				med = [
+					0xaef18997
 				]
-				Fast = [
-					Guit_PicToBurn_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_PicToBurn_075
-				]
-				Med = [
-					Guit_PicToBurn_100
-				]
-				Fast = [
-					Guit_PicToBurn_120
+				fast = [
+					0x9cc7eb15
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_PicToBurn_075
+			normal = {
+				slow = [
+					0x901881e8
 				]
-				Med = [
-					Guit_PicToBurn_100
+				med = [
+					0xaef18997
 				]
-				Fast = [
-					Guit_PicToBurn_120
+				fast = [
+					0x9cc7eb15
+				]
+			}
+			bad = {
+				slow = [
+					0x901881e8
+				]
+				med = [
+					0xaef18997
+				]
+				fast = [
+					0x9cc7eb15
 				]
 			}
 		}

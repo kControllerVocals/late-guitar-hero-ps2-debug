@@ -1,37 +1,37 @@
-L_SING_JoeH_Hot_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_joeh_hot_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_JoeH_Hot_075_F_01
+				slow = [
+					sing_joeh_hot_075_f_01
 				]
-				Med = [
-					Sing_JoeH_Hot_100_F_01
+				med = [
+					sing_joeh_hot_100_f_01
 				]
-				Fast = [
-					Sing_JoeH_Hot_120_F_01
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_JoeH_Hot_075_F_01
-				]
-				Med = [
-					Sing_JoeH_Hot_100_F_01
-				]
-				Fast = [
-					Sing_JoeH_Hot_120_F_01
+				fast = [
+					sing_joeh_hot_120_f_01
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_JoeH_Hot_075_F_01
+			normal = {
+				slow = [
+					sing_joeh_hot_075_f_01
 				]
-				Med = [
-					Sing_JoeH_Hot_100_F_01
+				med = [
+					sing_joeh_hot_100_f_01
 				]
-				Fast = [
-					Sing_JoeH_Hot_120_F_01
+				fast = [
+					sing_joeh_hot_120_f_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_joeh_hot_075_f_01
+				]
+				med = [
+					sing_joeh_hot_100_f_01
+				]
+				fast = [
+					sing_joeh_hot_120_f_01
 				]
 			}
 		}

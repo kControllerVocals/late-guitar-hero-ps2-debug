@@ -1,23 +1,23 @@
-Current_Tempo = 100
+current_tempo = 100
 drummer_active_values = [
-	AV_Drum_Anim_Hand_L
-	AV_Drum_Anim_Hand_R
-	AV_Drum_Anim_Foot_R
-	AV_Drum_Anim_Transit
-	AV_Drum_Blend_Hand_L
-	AV_Drum_Blend_Hand_R
-	AV_Drum_Blend_Foot_R
-	AV_Drum_Blend_HH_Kit
-	AV_Drum_Mod_Loop_Body
-	AV_Drum_Mod_Hand_R
-	AV_Drum_Mod_Hand_L
-	AV_Drum_Mod_Foot_R
-	AV_Drum_IK_Hand_L
-	AV_Drum_IK_Hand_R
-	AV_Drum_IK_Feet
+	av_drum_anim_hand_l
+	av_drum_anim_hand_r
+	av_drum_anim_foot_r
+	av_drum_anim_transit
+	av_drum_blend_hand_l
+	av_drum_blend_hand_r
+	av_drum_blend_foot_r
+	av_drum_blend_hh_kit
+	av_drum_mod_loop_body
+	av_drum_mod_hand_r
+	av_drum_mod_hand_l
+	av_drum_mod_foot_r
+	av_drum_ik_hand_l
+	av_drum_ik_hand_r
+	av_drum_ik_feet
 ]
 
-script Drummer_Transit_Base_Long 
+script drummer_transit_base_long 
 	smooth_transit_curve = [1.0 , 0.9927499 , 0.97199994 , 0.93924993 , 0.89599997 , 0.84375006 , 0.784 , 0.71825 , 0.64800006 , 0.57475 , 0.5 , 0.42525002 , 0.35200003 , 0.28175 , 0.216 , 0.15625 , 0.104 , 0.0607499 , 0.027999999 , 0.00725001 , 0.0]
 	if (<time_to_trans> < 0.0)
 		time_to_trans = 0.0
@@ -25,171 +25,171 @@ script Drummer_Transit_Base_Long
 	if (<time_to_trans_base> < 0.0)
 		time_to_trans_base = 0.0
 	endif
-	if (<node> = Body)
-		target = DB_Drum_Transition_Base_Anim
-		ExtendCRCWithString checksum = Drum_ string = <Drum_Old_Long_String>
-		OldBase = <ExtendedChecksum>
-		ExtendCRCWithString checksum = Drum_ string = <Drum_New_Long_String>
-		NewBase = <ExtendedChecksum>
+	if (<node> = body)
+		target = db_drum_transition_base_anim
+		extendcrcwithstring checksum = drum_ string = <drum_old_long_string>
+		oldbase = <extendedchecksum>
+		extendcrcwithstring checksum = drum_ string = <drum_new_long_string>
+		newbase = <extendedchecksum>
 		switch <currentset>
 			case 1
-			master_node = DB_Drum_Base_Master1
-			master_tree = $Drum_Base_Branch_Master1
-			tree1 = $Drum_Base_Branch_Old1
-			target1 = DB_Drum_Base_Anim_Old1
-			tree2 = $Drum_Base_Branch_New1
-			target2 = DB_Drum_Base_Anim_New1
+			master_node = db_drum_base_master1
+			master_tree = $drum_base_branch_master1
+			tree1 = $drum_base_branch_old1
+			target1 = db_drum_base_anim_old1
+			tree2 = $drum_base_branch_new1
+			target2 = db_drum_base_anim_new1
 			case 2
-			master_node = DB_Drum_Base_Master2
-			master_tree = $Drum_Base_Branch_Master2
-			tree1 = $Drum_Base_Branch_Old2
-			target1 = DB_Drum_Base_Anim_Old2
-			tree2 = $Drum_Base_Branch_New2
-			target2 = DB_Drum_Base_Anim_New2
+			master_node = db_drum_base_master2
+			master_tree = $drum_base_branch_master2
+			tree1 = $drum_base_branch_old2
+			target1 = db_drum_base_anim_old2
+			tree2 = $drum_base_branch_new2
+			target2 = db_drum_base_anim_new2
 			case 3
-			master_node = DB_Drum_Base_Master3
-			master_tree = $Drum_Base_Branch_Master3
-			tree1 = $Drum_Base_Branch_Old3
-			target1 = DB_Drum_Base_Anim_Old3
-			tree2 = $Drum_Base_Branch_New3
-			target2 = DB_Drum_Base_Anim_New3
+			master_node = db_drum_base_master3
+			master_tree = $drum_base_branch_master3
+			tree1 = $drum_base_branch_old3
+			target1 = db_drum_base_anim_old3
+			tree2 = $drum_base_branch_new3
+			target2 = db_drum_base_anim_new3
 			case 4
-			master_node = DB_Drum_Base_Master4
-			master_tree = $Drum_Base_Branch_Master4
-			tree1 = $Drum_Base_Branch_Old4
-			target1 = DB_Drum_Base_Anim_Old4
-			tree2 = $Drum_Base_Branch_New4
-			target2 = DB_Drum_Base_Anim_New4
+			master_node = db_drum_base_master4
+			master_tree = $drum_base_branch_master4
+			tree1 = $drum_base_branch_old4
+			target1 = db_drum_base_anim_old4
+			tree2 = $drum_base_branch_new4
+			target2 = db_drum_base_anim_new4
 		endswitch
 	else
-		target = DB_Drum_Transition_BaseIK_Anim
-		ExtendCRCWithString checksum = Drum_ string = <Drum_Old_Long_String>
-		OldPrefix = <ExtendedChecksum>
-		ExtendCRCWithString checksum = <OldPrefix> string = '_IK'
-		OldBase = <ExtendedChecksum>
-		ExtendCRCWithString checksum = Drum_ string = <Drum_New_Long_String>
-		NewPrefix = <ExtendedChecksum>
-		ExtendCRCWithString checksum = <NewPrefix> string = '_IK'
-		NewBase = <ExtendedChecksum>
+		target = db_drum_transition_baseik_anim
+		extendcrcwithstring checksum = drum_ string = <drum_old_long_string>
+		oldprefix = <extendedchecksum>
+		extendcrcwithstring checksum = <oldprefix> string = '_IK'
+		oldbase = <extendedchecksum>
+		extendcrcwithstring checksum = drum_ string = <drum_new_long_string>
+		newprefix = <extendedchecksum>
+		extendcrcwithstring checksum = <newprefix> string = '_IK'
+		newbase = <extendedchecksum>
 		switch <currentset>
 			case 1
-			master_node = DB_Drum_BaseIK_Master1
-			master_tree = $Drum_BaseIK_Branch_Master1
-			tree1 = $Drum_BaseIK_Branch_Old1
-			target1 = DB_Drum_BaseIK_Anim_Old1
-			tree2 = $Drum_BaseIK_Branch_New1
-			target2 = DB_Drum_BaseIK_Anim_New1
+			master_node = db_drum_baseik_master1
+			master_tree = $drum_baseik_branch_master1
+			tree1 = $drum_baseik_branch_old1
+			target1 = db_drum_baseik_anim_old1
+			tree2 = $drum_baseik_branch_new1
+			target2 = db_drum_baseik_anim_new1
 			case 2
-			master_node = DB_Drum_BaseIK_Master2
-			master_tree = $Drum_BaseIK_Branch_Master2
-			tree1 = $Drum_BaseIK_Branch_Old2
-			target1 = DB_Drum_BaseIK_Anim_Old2
-			tree2 = $Drum_BaseIK_Branch_New2
-			target2 = DB_Drum_BaseIK_Anim_New2
+			master_node = db_drum_baseik_master2
+			master_tree = $drum_baseik_branch_master2
+			tree1 = $drum_baseik_branch_old2
+			target1 = db_drum_baseik_anim_old2
+			tree2 = $drum_baseik_branch_new2
+			target2 = db_drum_baseik_anim_new2
 			case 3
-			master_node = DB_Drum_BaseIK_Master3
-			master_tree = $Drum_BaseIK_Branch_Master3
-			tree1 = $Drum_BaseIK_Branch_Old3
-			target1 = DB_Drum_BaseIK_Anim_Old3
-			tree2 = $Drum_BaseIK_Branch_New3
-			target2 = DB_Drum_BaseIK_Anim_New3
+			master_node = db_drum_baseik_master3
+			master_tree = $drum_baseik_branch_master3
+			tree1 = $drum_baseik_branch_old3
+			target1 = db_drum_baseik_anim_old3
+			tree2 = $drum_baseik_branch_new3
+			target2 = db_drum_baseik_anim_new3
 			case 4
-			master_node = DB_Drum_BaseIK_Master4
-			master_tree = $Drum_BaseIK_Branch_Master4
-			tree1 = $Drum_BaseIK_Branch_Old4
-			target1 = DB_Drum_BaseIK_Anim_Old4
-			tree2 = $Drum_BaseIK_Branch_New4
-			target2 = DB_Drum_BaseIK_Anim_New4
+			master_node = db_drum_baseik_master4
+			master_tree = $drum_baseik_branch_master4
+			tree1 = $drum_baseik_branch_old4
+			target1 = db_drum_baseik_anim_old4
+			tree2 = $drum_baseik_branch_new4
+			target2 = db_drum_baseik_anim_new4
 		endswitch
 	endif
-	Anim_Command target = <target> command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans_base>
+	anim_command target = <target> command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans_base>
 		blendcurve = <smooth_transit_curve>
-		Tree = <master_tree>
+		tree = <master_tree>
 		params = {
 		}
 	}
-	Anim_Command target = <master_node> command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
+	anim_command target = <master_node> command = degenerateblend_addbranch params = {
+		blendduration = 0.0
 		blendcurve = <smooth_transit_curve>
-		Tree = <tree1>
+		tree = <tree1>
 		params = {
 		}
 	}
-	if Anim_AnimNodeExists id = <target1>
-		Anim_Command target = <target1> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = 0.0
-			Tree = $Single_Source_tree
+	if anim_animnodeexists id = <target1>
+		anim_command target = <target1> command = degenerateblend_addbranch params = {
+			blendduration = 0.0
+			tree = $single_source_tree
 			params = {
-				Use_anim = <OldBase>
+				use_anim = <oldbase>
 			}
 		}
 	endif
-	Anim_Command target = <master_node> command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = <master_node> command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = <tree2>
+		tree = <tree2>
 		params = {
 		}
 	}
-	if Anim_AnimNodeExists id = <target2>
-		Anim_Command target = <target2> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = 0.0
-			Tree = $Single_Source_tree
+	if anim_animnodeexists id = <target2>
+		anim_command target = <target2> command = degenerateblend_addbranch params = {
+			blendduration = 0.0
+			tree = $single_source_tree
 			params = {
-				Use_anim = <NewBase>
+				use_anim = <newbase>
 			}
 		}
 	endif
-	Drum_Old_Long_String = 'S1T3'
-	Drum_New_Long_String = 'S1T3'
+	drum_old_long_string = 'S1T3'
+	drum_new_long_string = 'S1T3'
 	currentset = 0
-	OldBase = Drum_S1T3
-	NewBase = Drum_S1T3
-	ExtendedChecksum = null
+	oldbase = drum_s1t3
+	newbase = drum_s1t3
+	extendedchecksum = null
 endscript
 
-script Drummer_Anticipation_Arms 
-	smooth_In = [1.0 , 0.99024594 , 0.95976996 , 0.906626 , 0.82877296 , 0.724314 , 0.59211797 , 0.43345502 , 0.256324 , 0.0871634 , 0.0]
-	if (<Blendtime> < 0.0)
-		Blendtime = 0.0
+script drummer_anticipation_arms 
+	smooth_in = [1.0 , 0.99024594 , 0.95976996 , 0.906626 , 0.82877296 , 0.724314 , 0.59211797 , 0.43345502 , 0.256324 , 0.0871634 , 0.0]
+	if (<blendtime> < 0.0)
+		blendtime = 0.0
 	endif
-	Anim_Command target = <target> command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <Blendtime>
-		blendcurve = <smooth_In>
-		Tree = <Tree>
+	anim_command target = <target> command = degenerateblend_addbranch params = {
+		blendduration = <blendtime>
+		blendcurve = <smooth_in>
+		tree = <tree>
 		params = {
 		}
 	}
-	if Anim_AnimNodeExists id = <target2>
-		Anim_Command target = <target2> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = 0.0
-			Tree = $Sorce_Mod_Branch
+	if anim_animnodeexists id = <target2>
+		anim_command target = <target2> command = degenerateblend_addbranch params = {
+			blendduration = 0.0
+			tree = $sorce_mod_branch
 			params = {
 				strength = <strength>
-				Use_anim = <Anim>
+				use_anim = <anim>
 			}
 		}
 	endif
 endscript
 
-script Drummer_Anticipation_Arms_Out 
-	smooth_Out = [1.0 , 0.970518 , 0.86650604 , 0.68276 , 0.471731 , 0.296009 , 0.17043701 , 0.086863294 , 0.0352961 , 0.0081358 , 0.0]
-	if Anim_AnimNodeExists id = <target2>
-		Anim_Command target = <target2> command = DegenerateBlend_AddBranch params = {
-			blendcurve = <smooth_Out>
-			BlendDuration = <Blendtime>
-			Tree = $Sorce_Mod_Branch_blank
+script drummer_anticipation_arms_out 
+	smooth_out = [1.0 , 0.970518 , 0.86650604 , 0.68276 , 0.471731 , 0.296009 , 0.17043701 , 0.086863294 , 0.0352961 , 0.0081358 , 0.0]
+	if anim_animnodeexists id = <target2>
+		anim_command target = <target2> command = degenerateblend_addbranch params = {
+			blendcurve = <smooth_out>
+			blendduration = <blendtime>
+			tree = $sorce_mod_branch_blank
 			params = {
 			}
 		}
 	endif
 endscript
 
-script Drummer_Transit_Idles 
+script drummer_transit_idles 
 	smooth_transit_curve = [1.0 , 0.9927499 , 0.97199994 , 0.93924993 , 0.89599997 , 0.84375006 , 0.784 , 0.71825 , 0.64800006 , 0.57475 , 0.5 , 0.42525002 , 0.35200003 , 0.28175 , 0.216 , 0.15625 , 0.104 , 0.0607499 , 0.027999999 , 0.00725001 , 0.0]
-	Obj_GetID
-	switch <ObjID>
+	obj_getid
+	switch <objid>
 		case musician1
 		start = 0.0
 		case musician2
@@ -201,82 +201,82 @@ script Drummer_Transit_Idles
 		default
 		start = 0.0
 	endswitch
-	BlendDuration = (($Drum_Idlepoint_Arm_SHit * $Drum_Slowest_Arm_Hit) / 1000.0)
+	blendduration = (($drum_idlepoint_arm_shit * $drum_slowest_arm_hit) / 1000.0)
 	if (<tapin> = false)
-		Obj_SpawnScriptNow Default_drummer_State params = {time_to_trans = <BlendDuration> currentset = <currentset>}
+		obj_spawnscriptnow default_drummer_state params = {time_to_trans = <blendduration> currentset = <currentset>}
 	endif
 	begin
-	if (<Last_Hit> = true)
-		GetRandomValue \{name = randomanim
-			Integer
+	if (<last_hit> = true)
+		getrandomvalue \{name = randomanim
+			integer
 			a = 1
 			b = 4}
 		switch <randomanim>
 			case 1
-			Anim = DrumDroid_PeerIntoCrowd_InOut
+			anim = drumdroid_peerintocrowd_inout
 			case 2
-			Anim = DrumDroid_FistPump_InOut
+			anim = drumdroid_fistpump_inout
 			case 3
-			Anim = DrumDroid_Outro_02
+			anim = drumdroid_outro_02
 			case 4
-			Anim = DrumDroid_Outro_05
+			anim = drumdroid_outro_05
 		endswitch
 	else
-		GetRandomValue \{name = randomanim
-			Integer
+		getrandomvalue \{name = randomanim
+			integer
 			a = 1
 			b = 6}
 		switch <randomanim>
 			case 1
-			Anim = DrumDroid_LoosenUp_In
+			anim = drumdroid_loosenup_in
 			case 2
-			Anim = DrumDroid_PeerIntoCrowd_InOut
+			anim = drumdroid_peerintocrowd_inout
 			case 3
-			Anim = DrumDroid_FistPump_InOut
+			anim = drumdroid_fistpump_inout
 			case 4
-			Anim = DrumDroid_ArmAtReady_In
+			anim = drumdroid_armatready_in
 			case 5
-			Anim = DrumDroid_LittleChairTwist_In
+			anim = drumdroid_littlechairtwist_in
 			case 6
-			Anim = DrumDroid_PointCenter_In
+			anim = drumdroid_pointcenter_in
 		endswitch
 	endif
-	SetSearchAllAssetContexts
-	if Anim_AnimExists Anim = <Anim>
-		anim_Getanimlength Anim = <Anim>
+	setsearchallassetcontexts
+	if anim_animexists anim = <anim>
+		anim_getanimlength anim = <anim>
 	else
 		length = 5.0
 	endif
-	SetSearchAllAssetContexts \{off}
-	length = (<length> - <BlendDuration>)
+	setsearchallassetcontexts \{off}
+	length = (<length> - <blendduration>)
 	if (<length> < 0)
 		length = 0
 	endif
-	if (<BlendDuration> < 0.0)
-		BlendDuration = 0.0
+	if (<blendduration> < 0.0)
+		blendduration = 0.0
 	endif
-	Anim_Command target = DB_Drum_Loop_Anim_Tempo command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <BlendDuration>
-		Tree = $Drum_Loop_Anim_NoTempo
+	anim_command target = db_drum_loop_anim_tempo command = degenerateblend_addbranch params = {
+		blendduration = <blendduration>
+		tree = $drum_loop_anim_notempo
 		params = {
 			start = <start>
-			Loop_Tempo_Anim = <Anim>
-			Loop_Anim_Body = <Anim>
+			loop_tempo_anim = <anim>
+			loop_anim_body = <anim>
 		}
 	}
-	BlendDuration = 0.6
-	Wait <length> seconds
-	Last_Hit = false
+	blendduration = 0.6
+	wait <length> seconds
+	last_hit = false
 	repeat
 	currentset = 0
-	ObjID = musician1
+	objid = musician1
 	randomanim = 0
 endscript
 
-script Drummer_Transit_Loops 
-	Obj_GetID
+script drummer_transit_loops 
+	obj_getid
 	smooth_transit_curve = [1.0 , 0.9927499 , 0.97199994 , 0.93924993 , 0.89599997 , 0.84375006 , 0.784 , 0.71825 , 0.64800006 , 0.57475 , 0.5 , 0.42525002 , 0.35200003 , 0.28175 , 0.216 , 0.15625 , 0.104 , 0.0607499 , 0.027999999 , 0.00725001 , 0.0]
-	switch <ObjID>
+	switch <objid>
 		case musician1
 		start = 0.0
 		case musician2
@@ -288,38 +288,38 @@ script Drummer_Transit_Loops
 		default
 		start = 0.0
 	endswitch
-	if (<BlendDuration> < 0.0)
-		BlendDuration = 0.0
+	if (<blendduration> < 0.0)
+		blendduration = 0.0
 	endif
-	Current_Tempo = $Current_Tempo
-	if (<Current_Tempo> < 85.0)
-		Loop_Body = Drum_Loop_HighEnergy_075
-	elseif (<Current_Tempo> > 115.0)
-		Loop_Body = Drum_Loop_HighEnergy_120
+	current_tempo = $current_tempo
+	if (<current_tempo> < 85.0)
+		loop_body = drum_loop_highenergy_075
+	elseif (<current_tempo> > 115.0)
+		loop_body = drum_loop_highenergy_120
 	else
-		Loop_Body = Drum_Loop_HighEnergy_100
+		loop_body = drum_loop_highenergy_100
 	endif
 	begin
-	Anim_Command target = DB_Drum_Loop_Anim_Tempo command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <BlendDuration>
+	anim_command target = db_drum_loop_anim_tempo command = degenerateblend_addbranch params = {
+		blendduration = <blendduration>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Drum_Loop_Anim_Tempo
+		tree = $drum_loop_anim_tempo
 		params = {
 			start = <start>
-			Loop_Tempo_Anim = <Loop_Body>
-			Loop_Anim_Body = <Loop_Body>
+			loop_tempo_anim = <loop_body>
+			loop_anim_body = <loop_body>
 		}
 	}
-	Wait <blend_duration> seconds
-	drumdroid_loop_wait
+	wait <blend_duration> seconds
+	0x1f3e70c8
 	repeat
 endscript
 
-script Drummer_Current_Tempo 
+script drummer_current_tempo 
 	tempo_change_threshold = 10.0
 	begin
 	floatvalue = 0.0
-	GetPlayerFloat \{player = 1
+	getplayerfloat \{player = 1
 		checksum = current_song_beat_time}
 	current_song_beat_time = <floatvalue>
 	tempo_bpm = ((1000.0 / <current_song_beat_time>) * 60.0)
@@ -330,235 +330,235 @@ script Drummer_Current_Tempo
 	elseif (<tempo_bpm> < 67.5)
 		tempo_bpm = (<tempo_bpm> * 2.0)
 	endif
-	tempodiff = (<tempo_bpm> - $Current_Tempo)
+	tempodiff = (<tempo_bpm> - $current_tempo)
 	if (<tempodiff> < 0.0)
 		tempodiff = (<tempodiff> * (0.0 -1.0))
 	endif
 	if (<tempodiff> > <tempo_change_threshold>)
-		change Current_Tempo = <tempo_bpm>
-		Wait \{2
+		change current_tempo = <tempo_bpm>
+		wait \{2
 			seconds}
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	current_song_beat_time = 0
 endscript
 
-script Set_drummer_Active_Values 
-	Obj_GetID
-	<ObjID> :AnimPreview_SetSourceValues {
-		AV_Drum_Anim_Hand_L = <AV_Drum_Anim_Hand_L>
-		AV_Drum_Anim_Hand_R = <AV_Drum_Anim_Hand_R>
-		AV_Drum_Anim_Foot_R = <AV_Drum_Anim_Foot_R>
-		AV_Drum_Blend_Hand_L = <AV_Drum_Blend_Hand_L>
-		AV_Drum_Blend_Hand_R = <AV_Drum_Blend_Hand_R>
-		AV_Drum_Blend_Foot_R = <AV_Drum_Blend_Foot_R>
-		AV_Drum_Blend_HH_Kit = <AV_Drum_Blend_HH_Kit>
-		AV_Drum_Mod_Loop_Body = <AV_Drum_Mod_Loop_Body>
-		AV_Drum_Mod_Hand_R = <AV_Drum_Mod_Hand_R>
-		AV_Drum_Mod_Hand_L = <AV_Drum_Mod_Hand_L>
-		AV_Drum_Mod_Foot_R = <AV_Drum_Mod_Foot_R>
-		AV_Drum_IK_Hand_L = <AV_Drum_IK_Hand_L>
-		AV_Drum_IK_Hand_R = <AV_Drum_IK_Hand_R>
+script set_drummer_active_values 
+	obj_getid
+	<objid> :animpreview_setsourcevalues {
+		av_drum_anim_hand_l = <av_drum_anim_hand_l>
+		av_drum_anim_hand_r = <av_drum_anim_hand_r>
+		av_drum_anim_foot_r = <av_drum_anim_foot_r>
+		av_drum_blend_hand_l = <av_drum_blend_hand_l>
+		av_drum_blend_hand_r = <av_drum_blend_hand_r>
+		av_drum_blend_foot_r = <av_drum_blend_foot_r>
+		av_drum_blend_hh_kit = <av_drum_blend_hh_kit>
+		av_drum_mod_loop_body = <av_drum_mod_loop_body>
+		av_drum_mod_hand_r = <av_drum_mod_hand_r>
+		av_drum_mod_hand_l = <av_drum_mod_hand_l>
+		av_drum_mod_foot_r = <av_drum_mod_foot_r>
+		av_drum_ik_hand_l = <av_drum_ik_hand_l>
+		av_drum_ik_hand_r = <av_drum_ik_hand_r>
 	}
-	ObjID = musician0
-	AV_Drum_Anim_Hand_L = 0.0
-	AV_Drum_Anim_Hand_R = 0.0
-	AV_Drum_Anim_Foot_R = 0.0
-	AV_Drum_Blend_Hand_L = 0.0
-	AV_Drum_Blend_Hand_R = 0.0
-	AV_Drum_Blend_Foot_R = 0.0
-	AV_Drum_Blend_HH_Kit = 0.0
-	AV_Drum_Mod_Loop_Body = 0.0
-	AV_Drum_Mod_Hand_R = 0.0
-	AV_Drum_Mod_Hand_L = 0.0
-	AV_Drum_Mod_Foot_R = 0.0
-	AV_Drum_IK_Hand_L = 0.0
-	AV_Drum_IK_Hand_R = 0.0
+	objid = musician0
+	av_drum_anim_hand_l = 0.0
+	av_drum_anim_hand_r = 0.0
+	av_drum_anim_foot_r = 0.0
+	av_drum_blend_hand_l = 0.0
+	av_drum_blend_hand_r = 0.0
+	av_drum_blend_foot_r = 0.0
+	av_drum_blend_hh_kit = 0.0
+	av_drum_mod_loop_body = 0.0
+	av_drum_mod_hand_r = 0.0
+	av_drum_mod_hand_l = 0.0
+	av_drum_mod_foot_r = 0.0
+	av_drum_ik_hand_l = 0.0
+	av_drum_ik_hand_r = 0.0
 endscript
 
-script Hit_DrumKit_Piece \{strength = 0.0}
-	BlendDuration = 0.25
-	if (<pieces_Hit> = 2)
-		Anim_Command \{target = DB_Drum_HH
-			command = DegenerateBlend_AddBranch
+script hit_drumkit_piece \{strength = 0.0}
+	blendduration = 0.25
+	if (<pieces_hit> = 2)
+		anim_command \{target = db_drum_hh
+			command = degenerateblend_addbranch
 			params = {
-				BlendDuration = 0.2
-				Tree = $GH_Drum_HH_Branch
+				blendduration = 0.2
+				tree = $gh_drum_hh_branch
 				params = {
 					strength = 1.0
 				}
 			}}
-	elseif (<pieces_Hit> = 3)
-		Anim_Command target = DB_Drum_Cymbal_1 command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <BlendDuration>
-			Tree = $GH_Drum_Cymbal_1_Branch
+	elseif (<pieces_hit> = 3)
+		anim_command target = db_drum_cymbal_1 command = degenerateblend_addbranch params = {
+			blendduration = <blendduration>
+			tree = $gh_drum_cymbal_1_branch
 			params = {
 				strength = <strength>
 			}
 		}
-	elseif (<pieces_Hit> = 6)
-		Anim_Command target = DB_Drum_Cymbal_2 command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <BlendDuration>
-			Tree = $GH_Drum_Cymbal_2_Branch
+	elseif (<pieces_hit> = 6)
+		anim_command target = db_drum_cymbal_2 command = degenerateblend_addbranch params = {
+			blendduration = <blendduration>
+			tree = $gh_drum_cymbal_2_branch
 			params = {
 				strength = <strength>
 			}
 		}
-	elseif (<pieces_Hit> = 8)
-		Anim_Command target = DB_Drum_Cymbal_3 command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <BlendDuration>
-			Tree = $GH_Drum_Cymbal_3_Branch
+	elseif (<pieces_hit> = 8)
+		anim_command target = db_drum_cymbal_3 command = degenerateblend_addbranch params = {
+			blendduration = <blendduration>
+			tree = $gh_drum_cymbal_3_branch
 			params = {
 				strength = <strength>
-				Anim = Random (@ GH_Drum_Cymbal_3_1 @ GH_Drum_Cymbal_3_2 @ GH_Drum_Cymbal_3_3 )
+				anim = Random (@ gh_drum_cymbal_3_1 @ gh_drum_cymbal_3_2 @ gh_drum_cymbal_3_3 )
 			}
 		}
 	endif
 endscript
 
-script Default_Kit_anims 
-	<name> :Anim_Command target = DB_Drum_Cymbal_1 command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $GH_Drum_Cymbal_1_Branch
+script default_kit_anims 
+	<name> :anim_command target = db_drum_cymbal_1 command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $gh_drum_cymbal_1_branch
 		params = {
 			strength = 0.0
 		}
 	}
-	<name> :Anim_Command target = DB_Drum_Cymbal_2 command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $GH_Drum_Cymbal_2_Branch
+	<name> :anim_command target = db_drum_cymbal_2 command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $gh_drum_cymbal_2_branch
 		params = {
 			strength = 0.0
 		}
 	}
-	<name> :Anim_Command target = DB_Drum_Cymbal_3 command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $GH_Drum_Cymbal_3_Branch
+	<name> :anim_command target = db_drum_cymbal_3 command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $gh_drum_cymbal_3_branch
 		params = {
 			strength = 0.0
-			Anim = GH_Drum_Cymbal_3_1
+			anim = gh_drum_cymbal_3_1
 		}
 	}
-	<name> :Anim_Command target = DB_Drum_HH command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $GH_Drum_HH_Branch
+	<name> :anim_command target = db_drum_hh command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $gh_drum_hh_branch
 		params = {
 			strength = 0.0
 		}
 	}
 endscript
 
-script Default_drummer_State 
+script default_drummer_state 
 	smooth_transit_curve = [1.0 , 0.9927499 , 0.97199994 , 0.93924993 , 0.89599997 , 0.84375006 , 0.784 , 0.71825 , 0.64800006 , 0.57475 , 0.5 , 0.42525002 , 0.35200003 , 0.28175 , 0.216 , 0.15625 , 0.104 , 0.0607499 , 0.027999999 , 0.00725001 , 0.0]
 	switch <currentset>
 		case 1
-		TargetIK1 = DB_Drum_BaseIK_Anim_Old1
-		targetIK2 = DB_Drum_BaseIK_Anim_New1
-		target1 = DB_Drum_Base_Anim_Old1
-		target2 = DB_Drum_Base_Anim_New1
+		targetik1 = db_drum_baseik_anim_old1
+		targetik2 = db_drum_baseik_anim_new1
+		target1 = db_drum_base_anim_old1
+		target2 = db_drum_base_anim_new1
 		case 2
-		TargetIK1 = DB_Drum_BaseIK_Anim_Old2
-		targetIK2 = DB_Drum_BaseIK_Anim_New2
-		target1 = DB_Drum_Base_Anim_Old2
-		target2 = DB_Drum_Base_Anim_New2
+		targetik1 = db_drum_baseik_anim_old2
+		targetik2 = db_drum_baseik_anim_new2
+		target1 = db_drum_base_anim_old2
+		target2 = db_drum_base_anim_new2
 		case 3
-		TargetIK1 = DB_Drum_BaseIK_Anim_Old3
-		targetIK2 = DB_Drum_BaseIK_Anim_New3
-		target1 = DB_Drum_Base_Anim_Old3
-		target2 = DB_Drum_Base_Anim_New3
+		targetik1 = db_drum_baseik_anim_old3
+		targetik2 = db_drum_baseik_anim_new3
+		target1 = db_drum_base_anim_old3
+		target2 = db_drum_base_anim_new3
 		case 4
-		TargetIK1 = DB_Drum_BaseIK_Anim_Old4
-		targetIK2 = DB_Drum_BaseIK_Anim_New4
-		target1 = DB_Drum_Base_Anim_Old4
-		target2 = DB_Drum_Base_Anim_New4
+		targetik1 = db_drum_baseik_anim_old4
+		targetik2 = db_drum_baseik_anim_new4
+		target1 = db_drum_base_anim_old4
+		target2 = db_drum_base_anim_new4
 	endswitch
-	Anim_Command target = DB_Drum_SHit_R_Anim command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = db_drum_shit_r_anim command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Single_Source_Anim_Event_tree
+		tree = $single_source_anim_event_tree
 		params = {
-			Use_anim = Drum_S1T3_SHit_R
+			use_anim = drum_s1t3_shit_r
 		}
 	}
-	Anim_Command target = DB_Drum_MHit_R_Anim command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = db_drum_mhit_r_anim command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Single_Source_Anim_Event_tree
+		tree = $single_source_anim_event_tree
 		params = {
-			Use_anim = Drum_S1T3_MHit_R
+			use_anim = drum_s1t3_mhit_r
 		}
 	}
-	Anim_Command target = DB_Drum_QHit_R_Anim command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = db_drum_qhit_r_anim command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Single_Source_Anim_Event_tree
+		tree = $single_source_anim_event_tree
 		params = {
-			Use_anim = Drum_S1T3_QHit_R
+			use_anim = drum_s1t3_qhit_r
 		}
 	}
-	Anim_Command target = DB_Drum_SHit_L_Anim command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = db_drum_shit_l_anim command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Single_Source_Anim_Event_tree
+		tree = $single_source_anim_event_tree
 		params = {
-			Use_anim = Drum_S1T3_SHit_L
+			use_anim = drum_s1t3_shit_l
 		}
 	}
-	Anim_Command target = DB_Drum_MHit_L_Anim command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = db_drum_mhit_l_anim command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Single_Source_Anim_Event_tree
+		tree = $single_source_anim_event_tree
 		params = {
-			Use_anim = Drum_S1T3_MHit_L
+			use_anim = drum_s1t3_mhit_l
 		}
 	}
-	Anim_Command target = DB_Drum_QHit_L_Anim command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <time_to_trans>
+	anim_command target = db_drum_qhit_l_anim command = degenerateblend_addbranch params = {
+		blendduration = <time_to_trans>
 		blendcurve = <smooth_transit_curve>
-		Tree = $Single_Source_Anim_Event_tree
+		tree = $single_source_anim_event_tree
 		params = {
-			Use_anim = Drum_S1T3_QHit_L
+			use_anim = drum_s1t3_qhit_l
 		}
 	}
-	if Anim_AnimNodeExists id = <target1>
-		Anim_Command target = <target1> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <time_to_trans>
+	if anim_animnodeexists id = <target1>
+		anim_command target = <target1> command = degenerateblend_addbranch params = {
+			blendduration = <time_to_trans>
 			blendcurve = <smooth_transit_curve>
-			Tree = $Single_Source_tree
+			tree = $single_source_tree
 			params = {
-				Use_anim = Drum_S1T3
+				use_anim = drum_s1t3
 			}
 		}
 	endif
-	if Anim_AnimNodeExists id = <target2>
-		Anim_Command target = <target2> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <time_to_trans>
+	if anim_animnodeexists id = <target2>
+		anim_command target = <target2> command = degenerateblend_addbranch params = {
+			blendduration = <time_to_trans>
 			blendcurve = <smooth_transit_curve>
-			Tree = $Single_Source_tree
+			tree = $single_source_tree
 			params = {
-				Use_anim = Drum_S1T3
+				use_anim = drum_s1t3
 			}
 		}
 	endif
-	if Anim_AnimNodeExists id = <TargetIK1>
-		Anim_Command target = <TargetIK1> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <time_to_trans>
+	if anim_animnodeexists id = <targetik1>
+		anim_command target = <targetik1> command = degenerateblend_addbranch params = {
+			blendduration = <time_to_trans>
 			blendcurve = <smooth_transit_curve>
-			Tree = $Single_Source_tree
+			tree = $single_source_tree
 			params = {
-				Use_anim = Drum_S1T3_IK
+				use_anim = drum_s1t3_ik
 			}
 		}
 	endif
-	if Anim_AnimNodeExists id = <targetIK2>
-		Anim_Command target = <targetIK2> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <time_to_trans>
+	if anim_animnodeexists id = <targetik2>
+		anim_command target = <targetik2> command = degenerateblend_addbranch params = {
+			blendduration = <time_to_trans>
 			blendcurve = <smooth_transit_curve>
-			Tree = $Single_Source_tree
+			tree = $single_source_tree
 			params = {
-				Use_anim = Drum_S1T3_IK
+				use_anim = drum_s1t3_ik
 			}
 		}
 	endif

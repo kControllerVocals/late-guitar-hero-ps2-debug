@@ -3,15 +3,15 @@ guitarist_info = {
 	facial_anims = none
 	facial_anims_default = none
 	stance = stance_frontend
-	finger_anims = guitarist_finger_anims_CAR_Male
+	finger_anims = guitarist_finger_anims_car_male
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = CAR_Male_Normal
+	strum = car_male_normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -25,7 +25,7 @@ guitarist_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
 	part = guitar
@@ -39,15 +39,15 @@ bassist_info = {
 	facial_anims = none
 	facial_anims_default = none
 	stance = stance_frontend
-	finger_anims = guitarist_finger_anims_CAR_Male
+	finger_anims = guitarist_finger_anims_car_male
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = CAR_Male_Normal
+	strum = car_male_normal
 	bass_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -61,10 +61,10 @@ bassist_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
-	part = Bass
+	part = bass
 	intro_anim_name = none
 	win_anim_name = none
 	lose_anim_name = none
@@ -74,16 +74,16 @@ vocalist_info = {
 	anim_set = vocalist_animations
 	facial_anims = none
 	facial_anims_default = none
-	stance = Stance_A
-	finger_anims = guitarist_finger_anims_CAR_Male
+	stance = stance_a
+	finger_anims = guitarist_finger_anims_car_male
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = CAR_Male_Normal
+	strum = car_male_normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -97,10 +97,10 @@ vocalist_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
-	part = Vocals
+	part = vocals
 	intro_anim_name = none
 	win_anim_name = none
 	lose_anim_name = none
@@ -110,16 +110,16 @@ vocalist2_info = {
 	anim_set = vocalist_animations
 	facial_anims = none
 	facial_anims_default = none
-	stance = Stance_A
-	finger_anims = guitarist_finger_anims_CAR_Male
+	stance = stance_a
+	finger_anims = guitarist_finger_anims_car_male
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = CAR_Male_Normal
+	strum = car_male_normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -133,28 +133,28 @@ vocalist2_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
-	part = Vocals
+	part = vocals
 	intro_anim_name = none
 	win_anim_name = none
 	lose_anim_name = none
 	playing_special_anim = false
 }
 drummer_info = {
-	Twist = 0.0
+	twist = 0.0
 	desired_twist = 0.0
 	anim_set = drummer_animations
 	facial_anims = none
 	facial_anims_default = none
-	stance = Stance_A
-	current_anim = Idle
+	stance = stance_a
+	current_anim = idle
 	anim_repeat_count = 1
 	disable_arms = 0
 	arms_disabled = 0
 	cycle_anim = false
-	next_stance = Stance_A
+	next_stance = stance_a
 	next_anim = none
 	next_anim_repeat_count = 1
 	next_anim_disable_arms = 0
@@ -164,7 +164,7 @@ drummer_info = {
 	allow_movement = true
 	playing_missed_note = false
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	last_left_arm_note = 0
 	last_right_arm_note = 0
 	scale = 1.0
@@ -176,18 +176,18 @@ drummer_info = {
 	playing_special_anim = false
 }
 drummer2_info = {
-	Twist = 0.0
+	twist = 0.0
 	desired_twist = 0.0
 	anim_set = drummer_animations
 	facial_anims = none
 	facial_anims_default = none
-	stance = Stance_A
-	current_anim = Idle
+	stance = stance_a
+	current_anim = idle
 	anim_repeat_count = 1
 	disable_arms = 0
 	arms_disabled = 0
 	cycle_anim = false
-	next_stance = Stance_A
+	next_stance = stance_a
 	next_anim = none
 	next_anim_repeat_count = 1
 	next_anim_disable_arms = 0
@@ -197,7 +197,7 @@ drummer2_info = {
 	allow_movement = true
 	playing_missed_note = false
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	last_left_arm_note = 0
 	last_right_arm_note = 0
 	scale = 1.0
@@ -217,11 +217,11 @@ cas_musician1_info = {
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = Normal
+	strum = normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -235,7 +235,7 @@ cas_musician1_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
 	part = guitar
@@ -253,11 +253,11 @@ cas_musician2_info = {
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = Normal
+	strum = normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -271,7 +271,7 @@ cas_musician2_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
 	part = guitar
@@ -289,11 +289,11 @@ cas_musician3_info = {
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = Normal
+	strum = normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -307,7 +307,7 @@ cas_musician3_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
 	part = guitar
@@ -325,11 +325,11 @@ cas_musician4_info = {
 	lefty_chords = false
 	large_chords = false
 	fret_anims = fret_anims_rocker
-	strum = Normal
+	strum = normal
 	guitar_model = none
 	playing_missed_note = false
-	last_strum_length = Short
-	current_anim = Idle
+	last_strum_length = short
+	current_anim = idle
 	anim_repeat_count = 1
 	arms_disabled = 0
 	disable_arms = 0
@@ -343,7 +343,7 @@ cas_musician4_info = {
 	waiting_for_cameracut = false
 	allow_movement = true
 	target_node = none
-	facial_anim = Idle
+	facial_anim = idle
 	scale = 1.0
 	playing = true
 	part = guitar
@@ -358,36 +358,36 @@ script create_band \{async = 0}
 	if ($disable_band = 1)
 		return \{true}
 	endif
-	Band_ClearAnimTempo
+	band_clearanimtempo
 	band_builder_create_band async = <async> min_time = <min_time>
 	set_bandvisible
 	debug_toggle_band_visiblity
 	change \{enable_guitarist_camera_swapping = false}
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
-	if GotParam \{AirInstruments}
-		if (<AirInstruments> = 1)
-			change \{Cheat_AirInstruments = 1}
+	if gotparam \{airinstruments}
+		if (<airinstruments> = 1)
+			change \{cheat_airinstruments = 1}
 		else
-			change \{Cheat_AirInstruments = 2}
+			change \{cheat_airinstruments = 2}
 		endif
 	endif
-	if GotParam \{InvisibleCharacters}
-		if (<InvisibleCharacters> = 1)
-			change \{Cheat_InvisibleCharacters = 1}
+	if gotparam \{invisiblecharacters}
+		if (<invisiblecharacters> = 1)
+			change \{cheat_invisiblecharacters = 1}
 		else
-			change \{Cheat_InvisibleCharacters = 2}
+			change \{cheat_invisiblecharacters = 2}
 		endif
 	endif
-	BandManager_AirGuitarCheat
-	BandManager_InvisibleCharactersCheat
+	bandmanager_airguitarcheat
+	bandmanager_invisiblecharacterscheat
 	return \{true}
 endscript
 
 script create_frontend_musician \{instrument = none}
 
-	ExtendCRC <name> '_Info' out = info_struct
-	ClearEventHandlerGroup \{hand_events}
+	extendcrc <name> '_Info' out = info_struct
+	cleareventhandlergroup \{hand_events}
 	if NOT create_band_member name = <name> profile = <profile> instrument = <instrument> async = <async> pos = <pos> dir = <dir>
 		return \{false}
 	endif
@@ -395,23 +395,23 @@ script create_frontend_musician \{instrument = none}
 	return \{true}
 endscript
 
-script create_guitarist \{name = Guitarist
+script create_guitarist \{name = guitarist
 		profile_id = judy
 		async = 0}
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 
 	get_musician_profile_struct_by_id id = <profile_id> savegame = <savegame>
-	if GotParam \{node_name}
+	if gotparam \{node_name}
 		waypoint_id = <node_name>
 	else
 		get_start_node_id member = <name>
 	endif
-	if DoesWayPointExist name = <waypoint_id>
+	if doeswaypointexist name = <waypoint_id>
 		change structurename = <info_struct> target_node = <waypoint_id>
 	else
 
 	endif
-	ClearEventHandlerGroup \{hand_events}
+	cleareventhandlergroup \{hand_events}
 	set_guitar_string_properties <...>
 	if NOT create_band_member name = <name> profile = <profile_struct> start_node = <waypoint_id> instrument = guitar <...>
 		return \{false}
@@ -428,20 +428,20 @@ endscript
 script create_bassist \{name = bassist
 		profile_id = bassist
 		async = 0}
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 
 	get_musician_profile_struct_by_id id = <profile_id> savegame = <savegame>
 	get_start_node_id member = <name>
-	if DoesWayPointExist name = <waypoint_id>
-		GetWaypointPos name = <waypoint_id>
+	if doeswaypointexist name = <waypoint_id>
+		getwaypointpos name = <waypoint_id>
 		change structurename = <info_struct> target_node = <waypoint_id>
 	else
 
 	endif
 	set_bass_string_properties <...>
-	KillSpawnedScript \{name = PrepareBandForRenderUpdateLoop}
-	spawnscriptnow \{PrepareBandForRenderUpdateLoop}
-	if NOT create_band_member name = <name> profile = <profile_struct> start_node = <waypoint_id> instrument = Bass <...>
+	killspawnedscript \{name = preparebandforrenderupdateloop}
+	spawnscriptnow \{preparebandforrenderupdateloop}
+	if NOT create_band_member name = <name> profile = <profile_struct> start_node = <waypoint_id> instrument = bass <...>
 		return \{false}
 	endif
 	return \{true}
@@ -450,31 +450,31 @@ endscript
 script create_vocalist \{name = vocalist
 		profile_id = singer
 		async = 0}
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 
 	get_musician_profile_struct_by_id id = <profile_id> savegame = <savegame>
 	get_start_node_id member = <name>
-	if DoesWayPointExist name = <waypoint_id>
-		GetWaypointPos name = <waypoint_id>
+	if doeswaypointexist name = <waypoint_id>
+		getwaypointpos name = <waypoint_id>
 		change structurename = <info_struct> target_node = <waypoint_id>
 	else
 
 	endif
-	if NOT create_band_member name = <name> profile = <profile_struct> start_node = <waypoint_id> instrument = Vocals <...>
+	if NOT create_band_member name = <name> profile = <profile_struct> start_node = <waypoint_id> instrument = vocals <...>
 		return \{false}
 	endif
 	return \{true}
 endscript
 
-script create_drummer \{name = Drummer
-		profile_id = Drummer
+script create_drummer \{name = drummer
+		profile_id = drummer
 		async = 0}
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 
 	get_musician_profile_struct_by_id id = <profile_id> savegame = <savegame>
 	get_start_node_id member = <name>
-	if DoesWayPointExist name = <waypoint_id>
-		GetWaypointPos name = <waypoint_id>
+	if doeswaypointexist name = <waypoint_id>
+		getwaypointpos name = <waypoint_id>
 		change structurename = <info_struct> target_node = <waypoint_id>
 	else
 
@@ -486,10 +486,10 @@ script create_drummer \{name = Drummer
 endscript
 
 script guitarist_start_anims 
-	if ($Cheat_FocusMode = 1)
+	if ($cheat_focusmode = 1)
 		return
 	endif
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 	setup_character_anims {
 		profile_struct = <profile_struct>
 		character_id = <character_id>
@@ -501,8 +501,8 @@ script guitarist_start_anims
 	finger_anims = ($<info_struct>.finger_anims)
 	fret_anims = ($<info_struct>.fret_anims)
 	strum_type = ($<info_struct>.strum)
-	ExtendCRC <strum_type> '_Strums' out = strum_anims
-	<name> :GetSingleTag lefty
+	extendcrc <strum_type> '_Strums' out = strum_anims
+	<name> :getsingletag lefty
 	if (<lefty> = 1)
 		change structurename = <info_struct> fret_anims = fret_anims_rocker_lefty
 		fret_anims = fret_anims_rocker_lefty
@@ -512,13 +512,13 @@ script guitarist_start_anims
 			fret_anims = fret_anims_rocker
 		endif
 	endif
-	if CompositeObjectExists name = <name>
-		<name> :hero_play_fret_anim Anim = ($<fret_anims>.track_119)
-		<name> :SetTags LastBasePose = 'Strum_String_1'
-		<name> :SetTags LastType = null
-		<name> :SetTags LastNoteValue = 0
-		<name> :GetSingleTag is_female
-		<name> :GetSingleTag large_hands
+	if compositeobjectexists name = <name>
+		<name> :hero_play_fret_anim anim = ($<fret_anims>.track_119)
+		<name> :settags lastbasepose = 'Strum_String_1'
+		<name> :settags lasttype = null
+		<name> :settags lastnotevalue = 0
+		<name> :getsingletag is_female
+		<name> :getsingletag large_hands
 		if (<is_female> = 1)
 			gender = 'GH_Female'
 		elseif (<large_hands> = 1)
@@ -531,21 +531,21 @@ script guitarist_start_anims
 			gender = 'GH_Male'
 			strumtype = 'GL'
 		endif
-		if GotParam \{loading_into_song}
-			Initialize_Strum_anims strumtype = <strumtype> gender = <gender> name = <name>
+		if gotparam \{loading_into_song}
+			initialize_strum_anims strumtype = <strumtype> gender = <gender> name = <name>
 		endif
-		BandManager_AddGuitarist name = <name> player = 1
-		BandManager_ChangeStance name = <name> stance = <stance> no_wait
-		<name> :Obj_SpawnScriptNow facial_anim_loop
-		<name> :Obj_ForceUpdate
+		bandmanager_addguitarist name = <name> player = 1
+		bandmanager_changestance name = <name> stance = <stance> no_wait
+		<name> :obj_spawnscriptnow facial_anim_loop
+		<name> :obj_forceupdate
 	endif
 endscript
 
 script bassist_start_anims 
-	if ($Cheat_FocusMode = 1)
+	if ($cheat_focusmode = 1)
 		return
 	endif
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 	setup_character_anims {
 		profile_struct = <profile_struct>
 		character_id = <character_id>
@@ -556,18 +556,18 @@ script bassist_start_anims
 	finger_anims = ($<info_struct>.finger_anims)
 	fret_anims = ($<info_struct>.fret_anims)
 	strum_type = ($<info_struct>.strum)
-	ExtendCRC <strum_type> '_Strums' out = strum_anims
-	<name> :GetSingleTag lefty
+	extendcrc <strum_type> '_Strums' out = strum_anims
+	<name> :getsingletag lefty
 	if (<lefty> = 1)
 		change structurename = <info_struct> fret_anims = fret_anims_rocker_lefty
 	endif
-	if CompositeObjectExists name = <name>
-		<name> :hero_play_fret_anim Anim = ($<fret_anims>.track_96)
-		<name> :SetTags LastBasePose = 'Strum_String_1'
-		<name> :SetTags LastType = null
-		<name> :SetTags LastNoteValue = 0
-		<name> :GetSingleTag is_female
-		<name> :GetSingleTag large_hands
+	if compositeobjectexists name = <name>
+		<name> :hero_play_fret_anim anim = ($<fret_anims>.track_96)
+		<name> :settags lastbasepose = 'Strum_String_1'
+		<name> :settags lasttype = null
+		<name> :settags lastnotevalue = 0
+		<name> :getsingletag is_female
+		<name> :getsingletag large_hands
 		if (<is_female> = 1)
 			gender = 'GH_Female'
 		elseif (<large_hands> = 1)
@@ -580,69 +580,69 @@ script bassist_start_anims
 			gender = 'GH_Male'
 			strumtype = 'GL'
 		endif
-		if GotParam \{loading_into_song}
-			Initialize_Strum_anims strumtype = <strumtype> gender = <gender> name = <name>
+		if gotparam \{loading_into_song}
+			initialize_strum_anims strumtype = <strumtype> gender = <gender> name = <name>
 		endif
-		BandManager_AddBassist name = <name>
-		<name> :Obj_SpawnScriptNow facial_anim_loop
-		<name> :Obj_ForceUpdate
+		bandmanager_addbassist name = <name>
+		<name> :obj_spawnscriptnow facial_anim_loop
+		<name> :obj_forceupdate
 	endif
 endscript
 
-script Initialize_Strum_anims 
-	GetRandomFloat \{a = 0.0
+script initialize_strum_anims 
+	getrandomfloat \{a = 0.0
 		b = 1.0}
 	startanim = <random_float>
-	FormatText checksumname = baseanim '%a_%b_Strum_Base' a = <gender> b = <strumtype>
-	FormatText checksumname = BaseanimHigh '%a_%b_Strum_Base_High' a = <gender> b = <strumtype>
-	FormatText checksumname = BaseanimMid '%a_%b_Strum_Base_Mid' a = <gender> b = <strumtype>
-	FormatText checksumname = BaseanimLow '%a_%b_Strum_Base_Low' a = <gender> b = <strumtype>
-	FormatText checksumname = IdleBase '%a_%b_Strum_String_1' a = <gender> b = <strumtype>
-	FormatText checksumname = Idleanim '%a_%b_Strum_Idle_Rest' a = <gender> b = <strumtype>
-	<name> :Anim_Command target = Dynamic_Strum_Base command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $Dynamic_Strum_Source
+	formattext checksumname = baseanim '%a_%b_Strum_Base' a = <gender> b = <strumtype>
+	formattext checksumname = baseanimhigh '%a_%b_Strum_Base_High' a = <gender> b = <strumtype>
+	formattext checksumname = baseanimmid '%a_%b_Strum_Base_Mid' a = <gender> b = <strumtype>
+	formattext checksumname = baseanimlow '%a_%b_Strum_Base_Low' a = <gender> b = <strumtype>
+	formattext checksumname = idlebase '%a_%b_Strum_String_1' a = <gender> b = <strumtype>
+	formattext checksumname = idleanim '%a_%b_Strum_Idle_Rest' a = <gender> b = <strumtype>
+	<name> :anim_command target = dynamic_strum_base command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $dynamic_strum_source
 		params = {
-			Anim = <baseanim>
+			anim = <baseanim>
 		}
 	}
-	<name> :Anim_Command target = Dynamic_Strum_Roll_High command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $Dynamic_Strum_Source
+	<name> :anim_command target = dynamic_strum_roll_high command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $dynamic_strum_source
 		params = {
-			Anim = <BaseanimHigh>
+			anim = <baseanimhigh>
 		}
 	}
-	<name> :Anim_Command target = Dynamic_Strum_Roll_Mid command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $Dynamic_Strum_Source
+	<name> :anim_command target = dynamic_strum_roll_mid command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $dynamic_strum_source
 		params = {
-			Anim = <BaseanimMid>
+			anim = <baseanimmid>
 		}
 	}
-	<name> :Anim_Command target = Dynamic_Strum_Roll_Low command = DegenerateBlend_AddBranch params = {
-		BlendDuration = 0.0
-		Tree = $Dynamic_Strum_Source
+	<name> :anim_command target = dynamic_strum_roll_low command = degenerateblend_addbranch params = {
+		blendduration = 0.0
+		tree = $dynamic_strum_source
 		params = {
-			Anim = <BaseanimLow>}
+			anim = <baseanimlow>}
 	}
-	<name> :Anim_Command target = Dynamic_strums command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <blend>
-		blendcurve = $Idle_Blend_Curve
-		Tree = $Dynamic_Strum_Idle_Branch
+	<name> :anim_command target = dynamic_strums command = degenerateblend_addbranch params = {
+		blendduration = <blend>
+		blendcurve = $idle_blend_curve
+		tree = $dynamic_strum_idle_branch
 		params = {
 			startanim = <startanim>
-			baseanim = <IdleBase>
-			Strumanim = <Idleanim>
+			baseanim = <idlebase>
+			strumanim = <idleanim>
 		}
 	}
 endscript
 
 script vocalist_start_anims 
-	if ($Cheat_FocusMode = 1)
+	if ($cheat_focusmode = 1)
 		return
 	endif
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 	setup_character_anims {
 		profile_struct = <profile_struct>
 		character_id = <character_id>
@@ -650,58 +650,58 @@ script vocalist_start_anims
 		instrument = <instrument>
 		loading_into_song = <loading_into_song>
 	}
-	if CompositeObjectExists name = <name>
-		BandManager_AddVocalist name = <name>
-		<name> :Obj_SpawnScriptNow facial_anim_loop
+	if compositeobjectexists name = <name>
+		bandmanager_addvocalist name = <name>
+		<name> :obj_spawnscriptnow facial_anim_loop
 	endif
 endscript
 use_drummer_events = 0
 
 script drummer_start_anims 
-	if ($Cheat_FocusMode = 1)
+	if ($cheat_focusmode = 1)
 		return
 	endif
-	if ($Drumtest = 1)
-		Drummer_Reset_Globals
-		<name> :AnimInfo_GetAllActiveValueSources
-		AV_Drum_Anim_Hand_L = $Drum_Idlepoint_Arm_SHit
-		AV_Drum_Anim_Hand_R = $Drum_Idlepoint_Arm_SHit
-		AV_Drum_Anim_Foot_R = $Drum_Idlepoint_Foot_Hit
-		AV_Drum_Blend_Hand_L = 1.0
-		AV_Drum_Blend_Hand_R = 1.0
-		AV_Drum_Blend_Foot_R = 1.0
-		AV_Drum_Mod_Loop_Body = 1.0
-		AV_Drum_Mod_Hand_R = 1.0
-		AV_Drum_Mod_Hand_L = 1.0
-		AV_Drum_Mod_Foot_R = 1.0
-		AV_Drum_IK_Hand_L = 0.0
-		AV_Drum_IK_Hand_R = 0.0
-		<AV_Drum_IK_Feet> = 1.0
-		<AV_Drum_Blend_HH_Kit> = 1.0
-		<name> :AnimPreview_SetSourceValues <...>
-		<name> :SetTags Idle = true
-		<name> :SetTags tap = true
-		<name> :Obj_SpawnScriptNow Drummer_Transit_Base_Long params = {
-			node = Body
-			Drum_Old_Long_String = 'S1T3'
-			Drum_New_Long_String = 'S1T3'
+	if ($drumtest = 1)
+		drummer_reset_globals
+		<name> :animinfo_getallactivevaluesources
+		av_drum_anim_hand_l = $drum_idlepoint_arm_shit
+		av_drum_anim_hand_r = $drum_idlepoint_arm_shit
+		av_drum_anim_foot_r = $drum_idlepoint_foot_hit
+		av_drum_blend_hand_l = 1.0
+		av_drum_blend_hand_r = 1.0
+		av_drum_blend_foot_r = 1.0
+		av_drum_mod_loop_body = 1.0
+		av_drum_mod_hand_r = 1.0
+		av_drum_mod_hand_l = 1.0
+		av_drum_mod_foot_r = 1.0
+		av_drum_ik_hand_l = 0.0
+		av_drum_ik_hand_r = 0.0
+		<av_drum_ik_feet> = 1.0
+		<av_drum_blend_hh_kit> = 1.0
+		<name> :animpreview_setsourcevalues <...>
+		<name> :settags idle = true
+		<name> :settags tap = true
+		<name> :obj_spawnscriptnow drummer_transit_base_long params = {
+			node = body
+			drum_old_long_string = 'S1T3'
+			drum_new_long_string = 'S1T3'
 			time_to_trans_base = 0.0
 			time_to_trans = 0.0
 			currentset = 1
 		}
-		<name> :Obj_SpawnScriptNow Drummer_Transit_Base_Long params = {
-			node = Ik
-			Drum_Old_Long_String = 'S1T3'
-			Drum_New_Long_String = 'S1T3'
+		<name> :obj_spawnscriptnow drummer_transit_base_long params = {
+			node = ik
+			drum_old_long_string = 'S1T3'
+			drum_new_long_string = 'S1T3'
 			time_to_trans_base = 0.0
 			time_to_trans = 0.0
 			currentset = 1
 		}
-		<name> :Obj_SpawnScriptNow Default_drummer_State params = {time_to_trans = 0.0 currentset = 1}
-		<name> :Obj_SpawnScriptNow Drummer_Transit_Idles params = {state = in tapin = true currentset = 1 Last_Hit = false}
-		Default_Kit_anims name = <name>
+		<name> :obj_spawnscriptnow default_drummer_state params = {time_to_trans = 0.0 currentset = 1}
+		<name> :obj_spawnscriptnow drummer_transit_idles params = {state = in tapin = true currentset = 1 last_hit = false}
+		default_kit_anims name = <name>
 	endif
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 	setup_character_anims {
 		profile_struct = <profile_struct>
 		character_id = <character_id>
@@ -709,25 +709,25 @@ script drummer_start_anims
 		instrument = <instrument>
 		loading_into_song = <loading_into_song>
 	}
-	BandManager_AddDrummer name = <name>
-	<name> :Obj_SpawnScriptNow facial_anim_loop
+	bandmanager_adddrummer name = <name>
+	<name> :obj_spawnscriptnow facial_anim_loop
 endscript
 
 script initial_drummer_anim 
 	if ($current_song = jamsession)
-		hero_play_anim \{Anim = Drum_Andy_StandardLP_HS_100_01
-			Cycle}
+		hero_play_anim \{anim = drum_andy_standardlp_hs_100_01
+			cycle}
 	else
-		hero_play_anim \{Anim = Drum_Andy_StandardLP_NoTempo
-			Cycle}
+		hero_play_anim \{anim = drum_andy_standardlp_notempo
+			cycle}
 	endif
 endscript
 
 script should_display_debug_info 
-	Obj_GetID
+	obj_getid
 	display_info = false
-	switch (<ObjID>)
-		case Guitarist
+	switch (<objid>)
+		case guitarist
 		if ($display_guitarist_anim_info = true)
 			display_info = true
 		endif
@@ -739,7 +739,7 @@ script should_display_debug_info
 		if ($display_vocalist_anim_info = true)
 			display_info = true
 		endif
-		case Drummer
+		case drummer
 		if ($display_drummer_anim_info = true)
 			display_info = true
 		endif
@@ -749,14 +749,14 @@ endscript
 
 script hero_play_adjusting_random_anims \{blend_time = 0.2
 		random_start_time = false}
-	Obj_GetID
-	ExtendCRC <ObjID> '_Info' out = info_struct
+	obj_getid
+	extendcrc <objid> '_Info' out = info_struct
 	count = 0
 	begin
-	Anim = ($<info_struct>.current_anim)
-	Cycle = ($<info_struct>.cycle_anim)
+	anim = ($<info_struct>.current_anim)
+	cycle = ($<info_struct>.cycle_anim)
 	repeat_count = ($<info_struct>.anim_repeat_count)
-	if (<ObjID> = Guitarist || <ObjID> = bassist)
+	if (<objid> = guitarist || <objid> = bassist)
 		if (($<info_struct>.disable_arms) = 2)
 			if ($<info_struct>.arms_disabled != 2)
 
@@ -775,28 +775,28 @@ script hero_play_adjusting_random_anims \{blend_time = 0.2
 			endif
 		endif
 	endif
-	if (<ObjID> = Guitarist)
-		if NOT (<Anim> = Idle)
-			change structurename = <info_struct> facial_anim = <Anim>
+	if (<objid> = guitarist)
+		if NOT (<anim> = idle)
+			change structurename = <info_struct> facial_anim = <anim>
 		endif
 	endif
-	if hero_play_tempo_anim_cfunc Anim = <Anim> BlendDuration = <blend_time>
+	if hero_play_tempo_anim_cfunc anim = <anim> blendduration = <blend_time>
 		start = 0.0
-		if Anim_AnimExists Anim = <anim_to_run>
-			anim_Getanimlength Anim = <anim_to_run>
+		if anim_animexists anim = <anim_to_run>
+			anim_getanimlength anim = <anim_to_run>
 			if (<random_start_time> = true)
-				GetRandomValue a = 0.0 b = <length> name = start
+				getrandomvalue a = 0.0 b = <length> name = start
 
 			endif
 		else
 
 		endif
 		random_start_time = false
-		hero_play_anim Anim = <anim_to_run> BlendDuration = <blend_time> UseMotionExtraction = <use_motion_extraction> start = <start>
+		hero_play_anim anim = <anim_to_run> blendduration = <blend_time> usemotionextraction = <use_motion_extraction> start = <start>
 		hero_wait_until_anim_finished
 		blend_time = 0.2
 	else
-		WaitOneGameFrame
+		waitonegameframe
 	endif
 	display_debug_info = false
 	if (should_display_debug_info)
@@ -811,7 +811,7 @@ script hero_play_adjusting_random_anims \{blend_time = 0.2
 
 		endif
 		if play_stance_transition_cfunc anim_set = <anim_set> old_stance = <stance> new_stance = <next_stance>
-			hero_play_anim Anim = <anim_to_run>
+			hero_play_anim anim = <anim_to_run>
 			hero_wait_until_anim_finished
 		endif
 		change structurename = <info_struct> stance = <next_stance>
@@ -820,7 +820,7 @@ script hero_play_adjusting_random_anims \{blend_time = 0.2
 	endif
 	next_anim = ($<info_struct>.next_anim)
 	if (<next_anim> = none && <stance_changed> = false)
-		if (<Cycle> = false)
+		if (<cycle> = false)
 			repeat_count = (<repeat_count> - 1)
 			if (<repeat_count> < 1)
 				if (<display_debug_info> = true)
@@ -830,8 +830,8 @@ script hero_play_adjusting_random_anims \{blend_time = 0.2
 			endif
 		endif
 		change structurename = <info_struct> anim_repeat_count = <repeat_count>
-		if (<Cycle> = false && <repeat_count> <= 0)
-			change structurename = <info_struct> current_anim = Idle
+		if (<cycle> = false && <repeat_count> <= 0)
+			change structurename = <info_struct> current_anim = idle
 			change structurename = <info_struct> cycle_anim = true
 			if (<next_stance> = intro || <next_stance> = intro_smstg || <next_stance> = stance_frontend || <next_stance> = stance_frontend_guitar)
 			else
@@ -844,7 +844,7 @@ script hero_play_adjusting_random_anims \{blend_time = 0.2
 		else
 			blend_time = 0.2
 			if (<display_debug_info> = true)
-				if (<Cycle> = false)
+				if (<cycle> = false)
 
 				else
 
@@ -863,7 +863,7 @@ script hero_play_adjusting_random_anims \{blend_time = 0.2
 			if (<display_debug_info> = true)
 
 			endif
-			next_anim = Idle
+			next_anim = idle
 			cycle_next_anim = true
 		else
 			cycle_next_anim = ($<info_struct>.cycle_next_anim)
@@ -889,28 +889,28 @@ endscript
 script setup_character_anims 
 
 
-	if NOT GotParam \{profile_struct}
+	if NOT gotparam \{profile_struct}
 
 	endif
 	if NOT get_body_key_from_appearance key = anim_struct appearance = (<profile_struct>.appearance)
 
 	endif
 	if get_anim_struct_member anim_struct = <anim_struct> loading_into_song = <loading_into_song> member = <instrument>
-		if NOT GotParam \{loading_into_song}
-			get_anim_struct_member anim_struct = <anim_struct> member = FrontEnd
-			if NOT StructureContains Structure = <anim_struct_member> finger_anims
+		if NOT gotparam \{loading_into_song}
+			get_anim_struct_member anim_struct = <anim_struct> member = frontend
+			if NOT structurecontains structure = <anim_struct_member> finger_anims
 				use_default_finger_fret_strum = 1
 			endif
 		endif
-		if StructureContains Structure = <anim_struct_member> anim_set
+		if structurecontains structure = <anim_struct_member> anim_set
 
 			change structurename = <info_struct> anim_set = (<anim_struct_member>.anim_set)
-			if ((<instrument> = guitar) || (<instrument> = Bass) || (<instrument> = rhythm))
+			if ((<instrument> = guitar) || (<instrument> = bass) || (<instrument> = rhythm))
 				change structurename = <info_struct> part = <instrument>
-				if GotParam \{use_default_finger_fret_strum}
+				if gotparam \{use_default_finger_fret_strum}
 					change structurename = <info_struct> finger_anims = guitarist_finger_anims_car_female
 					change structurename = <info_struct> fret_anims = fret_anims_rocker
-					change structurename = <info_struct> strum = CAR_Female_Normal
+					change structurename = <info_struct> strum = car_female_normal
 				else
 					change structurename = <info_struct> finger_anims = (<anim_struct_member>.finger_anims)
 					change structurename = <info_struct> fret_anims = (<anim_struct_member>.fret_anims)
@@ -919,9 +919,9 @@ script setup_character_anims
 			endif
 		else
 
-			change structurename = <info_struct> anim_set = car_Female_animations
+			change structurename = <info_struct> anim_set = car_female_animations
 		endif
-		if StructureContains Structure = <anim_struct_member> facial_anims
+		if structurecontains structure = <anim_struct_member> facial_anims
 
 			change structurename = <info_struct> facial_anims = (<anim_struct_member>.facial_anims)
 			change structurename = <info_struct> facial_anims_default = (<anim_struct_member>.facial_anims)
@@ -939,16 +939,16 @@ script setup_character_anims
 	change structurename = <info_struct> next_stance = ($<info_struct>.stance)
 endscript
 
-script get_start_node_id \{character = qs("\Lguitarist")}
-	GetStartNodeID member = <member>
+script get_start_node_id \{character = qs(0x5c2c7d0c)}
+	getstartnodeid member = <member>
 	return waypoint_id = <waypoint_id> waypoint_name = <waypoint_name>
 endscript
 
 script get_skill_level 
 	health = ($player1_status.current_health)
-	skill = Normal
+	skill = normal
 	if (<health> < 0.66)
-		skill = Bad
+		skill = bad
 	elseif (<health> > 1.3299999)
 		skill = good
 	endif
@@ -956,115 +956,115 @@ script get_skill_level
 endscript
 
 script get_target_node 
-	Obj_GetID
-	ExtendCRC <ObjID> '_Info' out = info_struct
+	obj_getid
+	extendcrc <objid> '_Info' out = info_struct
 	return target_node = ($<info_struct>.target_node)
 endscript
-BandMember_Idle_EventTable = [
+bandmember_idle_eventtable = [
 ]
 
-script BandMember_Idle \{blend_time = 0.2
+script bandmember_idle \{blend_time = 0.2
 		random_start_time = false}
-	Obj_KillSpawnedScript \{name = hero_play_adjusting_random_anims}
-	Obj_SpawnScriptNow hero_play_adjusting_random_anims params = {Anim = Idle blend_time = <blend_time> random_start_time = <random_start_time>}
-	Block
+	obj_killspawnedscript \{name = hero_play_adjusting_random_anims}
+	obj_spawnscriptnow hero_play_adjusting_random_anims params = {anim = idle blend_time = <blend_time> random_start_time = <random_start_time>}
+	block
 endscript
 
 script play_special_facial_anim 
-	if NOT GotParam \{Anim}
+	if NOT gotparam \{anim}
 		return
 	endif
-	Obj_KillSpawnedScript \{name = facial_anim_loop}
-	Obj_GetID
-	if (<ObjID> = Guitarist)
+	obj_killspawnedscript \{name = facial_anim_loop}
+	obj_getid
+	if (<objid> = guitarist)
 
 	endif
-	hero_play_facial_anim Anim = <Anim>
-	hero_wait_until_anim_finished \{Timer = FacialTimer}
-	if (<ObjID> = Guitarist)
+	hero_play_facial_anim anim = <anim>
+	hero_wait_until_anim_finished \{timer = facialtimer}
+	if (<objid> = guitarist)
 
 	endif
-	Obj_SpawnScriptNow \{facial_anim_loop}
+	obj_spawnscriptnow \{facial_anim_loop}
 endscript
 
 script facial_anim_loop \{blend_duration = 0}
-	Obj_GetID
-	ExtendCRC <ObjID> '_Info' out = info_struct
+	obj_getid
+	extendcrc <objid> '_Info' out = info_struct
 	facial_anims = ($<info_struct>.facial_anims)
 	if (<facial_anims> = none)
 
 		return
 	endif
-	if NOT GlobalExists name = <facial_anims> type = Structure
+	if NOT globalexists name = <facial_anims> type = structure
 
 		return
 	endif
-	if NOT StructureContains Structure = $<facial_anims> name = Idle
+	if NOT structurecontains structure = $<facial_anims> name = idle
 		return
 	endif
 	begin
-	Anim = ($<info_struct>.facial_anim)
-	if NOT StructureContains Structure = $<facial_anims> name = <Anim>
+	anim = ($<info_struct>.facial_anim)
+	if NOT structurecontains structure = $<facial_anims> name = <anim>
 		if ($display_facial_anim_info = true)
 
 		endif
-		Anim = Idle
+		anim = idle
 	endif
-	anims = ($<facial_anims>.<Anim>)
-	GetArraySize <anims>
-	GetRandomValue name = index Integer a = 0 b = (<array_size> - 1)
+	anims = ($<facial_anims>.<anim>)
+	getarraysize <anims>
+	getrandomvalue name = index integer a = 0 b = (<array_size> - 1)
 	anim_name = (<anims> [<index>])
 	if ($display_facial_anim_info = true)
 
 	endif
-	change structurename = <info_struct> facial_anim = Idle
-	hero_play_facial_anim Anim = <anim_name> BlendDuration = <blend_duration>
+	change structurename = <info_struct> facial_anim = idle
+	hero_play_facial_anim anim = <anim_name> blendduration = <blend_duration>
 	blend_duration = 0
-	hero_wait_until_anim_finished \{Timer = FacialTimer}
-	WaitOneGameFrame
+	hero_wait_until_anim_finished \{timer = facialtimer}
+	waitonegameframe
 	repeat
 endscript
-Guitarist_Idle_EventTable = [
+guitarist_idle_eventtable = [
 ]
 
 script guitarist_idle \{blend_time = 0.2
 		random_start_time = false}
-	Obj_KillSpawnedScript \{name = hero_play_adjusting_random_anims}
-	Obj_SpawnScriptNow hero_play_adjusting_random_anims params = {Anim = Idle blend_time = <blend_time> random_start_time = <random_start_time> Cycle}
-	Block
+	obj_killspawnedscript \{name = hero_play_adjusting_random_anims}
+	obj_spawnscriptnow hero_play_adjusting_random_anims params = {anim = idle blend_time = <blend_time> random_start_time = <random_start_time> cycle}
+	block
 endscript
 
 script guitarist_idle_animpreview 
-	ClearEventHandlerGroup \{hand_events}
+	cleareventhandlergroup \{hand_events}
 endscript
 
 script handle_star_power 
 	return
 endscript
 band_character_names = [
-	Guitarist
+	guitarist
 	bassist
 	vocalist
-	Drummer
+	drummer
 	drummer2
 	guitarist2
 	bassist2
 ]
 
 script play_intro_anims 
-	Band_RestartIdles
+	band_restartidles
 
-	ForEachIn \{$band_character_names
+	foreachin \{$band_character_names
 		do = play_intro_anims_foreach}
-	Wait \{1
+	wait \{1
 		gameframe}
-	BandManager_SetPlayingIntroAnims
+	bandmanager_setplayingintroanims
 endscript
 
 script play_intro_anims_foreach 
-	if CompositeObjectExists name = <checksum>
-		if NOT BandManager_IsPlayingSimpleAnim name = <checksum>
-			ExtendCRC <checksum> '_Info' out = info_struct
+	if compositeobjectexists name = <checksum>
+		if NOT bandmanager_isplayingsimpleanim name = <checksum>
+			extendcrc <checksum> '_Info' out = info_struct
 			part = ($<info_struct>.part)
 			position = ($<info_struct>.position)
 			if (<part> = drum)
@@ -1081,35 +1081,35 @@ script play_intro_anims_foreach
 			intro_anim = ($<info_struct>.intro_anim_name)
 			if (<intro_anim> != none)
 
-				Band_PlaysimpleAnim {name = <checksum> Anim = <intro_anim> BlendDuration = 0.3 start = <start>}
-				if (<part> = guitar || <part> = Bass)
-					<checksum> :GetTags lefty
+				band_playsimpleanim {name = <checksum> anim = <intro_anim> blendduration = 0.3 start = <start>}
+				if (<part> = guitar || <part> = bass)
+					<checksum> :gettags lefty
 					if (<lefty> = 1)
-						Band_SetIKChain name = <checksum> chain = slave
+						band_setikchain name = <checksum> chain = slave
 					else
-						Band_SetIKChain name = <checksum> chain = guitar
+						band_setikchain name = <checksum> chain = guitar
 					endif
 				else
-					Band_SetIKChain name = <checksum> chain = slave
+					band_setikchain name = <checksum> chain = slave
 				endif
-				BandManager_StopFacialAnims name = <checksum>
+				bandmanager_stopfacialanims name = <checksum>
 			else
-				if (<checksum> = Drummer)
-					Drummer :Anim_Command \{target = moment_blend
-						command = Switch_SetState
+				if (<checksum> = drummer)
+					drummer :anim_command \{target = moment_blend
+						command = switch_setstate
 						params = {
 							off
 						}}
-					Drummer :Anim_Command \{target = moment_blend_inner
-						command = Switch_SetState
+					drummer :anim_command \{target = moment_blend_inner
+						command = switch_setstate
 						params = {
 							on
 						}}
-					Drummer :Anim_Command \{target = moment_branch
-						command = DegenerateBlend_AddBranch
+					drummer :anim_command \{target = moment_branch
+						command = degenerateblend_addbranch
 						params = {
-							Tree = $hero_empty_branch
-							BlendDuration = 0.0
+							tree = $hero_empty_branch
+							blendduration = 0.0
 						}}
 				endif
 			endif
@@ -1119,13 +1119,13 @@ script play_intro_anims_foreach
 	endif
 endscript
 
-script maybe_play_win_anims 
+script 0x86ce76d8 
 	if ($current_song = jamsession)
 		play_win_anims
 	endif
 endscript
 
-script maybe_play_lose_anims 
+script 0xf4c437d3 
 	if ($current_song = jamsession)
 		play_lose_anims
 	endif
@@ -1133,9 +1133,9 @@ endscript
 
 script play_win_anims 
 
-	KillSpawnedScript \{name = return_characters_to_idle_at_song_time}
+	killspawnedscript \{name = return_characters_to_idle_at_song_time}
 	if NOT ($game_mode = p2_pro_faceoff)
-		ForEachIn \{$band_character_names
+		foreachin \{$band_character_names
 			do = play_win_anims_foreach}
 		return
 	endif
@@ -1155,26 +1155,26 @@ script play_win_anims
 	if NOT (<p1_character> = vocalist || <p1_character> = vocalist2)
 		play_win_anims_foreach \{checksum = vocalist}
 	endif
-	if NOT (<p1_character> = Drummer || <p1_character> = drummer2)
-		play_win_anims_foreach \{checksum = Drummer}
+	if NOT (<p1_character> = drummer || <p1_character> = drummer2)
+		play_win_anims_foreach \{checksum = drummer}
 	else
-		<p1_character> :Anim_Command target = faceoff_blend command = PartialSwitch_SetState params = {off BlendDuration = 0.1}
+		<p1_character> :anim_command target = faceoff_blend command = partialswitch_setstate params = {off blendduration = 0.1}
 	endif
-	if (<p2_character> = Drummer || <p2_character> = drummer2)
-		<p2_character> :Anim_Command target = faceoff_blend command = PartialSwitch_SetState params = {off BlendDuration = 0.1}
+	if (<p2_character> = drummer || <p2_character> = drummer2)
+		<p2_character> :anim_command target = faceoff_blend command = partialswitch_setstate params = {off blendduration = 0.1}
 	endif
 endscript
 
 script play_win_anims_foreach 
-	if GotParam \{checksum}
-		if CompositeObjectExists name = <checksum>
-			ExtendCRC <checksum> '_Info' out = info_struct
-			Band_MoveToStartNode name = <checksum> allow_in_2player = true
-			Band_ChangeFacialAnims name = <checksum>
+	if gotparam \{checksum}
+		if compositeobjectexists name = <checksum>
+			extendcrc <checksum> '_Info' out = info_struct
+			band_movetostartnode name = <checksum> allow_in_2player = true
+			band_changefacialanims name = <checksum>
 			win_anim = ($<info_struct>.win_anim_name)
 			if (<win_anim> != none)
-				BandManager_ChangeIK name = <checksum> enabled = false
-				Band_PlaysimpleAnim {name = <checksum> Anim = <win_anim> BlendDuration = 0.3}
+				bandmanager_changeik name = <checksum> enabled = false
+				band_playsimpleanim {name = <checksum> anim = <win_anim> blendduration = 0.3}
 
 			else
 
@@ -1186,11 +1186,11 @@ endscript
 
 script play_lose_anims 
 
-	Band_ShowMic_Stand \{name = vocalist}
-	KillSpawnedScript \{name = return_characters_to_idle_at_song_time}
-	BandManager_TurnOffAllArmAnims
+	band_showmic_stand \{name = vocalist}
+	killspawnedscript \{name = return_characters_to_idle_at_song_time}
+	bandmanager_turnoffallarmanims
 	if NOT ($game_mode = p2_pro_faceoff)
-		ForEachIn \{$band_character_names
+		foreachin \{$band_character_names
 			do = play_lose_anims_foreach}
 		return
 	endif
@@ -1211,26 +1211,26 @@ script play_lose_anims
 	if NOT (<p1_character> = vocalist || <p1_character> = vocalist2)
 		play_lose_anims_foreach \{checksum = vocalist}
 	endif
-	if NOT (<p1_character> = Drummer || <p1_character> = drummer2)
-		play_lose_anims_foreach \{checksum = Drummer}
+	if NOT (<p1_character> = drummer || <p1_character> = drummer2)
+		play_lose_anims_foreach \{checksum = drummer}
 	else
-		<p1_character> :Anim_Command target = faceoff_blend command = PartialSwitch_SetState params = {off BlendDuration = 0.1}
+		<p1_character> :anim_command target = faceoff_blend command = partialswitch_setstate params = {off blendduration = 0.1}
 	endif
-	if (<p2_character> = Drummer || <p2_character> = drummer2)
-		<p2_character> :Anim_Command target = faceoff_blend command = PartialSwitch_SetState params = {off BlendDuration = 0.1}
+	if (<p2_character> = drummer || <p2_character> = drummer2)
+		<p2_character> :anim_command target = faceoff_blend command = partialswitch_setstate params = {off blendduration = 0.1}
 	endif
 endscript
 
 script play_lose_anims_foreach 
-	if GotParam \{checksum}
-		if CompositeObjectExists name = <checksum>
-			ExtendCRC <checksum> '_Info' out = info_struct
-			Band_MoveToStartNode name = <checksum> allow_in_2player = true
-			Band_ChangeFacialAnims name = <checksum>
+	if gotparam \{checksum}
+		if compositeobjectexists name = <checksum>
+			extendcrc <checksum> '_Info' out = info_struct
+			band_movetostartnode name = <checksum> allow_in_2player = true
+			band_changefacialanims name = <checksum>
 			lose_anim = ($<info_struct>.lose_anim_name)
 			if (<lose_anim> != none)
-				BandManager_ChangeIK name = <checksum> enabled = false
-				Band_PlaysimpleAnim {name = <checksum> Anim = <lose_anim> BlendDuration = 0.3}
+				bandmanager_changeik name = <checksum> enabled = false
+				band_playsimpleanim {name = <checksum> anim = <lose_anim> blendduration = 0.3}
 
 			else
 
@@ -1240,78 +1240,78 @@ script play_lose_anims_foreach
 endscript
 
 script restore_idle_faces 
-	if CompositeObjectExists \{name = Guitarist}
-		Guitarist :Obj_KillSpawnedScript \{name = facial_anim_loop}
-		Guitarist :Obj_SpawnScriptNow \{facial_anim_loop}
+	if compositeobjectexists \{name = guitarist}
+		guitarist :obj_killspawnedscript \{name = facial_anim_loop}
+		guitarist :obj_spawnscriptnow \{facial_anim_loop}
 	endif
-	if CompositeObjectExists \{name = bassist}
-		bassist :Obj_KillSpawnedScript \{name = facial_anim_loop}
-		bassist :Obj_SpawnScriptNow \{facial_anim_loop}
+	if compositeobjectexists \{name = bassist}
+		bassist :obj_killspawnedscript \{name = facial_anim_loop}
+		bassist :obj_spawnscriptnow \{facial_anim_loop}
 	endif
-	if CompositeObjectExists \{name = vocalist}
-		vocalist :Obj_KillSpawnedScript \{name = facial_anim_loop}
-		vocalist :Obj_SpawnScriptNow \{facial_anim_loop}
+	if compositeobjectexists \{name = vocalist}
+		vocalist :obj_killspawnedscript \{name = facial_anim_loop}
+		vocalist :obj_spawnscriptnow \{facial_anim_loop}
 	endif
-	if CompositeObjectExists \{name = Drummer}
-		Drummer :Obj_KillSpawnedScript \{name = facial_anim_loop}
-		Drummer :Obj_SpawnScriptNow \{facial_anim_loop}
+	if compositeobjectexists \{name = drummer}
+		drummer :obj_killspawnedscript \{name = facial_anim_loop}
+		drummer :obj_spawnscriptnow \{facial_anim_loop}
 	endif
 endscript
 
 script hide_band 
-	if CompositeObjectExists \{Guitarist}
-		Guitarist :hide
+	if compositeobjectexists \{guitarist}
+		guitarist :hide
 	endif
-	if CompositeObjectExists \{guitarist2}
-		Guitarist :hide
+	if compositeobjectexists \{guitarist2}
+		guitarist :hide
 	endif
-	if CompositeObjectExists \{bassist}
+	if compositeobjectexists \{bassist}
 		bassist :hide
 	endif
-	if CompositeObjectExists \{bassist2}
+	if compositeobjectexists \{bassist2}
 		bassist :hide
 	endif
-	if CompositeObjectExists \{vocalist}
+	if compositeobjectexists \{vocalist}
 		vocalist :hide
 	endif
-	if CompositeObjectExists \{vocalist2}
+	if compositeobjectexists \{vocalist2}
 		vocalist :hide
 	endif
-	if CompositeObjectExists \{Drummer}
-		Drummer :hide
+	if compositeobjectexists \{drummer}
+		drummer :hide
 	endif
-	if CompositeObjectExists \{drummer2}
-		Drummer :hide
+	if compositeobjectexists \{drummer2}
+		drummer :hide
 	endif
 endscript
 
 script unhide_band 
-	if CompositeObjectExists \{Guitarist}
-		Guitarist :unhide
+	if compositeobjectexists \{guitarist}
+		guitarist :unhide
 	endif
-	if CompositeObjectExists \{guitarist2}
-		Guitarist :unhide
+	if compositeobjectexists \{guitarist2}
+		guitarist :unhide
 	endif
-	if CompositeObjectExists \{bassist}
+	if compositeobjectexists \{bassist}
 		bassist :unhide
 	endif
-	if CompositeObjectExists \{bassist2}
+	if compositeobjectexists \{bassist2}
 		bassist :unhide
 	endif
-	if CompositeObjectExists \{vocalist}
+	if compositeobjectexists \{vocalist}
 		vocalist :unhide
 	endif
-	if CompositeObjectExists \{vocalist2}
+	if compositeobjectexists \{vocalist2}
 		vocalist :unhide
 	endif
-	if CompositeObjectExists \{Drummer}
-		Drummer :unhide
+	if compositeobjectexists \{drummer}
+		drummer :unhide
 	endif
-	if CompositeObjectExists \{drummer2}
-		Drummer :unhide
+	if compositeobjectexists \{drummer2}
+		drummer :unhide
 	endif
-	BandManager_AirGuitarCheat
-	BandManager_InvisibleCharactersCheat
+	bandmanager_airguitarcheat
+	bandmanager_invisiblecharacterscheat
 endscript
 
 script create_vocalist_dummy 
@@ -1347,8 +1347,8 @@ script destroy_frontend_lock_targets
 endscript
 
 script destroy_camera_lock_target 
-	if CompositeObjectExists <name>
-		<name> :Die
+	if compositeobjectexists <name>
+		<name> :die
 	endif
 endscript
 
@@ -1361,7 +1361,7 @@ script all_players_using_starpower
 	if (<num_players> > 0)
 		i = 1
 		begin
-		<player_status> = ($player_status_array [<i>])
+		<player_status> = ($0x2994109a [<i>])
 		if (($<player_status>.star_power_used) = 0)
 			return \{false}
 		endif
@@ -1380,42 +1380,42 @@ script kill_group_starpower_anim \{changecamera = 1}
 	if ($playing_group_starpower_anim = false)
 		return
 	endif
-	KillSpawnedScript \{name = play_group_star_power_animation}
+	killspawnedscript \{name = play_group_star_power_animation}
 	if (<changecamera> = 1)
-		CameraCuts_SetArrayPrefix \{prefix = 'cameras'}
+		cameracuts_setarrayprefix \{prefix = 'cameras'}
 	endif
-	change \{CameraCuts_AllowNoteScripts = true}
+	change \{cameracuts_allownotescripts = true}
 	change \{playing_group_starpower_anim = false}
 endscript
 
 script debug_toggle_band_visiblity 
-	debug_toggle_character_visiblity \{name = Guitarist}
+	debug_toggle_character_visiblity \{name = guitarist}
 	debug_toggle_character_visiblity \{name = bassist}
-	debug_toggle_character_visiblity \{name = Drummer}
+	debug_toggle_character_visiblity \{name = drummer}
 	debug_toggle_character_visiblity \{name = vocalist}
 endscript
 
 script debug_toggle_character_visiblity 
 
-	if NOT GotParam \{name}
+	if NOT gotparam \{name}
 
 		return
 	endif
 	switch (<name>)
-		case Guitarist
+		case guitarist
 		debug_hide = hide_guitarist
 		case bassist
 		debug_hide = hide_bassist
 		case vocalist
 		debug_hide = hide_vocalist
-		case Drummer
+		case drummer
 		debug_hide = hide_drummer
 		default
 
 		return
 	endswitch
 	get_musician_id name = <name>
-	if NOT CompositeObjectExists name = <name>
+	if NOT compositeobjectexists name = <name>
 
 		return
 	endif

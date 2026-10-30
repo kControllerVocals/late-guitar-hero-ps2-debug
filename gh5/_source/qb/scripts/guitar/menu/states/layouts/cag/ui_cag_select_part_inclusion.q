@@ -1,5 +1,5 @@
 
-script ui_create_cag_select_part_inclusion \{stance = Stance_Select_Guitar}
+script ui_create_cag_select_part_inclusion \{stance = stance_select_guitar}
 	spawnscriptnow ui_create_cag_select_part_inclusion_spawned params = {<...>}
 endscript
 
@@ -19,22 +19,22 @@ script ui_create_cag_select_part_inclusion_spawned
 	if has_inclusion_list body_part = <body_part> part = <part>
 		<filter_esp> = 0
 	endif
-	GetArraySize ($<part>)
-	part_loop_count = <array_size>
+	getarraysize ($<part>)
+	0x3a81d3a7 = <array_size>
 	i = 0
 	begin
 	<add_item> = 1
-	if (<part> = CAS_Guitar_Head || <part> = CAS_Guitar_Neck)
+	if (<part> = cas_guitar_head || <part> = cas_guitar_neck)
 		if (<filter_esp> = 1)
-			if StructureContains Structure = (($<part>) [<i>]) Is_Metallica
-				if (((($<part>) [<i>]).Is_Metallica) = 1)
+			if structurecontains structure = (($<part>) [<i>]) is_metallica
+				if (((($<part>) [<i>]).is_metallica) = 1)
 
 					<add_item> = 0
 				endif
 			endif
-			if GotParam \{is_esp}
+			if gotparam \{is_esp}
 				if (<is_esp> = 1)
-					if NOT StructureContains Structure = (($<part>) [<i>]) is_esp
+					if NOT structurecontains structure = (($<part>) [<i>]) is_esp
 
 						<add_item> = 0
 					elseif (((($<part>) [<i>]).is_esp) = 0)
@@ -42,7 +42,7 @@ script ui_create_cag_select_part_inclusion_spawned
 						<add_item> = 0
 					endif
 				else
-					if StructureContains Structure = (($<part>) [<i>]) is_esp
+					if structurecontains structure = (($<part>) [<i>]) is_esp
 						if (((($<part>) [<i>]).is_esp) = 1)
 
 							<add_item> = 0
@@ -50,7 +50,7 @@ script ui_create_cag_select_part_inclusion_spawned
 					endif
 				endif
 			else
-				if StructureContains Structure = (($<part>) [<i>]) is_esp
+				if structurecontains structure = (($<part>) [<i>]) is_esp
 					if (((($<part>) [<i>]).is_esp) = 1)
 
 						<add_item> = 0
@@ -65,14 +65,14 @@ script ui_create_cag_select_part_inclusion_spawned
 			add_item = 0
 		endif
 		if (<add_item> = 1)
-			if GetCASAppearancePart part = <body_part>
-				ps2_GetActualCASOptionStruct_as_struct part = <body_part> desc_id = <desc_id>
-				if StructureContains Structure = <ps2_part_struct> additional_inclusion_lists
-					additional_lists = (<ps2_part_struct>.additional_inclusion_lists)
-					GetArraySize <additional_lists>
+			if getcasappearancepart part = <body_part>
+				ps2_getactualcasoptionstruct_as_struct part = <body_part> desc_id = <desc_id>
+				if structurecontains structure = <ps2_part_struct> additional_inclusion_lists
+					0x8b2b1b6b = (<ps2_part_struct>.additional_inclusion_lists)
+					getarraysize <0x8b2b1b6b>
 					x = 0
 					begin
-					get_inclusion_list body_part = (<additional_lists> [<x>])
+					get_inclusion_list body_part = (<0x8b2b1b6b> [<x>])
 					if NOT cas_in_inclusion_list inclusion = <inclusion> part_name = <part> part_desc_id = ($<part> [<i>].desc_id)
 						add_item = 0
 						break
@@ -90,16 +90,16 @@ script ui_create_cag_select_part_inclusion_spawned
 					endif
 					if NOT is_part_purchased part = <part> desc_id = ((($<part>) [<i>]).desc_id) savegame = ($cas_current_savegame)
 						price = ((($<part>) [<i>]).price)
-						FormatText TextName = pad_choose_dialogue qs(0x7f837e4d) s = ((($<part>) [<i>]).frontend_desc)
+						formattext textname = pad_choose_dialogue qs(0x7f837e4d) s = ((($<part>) [<i>]).frontend_desc)
 						show_purchasable = 1
 						pad_back_script = generic_event_back
-						if NOT GotParam \{no_edit}
+						if NOT gotparam \{no_edit}
 							if is_part_editable part = <part> desc_id = ((($<part>) [<i>]).desc_id)
 								editable = {editable}
 								show_editable = 1
 							endif
 						endif
-					elseif NOT GotParam \{no_edit}
+					elseif NOT gotparam \{no_edit}
 						if is_part_editable part = <part> desc_id = ((($<part>) [<i>]).desc_id)
 							pad_option2_script = cag_select_part_inclusion_decide_action
 							pad_option2_params = {part = <part> color_wheel = <color_wheel> num_icons = <num_icons> icon = <hist_tex> cam_name = <cam_name> camera_list = <camera_list> zoom_camera = <zoom_camera> stance = <stance> index = <i>}
@@ -121,26 +121,26 @@ script ui_create_cag_select_part_inclusion_spawned
 						pad_option2_params = <pad_option2_params>
 						<editable>
 					}
-					if GotParam \{price}
-						RemoveParameter \{price}
+					if gotparam \{price}
+						removeparameter \{price}
 					endif
-					if GotParam \{pad_choose_dialogue}
-						RemoveParameter \{pad_choose_dialogue}
+					if gotparam \{pad_choose_dialogue}
+						removeparameter \{pad_choose_dialogue}
 					endif
-					if GotParam \{pad_back_dialogue}
-						RemoveParameter \{pad_back_dialogue}
+					if gotparam \{pad_back_dialogue}
+						removeparameter \{pad_back_dialogue}
 					endif
-					if GotParam \{show_purchasable}
-						RemoveParameter \{show_purchasable}
+					if gotparam \{show_purchasable}
+						removeparameter \{show_purchasable}
 					endif
-					if GotParam \{show_editable}
-						RemoveParameter \{show_editable}
+					if gotparam \{show_editable}
+						removeparameter \{show_editable}
 					endif
-					if GotParam \{pad_option2_script}
-						RemoveParameter \{pad_option2_script}
+					if gotparam \{pad_option2_script}
+						removeparameter \{pad_option2_script}
 					endif
-					if GotParam \{editable}
-						RemoveParameter \{editable}
+					if gotparam \{editable}
+						removeparameter \{editable}
 					endif
 					num_parts_added = (<num_parts_added> + 1)
 				endif
@@ -148,11 +148,11 @@ script ui_create_cag_select_part_inclusion_spawned
 		endif
 	endif
 	i = (<i> + 1)
-	repeat <part_loop_count>
+	repeat <0x3a81d3a7>
 	clean_up_user_control_helpers
 	menu_finish \{car_helper_text_extra}
-	LaunchEvent type = focus target = create_cag_select_part_inclusion_vmenu data = {child_index = <current_part>}
-	if GotParam \{cam_name}
+	launchevent type = focus target = create_cag_select_part_inclusion_vmenu data = {child_index = <current_part>}
+	if gotparam \{cam_name}
 		change \{generic_menu_block_input = 1}
 		task_menu_default_anim_in base_name = <cam_name>
 		change \{generic_menu_block_input = 0}
@@ -164,22 +164,22 @@ script ui_destroy_cag_select_part_inclusion
 endscript
 
 script ui_init_cag_select_part_inclusion 
-	PushTemporaryCASAppearance
+	pushtemporarycasappearance
 	ui_load_cas_rawpak part = <part>
 endscript
 
 script ui_deinit_cag_select_part_inclusion 
-	PopTemporaryCASAppearance
+	poptemporarycasappearance
 	cleanup_cas_menu_handlers
 endscript
 
 script cag_select_part_inclusion_decide_action 
 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = create_cag_select_part_inclusion_vmenu}
 	cas_queue_wait
-	if GetCASPartMaterials part = <part>
-		ui_event event = menu_replace data = {state = UIstate_cas_color_edit part_materials = <part_materials> part = <part> num_states = 1 color_wheel = <color_wheel> cam_name = <cam_name> camera_list = <camera_list> zoom_camera = <zoom_camera> return_stance = <stance>}
+	if getcaspartmaterials part = <part>
+		ui_event event = menu_replace data = {state = uistate_cas_color_edit part_materials = <part_materials> part = <part> num_states = 1 color_wheel = <color_wheel> cam_name = <cam_name> camera_list = <camera_list> zoom_camera = <zoom_camera> return_stance = <stance>}
 	else
 		generic_event_back
 	endif
@@ -187,10 +187,10 @@ endscript
 
 script get_inclusion_list 
 
-	if NOT GetCASAppearancePart part = <body_part>
+	if NOT getcasappearancepart part = <body_part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <body_part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <body_part> desc_id = <desc_id>
 
 	endif
 	return inclusion = <inclusion>
@@ -199,7 +199,7 @@ endscript
 script has_inclusion_list 
 
 	get_inclusion_list body_part = <body_part>
-	GetArraySize <inclusion>
+	getarraysize <inclusion>
 	i = 0
 	begin
 	if ((((<inclusion>) [<i>]).part) = <part>)

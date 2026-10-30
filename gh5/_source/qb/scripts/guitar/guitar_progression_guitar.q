@@ -1,218 +1,218 @@
-GH4_Career_Guitar_Songs = {
+gh4_career_guitar_songs = {
 	prefix = 'career_guitar'
 	part = guitar
 	num_tiers = 14
 	tier1 = {
-		title = qs("\LThe 13th Rail")
+		title = qs(0xe8f17401)
 		songs = [
-			TheySay
-			BlueDay
-			CigarettesWeddingBands
-			ExGirlfriend
-			FeelGoodInc
+			theysay
+			blueday
+			cigarettesweddingbands
+			exgirlfriend
+			feelgoodinc
 		]
-		unlockable_songs = [
-			AllAlongTheWatchTower
-			SympathyForTheDevil
+		0x29c8d5a6 = [
+			allalongthewatchtower
+			sympathyforthedevil
 		]
 		stars = 0
-		level = load_Z_Subway
+		level = load_z_subway
 	}
 	tier2 = {
-		title = qs("\LClub Boson")
+		title = qs(0xa6f99d1d)
 		songs = [
-			GammaRay
-			InMyPlace
-			Song2
-			SowingSeason
+			gammaray
+			inmyplace
+			song2
+			sowingseason
 		]
-		unlockable_songs = [
-			OnlyHappyWhenItRains
-			BlueOrchid
-			HurtsSoGood
+		0x29c8d5a6 = [
+			onlyhappywhenitrains
+			blueorchid
+			hurtssogood
 		]
 		stars = 15
-		level = load_Z_LHC
+		level = load_z_lhc
 	}
 	tier3 = {
-		title = qs("\LSideshow")
+		title = qs(0x4a95dc5c)
 		songs = [
-			SteadyAsSheGoes
-			Comedown
-			Fame
-			Gratitude
-			InTheMeantime
+			steadyasshegoes
+			comedown
+			fame
+			gratitude
+			inthemeantime
 		]
-		unlockable_songs = [
-			UnderPressure
-			SexOnFire
+		0x29c8d5a6 = [
+			underpressure
+			sexonfire
 		]
 		stars = 30
-		level = load_Z_FreakShow
+		level = load_z_freakshow
 	}
 	tier4 = {
-		title = qs("\LAngel's Crypt")
+		title = qs(0x8a2dd332)
 		songs = [
-			Jailbreak
-			Kryptonite
-			LoveToken
-			NeverMissABeat
-			PlayThatFunkyMusic
+			jailbreak
+			kryptonite
+			lovetoken
+			nevermissabeat
+			playthatfunkymusic
 		]
-		unlockable_songs = [
-			DancingWithMyself
-			ShoutItOutLoud
+		0x29c8d5a6 = [
+			dancingwithmyself
+			shoutitoutloud
 		]
 		stars = 45
-		level = load_Z_NewOrleans
+		level = load_z_neworleans
 	}
 	tier5 = {
-		title = qs("\LO'Connell's Corner")
+		title = qs(0x2d18d9da)
 		songs = [
-			RockShow
-			WomanFromTokyo
-			YouAndMe
-			BleedAmerican
-			LA
+			rockshow
+			womanfromtokyo
+			youandme
+			bleedamerican
+			la
 		]
-		unlockable_songs = [
-			PlugInBaby
-			Superstition
-			SultansOfSwing
+		0x29c8d5a6 = [
+			pluginbaby
+			superstition
+			sultansofswing
 		]
 		stars = 60
-		level = load_Z_Dublin
+		level = load_z_dublin
 	}
 	tier6 = {
-		title = qs("\LThe Aqueduct")
+		title = qs(0x3a84101e)
 		songs = [
-			LonelyIsTheNight
-			MakeItWitChu
-			NearlyLostYou
-			WannaBeInLA
+			lonelyisthenight
+			makeitwitchu
+			nearlylostyou
+			wannabeinla
 		]
-		unlockable_songs = [
-			HungryLikeTheWolf
-			LooksThatKill
+		0x29c8d5a6 = [
+			hungrylikethewolf
+			looksthatkill
 		]
 		stars = 75
-		level = load_Z_DragRace
+		level = load_z_dragrace
 	}
 	tier7 = {
-		title = qs("\LGuitarhenge")
+		title = qs(0x8cac823e)
 		songs = [
-			WhyBother
-			YouGiveLove
-			MirrorPeople
+			whybother
+			yougivelove
+			mirrorpeople
 		]
-		unlockable_songs = [
-			SmellsLikeTeenSpirit
-			Lithium
-			AllThePrettyFaces
+		0x29c8d5a6 = [
+			smellsliketeenspirit
+			lithium
+			alltheprettyfaces
 		]
 		stars = 87
-		level = load_Z_CarHenge
+		level = load_z_carhenge
 	}
 	tier8 = {
-		title = qs("\LNeon Oasis")
+		title = qs(0xeab93c80)
 		songs = [
-			Seven
-			APunk
-			BulletsButterfly
-			Disconnected
+			seven
+			apunk
+			bulletsbutterfly
+			disconnected
 		]
-		unlockable_songs = [
-			BringTheNoise
-			DuHast
+		0x29c8d5a6 = [
+			bringthenoise
+			duhast
 		]
 		stars = 99
-		level = load_Z_Vegas
+		level = load_z_vegas
 	}
 	tier9 = {
-		title = qs("\LElectric Honky Tonk")
+		title = qs(0xa36d3d13)
 		songs = [
-			RingOfFire
-			MaidenMotherCrone
-			OneBigHoliday
-			Incinerate
+			ringoffire
+			maidenmothercrone
+			onebigholiday
+			incinerate
 		]
-		unlockable_songs = [
-			WereAnAmericanBand
+		0x29c8d5a6 = [
+			wereanamericanband
 		]
 		stars = 111
-		level = load_Z_Nashville
+		level = load_z_nashville
 	}
 	tier10 = {
-		title = qs("\LCalavera Square")
+		title = qs(0x4b9bbddb)
 		songs = [
-			Medicate
-			Sneakout
-			SoLonely
-			TwentiethCenturyBoy
+			medicate
+			sneakout
+			solonely
+			twentiethcenturyboy
 		]
-		unlockable_songs = [
-			NoOneToDependOn
-			RunninDownADream
+		0x29c8d5a6 = [
+			noonetodependon
+			runnindownadream
 		]
 		stars = 123
-		level = load_Z_MexicoCity
+		level = load_z_mexicocity
 	}
 	tier11 = {
-		title = qs("\LCairo Bazaar")
+		title = qs(0x7196b4d1)
 		songs = [
-			WhatIGot
-			Deadbolt
-			Demon
-			Judith
+			whatigot
+			deadbolt
+			demon
+			judith
 		]
-		unlockable_songs = [
-			BackRound
-			YounkFunk
+		0x29c8d5a6 = [
+			backround
+			younkfunk
 		]
 		stars = 135
-		level = load_Z_Cairo
+		level = load_z_cairo
 	}
 	tier12 = {
-		title = qs("\LThe Golden Gate")
+		title = qs(0x40c9ee8a)
 		songs = [
-			LustForLife
-			SaturdayNightsAlright
-			SixDaysAWeek
-			StreamlineWoman
+			lustforlife
+			saturdaynightsalright
+			sixdaysaweek
+			streamlinewoman
 		]
-		unlockable_songs = [
-			Brianstorm
-			TwoMinutesToMidnight
+		0x29c8d5a6 = [
+			brianstorm
+			twominutestomidnight
 		]
 		stars = 147
-		level = load_Z_SanFrancisco
+		level = load_z_sanfrancisco
 	}
 	tier13 = {
-		title = qs("\LFjord of Swords")
+		title = qs(0xe9c20e9a)
 		songs = [
-			WolfLikeMe
-			AmericanGirl
-			SweatingBullets
-			DoYouFeelLikeWeDo
-			DoneWithEverything
-			Scatterbrain
+			wolflikeme
+			americangirl
+			sweatingbullets
+			doyoufeellikewedo
+			donewitheverything
+			scatterbrain
 		]
-		unlockable_songs = [
-			SpiritOfRadio
+		0x29c8d5a6 = [
+			spiritofradio
 		]
 		stars = 159
 		level = load_z_norway
 	}
 	tier14 = {
-		title = qs("\LHypersphere")
+		title = qs(0x3ee59a14)
 		songs = [
-			TwentyFirstCentury
+			twentyfirstcentury
 		]
 		stars = -1
 		level = load_z_cube
 	}
 }
-GH4_Career_Guitar_Progression_Unlock_Order = {
+gh4_career_guitar_progression_unlock_order = {
 	name = 'Career_Guitar'
 	freegigs = {
 		gig1 = {
@@ -255,48 +255,48 @@ GH4_Career_Guitar_Progression_Unlock_Order = {
 			name = 'gig10'
 			num = 10
 		}
-		gig11 = {
+		0x8efac11b = {
 			name = 'gig11'
 			num = 11
 		}
-		gig12 = {
+		0x17f390a1 = {
 			name = 'gig12'
 			num = 12
 		}
-		gig13 = {
+		0x60f4a037 = {
 			name = 'gig13'
 			num = 13
 		}
-		gig14 = {
+		0xfe903594 = {
 			name = 'gig14'
 			num = 14
 		}
 	}
 }
-GH4_Career_Guitar_Gig_Complete_Params = {
-	Career_Guitar
-	unlock_order = GH4_Career_Guitar_Progression_Unlock_Order
+gh4_career_guitar_gig_complete_params = {
+	career_guitar
+	unlock_order = gh4_career_guitar_progression_unlock_order
 	part = 'Guitar'
 }
-GH4_Career_Guitar_Progression = [
+gh4_career_guitar_progression = [
 	{
 		name = set_initial_states
-		type = Scr
-		atom_script = Progression_Career_Guitar_Init
+		type = scr
+		atom_script = progression_career_guitar_init
 		atom_params = {
 		}
 	}
 	{
 		name = guitar_career_gig1_complete
-		type = Scr
-		atom_script = Progression_Career_Gig_Complete
-		atom_params = $GH4_Career_Guitar_Gig_Complete_Params
+		type = scr
+		atom_script = progression_career_gig_complete
+		atom_params = $gh4_career_guitar_gig_complete_params
 		depends_on = [
 			{
-				type = Scr
-				Scr = Progression_Career_Check_Gig_Complete
+				type = scr
+				scr = progression_career_check_gig_complete
 				params = {
-					Career_Guitar
+					career_guitar
 					gig = 1
 				}
 			}
@@ -304,21 +304,21 @@ GH4_Career_Guitar_Progression = [
 	}
 	{
 		name = end_of_first_update
-		type = Scr
-		atom_script = Progression_Career_Guitar_EndOfFirstUpdate
+		type = scr
+		atom_script = progression_career_guitar_endoffirstupdate
 		atom_params = {
 		}
 	}
 ]
 
-script Progression_Career_Guitar_Init 
+script progression_career_guitar_init 
 
 endscript
 
-script Progression_Career_Guitar_EndOfFirstUpdate 
+script progression_career_guitar_endoffirstupdate 
 
 endscript
 
 script update_progression_guitar 
-	UpdateAtoms \{name = Progression}
+	updateatoms \{name = progression}
 endscript

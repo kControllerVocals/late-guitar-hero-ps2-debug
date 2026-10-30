@@ -1,17 +1,17 @@
 
-script TileSprite \{parent = root_window
-		container_type = ContainerElement
+script tilesprite \{parent = root_window
+		container_type = containerelement
 		tile_dims = (1280.0, 720.0)
 		pos = (0.0, 0.0)
 		sprite_props = {
 		}
 		container_props = {
 		}}
-	if NOT GotParam \{texture}
+	if NOT gotparam \{texture}
 
 		return
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		type = <container_type>
 		parent = <parent>
 		dims = <tile_dims>
@@ -21,35 +21,35 @@ script TileSprite \{parent = root_window
 		<container_props>
 	}
 	<container_id> = <id>
-	if NOT GotParam \{dims}
-		CreateScreenElement {
-			type = SpriteElement
+	if NOT gotparam \{dims}
+		createscreenelement {
+			type = spriteelement
 			parent = <parent>
 			texture = <texture>
 		}
-		GetScreenElementDims id = <id>
-		if ((<width> < 1) || (<Height> < 1))
+		getscreenelementdims id = <id>
+		if ((<width> < 1) || (<height> < 1))
 
-			DestroyScreenElement id = <container_id>
+			destroyscreenelement id = <container_id>
 			return
 		endif
-		DestroyScreenElement id = <id>
+		destroyscreenelement id = <id>
 	else
 		<width> = (<dims> [0])
-		<Height> = (<dims> [1])
+		<height> = (<dims> [1])
 	endif
-	<container_id> :SetTags {
+	<container_id> :settags {
 		width = <width>
-		Height = <Height>
+		height = <height>
 		pos = <pos>
 	}
-	if GotParam \{flip_h}
-		<container_id> :SetTags {
+	if gotparam \{flip_h}
+		<container_id> :settags {
 			flip_h
 		}
 	endif
-	if GotParam \{flip_v}
-		<container_id> :SetTags {
+	if gotparam \{flip_v}
+		<container_id> :settags {
 			flip_v
 		}
 	endif
@@ -60,20 +60,20 @@ script TileSprite \{parent = root_window
 	<count> = 0
 	begin
 	<flip> = {}
-	if GotParam \{flip_h}
-		Mod a = <row> b = (2)
-		if (<Mod> = 0)
+	if gotparam \{flip_h}
+		mod a = <row> b = (2)
+		if (<mod> = 0)
 			<flip> = {flip_h}
 		endif
 	endif
-	if GotParam \{flip_v}
-		Mod a = <column> b = (2)
-		if (<Mod> = 0)
+	if gotparam \{flip_v}
+		mod a = <column> b = (2)
+		if (<mod> = 0)
 			<flip> = {<flip> flip_v}
 		endif
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = <texture>
 		dims = <dims>
@@ -87,7 +87,7 @@ script TileSprite \{parent = root_window
 	<column> = (<column> + 1)
 	if (<x> >= (<tile_dims> [0]))
 		<x> = 0
-		<y> = (<y> + <Height>)
+		<y> = (<y> + <height>)
 		<row> = (<row> + 1)
 		<column> = 0
 		if (<y> >= (<tile_dims> [1]))
@@ -97,22 +97,22 @@ script TileSprite \{parent = root_window
 	repeat
 endscript
 
-script TileSpriteLoop \{move_x = 1
+script tilespriteloop \{move_x = 1
 		move_y = 0}
-	GetTags
-	Obj_GetID
-	<id> = <ObjID>
-	if GotParam \{flip_v}
+	gettags
+	obj_getid
+	<id> = <objid>
+	if gotparam \{flip_v}
 		<width> = (<width> * 2)
 	endif
-	if GotParam \{flip_h}
-		<Height> = (<Height> * 2)
+	if gotparam \{flip_h}
+		<height> = (<height> * 2)
 	endif
 	if ((<move_x> > <width>) || (<move_x> < (<width> * -1)))
 
 		return
 	endif
-	if ((<move_y> > <Height>) || (<move_y> < (<Height> * -1)))
+	if ((<move_y> > <height>) || (<move_y> < (<height> * -1)))
 
 		return
 	endif
@@ -123,29 +123,29 @@ script TileSpriteLoop \{move_x = 1
 	<y> = (<y> + <move_y>)
 	if (<x> > <width>)
 		<x> = (<x> - <width>)
-		LegacyDoMorph {
+		legacydomorph {
 			pos = {((-1.0, 0.0) * <width>) relative}
 		}
 	endif
 	if (<x> < (<width> * -1))
 		<x> = (<width> + <x>)
-		LegacyDoMorph {
+		legacydomorph {
 			pos = {((1.0, 0.0) * <width>) relative}
 		}
 	endif
-	if (<y> > <Height>)
-		<y> = (<y> - <Height>)
-		LegacyDoMorph {
-			pos = {((0.0, -1.0) * <Height>) relative}
+	if (<y> > <height>)
+		<y> = (<y> - <height>)
+		legacydomorph {
+			pos = {((0.0, -1.0) * <height>) relative}
 		}
 	endif
-	if (<y> < (<Height> * -1))
-		<y> = (<Height> + <y>)
-		LegacyDoMorph {
-			pos = {((0.0, 1.0) * <Height>) relative}
+	if (<y> < (<height> * -1))
+		<y> = (<height> + <y>)
+		legacydomorph {
+			pos = {((0.0, 1.0) * <height>) relative}
 		}
 	endif
-	LegacyDoMorph {
+	legacydomorph {
 		pos = (((1.0, 0.0) * ((<pos> [0]) + <x>)) + ((0.0, 1.0) * ((<pos> [1]) + <y>)))
 		time = 0.1
 	}

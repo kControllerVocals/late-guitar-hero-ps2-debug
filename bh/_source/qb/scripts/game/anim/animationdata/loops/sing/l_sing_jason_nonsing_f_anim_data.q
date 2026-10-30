@@ -1,37 +1,37 @@
-L_SING_Jason_NonSing_F_anims_set = {
-	Stance_A = {
-		Idle = {
+0xc412ff0d = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Jason_nonsing_075_F
+				slow = [
+					0x151790e8
 				]
-				Med = [
-					Sing_Jason_nonsing_100_1_F
+				med = [
+					0xe53bf608
 				]
-				Fast = [
-					Sing_Jason_nonsing_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Jason_nonsing_075_F
-				]
-				Med = [
-					Sing_Jason_nonsing_100_1_F
-				]
-				Fast = [
-					Sing_Jason_nonsing_120_F
+				fast = [
+					0x19628b81
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Jason_nonsing_075_F
+			normal = {
+				slow = [
+					0x151790e8
 				]
-				Med = [
-					Sing_Jason_nonsing_100_1_F
+				med = [
+					0xe53bf608
 				]
-				Fast = [
-					Sing_Jason_nonsing_120_F
+				fast = [
+					0x19628b81
+				]
+			}
+			bad = {
+				slow = [
+					0x151790e8
+				]
+				med = [
+					0xe53bf608
+				]
+				fast = [
+					0x19628b81
 				]
 			}
 		}

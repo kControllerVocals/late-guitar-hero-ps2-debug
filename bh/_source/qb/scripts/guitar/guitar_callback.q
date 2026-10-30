@@ -7,13 +7,13 @@ script script_callback_script
 endscript
 
 script script_postcallback_script 
-	UpdateGuitarFuncs
-	if NOT GameIsPaused
-		GetDeltaTime \{ignore_slomo}
-		Update2DParticleSystems delta_time = <delta_time>
-		RunQueuedPulseEvents
+	updateguitarfuncs
+	if NOT gameispaused
+		getdeltatime \{ignore_slomo}
+		update2dparticlesystems delta_time = <delta_time>
+		runqueuedpulseevents
 		if ($output_gpu_log = 1)
-			ps2_reportcpugpu
+			0xbce9b567
 		endif
 	endif
 	change current_frame_toggle = (1 - $current_frame_toggle)

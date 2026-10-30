@@ -3,28 +3,28 @@ script ui_create_options_vocals_view_warning
 	vocals_get_highway_view player = <player>
 	<vocals_highway_view> = <highway_view>
 	if (<vocals_highway_view> = static)
-		<other_view> = qs("SCROLLING")
+		<other_view> = qs(0x737839f5)
 	else
-		<other_view> = qs("STATIC")
+		<other_view> = qs(0x305014bd)
 	endif
-	FormatText {
-		TextName = message
-		qs("Changing the vocals view will require you to restart the song. Do you want to switch to %s?")
+	formattext {
+		textname = message
+		qs(0xb9e2cc58)
 		s = <other_view>
 	}
 	create_dialog_box {
 		no_background
-		heading_text = qs("WARNING")
+		heading_text = qs(0xaa163738)
 		body_text = <message>
 		options = [
 			{
 				func = generic_event_back
-				text = qs("CANCEL")
+				text = qs(0xf7723015)
 			}
 			{
 				func = options_change_vocals_highway_view
 				func_params = {controller = <controller> player = <player>}
-				text = qs("CONTINUE")
+				text = qs(0x182f0173)
 			}
 		]
 		player_device = <controller>

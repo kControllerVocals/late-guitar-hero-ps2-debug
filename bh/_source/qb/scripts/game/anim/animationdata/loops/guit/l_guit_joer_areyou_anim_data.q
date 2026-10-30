@@ -1,36 +1,36 @@
-L_GUIT_JoeR_AreYou_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_joer_areyou_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
+				slow = [
 					guit_joer_areyou_75
 				]
-				Med = [
+				med = [
 					guit_joer_areyou_100
 				]
-				Fast = [
+				fast = [
 					guit_joer_areyou_120
 				]
 			}
-			Normal = {
-				Slow = [
+			normal = {
+				slow = [
 					guit_joer_areyou_75
 				]
-				Med = [
+				med = [
 					guit_joer_areyou_100
 				]
-				Fast = [
+				fast = [
 					guit_joer_areyou_120
 				]
 			}
-			Bad = {
-				Slow = [
+			bad = {
+				slow = [
 					guit_joer_areyou_75
 				]
-				Med = [
+				med = [
 					guit_joer_areyou_100
 				]
-				Fast = [
+				fast = [
 					guit_joer_areyou_120
 				]
 			}

@@ -1,21 +1,21 @@
 
 script create_node_flags 
-	CreateNodeFlag \{LS_MOOD_RISING}
-	CreateNodeFlag \{LS_MOOD_PYRO}
-	CreateNodeFlag \{LS_MOOD_EXPOSITION}
-	CreateNodeFlag \{LS_MOOD_FLARE}
-	CreateNodeFlag \{LS_MOOD_BLACKOUT}
-	CreateNodeFlag \{ls_perf_openingact}
-	CreateNodeFlag \{LS_MOOD_CLIMAX}
-	CreateNodeFlag \{LS_MOOD_SILHOUETTE}
-	CreateNodeFlag \{LS_MOOD_PRELUDE}
-	CreateNodeFlag \{LS_MOOD_TENSION}
-	CreateNodeFlag \{LS_MOOD_STROBE}
-	CreateNodeFlag \{NODEFLAG_VIEWERLIGHTS}
-	CreateNodeFlag \{LS_PERF_ROUND}
-	CreateNodeFlag \{LS_MOOD_WASH}
-	CreateNodeFlag \{LS_MOOD_FALLING}
-	CreateNodeFlag \{LS_MOOD_RESOLUTION}
-	CreateNodeFlag \{LS_MOOD_INTRO}
-	CreateNodeFlag \{LS_PERF_STANDARD}
+	createnodeflag \{ls_mood_rising}
+	createnodeflag \{ls_mood_pyro}
+	createnodeflag \{ls_mood_exposition}
+	createnodeflag \{ls_mood_flare}
+	createnodeflag \{ls_mood_blackout}
+	createnodeflag \{ls_perf_openingact}
+	createnodeflag \{ls_mood_climax}
+	createnodeflag \{ls_mood_silhouette}
+	createnodeflag \{ls_mood_prelude}
+	createnodeflag \{ls_mood_tension}
+	createnodeflag \{ls_mood_strobe}
+	createnodeflag \{nodeflag_viewerlights}
+	createnodeflag \{ls_perf_round}
+	createnodeflag \{ls_mood_wash}
+	createnodeflag \{ls_mood_falling}
+	createnodeflag \{ls_mood_resolution}
+	createnodeflag \{ls_mood_intro}
+	createnodeflag \{ls_perf_standard}
 endscript

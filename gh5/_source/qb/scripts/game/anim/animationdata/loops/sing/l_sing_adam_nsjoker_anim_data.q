@@ -1,37 +1,37 @@
-L_SING_Adam_NsJoker_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_adam_nsjoker_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Adam_NsJoker_075_01
+				slow = [
+					sing_adam_nsjoker_075_01
 				]
-				Med = [
-					Sing_Adam_NsJoker_100_01
+				med = [
+					sing_adam_nsjoker_100_01
 				]
-				Fast = [
-					Sing_Adam_NsJoker_120_01
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Adam_NsJoker_075_01
-				]
-				Med = [
-					Sing_Adam_NsJoker_100_01
-				]
-				Fast = [
-					Sing_Adam_NsJoker_120_01
+				fast = [
+					sing_adam_nsjoker_120_01
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Adam_NsJoker_075_01
+			normal = {
+				slow = [
+					sing_adam_nsjoker_075_01
 				]
-				Med = [
-					Sing_Adam_NsJoker_100_01
+				med = [
+					sing_adam_nsjoker_100_01
 				]
-				Fast = [
-					Sing_Adam_NsJoker_120_01
+				fast = [
+					sing_adam_nsjoker_120_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_adam_nsjoker_075_01
+				]
+				med = [
+					sing_adam_nsjoker_100_01
+				]
+				fast = [
+					sing_adam_nsjoker_120_01
 				]
 			}
 		}

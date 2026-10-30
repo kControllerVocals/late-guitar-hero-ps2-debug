@@ -1,3 +1,3 @@
 
-script MovieDisplaySubtitles 
+script moviedisplaysubtitles 
 endscript

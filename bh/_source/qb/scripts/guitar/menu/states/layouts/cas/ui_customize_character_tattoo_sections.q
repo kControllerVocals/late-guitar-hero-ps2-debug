@@ -1,4 +1,4 @@
-CAS_Body_Art_Sections = [
+cas_body_art_sections = [
 	{
 		text = qs(0xa7767324)
 		parts = [
@@ -49,19 +49,19 @@ CAS_Body_Art_Sections = [
 			none
 			cag_graphics070
 			cag_graphics071
-			cag_graphics076
-			cag_graphics077
+			0x70a5f80d
+			0x07a2c89b
 			cag_graphics078
 			cag_graphics080
 			cag_graphics081
 			cag_graphics083
 			cag_graphics087
 			cag_graphics088
-			cag_graphics093
+			0x9e4c210c
 			cag_graphics094
 			cag_graphics096
 			cag_graphics099
-			cag_graphics105
+			0xa72f5547
 		]
 	}
 	{
@@ -76,9 +76,9 @@ CAS_Body_Art_Sections = [
 			cag_arms_graphics062_torso
 			cag_arms_graphics063_torso
 			cag_arms_graphics066_torso
-			cag_arms_icon_Insect002_torso
-			cag_arms_icon_Mammal001_torso
-			cag_arms_icon_Mammal002_torso
+			cag_arms_icon_insect002_torso
+			cag_arms_icon_mammal001_torso
+			cag_arms_icon_mammal002_torso
 			cag_arms_graphics067_torso
 			cag_arms_graphics068_torso
 			cag_arms_graphics075_torso

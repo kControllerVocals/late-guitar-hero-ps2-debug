@@ -3,36 +3,36 @@ script ui_create_practice_select_part \{rhythm_track = 0}
 	change menu_flow_locked = ($menu_flow_locked + 1)
 	destroy_loading_screen
 	ui_get_controller_parts_allowed controller = ($primary_controller)
-	make_menu_frontend \{title = qs("INSTRUMENT")}
-	GMan_SongTool_GetCurrentSong
+	make_menu_frontend \{title = qs(0x8694014b)}
+	gman_songtool_getcurrentsong
 	get_song_rhythm_track song = <current_song>
 	<parts> = [
-		{text = qs("GUITAR")
-			rhythm_text = qs("LEAD")
+		{text = qs(0x9504b94a)
+			rhythm_text = qs(0x0cc7d9b2)
 			id = cpp_guitar
 			part = guitar
 		}
-		{text = qs("BASS")
-			rhythm_text = qs("RHYTHM")
+		{text = qs(0x7d4f9214)
+			rhythm_text = qs(0x1f0659c1)
 			id = cpp_bass
-			part = Bass
+			part = bass
 		}
-		{text = qs("DRUMS")
+		{text = qs(0x388cd3db)
 			id = cpp_drum
 			part = drum
 		}
-		{text = qs("VOCALS")
+		{text = qs(0x1b9f6f84)
 			id = cpp_vocals
-			part = Vocals
+			part = vocals
 		}
 	]
 	<num_not_focusable> = 0
-	GetArraySize <parts>
+	getarraysize <parts>
 	<i> = 0
 	begin
 	<part_struct> = (<parts> [<i>])
 	focus = {}
-	if NOT StructureContains Structure = <allowed> (<part_struct>.part)
+	if NOT structurecontains structure = <allowed> (<part_struct>.part)
 		focus = {not_focusable}
 		<num_not_focusable> = (<num_not_focusable> + 1)
 	endif
@@ -51,10 +51,10 @@ script ui_create_practice_select_part \{rhythm_track = 0}
 	repeat <array_size>
 	menu_finish
 	if (<num_not_focusable> = 4)
-		if isXenon
-			warning_text = qs("You must connect a microphone or Xbox 360 Headset to continue.")
+		if isxenon
+			warning_text = qs(0xec4dbd17)
 		else
-			warning_text = qs("You must plug in a microphone with your controller to continue.")
+			warning_text = qs(0xe2f3f704)
 		endif
 		create_dialog_box {
 			body_text = <warning_text>
@@ -62,7 +62,7 @@ script ui_create_practice_select_part \{rhythm_track = 0}
 			options = [
 				{
 					func = generic_event_back
-					text = qs("GO BACK")
+					text = qs(0x320a8d1c)
 					no_sound
 				}
 			]
@@ -74,7 +74,7 @@ endscript
 
 script ui_destroy_practice_select_part 
 	change menu_flow_locked = ($menu_flow_locked + 1)
-	if ScreenElementExists \{id = dialog_box_container}
+	if screenelementexists \{id = dialog_box_container}
 		destroy_dialog_box
 	endif
 	generic_ui_destroy
@@ -87,7 +87,7 @@ endscript
 
 script ui_practice_select_part 
 	ui_get_controller_parts_allowed controller = ($primary_controller)
-	if NOT StructureContains Structure = <allowed> <part>
+	if NOT structurecontains structure = <allowed> <part>
 		generic_event_choose state = uistate_select_instrument_warning data = {instrument = <part> controller = ($primary_controller)}
 	endif
 	change structurename = player1_status part = <part>

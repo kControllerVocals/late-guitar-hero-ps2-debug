@@ -5,21 +5,21 @@ script make_list_menu {
 		pad_back_script = generic_event_back
 		additional_z_priority = 20
 		exclusive_device = ($primary_controller)
-		color_scheme = ($car_color_scheme)
+		color_scheme = ($0x3cdbdbae)
 	}
 	generic_list_destroy
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 		get_all_exclusive_devices
 	endif
 	if NOT (($menu_over_ride_exclusive_device) = -1)
 		exclusive_device = ($menu_over_ride_exclusive_device)
 	endif
-	if ScreenElementExists \{id = current_menu}
-		current_menu :SE_SetProps \{alpha = 0.5}
+	if screenelementexists \{id = current_menu}
+		current_menu :se_setprops \{alpha = 0.5}
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		parent = <parent>
 		desc = 'generic_list_menu'
 		id = generic_list_menu
@@ -29,44 +29,44 @@ script make_list_menu {
 		generic_list_icon_name_text = <text>
 		ignore_parent_alpha = true
 	}
-	if NOT GotParam \{text}
-		<id> :SE_SetProps generic_list_icon_name_alpha = 0
+	if NOT gotparam \{text}
+		<id> :se_setprops generic_list_icon_name_alpha = 0
 	endif
-	if GotParam \{list_offset}
-		<id> :SE_SetProps generic_list_menu_container_pos = {<list_offset> relative}
+	if gotparam \{list_offset}
+		<id> :se_setprops generic_list_menu_container_pos = {<list_offset> relative}
 	endif
-	if GotParam \{icon_offset}
-		<id> :SE_SetProps generic_list_menu_icon_container_pos = {<icon_offset> relative}
+	if gotparam \{icon_offset}
+		<id> :se_setprops generic_list_menu_icon_container_pos = {<icon_offset> relative}
 	endif
-	if NOT ((GotParam list_offset) || (GotParam icon_offset))
-		GetScreenElementPosition id = <parent> absolute
+	if NOT ((gotparam list_offset) || (gotparam icon_offset))
+		getscreenelementposition id = <parent> absolute
 		if (<screenelementpos>.(0.0, 1.0) > 550)
 			raise_by = ((480 - <screenelementpos>.(0.0, 1.0)) * (0.0, 1.0))
-			<id> :SE_SetProps generic_list_menu_container_pos = {relative <raise_by>}
+			<id> :se_setprops generic_list_menu_container_pos = {relative <raise_by>}
 			raise_by = ((550 - <screenelementpos>.(0.0, 1.0)) * (0.0, 1.0))
-			<id> :SE_SetProps generic_list_menu_icon_container_pos = {relative <raise_by>}
+			<id> :se_setprops generic_list_menu_icon_container_pos = {relative <raise_by>}
 		elseif (<screenelementpos>.(0.0, 1.0) > 500)
 			raise_by = ((480 - <screenelementpos>.(0.0, 1.0)) * (0.0, 1.0))
-			<id> :SE_SetProps generic_list_menu_container_pos = {relative <raise_by>}
+			<id> :se_setprops generic_list_menu_container_pos = {relative <raise_by>}
 			raise_by = ((500 - <screenelementpos>.(0.0, 1.0)) * (0.0, 1.0))
-			<id> :SE_SetProps generic_list_menu_icon_container_pos = {relative <raise_by>}
+			<id> :se_setprops generic_list_menu_icon_container_pos = {relative <raise_by>}
 		endif
 		if (<screenelementpos>.(0.0, 1.0) < 200)
-			<id> :SE_SetProps generic_list_menu_container_pos = {relative (0.0, 55.0)}
-			<id> :SE_SetProps generic_list_menu_icon_container_pos = {relative (0.0, 20.0)}
+			<id> :se_setprops generic_list_menu_container_pos = {relative (0.0, 55.0)}
+			<id> :se_setprops generic_list_menu_icon_container_pos = {relative (0.0, 20.0)}
 		endif
 	endif
-	if generic_list_menu :Desc_ResolveAlias \{name = alias_generic_list_menu_vmenu
+	if generic_list_menu :desc_resolvealias \{name = alias_generic_list_menu_vmenu
 			param = generic_list_vmenu}
-		AssignAlias id = <generic_list_vmenu> alias = current_list_menu
-		if GotParam \{vmenu_id}
-			AssignAlias id = <generic_list_vmenu> alias = <vmenu_id>
+		assignalias id = <generic_list_vmenu> alias = current_list_menu
+		if gotparam \{vmenu_id}
+			assignalias id = <generic_list_vmenu> alias = <vmenu_id>
 		endif
 	else
 
 	endif
-	current_list_menu :SetTags {color_scheme = <color_scheme>}
-	SetScreenElementProps \{id = current_list_menu
+	current_list_menu :settags {color_scheme = <color_scheme>}
+	setscreenelementprops \{id = current_list_menu
 		event_handlers = [
 			{
 				pad_up
@@ -83,24 +83,24 @@ script make_list_menu {
 				}
 			}
 		]}
-	if GotParam \{pad_down_script}
-		SetScreenElementProps {
+	if gotparam \{pad_down_script}
+		setscreenelementprops {
 			id = current_list_menu
 			event_handlers = [
 				{pad_down <pad_down_script> params = <pad_down_params>}
 			]
 		}
 	endif
-	if GotParam \{pad_up_script}
-		SetScreenElementProps {
+	if gotparam \{pad_up_script}
+		setscreenelementprops {
 			id = current_list_menu
 			event_handlers = [
 				{pad_up <pad_up_script> params = <pad_up_params>}
 			]
 		}
 	endif
-	if GotParam \{pad_option2_script}
-		SetScreenElementProps {
+	if gotparam \{pad_option2_script}
+		setscreenelementprops {
 			id = current_list_menu
 			event_handlers = [
 				{pad_option2 <pad_back_sound>}
@@ -108,8 +108,8 @@ script make_list_menu {
 			]
 		}
 	endif
-	if GotParam \{pad_option_script}
-		SetScreenElementProps {
+	if gotparam \{pad_option_script}
+		setscreenelementprops {
 			id = current_list_menu
 			event_handlers = [
 				{pad_option <pad_back_sound>}
@@ -117,23 +117,23 @@ script make_list_menu {
 			]
 		}
 	endif
-	if GotParam \{pad_back_script}
-		generic_list_menu :SetTags pad_back_script = <pad_back_script> pad_back_params = <pad_back_params>
+	if gotparam \{pad_back_script}
+		generic_list_menu :settags pad_back_script = <pad_back_script> pad_back_params = <pad_back_params>
 	endif
 	menu_id = <id>
 endscript
 
 script generic_list_destroy 
-	if ScreenElementExists \{id = generic_list_menu}
-		DestroyScreenElement \{id = generic_list_menu}
+	if screenelementexists \{id = generic_list_menu}
+		destroyscreenelement \{id = generic_list_menu}
 	endif
-	if ScreenElementExists \{id = popout_unfocus_current_menu}
-		DestroyScreenElement \{id = popout_unfocus_current_menu}
+	if screenelementexists \{id = popout_unfocus_current_menu}
+		destroyscreenelement \{id = popout_unfocus_current_menu}
 	endif
 	cleanup_cas_menu_handlers
 	clean_up_user_control_helpers
-	if ScreenElementExists \{id = current_menu}
-		current_menu :SE_SetProps \{alpha = 1.0}
+	if screenelementexists \{id = current_menu}
+		current_menu :se_setprops \{alpha = 1.0}
 	endif
 endscript
 
@@ -142,17 +142,17 @@ script add_list_item \{focus_script = menu_list_focus
 		pad_choose_sound = ui_menu_select_sfx
 		pad_back_sound = generic_menu_pad_back_sound
 		parent = current_list_menu
-		editable_icon = Colorwheel_Tiny}
-	if NOT GotParam \{pad_back_script}
-		generic_list_menu :GetTags
+		editable_icon = colorwheel_tiny}
+	if NOT gotparam \{pad_back_script}
+		generic_list_menu :gettags
 	endif
 	no_price = true
-	if NOT <parent> :GetSingleTag color_scheme
+	if NOT <parent> :getsingletag color_scheme
 		color_scheme = ($default_color_scheme)
 	endif
-	if ScreenElementExists id = <parent>
-		CreateScreenElement {
-			type = DescInterface
+	if screenelementexists id = <parent>
+		createscreenelement {
+			type = descinterface
 			parent = <parent>
 			desc = 'generic_list_menu_item'
 			dims = (300.0, 40.0)
@@ -165,28 +165,28 @@ script add_list_item \{focus_script = menu_list_focus
 	else
 
 	endif
-	if GotParam \{no_price}
-		<id> :SE_SetProps generic_list_menu_item_price_alpha = 0.0
+	if gotparam \{no_price}
+		<id> :se_setprops generic_list_menu_item_price_alpha = 0.0
 	endif
-	if GotParam \{editable}
+	if gotparam \{editable}
 		editable = 1
 	endif
-	if GotParam \{choose_state}
+	if gotparam \{choose_state}
 		pad_choose_script = ui_event
 		pad_choose_params = {event = menu_change data = {state = <choose_state> <choose_state_data>}}
 	endif
-	if GotParam \{choose_back}
+	if gotparam \{choose_back}
 		pad_choose_script = generic_event_back
 	endif
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <id>
 		event_handlers = [
 			{focus <focus_script> params = {id = <id> additional_focus_script = <additional_focus_script> additional_focus_params = <additional_focus_params> no_price = <no_price> editable = <editable>}}
 			{unfocus <unfocus_script> params = {id = <id> additional_unfocus_script = <additional_unfocus_script> additional_unfocus_params = <additional_unfocus_params> editable = <editable>}}
 		]
 	}
-	if GotParam \{pad_choose_script}
-		SetScreenElementProps {
+	if gotparam \{pad_choose_script}
+		setscreenelementprops {
 			id = <id>
 			event_handlers = [
 				{pad_choose <pad_choose_sound>}
@@ -194,8 +194,8 @@ script add_list_item \{focus_script = menu_list_focus
 			]
 		}
 	endif
-	if GotParam \{pad_back_script}
-		SetScreenElementProps {
+	if gotparam \{pad_back_script}
+		setscreenelementprops {
 			id = <id>
 			event_handlers = [
 				{pad_back <pad_back_sound>}
@@ -203,8 +203,8 @@ script add_list_item \{focus_script = menu_list_focus
 			]
 		}
 	endif
-	if GotParam \{pad_square_script}
-		SetScreenElementProps {
+	if gotparam \{pad_square_script}
+		setscreenelementprops {
 			id = <id>
 			event_handlers = [
 				{pad_square <pad_choose_sound>}
@@ -212,8 +212,8 @@ script add_list_item \{focus_script = menu_list_focus
 			]
 		}
 	endif
-	if GotParam \{pad_option2_script}
-		SetScreenElementProps {
+	if gotparam \{pad_option2_script}
+		setscreenelementprops {
 			id = <id>
 			event_handlers = [
 				{pad_option2 <pad_choose_sound>}
@@ -221,8 +221,8 @@ script add_list_item \{focus_script = menu_list_focus
 			]
 		}
 	endif
-	if GotParam \{pad_start_script}
-		SetScreenElementProps {
+	if gotparam \{pad_start_script}
+		setscreenelementprops {
 			id = <id>
 			event_handlers = [
 				{pad_start <pad_choose_sound>}
@@ -230,97 +230,97 @@ script add_list_item \{focus_script = menu_list_focus
 			]
 		}
 	endif
-	if GotParam \{text_case}
-		<id> :SE_SetProps generic_list_menu_item_text_textcase = <text_case>
+	if gotparam \{text_case}
+		<id> :se_setprops generic_list_menu_item_text_textcase = <text_case>
 	endif
 endscript
 
 script menu_list_focus 
-	if ScreenElementExists id = <id>
-		if <id> :SE_GetParentId
-			if <parent_id> :GetSingleTag color_scheme
-				<id> :SE_SetProps generic_list_menu_item_text_rgba = (<color_scheme>.text_focus_color)
-				<id> :SE_SetProps generic_list_menu_item_text_font = (<color_scheme>.text_focus_font)
+	if screenelementexists id = <id>
+		if <id> :se_getparentid
+			if <parent_id> :getsingletag color_scheme
+				<id> :se_setprops generic_list_menu_item_text_rgba = (<color_scheme>.text_focus_color)
+				<id> :se_setprops generic_list_menu_item_text_font = (<color_scheme>.0xf9bd0c3e)
 			endif
 		endif
-		if NOT GotParam \{no_price}
-			<id> :SE_SetProps generic_list_menu_item_price_alpha = 1.0
+		if NOT gotparam \{no_price}
+			<id> :se_setprops generic_list_menu_item_price_alpha = 1.0
 		endif
-		if GotParam \{editable}
-			<id> :SE_SetProps generic_list_menu_item_editable_alpha = 1.0
+		if gotparam \{editable}
+			<id> :se_setprops generic_list_menu_item_editable_alpha = 1.0
 		endif
 	endif
-	if GotParam \{additional_focus_script}
+	if gotparam \{additional_focus_script}
 		<additional_focus_script> <additional_focus_params>
 	endif
 endscript
 
 script menu_list_unfocus 
-	if ScreenElementExists id = <id>
-		if <id> :SE_GetParentId
-			if <parent_id> :GetSingleTag color_scheme
-				<id> :SE_SetProps generic_list_menu_item_text_rgba = (<color_scheme>.text_color)
-				<id> :SE_SetProps generic_list_menu_item_text_font = (<color_scheme>.text_font)
+	if screenelementexists id = <id>
+		if <id> :se_getparentid
+			if <parent_id> :getsingletag color_scheme
+				<id> :se_setprops generic_list_menu_item_text_rgba = (<color_scheme>.text_color)
+				<id> :se_setprops generic_list_menu_item_text_font = (<color_scheme>.text_font)
 			endif
 		endif
-		<id> :SE_SetProps generic_list_menu_item_price_alpha = 0.0
-		<id> :SE_SetProps generic_list_menu_item_editable_alpha = 0.0
+		<id> :se_setprops generic_list_menu_item_price_alpha = 0.0
+		<id> :se_setprops generic_list_menu_item_editable_alpha = 0.0
 	endif
-	if GotParam \{additional_unfocus_script}
+	if gotparam \{additional_unfocus_script}
 		<additional_unfocus_script> <additional_unfocus_params>
 	endif
 endscript
 
 script animate_in_list_menu 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = kill_oldest}
-	if ScreenElementExists id = <id>
-		<id> :SE_SetProps generic_list_menu_icon_container_scale = 0.5
-		<id> :SE_SetProps generic_list_menu_icon_container_scale = 1.0 time = 0.2
-		<id> :SE_SetProps generic_list_menu_container_pos = {(-200.0, 0.0) relative}
-		<id> :SE_SetProps generic_list_menu_container_pos = {(200.0, 0.0) relative} time = 0.2
-		<id> :SE_SetProps generic_list_icon_name_pos = {(0.0, -30.0) relative}
-		<id> :SE_SetProps generic_list_icon_name_pos = {(0.0, 40.0) relative} time = 0.2
+	if screenelementexists id = <id>
+		<id> :se_setprops generic_list_menu_icon_container_scale = 0.5
+		<id> :se_setprops generic_list_menu_icon_container_scale = 1.0 time = 0.2
+		<id> :se_setprops generic_list_menu_container_pos = {(-200.0, 0.0) relative}
+		<id> :se_setprops generic_list_menu_container_pos = {(200.0, 0.0) relative} time = 0.2
+		<id> :se_setprops generic_list_icon_name_pos = {(0.0, -30.0) relative}
+		<id> :se_setprops generic_list_icon_name_pos = {(0.0, 40.0) relative} time = 0.2
 	endif
-	Wait \{0.22
+	wait \{0.22
 		seconds}
-	if ScreenElementExists id = <id>
-		<id> :SE_SetProps generic_list_icon_name_pos = {(0.0, -10.0) relative} time = 0.15
+	if screenelementexists id = <id>
+		<id> :se_setprops generic_list_icon_name_pos = {(0.0, -10.0) relative} time = 0.15
 	endif
 endscript
 
 script pad_choose_dialogue_execute \{pad_choose_script = nullscript
-		price_text = qs("Free")
+		price_text = qs(0x27b7dfe5)
 		pad_yes_script = continue_purchase_item
 		pad_no_script = pad_choose_dialogue_return}
-	InputHandlerForbid
-	if ScreenElementExists \{id = generic_list_menu}
-		generic_list_menu :SE_SetProps generic_list_menu_dialogue_text_text = <pad_choose_dialogue> generic_list_menu_item_price_text_text = <price_text> generic_list_menu_dialogue_menu_yes_text = qs("Yes") generic_list_menu_dialogue_menu_no_text = qs("No")
-		generic_list_menu :SE_SetProps \{generic_list_menu_up_arrow_alpha = 0
+	0x79db87d7
+	if screenelementexists \{id = generic_list_menu}
+		generic_list_menu :se_setprops generic_list_menu_dialogue_text_text = <pad_choose_dialogue> generic_list_menu_item_price_text_text = <price_text> generic_list_menu_dialogue_menu_yes_text = qs(0x6d562a67) generic_list_menu_dialogue_menu_no_text = qs(0x47157885)
+		generic_list_menu :se_setprops \{generic_list_menu_up_arrow_alpha = 0
 			generic_list_menu_down_arrow_alpha = 0}
-		LaunchEvent \{target = current_list_menu
+		launchevent \{target = current_list_menu
 			type = unfocus}
-		generic_list_menu :SE_SetProps \{generic_list_menu_smenu_alpha = 0.0}
-		generic_list_menu :SE_SetProps \{generic_list_menu_dialogue_alpha = 1.0}
-		generic_list_menu :Desc_ResolveAlias \{name = alias_generic_list_menu_dialogue_menu
+		generic_list_menu :se_setprops \{generic_list_menu_smenu_alpha = 0.0}
+		generic_list_menu :se_setprops \{generic_list_menu_dialogue_alpha = 1.0}
+		generic_list_menu :desc_resolvealias \{name = alias_generic_list_menu_dialogue_menu
 			param = generic_list_dialogue}
-		if generic_list_menu :Desc_ResolveAlias \{name = alias_generic_list_menu_dialogue_menu_yes
+		if generic_list_menu :desc_resolvealias \{name = alias_generic_list_menu_dialogue_menu_yes
 				param = generic_list_dialogue_yes}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <generic_list_dialogue_yes>
 				alpha = 1.0
 				event_handlers = [
-					{focus pad_choose_dialogue_focus params = {item = Yes}}
-					{unfocus pad_choose_dialogue_unfocus params = {item = Yes}}
+					{focus pad_choose_dialogue_focus params = {item = yes}}
+					{unfocus pad_choose_dialogue_unfocus params = {item = yes}}
 					{pad_choose <pad_yes_script> params = {generic_list_dialogue = <generic_list_dialogue> pad_choose_script = <pad_choose_script> pad_choose_params = <pad_choose_params> part = (<pad_choose_params>.part) price = <price> is_preset = (<pad_choose_params>.is_preset)}}
 					{pad_back pad_choose_dialogue_return params = {generic_list_dialogue = <generic_list_dialogue>}}
 				]
 				replace_handlers
 			}
 		endif
-		if generic_list_menu :Desc_ResolveAlias \{name = alias_generic_list_menu_dialogue_menu_no
+		if generic_list_menu :desc_resolvealias \{name = alias_generic_list_menu_dialogue_menu_no
 				param = generic_list_dialogue_no}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <generic_list_dialogue_no>
 				alpha = 1.0
 				dims = (150.0, 50.0)
@@ -335,52 +335,52 @@ script pad_choose_dialogue_execute \{pad_choose_script = nullscript
 			}
 		endif
 		setup_cas_menu_handlers vmenu_id = <generic_list_dialogue> camera_list = <camera_list> zoom_camera = <zoom_camera>
-		LaunchEvent target = <generic_list_dialogue> type = focus data = {child_index = 0}
+		launchevent target = <generic_list_dialogue> type = focus data = {child_index = 0}
 		clean_up_user_control_helpers
 		menu_finish \{car_helper_text_cancel}
 	endif
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	InputHandlerPermit
+	0xf00f29a9
 endscript
 
 script pad_choose_dialogue_return 
-	LaunchEvent target = <generic_list_dialogue> type = unfocus
-	LaunchEvent \{target = current_list_menu
+	launchevent target = <generic_list_dialogue> type = unfocus
+	launchevent \{target = current_list_menu
 		type = focus}
 	generic_menu_pad_back_sound
-	generic_list_menu :SE_SetProps \{generic_list_menu_smenu_alpha = 1.0}
-	generic_list_menu :SE_SetProps \{generic_list_menu_dialogue_alpha = 0.0}
-	generic_list_menu :SE_SetProps \{generic_list_menu_up_arrow_alpha = 1}
-	generic_list_menu :SE_SetProps \{generic_list_menu_down_arrow_alpha = 1}
+	generic_list_menu :se_setprops \{generic_list_menu_smenu_alpha = 1.0}
+	generic_list_menu :se_setprops \{generic_list_menu_dialogue_alpha = 0.0}
+	generic_list_menu :se_setprops \{generic_list_menu_up_arrow_alpha = 1}
+	generic_list_menu :se_setprops \{generic_list_menu_down_arrow_alpha = 1}
 endscript
 
 script pad_choose_dialogue_focus 
 
-	if ScreenElementExists \{id = generic_list_menu}
-		if (<item> = Yes)
+	if screenelementexists \{id = generic_list_menu}
+		if (<item> = yes)
 			generic_menu_up_or_down_sound
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = generic_list_menu
 				generic_list_menu_dialogue_menu_yes_rgba = (($default_color_scheme).text_focus_color)
 				generic_list_menu_dialogue_menu_yes_font = fontgrid_text_a1
 			}
 		else
 			generic_menu_up_or_down_sound
-			generic_list_menu :SE_SetProps generic_list_menu_dialogue_menu_no_rgba = (($default_color_scheme).text_focus_color)
-			generic_list_menu :SE_SetProps \{generic_list_menu_dialogue_menu_no_font = fontgrid_text_a1}
+			generic_list_menu :se_setprops generic_list_menu_dialogue_menu_no_rgba = (($default_color_scheme).text_focus_color)
+			generic_list_menu :se_setprops \{generic_list_menu_dialogue_menu_no_font = fontgrid_text_a1}
 		endif
 	endif
 endscript
 
 script pad_choose_dialogue_unfocus 
-	if ScreenElementExists \{id = generic_list_menu}
-		if (<item> = Yes)
-			generic_list_menu :SE_SetProps generic_list_menu_dialogue_menu_yes_rgba = (($default_color_scheme).text_color)
-			generic_list_menu :SE_SetProps generic_list_menu_dialogue_menu_yes_font = ($test_menu_font)
+	if screenelementexists \{id = generic_list_menu}
+		if (<item> = yes)
+			generic_list_menu :se_setprops generic_list_menu_dialogue_menu_yes_rgba = (($default_color_scheme).text_color)
+			generic_list_menu :se_setprops generic_list_menu_dialogue_menu_yes_font = ($test_menu_font)
 		else
-			generic_list_menu :SE_SetProps generic_list_menu_dialogue_menu_no_rgba = (($default_color_scheme).text_color)
-			generic_list_menu :SE_SetProps generic_list_menu_dialogue_menu_no_font = ($test_menu_font)
+			generic_list_menu :se_setprops generic_list_menu_dialogue_menu_no_rgba = (($default_color_scheme).text_color)
+			generic_list_menu :se_setprops generic_list_menu_dialogue_menu_no_font = ($test_menu_font)
 		endif
 	endif
 endscript
@@ -388,10 +388,10 @@ endscript
 script continue_purchase_item 
 
 	if has_enough_money price = <price>
-		SoundEvent \{event = Menu_Purchase_Item}
+		soundevent \{event = menu_purchase_item}
 		decrease_band_money price = <price>
-		if NOT GotParam \{is_preset}
-			if NOT GetCASAppearancePart part = <part>
+		if NOT gotparam \{is_preset}
+			if NOT getcasappearancepart part = <part>
 
 			endif
 		else
@@ -401,28 +401,28 @@ script continue_purchase_item
 		set_current_band_part_flags part = <part> desc_id = <desc_id> purchased savegame = ($cas_current_savegame)
 		<pad_choose_script> <pad_choose_params>
 	else
-		generic_list_menu :SE_SetProps \{generic_list_menu_dialogue_text_text = qs("You do not have enough money to purchase this item.")
-			generic_list_menu_dialogue_menu_yes_text = qs("Continue")}
-		SoundEvent \{event = UI_SFX_Negative_Select}
-		if generic_list_menu :Desc_ResolveAlias \{name = alias_generic_list_menu_dialogue_menu_no
+		generic_list_menu :se_setprops \{generic_list_menu_dialogue_text_text = qs(0xf1dadf1b)
+			generic_list_menu_dialogue_menu_yes_text = qs(0x494b4d7f)}
+		soundevent \{event = ui_sfx_negative_select}
+		if generic_list_menu :desc_resolvealias \{name = alias_generic_list_menu_dialogue_menu_no
 				param = generic_list_dialogue_no}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <generic_list_dialogue_no>
 				alpha = 0
 				not_focusable
 				dims = (0.0, 0.0)
 			}
 		endif
-		if generic_list_menu :Desc_ResolveAlias \{name = alias_generic_list_menu_dialogue_menu_yes
+		if generic_list_menu :desc_resolvealias \{name = alias_generic_list_menu_dialogue_menu_yes
 				param = generic_list_dialogue_yes}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <generic_list_dialogue_yes>
 				event_handlers = [
 					{pad_choose pad_choose_dialogue_return params = {generic_list_dialogue = <generic_list_dialogue>}}
 				]
 				replace_handlers
 			}
-			LaunchEvent type = focus target = <generic_list_dialogue_yes>
+			launchevent type = focus target = <generic_list_dialogue_yes>
 		endif
 	endif
 endscript

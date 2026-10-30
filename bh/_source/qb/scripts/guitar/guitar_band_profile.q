@@ -1,68 +1,68 @@
 default_custom_musician_profile_female = {
 	allowed_parts = [
 		drum
-		Vocals
+		vocals
 		guitar
-		Bass
+		bass
 	]
-	blurb = qs("\L")
+	blurb = qs(0x03ac90f0)
 	appearance = {
-		CAS_Body = {
-			desc_id = GH4_CAR_Female
+		cas_body = {
+			desc_id = gh4_car_female
 		}
 		cas_physique = {
-			desc_id = FemalePhysique
+			desc_id = femalephysique
 		}
 		$preset_musician_instrument_hack
-		CAS_Female_Win_Anim = {
-			desc_id = Win_Hype
+		cas_female_win_anim = {
+			desc_id = win_hype
 		}
-		CAS_Female_Lose_Anim = {
-			desc_id = Lose_AngryAtCrowd
+		cas_female_lose_anim = {
+			desc_id = lose_angryatcrowd
 		}
-		CAS_Female_Intro_Anim = {
-			desc_id = Intro_Hype
+		cas_female_intro_anim = {
+			desc_id = intro_hype
 		}
-		genre = Rock
+		genre = rock
 	}
 }
 default_custom_musician_profile_male = {
 	allowed_parts = [
 		drum
-		Vocals
+		vocals
 		guitar
-		Bass
+		bass
 	]
-	blurb = qs("\L")
+	blurb = qs(0x03ac90f0)
 	appearance = {
-		CAS_Body = {
-			desc_id = GH4_CAR_Male
+		cas_body = {
+			desc_id = gh4_car_male
 		}
 		cas_physique = {
-			desc_id = MalePhysique
+			desc_id = malephysique
 		}
 		$preset_musician_instrument_hack
-		CAS_Male_Intro_Anim = {
-			desc_id = Intro_Waving
+		cas_male_intro_anim = {
+			desc_id = intro_waving
 		}
-		CAS_Male_Win_Anim = {
-			desc_id = Win_Robot
+		cas_male_win_anim = {
+			desc_id = win_robot
 		}
-		CAS_Male_Lose_Anim = {
-			desc_id = Lose_AngryAtCrowd
+		cas_male_lose_anim = {
+			desc_id = lose_angryatcrowd
 		}
-		genre = Rock
+		genre = rock
 	}
 }
-Net_Musician_Profiles = [
+net_musician_profiles = [
 	{
 		name = netappearance1
-		fullname = qs("\Lnetappearance1")
+		fullname = qs(0xa038ae98)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		appearance = {
@@ -70,12 +70,12 @@ Net_Musician_Profiles = [
 	}
 	{
 		name = netappearance2
-		fullname = qs("\Lnetappearance2")
+		fullname = qs(0x8b15fd5b)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		appearance = {
@@ -83,12 +83,12 @@ Net_Musician_Profiles = [
 	}
 	{
 		name = netappearance3
-		fullname = qs("\Lnetappearance3")
+		fullname = qs(0x920ecc1a)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		appearance = {
@@ -96,12 +96,12 @@ Net_Musician_Profiles = [
 	}
 	{
 		name = netappearance4
-		fullname = qs("\Lnetappearance4")
+		fullname = qs(0xdd4f5add)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		appearance = {
@@ -109,134 +109,134 @@ Net_Musician_Profiles = [
 	}
 ]
 modifiable_preset_musician_parts = [
-	CAS_Full_Body
-	CAS_Female_Hair
-	CAS_Female_Hat_Hair
-	CAS_Female_Hat
-	CAS_Female_Facial_Hair
-	CAS_Female_Torso
-	CAS_Female_Legs
-	CAS_Female_Shoes
-	CAS_Female_Acc_Left
-	CAS_Female_Acc_Right
-	CAS_Female_Acc_Face
-	CAS_Female_Acc_Ears
-	CAS_Male_Hair
-	CAS_Male_Hat_Hair
-	CAS_Male_Hat
-	CAS_Male_Facial_Hair
-	CAS_Male_Torso
-	CAS_Male_Legs
-	CAS_Male_Shoes
-	CAS_Male_Acc_Left
-	CAS_Male_Acc_Right
-	CAS_Male_Acc_Face
-	CAS_Male_Acc_Ears
+	cas_full_body
+	cas_female_hair
+	cas_female_hat_hair
+	cas_female_hat
+	cas_female_facial_hair
+	cas_female_torso
+	cas_female_legs
+	cas_female_shoes
+	cas_female_acc_left
+	cas_female_acc_right
+	cas_female_acc_face
+	cas_female_acc_ears
+	cas_male_hair
+	cas_male_hat_hair
+	cas_male_hat
+	cas_male_facial_hair
+	cas_male_torso
+	cas_male_legs
+	cas_male_shoes
+	cas_male_acc_left
+	cas_male_acc_right
+	cas_male_acc_face
+	cas_male_acc_ears
 ]
 modifiable_preset_musician_instrument_parts = [
-	CAS_Full_Instrument
-	CAS_Guitar_Body
-	CAS_Guitar_Neck
-	CAS_Guitar_Head
-	CAS_Guitar_Pickguards
-	CAS_Guitar_Bridges
-	CAS_Guitar_Knobs
-	CAS_Guitar_Pickups
-	CAS_Guitar_Strings
-	CAS_Bass_Body
-	CAS_Bass_Neck
-	CAS_Bass_Head
-	CAS_Bass_Pickguards
-	CAS_Bass_Pickups
-	CAS_Bass_Bridges
-	CAS_Bass_Knobs
-	CAS_Bass_Strings
-	CAS_Drums
-	CAS_Drums_Sticks
-	CAS_Mic
-	CAS_Mic_Stand
-	CAS_Guitar_Finish
-	CAS_Guitar_Body_Detail
+	cas_full_instrument
+	cas_guitar_body
+	cas_guitar_neck
+	cas_guitar_head
+	cas_guitar_pickguards
+	cas_guitar_bridges
+	cas_guitar_knobs
+	cas_guitar_pickups
+	cas_guitar_strings
+	cas_bass_body
+	cas_bass_neck
+	cas_bass_head
+	cas_bass_pickguards
+	cas_bass_pickups
+	cas_bass_bridges
+	cas_bass_knobs
+	cas_bass_strings
+	cas_drums
+	cas_drums_sticks
+	cas_mic
+	cas_mic_stand
+	cas_guitar_finish
+	cas_guitar_body_detail
 	cas_guitar_body_fade
-	CAS_Guitar_Neck_Finish
-	CAS_Guitar_Head_Finish
-	CAS_Guitar_Head_Detail
+	cas_guitar_neck_finish
+	cas_guitar_head_finish
+	cas_guitar_head_detail
 	cas_guitar_head_fade
-	CAS_Guitar_Pickguard_Finish
+	cas_guitar_pickguard_finish
 	cas_guitar_logo
-	CAS_Bass_Finish
-	CAS_Bass_Body_Detail
+	cas_bass_finish
+	cas_bass_body_detail
 	cas_bass_body_fade
-	CAS_Bass_Neck_Finish
-	CAS_Bass_Head_Finish
-	CAS_Bass_Head_Detail
+	cas_bass_neck_finish
+	cas_bass_head_finish
+	cas_bass_head_detail
 	cas_bass_head_fade
 	cas_bass_pickguard_finish
 	cas_guitar_logo
-	CAS_Drum_Finish
-	CAS_Drum_Detail
+	cas_drum_finish
+	cas_drum_detail
 	cas_drums_sticks_l
 	cas_drums_sticks_r
 ]
 default_band = {
-	Guitarist = RandomCharacter
-	bassist = RandomCharacter
-	vocalist = RandomCharacter
-	Drummer = RandomCharacter
+	guitarist = randomcharacter
+	bassist = randomcharacter
+	vocalist = randomcharacter
+	drummer = randomcharacter
 }
 worst_female_band = {
-	Guitarist = Worstfemale
-	bassist = Worstfemale
-	vocalist = Worstfemale2
-	Drummer = Worstfemale
+	guitarist = 0x7c96f449
+	bassist = 0x7c96f449
+	vocalist = 0xc7ab3e40
+	drummer = 0x7c96f449
 }
 worst_male_band = {
-	Guitarist = Worstmale
-	bassist = Worstmale
-	vocalist = Worstmale2
-	Drummer = Worstmale
+	guitarist = 0x0a25308d
+	bassist = 0x0a25308d
+	vocalist = 0x5bd48b2d
+	drummer = 0x0a25308d
 }
 jam_mode_band = 0
 jam_mode_band_profiles = {
-	Guitarist = Guitarist
+	guitarist = guitarist
 	bassist = bassist
 	vocalist = singer
-	Drummer = Drummer
+	drummer = drummer
 }
-Band_TaylorSwift = {
-	Guitarist = GH_Rocker_TaylorSwift_Guitarist
-	bassist = GH_Rocker_TaylorSwift_Bassist
-	vocalist = GH_Rocker_TaylorSwift
-	Drummer = GH_Rocker_TaylorSwift_Drummer
+band_taylorswift = {
+	guitarist = 0x6afc4e96
+	bassist = 0x0e82efc2
+	vocalist = 0x89438ada
+	drummer = 0x2564c7ff
 }
-Band_TaylorSwift2 = {
-	Guitarist = GH_Rocker_TaylorSwift_Guitarist
-	bassist = GH_Rocker_TaylorSwift_Bassist
-	vocalist = GH_Rocker_TaylorSwift2
-	Drummer = GH_Rocker_TaylorSwift_Drummer
+band_taylorswift2 = {
+	guitarist = 0x6afc4e96
+	bassist = 0x0e82efc2
+	vocalist = 0xae5829c0
+	drummer = 0x2564c7ff
 }
-Band_TaylorSwift3 = {
-	Guitarist = GH_Rocker_TaylorSwift_Guitarist
-	bassist = GH_Rocker_TaylorSwift_Bassist
-	vocalist = GH_Rocker_TaylorSwift3
-	Drummer = GH_Rocker_TaylorSwift_Drummer
+band_taylorswift3 = {
+	guitarist = 0x6afc4e96
+	bassist = 0x0e82efc2
+	vocalist = 0xd95f1956
+	drummer = 0x2564c7ff
 	vocalist_has_guitar
 }
-Band_AdamLevine = {
-	Guitarist = GH_Rocker_AdamLevine_Guitarist
-	bassist = GH_Rocker_AdamLevine_Bassist
-	vocalist = GH_Rocker_AdamLevine_CareerOnly
-	Drummer = GH_Rocker_AdamLevine_Drummer
+band_adamlevine = {
+	guitarist = 0x01054cb2
+	bassist = 0x8fdc240e
+	vocalist = 0x3c17a2c4
+	drummer = 0xa43a0c33
 }
-Band_NoDoubt_JustAGirl = {
-	Guitarist = GH_Rocker_TomDumont_CareerOnly
-	bassist = GH_Rocker_TonyKanal_CareerOnly
-	vocalist = GH_Rocker_GwenStefani2
-	Drummer = GH_Rocker_AdrianYoung_Drummer
+band_nodoubt_justagirl = {
+	guitarist = 0x47f4d11c
+	bassist = 0x9ba6f881
+	vocalist = 0x74f90a05
+	drummer = 0x908cf9f8
 }
-Band_NoDoubt_DontSpeak = {
-	Guitarist = GH_Rocker_TomDumont2
-	bassist = GH_Rocker_TonyKanal2
-	vocalist = GH_Rocker_GwenStefani
-	Drummer = GH_Rocker_AdrianYoung_Drummer
+band_nodoubt_dontspeak = {
+	guitarist = 0x49d2384e
+	bassist = 0x0c83f448
+	vocalist = 0x48d89fb1
+	drummer = 0x908cf9f8
 }

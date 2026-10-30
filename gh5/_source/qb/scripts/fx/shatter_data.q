@@ -1,8 +1,8 @@
 
-script ShatterFromSkater \{vel_scale = 0.5
+script shatterfromskater \{vel_scale = 0.5
 		gravity = (0.0, -6.3500004, 0.0)
 		area = 1.2900001
-		Blend_Mode = blend
+		blend_mode = blend
 		variance = 0.0
 		spread = 1.0
 		life = 4.0
@@ -10,13 +10,13 @@ script ShatterFromSkater \{vel_scale = 0.5
 		bounce_amp = 0.254
 		shininess = 0
 		radius = 0.0}
-	Obj_GetID
-	<ObjID> :Obj_GetVelocity
+	obj_getid
+	<objid> :obj_getvelocity
 	<force> = (<vel> * <vel_scale>)
-	<ObjID> :Obj_GetPosition
-	if GotParam \{radial_shatter}
+	<objid> :obj_getposition
+	if gotparam \{radial_shatter}
 
 		<origin> = <pos>
 	endif
-	Shatter <...>
+	shatter <...>
 endscript

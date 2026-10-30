@@ -4,229 +4,229 @@ test_16bit_cap = 0
 script create_model_from_appearance 
 	if ($ps2_cas_load_canceled = 1)
 		change \{ps2_cas_load_canceled = 0}
-		if NOT GotParam \{fast_update}
-			currgen_unload_skeleton
+		if NOT gotparam \{0x0f7210d9}
+			0x239b2ee5
 			return
 		endif
 	endif
-	LockForModelBuilder \{lock = 1}
-	if NOT GotParam \{hat_hair_choice}
+	lockformodelbuilder \{lock = 1}
+	if NOT gotparam \{hat_hair_choice}
 		hat_hair_choice = hair
 	endif
-	if NOT GotParam \{instrument}
+	if NOT gotparam \{instrument}
 		instrument = none
 	endif
-	FilterAppearancePartSet part_set = $instrument_part_sets chosen_set = <instrument>
-	FilterAppearancePartSet part_set = $hair_part_sets chosen_set = <hat_hair_choice>
-	if NOT GotParam \{caching}
-		if GotParam \{preload}
-			ModelRunScript \{ScriptName = cas_reset_bones}
-			ModelRunScript ScriptName = cas_skeleton_reset params = {skeleton = <modelbuilder_skeleton>}
-			ModelRunScript ScriptName = cas_ragdoll_reset params = {skeleton = <modelbuilder_skeleton> ragdoll = <modelbuilder_ragdoll>}
+	filterappearancepartset part_set = $instrument_part_sets chosen_set = <instrument>
+	filterappearancepartset part_set = $hair_part_sets chosen_set = <hat_hair_choice>
+	if NOT gotparam \{caching}
+		if gotparam \{preload}
+			modelrunscript \{scriptname = cas_reset_bones}
+			modelrunscript scriptname = cas_skeleton_reset params = {skeleton = <modelbuilder_skeleton>}
+			modelrunscript scriptname = cas_ragdoll_reset params = {skeleton = <modelbuilder_skeleton> ragdoll = <modelbuilder_ragdoll>}
 		endif
-		ModelClearAllGeoms
+		modelclearallgeoms
 	endif
-	foreachincas \{do = ModelAddGeom}
-	foreachincas \{do = GeomReplaceTexture}
-	GeomSetCreatedTexture
-	if NOT GotParam \{viewerobj}
-		if NOT GotParam \{preload}
-			foreachincas \{do = ModelReskinPart
+	foreachincas \{do = modeladdgeom}
+	foreachincas \{do = geomreplacetexture}
+	geomsetcreatedtexture
+	if NOT gotparam \{viewerobj}
+		if NOT gotparam \{preload}
+			foreachincas \{do = modelreskinpart
 				params = {
-					ScriptName = cas_part_reskin
+					scriptname = cas_part_reskin
 				}}
-			ModelUpdateMainRigForReskinning \{part = CAS_Body
-				ScriptName = cas_lowres_rig_reskin}
-			foreachincas \{do = ModelCopyGeom
+			modelupdatemainrigforreskinning \{part = cas_body
+				scriptname = cas_lowres_rig_reskin}
+			foreachincas \{do = modelcopygeom
 				params = {
 					materials = $cas_reskin_materials
 				}}
-			foreachincas \{do = ModelDeleteReskinTemporaries}
-			ModelRunScript \{ScriptName = cas_reset_bones}
-			foreachincas \{do = DeformMainSkeleton
+			foreachincas \{do = modeldeletereskintemporaries}
+			modelrunscript \{scriptname = cas_reset_bones}
+			foreachincas \{do = deformmainskeleton
 				params = {
-					ScriptName = cas_main_skel_scale
+					scriptname = cas_main_skel_scale
 				}}
 		endif
 	endif
-	ModelRemovePolys
-	foreachincas \{do = GeomModulateColor}
+	modelremovepolys
+	foreachincas \{do = geommodulatecolor}
 	set_uv_from_appearance
-	if GotParam \{new_object}
-		ModelExpandBoundingSphere
+	if gotparam \{new_object}
+		modelexpandboundingsphere
 	endif
-	ModelUpdateSkinningPolyRemoval
-	foreachincas \{do = CreateAPieceComposite}
-	if NOT GotParam \{caching}
-		if NOT GotParam \{preload}
-			GetModelBuilderAppearance
+	modelupdateskinningpolyremoval
+	foreachincas \{do = createapiececomposite}
+	if NOT gotparam \{caching}
+		if NOT gotparam \{preload}
+			getmodelbuilderappearance
 			if (<instrument> = drum)
-				ModelRunScript ScriptName = cas_merge_in_drummer_bones params = {skeleton = <modelbuilder_skeleton>}
-			elseif ((<instrument> = guitar) || (<instrument> = Bass))
-				ModelRunScript ScriptName = cas_merge_in_guitar_ragdoll params = {skeleton = <modelbuilder_skeleton>}
+				modelrunscript scriptname = cas_merge_in_drummer_bones params = {skeleton = <modelbuilder_skeleton>}
+			elseif ((<instrument> = guitar) || (<instrument> = bass))
+				modelrunscript scriptname = cas_merge_in_guitar_ragdoll params = {skeleton = <modelbuilder_skeleton>}
 			endif
-			if NOT GotParam \{new_object}
-				ModelRunScript ScriptName = cas_update_accessory_bones params = {appearance = <appearance>}
+			if NOT gotparam \{new_object}
+				modelrunscript scriptname = cas_update_accessory_bones params = {appearance = <appearance>}
 			endif
-			ModelRunScript ScriptName = cas_set_difference_anim params = {appearance = <appearance> instrument = <instrument>}
-			ModelRunScript \{ScriptName = cas_update_pose}
+			modelrunscript scriptname = cas_set_difference_anim params = {appearance = <appearance> instrument = <instrument>}
+			modelrunscript \{scriptname = cas_update_pose}
 		endif
 	endif
-	LockForModelBuilder \{lock = 0}
+	lockformodelbuilder \{lock = 0}
 endscript
 ps2_body_color_h = 0
 ps2_body_color_s = 0
 ps2_body_color_v = 0
 ps2_body_color_use_default_diffuse = 0
 ps2_fleshy_parts = {
-	CAS_Female_Base_Torso
-	CAS_Male_Base_Torso
+	cas_female_base_torso
+	cas_male_base_torso
 }
 ps2_fleshy_parts_array = [
-	CAS_Female_Base_Torso
-	CAS_Male_Base_Torso
+	cas_female_base_torso
+	cas_male_base_torso
 ]
 
 script ps2_propegate_body_color 
 	if ($ps2_body_color_use_default_diffuse = 1)
 		return
 	endif
-	if StructureContains Structure = $ps2_fleshy_parts <part>
-		SetCASAppearanceColor part = <part> h = ($ps2_body_color_h) s = ($ps2_body_color_s) v = ($ps2_body_color_v) use_default_diffuse = ($ps2_body_color_use_default_diffuse)
+	if structurecontains structure = $ps2_fleshy_parts <part>
+		setcasappearancecolor part = <part> h = ($ps2_body_color_h) s = ($ps2_body_color_s) v = ($ps2_body_color_v) use_default_diffuse = ($ps2_body_color_use_default_diffuse)
 	endif
 endscript
 
 script poly_removal_from_appearance 
-	foreachincas \{do = GeomPolyRemoval}
+	foreachincas \{do = geompolyremoval}
 endscript
 
 script create_ped_model_from_appearance 
-	LockForModelBuilder \{lock = 1}
-	ModelClearAllGeoms
-	ForEachInEditableList \{do = ModelAddGeom}
-	ModelRunScript \{ScriptName = cas_reset_bones}
-	ModelApplyObjectScale
-	ModelRemovePolys
-	ForEachInEditableList \{do = GeomModulateColor}
-	LockForModelBuilder \{lock = 0}
+	lockformodelbuilder \{lock = 1}
+	modelclearallgeoms
+	foreachineditablelist \{do = modeladdgeom}
+	modelrunscript \{scriptname = cas_reset_bones}
+	modelapplyobjectscale
+	modelremovepolys
+	foreachineditablelist \{do = geommodulatecolor}
+	lockformodelbuilder \{lock = 0}
 endscript
 
 script color_model_from_appearance 
-	FilterAppearancePartSet part_set = $instrument_part_sets chosen_set = <instrument>
-	if GetCASAppearancePart \{part = CAS_Body}
-		if GotParam \{h}
+	filterappearancepartset part_set = $instrument_part_sets chosen_set = <instrument>
+	if getcasappearancepart \{part = cas_body}
+		if gotparam \{h}
 			change ps2_body_color_h = (<h>)
 			change ps2_body_color_s = (<s>)
 			change ps2_body_color_v = (<v>)
 			change ps2_body_color_use_default_diffuse = (<use_default_diffuse>)
-			ForEachIn ($master_editable_list) do = ps2_propegate_body_color
+			foreachin ($master_editable_list) do = ps2_propegate_body_color
 		endif
 	endif
-	cas_propogate_color_to_other_parts \{part = CAS_Body
+	cas_propogate_color_to_other_parts \{part = cas_body
 		other_parts = $ps2_fleshy_parts_array}
-	foreachincas \{do = GeomModulateColor}
+	foreachincas \{do = geommodulatecolor}
 endscript
 
 script update_cap_part 
-	CreateAPieceComposite part = <part> incremental
+	createapiececomposite part = <part> incremental
 endscript
 
 script reskin_model_from_appearance 
-	if NOT GotParam \{kill_objects}
+	if NOT gotparam \{kill_objects}
 		do_not_kill_flags = {do_not_kill}
 	endif
-	FilterAppearancePartSet part_set = $instrument_part_sets chosen_set = <instrument>
-	GetModelBuilderSkeleton
-	ModelRunScript \{ScriptName = cas_reset_bones}
-	ModelRunScript ScriptName = cas_skeleton_reset params = {skeleton = <modelbuilder_skeleton>}
-	foreachincas \{do = ModelReskinPart
+	filterappearancepartset part_set = $instrument_part_sets chosen_set = <instrument>
+	getmodelbuilderskeleton
+	modelrunscript \{scriptname = cas_reset_bones}
+	modelrunscript scriptname = cas_skeleton_reset params = {skeleton = <modelbuilder_skeleton>}
+	foreachincas \{do = modelreskinpart
 		params = {
-			ScriptName = cas_part_reskin
+			scriptname = cas_part_reskin
 			force_reskin
 		}}
-	ModelUpdateMainRigForReskinning \{part = CAS_Body
-		ScriptName = cas_lowres_rig_reskin
+	modelupdatemainrigforreskinning \{part = cas_body
+		scriptname = cas_lowres_rig_reskin
 		force_reskin}
-	foreachincas \{do = ModelCopyGeom
+	foreachincas \{do = modelcopygeom
 		params = {
 			materials = $cas_reskin_materials
 		}}
-	foreachincas do = ModelDeleteReskinTemporaries params = <do_not_kill_flags>
-	foreachincas \{do = DeformMainSkeleton
+	foreachincas do = modeldeletereskintemporaries params = <do_not_kill_flags>
+	foreachincas \{do = deformmainskeleton
 		params = {
-			ScriptName = cas_main_skel_scale
+			scriptname = cas_main_skel_scale
 		}}
-	GetModelBuilderAppearance
-	ModelRunScript ScriptName = cas_update_accessory_bones params = {appearance = <appearance> do_ragdoll = 0 update_only}
+	getmodelbuilderappearance
+	modelrunscript scriptname = cas_update_accessory_bones params = {appearance = <appearance> do_ragdoll = 0 update_only}
 endscript
 
 script set_uv_from_appearance 
-	GetArraySize \{$master_uv_list}
+	getarraysize \{$master_uv_list}
 	if (<array_size> > 0)
 		<index> = 0
 		begin
 		part = (($master_uv_list [<index>]).part)
 		parent_part = (($master_uv_list [<index>]).parent_part)
-		GeomSetUVMatrix part = <part> parent_part = <parent_part>
+		geomsetuvmatrix part = <part> parent_part = <parent_part>
 		<index> = (<index> + 1)
 		repeat <array_size>
 	endif
 endscript
 
 script cas_set_difference_anim 
-	if NOT get_part_key_from_appearance key = diff_anim appearance = <appearance> part = CAS_Female_Shoes
-		if NOT get_part_key_from_appearance key = diff_anim appearance = <appearance> part = CAS_Male_Shoes
-			get_part_key_from_appearance key = diff_anim appearance = <appearance> part = CAS_Full_Body
+	if NOT get_part_key_from_appearance key = diff_anim appearance = <appearance> part = cas_female_shoes
+		if NOT get_part_key_from_appearance key = diff_anim appearance = <appearance> part = cas_male_shoes
+			get_part_key_from_appearance key = diff_anim appearance = <appearance> part = cas_full_body
 		endif
 	endif
-	if NOT GotParam \{diff_anim}
-		GetSingleTag \{is_female}
-		if GotParam \{is_female}
+	if NOT gotparam \{diff_anim}
+		getsingletag \{is_female}
+		if gotparam \{is_female}
 			if (<is_female> = 1)
-				diff_anim_name = GH_Rocker_Female_Empty_D
+				diff_anim_name = gh_rocker_female_empty_d
 			else
-				diff_anim_name = GH_Rocker_Male_Empty_D
+				diff_anim_name = gh_rocker_male_empty_d
 			endif
 		endif
 	else
-		if NOT GotParam \{instrument}
+		if NOT gotparam \{instrument}
 			instrument = none
 		endif
 		if (<instrument> = drum)
-			FormatText checksumname = diff_anim_name 'GH_Drummer_%s' s = <diff_anim>
+			formattext checksumname = diff_anim_name 'GH_Drummer_%s' s = <diff_anim>
 		else
-			FormatText checksumname = diff_anim_name 'GH_Rocker_%s' s = <diff_anim>
+			formattext checksumname = diff_anim_name 'GH_Rocker_%s' s = <diff_anim>
 		endif
 	endif
-	if GotParam \{diff_anim_name}
+	if gotparam \{diff_anim_name}
 
-		hero_add_clothing_difference_anim Anim = <diff_anim_name>
+		hero_add_clothing_difference_anim anim = <diff_anim_name>
 	endif
 endscript
 
 script cas_update_pose 
-	Anim_UpdatePose
+	anim_updatepose
 endscript
 
-script LockForModelBuilder 
+script lockformodelbuilder 
 	change model_builder_lock = <lock>
 endscript
 
-script CheckModelBuilderLock 
+script checkmodelbuilderlock 
 	if NOT ($model_builder_lock = 0)
 
 	endif
 endscript
 
-script BuildCASModel 
+script buildcasmodel 
 
-	Obj_GetID
-	MangleChecksums a = <ObjID> b = RagdollUpdateScript
-	ragdoll_script_id = <mangled_ID>
-	KillSpawnedScript id = <ragdoll_script_id>
+	obj_getid
+	manglechecksums a = <objid> b = ragdollupdatescript
+	ragdoll_script_id = <mangled_id>
+	killspawnedscript id = <ragdoll_script_id>
 
-	GetSingleTag \{asset_heap}
-	GetSingleTag \{lightgroup}
+	getsingletag \{asset_heap}
+	getsingletag \{lightgroup}
 	get_hat_hair_choice appearance = <appearance>
 	buildscriptparams = {
 		<buildscriptparams>
@@ -234,19 +234,19 @@ script BuildCASModel
 		temporary_heap = heap_cas
 		hat_hair_choice = <hat_hair_choice>
 	}
-	if GotParam \{use_cache}
-		CASCacheFlushVRAM
-		CASWaitForUnloads
-		if GotParam \{cancelled}
+	if gotparam \{use_cache}
+		cascacheflushvram
+		caswaitforunloads
+		if gotparam \{cancelled}
 			return \{false}
 		endif
-		CASCacheModel {
+		cascachemodel {
 			appearance = <appearance>
 			buildscriptparams = <buildscriptparams>
 			async = <async>
 			global_storage = <asset_heap>
 		}
-		if NOT BuildCASModel_LoadWait async = <async>
+		if NOT buildcasmodel_loadwait async = <async>
 			return \{false}
 		endif
 		async = 0
@@ -255,58 +255,58 @@ script BuildCASModel
 	else
 		hide
 	endif
-	ModelBuilder_Preload {
+	modelbuilder_preload {
 		async = <async>
 		appearance = <appearance>
 		buildscriptparams = <buildscriptparams>
 	}
-	if NOT BuildCASModel_UnloadWait async = <async>
-		CASTemporariesFlush
+	if NOT buildcasmodel_unloadwait async = <async>
+		castemporariesflush
 		return \{false}
 	endif
-	ModelBuilder_LoadAssets {
+	modelbuilder_loadassets {
 		async = <async>
 	}
-	if NOT BuildCASModel_LoadWait async = <async>
-		CASTemporariesFlush
+	if NOT buildcasmodel_loadwait async = <async>
+		castemporariesflush
 		return \{false}
 	endif
-	CASTemporariesLoadPending
-	if NOT BuildCASModel_LoadWait async = <async>
-		CASTemporariesFlush
+	castemporariesloadpending
+	if NOT buildcasmodel_loadwait async = <async>
+		castemporariesflush
 		return \{false}
 	endif
-	ModelBuilder_Build {
+	modelbuilder_build {
 		appearance = <appearance>
 		buildscriptparams = <buildscriptparams>
 	}
-	CleanupUnpackedCASAssets
-	BuildCASModel_CompositeWait async = <async>
-	if StructureContains Structure = <buildscriptparams> build_incremental
-		CASTemporariesFlush \{group = cap}
+	cleanupunpackedcasassets
+	buildcasmodel_compositewait async = <async>
+	if structurecontains structure = <buildscriptparams> build_incremental
+		castemporariesflush \{group = cap}
 	else
-		FlushAllCompositeTextures \{no_block}
-		CASTemporariesFlush
+		flushallcompositetextures \{no_block}
+		castemporariesflush
 	endif
-	if NOT BuildCASModel_UnloadWait async = <async>
+	if NOT buildcasmodel_unloadwait async = <async>
 		return \{false}
 	endif
-	if StructureContains Structure = <buildscriptparams> new_object
+	if structurecontains structure = <buildscriptparams> new_object
 		if (<async> = 1)
-			BuildCASModel_UpdateRagdoll appearance = <appearance>
+			buildcasmodel_updateragdoll appearance = <appearance>
 		else
-			Obj_SpawnScriptNow BuildCASModel_UpdateRagdoll id = <ragdoll_script_id> params = {appearance = <appearance>}
+			obj_spawnscriptnow buildcasmodel_updateragdoll id = <ragdoll_script_id> params = {appearance = <appearance>}
 		endif
 	endif
-	GenerateChecksumFromStruct struct = <appearance>
-	SetTags appearance_checksum = <structure_checksum>
+	generatechecksumfromstruct struct = <appearance>
+	settags appearance_checksum = <structure_checksum>
 	if (<async> = 1)
 		unhide
-		if StructureContains Structure = <buildscriptparams> new_object
-			if NOT GotParam \{use_cache}
-				if NOT StructureContains Structure = <buildscriptparams> loading_into_song
-					Obj_SetPosition \{position = (500.0, 500.0, 500.0)}
-					Wait \{1
+		if structurecontains structure = <buildscriptparams> new_object
+			if NOT gotparam \{use_cache}
+				if NOT structurecontains structure = <buildscriptparams> loading_into_song
+					obj_setposition \{position = (500.0, 500.0, 500.0)}
+					wait \{1
 						gameframe}
 				endif
 			endif
@@ -315,49 +315,49 @@ script BuildCASModel
 	return \{true}
 endscript
 
-script BuildCASModel_LoadWait 
+script buildcasmodel_loadwait 
 	if (<async> = 1)
-		CASWaitForLoading
+		caswaitforloading
 	else
-		CASBlockForLoading
+		casblockforloading
 	endif
-	if GotParam \{cancelled}
+	if gotparam \{cancelled}
 		return \{false}
 	endif
 	return \{true}
 endscript
 
-script BuildCASModel_CompositeWait 
+script buildcasmodel_compositewait 
 	if (<async> = 1)
-		CASWaitForComposite
+		caswaitforcomposite
 	else
-		CasBlockForComposite
+		casblockforcomposite
 	endif
 endscript
 
-script BuildCASModel_UnloadWait 
+script buildcasmodel_unloadwait 
 	if (<async> = 1)
-		CASWaitForUnloads
+		caswaitforunloads
 	else
-		CASWaitForUnloads \{Block}
+		caswaitforunloads \{block}
 	endif
-	if GotParam \{cancelled}
+	if gotparam \{cancelled}
 		return \{false}
 	endif
 	return \{true}
 endscript
 
-script BuildCASModel_UpdateRagdoll 
-	Wait \{2
+script buildcasmodel_updateragdoll 
+	wait \{2
 		gameframes}
 	cas_update_accessory_bones appearance = <appearance>
 endscript
 
 script model_apply_created_texture 
-	GeomSetCreatedTexture
+	geomsetcreatedtexture
 endscript
 
 script foreachincas \{params = {
 		}}
-	ForEachIn $master_editable_list do = <do> params = <params>
+	foreachin $master_editable_list do = <do> params = <params>
 endscript

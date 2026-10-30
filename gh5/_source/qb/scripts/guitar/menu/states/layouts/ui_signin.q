@@ -17,7 +17,7 @@ endscript
 
 script ui_create_signin \{new_data = {
 		}}
-	if GotParam \{new_state}
+	if gotparam \{new_state}
 		change signin_continue_state = <new_state>
 		change signin_continue_data = <new_data>
 	endif
@@ -42,20 +42,20 @@ script assign_new_primary_controller
 	change structurename = player1_status controller = ($primary_controller)
 	change globalname = player1_device newvalue = ($primary_controller)
 	change last_start_pressed_device = ($primary_controller)
-	if GotParam \{first_press}
+	if gotparam \{first_press}
 		change \{respond_to_signin_changed_func = ui_signin_changed_first_press}
 		memcard_secondary_signin_first_press
 	endif
 	if ($invite_controller = -1)
-		NetSessionFunc \{func = RemoveAllControllers}
+		netsessionfunc \{func = removeallcontrollers}
 	endif
-	NetSessionFunc func = AddControllers params = {controller = <device_num>}
+	netsessionfunc func = addcontrollers params = {controller = <device_num>}
 endscript
 
 script ui_signin_changed_first_press 
 
 	if NOT (<controller> = $primary_controller)
-		if IsLocallySignedIn controller = <controller>
+		if islocallysignedin controller = <controller>
 
 			change alternative_primary_selected = <controller>
 		endif
@@ -64,7 +64,7 @@ endscript
 
 script ui_signin_changed_func 
 
-	RemoveContentFiles playerid = <controller>
+	removecontentfiles playerid = <controller>
 	reset_globaltags savegame = <controller>
 	cheat_turnoffalllocked
 endscript
@@ -80,7 +80,7 @@ script ui_signin_check \{primary = 1
 			async = 0}
 	endif
 	if (<primary> = 1)
-		if GotParam \{device_num}
+		if gotparam \{device_num}
 			assign_new_primary_controller device_num = <device_num>
 		endif
 	endif
@@ -92,33 +92,33 @@ endscript
 
 script ui_signin_process_complete \{controller = -1}
 	begin
-	if IsSigninFinished
+	if issigninfinished
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	if (<controller> = -1)
 		controller = ($primary_controller)
 	endif
-	if isXenon
-		StartGameProfileSettingsRead controller = <controller>
+	if isxenon
+		startgameprofilesettingsread controller = <controller>
 		begin
-		if GameProfileSettingsFinished controller = <controller>
+		if gameprofilesettingsfinished controller = <controller>
 			break
 		endif
 		repeat
-		if GetGameProfileSetting gsid = 1 controller = <controller>
-			SetArrayElement ArrayName = default_difficulty GlobalArray index = <controller> newvalue = easy
+		if getgameprofilesetting gsid = 1 controller = <controller>
+			setarrayelement arrayname = default_difficulty globalarray index = <controller> newvalue = easy
 			if (<game_setting> = 3)
-				SetArrayElement ArrayName = default_difficulty GlobalArray index = <controller> newvalue = medium
+				setarrayelement arrayname = default_difficulty globalarray index = <controller> newvalue = medium
 			elseif (<game_setting> = 4)
-				SetArrayElement ArrayName = default_difficulty GlobalArray index = <controller> newvalue = hard
+				setarrayelement arrayname = default_difficulty globalarray index = <controller> newvalue = hard
 			endif
 		endif
 	endif
 	start_checking_for_signin_change
-	if ChecksumEquals a = ($signin_continue_state) b = uistate_boot_guitar
+	if checksumequals a = ($signin_continue_state) b = uistate_boot_guitar
 		callback = ui_event
 		callback_params = {event = menu_replace data = {state = uistate_memcard}}
 	else
@@ -168,83 +168,83 @@ script ui_signin_handle_warnings
 		change \{alternative_primary_selected = -1}
 		assign_new_primary_controller device_num = <device_num>
 	endif
-	if GotParam \{musicstore}
-		if isXenon
-			if NOT NetSessionFunc func = IsLiveEnabled params = {controller_index = <device_num>}
+	if gotparam \{musicstore}
+		if isxenon
+			if NOT netsessionfunc func = isliveenabled params = {controller_index = <device_num>}
 				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 				return \{warnings = 1}
-			elseif NetSessionFunc func = XenonIsGuest params = {controller_index = <device_num>}
+			elseif netsessionfunc func = xenonisguest params = {controller_index = <device_num>}
 				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 				return \{warnings = 1}
 			endif
-		elseif IsPs3
-			if NOT CheckForSignIn controller_index = <device_num>
+		elseif isps3
+			if NOT checkforsignin controller_index = <device_num>
 				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 				return \{warnings = 1}
-			elseif NetSessionFunc func = XenonIsGuest params = {controller_index = <device_num>}
+			elseif netsessionfunc func = xenonisguest params = {controller_index = <device_num>}
 				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 				return \{warnings = 1}
 			endif
 		endif
-	elseif GotParam \{require_live}
-		if GotParam \{jam}
-			if isXenon
-				if NOT NetSessionFunc func = IsLiveEnabled params = {controller_index = <device_num>}
+	elseif gotparam \{require_live}
+		if gotparam \{jam}
+			if isxenon
+				if NOT netsessionfunc func = isliveenabled params = {controller_index = <device_num>}
 					ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 					return \{warnings = 1}
-				elseif NetSessionFunc func = XenonIsGuest params = {controller_index = <device_num>}
+				elseif netsessionfunc func = xenonisguest params = {controller_index = <device_num>}
 					ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 					return \{warnings = 1}
 				endif
-			elseif IsPs3
-				if NOT CheckForSignIn controller_index = <device_num>
+			elseif isps3
+				if NOT checkforsignin controller_index = <device_num>
 					ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 					return \{warnings = 1}
-				elseif NetSessionFunc func = XenonIsGuest params = {controller_index = <device_num>}
+				elseif netsessionfunc func = xenonisguest params = {controller_index = <device_num>}
 					ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 					return \{warnings = 1}
 				endif
 			endif
 		else
-			if NOT CheckForSignIn controller_index = <device_num>
+			if NOT checkforsignin controller_index = <device_num>
 				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 				return \{warnings = 1}
-			elseif NetSessionFunc func = XenonIsGuest params = {controller_index = <device_num>}
-				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
-				return \{warnings = 1}
-			endif
-		endif
-	endif
-	if IsPs3
-		if GotParam \{boot}
-			if NOT CheckForSignIn controller_index = <device_num>
+			elseif netsessionfunc func = xenonisguest params = {controller_index = <device_num>}
 				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
 				return \{warnings = 1}
 			endif
 		endif
 	endif
-	if GotParam \{downloads}
-		if NOT CheckForSignIn local controller_index = <device_num>
+	if isps3
+		if gotparam \{boot}
+			if NOT checkforsignin controller_index = <device_num>
+				ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> require_live = <require_live>}
+				return \{warnings = 1}
+			endif
+		endif
+	endif
+	if gotparam \{downloads}
+		if NOT checkforsignin local controller_index = <device_num>
 			ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> downloads = <downloads>}
 			return \{warnings = 1}
 		endif
 	endif
-	if GotParam \{leaderboards}
-		if NOT CheckForSignIn <signin_params> controller_index = <device_num>
+	if gotparam \{leaderboards}
+		if NOT checkforsignin <signin_params> controller_index = <device_num>
 			ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> leaderboards = <leaderboards>}
 			return \{warnings = 1}
 		endif
-		if NOT NetSessionFunc func = IsLiveEnabled params = {controller_index = <device_num>}
+		if NOT netsessionfunc func = isliveenabled params = {controller_index = <device_num>}
 			ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> leaderboards = <leaderboards>}
 			return \{warnings = 1}
 		endif
 	endif
-	if NOT CheckForSignIn local controller_index = <device_num>
+	if NOT checkforsignin local controller_index = <device_num>
 		ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> jam = <jam> boot = <boot>}
 		return \{warnings = 1}
 	endif
-	if GotParam \{jam}
-		if NetSessionFunc func = XenonIsGuest params = {controller_index = <device_num>}
+	if gotparam \{jam}
+		if netsessionfunc func = xenonisguest params = {controller_index = <device_num>}
 			ui_event_wait event = menu_replace data = {state = uistate_signin_warning player_device = <device_num> allow_back = <allow_back> jam = <jam> boot = <boot>}
 			return \{warnings = 1}
 		endif

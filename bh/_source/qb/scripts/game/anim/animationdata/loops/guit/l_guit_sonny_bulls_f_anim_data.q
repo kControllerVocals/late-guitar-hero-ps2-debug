@@ -1,37 +1,37 @@
-L_GUIT_Sonny_bulls_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_sonny_bulls_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Sonny_bulls_75_F_01
+				slow = [
+					guit_sonny_bulls_75_f_01
 				]
-				Med = [
-					guit_Sonny_bulls_100_F_01
+				med = [
+					guit_sonny_bulls_100_f_01
 				]
-				Fast = [
-					guit_Sonny_bulls_120_F_01
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Sonny_bulls_75_F_01
-				]
-				Med = [
-					guit_Sonny_bulls_100_F_01
-				]
-				Fast = [
-					guit_Sonny_bulls_120_F_01
+				fast = [
+					guit_sonny_bulls_120_f_01
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Sonny_bulls_75_F_01
+			normal = {
+				slow = [
+					guit_sonny_bulls_75_f_01
 				]
-				Med = [
-					guit_Sonny_bulls_100_F_01
+				med = [
+					guit_sonny_bulls_100_f_01
 				]
-				Fast = [
-					guit_Sonny_bulls_120_F_01
+				fast = [
+					guit_sonny_bulls_120_f_01
+				]
+			}
+			bad = {
+				slow = [
+					guit_sonny_bulls_75_f_01
+				]
+				med = [
+					guit_sonny_bulls_100_f_01
+				]
+				fast = [
+					guit_sonny_bulls_120_f_01
 				]
 			}
 		}

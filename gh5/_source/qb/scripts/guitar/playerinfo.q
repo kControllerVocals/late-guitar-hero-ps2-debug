@@ -1,5 +1,5 @@
-num_player_idx = -1
-num_player_stack = [
+0xeac18047 = -1
+0xaf8e70d4 = [
 	0
 	0
 	0
@@ -7,25 +7,25 @@ num_player_stack = [
 	0
 ]
 
-script push_num_players 
+script 0xfd22d1e7 
 
-	change num_player_idx = ($num_player_idx + 1)
-	SetArrayElement ArrayName = num_player_stack GlobalArray index = $num_player_idx newvalue = <num>
-	change_num_players num = <num>
+	change 0xeac18047 = ($0xeac18047 + 1)
+	setarrayelement arrayname = 0xaf8e70d4 globalarray index = $0xeac18047 newvalue = <num>
+	0x04d11dea num = <num>
 endscript
 
-script pop_num_players 
-	change num_player_idx = ($num_player_idx - 1)
-	if ($num_player_idx = -1)
-		change_num_players \{num = 0}
+script 0x88e84c31 
+	change 0xeac18047 = ($0xeac18047 - 1)
+	if ($0xeac18047 = -1)
+		0x04d11dea \{num = 0}
 	else
-		change_num_players num = ($num_player_stack [$num_player_idx])
+		0x04d11dea num = ($0xaf8e70d4 [$0xeac18047])
 	endif
 endscript
 
-script change_num_players 
+script 0x04d11dea 
 
-	GetMaxPlayers
+	getmaxplayers
 	i = 1
 	begin
 	if (<i> <= <num>)
@@ -33,7 +33,7 @@ script change_num_players
 	else
 		in_game = 0
 	endif
-	SetPlayerInfo <i> in_game = <in_game>
+	setplayerinfo <i> in_game = <in_game>
 	<i> = (<i> + 1)
 	repeat <max_players>
 endscript
@@ -103,7 +103,7 @@ player1_defaults = {
 	text = 'p1'
 	part = guitar
 	character_id = judy
-	band_member = Guitarist
+	band_member = guitarist
 }
 player2_defaults = {
 	checksum = player2_status
@@ -273,7 +273,7 @@ player_shared_defaults = {
 	controller_type = controller
 	net_obj_id = -1
 	net_difficulty = easy
-	net_venue = load_z_Frathouse
+	net_venue = load_z_frathouse
 	team = 0
 	party_id = -1
 	individual_band_score = 0.0
@@ -283,14 +283,14 @@ player_shared_defaults = {
 	current_health = 0.0
 	health_invincible_time = 0.0
 	lowest_health = 2.0
-	Cash = 0
+	cash = 0
 	new_cash = 0
 	cash_rank_up = 0
 	career_earnings = 0
-	FourX_FingerFXID01 = JOW_NIL
-	FourX_FingerFXID02 = JOW_NIL
-	FourX_FingerFXID03 = JOW_NIL
-	FourX_FingerFXID04 = JOW_NIL
+	fourx_fingerfxid01 = jow_nil
+	fourx_fingerfxid02 = jow_nil
+	fourx_fingerfxid03 = jow_nil
+	fourx_fingerfxid04 = jow_nil
 	button_checker_up_time = -1.0
 	last_playline_song_beat_time = 1.0
 	last_playline_song_beat_change_time = 1.0

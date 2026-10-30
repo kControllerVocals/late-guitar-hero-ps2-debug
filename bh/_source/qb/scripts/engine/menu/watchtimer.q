@@ -1,12 +1,12 @@
-g_watch_timer_swing_angle = 0.0
-g_watch_timer_second_angle = 0.0
-g_watch_timer_minute_angle = 0.0
+0x1428a1f6 = 0.0
+0x36451372 = 0.0
+0x5e6ada5f = 0.0
 
 script make_watch_timer \{id = watch_timer}
-	CreateScreenElement {
+	createscreenelement {
 		id = <id>
 		parent = root_window
-		type = DescInterface
+		type = descinterface
 		desc = 'watch_timer'
 		pos = <pos>
 		z_priority = 5000
@@ -15,80 +15,80 @@ script make_watch_timer \{id = watch_timer}
 endscript
 
 script animate_watch_timer 
-	Obj_SpawnScriptNow \{animate_watch_timer_swing}
-	Obj_SpawnScriptNow \{animate_watch_timer_sweep_second}
-	Obj_SpawnScriptNow \{animate_watch_timer_sweep_minute}
+	obj_spawnscriptnow \{animate_watch_timer_swing}
+	obj_spawnscriptnow \{animate_watch_timer_sweep_second}
+	obj_spawnscriptnow \{animate_watch_timer_sweep_minute}
 endscript
 
 script animate_watch_timer_swing 
-	SetScriptCannotPause
-	SE_SetProps \{Timer_watch_alpha = 0.0}
-	SE_SetProps \{Timer_hand_big_alpha = 0.0}
-	SE_SetProps \{Timer_hand_small_alpha = 0.0}
-	SE_SetProps \{Timer_watch_alpha = 1.0
+	setscriptcannotpause
+	se_setprops \{timer_watch_alpha = 0.0}
+	se_setprops \{timer_hand_big_alpha = 0.0}
+	se_setprops \{timer_hand_small_alpha = 0.0}
+	se_setprops \{timer_watch_alpha = 1.0
 		time = 0.25}
-	SE_SetProps \{Timer_hand_big_alpha = 1.0
+	se_setprops \{timer_hand_big_alpha = 1.0
 		time = 0.25}
-	SE_SetProps \{Timer_hand_small_alpha = 1.0
+	se_setprops \{timer_hand_small_alpha = 1.0
 		time = 0.25}
-	<Angle> = $g_watch_timer_swing_angle
+	<angle> = $0x1428a1f6
 	begin
-	sin <Angle>
-	SE_SetProps Timer_rot_angle = (3.0 * <sin>)
-	WaitOneGameFrame
-	<Angle> = (<Angle> + 5.0)
-	if (<Angle> > 360.0)
-		<Angle> = (<Angle> - 360.0)
+	sin <angle>
+	se_setprops timer_rot_angle = (3.0 * <sin>)
+	waitonegameframe
+	<angle> = (<angle> + 5.0)
+	if (<angle> > 360.0)
+		<angle> = (<angle> - 360.0)
 	endif
-	change g_watch_timer_swing_angle = <Angle>
+	change 0x1428a1f6 = <angle>
 	repeat
 endscript
 
 script animate_watch_timer_sweep_second 
-	SetScriptCannotPause
-	<Angle> = $g_watch_timer_second_angle
+	setscriptcannotpause
+	<angle> = $0x36451372
 	begin
-	SE_SetProps timer_hand_big_rot_angle = <Angle>
-	WaitOneGameFrame
-	<Angle> = (<Angle> + 10.0)
-	if (<Angle> > 360.0)
-		<Angle> = (<Angle> - 360.0)
+	se_setprops timer_hand_big_rot_angle = <angle>
+	waitonegameframe
+	<angle> = (<angle> + 10.0)
+	if (<angle> > 360.0)
+		<angle> = (<angle> - 360.0)
 	endif
-	change g_watch_timer_second_angle = <Angle>
+	change 0x36451372 = <angle>
 	repeat
 endscript
 
 script animate_watch_timer_sweep_minute 
-	SetScriptCannotPause
-	<Angle> = $g_watch_timer_minute_angle
+	setscriptcannotpause
+	<angle> = $0x5e6ada5f
 	begin
-	SE_SetProps timer_hand_small_rot_angle = <Angle>
-	WaitOneGameFrame
-	<Angle> = (<Angle> + 1.0)
-	if (<Angle> > 360.0)
-		<Angle> = (<Angle> - 360.0)
+	se_setprops timer_hand_small_rot_angle = <angle>
+	waitonegameframe
+	<angle> = (<angle> + 1.0)
+	if (<angle> > 360.0)
+		<angle> = (<angle> - 360.0)
 	endif
-	change g_watch_timer_minute_angle = <Angle>
+	change 0x5e6ada5f = <angle>
 	repeat
 endscript
 
 script watch_animate_in 
-	SetScriptCannotPause
-	if GetSingleTag \{animating_out}
+	setscriptcannotpause
+	if getsingletag \{animating_out}
 		if (<animating_out> = 0)
 			return
 		endif
-		SetTags \{animating_out = 0}
-		SE_SetProps Timer_watch_alpha = 1.0 time = <time>
-		SE_SetProps Timer_hand_big_alpha = 1.0 time = <time>
-		SE_SetProps Timer_hand_small_alpha = 1.0 time = <time>
+		settags \{animating_out = 0}
+		se_setprops timer_watch_alpha = 1.0 time = <time>
+		se_setprops timer_hand_big_alpha = 1.0 time = <time>
+		se_setprops timer_hand_small_alpha = 1.0 time = <time>
 	endif
 endscript
 
 script watch_animate_out 
-	SetScriptCannotPause
-	SetTags \{animating_out = 1}
-	SE_SetProps Timer_watch_alpha = 0.0 time = <time>
-	SE_SetProps Timer_hand_big_alpha = 0.0 time = <time>
-	SE_SetProps Timer_hand_small_alpha = 0.0 time = <time>
+	setscriptcannotpause
+	settags \{animating_out = 1}
+	se_setprops timer_watch_alpha = 0.0 time = <time>
+	se_setprops timer_hand_big_alpha = 0.0 time = <time>
+	se_setprops timer_hand_small_alpha = 0.0 time = <time>
 endscript

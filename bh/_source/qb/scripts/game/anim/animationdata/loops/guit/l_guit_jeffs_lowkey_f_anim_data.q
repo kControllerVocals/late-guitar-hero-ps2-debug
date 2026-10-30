@@ -1,37 +1,37 @@
-L_GUIT_JeffS_Lowkey_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_jeffs_lowkey_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Jeff_Lowkey_075_F_01
+				slow = [
+					guit_jeff_lowkey_075_f_01
 				]
-				Med = [
-					guit_Jeff_Lowkey_100_F_01
+				med = [
+					guit_jeff_lowkey_100_f_01
 				]
-				Fast = [
-					guit_Jeff_Lowkey_120_F_01
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Jeff_Lowkey_075_F_01
-				]
-				Med = [
-					guit_Jeff_Lowkey_100_F_01
-				]
-				Fast = [
-					guit_Jeff_Lowkey_120_F_01
+				fast = [
+					guit_jeff_lowkey_120_f_01
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Jeff_Lowkey_075_F_01
+			normal = {
+				slow = [
+					guit_jeff_lowkey_075_f_01
 				]
-				Med = [
-					guit_Jeff_Lowkey_100_F_01
+				med = [
+					guit_jeff_lowkey_100_f_01
 				]
-				Fast = [
-					guit_Jeff_Lowkey_120_F_01
+				fast = [
+					guit_jeff_lowkey_120_f_01
+				]
+			}
+			bad = {
+				slow = [
+					guit_jeff_lowkey_075_f_01
+				]
+				med = [
+					guit_jeff_lowkey_100_f_01
+				]
+				fast = [
+					guit_jeff_lowkey_120_f_01
 				]
 			}
 		}

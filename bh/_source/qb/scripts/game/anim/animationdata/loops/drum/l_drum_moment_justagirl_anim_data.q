@@ -1,37 +1,37 @@
-L_DRUM_Moment_JustAGirl_anims_set = {
-	Stance_A = {
-		Idle = {
+0xdd4a585c = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					D_JustAGirl_01
+				slow = [
+					0x0edf9a58
 				]
-				Med = [
-					D_JustAGirl_02
+				med = [
+					0x97d6cbe2
 				]
-				Fast = [
-					D_JustAGirl_01
-				]
-			}
-			Normal = {
-				Slow = [
-					D_JustAGirl_01
-				]
-				Med = [
-					D_JustAGirl_02
-				]
-				Fast = [
-					D_JustAGirl_01
+				fast = [
+					0x0edf9a58
 				]
 			}
-			Bad = {
-				Slow = [
-					D_JustAGirl_01
+			normal = {
+				slow = [
+					0x0edf9a58
 				]
-				Med = [
-					D_JustAGirl_02
+				med = [
+					0x97d6cbe2
 				]
-				Fast = [
-					D_JustAGirl_01
+				fast = [
+					0x0edf9a58
+				]
+			}
+			bad = {
+				slow = [
+					0x0edf9a58
+				]
+				med = [
+					0x97d6cbe2
+				]
+				fast = [
+					0x0edf9a58
 				]
 			}
 		}

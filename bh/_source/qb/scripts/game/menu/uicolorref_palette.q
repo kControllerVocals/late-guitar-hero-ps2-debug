@@ -1,5 +1,5 @@
-UIColorRef_Palette = {
-	NTSCWhite = {
+uicolorref_palette = {
+	ntscwhite = {
 		rgba = [
 			230
 			230
@@ -39,7 +39,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_red_lt = {
+	0x8d470aac = {
 		rgba = [
 			251
 			142
@@ -47,7 +47,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_red_md = {
+	0x89eb2b89 = {
 		rgba = [
 			157
 			44
@@ -55,7 +55,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_red_dk = {
+	0xc8968d51 = {
 		rgba = [
 			71
 			9
@@ -63,7 +63,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_purple_lt = {
+	gh51_purple_lt = {
 		rgba = [
 			198
 			165
@@ -71,7 +71,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_purple_md = {
+	0x77457656 = {
 		rgba = [
 			155
 			58
@@ -79,7 +79,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_purple_dk = {
+	0x3638d08e = {
 		rgba = [
 			64
 			15
@@ -87,7 +87,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_blue_lt = {
+	gh51_blue_lt = {
 		rgba = [
 			153
 			230
@@ -95,7 +95,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_blue_md = {
+	0xaad894a8 = {
 		rgba = [
 			46
 			111
@@ -103,7 +103,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_blue_dk = {
+	0xeba53270 = {
 		rgba = [
 			5
 			50
@@ -111,7 +111,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH51_dark_subtract = {
+	0x9f13b8ec = {
 		rgba = [
 			186
 			243
@@ -119,7 +119,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_gold_md = {
+	gh5_gold_md = {
 		rgba = [
 			235
 			187
@@ -127,7 +127,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_blue_lt = {
+	gh5_blue_lt = {
 		rgba = [
 			150
 			220
@@ -135,7 +135,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_blue_xdk = {
+	gh5_blue_xdk = {
 		rgba = [
 			10
 			35
@@ -143,7 +143,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_blue_subtract = {
+	gh5_blue_subtract = {
 		rgba = [
 			245
 			220
@@ -151,7 +151,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_beginner = {
+	gh5_dif_beginner = {
 		rgba = [
 			195
 			215
@@ -159,7 +159,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_easy = {
+	gh5_dif_easy = {
 		rgba = [
 			130
 			175
@@ -167,7 +167,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_medium = {
+	gh5_dif_medium = {
 		rgba = [
 			90
 			135
@@ -175,7 +175,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_hard = {
+	gh5_dif_hard = {
 		rgba = [
 			160
 			80
@@ -183,7 +183,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_expert = {
+	gh5_dif_expert = {
 		rgba = [
 			50
 			50
@@ -191,7 +191,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_xxpert = {
+	gh5_dif_xxpert = {
 		rgba = [
 			200
 			155

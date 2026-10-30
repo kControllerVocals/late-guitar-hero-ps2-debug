@@ -1,35 +1,35 @@
 viewerobj_components = [
 	{
-		Component = viewerobj
-		geom_heap = DebugHeap
+		component = viewerobj
+		geom_heap = debugheap
 	}
 	{
-		Component = Suspend
+		component = suspend
 	}
 	{
-		Component = motion
+		component = motion
 	}
 	{
-		Component = Sound
+		component = sound
 	}
 	{
-		Component = stream
+		component = stream
 	}
 ]
-viewerobj_AnimTree = {
-	type = ModelViewer
-	id = ModelViewerNode
+viewerobj_animtree = {
+	type = modelviewer
+	id = modelviewernode
 	[
 		{
-			type = Cycle
-			id = CycleNode
-			Anim = param_anim
+			type = cycle
+			id = cyclenode
+			anim = param_anim
 			enable_anim_events
 			[
 				{
-					type = Source
-					id = SourceNode
-					Anim = param_anim
+					type = source
+					id = sourcenode
+					anim = param_anim
 				}
 			]
 		}
@@ -37,95 +37,95 @@ viewerobj_AnimTree = {
 }
 
 script viewerobj_set_anim 
-	Anim_UnInitTree
-	if NOT Anim_AnimExists Anim = <AnimName>
+	anim_uninittree
+	if NOT anim_animexists anim = <animname>
 
-		Anim_GetDefaultAnimName
-		if Anim_AnimExists Anim = <DefaultAnimName>
-			AnimName = <DefaultAnimName>
+		anim_getdefaultanimname
+		if anim_animexists anim = <defaultanimname>
+			animname = <defaultanimname>
 		endif
 	endif
 
-	Anim_InitTree {
-		Tree = $viewerobj_AnimTree
-		NodeIdDeclaration = [
-			ModelViewerNode
-			CycleNode
-			SourceNode
+	anim_inittree {
+		tree = $viewerobj_animtree
+		nodeiddeclaration = [
+			modelviewernode
+			cyclenode
+			sourcenode
 		]
 		params = {
-			param_anim = <AnimName>
+			param_anim = <animname>
 		}
 	}
 endscript
 
 script viewerobj_set_anim_speed 
-	Anim_Command \{command = ModelViewer_Play
-		target = ModelViewerNode}
-	Anim_Command command = Timer_SetSpeed target = CycleNode params = {Speed = <Speed>}
+	anim_command \{command = modelviewer_play
+		target = modelviewernode}
+	anim_command command = timer_setspeed target = cyclenode params = {speed = <speed>}
 endscript
 
 script viewerobj_reload_anim 
 
-	Anim_UnInitTree
-	ReloadAnim filename = <filename> Anim = <AnimName>
+	anim_uninittree
+	reloadanim filename = <filename> anim = <animname>
 	viewerobj_set_anim <...>
 endscript
 
 script viewerobj_step_frame 
-	Anim_Command \{command = Timer_SetSpeed
-		target = CycleNode
+	anim_command \{command = timer_setspeed
+		target = cyclenode
 		params = {
-			Speed = 1.0
+			speed = 1.0
 		}}
-	Anim_Command command = ModelViewer_Step target = ModelViewerNode params = <...>
+	anim_command command = modelviewer_step target = modelviewernode params = <...>
 endscript
 
 script viewer_obj_get_panel_info 
-	Anim_Command \{command = Source_GetAnimName
-		target = SourceNode}
-	if Anim_Command \{command = ModelViewer_IsStopped
-			target = ModelViewerNode}
-		Speed = 0.0
+	anim_command \{command = source_getanimname
+		target = sourcenode}
+	if anim_command \{command = modelviewer_isstopped
+			target = modelviewernode}
+		speed = 0.0
 	else
-		Anim_Command \{command = Timer_GetSpeed
-			target = CycleNode}
+		anim_command \{command = timer_getspeed
+			target = cyclenode}
 	endif
-	Anim_Command \{command = Timer_GetCurrentAnimTime
-		target = CycleNode}
-	Anim_Command \{command = Timer_GetAnimDuration
-		target = CycleNode}
-	FormatText TextName = line1 qs("\LNAME: %n") n = <AnimName> DontAssertForChecksums
-	FormatText TextName = line2 qs("\LSPEED: %s") s = <Speed>
-	FormatText TextName = line3 qs("\LTIME: %t of %d") t = <CurrentTime> d = <duration>
-	CurrentTime = ((<CurrentTime> * 60) + 1)
+	anim_command \{command = timer_getcurrentanimtime
+		target = cyclenode}
+	anim_command \{command = timer_getanimduration
+		target = cyclenode}
+	formattext textname = line1 qs(0x2b70644a) n = <animname> dontassertforchecksums
+	formattext textname = line2 qs(0xfb66f706) s = <speed>
+	formattext textname = line3 qs(0x870bf224) t = <currenttime> d = <duration>
+	currenttime = ((<currenttime> * 60) + 1)
 	duration = (<duration> * 60)
-	CastToInteger \{CurrentTime}
-	CastToInteger \{duration}
-	FormatText TextName = line4 qs("\LFRAME: %t of %d") t = <CurrentTime> d = <duration>
+	casttointeger \{currenttime}
+	casttointeger \{duration}
+	formattext textname = line4 qs(0x0c0feaaf) t = <currenttime> d = <duration>
 	return <...>
 endscript
 generic_model_anim_tree = {
-	type = DegenerateBlend
-	id = RootNode
+	type = degenerateblend
+	id = rootnode
 }
 generic_model_anim_branch = {
 	type = param_timer_type
-	id = TimerNode
-	Speed = param_speed
+	id = timernode
+	speed = param_speed
 	start = param_start
-	Anim = param_anim
+	anim = param_anim
 	[
 		{
-			type = Source
-			id = SourceNode
-			Anim = param_anim
+			type = source
+			id = sourcenode
+			anim = param_anim
 		}
 	]
 }
 generic_model_anim_branch_flipped = {
 	type = flip
-	id = FlipNode
+	id = flipnode
 	[
 		{
 			generic_model_anim_branch
@@ -133,44 +133,44 @@ generic_model_anim_branch_flipped = {
 	]
 }
 
-script ModelViewer_InitAnimTree 
-	Anim_UnInitTree
-	Anim_InitTree \{Tree = $generic_model_anim_tree
-		NodeIdDeclaration = [
-			RootNode
-			TimerNode
-			SourceNode
-			FlipNode
+script modelviewer_initanimtree 
+	anim_uninittree
+	anim_inittree \{tree = $generic_model_anim_tree
+		nodeiddeclaration = [
+			rootnode
+			timernode
+			sourcenode
+			flipnode
 		]}
 endscript
 
-script ModelViewer_PlayAnim \{Anim = 0
-		target = RootNode
-		Tree = $generic_model_anim_branch
-		Flipped = 0}
-	timer_type = Play
-	if GotParam \{Cycle}
-		timer_type = Cycle
+script modelviewer_playanim \{anim = 0
+		target = rootnode
+		tree = $generic_model_anim_branch
+		flipped = 0}
+	timer_type = play
+	if gotparam \{cycle}
+		timer_type = cycle
 	endif
-	if (<Flipped> = 1)
-		<Tree> = generic_model_anim_branch_flipped
+	if (<flipped> = 1)
+		<tree> = generic_model_anim_branch_flipped
 	endif
-	Anim_Command {
+	anim_command {
 		target = <target>
-		command = DegenerateBlend_AddBranch
+		command = degenerateblend_addbranch
 		params = {
-			BlendDuration = <BlendPeriod>
-			Tree = <Tree>
+			blendduration = <blendperiod>
+			tree = <tree>
 			params = {
 				param_timer_type = <timer_type>
-				param_anim = <Anim>
-				param_speed = <Speed>
+				param_anim = <anim>
+				param_speed = <speed>
 				param_start = <start>
 			}
 		}
 	}
 endscript
 
-script ModelViewer_WaitAnimFinished \{Timer = TimerNode}
-	Anim_Command target = <Timer> command = Timer_Wait
+script modelviewer_waitanimfinished \{timer = timernode}
+	anim_command target = <timer> command = timer_wait
 endscript

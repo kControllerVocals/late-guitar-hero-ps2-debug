@@ -1,17 +1,17 @@
 
 script ui_create_customize_character_body 
 	make_generic_menu \{vmenu_id = customize_body_vmenu
-		back_state = UIstate_customize_character_appearance
-		title = qs("BODY")
+		back_state = uistate_customize_character_appearance
+		title = qs(0x706474c8)
 		num_icons = 1
 		show_history}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -24,24 +24,24 @@ script ui_create_customize_character_body
 		]
 		zoom_camera = 'customize_character_Zoom'}
 	add_generic_menu_text_item {
-		text = qs("SKIN TONE")
-		choose_state = UIstate_cas_color_edit
+		text = qs(0x32aea2ab)
+		choose_state = uistate_cas_color_edit
 		choose_state_data = {
-			text = qs("SKIN TONE")
-			part = CAS_Body
+			text = qs(0x32aea2ab)
+			part = cas_body
 			camera_list = ['customize_character_outfit' 'customize_character_R' 'customize_character_B' 'customize_character_L']
 			zoom_camera = 'customize_character_Zoom'
 			part_materials = [skin]
 			num_states = 1
 			num_icons = 1
-			hist_tex = SkinTone
+			hist_tex = skintone
 			color_wheel = ($skin_colorwheel)
 		}
 	}
-	add_generic_menu_text_item \{text = qs("PROPORTIONS")
-		choose_state = UIstate_customize_character_proportions}
-	add_generic_menu_text_item \{text = qs("TATTOOS")
-		choose_state = UIstate_customize_character_body_art}
+	add_generic_menu_text_item \{text = qs(0xfa27a70a)
+		choose_state = uistate_customize_character_proportions}
+	add_generic_menu_text_item \{text = qs(0x76591c6a)
+		choose_state = uistate_customize_character_body_art}
 	menu_finish \{car_helper_text}
 endscript
 

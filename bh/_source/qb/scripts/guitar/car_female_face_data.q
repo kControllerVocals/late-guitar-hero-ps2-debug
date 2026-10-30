@@ -1,11 +1,11 @@
 car_female_facial_bones = [
-	Bone_Jaw
-	Bone_Lip_Lower_Mid
-	Bone_Lip_Upper_Mid
-	Bone_Lip_Lower_Corner_L
-	Bone_Lip_Lower_Corner_R
-	Bone_Lip_Upper_Corner_L
-	Bone_Lip_Upper_Corner_R
+	bone_jaw
+	bone_lip_lower_mid
+	bone_lip_upper_mid
+	bone_lip_lower_corner_l
+	bone_lip_lower_corner_r
+	bone_lip_upper_corner_l
+	bone_lip_upper_corner_r
 ]
 car_female_facial_bone_anim_scale = 0.75
 car_female_facial_scale_ignore = [

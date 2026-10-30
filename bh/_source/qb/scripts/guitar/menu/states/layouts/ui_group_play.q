@@ -9,14 +9,14 @@ script ui_create_group_play_spawned
 	cas_reset_random_human_picking
 	frontend_load_soundcheck \{loadingscreen}
 	cas_destroy_all_characters
-	make_menu_frontend \{title = qs("BAND")
+	make_menu_frontend \{title = qs(0xdabf99c0)
 		use_all_controllers}
 	if has_enough_controllers_for_band
-		add_menu_frontend_item \{text = qs("BAND PLAY")
+		add_menu_frontend_item \{text = qs(0x34dc8180)
 			pad_choose_script = ui_group_play_select_local}
 		<window_id> :obj_spawnscript ui_group_play_poll_for_band_mode params = {local_mode_allowed = 1}
 	else
-		add_menu_frontend_item \{text = qs("BAND PLAY")
+		add_menu_frontend_item \{text = qs(0x34dc8180)
 			pad_choose_script = ui_group_play_select_local
 			rgba = [
 				50
@@ -26,9 +26,9 @@ script ui_create_group_play_spawned
 			]}
 		<window_id> :obj_spawnscript ui_group_play_poll_for_band_mode params = {local_mode_allowed = 0}
 	endif
-	<window_id> :SetTags local_mode_id = <item_id>
+	<window_id> :settags local_mode_id = <item_id>
 	ui_return_game_mode
-	LaunchEvent type = focus target = current_menu data = {child_index = <selected_index>}
+	launchevent type = focus target = current_menu data = {child_index = <selected_index>}
 endscript
 
 script ui_destroy_group_play 
@@ -41,18 +41,18 @@ endscript
 
 script ui_group_play_select_local 
 	if is_regular_controller_not_enough_mics controller = <device_num>
-		if isXenon
-			ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs("You must connect a microphone or Xbox 360 Headset to continue.") player_device = <device_num>}
+		if isxenon
+			ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0xec4dbd17) player_device = <device_num>}
 		else
-			ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs("You must plug in a microphone with your controller to continue.") player_device = <device_num>}
+			ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0xe2f3f704) player_device = <device_num>}
 		endif
 	elseif are_multiple_controllers_connected
 		ui_event \{event = menu_change
 			data = {
-				state = UIstate_band_mode
+				state = uistate_band_mode
 			}}
 	else
-		ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs(0x6102eaaa) player_device = <device_num>}
+		ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0x6102eaaa) player_device = <device_num>}
 	endif
 endscript
 
@@ -61,10 +61,10 @@ script ui_group_play_select_online_career
 	if NOT is_regular_controller_not_enough_mics controller = <device_num>
 		check_net_privaleges action = <action> device_num = <device_num>
 	else
-		if isXenon
-			ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs("You must connect a microphone or Xbox 360 Headset to continue.") player_device = <device_num>}
+		if isxenon
+			ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0xec4dbd17) player_device = <device_num>}
 		else
-			ui_event event = menu_change data = {is_popup state = UIstate_generic_alert_popup title = qs("Warning") text = qs("You must plug in a microphone with your controller to continue.") player_device = <device_num>}
+			ui_event event = menu_change data = {is_popup state = uistate_generic_alert_popup title = qs(0x361603ec) text = qs(0xe2f3f704) player_device = <device_num>}
 		endif
 	endif
 endscript
@@ -88,18 +88,18 @@ script are_multiple_controllers_connected
 	if ($allow_controller_for_all_instruments = 1)
 		return \{true}
 	endif
-	GetActiveControllers
-	GetArraySize <active_controllers>
+	getactivecontrollers
+	getarraysize <active_controllers>
 	total_active = 0
 	controller_index = 0
 	begin
 	if (<active_controllers> [<controller_index>] = 1)
 		<total_active> = (<total_active> + 1)
-		if IsMicrophonePluggedIn
-			if IsGuitarController controller = <controller_index>
+		if ismicrophonepluggedin
+			if isguitarcontroller controller = <controller_index>
 				return \{true}
 			endif
-			if IsDrumController controller = <controller_index>
+			if isdrumcontroller controller = <controller_index>
 				return \{true}
 			endif
 		endif
@@ -120,7 +120,7 @@ script ui_group_play_poll_for_band_mode
 				data = {
 					state = uistate_group_play
 				}}
-			Block
+			block
 		endif
 	else
 		if (<local_mode_allowed> = 0)
@@ -128,10 +128,10 @@ script ui_group_play_poll_for_band_mode
 				data = {
 					state = uistate_group_play
 				}}
-			Block
+			block
 		endif
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -144,8 +144,8 @@ script has_only_regular_controller_no_mic
 	if (<num_mics_plugged_in> > 0)
 		return \{false}
 	endif
-	GetActiveControllers
-	GetArraySize <active_controllers>
+	getactivecontrollers
+	getarraysize <active_controllers>
 	total_active = 0
 	controller_index = 0
 	begin

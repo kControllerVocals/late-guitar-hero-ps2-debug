@@ -1,8 +1,8 @@
-Bonus_Songs = {
+bonus_songs = {
 	prefix = 'bonus'
 	num_tiers = 1
 	tier1 = {
-		title = qs("Bonus songs")
+		title = qs(0xb11ddafd)
 		songs = [
 			tenseconddebug
 			elevenseconddebug
@@ -11,9 +11,9 @@ Bonus_Songs = {
 		defaultunlocked = 0
 	}
 }
-Bonus_Videos = [
+bonus_videos = [
 	{
-		text = qs("CAREER INTRO")
+		text = qs(0xeb2c90ee)
 		id = career_intro
 		movie = 'career_intro'
 	}
@@ -36,1047 +36,1047 @@ Bonus_Videos = [
 	}
 	{
 		text = qs(0xe9451dea)
-		id = Matt_Bellamy
+		id = matt_bellamy
 		movie = 'Matt_Bellamy'
 		unlocked
 	}
 	{
 		text = qs(0x2b7c9888)
-		id = Shirley_Manson
+		id = shirley_manson
 		movie = 'Shirley_Manson'
 		unlocked
 	}
 	{
-		text = qs("CREDITS")
+		text = qs(0xeb365db4)
 		id = credits
 		movie = 'credits'
 		unlocked
 	}
 ]
-Bonus_Songs_Info = [
+bonus_songs_info = [
 ]
 progression_guitar_rewards = [
 	{
 		stars = 15
-		level = load_Z_LHC
+		level = load_z_lhc
 	}
 	{
 		stars = 30
-		level = load_Z_FreakShow
+		level = load_z_freakshow
 	}
 	{
 		stars = 45
-		level = load_Z_NewOrleans
+		level = load_z_neworleans
 	}
 	{
 		stars = 60
-		level = load_Z_Dublin
+		level = load_z_dublin
 	}
 	{
 		stars = 75
-		level = load_Z_DragRace
+		level = load_z_dragrace
 	}
 	{
 		stars = 87
-		level = load_Z_CarHenge
+		level = load_z_carhenge
 	}
 	{
 		stars = 99
-		level = load_Z_Vegas
+		level = load_z_vegas
 	}
 	{
 		stars = 111
-		level = load_Z_Nashville
+		level = load_z_nashville
 	}
 	{
 		stars = 123
-		level = load_Z_MexicoCity
+		level = load_z_mexicocity
 	}
 	{
 		stars = 135
-		level = load_Z_Cairo
+		level = load_z_cairo
 	}
 	{
 		stars = 147
-		level = load_Z_SanFrancisco
+		level = load_z_sanfrancisco
 	}
 	{
 		stars = 159
 		level = load_z_norway
 	}
 	{
-		song = SpiritOfRadio
+		song = spiritofradio
 		level = load_z_cube
 	}
 	{
 		venue_stars = 4
-		unlockable_song = AllAlongTheWatchTower
+		0x111c3e0a = allalongthewatchtower
 		tier_index = 1
 	}
 	{
 		venue_stars = 7
-		unlockable_song = SympathyForTheDevil
+		0x111c3e0a = sympathyforthedevil
 		tier_index = 1
 	}
 	{
 		venue_stars = 4
-		unlockable_song = OnlyHappyWhenItRains
+		0x111c3e0a = onlyhappywhenitrains
 		tier_index = 2
 	}
 	{
 		venue_stars = 7
-		unlockable_song = BlueOrchid
+		0x111c3e0a = blueorchid
 		tier_index = 2
 	}
 	{
 		venue_stars = 9
-		unlockable_song = HurtsSoGood
+		0x111c3e0a = hurtssogood
 		tier_index = 2
 	}
 	{
 		venue_stars = 9
-		unlockable_song = UnderPressure
+		0x111c3e0a = underpressure
 		tier_index = 3
 	}
 	{
 		venue_stars = 9
-		unlockable_song = SexOnFire
+		0x111c3e0a = sexonfire
 		tier_index = 3
 	}
 	{
 		venue_stars = 6
-		unlockable_song = DancingWithMyself
+		0x111c3e0a = dancingwithmyself
 		tier_index = 4
 	}
 	{
 		venue_stars = 9
-		unlockable_song = ShoutItOutLoud
+		0x111c3e0a = shoutitoutloud
 		tier_index = 4
 	}
 	{
 		venue_stars = 6
-		unlockable_song = PlugInBaby
+		0x111c3e0a = pluginbaby
 		tier_index = 5
 	}
 	{
 		venue_stars = 9
-		unlockable_song = Superstition
+		0x111c3e0a = superstition
 		tier_index = 5
 	}
 	{
 		venue_stars = 12
-		unlockable_song = SultansOfSwing
+		0x111c3e0a = sultansofswing
 		tier_index = 5
 	}
 	{
 		venue_stars = 6
-		unlockable_song = HungryLikeTheWolf
+		0x111c3e0a = hungrylikethewolf
 		tier_index = 6
 	}
 	{
 		venue_stars = 9
-		unlockable_song = LooksThatKill
+		0x111c3e0a = looksthatkill
 		tier_index = 6
 	}
 	{
 		venue_stars = 6
-		unlockable_song = SmellsLikeTeenSpirit
+		0x111c3e0a = smellsliketeenspirit
 		tier_index = 7
 	}
 	{
-		song = SmellsLikeTeenSpirit
-		unlockable_song = Lithium
+		song = smellsliketeenspirit
+		0x111c3e0a = lithium
 	}
 	{
 		venue_stars = 10
-		unlockable_song = AllThePrettyFaces
+		0x111c3e0a = alltheprettyfaces
 		tier_index = 7
 	}
 	{
 		venue_stars = 6
-		unlockable_song = BringTheNoise
+		0x111c3e0a = bringthenoise
 		tier_index = 8
 	}
 	{
 		venue_stars = 9
-		unlockable_song = DuHast
+		0x111c3e0a = duhast
 		tier_index = 8
 	}
 	{
 		venue_stars = 9
-		unlockable_song = WereAnAmericanBand
+		0x111c3e0a = wereanamericanband
 		tier_index = 9
 	}
 	{
 		venue_stars = 6
-		unlockable_song = NoOneToDependOn
+		0x111c3e0a = noonetodependon
 		tier_index = 10
 	}
 	{
 		venue_stars = 9
-		unlockable_song = RunninDownADream
+		0x111c3e0a = runnindownadream
 		tier_index = 10
 	}
 	{
 		venue_stars = 6
-		unlockable_song = BackRound
+		0x111c3e0a = backround
 		tier_index = 11
 	}
 	{
 		venue_stars = 9
-		unlockable_song = YounkFunk
+		0x111c3e0a = younkfunk
 		tier_index = 11
 	}
 	{
 		venue_stars = 6
-		unlockable_song = Brianstorm
+		0x111c3e0a = brianstorm
 		tier_index = 12
 	}
 	{
 		venue_stars = 9
-		unlockable_song = TwoMinutesToMidnight
+		0x111c3e0a = twominutestomidnight
 		tier_index = 12
 	}
 	{
 		venue_stars = 15
-		unlockable_song = SpiritOfRadio
+		0x111c3e0a = spiritofradio
 		tier_index = 13
 	}
 	{
-		song = AllAlongTheWatchTower
+		song = allalongthewatchtower
 		group_name = qs(0x418e5571)
 		unlock_icon = unlockable_outfit
 		car_pieces = [
 			{
-				part = CAS_Full_Body
+				part = cas_full_body
 				desc_id = lars_2
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Bmtl_Torso_Lars_2
+				part = cas_male_torso
+				desc_id = m_bmtl_torso_lars_2
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Bmtl_Legs_Lars_2
+				part = cas_male_legs
+				desc_id = m_bmtl_legs_lars_2
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Bmtl_Shoe_Lars_2
+				part = cas_male_shoes
+				desc_id = m_bmtl_shoe_lars_2
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Pandora_4
+				part = cas_full_body
+				desc_id = pandora_4
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Goth_Torso_PndrTrench
+				part = cas_female_torso
+				desc_id = f_goth_torso_pndrtrench
 			}
 			{
-				part = CAS_Female_Shoes
-				desc_id = F_Goth_Shoe_PndrSpike
+				part = cas_female_shoes
+				desc_id = f_goth_shoe_pndrspike
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Clive_2
+				part = cas_full_body
+				desc_id = clive_2
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Clsc_Torso_Clive2
+				part = cas_male_torso
+				desc_id = m_clsc_torso_clive2
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Clsc_Legs_Clive2
+				part = cas_male_legs
+				desc_id = m_clsc_legs_clive2
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Clsc_Shoes_Clive2
+				part = cas_male_shoes
+				desc_id = m_clsc_shoes_clive2
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Clsc_Acc_L3Rings
+				part = cas_male_acc_left
+				desc_id = m_clsc_acc_l3rings
 			}
 			{
-				part = CAS_Male_Acc_Right
-				desc_id = M_Clsc_Acc_R3Rings
+				part = cas_male_acc_right
+				desc_id = m_clsc_acc_r3rings
 			}
 			{
-				part = CAS_Full_Body
+				part = cas_full_body
 				desc_id = johnny_2
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Punk_Torso_Jny_2
+				part = cas_male_torso
+				desc_id = m_punk_torso_jny_2
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Punk_Legs_Jny_2
+				part = cas_male_legs
+				desc_id = m_punk_legs_jny_2
 			}
 			{
-				part = CAS_Male_Hair
-				desc_id = M_Punk_Hair_Jny_2
+				part = cas_male_hair
+				desc_id = m_punk_hair_jny_2
 			}
 			{
-				part = CAS_Male_Acc_Right
-				desc_id = M_Punk_AccR_Jny_2
+				part = cas_male_acc_right
+				desc_id = m_punk_accr_jny_2
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Izzy_2
+				part = cas_full_body
+				desc_id = izzy_2
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Glam_Torso_Mink
+				part = cas_male_torso
+				desc_id = m_glam_torso_mink
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Glam_Legs_Rose
+				part = cas_male_legs
+				desc_id = m_glam_legs_rose
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Glam_Shoes_mart
+				part = cas_male_shoes
+				desc_id = m_glam_shoes_mart
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Eddie_2
+				part = cas_full_body
+				desc_id = eddie_2
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Rock_Legs_Eddie2
+				part = cas_male_legs
+				desc_id = m_rock_legs_eddie2
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Rock_Shoe_Eddie2
+				part = cas_male_shoes
+				desc_id = m_rock_shoe_eddie2
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Rock_Acc_LEddie2
+				part = cas_male_acc_left
+				desc_id = m_rock_acc_leddie2
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Judy_1
+				part = cas_full_body
+				desc_id = judy_1
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Punk_Torso_JudyNails1
+				part = cas_female_torso
+				desc_id = f_punk_torso_judynails1
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Punk_Legs_JudyNails1
+				part = cas_female_legs
+				desc_id = f_punk_legs_judynails1
 			}
 			{
-				part = CAS_Female_Shoes
-				desc_id = F_Punk_Shoe_JudyNails1
+				part = cas_female_shoes
+				desc_id = f_punk_shoe_judynails1
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Casey_1
+				part = cas_full_body
+				desc_id = casey_1
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Rock_Torso_ECCorset
+				part = cas_female_torso
+				desc_id = f_rock_torso_eccorset
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Rock_Legs_ECChaps
+				part = cas_female_legs
+				desc_id = f_rock_legs_ecchaps
 			}
 			{
-				part = CAS_Female_Shoes
-				desc_id = F_Rock_shoe_ECBBoot
+				part = cas_female_shoes
+				desc_id = f_rock_shoe_ecbboot
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Axel_3
+				part = cas_full_body
+				desc_id = axel_3
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Mtl_Torso_Axel3
+				part = cas_male_torso
+				desc_id = m_mtl_torso_axel3
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Mtl_AccL_Axel3
+				part = cas_male_acc_left
+				desc_id = m_mtl_accl_axel3
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Mtl_Legs_Axel3
+				part = cas_male_legs
+				desc_id = m_mtl_legs_axel3
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Mtl_Shoes_Axel3
+				part = cas_male_shoes
+				desc_id = m_mtl_shoes_axel3
 			}
 		]
 	}
 	{
-		song = AllThePrettyFaces
+		song = alltheprettyfaces
 		group_name = qs(0x69edf386)
 		unlock_icon = unlockable_accessories
 		car_pieces = [
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Rock_acc_Lcast
+				part = cas_male_acc_left
+				desc_id = m_rock_acc_lcast
 			}
 			{
-				part = CAS_Female_Acc_Face
-				desc_id = F_Rock_Glasses_Fly
+				part = cas_female_acc_face
+				desc_id = f_rock_glasses_fly
 			}
 			{
-				part = CAS_Male_Hair
-				desc_id = M_Funpart_Hair_Slime
+				part = cas_male_hair
+				desc_id = m_funpart_hair_slime
 			}
 			{
-				part = CAS_Female_Hair
-				desc_id = F_Funpart_Hair_Slime
+				part = cas_female_hair
+				desc_id = f_funpart_hair_slime
 			}
 			{
-				part = CAS_Male_Acc_Face
-				desc_id = M_Rock_Glasses_Monocle
+				part = cas_male_acc_face
+				desc_id = m_rock_glasses_monocle
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Goth_Torso_Devilwings
+				part = cas_male_torso
+				desc_id = m_goth_torso_devilwings
 			}
 			{
-				part = CAS_Male_Acc_Face
-				desc_id = M_Rock_Glasses_Nerd
+				part = cas_male_acc_face
+				desc_id = m_rock_glasses_nerd
 			}
 			{
-				part = CAS_Male_Hair
-				desc_id = M_Funpart_Hair_Octo
+				part = cas_male_hair
+				desc_id = m_funpart_hair_octo
 			}
 			{
-				part = CAS_Female_Hair
-				desc_id = F_Funpart_Hair_Octo
+				part = cas_female_hair
+				desc_id = f_funpart_hair_octo
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Goth_Torso_SFVest
+				part = cas_male_torso
+				desc_id = m_goth_torso_sfvest
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Rock_Shoe_pegleg
+				part = cas_male_shoes
+				desc_id = m_rock_shoe_pegleg
 			}
 		]
 	}
 	{
-		song = APunk
+		song = apunk
 		group_name = qs(0x6fae039b)
 		unlock_icon = unlockable_character
-		character = Metalhead
+		character = metalhead
 	}
 	{
-		song = APunk
+		song = apunk
 		group_name = qs(0xd9275462)
 		unlock_icon = unlockable_character
-		character = Fembot
+		character = 0xf650b8fb
 	}
 	{
-		song = Brianstorm
+		song = brianstorm
 		group_name = qs(0xc195a33d)
 		unlock_icon = unlockable_character
-		character = Racques_Topus
+		character = 0xebac72a4
 	}
 	{
-		song = Disconnected
+		song = disconnected
 		group_name = qs(0xca13039a)
 		unlock_icon = unlockable_character
-		character = Scrap_Heap
+		character = 0x8a5d6de9
 	}
 	{
-		song = LustForLife
+		song = lustforlife
 		group_name = qs(0x97ce23c5)
 		unlock_icon = unlockable_character
-		character = Robbie_Lobster
+		character = 0xada2d6d1
 	}
 	{
-		song = NoOneToDependOn
-		group_name = qs("\LCarlos Santana")
+		song = noonetodependon
+		group_name = qs(0xdbed6658)
 		unlock_icon = unlockable_character
-		character = GH_Rocker_Santana
+		character = gh_rocker_santana
 		car_pieces = [
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Clsc_Torso_Santana_D1
+				part = cas_male_torso
+				desc_id = m_clsc_torso_santana_d1
 			}
 			{
-				part = CAS_Guitar_Body
-				desc_id = GTR80_PRS_SANT
+				part = cas_guitar_body
+				desc_id = gtr80_prs_sant
 			}
 		]
-		unlocking_car_pieces_with_character
+		0x20d97fe1
 	}
 	{
-		song = OnlyHappyWhenItRains
-		group_name = qs("\LShirley Manson")
+		song = onlyhappywhenitrains
+		group_name = qs(0x99902597)
 		unlock_icon = unlockable_character
-		character = GH_Rocker_ShirleyManson
+		character = gh_rocker_shirleymanson
 		car_pieces = [
 			{
-				part = CAS_Mic
+				part = cas_mic
 				desc_id = mic_shirley
 			}
 			{
-				part = CAS_Mic_Stand
+				part = cas_mic_stand
 				desc_id = mic_stand_shirley
 			}
 		]
-		unlocking_car_pieces_with_character
+		0x20d97fe1
 	}
 	{
-		song = PlugInBaby
-		group_name = qs("\LMatt Bellamy")
+		song = pluginbaby
+		group_name = qs(0x0ccbf66e)
 		unlock_icon = unlockable_character
-		character = GH_Rocker_MattBellamy_CAR
+		character = gh_rocker_mattbellamy_car
 		car_pieces = [
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = gtr25_manson_bellamy
 			}
 		]
-		unlocking_car_pieces_with_character
+		0x20d97fe1
 	}
 	{
-		song = RingOfFire
-		group_name = qs("\LJohnny Cash")
+		song = ringoffire
+		group_name = qs(0x3a825a9b)
 		unlock_icon = unlockable_character
-		character = GH_Rocker_JohnnyCash_CAR
+		character = gh_rocker_johnnycash_car
 		car_pieces = [
 			{
-				part = CAS_Guitar_Body
-				desc_id = GTR27_NSFT_Acoustic
+				part = cas_guitar_body
+				desc_id = gtr27_nsft_acoustic
 			}
 		]
-		unlocking_car_pieces_with_character
+		0x20d97fe1
 	}
 	{
-		song = SexOnFire
+		song = sexonfire
 		group_name = qs(0x4dec20c9)
 		unlock_icon = unlockable_accessories
 		car_pieces = [
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Rock_Hat_Cyclops
+				part = cas_male_hat
+				desc_id = m_rock_hat_cyclops
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Funpart_hat_clown
+				part = cas_male_hat
+				desc_id = m_funpart_hat_clown
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Metl_Horn
+				part = cas_male_hat
+				desc_id = m_metl_horn
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Pop_Acc_Catears
+				part = cas_female_hat
+				desc_id = f_pop_acc_catears
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Fun_Hat_Hannya
+				part = cas_male_hat
+				desc_id = m_fun_hat_hannya
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Bmtl_Hat_SkullHelmet
+				part = cas_male_hat
+				desc_id = m_bmtl_hat_skullhelmet
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Bmtl_Hat_SkullHelmet
+				part = cas_female_hat
+				desc_id = f_bmtl_hat_skullhelmet
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Bmtl_Hat_Brain
+				part = cas_male_hat
+				desc_id = m_bmtl_hat_brain
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Fun_Hat_WW2Helmet
+				part = cas_male_hat
+				desc_id = m_fun_hat_ww2helmet
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Metl_Acc_Horn
+				part = cas_female_hat
+				desc_id = f_metl_acc_horn
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Hat_Pimp
+				part = cas_male_hat
+				desc_id = m_hat_pimp
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Fun_Hat_EyeBall
+				part = cas_female_hat
+				desc_id = f_fun_hat_eyeball
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Fun_Hat_EyeBall
+				part = cas_male_hat
+				desc_id = m_fun_hat_eyeball
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Pop_Head_GasMask
+				part = cas_male_hat
+				desc_id = m_pop_head_gasmask
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Pop_Head_GasMask
+				part = cas_female_hat
+				desc_id = f_pop_head_gasmask
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Hat_Gorilla
+				part = cas_male_hat
+				desc_id = m_hat_gorilla
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Rock_hat_Spacehelmet
+				part = cas_male_hat
+				desc_id = m_rock_hat_spacehelmet
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Rock_hat_halo
+				part = cas_male_hat
+				desc_id = m_rock_hat_halo
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Rock_Hat_Pumpkin
+				part = cas_male_hat
+				desc_id = m_rock_hat_pumpkin
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Pop_Head_WW2Helm
+				part = cas_female_hat
+				desc_id = f_pop_head_ww2helm
 			}
 			{
-				part = CAS_Female_Hat
-				desc_id = F_Fun_Hat_Chickenmask
+				part = cas_female_hat
+				desc_id = f_fun_hat_chickenmask
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Rock_Hat_RetroTV
+				part = cas_male_hat
+				desc_id = m_rock_hat_retrotv
 			}
 		]
 	}
 	{
-		song = SmellsLikeTeenSpirit
-		group_name = qs("\LKurt Cobain")
+		song = smellsliketeenspirit
+		group_name = qs(0xf3647ae9)
 		unlock_icon = unlockable_character
-		character = GH_Rocker_KurtCobain
+		character = gh_rocker_kurtcobain
 		car_pieces = [
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = gtr78_kurt
 			}
 			{
-				part = CAS_Guitar_Pickups
+				part = cas_guitar_pickups
 				desc_id = gtr78_pickup1
 			}
 		]
-		unlocking_car_pieces_with_character
+		0x20d97fe1
 	}
 	{
-		song = Superstition
+		song = superstition
 		group_name = qs(0xb091edfe)
 		unlock_icon = unlockable_outfit
 		car_pieces = [
 			{
-				part = CAS_Full_Body
+				part = cas_full_body
 				desc_id = casey_2
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Rock_Torso_MetalStud
+				part = cas_female_torso
+				desc_id = f_rock_torso_metalstud
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Rock_Legs_Metalstud
+				part = cas_female_legs
+				desc_id = f_rock_legs_metalstud
 			}
 			{
-				part = CAS_Female_Shoes
-				desc_id = F_Rock_Shoe_ThighHigh
+				part = cas_female_shoes
+				desc_id = f_rock_shoe_thighhigh
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Rock_Torso_CTank
+				part = cas_female_torso
+				desc_id = f_rock_torso_ctank
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Lars_3
+				part = cas_full_body
+				desc_id = lars_3
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Bmtl_Torso_Lars_3
+				part = cas_male_torso
+				desc_id = m_bmtl_torso_lars_3
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Bmtl_Legs_Lars_3
+				part = cas_male_legs
+				desc_id = m_bmtl_legs_lars_3
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Bmtl_Shoe_Lars_3
+				part = cas_male_shoes
+				desc_id = m_bmtl_shoe_lars_3
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Bmtl_Acc_LLars_3
+				part = cas_male_acc_left
+				desc_id = m_bmtl_acc_llars_3
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Izzy_3
+				part = cas_full_body
+				desc_id = izzy_3
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Glam_Torso_Ljacket
+				part = cas_male_torso
+				desc_id = m_glam_torso_ljacket
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Glam_Legs_DoubleBelt
+				part = cas_male_legs
+				desc_id = m_glam_legs_doublebelt
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Glam_Shoe_Cowboy
+				part = cas_male_shoes
+				desc_id = m_glam_shoe_cowboy
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Johnny_4
+				part = cas_full_body
+				desc_id = johnny_4
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Punk_Torso_Jstripe
+				part = cas_male_torso
+				desc_id = m_punk_torso_jstripe
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Punk_Legs_Jzip
+				part = cas_male_legs
+				desc_id = m_punk_legs_jzip
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Punk_Shoe_Jzipconv
+				part = cas_male_shoes
+				desc_id = m_punk_shoe_jzipconv
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Punk_Acc_LJstudband
+				part = cas_male_acc_left
+				desc_id = m_punk_acc_ljstudband
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Pandora_3
+				part = cas_full_body
+				desc_id = pandora_3
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Goth_Torso_PndrStraps
+				part = cas_female_torso
+				desc_id = f_goth_torso_pndrstraps
 			}
 			{
-				part = CAS_Female_Shoes
-				desc_id = F_Goth_Shoe_PndrPlats
+				part = cas_female_shoes
+				desc_id = f_goth_shoe_pndrplats
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Goth_Legs_PndrRose
+				part = cas_female_legs
+				desc_id = f_goth_legs_pndrrose
 			}
 			{
-				part = CAS_Female_Acc_Left
-				desc_id = F_Goth_ACC_LPndrBuckles
+				part = cas_female_acc_left
+				desc_id = f_goth_acc_lpndrbuckles
 			}
 			{
-				part = CAS_Female_Acc_Right
-				desc_id = F_Goth_ACC_RPndrBuckles
+				part = cas_female_acc_right
+				desc_id = f_goth_acc_rpndrbuckles
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Eddie_4
+				part = cas_full_body
+				desc_id = eddie_4
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Rock_Torso_Leather
+				part = cas_male_torso
+				desc_id = m_rock_torso_leather
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Rock_Legs_RolledUp
+				part = cas_male_legs
+				desc_id = m_rock_legs_rolledup
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Axel_4
+				part = cas_full_body
+				desc_id = axel_4
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Metl_Torso_Axel4
+				part = cas_male_torso
+				desc_id = m_metl_torso_axel4
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Mtl_AccL_Axel4
+				part = cas_male_acc_left
+				desc_id = m_mtl_accl_axel4
 			}
 			{
-				part = CAS_Male_Acc_Right
-				desc_id = M_Mtl_AccR_Axel4
+				part = cas_male_acc_right
+				desc_id = m_mtl_accr_axel4
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Mtl_Legs_Axel4
+				part = cas_male_legs
+				desc_id = m_mtl_legs_axel4
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Mtl_Shoes_Axel4
+				part = cas_male_shoes
+				desc_id = m_mtl_shoes_axel4
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Judy_2
+				part = cas_full_body
+				desc_id = judy_2
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Punk_Torso_JudyNails2
+				part = cas_female_torso
+				desc_id = f_punk_torso_judynails2
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Punk_Legs_JudyNails2
+				part = cas_female_legs
+				desc_id = f_punk_legs_judynails2
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Clive_3
+				part = cas_full_body
+				desc_id = clive_3
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Clsc_Torso_Clive3
+				part = cas_male_torso
+				desc_id = m_clsc_torso_clive3
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Clsc_Legs_Clive3
+				part = cas_male_legs
+				desc_id = m_clsc_legs_clive3
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Clsc_Shoe_Clive3
+				part = cas_male_shoes
+				desc_id = m_clsc_shoe_clive3
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Clsc_Hat_Clive3
+				part = cas_male_hat
+				desc_id = m_clsc_hat_clive3
 			}
 		]
 	}
 	{
-		song = SympathyForTheDevil
+		song = sympathyforthedevil
 		group_name = qs(0xaca00b63)
 		unlock_icon = unlockable_bass_h
 		car_pieces = [
 			{
-				part = CAS_Bass_Body
-				desc_id = Bass102_Axe
+				part = cas_bass_body
+				desc_id = bass102_axe
 			}
 			{
-				part = CAS_Bass_Body
-				desc_id = Bass104_Skull
+				part = cas_bass_body
+				desc_id = bass104_skull
 			}
 			{
-				part = CAS_Bass_Body
-				desc_id = Bass103_Cross
+				part = cas_bass_body
+				desc_id = bass103_cross
 			}
 			{
-				part = CAS_Bass_Body
-				desc_id = Bass105_pin
+				part = cas_bass_body
+				desc_id = bass105_pin
 			}
 		]
 	}
 	{
-		song = TwoMinutesToMidnight
+		song = twominutestomidnight
 		group_name = qs(0x7c6ce79a)
 		unlock_icon = unlockable_mic2
 		car_pieces = [
 			{
-				part = CAS_Mic
-				desc_id = Mic_Vocality
+				part = cas_mic
+				desc_id = mic_vocality
 			}
 			{
-				part = CAS_Mic_Stand
+				part = cas_mic_stand
 				desc_id = mic_stand_vortex
 			}
 			{
-				part = CAS_Mic
-				desc_id = Mic_Futuro
+				part = cas_mic
+				desc_id = mic_futuro
 			}
 			{
-				part = CAS_Mic
-				desc_id = Mic_Dagger
+				part = cas_mic
+				desc_id = mic_dagger
 			}
 			{
-				part = CAS_Mic_Stand
+				part = cas_mic_stand
 				desc_id = mic_stand_hooks
 			}
 			{
-				part = CAS_Mic_Stand
-				desc_id = mic_Stand_crutch
+				part = cas_mic_stand
+				desc_id = mic_stand_crutch
 			}
 			{
-				part = CAS_Mic
-				desc_id = Mic_Ice_Cream_Cone
+				part = cas_mic
+				desc_id = mic_ice_cream_cone
 			}
 		]
 	}
 	{
-		song = WereAnAmericanBand
+		song = wereanamericanband
 		group_name = qs(0x1fd8a67c)
 		unlock_icon = unlockable_outfit
 		car_pieces = [
 			{
-				part = CAS_Full_Body
-				desc_id = Lars_4
+				part = cas_full_body
+				desc_id = lars_4
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Bmtl_Torso_Lars4
+				part = cas_male_torso
+				desc_id = m_bmtl_torso_lars4
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Bmtl_Legs_Lars4
+				part = cas_male_legs
+				desc_id = m_bmtl_legs_lars4
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Bmtl_Shoe_Lars4
+				part = cas_male_shoes
+				desc_id = m_bmtl_shoe_lars4
 			}
 			{
-				part = CAS_Male_Acc_Right
-				desc_id = M_Bmtl_Acc_RLars4
+				part = cas_male_acc_right
+				desc_id = m_bmtl_acc_rlars4
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Bmtl_Acc_LLars4
+				part = cas_male_acc_left
+				desc_id = m_bmtl_acc_llars4
 			}
 			{
-				part = CAS_Male_Hat
-				desc_id = M_Bmtl_Hat_Lars4
+				part = cas_male_hat
+				desc_id = m_bmtl_hat_lars4
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Johnny_3
+				part = cas_full_body
+				desc_id = johnny_3
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Punk_Legs_Jny_3
+				part = cas_male_legs
+				desc_id = m_punk_legs_jny_3
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Punk_AccL_Jny_3
+				part = cas_male_acc_left
+				desc_id = m_punk_accl_jny_3
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Izzy_4
+				part = cas_full_body
+				desc_id = izzy_4
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Glam_Torso_Jester
+				part = cas_male_torso
+				desc_id = m_glam_torso_jester
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Glam_Legs_Jester
+				part = cas_male_legs
+				desc_id = m_glam_legs_jester
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Glam_shoes_Jester
+				part = cas_male_shoes
+				desc_id = m_glam_shoes_jester
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Eddie_3
+				part = cas_full_body
+				desc_id = eddie_3
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Rock_Torso_SpadeSuit
+				part = cas_male_torso
+				desc_id = m_rock_torso_spadesuit
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Rock_Legs_SpadeSuit
+				part = cas_male_legs
+				desc_id = m_rock_legs_spadesuit
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Rock_Shoe_StrapBoots
+				part = cas_male_shoes
+				desc_id = m_rock_shoe_strapboots
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Clive_4
+				part = cas_full_body
+				desc_id = clive_4
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Clsc_Torso_Clive4
+				part = cas_male_torso
+				desc_id = m_clsc_torso_clive4
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Clsc_Legs_Clive4
+				part = cas_male_legs
+				desc_id = m_clsc_legs_clive4
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Clsc_Shoe_Clive4
+				part = cas_male_shoes
+				desc_id = m_clsc_shoe_clive4
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Casey_3
+				part = cas_full_body
+				desc_id = casey_3
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Rock_Legs_CBotStud
+				part = cas_female_legs
+				desc_id = f_rock_legs_cbotstud
 			}
 			{
-				part = CAS_Female_Acc_Left
-				desc_id = F_Rock_Acc_LCloth
+				part = cas_female_acc_left
+				desc_id = f_rock_acc_lcloth
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Pandora_2
+				part = cas_full_body
+				desc_id = pandora_2
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Goth_Torso_PndrMaid
+				part = cas_female_torso
+				desc_id = f_goth_torso_pndrmaid
 			}
 			{
-				part = CAS_Female_Shoes
-				desc_id = F_Goth_Shoe_Pilgrim
+				part = cas_female_shoes
+				desc_id = f_goth_shoe_pilgrim
 			}
 			{
-				part = CAS_Female_Acc_Left
-				desc_id = F_Goth_ACC_Llace
+				part = cas_female_acc_left
+				desc_id = f_goth_acc_llace
 			}
 			{
-				part = CAS_Female_Acc_Right
-				desc_id = F_Goth_ACC_Rlace
+				part = cas_female_acc_right
+				desc_id = f_goth_acc_rlace
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Axel_2
+				part = cas_full_body
+				desc_id = axel_2
 			}
 			{
-				part = CAS_Male_Torso
-				desc_id = M_Metl_Torso_Axel2GH5
+				part = cas_male_torso
+				desc_id = m_metl_torso_axel2gh5
 			}
 			{
-				part = CAS_Male_Acc_Left
-				desc_id = M_Metl_AccL_Axel2Gh5
+				part = cas_male_acc_left
+				desc_id = m_metl_accl_axel2gh5
 			}
 			{
-				part = CAS_Male_Acc_Right
-				desc_id = M_Metl_AccR_Axel2Gh5
+				part = cas_male_acc_right
+				desc_id = m_metl_accr_axel2gh5
 			}
 			{
-				part = CAS_Male_Legs
-				desc_id = M_Metl_Legs_Axel2GH5
+				part = cas_male_legs
+				desc_id = m_metl_legs_axel2gh5
 			}
 			{
-				part = CAS_Male_Shoes
-				desc_id = M_Metl_Shoes_Axel2GH5
+				part = cas_male_shoes
+				desc_id = m_metl_shoes_axel2gh5
 			}
 			{
-				part = CAS_Full_Body
-				desc_id = Judy_4
+				part = cas_full_body
+				desc_id = judy_4
 			}
 			{
-				part = CAS_Female_Torso
-				desc_id = F_Punk_Torso_JudyNails4
+				part = cas_female_torso
+				desc_id = f_punk_torso_judynails4
 			}
 			{
-				part = CAS_Female_Legs
-				desc_id = F_Punk_Legs_JudyNails4
+				part = cas_female_legs
+				desc_id = f_punk_legs_judynails4
 			}
 		]
 	}
 	{
-		song = YounkFunk
+		song = younkfunk
 		group_name = qs(0x2c5b907f)
 		unlock_icon = unlockable_guitar_h
 		car_pieces = [
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = guitar_skull_01
 			}
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = guitar_body20
 			}
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = guitar_spider_01
 			}
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = guitar_body_battleaxe
 			}
 			{
-				part = CAS_Guitar_Body
+				part = cas_guitar_body
 				desc_id = guitar_anarchy
 			}
 		]

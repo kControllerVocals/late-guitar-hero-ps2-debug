@@ -1,100 +1,100 @@
 
-script SafeGetUniqueCompositeObjectID \{preferredID = safeFXID01}
-	if NOT GotParam \{ObjID}
-		GetUniqueCompositeObjectID preferredID = <preferredID>
-		return uniqueID = <uniqueID>
+script safegetuniquecompositeobjectid \{preferredid = safefxid01}
+	if NOT gotparam \{objid}
+		getuniquecompositeobjectid preferredid = <preferredid>
+		return uniqueid = <uniqueid>
 	endif
 	i = 0
-	FormatText TextName = index '%i' i = <i>
-	ExtendCRC <preferredID> <index> out = preferredID
+	formattext textname = index '%i' i = <i>
+	extendcrc <preferredid> <index> out = preferredid
 	begin
-	MangleChecksums a = <preferredID> b = <ObjID>
-	if NOT ObjectExists id = <mangled_ID>
-		return uniqueID = <preferredID>
+	manglechecksums a = <preferredid> b = <objid>
+	if NOT objectexists id = <mangled_id>
+		return uniqueid = <preferredid>
 	else
 		i = (<i> + 1)
-		FormatText TextName = index '%i' i = <i>
-		ExtendCRC <preferredID> <index> out = preferredID
+		formattext textname = index '%i' i = <i>
+		extendcrc <preferredid> <index> out = preferredid
 	endif
 	repeat
 endscript
 
-script SetLightIntensityOverTime \{i = 1.0
+script setlightintensityovertime \{i = 1.0
 		time = 2.0
-		stepTime = 0.05}
-	targetI = <i>
-	GetLightIntensity name = <name>
-	numSteps = (<time> / <stepTime>)
-	CastToInteger \{numSteps}
-	stepSize = ((<targetI> - <i>) / <numSteps>)
+		steptime = 0.05}
+	targeti = <i>
+	getlightintensity name = <name>
+	numsteps = (<time> / <steptime>)
+	casttointeger \{numsteps}
+	stepsize = ((<targeti> - <i>) / <numsteps>)
 	begin
-	i = (<i> + <stepSize>)
-	SetLightIntensity name = <name> intensity = <i>
-	Wait <stepTime> seconds
-	repeat (<numSteps> -1)
-	SetLightIntensity name = <name> intensity = <targetI>
+	i = (<i> + <stepsize>)
+	setlightintensity name = <name> intensity = <i>
+	wait <steptime> seconds
+	repeat (<numsteps> -1)
+	setlightintensity name = <name> intensity = <targeti>
 endscript
 
-script Light_UpdatePosition \{offset = (0.0, 0.0, 0.0)}
-	Obj_GetID
+script light_updateposition \{offset = (0.0, 0.0, 0.0)}
+	obj_getid
 	begin
-	if NOT IsCreated <attachObjID>
-		Die
+	if NOT iscreated <attachobjid>
+		die
 	endif
-	<attachObjID> :Obj_GetPosition
-	MoveLight name = <ObjID> pos = (<pos> + <offset>)
-	Wait \{1
+	<attachobjid> :obj_getposition
+	movelight name = <objid> pos = (<pos> + <offset>)
+	wait \{1
 		frame}
 	repeat
 endscript
-Obj_Scale = ASSERT_ON_USE
+obj_scale = 0x24d8810d
 
-script Obj_SetMaterialColor_Spawner 
-	Obj_KillSpawnedScript \{name = Obj_SetMaterialColor}
-	Obj_SpawnScriptLater Obj_SetMaterialColor params = {<...>}
+script obj_setmaterialcolor_spawner 
+	obj_killspawnedscript \{name = obj_setmaterialcolor}
+	obj_spawnscriptlater obj_setmaterialcolor params = {<...>}
 endscript
 
-script Blend_RGBA 
-	LinearMap result = bR from = (<a> [0]) to = (<b> [0]) basedOn = <i> lowerBound = 0 upperBound = 1
-	LinearMap result = bG from = (<a> [1]) to = (<b> [1]) basedOn = <i> lowerBound = 0 upperBound = 1
-	LinearMap result = bB from = (<a> [2]) to = (<b> [2]) basedOn = <i> lowerBound = 0 upperBound = 1
-	LinearMap result = bA from = (<a> [3]) to = (<b> [3]) basedOn = <i> lowerBound = 0 upperBound = 1
+script blend_rgba 
+	linearmap result = br from = (<a> [0]) to = (<b> [0]) basedon = <i> lowerbound = 0 upperbound = 1
+	linearmap result = bg from = (<a> [1]) to = (<b> [1]) basedon = <i> lowerbound = 0 upperbound = 1
+	linearmap result = bb from = (<a> [2]) to = (<b> [2]) basedon = <i> lowerbound = 0 upperbound = 1
+	linearmap result = ba from = (<a> [3]) to = (<b> [3]) basedon = <i> lowerbound = 0 upperbound = 1
 	rgba = [0.0 0.0 0.0 0.0]
-	SetArrayElement ArrayName = rgba index = 0 newvalue = <bR>
-	SetArrayElement ArrayName = rgba index = 1 newvalue = <bG>
-	SetArrayElement ArrayName = rgba index = 2 newvalue = <bB>
-	SetArrayElement ArrayName = rgba index = 3 newvalue = <bA>
+	setarrayelement arrayname = rgba index = 0 newvalue = <br>
+	setarrayelement arrayname = rgba index = 1 newvalue = <bg>
+	setarrayelement arrayname = rgba index = 2 newvalue = <bb>
+	setarrayelement arrayname = rgba index = 3 newvalue = <ba>
 	return rgba = <rgba>
 endscript
 
-script Create_AVEdit_FX \{viewport = bg_viewport
-		clearColor = [
+script create_avedit_fx \{viewport = bg_viewport
+		clearcolor = [
 			0
 			0
 			0
 			255
 		]
-		blendMode = blend
-		alphaFromGray = 1}
-	ScreenFX_ClearFXInstances viewport = <viewport>
+		blendmode = blend
+		alphafromgray = 1}
+	screenfx_clearfxinstances viewport = <viewport>
 	change \{visualizer_events_enabled = false}
-	if GotParam \{primitives}
-		ScreenFX_AddFXInstance {
+	if gotparam \{primitives}
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = AVFX01
-			scefName = AVFX01
-			type = AudioVisualize
+			name = avfx01
+			scefname = avfx01
+			type = audiovisualize
 			on = 1
 			primitives = <primitives>
-			clearColor = <clearColor>
-			blendMode = <blendMode>
-			alphaFromGrayscale = <alphaFromGray>
-			audio_Params = $Default_Visualizer_Audio_Params
+			clearcolor = <clearcolor>
+			blendmode = <blendmode>
+			alphafromgrayscale = <alphafromgray>
+			audio_params = $default_visualizer_audio_params
 		}
-		ScreenFX_AddFXInstance {
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = AVFX_Bloom01
-			scefName = AVFX_Bloom01
+			name = avfx_bloom01
+			scefname = avfx_bloom01
 			type = bloom2
 			on = 1
 			materialfilter = 0
@@ -104,64 +104,64 @@ script Create_AVEdit_FX \{viewport = bg_viewport
 			saturation = 1.0
 			equation = eq2
 		}
-		ScreenFX_AddFXInstance {
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 			on = 1
 		}
 	endif
 endscript
 
-script CameraBlur_FastZoom_InandOut 
-	if NOT BG_fx_get_start_params \{viewport = bg_viewport
-			effectName = Depth_of_Field__simplified_}
+script camerablur_fastzoom_inandout 
+	if NOT bg_fx_get_start_params \{viewport = bg_viewport
+			effectname = depth_of_field__simplified_}
 		return
 	endif
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0.1}
-	Wait \{0.2
+	wait \{0.2
 		seconds}
-	BG_fx_set_blur \{appendStrength = 0
+	bg_fx_set_blur \{appendstrength = 0
 		time = 0.3}
-	Wait \{0.2
+	wait \{0.2
 		seconds}
-	BG_fx_set_blur \{appendStrength = 0.5
+	bg_fx_set_blur \{appendstrength = 0.5
 		time = 0.1}
-	Wait \{0.1
+	wait \{0.1
 		second}
-	BG_fx_set_blur effectParams = <startValue> time = 0.4
+	bg_fx_set_blur effectparams = <startvalue> time = 0.4
 endscript
 
-script CameraBlur_SlowZoom_InandOut 
-	if NOT BG_fx_get_start_params \{viewport = bg_viewport
-			effectName = Depth_of_Field__simplified_}
+script camerablur_slowzoom_inandout 
+	if NOT bg_fx_get_start_params \{viewport = bg_viewport
+			effectname = depth_of_field__simplified_}
 		return
 	endif
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0.5}
-	Wait \{0.4
+	wait \{0.4
 		seconds}
-	BG_fx_set_blur \{appendStrength = 0
+	bg_fx_set_blur \{appendstrength = 0
 		time = 0.4}
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0.3}
-	Wait \{0.3
+	wait \{0.3
 		second}
-	BG_fx_set_blur effectParams = <startValue> time = 0.4
+	bg_fx_set_blur effectparams = <startvalue> time = 0.4
 endscript
 
-script CameraBlur_FocusIn 
-	if NOT BG_fx_get_start_params \{viewport = bg_viewport
-			effectName = Depth_of_Field__simplified_}
+script camerablur_focusin 
+	if NOT bg_fx_get_start_params \{viewport = bg_viewport
+			effectname = depth_of_field__simplified_}
 		return
 	endif
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0}
-	Wait \{0.1
+	wait \{0.1
 		second}
-	BG_fx_set_blur effectParams = <startValue> time = 0.5
+	bg_fx_set_blur effectparams = <startvalue> time = 0.5
 endscript

@@ -1,7 +1,7 @@
 
 script ui_create_character_face_deformation 
 	make_generic_menu \{vmenu_id = face_deformation_vmenu
-		title = qs("EDIT FACE")
+		title = qs(0x8c4aaf6a)
 		num_icons = 2
 		show_history}
 	setup_cas_menu_handlers \{vmenu_id = face_deformation_vmenu
@@ -13,34 +13,34 @@ script ui_create_character_face_deformation
 		]
 		zoom_camera = 'customize_character_Zoom'}
 	add_generic_menu_text_item {
-		text = qs("SHAPE")
-		choose_state = UIstate_character_face_deformation_options
-		choose_state_data = {text = qs("SHAPE") option_array = ($cas_head_bone_options) hist_tex = icon_head_scale}
+		text = qs(0x36291eb1)
+		choose_state = uistate_character_face_deformation_options
+		choose_state_data = {text = qs(0x36291eb1) option_array = ($cas_head_bone_options) hist_tex = icon_head_scale}
 	}
 	add_generic_menu_text_item {
-		text = qs("NOSE")
-		choose_state = UIstate_character_face_deformation_options
-		choose_state_data = {text = qs("NOSE") option_array = ($cas_nose_bone_options) hist_tex = Head_Nose stance = Stance_Select_Profile}
+		text = qs(0x0c7253fc)
+		choose_state = uistate_character_face_deformation_options
+		choose_state_data = {text = qs(0x0c7253fc) option_array = ($cas_nose_bone_options) hist_tex = head_nose stance = stance_select_profile}
 	}
 	add_generic_menu_text_item {
-		text = qs("MOUTH")
-		choose_state = UIstate_character_face_deformation_options
-		choose_state_data = {text = qs("MOUTH") option_array = ($cas_mouth_bone_options) hist_tex = Head_Mouth}
+		text = qs(0xa7000f64)
+		choose_state = uistate_character_face_deformation_options
+		choose_state_data = {text = qs(0xa7000f64) option_array = ($cas_mouth_bone_options) hist_tex = head_mouth}
 	}
 	add_generic_menu_text_item {
-		text = qs("EYES")
-		choose_state = UIstate_character_face_deformation_options
-		choose_state_data = {text = qs("EYES") option_array = ($cas_eye_bone_options) hist_tex = Head_Eye return_stance = Stance_Select_Head}
+		text = qs(0xed7d13b8)
+		choose_state = uistate_character_face_deformation_options
+		choose_state_data = {text = qs(0xed7d13b8) option_array = ($cas_eye_bone_options) hist_tex = head_eye return_stance = stance_select_head}
 	}
-	GetGlobalTags savegame = ($cas_current_savegame) cas_helper_dialogue param = visit_deformation
+	getglobaltags savegame = ($cas_current_savegame) cas_helper_dialogue param = visit_deformation
 	if (<visit_deformation> = 0)
-		SetGlobalTags savegame = ($cas_current_savegame) cas_helper_dialogue params = {visit_deformation = 1}
+		setglobaltags savegame = ($cas_current_savegame) cas_helper_dialogue params = {visit_deformation = 1}
 		ui_event_wait \{event = menu_change
 			data = {
-				state = UIstate_helper_dialogue
+				state = uistate_helper_dialogue
 				is_popup
 				life = 30
-				text = qs("The FACE option allows you to alter the various aspects of your Rocker's face.")
+				text = qs(0xbd2a1598)
 			}}
 	endif
 	menu_finish \{car_helper_text}
@@ -56,29 +56,29 @@ script ui_destroy_character_face_deformation
 endscript
 
 script ui_init_character_face_deformation 
-	PushTemporaryCASAppearance
-	SetCASAppearancePartInstance \{part = CAS_Hair
+	pushtemporarycasappearance
+	setcasappearancepartinstance \{part = cas_hair
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Hat_Hair
+	setcasappearancepartinstance \{part = cas_hat_hair
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Hat
+	setcasappearancepartinstance \{part = cas_hat
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Acc_Face
+	setcasappearancepartinstance \{part = cas_acc_face
 		part_instance = {
 			desc_id = none
 		}}
-	RebuildCurrentCASModel
+	rebuildcurrentcasmodel
 endscript
 
 script ui_deinit_character_face_deformation 
-	MergePartIntoTemporaryCASAppearance \{part_list = [
-			CAS_Body
-			CAS_Eyes
+	mergepartintotemporarycasappearance \{part_list = [
+			cas_body
+			cas_eyes
 		]}
 endscript

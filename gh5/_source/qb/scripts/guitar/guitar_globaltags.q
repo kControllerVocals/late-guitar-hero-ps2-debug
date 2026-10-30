@@ -3,17 +3,17 @@ globaltag_checksum = empty
 
 script reset_globaltags savegame = ($primary_controller)
 	globaltag_checksum = initial_v037
-	LockGlobalTags \{off}
-	ClearGlobalTags savegame = <savegame>
+	lockglobaltags \{off}
+	clearglobaltags savegame = <savegame>
 	stars
 
 	stars
 
-	SetGlobalTags savegame = <savegame> last_singleplayer_character params = {last_singleplayer_character = none}
-	SetGlobalTags savegame = <savegame> last_band_characters params = {
+	setglobaltags savegame = <savegame> last_singleplayer_character params = {last_singleplayer_character = none}
+	setglobaltags savegame = <savegame> last_band_characters params = {
 		last_band_characters = [none none none none]
 	}
-	SetGlobalTags savegame = <savegame> last_h2h_characters params = {
+	setglobaltags savegame = <savegame> last_h2h_characters params = {
 		last_h2h_characters = [none none]
 	}
 	setupsongtags savegame = <savegame> globaltag_checksum = <globaltag_checksum> part = 'guitar'
@@ -22,37 +22,37 @@ script reset_globaltags savegame = ($primary_controller)
 	setupsongtags savegame = <savegame> globaltag_checksum = <globaltag_checksum> part = 'vocals' topscores = ($vocals_topscores)
 	setupsongtags savegame = <savegame> globaltag_checksum = <globaltag_checksum> part = 'band'
 	setup_venuetags savegame = <savegame> globaltag_checksum = <globaltag_checksum>
-	get_progression_globals \{Career_Guitar}
-	setup_gigtags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = guitar
-	get_progression_globals \{Career_Bass}
-	setup_gigtags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Bass
-	get_progression_globals \{Career_Drum}
-	setup_gigtags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = drum
-	get_progression_globals \{Career_Vocals}
-	setup_gigtags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Vocals
-	get_progression_globals \{Career_Band}
-	setup_gigtags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Band
-	get_progression_globals \{Career_Guitar}
-	setup_setlisttags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = guitar
-	get_progression_globals \{Career_Bass}
-	setup_setlisttags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Bass
-	get_progression_globals \{Career_Drum}
-	setup_setlisttags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = drum
-	get_progression_globals \{Career_Vocals}
-	setup_setlisttags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Vocals
-	get_progression_globals \{Career_Band}
-	setup_setlisttags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Band
+	get_progression_globals \{career_guitar}
+	setup_gigtags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = guitar
+	get_progression_globals \{career_bass}
+	setup_gigtags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = bass
+	get_progression_globals \{career_drum}
+	setup_gigtags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = drum
+	get_progression_globals \{career_vocals}
+	setup_gigtags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = vocals
+	get_progression_globals \{career_band}
+	setup_gigtags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = band
+	get_progression_globals \{career_guitar}
+	setup_setlisttags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = guitar
+	get_progression_globals \{career_bass}
+	setup_setlisttags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = bass
+	get_progression_globals \{career_drum}
+	setup_setlisttags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = drum
+	get_progression_globals \{career_vocals}
+	setup_setlisttags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = vocals
+	get_progression_globals \{career_band}
+	setup_setlisttags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = band
 	setup_quickplay_song_tags savegame = <savegame> allsongs
-	get_progression_globals \{Career_Guitar}
-	setup_quickplay_song_tags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = guitar
-	get_progression_globals \{Career_Bass}
-	setup_quickplay_song_tags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Bass
-	get_progression_globals \{Career_Drum}
-	setup_quickplay_song_tags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = drum
-	get_progression_globals \{Career_Vocals}
-	setup_quickplay_song_tags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Vocals
-	get_progression_globals \{Career_Band}
-	setup_quickplay_song_tags savegame = <savegame> SetList_Songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = Band
+	get_progression_globals \{career_guitar}
+	setup_quickplay_song_tags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = guitar
+	get_progression_globals \{career_bass}
+	setup_quickplay_song_tags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = bass
+	get_progression_globals \{career_drum}
+	setup_quickplay_song_tags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = drum
+	get_progression_globals \{career_vocals}
+	setup_quickplay_song_tags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = vocals
+	get_progression_globals \{career_band}
+	setup_quickplay_song_tags savegame = <savegame> setlist_songs = <tier_global> globaltag_checksum = <globaltag_checksum> part = band
 	setup_bandtags savegame = <savegame> globaltag_checksum = <globaltag_checksum>
 	setup_user_option_tags savegame = <savegame> globaltag_checksum = <globaltag_checksum>
 	setup_training_tags savegame = <savegame> globaltag_checksum = <globaltag_checksum>
@@ -62,11 +62,11 @@ script reset_globaltags savegame = ($primary_controller)
 	setup_cas_helper_tags savegame = <savegame> globaltag_checksum = <globaltag_checksum>
 	setup_saved_instrument_tags savegame = <savegame> globaltag_checksum = <globaltag_checksum>
 	restore_globals_from_global_tags savegame = <savegame> callmonitorcontrollerstates = 0
-	SetGlobalTags savegame = <savegame> globaltag_checksum params = {globaltag_checksum = <globaltag_checksum>}
+	setglobaltags savegame = <savegame> globaltag_checksum params = {globaltag_checksum = <globaltag_checksum>}
 	change globaltag_checksum = <globaltag_checksum>
-	SetGlobalTags savegame = <savegame> check_guid params = {user_id0 = -1 user_id1 = -1}
-	SetArrayElement ArrayName = globaltags_to_invalidate GlobalArray index = <savegame> newvalue = 0
-	LockGlobalTags
+	setglobaltags savegame = <savegame> check_guid params = {user_id0 = -1 user_id1 = -1}
+	setarrayelement arrayname = globaltags_to_invalidate globalarray index = <savegame> newvalue = 0
+	lockglobaltags
 endscript
 
 script reset_globaltags_all 
@@ -76,10 +76,10 @@ script reset_globaltags_all
 		savegame = 1
 		begin
 
-		ClearGlobalTags savegame = <savegame>
-		CopyGlobalTags from = 0 to = <savegame>
+		clearglobaltags savegame = <savegame>
+		copyglobaltags from = 0 to = <savegame>
 		jam_reset_controller_directory_listing savegame = <savegame>
-		SetArrayElement ArrayName = globaltags_to_invalidate GlobalArray index = <savegame> newvalue = 0
+		setarrayelement arrayname = globaltags_to_invalidate globalarray index = <savegame> newvalue = 0
 		<savegame> = (<savegame> + 1)
 		repeat (<num_globaltag_sets> - 1)
 	endif
@@ -87,16 +87,16 @@ endscript
 
 script init_globaltags 
 	max_globaltag_structs = 8000
-	PushMemProfile \{'globaltags'}
-	GetArraySize ($instrument_progression_list)
+	pushmemprofile \{'globaltags'}
+	getarraysize ($instrument_progression_list)
 	instrument_size = <array_size>
-	InitGlobalTags max_sets = <globaltag_sets> max_structs = <max_globaltag_structs> max_cars = ($max_num_create_a_rockers)
-	PopMemProfile
+	initglobaltags max_sets = <globaltag_sets> max_structs = <max_globaltag_structs> max_cars = ($max_num_create_a_rockers)
+	popmemprofile
 endscript
 
 script get_num_globaltag_sets 
-	GetMaxPlayers
-	if ((IsPs3) || (isps2) || (IsNgc))
+	getmaxplayers
+	if ((isps3) || (isps2) || (isngc))
 		return \{num_globaltag_sets = 1}
 	else
 		return num_globaltag_sets = <max_players>
@@ -110,7 +110,7 @@ globaltags_to_invalidate = [
 ]
 
 script mark_globaltags_to_invalidate \{savegame = 0}
-	SetArrayElement ArrayName = globaltags_to_invalidate GlobalArray index = <savegame> newvalue = 1
+	setarrayelement arrayname = globaltags_to_invalidate globalarray index = <savegame> newvalue = 1
 endscript
 
 script invalidate_globaltags 
@@ -217,28 +217,28 @@ default_songtags_with_difficulty = {
 
 script setup_custom_character_tags 
 	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = custom_profiles max_size = ($max_num_create_a_rockers) packtype = createarocker
-	GetArraySize \{$Preset_Musician_Profiles_Modifiable}
+	getarraysize \{$preset_musician_profiles_modifiable}
 	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = preset_profiles max_size = <array_size> packtype = presetcars start_full
 	i = 0
 	begin
-	globaltag_set_preset_musician savegame = <savegame> index = <i> appearance = ($Preset_Musician_Profiles_Modifiable [<i>].appearance)
-	globaltag_checksum = (<globaltag_checksum> + ($Preset_Musician_Profiles_Modifiable [<i>].name))
+	globaltag_set_preset_musician savegame = <savegame> index = <i> appearance = ($preset_musician_profiles_modifiable [<i>].appearance)
+	globaltag_checksum = (<globaltag_checksum> + ($preset_musician_profiles_modifiable [<i>].name))
 	i = (<i> + 1)
 	repeat <array_size>
 	return globaltag_checksum = <globaltag_checksum>
 endscript
 
 script get_formatted_songname \{part = 'guitar'}
-	FormatText checksumname = songname '%s%p%d' s = (<song_prefix>) p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+	formattext checksumname = songname '%s%p%d' s = (<song_prefix>) p = <part> d = <difficulty_text_nl> addtostringlookup = true
 	return songname = <songname>
 endscript
 
 script get_formatted_songname_for_jam_mode 
-	if NOT GotParam \{part}
+	if NOT gotparam \{part}
 		part = 'guitar'
 	endif
-	FormatText TextName = songname '%s_%p_%d_quickplay' s = (<song_prefix>) p = <part> d = <difficulty_text_nl> AddToStringLookup = true
-	FormatText checksumname = songname2 '%s' s = <songname> AddToStringLookup = true
+	formattext textname = songname '%s_%p_%d_quickplay' s = (<song_prefix>) p = <part> d = <difficulty_text_nl> addtostringlookup = true
+	formattext checksumname = songname2 '%s' s = <songname> addtostringlookup = true
 	return songname = <songname2>
 endscript
 default_venuetags = {
@@ -250,35 +250,35 @@ cheat_venuetags = {
 
 script setup_venuetags 
 	setup_generalvenuetags savegame = <savegame>
-	GetArraySize \{$LevelZoneArray}
+	getarraysize \{$levelzonearray}
 	level_zone_array_size = <array_size>
 	index = 0
 	begin
-	GetArraySize \{$instrument_progression_list}
+	getarraysize \{$instrument_progression_list}
 	instrument_size = <array_size>
 	instrument_index = 0
 	begin
-	if GotParam \{cheat}
+	if gotparam \{cheat}
 		venue_tags = $cheat_venuetags
 	else
 		venue_tags = $default_venuetags
 	endif
-	get_LevelZoneArray_checksum index = <index>
-	if NOT StructureContains Structure = ($LevelZones.<level_checksum>) debug_only
+	get_levelzonearray_checksum index = <index>
+	if NOT structurecontains structure = ($levelzones.<level_checksum>) debug_only
 		get_progression_globals ($instrument_progression_list [<instrument_index>])
-		FormatText {
+		formattext {
 			checksumname = venue_checksum
 			'%s_%i'
-			s = ($LevelZones.<level_checksum>.name)
+			s = ($levelzones.<level_checksum>.name)
 			i = ($instrument_list.($<tier_global>.part).text_nl)
-			AddToStringLookup = true
+			addtostringlookup = true
 		}
-		GetArraySize ($GH5_Career_Initial.unlocked_levels)
+		getarraysize ($0xd659dea8.unlocked_levels)
 		if (<array_size> > 0)
-			if NOT (<level_checksum> = load_z_Tushino)
+			if NOT (<level_checksum> = load_z_tushino)
 				i = 0
 				begin
-				if (($GH5_Career_Initial.unlocked_levels [<i>]) = <level_checksum>)
+				if (($0xd659dea8.unlocked_levels [<i>]) = <level_checksum>)
 					venue_tags = {<venue_tags> unlocked = 1}
 					break
 				endif
@@ -286,8 +286,8 @@ script setup_venuetags
 				repeat <array_size>
 			endif
 		endif
-		SetGlobalTags savegame = <savegame> <venue_checksum> params = {(<venue_tags>)} packtype = unlockedtags
-		if GotParam \{globaltag_checksum}
+		setglobaltags savegame = <savegame> <venue_checksum> params = {(<venue_tags>)} packtype = unlockedtags
+		if gotparam \{globaltag_checksum}
 			<globaltag_checksum> = (<globaltag_checksum> + <venue_checksum>)
 		endif
 	endif
@@ -299,37 +299,37 @@ script setup_venuetags
 	begin
 	switch <k>
 		case 0
-		tier_global = GH4_Career_Guitar_Songs
+		tier_global = gh4_career_guitar_songs
 		case 1
-		tier_global = GH4_Career_Bass_Songs
+		tier_global = gh4_career_bass_songs
 		case 2
-		tier_global = GH4_Career_Drum_Songs
+		tier_global = gh4_career_drum_songs
 		case 3
-		tier_global = GH4_Career_Vocals_Songs
+		tier_global = gh4_career_vocals_songs
 		case 4
-		tier_global = GH4_Career_Band_Songs
+		tier_global = gh4_career_band_songs
 	endswitch
 	e = 0
 	begin
 	num_gigs = ($<tier_global>.num_tiers)
 	i = 0
 	begin
-	FormatText checksumname = tier 'tier%n' n = (<i> + 1)
-	if StructureContains Structure = ($<tier_global>.<tier>) unlockable_songs
-		GetArraySize ($<tier_global>.<tier>.unlockable_songs)
+	formattext checksumname = tier 'tier%n' n = (<i> + 1)
+	if structurecontains structure = ($<tier_global>.<tier>) 0x29c8d5a6
+		getarraysize ($<tier_global>.<tier>.0x29c8d5a6)
 		j = 0
 		begin
-		format_globaltag_song_checksum part = ($<tier_global>.part) song = ($<tier_global>.<tier>.unlockable_songs [<j>]) difficulty = ($difficulty_list [<e>])
-		SetGlobalTags <song_checksum> all_active_players = 1 params = {unlocked = 0}
+		format_globaltag_song_checksum part = ($<tier_global>.part) song = ($<tier_global>.<tier>.0x29c8d5a6 [<j>]) difficulty = ($difficulty_list [<e>])
+		setglobaltags <song_checksum> all_active_players = 1 params = {unlocked = 0}
 		<j> = (<j> + 1)
 		repeat <array_size>
 	endif
-	if StructureContains Structure = ($<tier_global>.<tier>) songs
-		GetArraySize ($<tier_global>.<tier>.songs)
+	if structurecontains structure = ($<tier_global>.<tier>) songs
+		getarraysize ($<tier_global>.<tier>.songs)
 		h = 0
 		begin
 		format_globaltag_song_checksum part = ($<tier_global>.part) song = ($<tier_global>.<tier>.songs [<h>]) difficulty = ($difficulty_list [<e>])
-		SetGlobalTags <song_checksum> all_active_players = 1 params = {unlocked = 1}
+		setglobaltags <song_checksum> all_active_players = 1 params = {unlocked = 1}
 		<h> = (<h> + 1)
 		repeat <array_size>
 	endif
@@ -339,33 +339,33 @@ script setup_venuetags
 	repeat 5
 	<k> = (<k> + 1)
 	repeat 5
-	if GotParam \{globaltag_checksum}
+	if gotparam \{globaltag_checksum}
 		return globaltag_checksum = <globaltag_checksum>
 	endif
 endscript
 
 script setup_generalvenuetags 
-	get_LevelZoneArray_size
+	get_levelzonearray_size
 	level_size = <array_size>
 	array_count = 0
 	begin
-	get_LevelZoneArray_checksum index = <array_count>
-	if NOT StructureContains Structure = ($LevelZones.<level_checksum>) debug_only
+	get_levelzonearray_checksum index = <array_count>
+	if NOT structurecontains structure = ($levelzones.<level_checksum>) debug_only
 		unlocked = 1
-		FormatText checksumname = venue_checksum 'venue_%s' s = ($LevelZones.<level_checksum>.name) AddToStringLookup = true
-		GetArraySize ($GH5_Career_Initial.unlocked_levels)
+		formattext checksumname = venue_checksum 'venue_%s' s = ($levelzones.<level_checksum>.name) addtostringlookup = true
+		getarraysize ($0xd659dea8.unlocked_levels)
 		if (<array_size> > 0)
 			i = 0
 			begin
-			if (($GH5_Career_Initial.unlocked_levels [<i>]) = <level_checksum>)
+			if (($0xd659dea8.unlocked_levels [<i>]) = <level_checksum>)
 				unlocked = 1
 				break
 			endif
 			i = (<i> + 1)
 			repeat <array_size>
 		endif
-		if NOT GetGlobalTags savegame = <savegame> <venue_checksum> noassert = 1
-			SetGlobalTags savegame = <savegame> <venue_checksum> params = {($default_venuetags) unlocked = <unlocked>} packtype = unlockedtags
+		if NOT getglobaltags savegame = <savegame> <venue_checksum> noassert = 1
+			setglobaltags savegame = <savegame> <venue_checksum> params = {($default_venuetags) unlocked = <unlocked>} packtype = unlockedtags
 		endif
 	endif
 	array_count = (<array_count> + 1)
@@ -391,35 +391,35 @@ script setup_setlisttags \{globaltag_checksum = none
 	if (<download> = 1)
 		return globaltag_checksum = <globaltag_checksum>
 	endif
-	if GotParam \{SetList_Songs}
+	if gotparam \{setlist_songs}
 		tier_count = 1
 		begin
-		FormatText checksumname = tier 'tier%d' d = <tier_count>
+		formattext checksumname = tier 'tier%d' d = <tier_count>
 		defaultunlocked = 0
 		unlockall = 0
-		if StructureContains Structure = ($<SetList_Songs>.<tier>) defaultunlocked
+		if structurecontains structure = ($<setlist_songs>.<tier>) defaultunlocked
 			<defaultunlocked> = 1
-		elseif StructureContains Structure = ($<SetList_Songs>.<tier>) unlockall
+		elseif structurecontains structure = ($<setlist_songs>.<tier>) unlockall
 			<unlockall> = 1
 		endif
 		if (<defaultunlocked> = 1 || <unlockall> = 1)
 			tier_song_count = 0
-			GetArraySize ($<SetList_Songs>.<tier>.songs)
+			getarraysize ($<setlist_songs>.<tier>.songs)
 			tier_song_size = <array_size>
 			if (<tier_song_size> > 0)
 				begin
 				if (<defaultunlocked> = 1)
-					unlock_size = ($<SetList_Songs>.<tier>.defaultunlocked)
+					unlock_size = ($<setlist_songs>.<tier>.defaultunlocked)
 				else (<unlockall> = 1)
 					unlock_size = -1
 				endif
 				if (<tier_song_count> < <unlock_size> || <unlock_size> = -1)
 					difficulty_index = 0
-					GetArraySize \{$difficulty_list}
+					getarraysize \{$difficulty_list}
 					difficulty_size = <array_size>
 					begin
-					format_globaltag_song_checksum part = <part> song = ($<SetList_Songs>.<tier>.songs [<tier_song_count>]) difficulty_index = <difficulty_index>
-					SetGlobalTags savegame = <savegame> <song_checksum> params = {unlocked = 1}
+					format_globaltag_song_checksum part = <part> song = ($<setlist_songs>.<tier>.songs [<tier_song_count>]) difficulty_index = <difficulty_index>
+					setglobaltags savegame = <savegame> <song_checksum> params = {unlocked = 1}
 					<difficulty_index> = (<difficulty_index> + 1)
 					repeat <difficulty_size>
 				endif
@@ -428,14 +428,14 @@ script setup_setlisttags \{globaltag_checksum = none
 			endif
 		endif
 		<tier_count> = (<tier_count> + 1)
-		repeat ($<SetList_Songs>.num_tiers)
+		repeat ($<setlist_songs>.num_tiers)
 	endif
 	return globaltag_checksum = <globaltag_checksum>
 endscript
 default_bandtags = {
-	Cash = 100000
+	cash = 100000
 	career_earnings = 100
-	name = qs("\L")
+	name = qs(0x03ac90f0)
 	font = fontgrid_text_a6
 	save_created = 0
 	first_play = 1
@@ -553,14 +553,14 @@ default_bandtags = {
 	att_ballpark_drum = 0
 	att_ballpark_vocals = 0
 	load_z_meadowlands = 0
-	load_z_Justice = 0
-	load_z_MoP = 0
-	load_z_Donnington = 0
+	load_z_justice = 0
+	load_z_mop = 0
+	load_z_donnington = 0
 	load_z_forum = 0
-	load_z_Tushino = 0
-	load_z_Stone = 0
-	load_z_IceCave = 0
-	load_z_Studio2 = 0
+	load_z_tushino = 0
+	load_z_stone = 0
+	load_z_icecave = 0
+	load_z_studio2 = 0
 	load_z_soundcheck2 = 0
 }
 default_progressiontags = {
@@ -577,36 +577,36 @@ script setup_bandtags
 		band_count = 0
 		begin
 		get_band_info band_index = (<band_count> + 1)
-		SetGlobalTags savegame = <savegame> <band_info> params = {($default_bandtags)}
+		setglobaltags savegame = <savegame> <band_info> params = {($default_bandtags)}
 		<band_count> = (<band_count> + 1)
 		repeat ($num_career_bands + 1)
 	else
 		get_band_info
-		SetGlobalTags savegame = <savegame> <band_info> params = {($default_bandtags)}
+		setglobaltags savegame = <savegame> <band_info> params = {($default_bandtags)}
 	endif
-	SetGlobalTags savegame = <savegame> Progression params = {$default_progressiontags}
+	setglobaltags savegame = <savegame> progression params = {$default_progressiontags}
 endscript
 override_audio_lag = -1
 override_video_lag = -1
 
 script setup_user_option_tags 
-	SetGlobalTags savegame = <savegame> user_options params = {
+	setglobaltags savegame = <savegame> user_options params = {
 		volumes = {
 			guitar = {
 				mic = {vol = 7 comp = 1 rev = 2}
-				Vocals = {vol = 7}
+				vocals = {vol = 7}
 				backup = {vol = 7}
 				guitar = {vol = 7 eq = 2}
-				Bass = {vol = 7 eq = 2}
+				bass = {vol = 7 eq = 2}
 				drum = {vol = 7 eq = 2}
-				Crowd = {vol = 7}
+				crowd = {vol = 7}
 				sfx = {vol = 7}
-				Band = {vol = 7}
+				band = {vol = 7}
 			}
 		}
 		dolby_digital = 0
 		autosave = 1
-		PS2_Stereo_Sound = 1
+		ps2_stereo_sound = 1
 		ps2_widescreen = 1
 		lefty_flip_save = 0
 		use_tilt_for_starpower_save = 1
@@ -615,14 +615,14 @@ script setup_user_option_tags
 		lefty_flip_p2 = 0
 		lefty_flip_p3 = 0
 		lefty_flip_p4 = 0
-		Hyperspeed_Guitar = 1.0
-		Hyperspeed_Bass = 1.0
-		Hyperspeed_Drum = 1.0
-		AirInstruments = 0
-		InvisibleCharacters = 0
+		hyperspeed_guitar = 1.0
+		hyperspeed_bass = 1.0
+		hyperspeed_drum = 1.0
+		airinstruments = 0
+		invisiblecharacters = 0
 		gem_set = standard_gems
-		FX_Set = standard_fx
-		Star_Set = standard_stars
+		fx_set = standard_fx
+		star_set = standard_stars
 		unpause_count = 1
 		lag_calibration = 0.0
 		has_calibrated = 0
@@ -644,22 +644,22 @@ script setup_user_option_tags
 		vocals_highway_view_save = scrolling
 		vocals_sp_clap_save = 1
 		ghtunes_num_songs_rated = 0
-		unlock_Cheat_AlwaysSlide = 0
-		unlock_Cheat_AirInstruments = 0
-		unlock_Cheat_InvisibleCharacters = 0
-		unlock_Cheat_SnobCrowd = 0
-		unlock_Cheat_PerformanceMode = 0
-		unlock_Cheat_Hyperspeed = 0
-		unlock_Cheat_AutoKick = 0
-		unlock_Cheat_FreeDrum = 0
-		unlock_Cheat_GemColor = 0
-		unlock_Cheat_FlameColor = 0
-		unlock_Cheat_StarColor = 0
-		unlock_Cheat_VocalFireball = 0
-		unlock_Cheat_Invincible = 0
-		unlock_Cheat_allHOPOs = 0
-		unlock_Cheat_FocusMode = 0
-		unlock_Cheat_HUDFreeMode = 0
+		unlock_cheat_alwaysslide = 0
+		unlock_cheat_airinstruments = 0
+		unlock_cheat_invisiblecharacters = 0
+		unlock_cheat_snobcrowd = 0
+		unlock_cheat_performancemode = 0
+		unlock_cheat_hyperspeed = 0
+		unlock_cheat_autokick = 0
+		unlock_cheat_freedrum = 0
+		unlock_cheat_gemcolor = 0
+		unlock_cheat_flamecolor = 0
+		unlock_cheat_starcolor = 0
+		unlock_cheat_vocalfireball = 0
+		unlock_cheat_invincible = 0
+		unlock_cheat_allhopos = 0
+		unlock_cheat_focusmode = 0
+		unlock_cheat_hudfreemode = 0
 		cheat_index0 = 0
 		cheat_index1 = 0
 		cheat_index2 = 0
@@ -700,13 +700,13 @@ script setup_user_option_tags
 			change \{override_video_lag = 200}
 		endif
 		lag_calibration = (($override_audio_lag * 1000) + 1000)
-		SetGlobalTags savegame = <savegame> user_options params = {lag_calibration = <lag_calibration>}
-		SetGlobalTags savegame = <savegame> user_options params = {lag_calibration = (<lag_calibration> + $override_video_lag)}
+		setglobaltags savegame = <savegame> user_options params = {lag_calibration = <lag_calibration>}
+		setglobaltags savegame = <savegame> user_options params = {lag_calibration = (<lag_calibration> + $override_video_lag)}
 	endif
 endscript
 
 script setup_training_tags 
-	SetGlobalTags savegame = <savegame> practice params = {basic_lesson = not_complete
+	setglobaltags savegame = <savegame> practice params = {basic_lesson = not_complete
 		star_power_lesson = not_complete
 		advanced_techniques_lesson = not_complete
 		new_features_lesson = not_complete
@@ -738,14 +738,14 @@ endscript
 script globaltag_set_preset_musician 
 
 	dest_appearance = {}
-	CASCopySelectiveParts \{src_appearance_name = appearance
+	cascopyselectiveparts \{src_appearance_name = appearance
 		dest_appearance_name = dest_appearance
 		part_array_name = modifiable_preset_musician_parts
-		ToSave}
-	CASCopySelectiveParts \{src_appearance_name = appearance
+		0xb1ce14d5}
+	cascopyselectiveparts \{src_appearance_name = appearance
 		dest_appearance_name = dest_appearance
 		part_array_name = modifiable_preset_musician_instrument_parts
-		ToSave}
+		0xb1ce14d5}
 	globaltag_setarrayelement savegame = <savegame> array_name = preset_profiles index = <index> element = <dest_appearance>
 endscript
 
@@ -753,10 +753,10 @@ script globaltag_get_preset_musician
 
 	globaltag_getarrayelement savegame = <savegame> array_name = preset_profiles index = <index>
 	dest_appearance = (<profile_struct>.appearance)
-	CASCopySelectiveParts \{src_appearance_name = element
+	cascopyselectiveparts \{src_appearance_name = element
 		dest_appearance_name = dest_appearance
 		part_array_name = modifiable_preset_musician_parts}
-	CASCopySelectiveParts \{src_appearance_name = element
+	cascopyselectiveparts \{src_appearance_name = element
 		dest_appearance_name = dest_appearance
 		part_array_name = modifiable_preset_musician_instrument_parts}
 	return profile_struct = {<profile_struct> appearance = <dest_appearance>}
@@ -765,21 +765,21 @@ endscript
 script get_checksum_of_modified_appearance 
 
 	dest_appearance = {}
-	CASCopySelectiveParts \{src_appearance_name = appearance
+	cascopyselectiveparts \{src_appearance_name = appearance
 		dest_appearance_name = dest_appearance
 		part_array_name = modifiable_preset_musician_parts}
-	CASCopySelectiveParts \{src_appearance_name = appearance
+	cascopyselectiveparts \{src_appearance_name = appearance
 		dest_appearance_name = dest_appearance
 		part_array_name = modifiable_preset_musician_instrument_parts}
-	GenerateChecksumFromStruct struct = <dest_appearance>
+	generatechecksumfromstruct struct = <dest_appearance>
 	return checksum = <structure_checksum>
 endscript
 
 script globaltag_check_preset_musician_modified 
 
-	get_checksum_of_modified_appearance appearance = (($Preset_Musician_Profiles_Modifiable [<index>]).appearance)
+	get_checksum_of_modified_appearance appearance = (($preset_musician_profiles_modifiable [<index>]).appearance)
 	original_checksum = <checksum>
-	globaltag_get_preset_musician savegame = <savegame> profile_struct = ($Preset_Musician_Profiles_Modifiable [<index>]) index = <index>
+	globaltag_get_preset_musician savegame = <savegame> profile_struct = ($preset_musician_profiles_modifiable [<index>]) index = <index>
 	get_checksum_of_modified_appearance appearance = (<profile_struct>.appearance)
 	if (<original_checksum> = <checksum>)
 		return \{false}
@@ -788,47 +788,47 @@ script globaltag_check_preset_musician_modified
 endscript
 
 script restore_globals_from_global_tags \{callmonitorcontrollerstates = 1}
-	if GotParam \{savegame}
+	if gotparam \{savegame}
 		savegame_to_reset = <savegame>
 	else
 		savegame_to_reset = -1
 	endif
 	<i> = 1
 	begin
-	GetPlayerInfo player = <i> controller
+	getplayerinfo player = <i> controller
 	get_savegame_from_controller controller = <controller>
-	GetGlobalTags savegame = <savegame> user_options
-	<player_status> = ($player_status_array [<i>])
+	getglobaltags savegame = <savegame> user_options
+	<player_status> = ($0x2994109a [<i>])
 	change structurename = <player_status> lefty_flip = <lefty_flip_save>
 	change structurename = <player_status> vocals_highway_view = <vocals_highway_view_save>
 	change structurename = <player_status> vocals_sp_clap = <vocals_sp_clap_save>
 	change structurename = <player_status> use_tilt_for_starpower = <use_tilt_for_starpower_save>
 	change structurename = <player_status> enable_touch_strip = <enable_touch_strip_save>
 	if (<i> = 1)
-		if (<PS2_Stereo_Sound> = 1)
-			SetStereoSound \{1}
+		if (<ps2_stereo_sound> = 1)
+			0xf2b96a22 \{1}
 		else
-			SetStereoSound \{0}
+			0xf2b96a22 \{0}
 		endif
 	endif
 	<i> = (<i> + 1)
 	repeat 4
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<callmonitorcontrollerstates> = 1)
-		MonitorControllerStates
+		monitorcontrollerstates
 	endif
 endscript
 
 script reset_transient_tags 
-	SetGlobalTags savegame = <savegame> venue_intro_flags params = {
+	setglobaltags savegame = <savegame> venue_intro_flags params = {
 		z_meadowlands = 0
 		z_justice = 0
-		z_MoP = 0
+		z_mop = 0
 		z_donnington = 0
 		z_forum = 0
 		z_tushino = 0
 		z_stone = 0
-		z_IceCave = 0
+		z_icecave = 0
 		z_studio2 = 0
 		z_studio = 0
 		z_soundcheck2 = 0
@@ -836,39 +836,39 @@ script reset_transient_tags
 endscript
 
 script setup_unlocks \{globaltag_checksum = none}
-	GetArraySize ($Bonus_Videos)
+	getarraysize ($bonus_videos)
 	index = 0
 	begin
 	unlocked = 1
-	if NOT StructureContains Structure = ($Bonus_Videos [<index>]) unlocked
+	if NOT structurecontains structure = ($bonus_videos [<index>]) unlocked
 		unlocked = 0
 	endif
-	video_checksum = ($Bonus_Videos [<index>].id)
-	SetGlobalTags savegame = <savegame> <video_checksum> params = {unlocked = <unlocked>} packtype = unlockedtags
+	video_checksum = ($bonus_videos [<index>].id)
+	setglobaltags savegame = <savegame> <video_checksum> params = {unlocked = <unlocked>} packtype = unlockedtags
 	globaltag_checksum = (<globaltag_checksum> + <video_checksum>)
 	<index> = (<index> + 1)
 	repeat <array_size>
 	return globaltag_checksum = <globaltag_checksum>
 endscript
 
-script GlobalTags_UnlockAll songs_only = 0 difficulty = ($player1_status.difficulty)
+script globaltags_unlockall songs_only = 0 difficulty = ($player1_status.difficulty)
 	get_savegame_from_controller controller = ($primary_controller)
 	if NOT (<songs_only> = 1)
 		array_count = 0
-		GetArraySize \{$Preset_Musician_Profiles_Locked}
+		getarraysize \{$preset_musician_profiles_locked}
 		if (<array_size>)
 			begin
-			if StructureContains Structure = ($Preset_Musician_Profiles_Locked [<array_count>]) locked
-				unlock_profile id = ($Preset_Musician_Profiles_Locked [<array_count>].name) savegame = <savegame>
+			if structurecontains structure = ($preset_musician_profiles_locked [<array_count>]) locked
+				unlock_profile id = ($preset_musician_profiles_locked [<array_count>].name) savegame = <savegame>
 			endif
 			array_count = (<array_count> + 1)
 			repeat <array_size>
 		endif
 		array_count = 0
-		GetArraySize \{$Bonus_Videos}
+		getarraysize \{$bonus_videos}
 		if (<array_size>)
 			begin
-			SetGlobalTags savegame = <savegame> ($Bonus_Videos [<array_count>].id) params = {unlocked = 1}
+			setglobaltags savegame = <savegame> ($bonus_videos [<array_count>].id) params = {unlocked = 1}
 			array_count = (<array_count> + 1)
 			repeat <array_size>
 		endif
@@ -876,32 +876,32 @@ script GlobalTags_UnlockAll songs_only = 0 difficulty = ($player1_status.difficu
 	array_count = 0
 	begin
 	setlist_prefix = ($<songlist>.prefix)
-	FormatText checksumname = tiername '%ptier%i' p = <setlist_prefix> i = (<array_count> + 1)
-	FormatText checksumname = tier_checksum 'tier%s' s = (<array_count> + 1)
-	if NOT GlobalExists name = <songlist> type = Structure
+	formattext checksumname = tiername '%ptier%i' p = <setlist_prefix> i = (<array_count> + 1)
+	formattext checksumname = tier_checksum 'tier%s' s = (<array_count> + 1)
+	if NOT globalexists name = <songlist> type = structure
 
 	endif
-	if NOT StructureContains Structure = ($<songlist>) <tier_checksum>
+	if NOT structurecontains structure = ($<songlist>) <tier_checksum>
 
 	endif
-	if NOT StructureContains Structure = ($<songlist>.<tier_checksum>) songs
+	if NOT structurecontains structure = ($<songlist>.<tier_checksum>) songs
 
 	endif
-	GetArraySize ($<songlist>.<tier_checksum>.songs)
+	getarraysize ($<songlist>.<tier_checksum>.songs)
 	song_count = 0
 	begin
 	setlist_prefix = ($<songlist>.prefix)
 	format_globaltag_song_checksum part = ($<songlist>.part) song = ($<songlist>.<tier_checksum>.songs [<song_count>]) difficulty = <difficulty>
 	stars = 5
 	if (<song_count> = <array_size> - 1)
-		if StructureContains Structure = ($<songlist>.<tier_checksum>) end_with_credits
+		if structurecontains structure = ($<songlist>.<tier_checksum>) end_with_credits
 			stars = 0
 		endif
 	endif
 	if (<songs_only> = 1)
-		SetGlobalTags savegame = <savegame> <song_checksum> params = {unlocked = 1}
+		setglobaltags savegame = <savegame> <song_checksum> params = {unlocked = 1}
 	else
-		SetGlobalTags savegame = <savegame> <song_checksum> params = {stars = <stars>
+		setglobaltags savegame = <savegame> <song_checksum> params = {stars = <stars>
 			score = 1000000
 			unlocked = 1}
 		get_difficulty_text_nl difficulty = <difficulty>
@@ -910,26 +910,26 @@ script GlobalTags_UnlockAll songs_only = 0 difficulty = ($player1_status.difficu
 	endif
 	song_count = (<song_count> + 1)
 	repeat <array_size>
-	if StructureContains Structure = ($<songlist>.<tier_checksum>) unlockable_songs
-		GetArraySize ($<songlist>.<tier_checksum>.unlockable_songs)
+	if structurecontains structure = ($<songlist>.<tier_checksum>) 0x29c8d5a6
+		getarraysize ($<songlist>.<tier_checksum>.0x29c8d5a6)
 		<song_count> = 0
 		begin
 		setlist_prefix = ($<songlist>.prefix)
-		format_globaltag_song_checksum part = ($<songlist>.part) song = ($<songlist>.<tier_checksum>.unlockable_songs [<song_count>]) difficulty = <difficulty>
+		format_globaltag_song_checksum part = ($<songlist>.part) song = ($<songlist>.<tier_checksum>.0x29c8d5a6 [<song_count>]) difficulty = <difficulty>
 		stars = 5
 		if (<song_count> = <array_size> - 1)
-			if StructureContains Structure = ($<songlist>.<tier_checksum>) end_with_credits
+			if structurecontains structure = ($<songlist>.<tier_checksum>) end_with_credits
 				stars = 0
 			endif
 		endif
 		if (<songs_only> = 1)
-			SetGlobalTags savegame = <savegame> <song_checksum> params = {unlocked = 1}
+			setglobaltags savegame = <savegame> <song_checksum> params = {unlocked = 1}
 		else
-			SetGlobalTags savegame = <savegame> <song_checksum> params = {stars = <stars>
+			setglobaltags savegame = <savegame> <song_checksum> params = {stars = <stars>
 				score = 1000000
 				unlocked = 1}
 			get_difficulty_text_nl difficulty = <difficulty>
-			get_song_prefix song = ($<songlist>.<tier_checksum>.unlockable_songs [<song_count>])
+			get_song_prefix song = ($<songlist>.<tier_checksum>.0x29c8d5a6 [<song_count>])
 			get_formatted_songname song_prefix = <song_prefix> difficulty_text_nl = <difficulty_text_nl>
 		endif
 		song_count = (<song_count> + 1)
@@ -940,25 +940,25 @@ script GlobalTags_UnlockAll songs_only = 0 difficulty = ($player1_status.difficu
 	setup_venuetags \{cheat}
 endscript
 instrument_progression_list = [
-	Career_Guitar
-	Career_Bass
-	Career_Drum
-	Career_Vocals
-	Career_Band
+	career_guitar
+	career_bass
+	career_drum
+	career_vocals
+	career_band
 ]
 instrument_progression_list_nl_strings = {
-	Career_Guitar = 'guitar'
-	Career_Bass = 'bass'
-	Career_Drum = 'drum'
-	Career_Vocals = 'vocals'
-	Career_Band = 'band'
+	career_guitar = 'guitar'
+	career_bass = 'bass'
+	career_drum = 'drum'
+	career_vocals = 'vocals'
+	career_band = 'band'
 }
 unlock_order_list = [
-	GH4_Career_Guitar_Progression_Unlock_Order
-	GH4_Career_Bass_Progression_Unlock_Order
-	GH4_Career_Drum_Progression_Unlock_Order
-	GH4_Career_Vocals_Progression_Unlock_Order
-	GH4_Career_Band_Progression_Unlock_Order
+	gh4_career_guitar_progression_unlock_order
+	gh4_career_bass_progression_unlock_order
+	gh4_career_drum_progression_unlock_order
+	gh4_career_vocals_progression_unlock_order
+	gh4_career_band_progression_unlock_order
 ]
 
 script get_minimum_difficulty \{difficulty1 = easy
@@ -998,33 +998,33 @@ script get_minimum_difficulty \{difficulty1 = easy
 endscript
 
 script get_game_mode_ui_string 
-	if NOT GotParam \{game_mode}
+	if NOT gotparam \{game_mode}
 
 		return
 	endif
 	return ui_string = ($game_mode_ui_strings.<game_mode>)
 endscript
 game_mode_ui_strings = {
-	gh4_p1_career = qs("Career")
-	gh4_p2_career = qs("Career")
-	p1_quickplay = qs("Quick Play")
-	p2_quickplay = qs("Co-op Quick Play")
-	p2_pro_faceoff = qs("Pro Faceoff")
-	p2_coop = qs("Co-op")
+	gh4_p1_career = qs(0x5a4f279f)
+	gh4_p2_career = qs(0x5a4f279f)
+	p1_quickplay = qs(0x388d2deb)
+	p2_quickplay = qs(0x330c43bc)
+	p2_pro_faceoff = qs(0x4bf74995)
+	p2_coop = qs(0x977b1176)
 }
 
 script get_difficulty_ui_string 
-	if NOT GotParam \{difficulty}
+	if NOT gotparam \{difficulty}
 
 		return
 	endif
 	return ui_string = ($game_difficulty_ui_strings.<difficulty>)
 endscript
 game_difficulty_ui_strings = {
-	easy = qs("Easy")
-	medium = qs("Medium")
-	hard = qs("Hard")
-	expert = qs("Expert")
+	easy = qs(0xbf7ffd2d)
+	medium = qs(0xeac0f52d)
+	hard = qs(0x63aae385)
+	expert = qs(0xb778e780)
 }
 game_mode_names = {
 	gh4_p1_career = 'gh4_p1_career'
@@ -1051,7 +1051,7 @@ endscript
 
 script get_band_info \{band_index = 1}
 	if ($num_career_bands > 1)
-		FormatText checksumname = band_info 'band%i_info' i = <band_index> AddToStringLookup = true
+		formattext checksumname = band_info 'band%i_info' i = <band_index> addtostringlookup = true
 		return band_info = <band_info>
 	else
 		return \{band_info = band_info}
@@ -1065,10 +1065,10 @@ endscript
 
 script get_band_checksum \{band_index = 1}
 	if ($num_career_bands > 1)
-		FormatText checksumname = band_checksum 'career_band%i' i = <band_index> AddToStringLookup = true
+		formattext checksumname = band_checksum 'career_band%i' i = <band_index> addtostringlookup = true
 		return band_checksum = <band_checksum>
 	else
-		return \{band_checksum = Career_Band}
+		return \{band_checksum = career_band}
 	endif
 endscript
 
@@ -1079,73 +1079,73 @@ endscript
 
 script set_current_band_part_flags 
 
-	if GotParam \{unlocked}
+	if gotparam \{unlocked}
 		flag = {unlocked}
 	endif
-	if GotParam \{purchased}
+	if gotparam \{purchased}
 		flag = {purchased}
 	endif
 	get_current_band_info
-	GetGlobalTags <band_info> savegame = <savegame>
-	if NOT GotParam \{unlock_purchased}
+	getglobaltags <band_info> savegame = <savegame>
+	if NOT gotparam \{unlock_purchased}
 		initilize_current_band_unlock_purchase
 	endif
-	if NOT StructureContains Structure = <unlock_purchased> <part>
+	if NOT structurecontains structure = <unlock_purchased> <part>
 
 	endif
 	unlock_purchased_struct = (<unlock_purchased>.<part>)
-	GetArraySize \{unlock_purchased_struct}
+	getarraysize \{unlock_purchased_struct}
 	if (<array_size> > 0)
 		i = 0
 		begin
 		if (((<unlock_purchased_struct> [<i>]).desc_id) = <desc_id>)
-			SetArrayElement ArrayName = unlock_purchased_struct index = <i> newvalue = {(<unlock_purchased_struct> [<i>]) desc_id = <desc_id> <flag>}
-			AddParam name = <part> structure_name = new_entry value = <unlock_purchased_struct>
+			setarrayelement arrayname = unlock_purchased_struct index = <i> newvalue = {(<unlock_purchased_struct> [<i>]) desc_id = <desc_id> <flag>}
+			addparam name = <part> structure_name = new_entry value = <unlock_purchased_struct>
 			unlock_purchased = {<unlock_purchased> <new_entry>}
-			LockGlobalTags \{off}
-			SetGlobalTags <band_info> params = {unlock_purchased = <unlock_purchased>} savegame = <savegame>
-			LockGlobalTags
+			lockglobaltags \{off}
+			setglobaltags <band_info> params = {unlock_purchased = <unlock_purchased>} savegame = <savegame>
+			lockglobaltags
 			return
 		endif
 		i = (<i> + 1)
 		repeat <array_size>
 	endif
-	AddArrayElement array = <unlock_purchased_struct> element = {desc_id = <desc_id> <flag>}
-	AddParam name = <part> structure_name = new_entry value = <array>
+	addarrayelement array = <unlock_purchased_struct> element = {desc_id = <desc_id> <flag>}
+	addparam name = <part> structure_name = new_entry value = <array>
 	unlock_purchased = {<unlock_purchased> <new_entry>}
-	LockGlobalTags \{off}
-	SetGlobalTags <band_info> params = {unlock_purchased = <unlock_purchased>} savegame = <savegame>
-	LockGlobalTags
+	lockglobaltags \{off}
+	setglobaltags <band_info> params = {unlock_purchased = <unlock_purchased>} savegame = <savegame>
+	lockglobaltags
 	return
 endscript
 
 script initilize_current_band_unlock_purchase 
-	GetArraySize ($master_editable_list)
+	getarraysize ($master_editable_list)
 	i = 0
 	begin
-	AddParam name = ((($master_editable_list) [<i>]).part) value = []
+	addparam name = ((($master_editable_list) [<i>]).part) value = []
 	i = (<i> + 1)
 	repeat <array_size>
-	RemoveParameter \{i}
-	RemoveParameter \{array_size}
+	removeparameter \{i}
+	removeparameter \{array_size}
 	unlock_purchased = {<...>}
 	return unlock_purchased = <unlock_purchased>
 endscript
 
 script unlock_purchase_all_cas_parts 
-	GetArraySize ($master_editable_list)
+	getarraysize ($master_editable_list)
 	master_list_size = <array_size>
 	i = 0
 	begin
 	part = ((($master_editable_list) [<i>]).part)
-	GetArraySize ($<part>)
+	getarraysize ($<part>)
 	if (<array_size> > 0)
 		j = 0
 		begin
-		if StructureContains Structure = (($<part>) [<j>]) locked
+		if structurecontains structure = (($<part>) [<j>]) locked
 			set_current_band_part_flags part = <part> desc_id = ((($<part>) [<j>]).desc_id) unlocked
 		endif
-		if StructureContains Structure = (($<part>) [<j>]) price
+		if structurecontains structure = (($<part>) [<j>]) price
 			set_current_band_part_flags part = <part> desc_id = ((($<part>) [<j>]).desc_id) purchased
 		endif
 		j = (<j> + 1)
@@ -1158,15 +1158,15 @@ endscript
 script get_current_band_part_flags 
 
 	get_current_band_info
-	GetGlobalTags <band_info> savegame = <savegame>
-	if NOT GotParam \{unlock_purchased}
+	getglobaltags <band_info> savegame = <savegame>
+	if NOT gotparam \{unlock_purchased}
 		return
 	endif
-	if NOT StructureContains Structure = <unlock_purchased> <part>
+	if NOT structurecontains structure = <unlock_purchased> <part>
 
 	endif
 	unlock_purchased_struct = (<unlock_purchased>.<part>)
-	GetArraySize \{unlock_purchased_struct}
+	getarraysize \{unlock_purchased_struct}
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -1180,12 +1180,12 @@ endscript
 
 script get_current_band_name 
 	get_current_band_info
-	GetGlobalTags <band_info>
+	getglobaltags <band_info>
 	return band_name = <name>
 endscript
 
 script setup_cas_helper_tags 
-	SetGlobalTags savegame = <savegame> cas_helper_dialogue params = {
+	setglobaltags savegame = <savegame> cas_helper_dialogue params = {
 		visit_cag = 0
 		visit_cap = 0
 		visit_cadrm = 0
@@ -1213,16 +1213,16 @@ cheat_gig_tags = {
 
 script setup_gigtags \{globaltag_checksum = none
 		use_cheat_tags = 0}
-	if NOT GotParam \{unlock_order}
-		unlock_order = GH4_Career_Band_Progression_Unlock_Order
+	if NOT gotparam \{unlock_order}
+		unlock_order = gh4_career_band_progression_unlock_order
 		if (<part> = guitar)
-			unlock_order = GH4_Career_Guitar_Progression_Unlock_Order
+			unlock_order = gh4_career_guitar_progression_unlock_order
 		elseif (<part> = drum)
-			unlock_order = GH4_Career_Drum_Progression_Unlock_Order
-		elseif (<part> = Bass)
-			unlock_order = GH4_Career_Bass_Progression_Unlock_Order
-		elseif (<part> = Vocals)
-			unlock_order = GH4_Career_Vocals_Progression_Unlock_Order
+			unlock_order = gh4_career_drum_progression_unlock_order
+		elseif (<part> = bass)
+			unlock_order = gh4_career_bass_progression_unlock_order
+		elseif (<part> = vocals)
+			unlock_order = gh4_career_vocals_progression_unlock_order
 		endif
 	endif
 	setlist_prefix = ($<unlock_order>.name)
@@ -1232,41 +1232,41 @@ script setup_gigtags \{globaltag_checksum = none
 	endif
 	free_gig = 1
 	begin
-	FormatText checksumname = gignum 'gig%d' d = <free_gig>
-	if NOT StructureContains Structure = ($<unlock_order>.freegigs) <gignum>
+	formattext checksumname = gignum 'gig%d' d = <free_gig>
+	if NOT structurecontains structure = ($<unlock_order>.freegigs) <gignum>
 		break
 	endif
 	gig = ($<unlock_order>.freegigs.<gignum>.name)
 	format_globaltag_gigname setlist_prefix = <setlist_prefix> gig = <gig>
 	additional_tags = {}
-	if StructureContains Structure = ($<unlock_order>.freegigs.<gignum>) DEBUG_DONT_UNLOCK
+	if structurecontains structure = ($<unlock_order>.freegigs.<gignum>) debug_dont_unlock
 		<additional_tags> = {completed = -1}
 	endif
-	SetGlobalTags {
+	setglobaltags {
 		savegame = <savegame>
 		<gig_name>
 		params = {($default_gig_tags) <additional_tags> unlocked = 1}
 		packtype = gigtags
 	}
 	globaltag_checksum = (<globaltag_checksum> + <gig_name>)
-	FormatText checksumname = tier 'tier%d' d = ($<unlock_order>.freegigs.<gignum>.num)
+	formattext checksumname = tier 'tier%d' d = ($<unlock_order>.freegigs.<gignum>.num)
 	song_count = 0
-	GetArraySize ($<SetList_Songs>.<tier>.songs)
+	getarraysize ($<setlist_songs>.<tier>.songs)
 	begin
-	SetGlobalTags savegame = <savegame> ($<SetList_Songs>.<tier>.songs [<song_count>]) params = {unlocked = 1}
+	setglobaltags savegame = <savegame> ($<setlist_songs>.<tier>.songs [<song_count>]) params = {unlocked = 1}
 	<song_count> = (<song_count> + 1)
 	repeat <array_size>
 	<free_gig> = (<free_gig> + 1)
 	repeat
 	set_num = 1
 	begin
-	FormatText checksumname = setnum 'unlockset%d' d = <set_num>
-	if NOT StructureContains Structure = $<unlock_order> <setnum>
+	formattext checksumname = setnum 'unlockset%d' d = <set_num>
+	if NOT structurecontains structure = $<unlock_order> <setnum>
 		break
 	endif
-	if StructureContains Structure = ($<unlock_order>.<setnum>) none
+	if structurecontains structure = ($<unlock_order>.<setnum>) none
 		format_globaltag_gigname setlist_prefix = <setlist_prefix> gig = ($<unlock_order>.<setnum>.none)
-		SetGlobalTags {
+		setglobaltags {
 			savegame = <savegame>
 			<gig_name>
 			params = {($default_gig_tags) <cheat_tags>}
@@ -1276,13 +1276,13 @@ script setup_gigtags \{globaltag_checksum = none
 	endif
 	gig_num = 1
 	begin
-	FormatText checksumname = gignum 'gig%d' d = <gig_num>
-	if NOT StructureContains Structure = ($<unlock_order>.<setnum>) <gignum>
+	formattext checksumname = gignum 'gig%d' d = <gig_num>
+	if NOT structurecontains structure = ($<unlock_order>.<setnum>) <gignum>
 		break
 	endif
 	gig = ($<unlock_order>.<setnum>.<gignum>.name)
 	format_globaltag_gigname setlist_prefix = <setlist_prefix> gig = <gig>
-	SetGlobalTags {
+	setglobaltags {
 		savegame = <savegame>
 		<gig_name>
 		params = {($default_gig_tags) <cheat_tags>}
@@ -1293,20 +1293,20 @@ script setup_gigtags \{globaltag_checksum = none
 	repeat
 	<set_num> = (<set_num> + 1)
 	repeat
-	if StructureContains Structure = $<unlock_order> freegigs_last
+	if structurecontains structure = $<unlock_order> freegigs_last
 		free_gig = 1
 		begin
-		FormatText checksumname = gignum 'gig%d' d = <free_gig>
-		if NOT StructureContains Structure = ($<unlock_order>.freegigs_last) <gignum>
+		formattext checksumname = gignum 'gig%d' d = <free_gig>
+		if NOT structurecontains structure = ($<unlock_order>.freegigs_last) <gignum>
 			break
 		endif
 		gig = ($<unlock_order>.freegigs_last.<gignum>.name)
 		format_globaltag_gigname setlist_prefix = <setlist_prefix> gig = <gig>
 		additional_tags = {}
-		if StructureContains Structure = ($<unlock_order>.freegigs_last.<gignum>) DEBUG_DONT_UNLOCK
+		if structurecontains structure = ($<unlock_order>.freegigs_last.<gignum>) debug_dont_unlock
 			<additional_tags> = {completed = -1}
 		endif
-		SetGlobalTags {
+		setglobaltags {
 			savegame = <savegame>
 			<gig_name>
 			params = {($default_gig_tags) <additional_tags>}
@@ -1320,64 +1320,64 @@ script setup_gigtags \{globaltag_checksum = none
 endscript
 
 script format_globaltag_song_checksum difficulty = ($player1_status.difficulty)
-	if GotParam \{song}
+	if gotparam \{song}
 		get_song_name song = <song>
 	endif
-	if GotParam \{difficulty_index}
+	if gotparam \{difficulty_index}
 		get_difficulty_text_nl index = <difficulty_index>
 	else
-		if NOT GotParam \{difficulty_text_nl}
+		if NOT gotparam \{difficulty_text_nl}
 			get_difficulty_text_nl difficulty = <difficulty>
 		endif
 	endif
-	if NOT GotParam \{part}
+	if NOT gotparam \{part}
 		part = guitar
 	endif
-	if NOT GotParam \{part_text}
+	if NOT gotparam \{part_text}
 		part_text = ($instrument_list.<part>.text_nl)
 	endif
-	FormatText checksumname = song_checksum '%s%p%d' s = <song_name> p = <part_text> d = <difficulty_text_nl> AddToStringLookup = true
+	formattext checksumname = song_checksum '%s%p%d' s = <song_name> p = <part_text> d = <difficulty_text_nl> addtostringlookup = true
 	return song_checksum = <song_checksum>
 endscript
 
 script format_globaltag_gigname 
 
-	if GotParam \{gignum}
-		FormatText TextName = gig 'gig%g' g = (<gignum>)
+	if gotparam \{gignum}
+		formattext textname = gig 'gig%g' g = (<gignum>)
 	endif
 
-	FormatText checksumname = gig_name '%s_%g' s = <setlist_prefix> g = <gig> AddToStringLookup = true
+	formattext checksumname = gig_name '%s_%g' s = <setlist_prefix> g = <gig> addtostringlookup = true
 	return gig_name = <gig_name>
 endscript
 
 script setup_quickplay_song_tags 
-	if GotParam \{allsongs}
+	if gotparam \{allsongs}
 		return
 	endif
-	if NOT GotParam \{unlock_order}
-		unlock_order = GH4_Career_Band_Progression_Unlock_Order
+	if NOT gotparam \{unlock_order}
+		unlock_order = gh4_career_band_progression_unlock_order
 		if (<part> = guitar)
-			unlock_order = GH4_Career_Guitar_Progression_Unlock_Order
+			unlock_order = gh4_career_guitar_progression_unlock_order
 		elseif (<part> = drum)
-			unlock_order = GH4_Career_Drum_Progression_Unlock_Order
-		elseif (<part> = Bass)
-			unlock_order = GH4_Career_Bass_Progression_Unlock_Order
-		elseif (<part> = Vocals)
-			unlock_order = GH4_Career_Vocals_Progression_Unlock_Order
+			unlock_order = gh4_career_drum_progression_unlock_order
+		elseif (<part> = bass)
+			unlock_order = gh4_career_bass_progression_unlock_order
+		elseif (<part> = vocals)
+			unlock_order = gh4_career_vocals_progression_unlock_order
 		endif
 	endif
 	free_gig = 1
 	begin
-	FormatText checksumname = gignum 'gig%d' d = <free_gig>
-	if NOT StructureContains Structure = ($<unlock_order>.freegigs) <gignum>
+	formattext checksumname = gignum 'gig%d' d = <free_gig>
+	if NOT structurecontains structure = ($<unlock_order>.freegigs) <gignum>
 		break
 	endif
-	FormatText checksumname = tier 'tier%d' d = ($<unlock_order>.freegigs.<gignum>.num)
+	formattext checksumname = tier 'tier%d' d = ($<unlock_order>.freegigs.<gignum>.num)
 	song_count = 0
-	GetArraySize ($<SetList_Songs>.<tier>.songs)
+	getarraysize ($<setlist_songs>.<tier>.songs)
 	begin
-	SetGlobalTags savegame = <savegame> ($<SetList_Songs>.<tier>.songs [<song_count>]) params = {unlocked = 1}
-	<globaltag_checksum> = (<globaltag_checksum> + ($<SetList_Songs>.<tier>.songs [<song_count>]))
+	setglobaltags savegame = <savegame> ($<setlist_songs>.<tier>.songs [<song_count>]) params = {unlocked = 1}
+	<globaltag_checksum> = (<globaltag_checksum> + ($<setlist_songs>.<tier>.songs [<song_count>]))
 	<song_count> = (<song_count> + 1)
 	repeat <array_size>
 	<free_gig> = (<free_gig> + 1)
@@ -1393,9 +1393,9 @@ script set_band_character_id_globaltag
 
 		player_index = (<player> -1)
 
-		GetGlobalTags savegame = <savegame> last_h2h_characters
-		SetArrayElement ArrayName = last_h2h_characters index = <player_index> newvalue = <character_id>
-		SetGlobalTags savegame = <savegame> last_h2h_characters params = {last_h2h_characters = <last_h2h_characters>}
+		getglobaltags savegame = <savegame> last_h2h_characters
+		setarrayelement arrayname = last_h2h_characters index = <player_index> newvalue = <character_id>
+		setglobaltags savegame = <savegame> last_h2h_characters params = {last_h2h_characters = <last_h2h_characters>}
 		return
 	endif
 	if (($band_mode_mode = career) || ($is_network_game = 1))
@@ -1404,39 +1404,39 @@ script set_band_character_id_globaltag
 		if (<controller> >= 4)
 			return
 		endif
-		GetGlobalTags savegame = <savegame> last_band_characters
-		SetArrayElement ArrayName = last_band_characters index = <controller> newvalue = <character_id>
-		SetGlobalTags savegame = <savegame> last_band_characters params = {last_band_characters = <last_band_characters>}
+		getglobaltags savegame = <savegame> last_band_characters
+		setarrayelement arrayname = last_band_characters index = <controller> newvalue = <character_id>
+		setglobaltags savegame = <savegame> last_band_characters params = {last_band_characters = <last_band_characters>}
 	endif
 endscript
 
 script get_last_band_character_recorded 
 
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	controller = ($<player_status>.controller)
-	if GotParam \{no_band_leader_grab}
+	if gotparam \{no_band_leader_grab}
 		get_savegame_from_player_status player_status = <player_status>
 	else
 		get_savegame_from_player_status band_character_select player_status = <player_status>
 	endif
 	if (($is_network_game = 0) && ($game_mode = p2_pro_faceoff))
-		if NOT GotParam \{character_id}
+		if NOT gotparam \{character_id}
 			player_index = (<player> -1)
 			if (<player_index> >= 2)
 				return \{character_id = none}
 			endif
-			GetGlobalTags savegame = <savegame> last_h2h_characters
+			getglobaltags savegame = <savegame> last_h2h_characters
 			character_id = (<last_h2h_characters> [<player_index>])
 		endif
 	else
-		if NOT GotParam \{character_id}
+		if NOT gotparam \{character_id}
 			if (<controller> >= 4)
 				return \{character_id = none}
 			endif
 			if (<controller> < 0)
 				<controller> = 0
 			endif
-			GetGlobalTags savegame = <savegame> last_band_characters
+			getglobaltags savegame = <savegame> last_band_characters
 			character_id = (<last_band_characters> [<controller>])
 		endif
 	endif
@@ -1456,23 +1456,23 @@ script setup_saved_instrument_tags
 	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_created_graphics_save max_size = ($max_num_logo_saves) packtype = logos
 	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_guitar_save max_size = ($max_num_instrument_saves) packtype = guitars
 	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_bass_save max_size = ($max_num_instrument_saves) packtype = basses
-	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_drum_save max_size = ($max_num_instrument_saves) packtype = Drums
-	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_mic_save max_size = ($max_num_instrument_saves) packtype = Vocals
+	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_drum_save max_size = ($max_num_instrument_saves) packtype = drums
+	globaltag_createarray globaltag_checksum = <globaltag_checksum> savegame = <savegame> array_name = player_mic_save max_size = ($max_num_instrument_saves) packtype = vocals
 	return globaltag_checksum = <globaltag_checksum>
 endscript
 
 script globaltag_createarray 
 
-	SetGlobalTags savegame = <savegame> <array_name> params = {valid_entries = [] max_size = <max_size>}
+	setglobaltags savegame = <savegame> <array_name> params = {valid_entries = [] max_size = <max_size>}
 	i = 0
 	begin
-	FormatText TextName = arrayappend '_array%d' d = <i>
-	ExtendCRC <array_name> <arrayappend> out = arrayid
-	SetGlobalTags savegame = <savegame> <arrayid> params = {contents = {}} packtype = <packtype>
+	formattext textname = arrayappend '_array%d' d = <i>
+	extendcrc <array_name> <arrayappend> out = arrayid
+	setglobaltags savegame = <savegame> <arrayid> params = {contents = {}} packtype = <packtype>
 	globaltag_checksum = (<globaltag_checksum> + <arrayid>)
 	i = (<i> + 1)
 	repeat <max_size>
-	if GotParam \{start_full}
+	if gotparam \{start_full}
 		i = 0
 		begin
 		globaltag_addarrayelement savegame = <savegame> array_name = <array_name> element = {}
@@ -1484,17 +1484,17 @@ endscript
 
 script globaltag_getarraysize 
 
-	GetGlobalTags savegame = <savegame> <array_name>
-	GetArraySize <valid_entries>
+	getglobaltags savegame = <savegame> <array_name>
+	getarraysize <valid_entries>
 	return array_size = <array_size>
 endscript
 
 script globaltag_getarrayelement 
 
-	GetGlobalTags savegame = <savegame> <array_name>
-	GetArraySize <valid_entries>
+	getglobaltags savegame = <savegame> <array_name>
+	getarraysize <valid_entries>
 	if (<index> < <array_size>)
-		GetGlobalTags savegame = <savegame> (<valid_entries> [<index>])
+		getglobaltags savegame = <savegame> (<valid_entries> [<index>])
 		return true element = <contents>
 	endif
 	return \{false}
@@ -1502,10 +1502,10 @@ endscript
 
 script globaltag_setarrayelement 
 
-	GetGlobalTags savegame = <savegame> <array_name>
-	GetArraySize <valid_entries>
+	getglobaltags savegame = <savegame> <array_name>
+	getarraysize <valid_entries>
 	if (<index> < <array_size>)
-		SetGlobalTags savegame = <savegame> (<valid_entries> [<index>]) params = {contents = <element>}
+		setglobaltags savegame = <savegame> (<valid_entries> [<index>]) params = {contents = <element>}
 		return \{true}
 	endif
 	return \{false}
@@ -1513,17 +1513,17 @@ endscript
 
 script globaltag_addarrayelement 
 
-	GetGlobalTags savegame = <savegame> <array_name>
-	GetArraySize <valid_entries>
+	getglobaltags savegame = <savegame> <array_name>
+	getarraysize <valid_entries>
 	if (<array_size> < <max_size>)
 		i = 0
 		begin
-		FormatText TextName = arrayappend '_array%d' d = <i>
-		ExtendCRC <array_name> <arrayappend> out = arrayid
-		if NOT ArrayContains array = <valid_entries> contains = <arrayid>
-			AddArrayElement array = <valid_entries> element = <arrayid>
-			SetGlobalTags savegame = <savegame> <array_name> params = {valid_entries = <array> max_size = <max_size>}
-			SetGlobalTags savegame = <savegame> <arrayid> params = {contents = <element>}
+		formattext textname = arrayappend '_array%d' d = <i>
+		extendcrc <array_name> <arrayappend> out = arrayid
+		if NOT arraycontains array = <valid_entries> contains = <arrayid>
+			addarrayelement array = <valid_entries> element = <arrayid>
+			setglobaltags savegame = <savegame> <array_name> params = {valid_entries = <array> max_size = <max_size>}
+			setglobaltags savegame = <savegame> <arrayid> params = {contents = <element>}
 			return \{true}
 		endif
 		i = (<i> + 1)
@@ -1534,11 +1534,11 @@ endscript
 
 script globaltag_removearrayelement 
 
-	GetGlobalTags savegame = <savegame> <array_name>
-	GetArraySize <valid_entries>
+	getglobaltags savegame = <savegame> <array_name>
+	getarraysize <valid_entries>
 	if (<array_size> <= <max_size>)
-		RemoveArrayElement array = <valid_entries> index = <index>
-		SetGlobalTags savegame = <savegame> <array_name> params = {valid_entries = <array> max_size = <max_size>}
+		removearrayelement array = <valid_entries> index = <index>
+		setglobaltags savegame = <savegame> <array_name> params = {valid_entries = <array> max_size = <max_size>}
 		return \{true}
 	endif
 	return \{false}
@@ -1552,7 +1552,7 @@ script globaltag_getarraychecksum
 		i = 0
 		begin
 		globaltag_getarrayelement savegame = <savegame> array_name = <array_name> index = <i>
-		GenerateChecksumFromStruct \{StructName = element}
+		generatechecksumfromstruct \{structname = element}
 		array_checksum = (<array_checksum> + <structure_checksum>)
 		i = (<i> + 1)
 		repeat <array_size>
@@ -1560,7 +1560,7 @@ script globaltag_getarraychecksum
 	return array_checksum = <array_checksum>
 endscript
 neversoft_hiscore_names = [
-	qs("\LABC")
+	qs(0xef227354)
 	qs(0x5f4f2e1b)
 	qs(0xac2998a7)
 	qs(0x7f75d0d2)

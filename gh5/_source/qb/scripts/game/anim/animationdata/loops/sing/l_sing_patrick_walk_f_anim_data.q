@@ -1,37 +1,37 @@
-L_SING_Patrick_Walk_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_patrick_walk_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					SING_Patrick_Walk_075_F
+				slow = [
+					sing_patrick_walk_075_f
 				]
-				Med = [
-					SING_Patrick_Walk_100_F
+				med = [
+					sing_patrick_walk_100_f
 				]
-				Fast = [
-					SING_Patrick_Walk_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					SING_Patrick_Walk_075_F
-				]
-				Med = [
-					SING_Patrick_Walk_100_F
-				]
-				Fast = [
-					SING_Patrick_Walk_120_F
+				fast = [
+					sing_patrick_walk_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					SING_Patrick_Walk_075_F
+			normal = {
+				slow = [
+					sing_patrick_walk_075_f
 				]
-				Med = [
-					SING_Patrick_Walk_100_F
+				med = [
+					sing_patrick_walk_100_f
 				]
-				Fast = [
-					SING_Patrick_Walk_120_F
+				fast = [
+					sing_patrick_walk_120_f
+				]
+			}
+			bad = {
+				slow = [
+					sing_patrick_walk_075_f
+				]
+				med = [
+					sing_patrick_walk_100_f
+				]
+				fast = [
+					sing_patrick_walk_120_f
 				]
 			}
 		}

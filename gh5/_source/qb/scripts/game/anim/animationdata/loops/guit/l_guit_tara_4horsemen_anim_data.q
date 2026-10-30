@@ -1,37 +1,37 @@
-L_GUIT_Tara_4horsemen_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_tara_4horsemen_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Tara_4horsemen_075
+				slow = [
+					guit_tara_4horsemen_075
 				]
-				Med = [
-					guit_Tara_4horsemen_100
+				med = [
+					guit_tara_4horsemen_100
 				]
-				Fast = [
-					guit_Tara_4horsemen_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Tara_4horsemen_075
-				]
-				Med = [
-					guit_Tara_4horsemen_100
-				]
-				Fast = [
-					guit_Tara_4horsemen_120
+				fast = [
+					guit_tara_4horsemen_120
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Tara_4horsemen_075
+			normal = {
+				slow = [
+					guit_tara_4horsemen_075
 				]
-				Med = [
-					guit_Tara_4horsemen_100
+				med = [
+					guit_tara_4horsemen_100
 				]
-				Fast = [
-					guit_Tara_4horsemen_120
+				fast = [
+					guit_tara_4horsemen_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_tara_4horsemen_075
+				]
+				med = [
+					guit_tara_4horsemen_100
+				]
+				fast = [
+					guit_tara_4horsemen_120
 				]
 			}
 		}

@@ -1,13 +1,13 @@
-NX_SignInComplete = 0
-NX_SignedIn = 0
+nx_signincomplete = 0
+nx_signedin = 0
 
-script StartNetworkPlatform 
+script startnetworkplatform 
 endscript
 
-script NetworkPlatformComplete 
+script networkplatformcomplete 
 
-	change \{NX_SignInComplete = 1}
-	if GotParam \{SignedIn}
-		change \{NX_SignedIn = 1}
+	change \{nx_signincomplete = 1}
+	if gotparam \{signedin}
+		change \{nx_signedin = 1}
 	endif
 endscript

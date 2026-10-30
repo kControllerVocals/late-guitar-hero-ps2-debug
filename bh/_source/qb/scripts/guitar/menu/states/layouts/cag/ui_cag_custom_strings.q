@@ -9,7 +9,7 @@ script ui_create_cag_custom_strings
 	get_part_current_desc_id part = <part>
 	current_part = 0
 	num_parts_added = 0
-	GetArraySize ($<part>)
+	getarraysize ($<part>)
 	i = 0
 	begin
 	if cas_item_is_visible part = <part> part_index = <i>
@@ -31,41 +31,41 @@ script ui_create_cag_custom_strings
 	clean_up_user_control_helpers
 	menu_finish \{car_helper_text_cancel
 		no_rotate_zoom_text}
-	LaunchEvent type = focus target = create_cag_custom_strings_vmenu data = {child_index = <current_part>}
+	launchevent type = focus target = create_cag_custom_strings_vmenu data = {child_index = <current_part>}
 endscript
 
 script ui_destroy_cag_custom_strings 
 	generic_list_destroy
-	if ScreenElementExists \{id = string_preview}
-		DestroyScreenElement \{id = string_preview}
+	if screenelementexists \{id = string_preview}
+		destroyscreenelement \{id = string_preview}
 	endif
 endscript
 
 script ui_init_cag_custom_strings 
-	PushTemporaryCASAppearance
+	pushtemporarycasappearance
 endscript
 
 script ui_deinit_cag_custom_strings 
-	PopTemporaryCASAppearance
+	poptemporarycasappearance
 endscript
 
 script select_strings_focus_change 
-	if ScreenElementExists \{id = string_preview}
-		DestroyScreenElement \{id = string_preview}
+	if screenelementexists \{id = string_preview}
+		destroyscreenelement \{id = string_preview}
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = (($<part>) [<index>].desc_id)
+	if NOT getactualcasoptionstruct part = <part> desc_id = (($<part>) [<index>].desc_id)
 
 	endif
-	PushAssetContext \{context = z_soundcheck}
-	CreateScreenElement {
+	pushassetcontext \{context = z_soundcheck}
+	createscreenelement {
 		id = string_preview
-		type = SpriteElement
+		type = spriteelement
 		parent = root_window
 		texture = <preview_texture>
 		pos = (750.0, 200.0)
 		just = [-1.0 -1.0]
 		dims = (256.0, 256.0)
 	}
-	PopAssetContext \{context = z_soundcheck}
-	EditCASAppearance target = SetPart targetParams = {part = <part> desc_id = <desc_id>}
+	popassetcontext \{context = z_soundcheck}
+	editcasappearance target = setpart targetparams = {part = <part> desc_id = <desc_id>}
 endscript

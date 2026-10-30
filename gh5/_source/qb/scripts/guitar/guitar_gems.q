@@ -9,9 +9,9 @@ num_song_columns = 2
 gem_colors = [
 	green
 	red
-	Yellow
-	Blue
-	Orange
+	yellow
+	blue
+	orange
 	white
 ]
 gem_colors_text = [
@@ -30,8 +30,8 @@ broken_strings = [
 	broken_string_orange
 	broken_string_white
 ]
-player_status_array = [
-	playeXX_status
+0x2994109a = [
+	0x7aa563f4
 	player1_status
 	player2_status
 	player3_status
@@ -41,7 +41,7 @@ player_status_array = [
 	player7_status
 	player8_status
 ]
-player_text_array = [
+0x57e22f28 = [
 	'pX'
 	'p1'
 	'p2'
@@ -52,8 +52,8 @@ player_text_array = [
 	'p7'
 	'p8'
 ]
-g_current_oogame_pak_name = ''
-note_not_loaded = false
+0xa025a029 = ''
+0x37e424bf = false
 scripts_array = [
 	{
 		name = 'scripts'
@@ -82,777 +82,777 @@ scripts_array = [
 ]
 fretbar_end_scale = 0.48000002
 gray_gems = 0
-ps2_loading_jamsession_song = 0
+0xdd4f68fd = 0
 ps2_gameplay_restart_song = 0
 button_models = [
 	{
 		green = {
-			gem_material = Mat_Gem_Green
-			gem_hammer_material = Mat_Gem_Hammer_Green
-			star_material = Mat_Star_Green
-			star_hammer_material = Mat_Star_Hammer_Green
-			whammy_material = Mat_Whammy_Green
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Green
-			solo_star_material = Mat_Solo_Star_Green
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Green
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Green
-			star_material_drum = Mat_Drum_Star_Green
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Green
-			star_material_drum_accent = Mat_Drum_Star_Accent_Green
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_green
+			gem_hammer_material = mat_gem_hammer_green
+			star_material = mat_star_green
+			star_hammer_material = mat_star_hammer_green
+			whammy_material = mat_whammy_green
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_green
+			solo_star_material = mat_solo_star_green
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_green
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_green
+			star_material_drum = mat_drum_star_green
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_green
+			star_material_drum_accent = mat_drum_star_accent_green
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_g
 			icon_pos = (130.0, 100.0)
 		}
 		red = {
-			gem_material = Mat_Gem_Red
-			gem_hammer_material = Mat_Gem_Hammer_Red
-			star_material = Mat_Star_Red
-			star_hammer_material = Mat_Star_Hammer_Red
-			whammy_material = Mat_Whammy_Red
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Red
-			solo_star_material = Mat_Solo_Star_Red
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Red
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Red
-			star_material_drum = Mat_Drum_Star_Red
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Red
-			star_material_drum_accent = Mat_Drum_Star_Accent_Red
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_red
+			gem_hammer_material = mat_gem_hammer_red
+			star_material = mat_star_red
+			star_hammer_material = mat_star_hammer_red
+			whammy_material = mat_whammy_red
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_red
+			solo_star_material = mat_solo_star_red
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_red
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_red
+			star_material_drum = mat_drum_star_red
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_red
+			star_material_drum_accent = mat_drum_star_accent_red
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_r
 			icon_pos = (130.0, 100.0)
 		}
-		Yellow = {
-			gem_material = Mat_Gem_Yellow
-			gem_hammer_material = Mat_Gem_Hammer_Yellow
-			star_material = Mat_Star_Yellow
-			star_hammer_material = Mat_Star_Hammer_Yellow
-			whammy_material = Mat_Whammy_Yellow
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Yellow
-			solo_star_material = Mat_Solo_Star_Yellow
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Yellow
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Yellow
-			star_material_drum = Mat_Drum_Star_Yellow
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Yellow
-			star_material_drum_accent = Mat_Drum_Star_Accent_Yellow
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		yellow = {
+			gem_material = mat_gem_yellow
+			gem_hammer_material = mat_gem_hammer_yellow
+			star_material = mat_star_yellow
+			star_hammer_material = mat_star_hammer_yellow
+			whammy_material = mat_whammy_yellow
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_yellow
+			solo_star_material = mat_solo_star_yellow
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_yellow
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_yellow
+			star_material_drum = mat_drum_star_yellow
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_yellow
+			star_material_drum_accent = mat_drum_star_accent_yellow
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_y
 			icon_pos = (130.0, 100.0)
 		}
-		Blue = {
-			gem_material = Mat_Gem_Blue
-			gem_hammer_material = Mat_Gem_Hammer_Blue
-			star_material = Mat_Star_Blue
-			star_hammer_material = Mat_Star_Hammer_Blue
-			whammy_material = Mat_Whammy_Blue
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Blue
-			solo_star_material = Mat_Solo_Star_Blue
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Blue
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Blue
-			star_material_drum = Mat_Drum_Star_Blue
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Blue
-			star_material_drum_accent = Mat_Drum_Star_Accent_Blue
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		blue = {
+			gem_material = mat_gem_blue
+			gem_hammer_material = mat_gem_hammer_blue
+			star_material = mat_star_blue
+			star_hammer_material = mat_star_hammer_blue
+			whammy_material = mat_whammy_blue
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_blue
+			solo_star_material = mat_solo_star_blue
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_blue
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_blue
+			star_material_drum = mat_drum_star_blue
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_blue
+			star_material_drum_accent = mat_drum_star_accent_blue
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_b
 			icon_pos = (130.0, 100.0)
 		}
-		Orange = {
-			gem_material = Mat_Gem_Orange
-			gem_hammer_material = Mat_Gem_Hammer_Orange
-			star_material = Mat_Star_Orange
-			star_hammer_material = Mat_Star_Hammer_Orange
-			whammy_material = Mat_Whammy_Orange
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Orange
-			solo_star_material = Mat_Solo_Star_Orange
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Orange
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Orange
-			star_material_drum = Mat_Drum_Star_Orange
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Orange
-			star_material_drum_accent = Mat_Drum_Star_Accent_Orange
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		orange = {
+			gem_material = mat_gem_orange
+			gem_hammer_material = mat_gem_hammer_orange
+			star_material = mat_star_orange
+			star_hammer_material = mat_star_hammer_orange
+			whammy_material = mat_whammy_orange
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_orange
+			solo_star_material = mat_solo_star_orange
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_orange
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_orange
+			star_material_drum = mat_drum_star_orange
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_orange
+			star_material_drum_accent = mat_drum_star_accent_orange
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_o
 			icon_pos = (130.0, 100.0)
 		}
 		white = {
-			gem_material = Mat_open_note
-			gem_hammer_material = Mat_open_note_Hammer
-			star_material = Mat_open_note_Star
-			star_hammer_material = Mat_open_note_Star_Hammer
-			whammy_material = Mat_Placeholder
-			star_power_material = Mat_open_note_Star_Power
-			star_power_star_material = Mat_open_note_Star_Power_Star
-			star_power_hammer_star_material = Mat_open_note_Star_Power_Star_Hammer
-			star_power_hammer_material = Mat_open_note_Star_Power_Hammer
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Placeholder
-			solo_star_material = Mat_Placeholder
-			solo_star_power_material = Mat_Placeholder
-			solo_star_power_star_material = Mat_Placeholder
-			solo_whammy_material = Mat_Placeholder
-			solo_whammy_star_material = Mat_Placeholder
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Kickdrum
-			star_material_drum = Mat_Drum_Kickdrum_Star
-			star_power_material_drum = Mat_Drum_Kickdrum_Star_Power
-			star_power_star_material_drum = Mat_Drum_Kickdrum_Star_Power_Star
-			gem_material_beginner = Mat_Kid_Gem
-			star_material_beginner = Mat_Kid_Gem_Star
-			star_power_material_beginner = Mat_Kid_Gem_Star_Power
+			gem_material = mat_open_note
+			gem_hammer_material = mat_open_note_hammer
+			star_material = mat_open_note_star
+			star_hammer_material = mat_open_note_star_hammer
+			whammy_material = mat_placeholder
+			star_power_material = mat_open_note_star_power
+			star_power_star_material = mat_open_note_star_power_star
+			star_power_hammer_star_material = mat_open_note_star_power_star_hammer
+			star_power_hammer_material = mat_open_note_star_power_hammer
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_placeholder
+			solo_star_material = mat_placeholder
+			solo_star_power_material = mat_placeholder
+			solo_star_power_star_material = mat_placeholder
+			solo_whammy_material = mat_placeholder
+			solo_whammy_star_material = mat_placeholder
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_kickdrum
+			star_material_drum = mat_drum_kickdrum_star
+			star_power_material_drum = mat_drum_kickdrum_star_power
+			star_power_star_material_drum = mat_drum_kickdrum_star_power_star
+			gem_material_beginner = mat_kid_gem
+			star_material_beginner = mat_kid_gem_star
+			star_power_material_beginner = mat_kid_gem_star_power
 			name = button_b
 			icon_pos = (256.0, 0.0)
 		}
 	}
 	{
 		green = {
-			gem_material = Mat_Gem_Green
-			gem_hammer_material = Mat_Gem_Hammer_Green
-			star_material = Mat_Star_Green
-			star_hammer_material = Mat_Star_Hammer_Green
-			whammy_material = Mat_Whammy_Green
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Green
-			solo_star_material = Mat_Solo_Star_Green
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Green
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Green
-			star_material_drum = Mat_Drum_Star_Green
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Green
-			star_material_drum_accent = Mat_Drum_Star_Accent_Green
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_green
+			gem_hammer_material = mat_gem_hammer_green
+			star_material = mat_star_green
+			star_hammer_material = mat_star_hammer_green
+			whammy_material = mat_whammy_green
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_green
+			solo_star_material = mat_solo_star_green
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_green
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_green
+			star_material_drum = mat_drum_star_green
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_green
+			star_material_drum_accent = mat_drum_star_accent_green
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_g
 			icon_pos = (130.0, 100.0)
 		}
 		red = {
-			gem_material = Mat_Gem_Red
-			gem_hammer_material = Mat_Gem_Hammer_Red
-			star_material = Mat_Star_Red
-			star_hammer_material = Mat_Star_Hammer_Red
-			whammy_material = Mat_Whammy_Red
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Red
-			solo_star_material = Mat_Solo_Star_Red
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Red
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Red
-			star_material_drum = Mat_Drum_Star_Red
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Red
-			star_material_drum_accent = Mat_Drum_Star_Accent_Red
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_red
+			gem_hammer_material = mat_gem_hammer_red
+			star_material = mat_star_red
+			star_hammer_material = mat_star_hammer_red
+			whammy_material = mat_whammy_red
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_red
+			solo_star_material = mat_solo_star_red
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_red
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_red
+			star_material_drum = mat_drum_star_red
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_red
+			star_material_drum_accent = mat_drum_star_accent_red
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_r
 			icon_pos = (130.0, 100.0)
 		}
-		Yellow = {
-			gem_material = Mat_Gem_Yellow
-			gem_hammer_material = Mat_Gem_Hammer_Yellow
-			star_material = Mat_Star_Yellow
-			star_hammer_material = Mat_Star_Hammer_Yellow
-			whammy_material = Mat_Whammy_Yellow
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Yellow
-			solo_star_material = Mat_Solo_Star_Yellow
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Yellow
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Yellow
-			star_material_drum = Mat_Drum_Star_Yellow
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Yellow
-			star_material_drum_accent = Mat_Drum_Star_Accent_Yellow
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		yellow = {
+			gem_material = mat_gem_yellow
+			gem_hammer_material = mat_gem_hammer_yellow
+			star_material = mat_star_yellow
+			star_hammer_material = mat_star_hammer_yellow
+			whammy_material = mat_whammy_yellow
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_yellow
+			solo_star_material = mat_solo_star_yellow
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_yellow
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_yellow
+			star_material_drum = mat_drum_star_yellow
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_yellow
+			star_material_drum_accent = mat_drum_star_accent_yellow
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_y
 			icon_pos = (130.0, 100.0)
 		}
-		Blue = {
-			gem_material = Mat_Gem_Blue
-			gem_hammer_material = Mat_Gem_Hammer_Blue
-			star_material = Mat_Star_Blue
-			star_hammer_material = Mat_Star_Hammer_Blue
-			whammy_material = Mat_Whammy_Blue
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Blue
-			solo_star_material = Mat_Solo_Star_Blue
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Blue
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Blue
-			star_material_drum = Mat_Drum_Star_Blue
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Blue
-			star_material_drum_accent = Mat_Drum_Star_Accent_Blue
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		blue = {
+			gem_material = mat_gem_blue
+			gem_hammer_material = mat_gem_hammer_blue
+			star_material = mat_star_blue
+			star_hammer_material = mat_star_hammer_blue
+			whammy_material = mat_whammy_blue
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_blue
+			solo_star_material = mat_solo_star_blue
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_blue
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_blue
+			star_material_drum = mat_drum_star_blue
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_blue
+			star_material_drum_accent = mat_drum_star_accent_blue
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_b
 			icon_pos = (130.0, 100.0)
 		}
-		Orange = {
-			gem_material = Mat_Gem_Orange
-			gem_hammer_material = Mat_Gem_Hammer_Orange
-			star_material = Mat_Star_Orange
-			star_hammer_material = Mat_Star_Hammer_Orange
-			whammy_material = Mat_Whammy_Orange
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Orange
-			solo_star_material = Mat_Solo_Star_Orange
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Orange
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Orange
-			star_material_drum = Mat_Drum_Star_Orange
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Orange
-			star_material_drum_accent = Mat_Drum_Star_Accent_Orange
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		orange = {
+			gem_material = mat_gem_orange
+			gem_hammer_material = mat_gem_hammer_orange
+			star_material = mat_star_orange
+			star_hammer_material = mat_star_hammer_orange
+			whammy_material = mat_whammy_orange
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_orange
+			solo_star_material = mat_solo_star_orange
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_orange
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_orange
+			star_material_drum = mat_drum_star_orange
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_orange
+			star_material_drum_accent = mat_drum_star_accent_orange
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_o
 			icon_pos = (130.0, 100.0)
 		}
 		white = {
-			gem_material = Mat_open_note
-			gem_hammer_material = Mat_open_note_Hammer
-			star_material = Mat_open_note_Star
-			star_hammer_material = Mat_open_note_Star_Hammer
-			whammy_material = Mat_Placeholder
-			star_power_material = Mat_open_note_Star_Power
-			star_power_star_material = Mat_open_note_Star_Power_Star
-			star_power_hammer_star_material = Mat_open_note_Star_Power_Star_Hammer
-			star_power_hammer_material = Mat_open_note_Star_Power_Hammer
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Placeholder
-			solo_star_material = Mat_Placeholder
-			solo_star_power_material = Mat_Placeholder
-			solo_star_power_star_material = Mat_Placeholder
-			solo_whammy_material = Mat_Placeholder
-			solo_whammy_star_material = Mat_Placeholder
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Kickdrum
-			star_material_drum = Mat_Drum_Kickdrum_Star
-			star_power_material_drum = Mat_Drum_Kickdrum_Star_Power
-			star_power_star_material_drum = Mat_Drum_Kickdrum_Star_Power_Star
-			gem_material_beginner = Mat_Kid_Gem
-			star_material_beginner = Mat_Kid_Gem_Star
-			star_power_material_beginner = Mat_Kid_Gem_Star_Power
+			gem_material = mat_open_note
+			gem_hammer_material = mat_open_note_hammer
+			star_material = mat_open_note_star
+			star_hammer_material = mat_open_note_star_hammer
+			whammy_material = mat_placeholder
+			star_power_material = mat_open_note_star_power
+			star_power_star_material = mat_open_note_star_power_star
+			star_power_hammer_star_material = mat_open_note_star_power_star_hammer
+			star_power_hammer_material = mat_open_note_star_power_hammer
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_placeholder
+			solo_star_material = mat_placeholder
+			solo_star_power_material = mat_placeholder
+			solo_star_power_star_material = mat_placeholder
+			solo_whammy_material = mat_placeholder
+			solo_whammy_star_material = mat_placeholder
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_kickdrum
+			star_material_drum = mat_drum_kickdrum_star
+			star_power_material_drum = mat_drum_kickdrum_star_power
+			star_power_star_material_drum = mat_drum_kickdrum_star_power_star
+			gem_material_beginner = mat_kid_gem
+			star_material_beginner = mat_kid_gem_star
+			star_power_material_beginner = mat_kid_gem_star_power
 			name = button_b
 			icon_pos = (256.0, 0.0)
 		}
 	}
 	{
 		green = {
-			gem_material = Mat_Gem_Green
-			gem_hammer_material = Mat_Gem_Hammer_Green
-			star_material = Mat_Star_Green
-			star_hammer_material = Mat_Star_Hammer_Green
-			whammy_material = Mat_Whammy_Green
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Green
-			solo_star_material = Mat_Solo_Star_Green
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Green
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Green
-			star_material_drum = Mat_Drum_Star_Green
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Green
-			star_material_drum_accent = Mat_Drum_Star_Accent_Green
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_green
+			gem_hammer_material = mat_gem_hammer_green
+			star_material = mat_star_green
+			star_hammer_material = mat_star_hammer_green
+			whammy_material = mat_whammy_green
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_green
+			solo_star_material = mat_solo_star_green
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_green
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_green
+			star_material_drum = mat_drum_star_green
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_green
+			star_material_drum_accent = mat_drum_star_accent_green
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_g
 			icon_pos = (130.0, 100.0)
 		}
 		red = {
-			gem_material = Mat_Gem_Red
-			gem_hammer_material = Mat_Gem_Hammer_Red
-			star_material = Mat_Star_Red
-			star_hammer_material = Mat_Star_Hammer_Red
-			whammy_material = Mat_Whammy_Red
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Red
-			solo_star_material = Mat_Solo_Star_Red
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Red
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Red
-			star_material_drum = Mat_Drum_Star_Red
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Red
-			star_material_drum_accent = Mat_Drum_Star_Accent_Red
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_red
+			gem_hammer_material = mat_gem_hammer_red
+			star_material = mat_star_red
+			star_hammer_material = mat_star_hammer_red
+			whammy_material = mat_whammy_red
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_red
+			solo_star_material = mat_solo_star_red
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_red
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_red
+			star_material_drum = mat_drum_star_red
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_red
+			star_material_drum_accent = mat_drum_star_accent_red
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_r
 			icon_pos = (130.0, 100.0)
 		}
-		Yellow = {
-			gem_material = Mat_Gem_Yellow
-			gem_hammer_material = Mat_Gem_Hammer_Yellow
-			star_material = Mat_Star_Yellow
-			star_hammer_material = Mat_Star_Hammer_Yellow
-			whammy_material = Mat_Whammy_Yellow
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Yellow
-			solo_star_material = Mat_Solo_Star_Yellow
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Yellow
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Yellow
-			star_material_drum = Mat_Drum_Star_Yellow
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Yellow
-			star_material_drum_accent = Mat_Drum_Star_Accent_Yellow
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		yellow = {
+			gem_material = mat_gem_yellow
+			gem_hammer_material = mat_gem_hammer_yellow
+			star_material = mat_star_yellow
+			star_hammer_material = mat_star_hammer_yellow
+			whammy_material = mat_whammy_yellow
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_yellow
+			solo_star_material = mat_solo_star_yellow
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_yellow
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_yellow
+			star_material_drum = mat_drum_star_yellow
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_yellow
+			star_material_drum_accent = mat_drum_star_accent_yellow
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_y
 			icon_pos = (130.0, 100.0)
 		}
-		Blue = {
-			gem_material = Mat_Gem_Blue
-			gem_hammer_material = Mat_Gem_Hammer_Blue
-			star_material = Mat_Star_Blue
-			star_hammer_material = Mat_Star_Hammer_Blue
-			whammy_material = Mat_Whammy_Blue
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Blue
-			solo_star_material = Mat_Solo_Star_Blue
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Blue
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Blue
-			star_material_drum = Mat_Drum_Star_Blue
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Blue
-			star_material_drum_accent = Mat_Drum_Star_Accent_Blue
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		blue = {
+			gem_material = mat_gem_blue
+			gem_hammer_material = mat_gem_hammer_blue
+			star_material = mat_star_blue
+			star_hammer_material = mat_star_hammer_blue
+			whammy_material = mat_whammy_blue
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_blue
+			solo_star_material = mat_solo_star_blue
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_blue
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_blue
+			star_material_drum = mat_drum_star_blue
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_blue
+			star_material_drum_accent = mat_drum_star_accent_blue
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_b
 			icon_pos = (130.0, 100.0)
 		}
-		Orange = {
-			gem_material = Mat_Gem_Orange
-			gem_hammer_material = Mat_Gem_Hammer_Orange
-			star_material = Mat_Star_Orange
-			star_hammer_material = Mat_Star_Hammer_Orange
-			whammy_material = Mat_Whammy_Orange
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Orange
-			solo_star_material = Mat_Solo_Star_Orange
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Orange
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Orange
-			star_material_drum = Mat_Drum_Star_Orange
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Orange
-			star_material_drum_accent = Mat_Drum_Star_Accent_Orange
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		orange = {
+			gem_material = mat_gem_orange
+			gem_hammer_material = mat_gem_hammer_orange
+			star_material = mat_star_orange
+			star_hammer_material = mat_star_hammer_orange
+			whammy_material = mat_whammy_orange
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_orange
+			solo_star_material = mat_solo_star_orange
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_orange
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_orange
+			star_material_drum = mat_drum_star_orange
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_orange
+			star_material_drum_accent = mat_drum_star_accent_orange
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_o
 			icon_pos = (130.0, 100.0)
 		}
 		white = {
-			gem_material = Mat_open_note
-			gem_hammer_material = Mat_open_note_Hammer
-			star_material = Mat_open_note_Star
-			star_hammer_material = Mat_open_note_Star_Hammer
-			whammy_material = Mat_Placeholder
-			star_power_material = Mat_open_note_Star_Power
-			star_power_star_material = Mat_open_note_Star_Power_Star
-			star_power_hammer_star_material = Mat_open_note_Star_Power_Star_Hammer
-			star_power_hammer_material = Mat_open_note_Star_Power_Hammer
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Placeholder
-			solo_star_material = Mat_Placeholder
-			solo_star_power_material = Mat_Placeholder
-			solo_star_power_star_material = Mat_Placeholder
-			solo_whammy_material = Mat_Placeholder
-			solo_whammy_star_material = Mat_Placeholder
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Kickdrum
-			star_material_drum = Mat_Drum_Kickdrum_Star
-			star_power_material_drum = Mat_Drum_Kickdrum_Star_Power
-			star_power_star_material_drum = Mat_Drum_Kickdrum_Star_Power_Star
-			gem_material_beginner = Mat_Kid_Gem
-			star_material_beginner = Mat_Kid_Gem_Star
-			star_power_material_beginner = Mat_Kid_Gem_Star_Power
+			gem_material = mat_open_note
+			gem_hammer_material = mat_open_note_hammer
+			star_material = mat_open_note_star
+			star_hammer_material = mat_open_note_star_hammer
+			whammy_material = mat_placeholder
+			star_power_material = mat_open_note_star_power
+			star_power_star_material = mat_open_note_star_power_star
+			star_power_hammer_star_material = mat_open_note_star_power_star_hammer
+			star_power_hammer_material = mat_open_note_star_power_hammer
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_placeholder
+			solo_star_material = mat_placeholder
+			solo_star_power_material = mat_placeholder
+			solo_star_power_star_material = mat_placeholder
+			solo_whammy_material = mat_placeholder
+			solo_whammy_star_material = mat_placeholder
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_kickdrum
+			star_material_drum = mat_drum_kickdrum_star
+			star_power_material_drum = mat_drum_kickdrum_star_power
+			star_power_star_material_drum = mat_drum_kickdrum_star_power_star
+			gem_material_beginner = mat_kid_gem
+			star_material_beginner = mat_kid_gem_star
+			star_power_material_beginner = mat_kid_gem_star_power
 			name = button_b
 			icon_pos = (256.0, 0.0)
 		}
 	}
 	{
 		green = {
-			gem_material = Mat_Gem_Green
-			gem_hammer_material = Mat_Gem_Hammer_Green
-			star_material = Mat_Star_Green
-			star_hammer_material = Mat_Star_Hammer_Green
-			whammy_material = Mat_Whammy_Green
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Green
-			solo_star_material = Mat_Solo_Star_Green
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Green
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Green
-			star_material_drum = Mat_Drum_Star_Green
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Green
-			star_material_drum_accent = Mat_Drum_Star_Accent_Green
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_green
+			gem_hammer_material = mat_gem_hammer_green
+			star_material = mat_star_green
+			star_hammer_material = mat_star_hammer_green
+			whammy_material = mat_whammy_green
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_green
+			solo_star_material = mat_solo_star_green
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_green
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_green
+			star_material_drum = mat_drum_star_green
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_green
+			star_material_drum_accent = mat_drum_star_accent_green
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_g
 			icon_pos = (130.0, 100.0)
 		}
 		red = {
-			gem_material = Mat_Gem_Red
-			gem_hammer_material = Mat_Gem_Hammer_Red
-			star_material = Mat_Star_Red
-			star_hammer_material = Mat_Star_Hammer_Red
-			whammy_material = Mat_Whammy_Red
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Red
-			solo_star_material = Mat_Solo_Star_Red
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Red
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Red
-			star_material_drum = Mat_Drum_Star_Red
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Red
-			star_material_drum_accent = Mat_Drum_Star_Accent_Red
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+			gem_material = mat_gem_red
+			gem_hammer_material = mat_gem_hammer_red
+			star_material = mat_star_red
+			star_hammer_material = mat_star_hammer_red
+			whammy_material = mat_whammy_red
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_red
+			solo_star_material = mat_solo_star_red
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_red
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_red
+			star_material_drum = mat_drum_star_red
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_red
+			star_material_drum_accent = mat_drum_star_accent_red
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_r
 			icon_pos = (130.0, 100.0)
 		}
-		Yellow = {
-			gem_material = Mat_Gem_Yellow
-			gem_hammer_material = Mat_Gem_Hammer_Yellow
-			star_material = Mat_Star_Yellow
-			star_hammer_material = Mat_Star_Hammer_Yellow
-			whammy_material = Mat_Whammy_Yellow
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Yellow
-			solo_star_material = Mat_Solo_Star_Yellow
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Yellow
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Yellow
-			star_material_drum = Mat_Drum_Star_Yellow
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Yellow
-			star_material_drum_accent = Mat_Drum_Star_Accent_Yellow
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		yellow = {
+			gem_material = mat_gem_yellow
+			gem_hammer_material = mat_gem_hammer_yellow
+			star_material = mat_star_yellow
+			star_hammer_material = mat_star_hammer_yellow
+			whammy_material = mat_whammy_yellow
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_yellow
+			solo_star_material = mat_solo_star_yellow
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_yellow
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_yellow
+			star_material_drum = mat_drum_star_yellow
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_yellow
+			star_material_drum_accent = mat_drum_star_accent_yellow
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_y
 			icon_pos = (130.0, 100.0)
 		}
-		Blue = {
-			gem_material = Mat_Gem_Blue
-			gem_hammer_material = Mat_Gem_Hammer_Blue
-			star_material = Mat_Star_Blue
-			star_hammer_material = Mat_Star_Hammer_Blue
-			whammy_material = Mat_Whammy_Blue
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Blue
-			solo_star_material = Mat_Solo_Star_Blue
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Blue
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Blue
-			star_material_drum = Mat_Drum_Star_Blue
-			star_power_material_drum = Mat_Drum_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Drum_Accent_Blue
-			star_material_drum_accent = Mat_Drum_Star_Accent_Blue
-			star_power_material_drum_accent = Mat_Drum_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		blue = {
+			gem_material = mat_gem_blue
+			gem_hammer_material = mat_gem_hammer_blue
+			star_material = mat_star_blue
+			star_hammer_material = mat_star_hammer_blue
+			whammy_material = mat_whammy_blue
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_blue
+			solo_star_material = mat_solo_star_blue
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_blue
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_blue
+			star_material_drum = mat_drum_star_blue
+			star_power_material_drum = mat_drum_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_drum_accent_blue
+			star_material_drum_accent = mat_drum_star_accent_blue
+			star_power_material_drum_accent = mat_drum_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_b
 			icon_pos = (130.0, 100.0)
 		}
-		Orange = {
-			gem_material = Mat_Gem_Orange
-			gem_hammer_material = Mat_Gem_Hammer_Orange
-			star_material = Mat_Star_Orange
-			star_hammer_material = Mat_Star_Hammer_Orange
-			whammy_material = Mat_Whammy_Orange
-			star_power_material = Mat_Gem_Star
-			star_power_star_material = Mat_Star_Star
-			star_power_hammer_star_material = Mat_Star_Hammer_Star
-			star_power_hammer_material = Mat_Gem_Hammer_Star
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Solo_Gem_Orange
-			solo_star_material = Mat_Solo_Star_Orange
-			solo_star_power_material = Mat_Solo_Gem_Star
-			solo_star_power_star_material = Mat_Solo_Star_Star
-			solo_whammy_material = Mat_Solo_Whammy_Orange
-			solo_whammy_star_material = Mat_Solo_Whammy_Star
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Cym_Orange
-			star_material_drum = Mat_Drum_Star_Orange
-			star_power_material_drum = Mat_Cym_Star
-			star_power_star_material_drum = Mat_Drum_Star_Star
-			gem_material_drum_accent = Mat_Cym_Accent_Orange
-			star_material_drum_accent = Mat_Drum_Star_Accent_Orange
-			star_power_material_drum_accent = Mat_Cym_Accent_Star
-			star_power_star_material_drum_accent = Mat_Drum_Star_Accent_Star
+		orange = {
+			gem_material = mat_gem_orange
+			gem_hammer_material = mat_gem_hammer_orange
+			star_material = mat_star_orange
+			star_hammer_material = mat_star_hammer_orange
+			whammy_material = mat_whammy_orange
+			star_power_material = mat_gem_star
+			star_power_star_material = mat_star_star
+			star_power_hammer_star_material = mat_star_hammer_star
+			star_power_hammer_material = mat_gem_hammer_star
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_solo_gem_orange
+			solo_star_material = mat_solo_star_orange
+			solo_star_power_material = mat_solo_gem_star
+			solo_star_power_star_material = mat_solo_star_star
+			solo_whammy_material = mat_solo_whammy_orange
+			solo_whammy_star_material = mat_solo_whammy_star
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_cym_orange
+			star_material_drum = mat_drum_star_orange
+			star_power_material_drum = mat_cym_star
+			star_power_star_material_drum = mat_drum_star_star
+			gem_material_drum_accent = mat_cym_accent_orange
+			star_material_drum_accent = mat_drum_star_accent_orange
+			star_power_material_drum_accent = mat_cym_accent_star
+			star_power_star_material_drum_accent = mat_drum_star_accent_star
 			name = button_o
 			icon_pos = (130.0, 100.0)
 		}
 		white = {
-			gem_material = Mat_open_note
-			gem_hammer_material = Mat_open_note_Hammer
-			star_material = Mat_open_note_Star
-			star_hammer_material = Mat_open_note_Star_Hammer
-			whammy_material = Mat_Placeholder
-			star_power_material = Mat_open_note_Star_Power
-			star_power_star_material = Mat_open_note_Star_Power_Star
-			star_power_hammer_star_material = Mat_open_note_Star_Power_Star_Hammer
-			star_power_hammer_material = Mat_open_note_Star_Power_Hammer
-			star_power_whammy_material = Mat_Whammy_Star
-			solo_material = Mat_Placeholder
-			solo_star_material = Mat_Placeholder
-			solo_star_power_material = Mat_Placeholder
-			solo_star_power_star_material = Mat_Placeholder
-			solo_whammy_material = Mat_Placeholder
-			solo_whammy_star_material = Mat_Placeholder
-			gray_material = Mat_Placeholder
-			gray_hammer_material = Mat_Placeholder
-			gray_whammy_material = Mat_Whammy_Star
-			dead_whammy = Mat_Whammy_Dead
-			gem_material_drum = Mat_Drum_Kickdrum
-			star_material_drum = Mat_Drum_Kickdrum_Star
-			star_power_material_drum = Mat_Drum_Kickdrum_Star_Power
-			star_power_star_material_drum = Mat_Drum_Kickdrum_Star_Power_Star
-			gem_material_beginner = Mat_Kid_Gem
-			star_material_beginner = Mat_Kid_Gem_Star
-			star_power_material_beginner = Mat_Kid_Gem_Star_Power
+			gem_material = mat_open_note
+			gem_hammer_material = mat_open_note_hammer
+			star_material = mat_open_note_star
+			star_hammer_material = mat_open_note_star_hammer
+			whammy_material = mat_placeholder
+			star_power_material = mat_open_note_star_power
+			star_power_star_material = mat_open_note_star_power_star
+			star_power_hammer_star_material = mat_open_note_star_power_star_hammer
+			star_power_hammer_material = mat_open_note_star_power_hammer
+			star_power_whammy_material = mat_whammy_star
+			solo_material = mat_placeholder
+			solo_star_material = mat_placeholder
+			solo_star_power_material = mat_placeholder
+			solo_star_power_star_material = mat_placeholder
+			solo_whammy_material = mat_placeholder
+			solo_whammy_star_material = mat_placeholder
+			gray_material = mat_placeholder
+			gray_hammer_material = mat_placeholder
+			gray_whammy_material = mat_whammy_star
+			dead_whammy = mat_whammy_dead
+			gem_material_drum = mat_drum_kickdrum
+			star_material_drum = mat_drum_kickdrum_star
+			star_power_material_drum = mat_drum_kickdrum_star_power
+			star_power_star_material_drum = mat_drum_kickdrum_star_power_star
+			gem_material_beginner = mat_kid_gem
+			star_material_beginner = mat_kid_gem_star
+			star_power_material_beginner = mat_kid_gem_star_power
 			name = button_b
 			icon_pos = (256.0, 0.0)
 		}
@@ -861,36 +861,36 @@ button_models = [
 
 script setup_models 
 	tod_manager_create_perm_lights
-	LightShow_CreatePermModels
+	lightshow_createpermmodels
 endscript
 
 script get_notetrack_part_text 
-	if NOT GotParam \{part}
-		if GotParam \{player_status}
+	if NOT gotparam \{part}
+		if gotparam \{player_status}
 			part = ($<player_status>.part)
 		else
-			GetPlayerInfo <player> part
+			getplayerinfo <player> part
 		endif
 	endif
-	if (<part> = Bass)
+	if (<part> = bass)
 		<part> = 'rhythm_'
 	elseif (<part> = rhythm)
 
 	elseif (<part> = drum)
 		<part> = 'drum_'
 	else
-		if GotParam \{fullname}
+		if gotparam \{fullname}
 			<part> = 'guitar'
 		else
 			<part> = ''
 		endif
 	endif
-	if GotParam \{player_status}
+	if gotparam \{player_status}
 		if ($game_mode = gh4_p2_career || $game_mode = p2_coop || $game_mode = p2_quickplay || $force_coop = 1 ||
-				($game_mode = practice && ($<player_status>.part = Bass)))
+				($game_mode = practice && ($<player_status>.part = bass)))
 			get_song_struct song = <song_name>
-			if StructureContains Structure = <song_struct> use_coop_notetracks
-				if (($<player_status>.part) = Bass)
+			if structurecontains structure = <song_struct> use_coop_notetracks
+				if (($<player_status>.part) = bass)
 					<part> = 'rhythmcoop_'
 				elseif (($<player_status>.part) = guitar)
 					<part> = 'guitarcoop_'
@@ -908,24 +908,24 @@ script get_gem_array_name
 	get_difficulty_text_nl difficulty = <difficulty> no_rhythm
 	if (<song_name> = jamsession)
 		blank_part = <part>
-		<Vocals> = 0
-		if GotParam \{player}
-			GetPlayerInfo <player> part
-			if ChecksumEquals a = <part> b = Vocals
-				<Vocals> = 1
+		<vocals> = 0
+		if gotparam \{player}
+			getplayerinfo <player> part
+			if checksumequals a = <part> b = vocals
+				<vocals> = 1
 			endif
 		endif
-		if (<Vocals> = 1)
-			FormatText \{checksumname = gem_array
+		if (<vocals> = 1)
+			formattext \{checksumname = gem_array
 				'jamsession_song_vocals'
-				AddToStringLookup = true}
+				addtostringlookup = true}
 			<part> = <blank_part>
 		else
 			<part> = <blank_part>
-			FormatText checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+			formattext checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> addtostringlookup = true
 		endif
 	else
-		FormatText checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+		formattext checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> addtostringlookup = true
 	endif
 	return gem_array = <gem_array>
 endscript
@@ -933,26 +933,26 @@ endscript
 script get_fretbar_array_name 
 
 	get_song_prefix song = <song_name>
-	FormatText checksumname = fretbar_array '%s_fretbars' s = <song_prefix> AddToStringLookup = true
+	formattext checksumname = fretbar_array '%s_fretbars' s = <song_prefix> addtostringlookup = true
 	return fretbar_array = <fretbar_array>
 endscript
 
 script get_timsig_array_name 
 
 	get_song_prefix song = <song_name>
-	FormatText checksumname = timesig_array '%s_timesig' s = <song_prefix> AddToStringLookup = true
+	formattext checksumname = timesig_array '%s_timesig' s = <song_prefix> addtostringlookup = true
 	return timesig_array = <timesig_array>
 endscript
 
 script get_starpower_array_name 
 
 	get_song_prefix song = <song_name>
-	if (<part> = Vocals)
-		FormatText checksumname = star_array '%s_vocals_Star' s = <song_prefix> p = <part> AddToStringLookup = true
+	if (<part> = vocals)
+		formattext checksumname = star_array '%s_vocals_Star' s = <song_prefix> p = <part> addtostringlookup = true
 	else
 		get_notetrack_part_text player = <player> song_name = <song_name> part = <part>
 		get_difficulty_text_nl difficulty = <difficulty> no_rhythm
-		FormatText checksumname = star_array '%s_%p%d_Star' s = <song_prefix> p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+		formattext checksumname = star_array '%s_%p%d_Star' s = <song_prefix> p = <part> d = <difficulty_text_nl> addtostringlookup = true
 	endif
 	return star_array = <star_array>
 endscript
@@ -962,7 +962,7 @@ script get_tapping_array_name
 	get_notetrack_part_text player = <player> song_name = <song_name> part = <part>
 	get_song_prefix song = <song_name>
 	get_difficulty_text_nl difficulty = <difficulty> no_rhythm
-	FormatText checksumname = tapping_array '%s_%p%d_Tapping' s = <song_prefix> p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+	formattext checksumname = tapping_array '%s_%p%d_Tapping' s = <song_prefix> p = <part> d = <difficulty_text_nl> addtostringlookup = true
 	return tapping_array = <tapping_array>
 endscript
 
@@ -970,7 +970,7 @@ script get_drum_fill_array_name
 
 	get_song_prefix song = <song_name>
 	get_difficulty_text_nl difficulty = <difficulty> no_rhythm
-	FormatText checksumname = drumfill_array '%s_%d_DrumFill' s = <song_prefix> d = <difficulty_text_nl> AddToStringLookup = true
+	formattext checksumname = drumfill_array '%s_%d_DrumFill' s = <song_prefix> d = <difficulty_text_nl> addtostringlookup = true
 	return drumfill_array = <drumfill_array>
 endscript
 
@@ -978,14 +978,14 @@ script get_marker_array_name
 
 	get_notetrack_part_text player = <player> song_name = <song_name> part = <part> fullname
 	get_song_prefix song = <song_name>
-	FormatText checksumname = marker_array '%s_%p_Markers' s = <song_prefix> p = <part> AddToStringLookup = true
+	formattext checksumname = marker_array '%s_%p_Markers' s = <song_prefix> p = <part> addtostringlookup = true
 	return marker_array = <marker_array>
 endscript
 
 script get_band_moment_array_name 
 
 	get_song_prefix song = <song_name>
-	FormatText checksumname = band_moment_array '%s_BandMoment' s = <song_prefix> AddToStringLookup = true
+	formattext checksumname = band_moment_array '%s_BandMoment' s = <song_prefix> addtostringlookup = true
 	return band_moment_array = <band_moment_array>
 endscript
 
@@ -996,26 +996,26 @@ script setup_gemarrays \{player = 1}
 	get_difficulty_text_nl difficulty = <difficulty> no_rhythm
 	if ($current_song = jamsession)
 		blank_part = <part>
-		<Vocals> = 0
-		GetPlayerInfo <player> part
-		if ChecksumEquals a = <part> b = Vocals
-			<Vocals> = 1
+		<vocals> = 0
+		getplayerinfo <player> part
+		if checksumequals a = <part> b = vocals
+			<vocals> = 1
 		endif
-		if (<Vocals> = 1)
-			FormatText \{checksumname = gem_array
+		if (<vocals> = 1)
+			formattext \{checksumname = gem_array
 				'jamsession_song_vocals'
-				AddToStringLookup = true}
+				addtostringlookup = true}
 			<part> = <blank_part>
 		else
 			<part> = <blank_part>
-			FormatText checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+			formattext checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> addtostringlookup = true
 		endif
 	else
-		FormatText checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> AddToStringLookup = true
+		formattext checksumname = gem_array '%s_song_%p%d' s = <song_prefix> p = <part> d = <difficulty_text_nl> addtostringlookup = true
 	endif
-	FormatText checksumname = fretbar_array '%s_fretbars' s = <song_prefix> AddToStringLookup = true
+	formattext checksumname = fretbar_array '%s_fretbars' s = <song_prefix> addtostringlookup = true
 	change structurename = <player_status> current_song_gem_array = <gem_array>
-	SetPlayerInfo <player> current_song_name = ($current_song)
+	setplayerinfo <player> current_song_name = ($current_song)
 	reset_tapping_array song_name = <song_name> difficulty = <difficulty> player_status = <player_status>
 	return gem_array = <gem_array> fretbar_array = <fretbar_array> song_prefix = <song_prefix> part = <part> difficulty_text_nl = <difficulty_text_nl>
 endscript
@@ -1023,15 +1023,15 @@ endscript
 script calc_health_invincible_time 
 	get_song_end_time song = ($current_song)
 	health_invincible_time = 0.0
-	time_beginner = (<total_end_time> * $health_invincible_time_percentage_beginner / 100.0)
+	0xcbfa64e8 = (<total_end_time> * $health_invincible_time_percentage_beginner / 100.0)
 	time_easy = (<total_end_time> * $health_invincible_time_percentage_easy / 100.0)
 	time_medium = (<total_end_time> * $health_invincible_time_percentage_medium / 100.0)
 	if ($game_mode = p1_quickplay || $game_mode = gh4_p1_career)
 		player = ($<player_status>.player)
-		GetPlayerInfo <player> difficulty
+		getplayerinfo <player> difficulty
 		switch <difficulty>
 			case beginner
-			health_invincible_time = <time_beginner>
+			health_invincible_time = <0xcbfa64e8>
 			case easy
 			health_invincible_time = <time_easy>
 			case medium
@@ -1039,10 +1039,10 @@ script calc_health_invincible_time
 		endswitch
 	else
 		get_highest_difficulty_num \{num_players = $current_num_players}
-		if GotParam \{highest_difficulty_num}
+		if gotparam \{highest_difficulty_num}
 			switch <highest_difficulty_num>
 				case 0
-				health_invincible_time = <time_beginner>
+				health_invincible_time = <0xcbfa64e8>
 				case 1
 				health_invincible_time = <time_easy>
 				case 2
@@ -1057,7 +1057,7 @@ script get_highest_difficulty_num \{num_players = 4}
 	i = 1
 	max_diff_num = 0
 	begin
-	GetPlayerInfo <i> difficulty
+	getplayerinfo <i> difficulty
 	switch <difficulty>
 		case beginner
 		diff_num = 0
@@ -1090,7 +1090,7 @@ script gem_scroller \{player = 1
 		change structurename = <player_status> check_time_early = ($check_time_early * $current_speedfactor)
 		change structurename = <player_status> check_time_late = ($check_time_late * $current_speedfactor)
 	endif
-	FormatText checksumname = input_array 'input_array%p' p = <player_text>
+	formattext checksumname = input_array 'input_array%p' p = <player_text>
 
 
 
@@ -1102,14 +1102,14 @@ script gem_scroller \{player = 1
 
 
 
-	InputArrayCreate name = <input_array>
+	inputarraycreate name = <input_array>
 	<gem_offset> = ($time_gem_offset * $current_speedfactor)
 	<input_offset> = ($time_input_offset * $current_speedfactor)
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
 	if (<lag_calibration> > 999)
-		Mod a = <lag_calibration> b = 1000
-		<video_offset> = (0 - <Mod>)
+		mod a = <lag_calibration> b = 1000
+		<video_offset> = (0 - <mod>)
 		<audio_offset> = ((<lag_calibration> / 1000) - 1)
 		<input_offset> = (<input_offset> - <audio_offset>)
 		<gem_offset> = (<gem_offset> - <audio_offset>)
@@ -1122,22 +1122,22 @@ script gem_scroller \{player = 1
 		change \{time_gem_offset_with_lag = $time_gem_offset}
 	endif
 	if ((<training_mode> = 1) || ($game_mode = practice))
-		SpawnScriptLater tempo_matching_iterator params = {song_name = <song_name> difficulty = <difficulty> thin_fretbars
+		spawnscriptlater tempo_matching_iterator params = {song_name = <song_name> difficulty = <difficulty> thin_fretbars
 			time_offset = <gem_offset> fretbar_function = create_fretbar skipleadin = 0
 			player = <player> player_status = <player_status> player_text = <player_text>}
 	else
 		if (<player> = 1)
-			BandManager_StartAllAnimIterators song_name = <song_name> time_offset = <gem_offset>
-			if ($Drumtest = 1)
-				KillSpawnedScript \{name = Drummer_ControlScript}
-				spawnscriptnow \{Drummer_ControlScript}
+			bandmanager_startallanimiterators song_name = <song_name> time_offset = <gem_offset>
+			if ($drumtest = 1)
+				killspawnedscript \{name = drummer_controlscript}
+				spawnscriptnow \{drummer_controlscript}
 			endif
-			SpawnScriptLater WatchForStartPlaying_iterator params = {time_offset = <gem_offset>}
-			SpawnScriptLater tempo_matching_iterator params = {song_name = <song_name> difficulty = <difficulty> thin_fretbars
+			spawnscriptlater watchforstartplaying_iterator params = {time_offset = <gem_offset>}
+			spawnscriptlater tempo_matching_iterator params = {song_name = <song_name> difficulty = <difficulty> thin_fretbars
 				time_offset = <gem_offset> fretbar_function = create_fretbar skipleadin = 0
 				player = <player> player_status = <player_status> player_text = <player_text>}
-			SpawnScriptLater Drumkit_anim_iterator params = {
-				id = Drummer
+			spawnscriptlater drumkit_anim_iterator params = {
+				id = drummer
 				song_name = <song_name> difficulty = <difficulty>
 				time_offset = <gem_offset>
 				skipleadin = 0
@@ -1147,8 +1147,8 @@ script gem_scroller \{player = 1
 			}
 		elseif (($<player_status>.part) = drum)
 			id = ($<player_status>.band_member)
-			if NOT (<id> = Drummer)
-				SpawnScriptLater Drumkit_anim_iterator params = {
+			if NOT (<id> = drummer)
+				spawnscriptlater drumkit_anim_iterator params = {
 					id = <id>
 					song_name = <song_name> difficulty = <difficulty>
 					time_offset = <gem_offset>
@@ -1161,8 +1161,8 @@ script gem_scroller \{player = 1
 		endif
 	endif
 	fill_input_offset = ((($<player_status>.scroll_time - $destroy_time) * 1000.0) + <gem_offset> + 1000.0)
-	FormatText checksumname = input_array 'input_array%p' p = <player_text>
-	SpawnScriptLater gem_iterator params = {iterator_text = 'fill_array' song_name = <song_name> difficulty = <difficulty> part = <part> input_array = <input_array>
+	formattext checksumname = input_array 'input_array%p' p = <player_text>
+	spawnscriptlater gem_iterator params = {iterator_text = 'fill_array' song_name = <song_name> difficulty = <difficulty> part = <part> input_array = <input_array>
 		time_offset = <fill_input_offset> strum_function = fill_input_array skipleadin = ($<player_status>.scroll_time * 1000.0)
 		player = <player> player_status = <player_status> player_text = <player_text>}
 	<do_bot> = 0
@@ -1170,23 +1170,23 @@ script gem_scroller \{player = 1
 		<do_bot> = 1
 	endif
 	if (<do_bot> = 1)
-		FormatText checksumname = botresponse_array 'botresponse_array%p' p = <player_text>
-		InputArrayCreate name = <botresponse_array>
-		SpawnScriptLater gem_iterator params = {iterator_text = 'fill_botresponsearray' song_name = <song_name> difficulty = <difficulty> part = <part> input_array = <botresponse_array>
+		formattext checksumname = botresponse_array 'botresponse_array%p' p = <player_text>
+		inputarraycreate name = <botresponse_array>
+		spawnscriptlater gem_iterator params = {iterator_text = 'fill_botresponsearray' song_name = <song_name> difficulty = <difficulty> part = <part> input_array = <botresponse_array>
 			time_offset = ((($<player_status>.scroll_time - $destroy_time) * 1000.0) + <gem_offset> + 1000.0) strum_function = fill_input_array skipleadin = ($<player_status>.scroll_time * 1000.0)
 			player = <player> player_status = <player_status> player_text = <player_text>}
-		SpawnScriptLater gem_iterator params = {iterator_text = 'bot' song_name = <song_name> difficulty = <difficulty> part = <part> use_input_array = 'botresponse_array'
+		spawnscriptlater gem_iterator params = {iterator_text = 'bot' song_name = <song_name> difficulty = <difficulty> part = <part> use_input_array = 'botresponse_array'
 			time_offset = ((($<player_status>.check_time_early) * 1000.0) + <input_offset> - ($check_time_late * 1000.0)) strum_function = check_buttons_bot skipleadin = ($<player_status>.scroll_time * 1000.0)
 			player = <player> player_status = <player_status> player_text = <player_text>}
 
 	endif
-	SpawnScriptLater gem_iterator params = {iterator_text = 'create_gem' song_name = <song_name> difficulty = <difficulty> part = <part> use_input_array = 'input_array'
+	spawnscriptlater gem_iterator params = {iterator_text = 'create_gem' song_name = <song_name> difficulty = <difficulty> part = <part> use_input_array = 'input_array'
 		time_offset = ((($<player_status>.scroll_time - $destroy_time) * 1000.0) + <gem_offset>) gem_function = create_gem skipleadin = ($<player_status>.scroll_time * 1000.0)
 		player = <player> player_status = <player_status> player_text = <player_text>}
 	get_song_prefix song = <song_name>
-	FormatText checksumname = guitar_stream '%s_guitar' s = <song_prefix> AddToStringLookup
-	if GotParam \{looping}
-		RestartPlayerServerInput {
+	formattext checksumname = guitar_stream '%s_guitar' s = <song_prefix> addtostringlookup
+	if gotparam \{looping}
+		restartplayerserverinput {
 			id = <player_status>
 			player = <player>
 			controller = ($<player_status>.controller)
@@ -1196,8 +1196,8 @@ script gem_scroller \{player = 1
 			song_name = <song_name>
 		}
 	else
-		CreatePlayerServer id = <player_status> player = <player>
-		AddPlayerServerInput {id = <player_status>
+		createplayerserver id = <player_status> player = <player>
+		addplayerserverinput {id = <player_status>
 			player = <player>
 			controller = ($<player_status>.controller)
 			difficulty = <difficulty>
@@ -1205,62 +1205,62 @@ script gem_scroller \{player = 1
 			time_offset = ((($<player_status>.check_time_early) * 1000.0) + <input_offset>)
 			song_name = <song_name>
 		}
-		AddPlayerServerHighway id = <player_status> player = <player>
+		addplayerserverhighway id = <player_status> player = <player>
 	endif
-	if NOT PlayerInfoEquals <player> part = Vocals
-		AddPlayerServerFretbarIterator {fretbar_id = CreateFretbar id = <player_status> song_name = <song_name> difficulty = <difficulty> thin_fretbars
-			time_offset = ((($<player_status>.scroll_time - $destroy_time) * 1000.0) + <gem_offset>) fretbar_function = Create2DFretbar skipleadin = ($<player_status>.scroll_time * 1000.0)
+	if NOT playerinfoequals <player> part = vocals
+		addplayerserverfretbariterator {fretbar_id = createfretbar id = <player_status> song_name = <song_name> difficulty = <difficulty> thin_fretbars
+			time_offset = ((($<player_status>.scroll_time - $destroy_time) * 1000.0) + <gem_offset>) fretbar_function = create2dfretbar skipleadin = ($<player_status>.scroll_time * 1000.0)
 			player = <player> player_status = <player_status> player_text = <player_text>}
 	endif
-	SpawnScriptLater fretbar_update_tempo params = {song_name = <song_name> difficulty = <difficulty>
+	spawnscriptlater fretbar_update_tempo params = {song_name = <song_name> difficulty = <difficulty>
 		time_offset = ((($<player_status>.check_time_early) * 1000.0) + <gem_offset>) player = <player> skipleadin = ($<player_status>.scroll_time * 1000.0)
 		player_status = <player_status> player_text = <player_text>}
-	SpawnScriptLater fretbar_update_hammer_on_tolerance params = {song_name = <song_name> difficulty = <difficulty>
+	spawnscriptlater fretbar_update_hammer_on_tolerance params = {song_name = <song_name> difficulty = <difficulty>
 		time_offset = ((($<player_status>.scroll_time - $destroy_time) * 1000.0) + <gem_offset> + 1000.0) player = <player> skipleadin = ($<player_status>.scroll_time * 1000.0)
 		player_status = <player_status> player_text = <player_text>}
 	if (<player> = 1)
-		AddPlayerServerFretbarIterator {fretbar_id = PreFretbarEvent id = <player_status> song_name = <song_name> difficulty = <difficulty>
-			time_offset = (($prefretbar_time * 1000.0) + <gem_offset>) fretbar_function = GuitarEvent_PreFretbar skipleadin = 0
+		addplayerserverfretbariterator {fretbar_id = prefretbarevent id = <player_status> song_name = <song_name> difficulty = <difficulty>
+			time_offset = (($prefretbar_time * 1000.0) + <gem_offset>) fretbar_function = guitarevent_prefretbar skipleadin = 0
 			player = <player> player_status = <player_status> player_text = <player_text>}
-		AddPlayerServerFretbarIterator {fretbar_id = FretbarEvent id = <player_status> song_name = <song_name> difficulty = <difficulty>
-			time_offset = <gem_offset> fretbar_function = GuitarEvent_Fretbar skipleadin = 0
+		addplayerserverfretbariterator {fretbar_id = fretbarevent id = <player_status> song_name = <song_name> difficulty = <difficulty>
+			time_offset = <gem_offset> fretbar_function = guitarevent_fretbar skipleadin = 0
 			player = <player> player_status = <player_status> player_text = <player_text>}
-		if ($Debug_Audible_Downbeat = 1)
-			AddPlayerServerFretbarIterator {fretbar_id = FretbarEventEarly id = <player_status> song_name = <song_name> difficulty = <difficulty>
-				time_offset = (<gem_offset> + ($check_time_early * 1000.0)) fretbar_function = GuitarEvent_Fretbar_Early skipleadin = 0
+		if ($debug_audible_downbeat = 1)
+			addplayerserverfretbariterator {fretbar_id = fretbareventearly id = <player_status> song_name = <song_name> difficulty = <difficulty>
+				time_offset = (<gem_offset> + ($check_time_early * 1000.0)) fretbar_function = guitarevent_fretbar_early skipleadin = 0
 				player = <player> player_status = <player_status> player_text = <player_text>}
-			AddPlayerServerFretbarIterator {fretbar_id = FretbarEventLate id = <player_status> song_name = <song_name> difficulty = <difficulty>
-				time_offset = (<gem_offset> - ($check_time_late * 1000.0)) fretbar_function = GuitarEvent_Fretbar_Late skipleadin = 0
+			addplayerserverfretbariterator {fretbar_id = fretbareventlate id = <player_status> song_name = <song_name> difficulty = <difficulty>
+				time_offset = (<gem_offset> - ($check_time_late * 1000.0)) fretbar_function = guitarevent_fretbar_late skipleadin = 0
 				player = <player> player_status = <player_status> player_text = <player_text>}
 		endif
-		if GotParam \{looping}
+		if gotparam \{looping}
 			return
 		endif
-		if NOT IsVideoVenuesEnabled
+		if NOT 0x2e51d96c
 			spawnscriptnow lightshow_iterator params = {song_name = <song_name> time_offset = (<gem_offset> + $lightshow_offset_ms) skipleadin = 0}
-			SpawnScriptLater cameracuts_iterator params = {song_name = <song_name> time_offset = <gem_offset> skipleadin = 0}
+			spawnscriptlater cameracuts_iterator params = {song_name = <song_name> time_offset = <gem_offset> skipleadin = 0}
 		endif
-		GetArraySize \{$scripts_array}
+		getarraysize \{$scripts_array}
 		array_count = 0
 		begin
 		<lead_ms> = ($scripts_array [<array_count>].lead_ms)
-		SpawnScriptLater event_iterator params = {song_name = <song_name> difficulty = <difficulty>
+		spawnscriptlater event_iterator params = {song_name = <song_name> difficulty = <difficulty>
 			event_string = ($scripts_array [<array_count>].name) time_offset = (<gem_offset> + <lead_ms>) skipleadin = 0
 			player = <player> player_status = <player_status> player_text = <player_text>}
-		SpawnScriptLater notemap_startiterator params = {song_name = <song_name> difficulty = <difficulty>
+		spawnscriptlater notemap_startiterator params = {song_name = <song_name> difficulty = <difficulty>
 			event_string = ($scripts_array [<array_count>].name) time_offset = (<gem_offset> + <lead_ms>) skipleadin = 0
 			player = <player> player_status = <player_status> player_text = <player_text>}
 		array_count = (<array_count> + 1)
 		repeat <array_size>
 	endif
-	SpawnScriptLater win_song params = {<...>}
+	spawnscriptlater win_song params = {<...>}
 endscript
 
 script get_song_end_time_for_array 
-	if NOT GlobalExists name = <song_array>
+	if NOT globalexists name = <song_array>
 		total_end_time2 = 2.0
 	else
-		GetArraySize $<song_array>
+		getarraysize $<song_array>
 		if (<array_size> = 0)
 			total_end_time2 = 2.0
 		else
@@ -1271,7 +1271,7 @@ script get_song_end_time_for_array
 			total_end_time2 = (<end_time> + <whammy_time>)
 		endif
 	endif
-	if NOT GotParam \{total_end_time}
+	if NOT gotparam \{total_end_time}
 		total_end_time = <total_end_time2>
 	else
 		if (<total_end_time2> > <total_end_time>)
@@ -1282,146 +1282,146 @@ script get_song_end_time_for_array
 endscript
 
 script get_song_end_time \{for_practice = 0}
-	SongFileManager func = get_song_end_time song_name = <song>
+	songfilemanager func = get_song_end_time song_name = <song>
 	return total_end_time = <total_end_time>
 endscript
 failed_song = 0
 
 script win_song 
 	change \{failed_song = 0}
-	GetFirstPlayer \{out = first_player}
+	getfirstplayer \{out = first_player}
 	if (<player> = <first_player>)
 		change \{num_players_finished = 0}
 	endif
-	SongFileManager func = get_song_end_time song_name = <song_name>
+	songfilemanager func = get_song_end_time song_name = <song_name>
 
-	TimeMarkerReached_SetParams time_offset = 0 time = <total_end_time>
+	timemarkerreached_setparams time_offset = 0 time = <total_end_time>
 	begin
-	if TimeMarkerReached
+	if timemarkerreached
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	GetNumPlayersInGame
+	getnumplayersingame
 	if (<num_players> = 2)
 		wait_on_player = 2
 	else
 		wait_on_player = 1
 	endif
 
-	Wait \{$Song_Win_Delay
+	wait \{$song_win_delay
 		seconds}
 	change num_players_finished = ($num_players_finished + 1)
 
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 	if ($num_players_finished >= <num_players_shown>)
 
-		ExtendCRC song_won <player_text> out = type
-		BroadcastEvent type = <type> data = {song_complete = 1}
+		extendcrc song_won <player_text> out = type
+		broadcastevent type = <type> data = {song_complete = 1}
 	endif
 endscript
 last_gems = none
-last_fx_Set = none
+last_fx_set = none
 last_star_set = none
-old_zone = none
+0x7789be5d = none
 
-script Unload_gempaks 
+script unload_gempaks 
 	if ($last_gems != none)
 
-		UnloadPak \{$last_gems}
+		unloadpak \{$last_gems}
 	endif
-	if ($last_fx_Set != none)
+	if ($last_fx_set != none)
 
-		FormatText \{TextName = fxpak
+		formattext \{textname = fxpak
 			'%i.pak'
-			i = $last_fx_Set
-			AddToStringLookup = true}
-		UnloadPak <fxpak>
+			i = $last_fx_set
+			addtostringlookup = true}
+		unloadpak <fxpak>
 	endif
 	if ($last_star_set != none)
 
-		FormatText \{TextName = starpak
+		formattext \{textname = starpak
 			'%i.pak'
 			i = $last_star_set
-			AddToStringLookup = true}
-		UnloadPak <starpak>
+			addtostringlookup = true}
+		unloadpak <starpak>
 	endif
 endscript
 
-script UnloadZoneAnims 
-	<pak> = $old_zone
+script 0x136c76bb 
+	<pak> = $0x7789be5d
 	if (<pak> != none)
-		if StructureContains Structure = $GHZones <pak>
-			zone_name = ($GHZones.<pak>.name)
-		elseif StructureContains Structure = $GHFullZones <pak>
-			zone_name = ($GHFullZones.<pak>.name)
+		if structurecontains structure = $ghzones <pak>
+			zone_name = ($ghzones.<pak>.name)
+		elseif structurecontains structure = $0x94a64133 <pak>
+			zone_name = ($0x94a64133.<pak>.name)
 		else
 			return
 		endif
 
 
-		FormatText TextName = zonepak 'pak/anims/zones/%s_anims.pak' s = (<zone_name>)
+		formattext textname = 0x0ba45610 'pak/anims/zones/%s_anims.pak' s = (<zone_name>)
 
-		UnloadPak <zonepak>
-		change \{old_zone = none}
+		unloadpak <0x0ba45610>
+		change \{0x7789be5d = none}
 	endif
 endscript
 
-script UpdateZoneAnims 
-	GetPakManCurrent \{map = zones}
-	if (<pak> != $old_zone)
-		UnloadZoneAnims
-		if StructureContains Structure = $GHZones <pak>
-			zone_name = ($GHZones.<pak>.name)
-		elseif StructureContains Structure = $GHFullZones <pak>
-			zone_name = ($GHFullZones.<pak>.name)
+script 0x3d141c93 
+	getpakmancurrent \{map = zones}
+	if (<pak> != $0x7789be5d)
+		0x136c76bb
+		if structurecontains structure = $ghzones <pak>
+			zone_name = ($ghzones.<pak>.name)
+		elseif structurecontains structure = $0x94a64133 <pak>
+			zone_name = ($0x94a64133.<pak>.name)
 		else
 			return
 		endif
 
 
-		FormatText TextName = zonepak 'pak/anims/zones/%s_anims.pak' s = (<zone_name>)
+		formattext textname = 0x0ba45610 'pak/anims/zones/%s_anims.pak' s = (<zone_name>)
 
-		LoadPak <zonepak> no_assert
-		change old_zone = <pak>
+		loadpak <0x0ba45610> no_assert
+		change 0x7789be5d = <pak>
 	endif
 endscript
 
-script Load_gempaks \{async = 0}
-	GetGlobalTags \{user_options
+script load_gempaks \{async = 0}
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
-	if NOT GotParam \{gem_set}
+	if NOT gotparam \{gem_set}
 		gem_set = standard_gems
 	endif
-	if NOT GotParam \{FX_Set}
-		FX_Set = standard_fx
+	if NOT gotparam \{fx_set}
+		fx_set = standard_fx
 	endif
-	if NOT GotParam \{Star_Set}
-		Star_Set = standard_stars
+	if NOT gotparam \{star_set}
+		star_set = standard_stars
 	endif
-	Unload_gempaks
-	if NOT LookUpGemString name = <gem_set>
+	unload_gempaks
+	if NOT lookupgemstring name = <gem_set>
 		pak = 'pak/gems/standard_gems'
 	endif
 
-	FormatText TextName = gempak '%i.pak' i = <pak> AddToStringLookup = true
+	formattext textname = gempak '%i.pak' i = <pak> addtostringlookup = true
 
-	LoadPakAsync pak_name = <gempak> heap = heap_cas no_vram async = <async>
+	loadpakasync pak_name = <gempak> heap = heap_cas no_vram async = <async>
 	change last_gems = <gempak>
-	if NOT LookUpGemString name = <FX_Set>
+	if NOT lookupgemstring name = <fx_set>
 		pak = 'pak/gems/standard_fx'
 	endif
-	FormatText TextName = fxpak '%i.pak' i = <pak> AddToStringLookup = true
+	formattext textname = fxpak '%i.pak' i = <pak> addtostringlookup = true
 
-	LoadPakAsync pak_name = <fxpak> heap = heap_cas no_vram async = <async>
-	change last_fx_Set = <pak>
-	if NOT LookUpGemString name = <Star_Set>
+	loadpakasync pak_name = <fxpak> heap = heap_cas no_vram async = <async>
+	change last_fx_set = <pak>
+	if NOT lookupgemstring name = <star_set>
 		pak = 'pak/gems/standard_star'
 	endif
-	FormatText TextName = starpak '%i.pak' i = <pak> AddToStringLookup = true
+	formattext textname = starpak '%i.pak' i = <pak> addtostringlookup = true
 
-	LoadPakAsync pak_name = <starpak> heap = heap_cas no_vram async = <async>
+	loadpakasync pak_name = <starpak> heap = heap_cas no_vram async = <async>
 	change last_star_set = <pak>
 endscript
 
@@ -1432,13 +1432,13 @@ script load_song_anims \{async = 0}
 		if (<song_performance> = 0)
 			song_perf_ext = ''
 		else
-			FormatText TextName = song_perf_ext '_perf%i' i = (<song_performance> + 1)
+			formattext textname = song_perf_ext '_perf%i' i = (<song_performance> + 1)
 		endif
 		get_song_prefix song = <song_name>
-		FormatText TextName = animqpak 'pak/anims/songs/%i%s_anims.pak' i = <song_prefix> s = <song_perf_ext> AddToStringLookup = true
+		formattext textname = animqpak 'pak/anims/songs/%i%s_anims.pak' i = <song_prefix> s = <song_perf_ext> addtostringlookup = true
 
-		if NOT LoadPakAsync pak_name = <animqpak> heap = heap_song no_vram async = <async>
-			DownloadContentLost
+		if NOT loadpakasync pak_name = <animqpak> heap = heap_song no_vram async = <async>
+			downloadcontentlost
 			return
 		endif
 	endif
@@ -1453,12 +1453,12 @@ script unload_song_anims
 		if ($current_song_qpak_performance = 0)
 			song_perf_ext = ''
 		else
-			FormatText TextName = song_perf_ext '_perf%i' i = ($current_song_qpak_performance + 1)
+			formattext textname = song_perf_ext '_perf%i' i = ($current_song_qpak_performance + 1)
 		endif
 		get_song_prefix song = ($current_song_qpak)
-		FormatText TextName = songqpak 'pak/anims/songs/%i%s_anims.pak' i = <song_prefix> s = <song_perf_ext> AddToStringLookup = true
+		formattext textname = songqpak 'pak/anims/songs/%i%s_anims.pak' i = <song_prefix> s = <song_perf_ext> addtostringlookup = true
 
-		UnloadPak <songqpak>
+		unloadpak <songqpak>
 	endif
 endscript
 
@@ -1470,64 +1470,64 @@ script load_songqpak \{async = 0}
 	get_song_performance song = <song_name>
 	if NOT (<song_name> = $current_song_qpak &&
 			<song_performance> = $current_song_qpak_performance)
-		Transitions_ResetZone \{profile = $Profile_Ven_Camera_Obj}
+		transitions_resetzone \{profile = $profile_ven_camera_obj}
 		unload_songqpak
 		if (<song_name> = jamsession)
 		else
 			if (<song_performance> = 0)
 				song_perf_ext = ''
 			else
-				FormatText TextName = song_perf_ext '_perf%i' i = (<song_performance> + 1)
+				formattext textname = song_perf_ext '_perf%i' i = (<song_performance> + 1)
 			endif
 			get_song_prefix song = <song_name>
-			FormatText TextName = songqpak 'songs/%i%s.pak' i = <song_prefix> s = <song_perf_ext> AddToStringLookup = true
+			formattext textname = songqpak 'songs/%i%s.pak' i = <song_prefix> s = <song_perf_ext> addtostringlookup = true
 
-			if NOT LoadPakAsync pak_name = <songqpak> heap = heap_song no_vram async = <async>
-				DownloadContentLost
+			if NOT loadpakasync pak_name = <songqpak> heap = heap_song no_vram async = <async>
+				downloadcontentlost
 				return
 			endif
 		endif
 		change current_song_qpak = <song_name>
 		change current_song_qpak_performance = <song_performance>
-		if GotParam \{song_prefix}
-			FormatText checksumname = song_setup '%s_setup' s = <song_prefix>
-			if ScriptExists <song_setup>
+		if gotparam \{song_prefix}
+			formattext checksumname = song_setup '%s_setup' s = <song_prefix>
+			if scriptexists <song_setup>
 				spawnscriptnow <song_setup>
 			endif
 		endif
-		if NOT SongFileManager \{func = is_song_ready
+		if NOT songfilemanager \{func = 0xc7c46bb1
 				song_name = $current_song}
-			change \{note_not_loaded = true}
-			SongFileManager \{func = add_song_file
+			change \{0x37e424bf = true}
+			songfilemanager \{func = add_song_file
 				song_name = $current_song}
 		else
-			change \{note_not_loaded = false}
+			change \{0x37e424bf = false}
 		endif
 	endif
 endscript
 
 script unload_songqpak 
 	if NOT ($current_song_qpak = none)
-		if ($note_not_loaded = true)
-			SongFileManager \{func = remove_song_file
+		if ($0x37e424bf = true)
+			songfilemanager \{func = remove_song_file
 				song_name = $current_song}
 		endif
 		if ($current_song_qpak = jamsession)
-			if ($ps2_loading_jamsession_song = 0)
+			if ($0xdd4f68fd = 0)
 				jamsession_unload \{song_prefix = 'jamsession'}
-				ClearJamSession
+				clearjamsession
 			endif
 		else
 			if ($current_song_qpak_performance = 0)
 				song_perf_ext = ''
 			else
-				FormatText TextName = song_perf_ext '_perf%i' i = ($current_song_qpak_performance + 1)
+				formattext textname = song_perf_ext '_perf%i' i = ($current_song_qpak_performance + 1)
 			endif
 			get_song_prefix song = ($current_song_qpak)
 			unload_song_anims
-			FormatText TextName = songqpak 'songs/%i%s.pak' i = <song_prefix> s = <song_perf_ext> AddToStringLookup = true
+			formattext textname = songqpak 'songs/%i%s.pak' i = <song_prefix> s = <song_perf_ext> addtostringlookup = true
 
-			UnloadPak <songqpak>
+			unloadpak <songqpak>
 		endif
 		change \{current_song_qpak = none}
 		change \{current_song_qpak_performance = 0}
@@ -1535,28 +1535,28 @@ script unload_songqpak
 endscript
 
 script unpause_loading_scripts 
-	unpausespawnedscript \{Crowd_Loading_Surge}
-	unpausespawnedscript \{Loading_Screen_Crowd_Swell}
-	unpausespawnedscript \{Crowd_Loading_Whistle}
+	unpausespawnedscript \{crowd_loading_surge}
+	unpausespawnedscript \{loading_screen_crowd_swell}
+	unpausespawnedscript \{crowd_loading_whistle}
 endscript
 playing_song = 0
 playing_song_for_real = 0
 
-script start_gem_scroller \{StartTime = 0
+script start_gem_scroller \{starttime = 0
 		practice_intro = 0
 		training_mode = 0
 		endtime = 99999999
 		end_credits_restart = 0
 		loading_transition = 0
 		restarting = 0}
-	if NOT GotParam \{no_band_logo}
-		edit_graphic_load_data_from_global
+	if NOT gotparam \{0x97cb575b}
+		0x9db2b00d
 	endif
-	UpdateZoneAnims
-	DisableAnimVideoSync
-	change \{Add_loading_screen = 0}
+	0x3d141c93
+	0x22a3ae8d
+	change \{0xa3ce893c = 0}
 	update_all_volumes
-	change \{Star_power_verb_is_on = 0}
+	change \{star_power_verb_is_on = 0}
 	<note_input> = $disable_note_input
 	change \{disable_note_input = 1}
 	change last_start_pressed_device = ($primary_controller)
@@ -1577,7 +1577,7 @@ script start_gem_scroller \{StartTime = 0
 		bot_strum = 0}
 	change \{structurename = player4_status
 		bot_strum = 0}
-	Yield
+	yield
 	if (<end_credits_restart> = 1)
 
 	else
@@ -1585,9 +1585,9 @@ script start_gem_scroller \{StartTime = 0
 			change \{end_credits = 0}
 		endif
 	endif
-	Yield
-	song_start_time = <StartTime>
-	Yield \{'preload_song'}
+	yield
+	song_start_time = <starttime>
+	yield \{'preload_song'}
 	if (<loading_transition> = 0)
 		change \{playing_song = 1}
 	endif
@@ -1596,23 +1596,23 @@ script start_gem_scroller \{StartTime = 0
 		cas_destroy_all_characters
 	endif
 	mark_unsafe_for_shutdown
-	Yield
+	yield
 	dragonforce_hack_off
 	tap_prototype_off
-	Menu_Music_Off
-	Yield
-	Song_Quiet_Reset_SFX_Balance restarting = <restarting> loading_transition = <loading_transition>
-	GH3_AdjustCrowdLoopBackToDefault restarting = <restarting>
-	Yield
-	GuitarEvent_EnterVenue
+	menu_music_off
+	yield
+	song_quiet_reset_sfx_balance restarting = <restarting> loading_transition = <loading_transition>
+	gh3_adjustcrowdloopbacktodefault restarting = <restarting>
+	yield
+	guitarevent_entervenue
 	init_play_log
-	Yield
+	yield
 	change \{structurename = guitarist_info
-		stance = Stance_A}
+		stance = stance_a}
 	change \{structurename = guitarist_info
-		next_stance = Stance_A}
+		next_stance = stance_a}
 	change \{structurename = guitarist_info
-		current_anim = Idle}
+		current_anim = idle}
 	change \{structurename = guitarist_info
 		cycle_anim = true}
 	change \{structurename = guitarist_info
@@ -1621,13 +1621,13 @@ script start_gem_scroller \{StartTime = 0
 		playing_missed_note = false}
 	change \{structurename = guitarist_info
 		waiting_for_cameracut = false}
-	Yield
+	yield
 	change \{structurename = bassist_info
-		stance = Stance_A}
+		stance = stance_a}
 	change \{structurename = bassist_info
-		next_stance = Stance_A}
+		next_stance = stance_a}
 	change \{structurename = bassist_info
-		current_anim = Idle}
+		current_anim = idle}
 	change \{structurename = bassist_info
 		cycle_anim = true}
 	change \{structurename = bassist_info
@@ -1636,98 +1636,98 @@ script start_gem_scroller \{StartTime = 0
 		playing_missed_note = false}
 	change \{structurename = bassist_info
 		waiting_for_cameracut = false}
-	Yield
+	yield
 	change \{structurename = vocalist_info
-		stance = Stance_A}
+		stance = stance_a}
 	change \{structurename = vocalist_info
-		next_stance = Stance_A}
+		next_stance = stance_a}
 	change \{structurename = vocalist_info
-		current_anim = Idle}
+		current_anim = idle}
 	change \{structurename = vocalist_info
 		cycle_anim = true}
 	change \{structurename = vocalist_info
 		next_anim = none}
-	Yield
+	yield
 	change \{structurename = drummer_info
-		stance = Stance_A}
+		stance = stance_a}
 	change \{structurename = drummer_info
-		next_stance = Stance_A}
+		next_stance = stance_a}
 	change \{structurename = drummer_info
-		current_anim = Idle}
+		current_anim = idle}
 	change \{structurename = drummer_info
 		cycle_anim = true}
 	change \{structurename = drummer_info
 		next_anim = none}
 	change \{structurename = drummer_info
-		Twist = 0.0}
+		twist = 0.0}
 	change \{structurename = drummer_info
 		desired_twist = 0.0}
 	change \{structurename = drummer_info
 		last_left_arm_note = 0}
 	change \{structurename = drummer_info
 		last_right_arm_note = 0}
-	Yield
-	Band_ClearAnimTempo
-	Yield
+	yield
+	band_clearanimtempo
+	yield
 	if ($ps2_gameplay_restart_song = 0)
-		ps2_force_unload_car_part_script
+		0xce69e479
 		unload_songqpak
-		WaitOneGameFrame
+		waitonegameframe
 		load_songqpak song_name = <song_name> async = 1
 		ps2_load_car_part_script
 	endif
 	if (<loading_transition> = 0)
-		change \{start_animations = 0}
+		change \{0x19d65371 = 0}
 		create_all_camera_lock_targets
-		Yield \{'create_all_camera_lock_targets'}
+		yield \{'create_all_camera_lock_targets'}
 		if (<training_mode> = 0)
-			Yield
+			yield
 			if ($ps2_gameplay_restart_song = 0)
 				band_unload_anim_paks
 				band_unload_song_anim_paks
-				SmartFlushPak \{async = 0
+				smartflushpak \{async = 0
 					tags = {
 						map = animpak
 					}}
-				SmartFlushPak \{async = 0
+				smartflushpak \{async = 0
 					tags = {
 						map = looppak
 					}}
 				if NOT create_band \{async = 1}
-					DownloadContentLost
+					downloadcontentlost
 				endif
 			endif
-			Yield \{'create_band2'}
+			yield \{'create_band2'}
 		endif
-		Yield
+		yield
 		create_vocalist_dummy
-		Yield
-		Yield
+		yield
+		yield
 	endif
 	if ($ps2_gameplay_restart_song = 0)
-		ps2_force_unload_car_part_script
+		0xce69e479
 	endif
 	begin_singleplayer_game
-	Yield
+	yield
 	change current_song = <song_name>
 	begin
-	if SongFileManager \{func = is_song_ready
+	if songfilemanager \{func = 0xc7c46bb1
 			song_name = $current_song}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	cache_song_end_time
 	change structurename = player1_status difficulty = <difficulty>
 	change structurename = player2_status difficulty = <difficulty2>
-	change current_starttime = <StartTime>
+	change current_starttime = <starttime>
 	change current_endtime = <endtime>
 	change \{showing_raise_axe = 0}
 	in_the_round_check
-	Yield
-	Progression_SetProgressionNodeFlags
-	Yield \{'Nodeflags'}
+	yield
+	progression_setprogressionnodeflags
+	yield \{'Nodeflags'}
 	if (($player2_status.bot_play = 1) || ($player2_status.is_local_client = 0))
 		setup_bot_controller \{player = 2}
 
@@ -1745,25 +1745,25 @@ script start_gem_scroller \{StartTime = 0
 
 	endif
 	if ($ps2_gameplay_restart_song = 0)
-		Unload_gempaks
-		<oogame_pak_name> = ''
+		unload_gempaks
+		<0x0347f72c> = ''
 		if ($game_mode = p2_pro_faceoff)
-			<oogame_pak_name> = 'pak/oogame/oogamevs.pak'
+			<0x0347f72c> = 'pak/oogame/oogamevs.pak'
 		elseif ($game_mode = p2_quickplay || $game_mode = p3_quickplay || $game_mode = p4_quickplay ||
 				$game_mode = gh4_p2_career || $game_mode = gh4_p3_career || $game_mode = gh4_p4_career ||
 				$game_mode = p4_pro_faceoff || $game_mode = p6_pro_faceoff_no_mics || $game_mode = p8_pro_faceoff)
-			<oogame_pak_name> = 'pak/oogame/oogameband.pak'
+			<0x0347f72c> = 'pak/oogame/oogameband.pak'
 		else
-			<oogame_pak_name> = 'pak/oogame/oogame.pak'
+			<0x0347f72c> = 'pak/oogame/oogame.pak'
 		endif
-		if NOT ($g_current_oogame_pak_name = <oogame_pak_name>)
-			if NOT ($g_current_oogame_pak_name = '')
-				UnloadPak \{$g_current_oogame_pak_name
+		if NOT ($0xa025a029 = <0x0347f72c>)
+			if NOT ($0xa025a029 = '')
+				unloadpak \{$0xa025a029
 					heap = heap_cas}
 			endif
-			change g_current_oogame_pak_name = <oogame_pak_name>
-			if NOT ($g_current_oogame_pak_name = '')
-				LoadPak \{$g_current_oogame_pak_name
+			change 0xa025a029 = <0x0347f72c>
+			if NOT ($0xa025a029 = '')
+				loadpak \{$0xa025a029
 					heap = heap_cas}
 			endif
 		endif
@@ -1771,13 +1771,13 @@ script start_gem_scroller \{StartTime = 0
 	if ($game_mode = tutorial)
 
 	elseif ($game_mode = p2_pro_faceoff)
-		ReloadSfx \{mode = oogamevs}
+		0xc1c4e84c \{mode = 0x68721771}
 	elseif ($current_song = jamsession)
-		ReloadSfx \{mode = jammode}
+		0xc1c4e84c \{mode = jammode}
 	else
-		ReloadSfx \{mode = oogame}
+		0xc1c4e84c \{mode = 0xae92eddf}
 	endif
-	Yield
+	yield
 
 
 
@@ -1785,92 +1785,92 @@ script start_gem_scroller \{StartTime = 0
 
 
 
-	Yield
+	yield
 	if (<song_name> = jamsession)
-		GetSongInfo
+		getsonginfo
 		drum_kit = 0
-		SetSongInfo \{drum_kit = 0}
+		setsonginfo \{drum_kit = 0}
 		change jam_current_drum_kit = <drum_kit>
-		LoadDrumKitAll drum_kit = ($drum_kits [<drum_kit>].string_id) percussion_kit = ($drum_kits [<drum_kit>].percussion_string_id) async = 0
+		loaddrumkitall drum_kit = ($drum_kits [<drum_kit>].string_id) percussion_kit = ($drum_kits [<drum_kit>].percussion_string_id) async = 0
 		melody_kit = 0
-		SetSongInfo \{melody_kit = 0}
+		setsonginfo \{melody_kit = 0}
 		change jam_current_melody_kit = <melody_kit>
-		if GotParam \{bass_kit}
-			GetArraySize \{$pause_bass_kit_options}
+		if gotparam \{bass_kit}
+			getarraysize \{$pause_bass_kit_options}
 			if ((<bass_kit> >= <array_size>) || (<bass_kit> < 0))
 				<bass_kit> = 0
 			endif
 			change bass_kit_mode = <bass_kit>
 		else
-			SetSongInfo \{bass_kit = 0}
+			setsonginfo \{bass_kit = 0}
 			change \{bass_kit_mode = 0}
 		endif
 	else
 		drum_kit_index = 0
 		change jam_current_drum_kit = <drum_kit_index>
-		LoadDrumKitAll drum_kit = <drum_kit_type>
+		loaddrumkitall drum_kit = <drum_kit_type>
 	endif
-	Yield \{'LoadDrumKitAll'}
+	yield \{'LoadDrumKitAll'}
 	call_startup_scripts <...>
-	Yield
+	yield
 	if (<loading_transition> = 0)
 		setup_bg_viewport
 		if (<training_mode> = 0)
-			KillCamAnim \{all}
+			killcamanim \{all}
 		endif
 		create_cameracuts <...>
 	else
 		reset_cameracuts_internal_vars
 	endif
-	Yield \{'setup_bg_viewport2'}
-	if IsVideoVenuesEnabled
+	yield \{'setup_bg_viewport2'}
+	if 0x2e51d96c
 
 
-		vv_setup_camera_cuts <...>
+		0x6797e24c <...>
 	endif
 	if NOT (<song_name> = jamsession)
-		preload_song song_name = <song_name> StartTime = <StartTime>
+		preload_song song_name = <song_name> starttime = <starttime>
 
 
 
 
 
-		StartTime = <adjustedtime>
-		change current_starttime = <StartTime>
+		starttime = <adjustedtime>
+		change current_starttime = <starttime>
 	endif
-	starttimeafterintro = <StartTime>
+	starttimeafterintro = <starttime>
 
 	if ($current_transition = none)
 		change \{current_transition = fastintro}
 	endif
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
 	<transition_lag_offset> = 0
 	if (<lag_calibration> > 999)
-		Mod a = <lag_calibration> b = 1000
-		<video_offset> = (0 - <Mod>)
+		mod a = <lag_calibration> b = 1000
+		<video_offset> = (0 - <mod>)
 		<audio_offset> = ((<lag_calibration> / 1000) - 1)
 		<transition_lag_offset> = (0 - <video_offset> - <audio_offset>)
 	endif
-	Yield
-	Transition_GetTime type = ($current_transition)
-	StartTime = (<StartTime> - <transition_time> - <transition_lag_offset>)
+	yield
+	transition_gettime type = ($current_transition)
+	starttime = (<starttime> - <transition_time> - <transition_lag_offset>)
 	if (<loading_transition> = 0)
-		Yield
+		yield
 		setslomo \{0.001}
-		reset_song_time StartTime = <StartTime>
+		reset_song_time starttime = <starttime>
 	endif
-	Yield
+	yield
 	if NOT ($use_character_debug_cam = 1)
 	endif
-	Yield
+	yield
 	if (<loading_transition> = 0)
 		if (<training_mode> = 0)
 			if NOT ($game_mode = practice)
 				apply_band_logo_to_venue \{step = build}
 			endif
 		endif
-		Yield \{'apply_band_logo_to_venue'}
+		yield \{'apply_band_logo_to_venue'}
 		if ((<training_mode> = 1) || ($game_mode = practice))
 			if ($current_bandname_viewport = none)
 				create_movie_viewport
@@ -1878,47 +1878,47 @@ script start_gem_scroller \{StartTime = 0
 		else
 			create_movie_viewport
 		endif
-		Yield
+		yield
 		create_crowd_models
 	endif
-	Yield \{'create_crowd_models'}
-	Yield
+	yield \{'create_crowd_models'}
+	yield
 	crowd_create_lighters
-	Yield
-	Crowd_StageDiver_Hide
-	Yield
+	yield
+	crowd_stagediver_hide
+	yield
 	if ($debug_showmeasures = on)
-		if ScreenElementExists \{id = debug_measures_text}
-			debug_measures_text :SE_SetProps \{unhide}
-			debug_measures_text :SE_SetProps \{text = qs("\LM: 1 : B: 1")}
+		if screenelementexists \{id = debug_measures_text}
+			debug_measures_text :se_setprops \{unhide}
+			debug_measures_text :se_setprops \{text = qs(0x9f7db74f)}
 		endif
 	endif
 	if ($debug_showsongtime = on)
-		debug_songtime_text :SE_SetProps \{unhide}
+		debug_songtime_text :se_setprops \{unhide}
 	endif
 	if ($debug_showsongstars = on)
-		debug_songstars_text :SE_SetProps \{unhide
-			text = qs("\LStars: 0.0")}
+		debug_songstars_text :se_setprops \{unhide
+			text = qs(0xfbf320c8)}
 	endif
-	Yield
+	yield
 	if ($ps2_gameplay_restart_song = 0)
-		ps2_force_unload_car_part_script
-		WaitOneGameFrame
+		0xce69e479
+		waitonegameframe
 		load_song_anims song_name = <song_name> async = 1
-		band_clear_invalid_durations
+		0xf11ce60b
 	endif
 	if ($game_mode = practice)
 		practicemode_init
 	endif
-	Yield \{'preload_song'}
+	yield \{'preload_song'}
 	player = 1
 	begin
 	set_song_section_array player = <player>
 	player = (<player> + 1)
 	repeat $current_num_players
-	Yield
+	yield
 	calc_score = true
-	Yield
+	yield
 	if NOT ($end_credits = 1)
 		if ($use_last_player_scores = 0)
 			reset_score \{player_status = player1_status}
@@ -1938,30 +1938,30 @@ script start_gem_scroller \{StartTime = 0
 		score = 0}
 	change \{structurename = band2_status
 		star_power_amount = 0}
-	Yield \{'reset_score'}
-	GetGlobalTags \{user_options
+	yield \{'reset_score'}
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
-	Yield
-	GetArraySize \{$currently_holding
+	yield
+	getarraysize \{$currently_holding
 		param = holding_size}
 	holding_count = 0
 	begin
-	SetArrayElement ArrayName = currently_holding GlobalArray index = <holding_count> newvalue = 0
+	setarrayelement arrayname = currently_holding globalarray index = <holding_count> newvalue = 0
 	holding_count = (<holding_count> + 1)
 	repeat <holding_size>
-	Yield
+	yield
 	<num_players> = $current_num_players
 	if (<num_players> > 0)
 		player = 1
 		begin
 		if (<player> >= 2)
-			GetPlayerInfo <player> difficulty
+			getplayerinfo <player> difficulty
 		endif
-		Yield
-		<player_status> = ($player_status_array [<player>])
-		<player_text> = ($player_text_array [<player>])
+		yield
+		<player_status> = ($0x2994109a [<player>])
+		<player_text> = ($0x57e22f28 [<player>])
 		player_on_screen = 1
-		if (GameMode_IsBandBattle)
+		if (gamemode_isbandbattle)
 			if NOT (($<player_status>.team) = ($player1_status.team))
 				player_on_screen = 0
 			endif
@@ -1972,66 +1972,66 @@ script start_gem_scroller \{StartTime = 0
 		change structurename = <player_status> drum_volume3 = 100
 		change structurename = <player_status> drum_volume4 = 100
 		if (<player_on_screen> = 1)
-			UpdateGuitarVolume
+			updateguitarvolume
 		endif
-		Yield
-		GetGlobalTags \{user_options
+		yield
+		getglobaltags \{user_options
 			attract_mode_fix = 1}
 		if ($is_network_game = 0)
 			change structurename = <player_status> lefthanded_gems = ($<player_status>.lefty_flip)
 			change structurename = <player_status> lefthanded_button_ups = ($<player_status>.lefty_flip)
 		endif
-		Yield
+		yield
 		get_resting_whammy_position controller = ($<player_status>.controller)
-		if GotParam \{resting_whammy_position}
+		if gotparam \{resting_whammy_position}
 			change structurename = <player_status> resting_whammy_position = <resting_whammy_position>
 		endif
 		get_star_power_position controller = ($<player_status>.controller)
-		if GotParam \{star_power_position}
+		if gotparam \{star_power_position}
 			change structurename = <player_status> star_tilt_threshold = <star_power_position>
 		endif
-		Yield
+		yield
 		if (($tutorial_disable_hud = 0) && (<player_on_screen> = 1) && ($end_credits = 0))
 			setup_hud <...>
 		endif
-		Yield \{'setup_hud'}
+		yield \{'setup_hud'}
 		if ($output_gpu_log = 1)
-			TextOutputStart
+			textoutputstart
 		endif
-		Yield
+		yield
 		if (($tutorial_disable_hud = 0) && ($end_credits = 0))
 			crowd_reset <...>
 		endif
-		Yield \{'crowd_reset'}
+		yield \{'crowd_reset'}
 		star_power_reset <...>
-		Yield
+		yield
 		if (($<player_status>.part) = guitar)
-			change structurename = <player_status> hyperspeed = <Hyperspeed_Guitar>
-		elseif (($<player_status>.part) = Bass)
-			change structurename = <player_status> hyperspeed = <Hyperspeed_Bass>
+			change structurename = <player_status> hyperspeed = <hyperspeed_guitar>
+		elseif (($<player_status>.part) = bass)
+			change structurename = <player_status> hyperspeed = <hyperspeed_bass>
 		elseif (($<player_status>.part) = drum)
-			change structurename = <player_status> hyperspeed = <Hyperspeed_Drum>
+			change structurename = <player_status> hyperspeed = <hyperspeed_drum>
 		else
 			change structurename = <player_status> hyperspeed = 1.0
 		endif
 		if (<player> = 1)
-			Load_gempaks
+			load_gempaks
 		endif
-		Yield
+		yield
 		difficulty_setup <...>
-		Yield
+		yield
 		if (<player_on_screen>)
-			if (($<player_status>.part) != Vocals)
+			if (($<player_status>.part) != vocals)
 				setup_highway <...>
 			else
-				SetArrayElement GlobalArray ArrayName = highway_pos_table index = (<player> -1) newvalue = ($highway_guitar1)
+				setarrayelement globalarray arrayname = highway_pos_table index = (<player> -1) newvalue = ($highway_guitar1)
 			endif
 		endif
-		Yield \{'setup_highway'}
+		yield \{'setup_highway'}
 		if (($tutorial_disable_hud = 0) && (<player_on_screen> = 1) && ($end_credits = 0))
 			reset_hud <...>
 		endif
-		Yield
+		yield
 		if (<player_on_screen> = 1)
 
 			if (<loading_transition> = 1)
@@ -2040,33 +2040,33 @@ script start_gem_scroller \{StartTime = 0
 			spawnscriptnow gem_scroller params = {<...>}
 		else
 
-			CreatePlayerServer id = <player_status> player = <player>
-			AddNetworkPlayerOutputs id = <player_status> player = <player> onscreen = 0
+			createplayerserver id = <player_status> player = <player>
+			addnetworkplayeroutputs id = <player_status> player = <player> onscreen = 0
 		endif
-		Yield \{'ss gem_scroller'}
-		if ((($<player_status>.part) != Vocals) && (<player_on_screen> = 1))
+		yield \{'ss gem_scroller'}
+		if ((($<player_status>.part) != vocals) && (<player_on_screen> = 1))
 			spawnscriptnow button_checker params = {<...>}
 		endif
-		Yield
+		yield
 		if ($<player_status>.is_local_client = 1)
-			SpawnScriptLater check_for_star_power params = {<...>}
+			spawnscriptlater check_for_star_power params = {<...>}
 		endif
-		Yield
+		yield
 		if ((<calc_score> = true) && (<player_on_screen> = 1))
 			calc_songscoreinfo player_status = <player_status>
 		endif
-		if NOT GotParam \{no_score_update}
-			SpawnScriptLater update_score_fast params = {player_status = <player_status> player_on_screen = <player_on_screen>}
+		if NOT gotparam \{no_score_update}
+			spawnscriptlater update_score_fast params = {player_status = <player_status> player_on_screen = <player_on_screen>}
 		endif
 		player = (<player> + 1)
 		repeat <num_players>
 	endif
-	Yield
-	Yield
+	yield
+	yield
 	setup_band_hud
-	Yield \{'setup_band_hud'}
-	GetPakManCurrent \{map = zones}
-	Yield
+	yield \{'setup_band_hud'}
+	getpakmancurrent \{map = zones}
+	yield
 	if (<loading_transition> = 0)
 		if (<training_mode> = 0)
 			if NOT ($game_mode = practice)
@@ -2074,63 +2074,63 @@ script start_gem_scroller \{StartTime = 0
 			endif
 		endif
 	endif
-	Yield
-	GH3_Set_Guitar_Verb_And_Echo_to_Dry
-	SetupSongDSPNetworks song_name = <song_name>
+	yield
+	gh3_set_guitar_verb_and_echo_to_dry
+	setupsongdspnetworks song_name = <song_name>
 	if (<song_name> = jamsession)
 		begin_jam_song
 	endif
-	Yield
+	yield
 	if (<loading_transition> = 1)
 
 		mark_safe_for_shutdown
 		setslomo \{$current_speedfactor}
-		Transition_Wait
+		transition_wait
 		change \{playing_song = 1}
-		Yield \{'Transition_Wait'}
+		yield \{'Transition_Wait'}
 		setslomo \{0.001}
-		Transition_GetTime type = ($current_transition)
+		transition_gettime type = ($current_transition)
 		songtime = (0 - <transition_time> - <transition_lag_offset> - <transition_lag_offset>)
-		reset_song_time StartTime = <songtime>
+		reset_song_time starttime = <songtime>
 	endif
-	Yield
-	Transition_Play type = ($current_transition)
+	yield
+	transition_play type = ($current_transition)
 	change \{current_transition = none}
-	Yield \{'Transition_Play'}
+	yield \{'Transition_Play'}
 	change \{check_for_unplugged_controllers = 1}
-	Yield
-	WaitOneGameFrame
-	Yield \{'wait 1 gameframe'}
+	yield
+	waitonegameframe
+	yield \{'wait 1 gameframe'}
 	if (<loading_transition> = 0)
-		Yield \{'StopRendering'}
+		yield \{'StopRendering'}
 		if ($end_credits = 0)
 			destroy_loading_screen
 		endif
-		Yield
+		yield
 	else
 		destroy_loading_screen
-		Yield
+		yield
 	endif
 	setslomo \{$current_speedfactor}
-	Yield
+	yield
 	spawnscriptnow begin_song_after_intro params = {starttimeafterintro = <starttimeafterintro>}
-	Achievements_ResetGreenHellFlags
+	achievements_resetgreenhellflags
 	player = 1
 	begin
 	init_star_power_debug player = <player>
 	player = (<player> + 1)
 	repeat $current_num_players
-	Yield
+	yield
 	mark_safe_for_shutdown
-	ResetWhammyCachedRows
+	resetwhammycachedrows
 	change disable_note_input = <note_input>
 	player = 1
 	begin
-	<player_status> = ($player_status_array [<player>])
-	EnableInput off controller = ($<player_status>.controller)
+	<player_status> = ($0x2994109a [<player>])
+	enableinput off controller = ($<player_status>.controller)
 	player = (<player> + 1)
 	repeat $current_num_players
-	debug_printscriptinfo \{'*_*'}
+	0x821ec1ac \{'*_*'}
 endscript
 
 script in_the_round_check 
@@ -2139,9 +2139,9 @@ script in_the_round_check
 	endif
 	song = $current_song
 	level_checksum = $current_level
-	if StructureContains Structure = ($gh_songlist_props.<song>) in_the_round
+	if structurecontains structure = ($gh_songlist_props.<song>) in_the_round
 		if (($gh_songlist_props.<song>.in_the_round) = 1)
-			if NOT StructureContains Structure = ($LevelZones.<level_checksum>) in_the_round
+			if NOT structurecontains structure = ($levelzones.<level_checksum>) in_the_round
 
 			endif
 		endif
@@ -2150,11 +2150,11 @@ endscript
 
 script begin_song_after_intro 
 	begin
-	GetSongTimeMs
+	getsongtimems
 	if (<time> >= <starttimeafterintro>)
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 	begin_song
 	change \{playing_song_for_real = 1}
@@ -2164,13 +2164,13 @@ script begin_song_after_intro
 endscript
 
 script kill_gem_scroller \{no_render = 0
-		type = Normal
+		type = normal
 		training_mode = 0}
 	change \{playing_song_for_real = 0}
-	if (<type> = Normal)
+	if (<type> = normal)
 		mark_unsafe_for_shutdown
 
-		if NOT GotParam \{restarting}
+		if NOT gotparam \{restarting}
 			stoprendering
 		endif
 		disable_highway_prepass
@@ -2180,23 +2180,23 @@ script kill_gem_scroller \{no_render = 0
 	endif
 
 	change \{crowd_in_jam_mode_song_state = 0}
-	change \{crowd_in_Front_End_state = 1}
+	change \{crowd_in_front_end_state = 1}
 	change last_start_pressed_device = ($primary_controller)
-	PrintMissingDrumPatterns
+	printmissingdrumpatterns
 	if NOT (<type> = restart)
-		LaunchGemEvent \{event = kill_objects}
-		DestroyPlayerServer \{id = all}
+		launchgemevent \{event = kill_objects}
+		destroyplayerserver \{id = all}
 		begin
 		if ($practice_songpreview_changing = 0)
 			break
 		endif
-		Wait \{1
+		wait \{1
 			gameframe}
 		repeat
-		SongUnLoad
-		Kill_StarPower_Camera \{changecamera = 0}
+		songunload
+		kill_starpower_camera \{changecamera = 0}
 		kill_group_starpower_anim
-		Kill_Walk_Camera \{changecamera = 0}
+		kill_walk_camera \{changecamera = 0}
 		change \{structurename = player1_status
 			star_power_amount = 0}
 		change \{structurename = player2_status
@@ -2205,54 +2205,54 @@ script kill_gem_scroller \{no_render = 0
 			star_power_amount = 0}
 		change \{structurename = player4_status
 			star_power_amount = 0}
-		Kill_StarPower_StageFX player_text = ($player1_status.text) player_status = player1_status ifEmpty = 0
-		Kill_StarPower_StageFX player_text = ($player2_status.text) player_status = player2_status ifEmpty = 0
-		Kill_StarPower_StageFX player_text = ($player3_status.text) player_status = player3_status ifEmpty = 0
-		Kill_StarPower_StageFX player_text = ($player4_status.text) player_status = player4_status ifEmpty = 0
+		kill_starpower_stagefx player_text = ($player1_status.text) player_status = player1_status ifempty = 0
+		kill_starpower_stagefx player_text = ($player2_status.text) player_status = player2_status ifempty = 0
+		kill_starpower_stagefx player_text = ($player3_status.text) player_status = player3_status ifempty = 0
+		kill_starpower_stagefx player_text = ($player4_status.text) player_status = player4_status ifempty = 0
 		change \{showing_raise_axe = 0}
 		practicemode_deinit
 		notemap_deinit
-		KillSpawnedScript \{name = Do_StarPower_TeslaFX}
-		KillSpawnedScript \{name = Create_StarPower_TeslaFX}
+		killspawnedscript \{name = do_starpower_teslafx}
+		killspawnedscript \{name = create_starpower_teslafx}
 	endif
 	if NOT (<type> = outro)
-		if ScreenElementExists \{id = starpower_container_leftp1}
-			LegacyDoScreenElementMorph \{id = starpower_container_leftp1
+		if screenelementexists \{id = starpower_container_leftp1}
+			legacydoscreenelementmorph \{id = starpower_container_leftp1
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = starpower_container_leftp2}
-			LegacyDoScreenElementMorph \{id = starpower_container_leftp2
+		if screenelementexists \{id = starpower_container_leftp2}
+			legacydoscreenelementmorph \{id = starpower_container_leftp2
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = starpower_container_rightp1}
-			LegacyDoScreenElementMorph \{id = starpower_container_rightp1
+		if screenelementexists \{id = starpower_container_rightp1}
+			legacydoscreenelementmorph \{id = starpower_container_rightp1
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = starpower_container_rightp2}
-			LegacyDoScreenElementMorph \{id = starpower_container_rightp2
+		if screenelementexists \{id = starpower_container_rightp2}
+			legacydoscreenelementmorph \{id = starpower_container_rightp2
 				alpha = 0}
 		endif
 		kill_debug_elements
-		GuitarEvent_ExitVenue
+		guitarevent_exitvenue
 		destroy_credits_menu
 		deinit_star_power_debug
-		KillSpawnedScript \{name = move_2d_elements_to_default}
-		KillSpawnedScript \{name = wait_and_play_you_rock_movie}
-		KillSpawnedScript \{name = star_power_activate_and_drain}
-		KillSpawnedScript \{name = highway_pulse_multiplier_loss}
+		killspawnedscript \{name = move_2d_elements_to_default}
+		killspawnedscript \{name = wait_and_play_you_rock_movie}
+		killspawnedscript \{name = star_power_activate_and_drain}
+		killspawnedscript \{name = highway_pulse_multiplier_loss}
 		kill_pulsate_star_power_bulbs \{player = 1}
 		kill_pulsate_star_power_bulbs \{player = 2}
-		KillSpawnedScript \{name = guitar_jam_playback_recording}
-		KillSpawnedScript \{name = guitar_jam_drum_playback}
-		KillSpawnedScript \{name = jam_input_whammy_spawned}
+		killspawnedscript \{name = guitar_jam_playback_recording}
+		killspawnedscript \{name = guitar_jam_drum_playback}
+		killspawnedscript \{name = jam_input_whammy_spawned}
 		jam_stop_all_samples
 		jam_deinit_reverb
 	endif
-	GetMaxPlayers
+	getmaxplayers
 	player = 1
 	begin
-	<player_status> = ($player_status_array [<player>])
-	<player_text> = ($player_text_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
+	<player_text> = ($0x57e22f28 [<player>])
 	if NOT (<type> = outro)
 		change structurename = <player_status> star_power_used = 0
 		change structurename = <player_status> whammy_on = 0
@@ -2261,7 +2261,7 @@ script kill_gem_scroller \{no_render = 0
 		destroy_highway <...>
 	endif
 	if NOT (<type> = restart)
-		GuitarEvent_KillSong <...> loading_transition = 1
+		guitarevent_killsong <...> loading_transition = 1
 		destroy_hud player_text = <player_text> player = <player>
 		vocals_destroy_highway player = <player>
 		faceoff_deinit <...>
@@ -2273,129 +2273,129 @@ script kill_gem_scroller \{no_render = 0
 	if NOT (<type> = restart)
 		destroy_band_hud
 		kill_startup_script <...>
-		KillSpawnedScript \{name = GuitarEvent_MissedNote}
-		KillSpawnedScript \{name = GuitarEvent_UnnecessaryNote}
-		KillSpawnedScript \{name = GuitarEvent_HitNotes}
-		KillSpawnedScript \{name = GuitarEvent_HitNote}
-		KillSpawnedScript \{name = GuitarEvent_StarPowerOn}
-		KillSpawnedScript \{name = GuitarEvent_StarPowerOff}
-		KillSpawnedScript \{name = GuitarEvent_StarHitNote}
-		KillSpawnedScript \{name = GuitarEvent_StarSequenceBonus}
-		KillSpawnedScript \{name = GuitarEvent_StarMissNote}
-		KillSpawnedScript \{name = GuitarEvent_WhammyOn}
-		KillSpawnedScript \{name = GuitarEvent_WhammyOff}
-		KillSpawnedScript \{name = GuitarEvent_StarWhammyOn}
-		KillSpawnedScript \{name = GuitarEvent_StarWhammyOff}
-		KillSpawnedScript \{name = GuitarEvent_Note_Window_Open}
-		KillSpawnedScript \{name = GuitarEvent_Note_Window_Close}
-		KillSpawnedScript \{name = GuitarEvent_crowd_poor_medium}
-		KillSpawnedScript \{name = GuitarEvent_crowd_medium_good}
-		KillSpawnedScript \{name = GuitarEvent_crowd_medium_poor}
-		KillSpawnedScript \{name = GuitarEvent_crowd_good_medium}
-		KillSpawnedScript \{name = GuitarEvent_CreateFirstGem}
-		KillSpawnedScript \{name = highway_pulse_black}
-		KillSpawnedScript \{name = GuitarEvent_HitNote_Spawned}
-		KillSpawnedScript \{name = hit_note_fx}
-		KillSpawnedScript \{name = Do_StarPower_StageFX}
-		KillSpawnedScript \{name = Do_StarPower_Camera}
-		KillSpawnedScript \{name = first_gem_fx}
-		KillSpawnedScript \{name = gem_iterator}
-		KillSpawnedScript \{name = gem_array_stepper}
-		KillSpawnedScript \{name = gem_array_events}
-		KillSpawnedScript \{name = gem_step}
-		KillSpawnedScript \{name = gem_step_end}
-		KillSpawnedScript \{name = Drumkit_anim_iterator}
-		KillSpawnedScript \{name = WatchForStartPlaying_iterator}
-		Band_DisableTempoIterator
-		KillSpawnedScript \{name = tempo_matching_iterator}
-		KillSpawnedScript \{name = MomentCamera_PlayAnim_Spawned}
-		ClearMeasureCallbacks
-		ClearBeatCallbacks
-		KillSpawnedScript \{name = gem_scroller}
-		KillSpawnedScript \{name = button_checker}
-		KillSpawnedScript \{name = check_buttons}
-		KillSpawnedScript \{name = fretbar_update_tempo}
-		KillSpawnedScript \{name = fretbar_update_hammer_on_tolerance}
-		KillSpawnedScript \{name = move_whammy}
-		KillSpawnedScript \{name = create_fretbar}
-		KillSpawnedScript \{name = move_highway_2d}
-		KillSpawnedScript \{name = move_highway_2d_off}
-		KillSpawnedScript \{name = update_score_fast}
-		KillSpawnedScript \{name = check_for_star_power}
-		KillSpawnedScript \{name = wait_for_inactive}
-		KillSpawnedScript \{name = GuitarEvent_PreFretbar}
-		KillSpawnedScript \{name = GuitarEvent_Fretbar}
-		KillSpawnedScript \{name = pulsate_all_star_power_bulbs}
-		KillSpawnedScript \{name = pulsate_star_power_bulb}
-		KillSpawnedScript \{name = rock_meter_star_power_on}
-		KillSpawnedScript \{name = rock_meter_star_power_off}
-		KillSpawnedScript \{name = hud_activated_star_power}
-		KillSpawnedScript \{name = hud_move_note_scorebar}
-		KillSpawnedScript \{name = hud_flash_red_bg_p1}
-		KillSpawnedScript \{name = hud_flash_red_bg_p2}
-		KillSpawnedScript \{name = hud_flash_red_bg_kill}
-		KillSpawnedScript \{name = hud_lightning_alert}
-		KillSpawnedScript \{name = hud_show_note_streak_combo}
-		KillSpawnedScript \{name = net_check_buttons}
-		KillSpawnedScript \{name = net_whammy_pitch_shift}
-		KillSpawnedScript \{name = net_control_whammy_pitch_loop}
-		KillSpawnedScript \{name = show_star_power_ready}
-		KillSpawnedScript \{name = hud_glowburst_alert}
+		killspawnedscript \{name = guitarevent_missednote}
+		killspawnedscript \{name = guitarevent_unnecessarynote}
+		killspawnedscript \{name = guitarevent_hitnotes}
+		killspawnedscript \{name = guitarevent_hitnote}
+		killspawnedscript \{name = guitarevent_starpoweron}
+		killspawnedscript \{name = guitarevent_starpoweroff}
+		killspawnedscript \{name = guitarevent_starhitnote}
+		killspawnedscript \{name = guitarevent_starsequencebonus}
+		killspawnedscript \{name = guitarevent_starmissnote}
+		killspawnedscript \{name = guitarevent_whammyon}
+		killspawnedscript \{name = guitarevent_whammyoff}
+		killspawnedscript \{name = guitarevent_starwhammyon}
+		killspawnedscript \{name = guitarevent_starwhammyoff}
+		killspawnedscript \{name = guitarevent_note_window_open}
+		killspawnedscript \{name = guitarevent_note_window_close}
+		killspawnedscript \{name = guitarevent_crowd_poor_medium}
+		killspawnedscript \{name = guitarevent_crowd_medium_good}
+		killspawnedscript \{name = guitarevent_crowd_medium_poor}
+		killspawnedscript \{name = guitarevent_crowd_good_medium}
+		killspawnedscript \{name = guitarevent_createfirstgem}
+		killspawnedscript \{name = highway_pulse_black}
+		killspawnedscript \{name = guitarevent_hitnote_spawned}
+		killspawnedscript \{name = hit_note_fx}
+		killspawnedscript \{name = do_starpower_stagefx}
+		killspawnedscript \{name = do_starpower_camera}
+		killspawnedscript \{name = first_gem_fx}
+		killspawnedscript \{name = gem_iterator}
+		killspawnedscript \{name = gem_array_stepper}
+		killspawnedscript \{name = gem_array_events}
+		killspawnedscript \{name = gem_step}
+		killspawnedscript \{name = gem_step_end}
+		killspawnedscript \{name = drumkit_anim_iterator}
+		killspawnedscript \{name = watchforstartplaying_iterator}
+		band_disabletempoiterator
+		killspawnedscript \{name = tempo_matching_iterator}
+		killspawnedscript \{name = momentcamera_playanim_spawned}
+		clearmeasurecallbacks
+		clearbeatcallbacks
+		killspawnedscript \{name = gem_scroller}
+		killspawnedscript \{name = button_checker}
+		killspawnedscript \{name = check_buttons}
+		killspawnedscript \{name = fretbar_update_tempo}
+		killspawnedscript \{name = fretbar_update_hammer_on_tolerance}
+		killspawnedscript \{name = move_whammy}
+		killspawnedscript \{name = create_fretbar}
+		killspawnedscript \{name = move_highway_2d}
+		killspawnedscript \{name = move_highway_2d_off}
+		killspawnedscript \{name = update_score_fast}
+		killspawnedscript \{name = check_for_star_power}
+		killspawnedscript \{name = wait_for_inactive}
+		killspawnedscript \{name = guitarevent_prefretbar}
+		killspawnedscript \{name = guitarevent_fretbar}
+		killspawnedscript \{name = pulsate_all_star_power_bulbs}
+		killspawnedscript \{name = pulsate_star_power_bulb}
+		killspawnedscript \{name = rock_meter_star_power_on}
+		killspawnedscript \{name = rock_meter_star_power_off}
+		killspawnedscript \{name = hud_activated_star_power}
+		killspawnedscript \{name = hud_move_note_scorebar}
+		killspawnedscript \{name = hud_flash_red_bg_p1}
+		killspawnedscript \{name = hud_flash_red_bg_p2}
+		killspawnedscript \{name = hud_flash_red_bg_kill}
+		killspawnedscript \{name = hud_lightning_alert}
+		killspawnedscript \{name = hud_show_note_streak_combo}
+		killspawnedscript \{name = net_check_buttons}
+		killspawnedscript \{name = net_whammy_pitch_shift}
+		killspawnedscript \{name = net_control_whammy_pitch_loop}
+		killspawnedscript \{name = show_star_power_ready}
+		killspawnedscript \{name = hud_glowburst_alert}
 		change \{star_power_ready_on_p1 = 0}
 		change \{star_power_ready_on_p2 = 0}
-		KillSpawnedScript \{name = event_iterator}
-		KillSpawnedScript \{name = win_song}
-		KillSpawnedScript \{name = hand_note_iterator}
-		KillSpawnedScript \{name = kill_object_later}
-		KillSpawnedScript \{name = show_coop_raise_axe_for_starpower}
-		KillSpawnedScript \{name = net_whammy_pitch_shift}
-		KillSpawnedScript \{name = Crowd_AllPlayAnim}
-		KillSpawnedScript \{name = hud_activated_star_power_spawned}
-		KillSpawnedScript \{name = play_intro}
-		KillSpawnedScript \{name = begin_song_after_intro}
+		killspawnedscript \{name = event_iterator}
+		killspawnedscript \{name = win_song}
+		killspawnedscript \{name = hand_note_iterator}
+		killspawnedscript \{name = kill_object_later}
+		killspawnedscript \{name = show_coop_raise_axe_for_starpower}
+		killspawnedscript \{name = net_whammy_pitch_shift}
+		killspawnedscript \{name = crowd_allplayanim}
+		killspawnedscript \{name = hud_activated_star_power_spawned}
+		killspawnedscript \{name = play_intro}
+		killspawnedscript \{name = begin_song_after_intro}
 
-		KillSpawnedScript \{id = song_event_scripts}
+		killspawnedscript \{id = song_event_scripts}
 
-		Destroy_AllWhammyFX
+		destroy_allwhammyfx
 		destroy_intro
 	endif
 	if NOT (<type> = outro)
-		KillSpawnedScript \{name = move_highway_prepass}
-		KillSpawnedScript \{name = waitAndKillHighway}
-		KillSpawnedScript \{name = testlevel_debug}
-		KillSpawnedScript \{name = online_win_song}
+		killspawnedscript \{name = move_highway_prepass}
+		killspawnedscript \{name = waitandkillhighway}
+		killspawnedscript \{name = testlevel_debug}
+		killspawnedscript \{name = online_win_song}
 		destroy_net_popup
 		destroy_gamertags
-		LightShow_Shutdown
-		DestroyParticlesByGroupID \{groupID = zoneparticles}
-		Transition_KillAll
-		KillSpawnedScript \{name = GuitarEvent_SongFailed_Spawned}
-		if NOT GotParam \{for_credits_venue}
-			KillSpawnedScript \{name = GuitarEvent_SongWon_Spawned}
-			KillSpawnedScript \{name = Cheer_Before_Explosion}
-			KillSpawnedScript \{name = You_Rock_Waiting_Crowd_SFX}
-			KillSpawnedScript \{name = waitAndKillHighway}
-			KillSpawnedScript \{name = wait_and_play_you_rock_movie}
-			KillSpawnedScript \{name = create_exploding_text}
+		lightshow_shutdown
+		destroyparticlesbygroupid \{groupid = zoneparticles}
+		transition_killall
+		killspawnedscript \{name = guitarevent_songfailed_spawned}
+		if NOT gotparam \{for_credits_venue}
+			killspawnedscript \{name = guitarevent_songwon_spawned}
+			killspawnedscript \{name = cheer_before_explosion}
+			killspawnedscript \{name = you_rock_waiting_crowd_sfx}
+			killspawnedscript \{name = waitandkillhighway}
+			killspawnedscript \{name = wait_and_play_you_rock_movie}
+			killspawnedscript \{name = create_exploding_text}
 		endif
 		deinit_jam_audio \{keep_drumkit}
 	endif
 	if (<type> = outro)
-		if GotParam \{kill_cameracuts_iterator}
-			KillSpawnedScript \{name = cameracuts_iterator}
+		if gotparam \{kill_cameracuts_iterator}
+			killspawnedscript \{name = cameracuts_iterator}
 		endif
 		end_song <...>
 	endif
-	if (<type> = Normal)
+	if (<type> = normal)
 		hud_flash_red_bg_kill \{player = 1}
 		hud_flash_red_bg_kill \{player = 2}
-		KillSpawnedScript \{id = zone_scripts}
-		GetPakManCurrentName \{map = zones}
-		FormatText checksumname = zone_killsong '%s_KillSong' s = <pakname>
-		if ScriptExists <zone_killsong>
+		killspawnedscript \{id = zone_scripts}
+		getpakmancurrentname \{map = zones}
+		formattext checksumname = zone_killsong '%s_KillSong' s = <pakname>
+		if scriptexists <zone_killsong>
 			<zone_killsong>
 		endif
-		LS_ResetVenueLights
+		ls_resetvenuelights
 		if (<training_mode> = 0)
 			if NOT ($game_mode = practice)
 				destroy_movie_viewport
@@ -2415,24 +2415,24 @@ script kill_gem_scroller \{no_render = 0
 		destroy_all_camera_lock_targets
 		destroy_cameracuts
 		if ($debug_showmeasures = on)
-			if ScreenElementExists \{id = debug_measures_text}
-				debug_measures_text :SE_SetProps \{hide}
+			if screenelementexists \{id = debug_measures_text}
+				debug_measures_text :se_setprops \{hide}
 			else
 				change \{debug_showmeasures = off}
 				toggle_showmeasures \{for_autolaunch}
 			endif
 		endif
 		if ($debug_showsongtime = on)
-			if ScreenElementExists \{id = debug_songtime_text}
-				debug_songtime_text :SE_SetProps \{hide}
+			if screenelementexists \{id = debug_songtime_text}
+				debug_songtime_text :se_setprops \{hide}
 			else
 				change \{debug_showsongtime = off}
 				toggle_showsongtime
 			endif
 		endif
 		if ($debug_showsongstars = on)
-			if ScreenElementExists \{id = debug_songstars_text}
-				debug_songstars_text :SE_SetProps \{hide}
+			if screenelementexists \{id = debug_songstars_text}
+				debug_songstars_text :se_setprops \{hide}
 			else
 				change \{debug_showsongstars = off}
 				toggle_showsongstars
@@ -2443,7 +2443,7 @@ script kill_gem_scroller \{no_render = 0
 		change \{structurename = guitarist_info
 			next_stance = stance_frontend}
 		change \{structurename = guitarist_info
-			current_anim = Idle}
+			current_anim = idle}
 		change \{structurename = guitarist_info
 			cycle_anim = true}
 		change \{structurename = guitarist_info
@@ -2455,7 +2455,7 @@ script kill_gem_scroller \{no_render = 0
 		change \{structurename = bassist_info
 			next_stance = stance_frontend}
 		change \{structurename = bassist_info
-			current_anim = Idle}
+			current_anim = idle}
 		change \{structurename = bassist_info
 			cycle_anim = true}
 		change \{structurename = bassist_info
@@ -2467,33 +2467,33 @@ script kill_gem_scroller \{no_render = 0
 		change \{check_for_unplugged_controllers = 0}
 		shut_down_practice_mode
 		destroy_menu \{menu_id = you_rock_container}
-		KillMovie \{TextureSlot = 1}
+		killmovie \{textureslot = 1}
 	endif
-	if (<type> = Normal)
+	if (<type> = normal)
 
-		Wait \{2
+		wait \{2
 			gameframes}
 
-		if NOT GotParam \{restarting}
-			if NOT ($g_current_oogame_pak_name = '')
-				UnloadPak \{$g_current_oogame_pak_name
+		if NOT gotparam \{restarting}
+			if NOT ($0xa025a029 = '')
+				unloadpak \{$0xa025a029
 					heap = heap_cas}
-				change \{g_current_oogame_pak_name = ''}
+				change \{0xa025a029 = ''}
 			endif
 			if ($game_mode = tutorial)
 
 			else
 				if NOT ui_event_exists_in_stack \{name = 'jam'}
-					ReloadSfx \{mode = FrontEnd}
+					0xc1c4e84c \{mode = frontend}
 				else
-					ReloadSfx \{mode = jammode
-						noreset = 1}
+					0xc1c4e84c \{mode = jammode
+						0xd607e2e6 = 1}
 				endif
 			endif
 		endif
-		if NOT GotParam \{restarting}
+		if NOT gotparam \{restarting}
 			end_song
-			anim_paks_set_state \{state = FrontEnd
+			anim_paks_set_state \{state = frontend
 				async = 0}
 		endif
 		if NOT (<no_render> = 1)
@@ -2504,11 +2504,11 @@ script kill_gem_scroller \{no_render = 0
 
 		mark_safe_for_shutdown
 		change \{playing_song = 0}
-		BroadcastEvent \{type = kill_gem_scroller_done}
+		broadcastevent \{type = kill_gem_scroller_done}
 	endif
-	Destroy_Band_Failing_Vignette
-	if (<type> = Normal)
-		if NOT GotParam \{restarting}
+	destroy_band_failing_vignette
+	if (<type> = normal)
+		if NOT gotparam \{restarting}
 			startrendering
 		endif
 	endif
@@ -2517,70 +2517,70 @@ endscript
 script restart_gem_scroller \{no_render = 0
 		loading_transition = 0
 		restarting = 1}
-	Yield
+	yield
 	mark_unsafe_for_shutdown
 	disable_pause
-	Yield
+	yield
 	if (<loading_transition> = 0)
-		PauseGame
+		pausegame
 	endif
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = root_window}
-	Yield
+	yield
 
 	if (<loading_transition> = 0)
 		kill_gem_scroller no_render = <no_render> restarting
 		mark_unsafe_for_shutdown
 	endif
-	Yield \{'kill_gem_scroller'}
-	start_gem_scroller {<...> no_band_logo}
-	Yield
+	yield \{'kill_gem_scroller'}
+	start_gem_scroller {<...> 0x97cb575b}
+	yield
 	change \{check_for_unplugged_controllers = 1}
-	UnBindGuitarControllerStatus
-	Yield
-	LaunchEvent \{type = focus
+	unbindguitarcontrollerstatus
+	yield
+	launchevent \{type = focus
 		target = root_window}
-	Yield
-	KillSpawnedScript \{name = YieldMonitor}
+	yield
+	killspawnedscript \{name = yieldmonitor}
 	if (<loading_transition> = 0)
 		do_gh3_unpause
 	endif
 endscript
 
-script reset_song_time \{StartTime = 0}
+script reset_song_time \{starttime = 0}
 	change current_deltatime = (1.0 / 60.0)
-	change current_time = (<StartTime> / 1000.0)
-	ResetSongTimer StartTime = (<StartTime> / 1000.0)
+	change current_time = (<starttime> / 1000.0)
+	resetsongtimer starttime = (<starttime> / 1000.0)
 endscript
 
 script fill_input_array 
-	FillInputArray <...>
+	fillinputarray <...>
 endscript
 
 script create_gem 
 	if (<delay> > 0)
 		begin
-		WaitOneGameFrame
+		waitonegameframe
 		<time> = (<time> + ($current_deltatime * 1000.0))
 		repeat <delay>
 	endif
-	Create2DGem <...>
+	create2dgem <...>
 endscript
 
 script gem_iterator \{song_name = test
 		difficulty = easy
-		array_type = qs("\Lsong")
+		array_type = qs(0x13e59f9f)
 		not_player_specific = false
 		add_part_to_event_id = false}
 	if (<not_player_specific> = false)
 		spawnscriptnow gem_array_events params = {<...>}
 	endif
 	if (<not_player_specific> = false)
-		if PlayerInfoEquals <player> part = Vocals
+		if playerinfoequals <player> part = vocals
 			return
 		endif
 	endif
-	if GotParam \{use_input_array}
+	if gotparam \{use_input_array}
 		get_difficulty_text_nl difficulty = <difficulty> no_rhythm
 		spawnscriptnow gem_array_stepper params = {<...>}
 	else
@@ -2593,51 +2593,51 @@ endscript
 
 script gem_array_events \{not_player_specific = false
 		add_part_to_event_id = false}
-	GetPlayerInfo <player> difficulty
+	getplayerinfo <player> difficulty
 	get_difficulty_text_nl difficulty = <difficulty> no_rhythm
 	get_notetrack_part_text player = <player>
 
-	ClearEventHandlerGroup \{iterator_group}
+	cleareventhandlergroup \{iterator_group}
 	if (<not_player_specific> = false)
-		ExtendCrcPlayer gem_step_event <player> out = id
+		extendcrcplayer gem_step_event <player> out = id
 	elseif (<add_part_to_event_id> = true)
-		ExtendCRC gem_step_event <part> out = id
+		extendcrc gem_step_event <part> out = id
 	else
 		id = gem_step_event
 	endif
-	ExtendCRC <id> <iterator_text> out = id
-	ExtendCRC <id> <difficulty_text_nl> out = id
-	SetEventHandler response = call_script event = <id> Scr = gem_step params = {<...>} group = iterator_group
+	extendcrc <id> <iterator_text> out = id
+	extendcrc <id> <difficulty_text_nl> out = id
+	seteventhandler response = call_script event = <id> scr = gem_step params = {<...>} group = iterator_group
 	if (<not_player_specific> = false)
-		ExtendCrcPlayer gem_step_begin <player> out = id
+		extendcrcplayer gem_step_begin <player> out = id
 	elseif (<add_part_to_event_id> = true)
-		ExtendCRC gem_step_begin <part> out = id
+		extendcrc gem_step_begin <part> out = id
 	else
 		id = gem_step_begin
 	endif
-	ExtendCRC <id> <iterator_text> out = id
-	ExtendCRC <id> <difficulty_text_nl> out = id
-	SetEventHandler response = call_script event = <id> Scr = gem_step_begin params = {<...>} group = iterator_group
+	extendcrc <id> <iterator_text> out = id
+	extendcrc <id> <difficulty_text_nl> out = id
+	seteventhandler response = call_script event = <id> scr = gem_step_begin params = {<...>} group = iterator_group
 	if (<not_player_specific> = false)
-		ExtendCrcPlayer gem_step_end <player> out = id
+		extendcrcplayer gem_step_end <player> out = id
 	elseif (<add_part_to_event_id> = true)
-		ExtendCRC gem_step_end <part> out = id
+		extendcrc gem_step_end <part> out = id
 	else
 		id = gem_step_end
 	endif
-	ExtendCRC <id> <iterator_text> out = id
-	ExtendCRC <id> <difficulty_text_nl> out = id
-	SetEventHandler response = call_script event = <id> Scr = gem_step_end params = {<...>} group = iterator_group
-	if NOT GotParam \{use_input_array}
-		ExtendCrcPlayer restart_gem_array_events <player> out = id
-		SetEventHandler response = switch_script event = <id> Scr = gem_array_events params = {<...>} group = iterator_group
+	extendcrc <id> <iterator_text> out = id
+	extendcrc <id> <difficulty_text_nl> out = id
+	seteventhandler response = call_script event = <id> scr = gem_step_end params = {<...>} group = iterator_group
+	if NOT gotparam \{use_input_array}
+		extendcrcplayer restart_gem_array_events <player> out = id
+		seteventhandler response = switch_script event = <id> scr = gem_array_events params = {<...>} group = iterator_group
 	endif
 
-	Block
+	block
 endscript
 
 script gem_step 
-	GemStep
+	gemstep
 endscript
 
 script gem_step_begin 
@@ -2647,14 +2647,14 @@ script gem_step_end
 endscript
 
 script gem_array_stepper 
-	gem_array_stepper_CFunc_Setup
+	gem_array_stepper_cfunc_setup
 	begin
-	if gem_array_stepper_CFunc
+	if gem_array_stepper_cfunc
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
-	gem_array_stepper_CFunc_Cleanup
+	gem_array_stepper_cfunc_cleanup
 endscript
 
 script default_startup 
@@ -2662,18 +2662,18 @@ endscript
 
 script call_startup_scripts 
 	change \{current_startup_script = default_startup}
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
 	get_song_struct song = <song_name>
 	setlagoffsets song_struct = <song_struct>
-	if StructureContains Structure = <song_struct> name = startup_script
+	if structurecontains structure = <song_struct> name = startup_script
 		change current_startup_script = (<song_struct>.startup_script)
 	endif
-	if StructureContains Structure = <song_struct> name = exit_script
+	if structurecontains structure = <song_struct> name = exit_script
 		change current_exit_script = (<song_struct>.exit_script)
 	else
 	endif
-	if StructureContains Structure = <song_struct> name = hammer_on_measure_scale
+	if structurecontains structure = <song_struct> name = hammer_on_measure_scale
 		change hammer_on_measure_scale = (<song_struct>.hammer_on_measure_scale)
 	else
 		change \{hammer_on_measure_scale = $default_hammer_on_measure_scale}
@@ -2687,9 +2687,9 @@ script addlagoffsets
 	input_lag_ms = 0
 	drum_midi_lag_ms = 0
 	prefretbar_time = 0
-	GetPlatform
-	if StructureContains Structure = <settings> name = <platform>
-		AddParams (<settings>.<platform>)
+	getplatform
+	if structurecontains structure = <settings> name = <platform>
+		addparams (<settings>.<platform>)
 	endif
 	change time_audio_offset = ($time_audio_offset + <audio_lag_ms>)
 	change time_gem_offset = ($time_gem_offset + <gem_lag_ms>)
@@ -2728,40 +2728,40 @@ script setlagoffsets
 	if NOT (<practice_settings> = none)
 		addlagoffsets settings = ($<practice_settings>)
 	endif
-	if StructureContains Structure = <song_struct> name = gem_offset
+	if structurecontains structure = <song_struct> name = gem_offset
 		change time_gem_offset = ($time_gem_offset + (<song_struct>.gem_offset))
 	endif
-	if StructureContains Structure = <song_struct> name = input_offset
+	if structurecontains structure = <song_struct> name = input_offset
 		change time_input_offset = ($time_input_offset + (<song_struct>.input_offset))
 	endif
 endscript
 
 script kill_startup_script 
 	if NOT ($current_startup_script = nothing)
-		KillSpawnedScript name = ($current_startup_script)
+		killspawnedscript name = ($current_startup_script)
 	endif
 	if NOT ($current_exit_script = nothing)
 		spawnscriptnow ($current_exit_script) params = {<...>}
 	endif
 endscript
 
-script Load_Venue \{block_scripts = 0
+script load_venue \{block_scripts = 0
 		force_venue_reload = 0}
-	GetPakManCurrent \{map = zones}
-	if GotParam \{pak}
-		if NOT StructureContains \{Structure = $LevelZones
+	getpakmancurrent \{map = zones}
+	if gotparam \{pak}
+		if NOT structurecontains \{structure = $levelzones
 				$current_level}
 
 		endif
-		level_zone = (($LevelZones.$current_level).zone)
-		if IsLevelZoneVideoVenue level_zone = <level_zone>
-			if NOT IsVideoVenuesEnabled
-				EnableVideoVenues
+		0x3631c4e9 = (($levelzones.$current_level).zone)
+		if 0xd1249523 0x3631c4e9 = <0x3631c4e9>
+			if NOT 0x2e51d96c
+				0x11a515a1
 			endif
-			LoadVenueVideo pn = <level_zone>
+			loadvenuevideo pn = <0x3631c4e9>
 		else
-			if IsVideoVenuesEnabled
-				DisableVideoVenues
+			if 0x2e51d96c
+				0x29472091
 			endif
 		endif
 
@@ -2770,51 +2770,51 @@ script Load_Venue \{block_scripts = 0
 		if (<force_venue_reload> = 1)
 			pak = none
 		endif
-		if (<pak> = (($LevelZones.$current_level).zone))
-			Transitions_ResetZone
+		if (<pak> = (($levelzones.$current_level).zone))
+			transitions_resetzone
 			return
 		else
-			ClearSceneGraph
+			0x776e192b
 
 			destroy_crowd_models
-			SetPakManCurrentBlock \{map = zones
+			setpakmancurrentblock \{map = zones
 				pak = none}
 
 		endif
 	else
 
-		ResetWaypoints
+		resetwaypoints
 	endif
-	ResetPulseEvents
-	if NOT SetPakManCurrentBlock map = zones pak = (($LevelZones.$current_level).zone) block_scripts = <block_scripts>
-		DownloadContentLost
+	resetpulseevents
+	if NOT setpakmancurrentblock map = zones pak = (($levelzones.$current_level).zone) block_scripts = <block_scripts>
+		downloadcontentlost
 		return
 	endif
-	Setup_All_Crowd_Sounds_Based_On_Zone
-	GH3_Change_crowd_reverb_settings_by_Venue
-	if NodeFlagExists \{NODEFLAG_VIEWERLIGHTS}
+	setup_all_crowd_sounds_based_on_zone
+	gh3_change_crowd_reverb_settings_by_venue
+	if nodeflagexists \{nodeflag_viewerlights}
 		if ($current_level = load_z_viewer ||
 				$current_level = viewer)
-			ChangeNodeFlag \{NODEFLAG_VIEWERLIGHTS
+			changenodeflag \{nodeflag_viewerlights
 				0}
-			ChangeNodeFlag \{NODEFLAG_VIEWERLIGHTS
+			changenodeflag \{nodeflag_viewerlights
 				1}
 			($default_loading_screen.destroy)
 		else
-			ChangeNodeFlag \{NODEFLAG_VIEWERLIGHTS
+			changenodeflag \{nodeflag_viewerlights
 				0}
 		endif
 	endif
-	AddToMaterialLibrary \{scene = 'zones/z_in_game/z_in_game.scn'}
+	addtomateriallibrary \{scene = 'zones/z_in_game/z_in_game.scn'}
 endscript
 
-script Unload_Venue 
-	if IsVideoVenuesEnabled
-		DisableVideoVenues
+script 0xbbb34620 
+	if 0x2e51d96c
+		0x29472091
 	endif
 endscript
-last_used_band = none
-last_singer = Male
+0x0fe12f5d = none
+0xed4e64b2 = male
 
 script start_song \{device_num = 69
 		practice_intro = 0
@@ -2832,44 +2832,44 @@ script start_song \{device_num = 69
 		set_rich_presence_game_mode \{online = 1}
 	endif
 	if NOT ($game_mode = practice)
-		PushVideoVenues
+		0x622f875f
 	endif
-	Load_Venue
+	load_venue
 	if ($autotest_on = 1)
 		change current_transition = ($autotest_transition)
 	elseif NOT ($debug_current_transition = none)
 		change current_transition = ($debug_current_transition)
 	else
-		Transition_SelectTransition practice_intro = <practice_intro> force_encore = <force_encore>
+		transition_selecttransition practice_intro = <practice_intro> force_encore = <force_encore>
 	endif
-	GameMode_GetType
+	gamemode_gettype
 	if (($is_network_game = 0) || (<type> = career))
-		if NOT GotParam \{StartTime}
-			if GotParam \{uselaststarttime}
-				StartTime = ($current_starttime)
+		if NOT gotparam \{starttime}
+			if gotparam \{uselaststarttime}
+				starttime = ($current_starttime)
 			else
-				StartTime = 0
+				starttime = 0
 			endif
 		endif
-		if NOT GotParam \{difficulty}
+		if NOT gotparam \{difficulty}
 			difficulty = ($player1_status.difficulty)
 		endif
-		if NOT GotParam \{difficulty2}
+		if NOT gotparam \{difficulty2}
 			difficulty2 = ($player2_status.difficulty)
 		endif
-		if NOT GotParam \{song_name}
+		if NOT gotparam \{song_name}
 			song_name = ($current_song)
 		endif
 		if (<song_name> = jamsession)
-			change \{ps2_loading_jamsession_song = 1}
+			change \{0xdd4f68fd = 1}
 		endif
-		change \{last_used_band = none}
+		change \{0x0fe12f5d = none}
 		if NOT ($end_credits = 1)
 			restart_gem_scroller {
 				song_name = <song_name>
 				difficulty = <difficulty>
 				difficulty2 = <difficulty2>
-				StartTime = <StartTime>
+				starttime = <starttime>
 				practice_intro = <practice_intro>
 				endtime = <endtime>
 				restarting = 0
@@ -2877,42 +2877,42 @@ script start_song \{device_num = 69
 		endif
 	endif
 	change \{check_for_unplugged_controllers = 1}
-	change \{ps2_loading_jamsession_song = 0}
+	change \{0xdd4f68fd = 0}
 	get_band_name song = ($current_song)
 	band_builder_get_cpu_singer_id
-	change last_used_band = <Band>
-	if GotParam \{singer_id}
-		change last_singer = <singer_id>
+	change 0x0fe12f5d = <band>
+	if gotparam \{singer_id}
+		change 0xed4e64b2 = <singer_id>
 	else
-		change \{last_singer = none}
+		change \{0xed4e64b2 = none}
 	endif
 endscript
 
-script YieldMonitor 
+script yieldmonitor 
 	begin
-	WaitOneGameFrame
-	YieldPing
+	waitonegameframe
+	yieldping
 	repeat
 endscript
 
 script restart_song \{practice_intro = 0
 		loading_transition = 0}
 	if ($current_song_qpak = jamsession)
-		change \{ps2_loading_jamsession_song = 1}
+		change \{0xdd4f68fd = 1}
 	endif
-	push_loading_screen \{full}
+	0xd3f993c8 \{full}
 	if ($shutdown_game_for_signin_change_flag = 1)
 		return
 	endif
 	mark_unsafe_for_shutdown
 	disable_pause
 	if (<loading_transition> = 1)
-		ResetYieldInfo \{Yield = true}
+		resetyieldinfo \{yield = true}
 
-		CreateScreenElement \{type = SpriteElement
-			id = loading_hide
+		createscreenelement \{type = spriteelement
+			id = 0x6bb63ae6
 			parent = root_window
-			texture = Loading_Background_venue
+			texture = 0xe40dbad3
 			pos = (640.0, 360.0)
 			just = [
 				center
@@ -2920,72 +2920,72 @@ script restart_song \{practice_intro = 0
 			]
 			dims = (1280.0, 720.0)
 			z_priority = 0}
-		KillSpawnedScript \{name = YieldMonitor}
-		spawnscriptnow \{YieldMonitor}
-		Yield
+		killspawnedscript \{name = yieldmonitor}
+		spawnscriptnow \{yieldmonitor}
+		yield
 		if ($current_song = none)
 			change \{current_song = $old_song}
 		endif
 		if ($game_mode != tutorial)
-			Band_PlayTransitionIdles
-			BandManager_StopAllAnimIterators
+			band_playtransitionidles
+			bandmanager_stopallanimiterators
 			band_unload_anim_paks
 			band_unload_song_anim_paks
 		endif
-		Drummer_Kill_Spawnscripts
+		drummer_kill_spawnscripts
 		kill_gem_scroller \{type = restart}
-		Yield \{'kill_gem_scroller'}
+		yield \{'kill_gem_scroller'}
 		setup_bg_viewport
-		Yield \{'setup_bg_viewport'}
+		yield \{'setup_bg_viewport'}
 		create_cameracuts
-		Transition_SelectTransition practice_intro = <practice_intro>
+		transition_selecttransition practice_intro = <practice_intro>
 		if ($current_transition = intro)
 			change \{current_transition = loadingintro}
 		endif
-		Yield
+		yield
 		songtime = 0
-		Transition_GetTime \{type = loading}
+		transition_gettime \{type = loading}
 		songtime = (<songtime> - <transition_time>)
-		Transition_GetTime type = ($current_transition)
+		transition_gettime type = ($current_transition)
 		songtime = (<songtime> - <transition_time>)
-		reset_song_time StartTime = <songtime>
-		Yield
-		Transition_Play \{type = loading}
-		Yield
+		reset_song_time starttime = <songtime>
+		yield
+		transition_play \{type = loading}
+		yield
 		if ($ps2_gameplay_restart_song = 0)
 			if (<loading_transition> = 1)
-				PauseInVenueLoadingScreen
+				pauseinvenueloadingscreen
 			endif
 		endif
-		Yield
-		UnPauseGame
-		Yield
+		yield
+		unpausegame
+		yield
 		if ($current_song = jamsession)
 			mark_safe_for_shutdown
-			Transition_Wait
+			transition_wait
 			change \{current_transition = fastintro}
 			return
 		endif
-		unload_car_part_paks = 1
-		game_type_quickplay = 0
+		0xb56773dd = 1
+		0x75f38d57 = 0
 		if ($game_mode = p1_quickplay || $game_mode = p2_quickplay || $game_mode = p3_quickplay || $game_mode = p4_quickplay)
-			game_type_quickplay = 1
+			0x75f38d57 = 1
 		endif
-		if ($quickplay_song_list_current > 0 && <game_type_quickplay> = 1)
-			unload_car_part_paks = 0
+		if ($quickplay_song_list_current > 0 && <0x75f38d57> = 1)
+			0xb56773dd = 0
 		elseif ($ps2_gameplay_restart_song = 1)
-			unload_car_part_paks = 0
+			0xb56773dd = 0
 		endif
-		if (<unload_car_part_paks> = 1)
+		if (<0xb56773dd> = 1)
 			unload_songqpak
 			load_songqpak song_name = ($current_song) async = 1
 			band_unload_anim_paks
 			band_unload_song_anim_paks
-			SmartFlushPak \{async = 0
+			smartflushpak \{async = 0
 				tags = {
 					map = animpak
 				}}
-			SmartFlushPak \{async = 0
+			smartflushpak \{async = 0
 				tags = {
 					map = looppak
 				}}
@@ -2996,39 +2996,39 @@ script restart_song \{practice_intro = 0
 			change \{band_builder_no_genre_swaps = 1}
 			create_band async = 1 min_time = ($minimum_transition_load_time)
 			change \{band_builder_no_genre_swaps = 0}
-			ps2_force_unload_car_part_script
+			0xce69e479
 			unload_songqpak
-			WaitOneGameFrame
+			waitonegameframe
 			load_songqpak song_name = ($current_song) async = 1
 			load_song_anims song_name = ($current_song) async = 1
-			band_clear_invalid_durations
+			0xf11ce60b
 		else
 
 		endif
 		get_song_struct song = ($current_song)
-		if StructureContains Structure = <song_struct> name = venue_set
-			venue_set = (<song_struct>.venue_set)
+		if structurecontains structure = <song_struct> name = 0x59cb4f1c
+			0x59cb4f1c = (<song_struct>.0x59cb4f1c)
 			level_checksum = ($current_level)
-			FormatText checksumname = venue_checksum 'load_%s' s = ($LevelZones.<level_checksum>.name)
-			if NOT ArrayContains array = $<venue_set> contains = <venue_checksum>
+			formattext checksumname = venue_checksum 'load_%s' s = ($levelzones.<level_checksum>.name)
+			if NOT arraycontains array = $<0x59cb4f1c> contains = <venue_checksum>
 				quickplay_choose_random_venue
 			endif
 		endif
 	else
 
-		ResetYieldInfo \{Yield = false}
+		resetyieldinfo \{yield = false}
 		create_loading_screen \{mode = restart_song}
 	endif
-	Yield
-	StopSoundEvent \{Crowd_Fail_Song_SFX}
-	Yield
+	yield
+	stopsoundevent \{crowd_fail_song_sfx}
+	yield
 	if (<loading_transition> = 0 &&
 			<practice_intro> = 0)
 		if NOT ($debug_current_transition = none)
 			change current_transition = ($debug_current_transition)
 		elseif ($current_transition = forceintro)
 			change \{current_transition = fastintro}
-			Transition_SelectTransition practice_intro = <practice_intro>
+			transition_selecttransition practice_intro = <practice_intro>
 		elseif ($debug_encore)
 			change \{current_transition = restartencore}
 		else
@@ -3037,56 +3037,56 @@ script restart_song \{practice_intro = 0
 		get_progression_globals game_mode = ($game_mode) ($current_progression_flag) use_current_tab = 1
 		tier = ($current_gig_number)
 		if ($game_mode = gh4_p1_career || $game_mode = gh4_p2_career)
-			if Progression_IsEncoreSong tier_global = <tier_global> tier = <tier> song = ($current_song)
+			if progression_isencoresong tier_global = <tier_global> tier = <tier> song = ($current_song)
 				change \{current_transition = restartencore}
 			endif
 		endif
 	endif
-	Yield \{'Select Transition Logic'}
-	UnPauseGame
-	Yield
+	yield \{'Select Transition Logic'}
+	unpausegame
+	yield
 	restart_gem_scroller {
 		song_name = ($current_song)
 		difficulty = ($player1_status.difficulty)
 		difficulty2 = ($player2_status.difficulty)
-		StartTime = ($current_starttime)
+		starttime = ($current_starttime)
 		practice_intro = <practice_intro>
 		endtime = <endtime>
 		loading_transition = <loading_transition>
 	}
-	change \{ps2_loading_jamsession_song = 0}
+	change \{0xdd4f68fd = 0}
 	change \{ps2_gameplay_restart_song = 0}
-	if ScreenElementExists \{id = loading_hide}
-		DestroyScreenElement \{id = loading_hide}
+	if screenelementexists \{id = 0x6bb63ae6}
+		destroyscreenelement \{id = 0x6bb63ae6}
 	endif
-	pop_loading_screen
-	UnPauseGame
+	0xe5a305c6
+	unpausegame
 endscript
 
 script kill_object_later 
-	if ScreenElementExists id = <gem_id>
-		DestroyGem name = <gem_id> player_status = <player_status>
+	if screenelementexists id = <gem_id>
+		destroygem name = <gem_id> player_status = <player_status>
 	endif
 endscript
 
 script debug_flash_star 
 	begin
-	LaunchGemEvent \{event = debug_star}
-	Wait \{8
+	launchgemevent \{event = debug_star}
+	wait \{8
 		gameframes}
-	LaunchGemEvent \{event = debug_gem}
-	Wait \{8
+	launchgemevent \{event = debug_gem}
+	wait \{8
 		gameframes}
 	repeat
 endscript
 
 script cache_song_end_time 
-	GMan_SongTool_GetCurrentSong
-	SongFileManager func = get_song_end_time song_name = <current_song>
-	CacheSongEndTime time = <total_end_time>
+	gman_songtool_getcurrentsong
+	songfilemanager func = get_song_end_time song_name = <current_song>
+	cachesongendtime time = <total_end_time>
 endscript
 
-script vv_is_perf2 
+script 0x6280a0be 
 	get_song_performance song = <song>
 	if (<song_performance> = 1)
 		return \{true}

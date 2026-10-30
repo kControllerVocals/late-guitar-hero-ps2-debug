@@ -1,50 +1,50 @@
-CameraCuts_Good_Array = $Default_Cameras_Good
-CameraCuts_Normal_Array = $Default_Cameras_Normal
-CameraCuts_Poor_Array = $Default_Cameras_Poor
-CameraCuts_Performance = good
-CameraCuts_LastArray = $CameraCuts_Good_Array
-CameraCuts_LastPerformance = good
-CameraCuts_Init = false
-CameraCuts_Enabled = false
-CameraCuts_LastIndex = 0
-CameraCuts_LastType = none
-CameraCuts_LastName = none
-CameraCuts_LastDownbeatIndex = 0
-CameraCuts_ChangeTime = 0
-CameraCuts_ChangeNow = false
-CameraCuts_ForceTime = 0
-CameraCuts_NextTime = 0
-CameraCuts_ArrayPrefix = 'Cameras'
-CameraCuts_ForceType = none
-CameraCuts_NextName = none
-CameraCuts_ChangeCamEnable = true
-CameraCuts_AllowNoteScripts = true
-CameraCuts_LastCameraStartTime = 0.0
-CameraCuts_ForceChangeTime = 0.0
-CameraCuts_ShadowCasters = none
-CameraCuts_NextNoteCameraTime = -1
-default_handcam_amplitudePosition = 0.05
-default_handcam_amplitudeRotation = -0.08
-handcam_amplitudePosition = 0.05
-handcam_amplitudeRotation = -0.08
-CameraCuts_NoteMapping = [
+cameracuts_good_array = $default_cameras_good
+cameracuts_normal_array = $default_cameras_normal
+cameracuts_poor_array = $default_cameras_poor
+cameracuts_performance = good
+cameracuts_lastarray = $cameracuts_good_array
+cameracuts_lastperformance = good
+cameracuts_init = false
+cameracuts_enabled = false
+cameracuts_lastindex = 0
+cameracuts_lasttype = none
+cameracuts_lastname = none
+cameracuts_lastdownbeatindex = 0
+cameracuts_changetime = 0
+cameracuts_changenow = false
+cameracuts_forcetime = 0
+cameracuts_nexttime = 0
+cameracuts_arrayprefix = 'Cameras'
+cameracuts_forcetype = none
+cameracuts_nextname = none
+cameracuts_changecamenable = true
+cameracuts_allownotescripts = true
+cameracuts_lastcamerastarttime = 0.0
+cameracuts_forcechangetime = 0.0
+cameracuts_shadowcasters = none
+cameracuts_nextnotecameratime = -1
+default_handcam_amplitudeposition = 0.05
+default_handcam_amplituderotation = -0.08
+handcam_amplitudeposition = 0.05
+handcam_amplituderotation = -0.08
+cameracuts_notemapping = [
 	{
-		MidiNote = 0
-		Scr = CameraCuts_EnableChangeCam
+		midinote = 0
+		scr = cameracuts_enablechangecam
 		params = {
 			enable = true
 		}
 	}
 	{
-		MidiNote = 1
-		Scr = CameraCuts_EnableChangeCam
+		midinote = 1
+		scr = cameracuts_enablechangecam
 		params = {
 			enable = false
 		}
 	}
 	{
-		MidiNote = 3
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 3
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -52,8 +52,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 4
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 4
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -61,8 +61,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 5
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 5
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -70,8 +70,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 6
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 6
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -79,8 +79,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 8
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 8
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_guitarist'
 			changenow
@@ -88,8 +88,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 9
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 9
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_guitarist'
 			changenow
@@ -97,8 +97,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 10
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 10
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_guitarist'
 			changenow
@@ -106,8 +106,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 11
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 11
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_guitarist'
 			changenow
@@ -115,8 +115,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 13
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 13
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_singer'
 			changenow
@@ -124,8 +124,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 14
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 14
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_singer'
 			changenow
@@ -133,8 +133,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 15
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 15
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_singer'
 			changenow
@@ -142,8 +142,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 16
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 16
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_singer'
 			changenow
@@ -151,8 +151,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 18
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 18
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_bassist'
 			changenow
@@ -160,8 +160,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 19
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 19
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_bassist'
 			changenow
@@ -169,8 +169,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 20
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 20
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_bassist'
 			changenow
@@ -178,8 +178,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 21
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 21
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_bassist'
 			changenow
@@ -187,8 +187,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 23
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 23
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_drummer'
 			changenow
@@ -196,8 +196,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 24
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 24
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_drummer'
 			changenow
@@ -205,8 +205,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 25
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 25
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_drummer'
 			changenow
@@ -214,8 +214,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 26
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 26
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_drummer'
 			changenow
@@ -223,8 +223,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 28
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 28
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras'
 			changenow
@@ -232,8 +232,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 29
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 29
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras'
 			changenow
@@ -241,8 +241,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 30
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 30
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras'
 			changenow
@@ -250,8 +250,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 31
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 31
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras'
 			changenow
@@ -259,8 +259,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 33
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 33
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_solo'
 			changenow
@@ -268,8 +268,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 34
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 34
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_solo'
 			changenow
@@ -277,8 +277,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 35
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 35
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_solo'
 			changenow
@@ -286,8 +286,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 36
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 36
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_solo'
 			changenow
@@ -295,8 +295,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 38
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 38
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_single'
 			changenow
@@ -304,8 +304,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 40
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 40
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_special'
 			changenow
@@ -313,8 +313,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 41
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 41
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_special'
 			changenow
@@ -322,8 +322,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 43
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 43
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_audience'
 			changenow
@@ -331,8 +331,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 45
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 45
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_zoom'
 			changenow
@@ -340,8 +340,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 46
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 46
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_zoom'
 			changenow
@@ -349,8 +349,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 48
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 48
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_spotlight'
 			changenow
@@ -358,104 +358,104 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 50
-		Scr = Jumbotron_SetOverride
+		midinote = 50
+		scr = jumbotron_setoverride
 		params = {
 			focus = none
 		}
 	}
 	{
-		MidiNote = 51
-		Scr = Jumbotron_SetOverride
+		midinote = 51
+		scr = jumbotron_setoverride
 		params = {
-			focus = Guitarist
+			focus = guitarist
 		}
 	}
 	{
-		MidiNote = 52
-		Scr = Jumbotron_SetOverride
+		midinote = 52
+		scr = jumbotron_setoverride
 		params = {
 			focus = bassist
 		}
 	}
 	{
-		MidiNote = 53
-		Scr = Jumbotron_SetOverride
+		midinote = 53
+		scr = jumbotron_setoverride
 		params = {
 			focus = vocalist
 		}
 	}
 	{
-		MidiNote = 54
-		Scr = Jumbotron_SetOverride
+		midinote = 54
+		scr = jumbotron_setoverride
 		params = {
-			focus = Drummer
+			focus = drummer
 		}
 	}
 	{
-		MidiNote = 55
-		Scr = Jumbotron_SetOverride
+		midinote = 55
+		scr = jumbotron_setoverride
 		params = {
 			focus = visualizer
 		}
 	}
 	{
-		MidiNote = 74
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 74
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_Orbits'
 			changenow
-			type = Orbit_Low
+			type = orbit_low
 		}
 	}
 	{
-		MidiNote = 75
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 75
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_Orbits'
 			changenow
-			type = Orbit_High
+			type = orbit_high
 		}
 	}
 	{
-		MidiNote = 57
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 57
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_Verts_Front'
 			changenow
-			type = Verts_Front
+			type = verts_front
 		}
 	}
 	{
-		MidiNote = 58
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 58
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_Verts_Rear'
 			changenow
-			type = Verts_Rear
+			type = verts_rear
 		}
 	}
 	{
-		MidiNote = 60
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 60
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_G_across_stage'
 			changenow
-			type = G_across_stage
+			type = g_across_stage
 		}
 	}
 	{
-		MidiNote = 61
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 61
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_S_across_stage'
 			changenow
-			type = S_across_stage
+			type = s_across_stage
 		}
 	}
 	{
-		MidiNote = 90
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 90
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -463,8 +463,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 91
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 91
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -472,8 +472,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 92
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 92
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -481,8 +481,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 93
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 93
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -490,8 +490,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 94
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 94
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -499,8 +499,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 95
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 95
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -508,8 +508,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 96
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 96
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -517,8 +517,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 97
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 97
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -526,8 +526,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 98
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 98
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -535,8 +535,8 @@ CameraCuts_NoteMapping = [
 		}
 	}
 	{
-		MidiNote = 99
-		Scr = CameraCuts_SetArrayPrefix
+		midinote = 99
+		scr = cameracuts_setarrayprefix
 		params = {
 			prefix = 'cameras_moments'
 			changenow
@@ -546,40 +546,40 @@ CameraCuts_NoteMapping = [
 ]
 last_camera_array_entry = 0
 
-script CameraCuts_GetNextNoteCameraTime 
-	return camera_time = ($CameraCuts_NextNoteCameraTime)
+script cameracuts_getnextnotecameratime 
+	return camera_time = ($cameracuts_nextnotecameratime)
 endscript
 
-script CameraCuts_SetArray \{type = good
-		array = Default_Cameras_Good}
+script cameracuts_setarray \{type = good
+		array = default_cameras_good}
 	if (<type> = good)
-		change CameraCuts_Good_Array = $<array>
+		change cameracuts_good_array = $<array>
 	endif
 	if (<type> = medium)
-		change CameraCuts_Normal_Array = $<array>
+		change cameracuts_normal_array = $<array>
 	endif
 	if (<type> = poor)
-		change CameraCuts_Poor_Array = $<array>
+		change cameracuts_poor_array = $<array>
 	endif
 endscript
 
-script CameraCuts_SetParams \{performance = medium}
-	change CameraCuts_Performance = <performance>
+script cameracuts_setparams \{performance = medium}
+	change cameracuts_performance = <performance>
 endscript
 
-script SetupInitialSongHandCamParams 
-	SetSongHandCamParams amplitudePosition = ($default_handcam_amplitudePosition) amplitudeRotation = ($default_handcam_amplitudeRotation)
-	GetSongTimeMs time_offset = <time_offset>
+script setupinitialsonghandcamparams 
+	setsonghandcamparams amplitudeposition = ($default_handcam_amplitudeposition) amplituderotation = ($default_handcam_amplituderotation)
+	getsongtimems time_offset = <time_offset>
 	if (<time> < 0)
 		get_song_prefix song = <song_name>
-		FormatText checksumname = event_array '%s_performance' s = <song_prefix>
+		formattext checksumname = event_array '%s_performance' s = <song_prefix>
 		index = 0
-		GetArraySize $<event_array>
+		getarraysize $<event_array>
 		if (<array_size> > 0)
 			begin
 			if ($<event_array> [<index>].time < 100)
-				if ($<event_array> [<index>].Scr = SetSongHandCamParams)
-					SetSongHandCamParams ($<event_array> [<index>].params)
+				if ($<event_array> [<index>].scr = setsonghandcamparams)
+					setsonghandcamparams ($<event_array> [<index>].params)
 					break
 				endif
 			else
@@ -591,73 +591,73 @@ script SetupInitialSongHandCamParams
 	endif
 endscript
 
-script SetSongHandCamParams 
-	if GotParam \{amplitudePosition}
-		change handcam_amplitudePosition = <amplitudePosition>
+script setsonghandcamparams 
+	if gotparam \{amplitudeposition}
+		change handcam_amplitudeposition = <amplitudeposition>
 	endif
-	if GotParam \{amplitudeRotation}
-		change handcam_amplitudeRotation = <amplitudeRotation>
+	if gotparam \{amplituderotation}
+		change handcam_amplituderotation = <amplituderotation>
 	endif
 endscript
 
-script CameraCuts_SetArrayPrefix \{prefix = 'cameras'
+script cameracuts_setarrayprefix \{prefix = 'cameras'
 		type = none
 		name = none
 		length = 0}
 	if NOT ($debug_camera_array = none)
 		return
 	endif
-	change CameraCuts_ArrayPrefix = <prefix>
-	change CameraCuts_ForceType = <type>
-	change CameraCuts_NextName = <name>
+	change cameracuts_arrayprefix = <prefix>
+	change cameracuts_forcetype = <type>
+	change cameracuts_nextname = <name>
 	set_defaultcameracuts
-	if GotParam \{changetime}
-		change CameraCuts_ForceChangeTime = <changetime>
+	if gotparam \{changetime}
+		change cameracuts_forcechangetime = <changetime>
 	endif
-	if GotParam \{changenow}
+	if gotparam \{changenow}
 		if (<length> > 200)
-			change CameraCuts_NextTime = <length>
+			change cameracuts_nexttime = <length>
 		endif
-		CameraCuts_EnableChangeCam \{enable = true}
+		cameracuts_enablechangecam \{enable = true}
 	endif
 endscript
 
 script set_defaultcameracut_perf \{perf = 'good'
 		perf_checksum = good}
-	GetPakManCurrentName \{map = zones}
+	getpakmancurrentname \{map = zones}
 	if ($current_num_players = 2)
-		FormatText checksumname = Cameras_Array '%s_%p_%c_2p' p = $CameraCuts_ArrayPrefix c = <perf> s = <pakname>
-		if GlobalExists name = <Cameras_Array> type = array
-			CameraCuts_SetArray type = <perf_checksum> array = <Cameras_Array>
+		formattext checksumname = cameras_array '%s_%p_%c_2p' p = $cameracuts_arrayprefix c = <perf> s = <pakname>
+		if globalexists name = <cameras_array> type = array
+			cameracuts_setarray type = <perf_checksum> array = <cameras_array>
 			return
 		endif
-		FormatText checksumname = Cameras_Array '%s_%p_2p' p = $CameraCuts_ArrayPrefix s = <pakname>
-		if GlobalExists name = <Cameras_Array> type = array
-			CameraCuts_SetArray type = <perf_checksum> array = <Cameras_Array>
+		formattext checksumname = cameras_array '%s_%p_2p' p = $cameracuts_arrayprefix s = <pakname>
+		if globalexists name = <cameras_array> type = array
+			cameracuts_setarray type = <perf_checksum> array = <cameras_array>
 			return
 		endif
 	endif
-	FormatText checksumname = Cameras_Array '%s_%p_%c' p = $CameraCuts_ArrayPrefix c = <perf> s = <pakname>
-	if GlobalExists name = <Cameras_Array> type = array
-		CameraCuts_SetArray type = <perf_checksum> array = <Cameras_Array>
+	formattext checksumname = cameras_array '%s_%p_%c' p = $cameracuts_arrayprefix c = <perf> s = <pakname>
+	if globalexists name = <cameras_array> type = array
+		cameracuts_setarray type = <perf_checksum> array = <cameras_array>
 		return
 	endif
-	FormatText checksumname = Cameras_Array '%s_%p' p = $CameraCuts_ArrayPrefix s = <pakname>
-	if GlobalExists name = <Cameras_Array> type = array
-		CameraCuts_SetArray type = <perf_checksum> array = <Cameras_Array>
+	formattext checksumname = cameras_array '%s_%p' p = $cameracuts_arrayprefix s = <pakname>
+	if globalexists name = <cameras_array> type = array
+		cameracuts_setarray type = <perf_checksum> array = <cameras_array>
 		return
 	endif
-	FormatText checksumname = Cameras_Array '%s_%p_%c' p = $CameraCuts_ArrayPrefix c = <perf> s = 'default'
-	if GlobalExists name = <Cameras_Array> type = array
-		CameraCuts_SetArray type = <perf_checksum> array = <Cameras_Array>
+	formattext checksumname = cameras_array '%s_%p_%c' p = $cameracuts_arrayprefix c = <perf> s = 'default'
+	if globalexists name = <cameras_array> type = array
+		cameracuts_setarray type = <perf_checksum> array = <cameras_array>
 		return
 	endif
-	FormatText \{checksumname = Cameras_Array
+	formattext \{checksumname = cameras_array
 		'%s_%p'
-		p = $CameraCuts_ArrayPrefix
+		p = $cameracuts_arrayprefix
 		s = 'default'}
-	if GlobalExists name = <Cameras_Array> type = array
-		CameraCuts_SetArray type = <perf_checksum> array = <Cameras_Array>
+	if globalexists name = <cameras_array> type = array
+		cameracuts_setarray type = <perf_checksum> array = <cameras_array>
 		return
 	endif
 
@@ -674,41 +674,41 @@ script set_defaultcameracuts
 endscript
 
 script create_cameracuts 
-	if ($CameraCuts_Init = true)
+	if ($cameracuts_init = true)
 		return
 	else
-		change \{CameraCuts_Init = true}
+		change \{cameracuts_init = true}
 	endif
 	kill_dummy_bg_camera
 	reset_cameracuts_internal_vars
-	CameraCuts_StartCallback
+	cameracuts_startcallback
 endscript
 
 script reset_cameracuts_internal_vars 
-	if ($CameraCuts_Init = false)
+	if ($cameracuts_init = false)
 
 	endif
-	change \{CameraCuts_ArrayPrefix = 'cameras'}
+	change \{cameracuts_arrayprefix = 'cameras'}
 	set_defaultcameracuts
-	change \{CameraCuts_LastType = none}
-	change \{CameraCuts_LastDownbeatIndex = 0}
-	change \{CameraCuts_ForceChangeTime = 0.0}
-	change \{CameraCuts_ForceType = none}
-	change \{CameraCuts_NextName = none}
+	change \{cameracuts_lasttype = none}
+	change \{cameracuts_lastdownbeatindex = 0}
+	change \{cameracuts_forcechangetime = 0.0}
+	change \{cameracuts_forcetype = none}
+	change \{cameracuts_nextname = none}
 	if ($game_mode = practice || $game_mode = tutorial || $game_mode = practice)
-		change \{CameraCuts_ChangeCamEnable = false}
-		change \{CameraCuts_AllowNoteScripts = false}
+		change \{cameracuts_changecamenable = false}
+		change \{cameracuts_allownotescripts = false}
 	elseif ($game_mode = p2_pro_faceoff)
-		change \{CameraCuts_ChangeCamEnable = true}
-		change \{CameraCuts_AllowNoteScripts = false}
+		change \{cameracuts_changecamenable = true}
+		change \{cameracuts_allownotescripts = false}
 	elseif ($current_song = jamsession)
-		change \{CameraCuts_ChangeCamEnable = true}
-		change \{CameraCuts_AllowNoteScripts = false}
+		change \{cameracuts_changecamenable = true}
+		change \{cameracuts_allownotescripts = false}
 	else
-		change \{CameraCuts_ChangeCamEnable = true}
-		change \{CameraCuts_AllowNoteScripts = true}
+		change \{cameracuts_changecamenable = true}
+		change \{cameracuts_allownotescripts = true}
 	endif
-	change \{CameraCuts_Enabled = true}
+	change \{cameracuts_enabled = true}
 	change \{next_screenfx = none}
 	change \{current_screenfx = none}
 	change \{cameracuts_pendingwhiteflash = false}
@@ -717,22 +717,22 @@ script reset_cameracuts_internal_vars
 	endif
 endscript
 
-script CameraCuts_GetNextDownbeat 
+script cameracuts_getnextdownbeat 
 	get_song_prefix song = ($current_song)
-	FormatText checksumname = event_array '%s_lightshow_notes' s = <song_prefix> AddToStringLookup
-	if NOT GlobalExists name = <event_array> type = array
+	formattext checksumname = event_array '%s_lightshow_notes' s = <song_prefix> addtostringlookup
+	if NOT globalexists name = <event_array> type = array
 		return false endtime = <endtime>
 	endif
-	GetArraySize $<event_array>
-	array_count = ($CameraCuts_LastDownbeatIndex)
+	getarraysize $<event_array>
+	array_count = ($cameracuts_lastdownbeatindex)
 	array_size = (<array_size> - <array_count>)
 	array_size = (<array_size> / 2)
 	if (<array_size> > 0)
 		begin
-		DecompressNoteValue note_value = ($<event_array> [(<array_count> + 1)])
+		decompressnotevalue note_value = ($<event_array> [(<array_count> + 1)])
 		if (<note> = 58 || <note> = 57)
 			if ($<event_array> [<array_count>] > <endtime>)
-				change CameraCuts_LastDownbeatIndex = <array_count>
+				change cameracuts_lastdownbeatindex = <array_count>
 				return true endtime = ($<event_array> [<array_count>])
 			endif
 		endif
@@ -743,59 +743,59 @@ script CameraCuts_GetNextDownbeat
 	return false endtime = <endtime>
 endscript
 
-script CameraCuts_StartCallback 
-	if IsVideoVenuesEnabled
+script cameracuts_startcallback 
+	if 0x2e51d96c
 		return
 	endif
-	if ($Cheat_FocusMode = 1)
+	if ($cheat_focusmode = 1)
 		return
 	endif
-	change \{CameraCuts_ChangeNow = false}
-	if ($CameraCuts_Enabled = false)
+	change \{cameracuts_changenow = false}
+	if ($cameracuts_enabled = false)
 		return
 	endif
-	if ($CameraCuts_Performance = poor)
-		Camera_Array = CameraCuts_Poor_Array
+	if ($cameracuts_performance = poor)
+		camera_array = cameracuts_poor_array
 	else
-		if ($CameraCuts_Performance = good)
-			Camera_Array = CameraCuts_Good_Array
+		if ($cameracuts_performance = good)
+			camera_array = cameracuts_good_array
 		else
-			Camera_Array = CameraCuts_Normal_Array
+			camera_array = cameracuts_normal_array
 		endif
 	endif
-	if CompositeObjectExists \{name = Guitarist}
-		Guitarist :get_target_node
+	if compositeobjectexists \{name = guitarist}
+		guitarist :get_target_node
 	endif
-	if NOT ($CameraCuts_NextName = none)
-		CameraCut_GetArraySize Camera_Array = <Camera_Array> name = ($CameraCuts_NextName) target_node = <target_node>
-	elseif NOT ($CameraCuts_ForceType = none)
-		CameraCut_GetArraySize Camera_Array = <Camera_Array> includetype = $CameraCuts_ForceType target_node = <target_node>
+	if NOT ($cameracuts_nextname = none)
+		cameracut_getarraysize camera_array = <camera_array> name = ($cameracuts_nextname) target_node = <target_node>
+	elseif NOT ($cameracuts_forcetype = none)
+		cameracut_getarraysize camera_array = <camera_array> includetype = $cameracuts_forcetype target_node = <target_node>
 	elseif ($game_mode = p2_pro_faceoff)
-		CameraCut_GetArraySize Camera_Array = <Camera_Array> excludename = $CameraCuts_LastName target_node = <target_node>
+		cameracut_getarraysize camera_array = <camera_array> excludename = $cameracuts_lastname target_node = <target_node>
 	elseif ($current_song = jamsession)
-		CameraCut_GetArraySize Camera_Array = <Camera_Array> excludename = $CameraCuts_LastName target_node = <target_node>
+		cameracut_getarraysize camera_array = <camera_array> excludename = $cameracuts_lastname target_node = <target_node>
 	else
-		CameraCut_GetArraySize Camera_Array = <Camera_Array> excludetype = $CameraCuts_LastType target_node = <target_node>
+		cameracut_getarraysize camera_array = <camera_array> excludetype = $cameracuts_lasttype target_node = <target_node>
 	endif
 	if (<array_size> = 0)
 		newindex = 0
 	else
-		GetRandomValue name = newindex Integer a = 0 b = (<array_size> - 1)
-		CameraCut_GetCameraIndex Camera_Array = <Camera_Array> newindex = <newindex>
+		getrandomvalue name = newindex integer a = 0 b = (<array_size> - 1)
+		cameracut_getcameraindex camera_array = <camera_array> newindex = <newindex>
 	endif
 	debug_flags = none
 	if NOT ($debug_camera_array = none)
 		select_cameracut_video_end
 		found = 0
-		FormatText \{checksumname = New_Camera_Array
+		formattext \{checksumname = new_camera_array
 			'%s_%p'
 			s = $debug_camera_array_pakname
 			p = $debug_camera_array}
-		if GlobalExists name = <New_Camera_Array>
-			GetArraySize $<New_Camera_Array>
+		if globalexists name = <new_camera_array>
+			getarraysize $<new_camera_array>
 			index = ($debug_camera_array_count)
 			if (<index> < <array_size>)
-				Camera_Array = <New_Camera_Array>
+				camera_array = <new_camera_array>
 				newindex = ($debug_camera_array_count)
 				found = 1
 				debug_flags = update_when_paused
@@ -807,74 +807,74 @@ script CameraCuts_StartCallback
 			change \{debug_camera_array_count = none}
 		endif
 	endif
-	change CameraCuts_LastArray = $<Camera_Array>
-	change \{CameraCuts_LastPerformance = $CameraCuts_Performance}
-	change CameraCuts_LastIndex = <newindex>
-	CameraCut_SaveSelectedParams
-	if ($CameraCuts_EnableVideoVenueCams = 1)
-		FindVideoVenueCam <...>
+	change cameracuts_lastarray = $<camera_array>
+	change \{cameracuts_lastperformance = $cameracuts_performance}
+	change cameracuts_lastindex = <newindex>
+	cameracut_saveselectedparams
+	if ($cameracuts_enablevideovenuecams = 1)
+		findvideovenuecam <...>
 	endif
 	if ($debug_showcameraname = on)
-		CameraCuts_UpdateDebugCameraName
+		cameracuts_updatedebugcameraname
 	endif
 	if ($output_gpu_log = 1)
-		CameraCuts_OutputGPULog
+		cameracuts_outputgpulog
 	endif
-	if StructureContains Structure = ($<Camera_Array> [<newindex>]) params
-		camStruct = (($<Camera_Array> [<newindex>]).params)
-		if NOT StructureContains Structure = <camStruct> dof
-			camStruct = ($<Camera_Array> [<newindex>])
+	if structurecontains structure = ($<camera_array> [<newindex>]) params
+		camstruct = (($<camera_array> [<newindex>]).params)
+		if NOT structurecontains structure = <camstruct> dof
+			camstruct = ($<camera_array> [<newindex>])
 		endif
 	else
-		camStruct = ($<Camera_Array> [<newindex>])
+		camstruct = ($<camera_array> [<newindex>])
 	endif
-	if StructureContains Structure = ($<Camera_Array> [<newindex>]) ShadowCasters
-		change CameraCuts_ShadowCasters = ($<Camera_Array> [<newindex>].ShadowCasters)
+	if structurecontains structure = ($<camera_array> [<newindex>]) shadowcasters
+		change cameracuts_shadowcasters = ($<camera_array> [<newindex>].shadowcasters)
 	else
-		change \{CameraCuts_ShadowCasters = none}
+		change \{cameracuts_shadowcasters = none}
 	endif
-	gpu_load = 100.0
-	if StructureContains Structure = ($<Camera_Array> [<newindex>]) gpu
-		gpu_load = ((<Camera_Array> [<newindex>]).gpu)
+	0x4975a676 = 100.0
+	if structurecontains structure = ($<camera_array> [<newindex>]) gpu
+		0x4975a676 = ((<camera_array> [<newindex>]).gpu)
 	endif
-	if (<gpu_load> <= 80.0)
-		ShowDOF
+	if (<0x4975a676> <= 80.0)
+		0xbf54cf40
 	else
-		HideDOF
+		0x9c117ad4
 	endif
-	if (<gpu_load> <= 71.0)
-		ShowStencilShadow
+	if (<0x4975a676> <= 71.0)
+		showstencilshadow
 	else
 	endif
 	change \{structurename = guitarist_info
 		waiting_for_cameracut = false}
 	change \{structurename = bassist_info
 		waiting_for_cameracut = false}
-	BandManager_NotifyAllOfCameraCut
-	GetSongTimeMs
-	change CameraCuts_LastCameraStartTime = <time>
+	bandmanager_notifyallofcameracut
+	getsongtimems
+	change cameracuts_lastcamerastarttime = <time>
 	if ($display_clip_info = true)
 		clip_get_time_and_frame
 
 	endif
-	CamParams = ($<Camera_Array> [<newindex>])
-	CameraCut_SwapLookAts
-	if StructureContains Structure = <camStruct> name
-		camera_name = (<camStruct>.name)
+	camparams = ($<camera_array> [<newindex>])
+	cameracut_swaplookats
+	if structurecontains structure = <camstruct> name
+		camera_name = (<camstruct>.name)
 	else
-		camera_name = $CameraCuts_NextName
+		camera_name = $cameracuts_nextname
 	endif
 	prepare_mocap_lock_target camera = <camera_name>
-	PlayIGCCam {
+	playigccam {
 		time = <camera_time>
 		viewport = bg_viewport
-		controlscript = CameraCuts_StaticCamControl
-		params = {CamParams = <CamParams>}
+		controlscript = cameracuts_staticcamcontrol
+		params = {camparams = <camparams>}
 		far_clip = 500.0
-		<CamParams>
-		exitscript = CameraCuts_StartCallback
-		Play_hold = 0
-		name = CameraCutCam
+		<camparams>
+		exitscript = cameracuts_startcallback
+		play_hold = 0
+		name = cameracutcam
 		<debug_flags>
 	}
 endscript
@@ -920,21 +920,21 @@ script prepare_mocap_lock_target
 		default
 		return
 	endswitch
-	if CompositeObjectExists name = <lock_target>
+	if compositeobjectexists name = <lock_target>
 		<lock_target> :anim_update active_camera_override = true
 	endif
 endscript
 
-script FindVideoVenueCam 
-	ExtendCRC <Camera_Array> '_video_venue' out = Camera_Array_Video_Venue
-	if GlobalExists name = <Camera_Array_Video_Venue>
-		if StructureContains Structure = ($<Camera_Array> [<newindex>]) name
-			name = ($<Camera_Array> [<newindex>].name)
-			GetArraySize ($<Camera_Array_Video_Venue>)
+script findvideovenuecam 
+	extendcrc <camera_array> '_video_venue' out = camera_array_video_venue
+	if globalexists name = <camera_array_video_venue>
+		if structurecontains structure = ($<camera_array> [<newindex>]) name
+			name = ($<camera_array> [<newindex>].name)
+			getarraysize ($<camera_array_video_venue>)
 			index_vv = 0
 			begin
-			if ($<Camera_Array_Video_Venue> [<index_vv>].name = <name>)
-				return Camera_Array = <Camera_Array_Video_Venue> newindex = <index_vv>
+			if ($<camera_array_video_venue> [<index_vv>].name = <name>)
+				return camera_array = <camera_array_video_venue> newindex = <index_vv>
 			endif
 			index_vv = (<index_vv> + 1)
 			repeat <array_size>
@@ -943,45 +943,45 @@ script FindVideoVenueCam
 	return
 endscript
 
-script ApplyDeferredCameraEffects 
-	WaitOneGameFrame
-	KillSpawnedScript \{id = CameraCuts_ScriptsToKillOnCut}
+script applydeferredcameraeffects 
+	waitonegameframe
+	killspawnedscript \{id = cameracuts_scriptstokilloncut}
 	if ($game_mode = practice || $game_mode = tutorial || $game_mode = practice)
 		return
 	endif
-	ApplyScreenFx effect = ($next_screenfx)
-	if NOT ScreenFX_FxInstanceExists \{viewport = bg_viewport
-			name = Depth_of_Field__simplified_}
-		ScreenFX_AddFXInstance {
+	applyscreenfx effect = ($next_screenfx)
+	if NOT screenfx_fxinstanceexists \{viewport = bg_viewport
+			name = depth_of_field__simplified_}
+		screenfx_addfxinstance {
 			viewport = bg_viewport
-			<dofParam>
+			<dofparam>
 		}
 	else
-		ScreenFX_UpdateFXInstanceParams {
+		screenfx_updatefxinstanceparams {
 			viewport = bg_viewport
-			<dofParam>
+			<dofparam>
 		}
 	endif
 	if ($cameracuts_pendingwhiteflash = true)
 		change \{cameracuts_pendingwhiteflash = false}
-		spawnscriptnow \{CameraFX_WhiteFlash}
+		spawnscriptnow \{camerafx_whiteflash}
 	endif
 endscript
 next_screenfx = none
 current_screenfx = none
 cameracuts_pendingwhiteflash = false
 
-script CameraCuts_SetNextScreenFx 
+script cameracuts_setnextscreenfx 
 	change next_screenfx = <effect>
 endscript
 
-script CameraCuts_SetPendingWhiteFlash 
+script cameracuts_setpendingwhiteflash 
 	change \{cameracuts_pendingwhiteflash = true}
 endscript
 
-script CameraCuts_UpdateDebugCameraName 
-	if NOT ScreenElementExists \{id = debug_camera_name_text}
-		CreateScreenElement \{type = TextElement
+script cameracuts_updatedebugcameraname 
+	if NOT screenelementexists \{id = debug_camera_name_text}
+		createscreenelement \{type = textelement
 			parent = root_window
 			id = debug_camera_name_text
 			font = debug
@@ -997,13 +997,13 @@ script CameraCuts_UpdateDebugCameraName
 				210
 				250
 			]
-			text = qs("\LCamera Name")
+			text = qs(0xeb0e6415)
 			z_priority = 100.0
 			z_priority = 1.0
 			alpha = 1}
 	endif
-	if NOT ScreenElementExists \{id = debug_camera_name_text2}
-		CreateScreenElement \{type = TextElement
+	if NOT screenelementexists \{id = debug_camera_name_text2}
+		createscreenelement \{type = textelement
 			parent = root_window
 			id = debug_camera_name_text2
 			font = debug
@@ -1019,76 +1019,76 @@ script CameraCuts_UpdateDebugCameraName
 				210
 				250
 			]
-			text = qs("\LCamera Name")
+			text = qs(0xeb0e6415)
 			z_priority = 100.0
 			z_priority = 1.0
 			alpha = 1}
 	endif
 	cameraname_crc = none
-	Crowd = 1
-	if ($CameraCuts_Init = true)
-		GetArraySize ($CameraCuts_LastArray)
-		if ($CameraCuts_LastIndex < <array_size>)
-			if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex]) params
-				if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex].params) name
-					cameraname_crc = ($CameraCuts_LastArray [$CameraCuts_LastIndex].params.name)
+	crowd = 1
+	if ($cameracuts_init = true)
+		getarraysize ($cameracuts_lastarray)
+		if ($cameracuts_lastindex < <array_size>)
+			if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex]) params
+				if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex].params) name
+					cameraname_crc = ($cameracuts_lastarray [$cameracuts_lastindex].params.name)
 				endif
 			endif
-			if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex]) name
-				cameraname_crc = ($CameraCuts_LastArray [$CameraCuts_LastIndex].name)
+			if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex]) name
+				cameraname_crc = ($cameracuts_lastarray [$cameracuts_lastindex].name)
 			endif
-			if StructureContains Structure = ($CameraCuts_LastArray [$CameraCuts_LastIndex]) CrowdOff
-				<Crowd> = 0
+			if structurecontains structure = ($cameracuts_lastarray [$cameracuts_lastindex]) crowdoff
+				<crowd> = 0
 			endif
 			if (<cameraname_crc> = none)
-				if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex]) controlscript
-					cameraname_crc = ($CameraCuts_LastArray [$CameraCuts_LastIndex].controlscript)
+				if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex]) controlscript
+					cameraname_crc = ($cameracuts_lastarray [$cameracuts_lastindex].controlscript)
 				endif
 			endif
 		endif
 	endif
-	FormatText TextName = cameraname qs("\L%s type=%t crowd=%c") s = <cameraname_crc> t = $CameraCuts_LastType c = <Crowd> DontAssertForChecksums DoNotResolve
-	debug_camera_name_text :SE_SetProps text = <cameraname>
+	formattext textname = cameraname qs(0x4558200d) s = <cameraname_crc> t = $cameracuts_lasttype c = <crowd> dontassertforchecksums donotresolve
+	debug_camera_name_text :se_setprops text = <cameraname>
 
-	debug_camera_name_text2 :SE_SetProps text = <cameraname>
+	debug_camera_name_text2 :se_setprops text = <cameraname>
 endscript
 
-script CameraCuts_OutputGPULog 
-	GetArraySize ($CameraCuts_LastArray)
+script cameracuts_outputgpulog 
+	getarraysize ($cameracuts_lastarray)
 	cameraname = none
-	if ($CameraCuts_LastIndex < <array_size>)
-		if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex]) params
-			if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex].params) name
-				cameraname = ($CameraCuts_LastArray [$CameraCuts_LastIndex].params.name)
+	if ($cameracuts_lastindex < <array_size>)
+		if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex]) params
+			if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex].params) name
+				cameraname = ($cameracuts_lastarray [$cameracuts_lastindex].params.name)
 			endif
 		endif
-		if StructureContains Structure = (($CameraCuts_LastArray) [$CameraCuts_LastIndex]) name
-			cameraname = ($CameraCuts_LastArray [$CameraCuts_LastIndex].name)
+		if structurecontains structure = (($cameracuts_lastarray) [$cameracuts_lastindex]) name
+			cameraname = ($cameracuts_lastarray [$cameracuts_lastindex].name)
 		endif
 	endif
-	<Crowd> = 1
-	if StructureContains Structure = ($CameraCuts_LastArray [$CameraCuts_LastIndex]) CrowdOff
-		<Crowd> = 0
+	<crowd> = 1
+	if structurecontains structure = ($cameracuts_lastarray [$cameracuts_lastindex]) crowdoff
+		<crowd> = 0
 	endif
-	FormatText TextName = text qs("\LCam: %s, type: %t, crowd: %c ; ; ; 16.667") s = <cameraname> t = $CameraCuts_LastType c = <Crowd> DontAssertForChecksums
-	TextOutput text = <text>
+	formattext textname = text qs(0x735757ef) s = <cameraname> t = $cameracuts_lasttype c = <crowd> dontassertforchecksums
+	textoutput text = <text>
 endscript
 
 script destroy_cameracuts 
-	change \{CameraCuts_Init = false}
-	change \{CameraCuts_Enabled = false}
-	KillSpawnedScript \{name = CameraCuts_StartCallback}
-	KillSpawnedScript \{name = ApplyDeferredCameraEffects}
-	KillCamAnim \{name = CameraCutCam}
+	change \{cameracuts_init = false}
+	change \{cameracuts_enabled = false}
+	killspawnedscript \{name = cameracuts_startcallback}
+	killspawnedscript \{name = applydeferredcameraeffects}
+	killcamanim \{name = cameracutcam}
 	kill_dummy_bg_camera
-	ClearNoteMappings \{section = cameras}
-	KillSpawnedScript \{name = cameracuts_iterator}
-	KillSpawnedScript \{id = CameraCuts_Scripts}
-	KillSpawnedScript \{id = CameraCuts_ScriptsToKillOnCut}
+	clearnotemappings \{section = cameras}
+	killspawnedscript \{name = cameracuts_iterator}
+	killspawnedscript \{id = cameracuts_scripts}
+	killspawnedscript \{id = cameracuts_scriptstokilloncut}
 endscript
 profiling_cameracuts = false
 
-script profile_camera_cuts \{filename = qs("\LProfileCameras")}
+script profile_camera_cuts \{filename = qs(0xd8a6b977)}
 	if ($profiling_cameracuts = true)
 		return
 	endif
@@ -1097,29 +1097,29 @@ script profile_camera_cuts \{filename = qs("\LProfileCameras")}
 	setslomo \{0.001}
 	setslomo_song \{slomo = 0.001}
 	dumpprofilestart
-	GetPakManCurrentName \{map = zones}
+	getpakmancurrentname \{map = zones}
 	camera_count = 0
 	begin
 	switch <camera_count>
 		case 0
-		suffix = qs("\Lcameras_good")
+		suffix = qs(0xe5bed240)
 		case 1
-		suffix = qs("\Lcameras_normal")
+		suffix = qs(0xa8f5d7cc)
 		case 2
-		suffix = qs("\Lcameras_poor")
+		suffix = qs(0x8f585fa5)
 		case 3
-		suffix = qs("\Lcameras_good_2p")
+		suffix = qs(0x262cfe49)
 		case 4
-		suffix = qs("\Lcameras_normal_2p")
+		suffix = qs(0xb3e96435)
 		case 5
-		suffix = qs("\Lcameras_poor_2p")
+		suffix = qs(0x9f875049)
 	endswitch
-	FormatText checksumname = Camera_Array '%s_%p' s = <pakname> p = <suffix>
-	if GlobalExists name = <Camera_Array>
-		GetArraySize $<Camera_Array>
+	formattext checksumname = camera_array '%s_%p' s = <pakname> p = <suffix>
+	if globalexists name = <camera_array>
+		getarraysize $<camera_array>
 		array_count = 0
 		begin
-		profile_cameracut Camera_Array_pakname = <pakname> Camera_Array = <suffix> array_count = <array_count>
+		profile_cameracut camera_array_pakname = <pakname> camera_array = <suffix> array_count = <array_count>
 		<array_count> = (<array_count> + 1)
 		repeat <array_size>
 	endif
@@ -1127,7 +1127,7 @@ script profile_camera_cuts \{filename = qs("\LProfileCameras")}
 	repeat 6
 	change \{debug_camera_array = none}
 	destroy_cameracuts
-	Wait \{3
+	wait \{3
 		gameframes}
 	create_cameracuts
 	dumpprofileend output_text output_file filename = <filename>
@@ -1137,67 +1137,67 @@ script profile_camera_cuts \{filename = qs("\LProfileCameras")}
 endscript
 
 script profile_cameracut 
-	change debug_camera_array = <Camera_Array>
-	change debug_camera_array_pakname = <Camera_Array_pakname>
+	change debug_camera_array = <camera_array>
+	change debug_camera_array_pakname = <camera_array_pakname>
 	change debug_camera_array_count = <array_count>
 	cpu = $current_cpu
-	ToggleMetrics \{mode = 2}
+	togglemetrics \{mode = 2}
 	change \{current_cpu = 6}
 	destroy_cameracuts
-	Wait \{2
+	wait \{2
 		gameframes}
 	create_cameracuts
-	Wait \{3
+	wait \{3
 		gameframes}
 	profile_camera_gpu
-	ToggleMetrics \{mode = 0}
+	togglemetrics \{mode = 0}
 	change current_cpu = <cpu>
 endscript
 
 script profile_camera_gpu 
-	FormatText \{checksumname = New_Camera_Array
+	formattext \{checksumname = new_camera_array
 		'%s_%p'
 		s = $debug_camera_array_pakname
 		p = $debug_camera_array}
-	Camera_Array = $<New_Camera_Array>
-	if StructureContains Structure = ($<Camera_Array> [$debug_camera_array_count]) name
-		FormatText TextName = title qs("\LCamera %n Profile Dump") n = (($<Camera_Array> [$debug_camera_array_count]).name) DontAssertForChecksums
+	camera_array = $<new_camera_array>
+	if structurecontains structure = ($<camera_array> [$debug_camera_array_count]) name
+		formattext textname = title qs(0xba1fa8c6) n = (($<camera_array> [$debug_camera_array_count]).name) dontassertforchecksums
 	else
-		FormatText TextName = title qs("\LCamera %n Profile Dump") n = (($<Camera_Array> [$debug_camera_array_count]).params.name) DontAssertForChecksums
+		formattext textname = title qs(0xba1fa8c6) n = (($<camera_array> [$debug_camera_array_count]).params.name) dontassertforchecksums
 	endif
 	dumpprofile cpu = 6 title = <title> current_time_only
 endscript
 
-script CameraCuts_EnableChangeCam 
+script cameracuts_enablechangecam 
 	if NOT ($debug_camera_array = none)
 		return
 	endif
-	change CameraCuts_ChangeCamEnable = <enable>
-	change \{CameraCuts_ChangeNow = true}
+	change cameracuts_changecamenable = <enable>
+	change \{cameracuts_changenow = true}
 endscript
 
-script CameraCuts_CalcTime 
-	if GotParam \{force_time}
+script cameracuts_calctime 
+	if gotparam \{force_time}
 		camera_time = <force_time>
-		GetSongTimeMs
+		getsongtimems
 		camera_songtime = (<time> + <camera_time> * 1000)
 		return camera_time = <camera_time> camera_songtime = <camera_songtime>
 	endif
-	if ($CameraCuts_ChangeNow = true)
+	if ($cameracuts_changenow = true)
 		camera_time = 0
-		GetSongTimeMs
+		getsongtimems
 		camera_songtime = (<time> + <camera_time> * 1000)
 		return camera_time = <camera_time> camera_songtime = <camera_songtime>
 	endif
-	if ($CameraCuts_ForceTime = 0)
-		if ($CameraCuts_NextTime = 0)
+	if ($cameracuts_forcetime = 0)
+		if ($cameracuts_nexttime = 0)
 			if NOT ($debug_camera_array = none)
 				camera_time = 5.0
 			else
 				camera_time = RandomFloat (2.0, 4.0)
-				GetSongTimeMs
+				getsongtimems
 				endtime = (<time> + <camera_time> * 1000)
-				if CameraCuts_GetNextDownbeat endtime = <endtime>
+				if cameracuts_getnextdownbeat endtime = <endtime>
 					<delta> = ((<endtime> - <time>) / 1000.0)
 					if ((<delta> < 6.0) && (<delta> > 2.0))
 						<camera_time> = <delta>
@@ -1205,268 +1205,268 @@ script CameraCuts_CalcTime
 				endif
 			endif
 		else
-			camera_time = ($CameraCuts_NextTime / 1000.0)
-			change \{CameraCuts_NextTime = 0}
+			camera_time = ($cameracuts_nexttime / 1000.0)
+			change \{cameracuts_nexttime = 0}
 		endif
 	else
-		camera_time = ($CameraCuts_ForceTime)
+		camera_time = ($cameracuts_forcetime)
 	endif
-	GetSongTimeMs
+	getsongtimems
 	camera_songtime = (<time> + <camera_time> * 1000)
 	return camera_time = <camera_time> camera_songtime = <camera_songtime>
 endscript
 
-script CameraCuts_WaitScript \{camera_time = 0
+script cameracuts_waitscript \{camera_time = 0
 		camera_songtime = 0}
-	if GotParam \{force_time}
-		Wait <force_time> seconds
+	if gotparam \{force_time}
+		wait <force_time> seconds
 		return \{true}
 	endif
-	GetSongTimeMs
-	change CameraCuts_ChangeTime = <camera_songtime>
+	getsongtimems
+	change cameracuts_changetime = <camera_songtime>
 	begin
-	GetSongTimeMs
-	if (<time> >= $CameraCuts_ChangeTime ||
-			$CameraCuts_ChangeNow = true)
-		if ($CameraCuts_ChangeCamEnable = true)
+	getsongtimems
+	if (<time> >= $cameracuts_changetime ||
+			$cameracuts_changenow = true)
+		if ($cameracuts_changecamenable = true)
 			break
 		endif
 	endif
-	if NOT ($CameraCuts_ForceChangeTime = 0.0)
-		if ($CameraCuts_ForceChangeTime < (<time> - $CameraCuts_LastCameraStartTime))
-			change \{CameraCuts_ForceChangeTime = 0.0}
+	if NOT ($cameracuts_forcechangetime = 0.0)
+		if ($cameracuts_forcechangetime < (<time> - $cameracuts_lastcamerastarttime))
+			change \{cameracuts_forcechangetime = 0.0}
 			break
 		endif
 	endif
-	if GotParam \{nowait}
+	if gotparam \{nowait}
 		return \{false}
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 	return \{true}
 endscript
 
-script CameraCuts_StaticCamControl 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph {
-		<CamParams>
+script cameracuts_staticcamcontrol 
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph {
+		<camparams>
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_BlockControl 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph {
+script cameracuts_blockcontrol 
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph {
 		<...>
 	}
-	Block
+	block
 endscript
 
-script CameraCuts_HandCam \{name = none}
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph
+script cameracuts_handcam \{name = none}
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph
 	zooming = false
-	if GotParam \{type}
+	if gotparam \{type}
 		if (<type> = longshot)
-			GetRandomValue \{name = random_value
-				Integer
+			getrandomvalue \{name = random_value
+				integer
 				a = 0
 				b = 100}
 			if (<random_value> < 25)
-				CCam_DoMorph <...> FOV = 62 time = <camera_time>
+				ccam_domorph <...> fov = 62 time = <camera_time>
 				zooming = true
 			endif
 			if (<random_value> > 95)
-				CCam_DoMorph <...> FOV = 78 time = <camera_time>
+				ccam_domorph <...> fov = 78 time = <camera_time>
 				zooming = true
 			endif
 		endif
 		if (<type> = mid)
-			GetRandomValue \{name = random_value
-				Integer
+			getrandomvalue \{name = random_value
+				integer
 				a = 0
 				b = 100}
 			if (<random_value> < 5)
-				CCam_DoMorph <...> FOV = 64 time = <camera_time>
+				ccam_domorph <...> fov = 64 time = <camera_time>
 				zooming = true
 			endif
 			if (<random_value> > 85)
-				CCam_DoMorph <...> FOV = 82 time = <camera_time>
+				ccam_domorph <...> fov = 82 time = <camera_time>
 				zooming = true
 			endif
 		endif
 	endif
 	if (<zooming> = true)
-		amplitudePosition = 0.01
-		amplitudeRotation = -0.01
+		amplitudeposition = 0.01
+		amplituderotation = -0.01
 	else
-		amplitudePosition = ($handcam_amplitudePosition)
-		amplitudeRotation = ($handcam_amplitudeRotation)
+		amplitudeposition = ($handcam_amplitudeposition)
+		amplituderotation = ($handcam_amplituderotation)
 	endif
-	CameraCuts_SetHandCamParams <...>
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_sethandcamparams <...>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_TwoCam 
-	if GotParam \{UseHandCam}
-		CameraCuts_SetHandCamParams {
-			amplitudePosition = ($handcam_amplitudePosition)
-			amplitudeRotation = ($handcam_amplitudeRotation)
+script cameracuts_twocam 
+	if gotparam \{usehandcam}
+		cameracuts_sethandcamparams {
+			amplitudeposition = ($handcam_amplitudeposition)
+			amplituderotation = ($handcam_amplituderotation)
 		}
 	endif
-	if GotParam \{UseHandCamSmooth}
-		CameraCuts_SetHandCamParams \{amplitudePosition = 0.05
-			amplitudeRotation = -0.08}
+	if gotparam \{usehandcamsmooth}
+		cameracuts_sethandcamparams \{amplitudeposition = 0.05
+			amplituderotation = -0.08}
 	endif
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph {
-		<Cam1>
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph {
+		<cam1>
 	}
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CCam_DoMorph {
-		<Cam2>
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	ccam_domorph {
+		<cam2>
 		time = <camera_time>
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_WaitForMorphOrSongTime 
+script cameracuts_waitformorphorsongtime 
 
 	begin
-	if CCam_IsMorphComplete
+	if ccam_ismorphcomplete
 		return
 	endif
-	if CameraCuts_WaitScript camera_songtime = <camera_songtime> nowait
+	if cameracuts_waitscript camera_songtime = <camera_songtime> nowait
 		goto \{nullscript}
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 endscript
 
-script CameraCuts_WaitForTimeOrSongTime 
+script cameracuts_waitfortimeorsongtime 
 
-	ResetTimer
+	resettimer
 	begin
-	if TimeGreaterThan <seconds>
+	if timegreaterthan <seconds>
 		return
 	endif
-	if CameraCuts_WaitScript camera_songtime = <camera_songtime> nowait
+	if cameracuts_waitscript camera_songtime = <camera_songtime> nowait
 		goto \{nullscript}
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 endscript
 
-script CameraCuts_Encore 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph {
-		<Cam1>
+script cameracuts_encore 
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph {
+		<cam1>
 	}
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 3
-	CCam_DoMorph {
-		<Cam2>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 3
+	ccam_domorph {
+		<cam2>
 	}
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 2.5
-	CCam_DoMorph {
-		<Cam3>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 2.5
+	ccam_domorph {
+		<cam3>
 	}
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 3
-	CCam_DoMorph {
-		<Cam4>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 3
+	ccam_domorph {
+		<cam4>
 	}
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 2
-	CCam_DoMorph {
-		<Cam5>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 2
+	ccam_domorph {
+		<cam5>
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_Orbit 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph {
+script cameracuts_orbit 
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph {
 		<...>
 	}
 	orbitangle = (3.1409998 * <orbitangle> / 180.0)
 	if (<camera_time> > 0)
-		CCam_Orbit axis = (0.0, 1.0, 0.0) Speed = (<orbitangle> / <camera_time>)
+		ccam_orbit axis = (0.0, 1.0, 0.0) speed = (<orbitangle> / <camera_time>)
 	endif
-	CameraCuts_SetHandCamDriftOnly
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_sethandcamdriftonly
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_OrbitAndMorphTwoCam 
-	CameraCuts_CalcTime force_time = <force_time>
+script cameracuts_orbitandmorphtwocam 
+	cameracuts_calctime force_time = <force_time>
 	if (<camera_time> > 0)
 		<orbitangle> = (3.1409998 * <orbitangle> / 180.0)
-		<orbitparams> = {axis = (0.0, 1.0, 0.0) Speed = (<orbitangle> / <camera_time>)}
+		<orbitparams> = {axis = (0.0, 1.0, 0.0) speed = (<orbitangle> / <camera_time>)}
 	endif
-	CCam_DoMorph {
-		<Cam1>
+	ccam_domorph {
+		<cam1>
 	}
 	if (<camera_time> > 0)
-		if GotParam \{DisableOrbit1}
-			CCam_Orbit \{off}
+		if gotparam \{disableorbit1}
+			ccam_orbit \{off}
 		else
-			CCam_Orbit <orbitparams>
+			ccam_orbit <orbitparams>
 		endif
 	endif
-	CameraCuts_SetHandCamDriftOnly
-	CCam_DoMorph {
-		<Cam2>
+	cameracuts_sethandcamdriftonly
+	ccam_domorph {
+		<cam2>
 		time = <camera_time>
 	}
 	if (<camera_time> > 0)
-		if GotParam \{DisableOrbit2}
-			CCam_Orbit \{off}
+		if gotparam \{disableorbit2}
+			ccam_orbit \{off}
 		else
-			CCam_Orbit <orbitparams>
+			ccam_orbit <orbitparams>
 		endif
 	endif
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_SplineMorph 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_SplineMorph {
+script cameracuts_splinemorph 
+	cameracuts_calctime force_time = <force_time>
+	ccam_splinemorph {
 		<...>
 		total_time = <camera_time>
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_SpecialStepMove 
-	CCam_SetSmoothing \{type = all
+script cameracuts_specialstepmove 
+	ccam_setsmoothing \{type = all
 		on = 1
 		slow_lerp_factor = 0.7
 		fast_lerp_factor = 0.7
 		lerp_dropoff = 2.0}
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_DoMorph {
-		<Cam1>
+	cameracuts_calctime force_time = <force_time>
+	ccam_domorph {
+		<cam1>
 	}
-	CameraCuts_SetHandCamParams \{amplitudePosition = 0.0
-		amplitudeRotation = -0.8}
-	if NOT GotParam \{stepTime}
-		stepTime = 6.0
+	cameracuts_sethandcamparams \{amplitudeposition = 0.0
+		amplituderotation = -0.8}
+	if NOT gotparam \{steptime}
+		steptime = 6.0
 	endif
-	if NOT GotParam \{FinalRotTime}
-		FinalRotTime = 1.0
+	if NOT gotparam \{finalrottime}
+		finalrottime = 1.0
 	endif
-	if NOT GotParam \{StepNum}
-		StepNum = 6.0
+	if NOT gotparam \{stepnum}
+		stepnum = 6.0
 	endif
-	if NOT GotParam \{StepDir}
-		StepDir = (0.0, 0.07, 0.05)
+	if NOT gotparam \{stepdir}
+		stepdir = (0.0, 0.07, 0.05)
 	endif
-	origpos = (<Cam1>.pos)
-	diry = <StepDir>
+	origpos = (<cam1>.pos)
+	diry = <stepdir>
 	count = 0.0
 	timestep = 0.05
-	step = (<timestep> / <stepTime>)
-	num_jumps = <StepNum>
-	dirx = ((<Cam2>.pos) - (<Cam1>.pos))
+	step = (<timestep> / <steptime>)
+	num_jumps = <stepnum>
+	dirx = ((<cam2>.pos) - (<cam1>.pos))
 	jump_multiplier = (<num_jumps> * 360.0)
 	count = (<count> + <step>)
 	begin
@@ -1475,260 +1475,260 @@ script CameraCuts_SpecialStepMove
 	endif
 	sin (<count> * <jump_multiplier>)
 	pos = (<origpos> + <dirx> * <count> + <diry> * <sin>)
-	CCam_DoMorph {
+	ccam_domorph {
 		<...>
 		time = <timestep>
 		motion = linear
 	}
 	begin
-	if CameraCuts_WaitScript camera_songtime = <camera_songtime> nowait
+	if cameracuts_waitscript camera_songtime = <camera_songtime> nowait
 		return
 	endif
-	if CCam_IsMorphComplete
+	if ccam_ismorphcomplete
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 	count = (<count> + <step>)
 	repeat
-	CCam_DoMorph {
-		<Cam2>
-		time = <FinalRotTime>
+	ccam_domorph {
+		<cam2>
+		time = <finalrottime>
 		motion = smooth
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_ApplyDOF \{dof = $DOF_Medium02_tod_manager
+script cameracuts_applydof \{dof = $dof_medium02_tod_manager
 		time = 0.0}
-	dofType = <dof>
-	dofParam = (<dofType>.screen_fx [0])
-	if NOT ScreenFX_FxInstanceExists \{viewport = bg_viewport
-			name = Depth_of_Field__simplified_}
-		ScreenFX_AddFXInstance {
+	doftype = <dof>
+	dofparam = (<doftype>.screen_fx [0])
+	if NOT screenfx_fxinstanceexists \{viewport = bg_viewport
+			name = depth_of_field__simplified_}
+		screenfx_addfxinstance {
 			viewport = bg_viewport
-			name = Depth_of_Field__simplified_
-			<dofParam>
+			name = depth_of_field__simplified_
+			<dofparam>
 			time = <time>
 		}
 	else
-		ScreenFX_UpdateFXInstanceParams {
+		screenfx_updatefxinstanceparams {
 			viewport = bg_viewport
-			name = Depth_of_Field__simplified_
-			<dofParam>
+			name = depth_of_field__simplified_
+			<dofparam>
 			time = <time>
 		}
 	endif
 endscript
 
-script CameraCuts_SetHandCamDriftOnly 
-	CCam_EnableHandcam \{ShakeEnabled = false
-		DriftEnabled = true}
-	driftSlerpMap = [
+script cameracuts_sethandcamdriftonly 
+	ccam_enablehandcam \{shakeenabled = false
+		driftenabled = true}
+	driftslerpmap = [
 		(0.1, 0.3)
 		(0.2, 0.3)
 	]
-	if GotParam \{DriftZoneAngles}
-		SetArrayElement ArrayName = driftSlerpMap index = 1 newvalue = <DriftZoneAngles>
+	if gotparam \{driftzoneangles}
+		setarrayelement arrayname = driftslerpmap index = 1 newvalue = <driftzoneangles>
 	endif
-	CCam_SetHandcamParams {
+	ccam_sethandcamparams {
 		$cinematic_camera_default_handcam_params
-		driftSlerpMap = <driftSlerpMap>
+		driftslerpmap = <driftslerpmap>
 	}
 endscript
 
-script CameraCuts_SetHandCamParams \{amplitudePosition = 0.01
-		amplitudeRotation = -0.01}
-	CCam_EnableHandcam \{ShakeEnabled = true
-		DriftEnabled = true}
-	if GotParam \{handcamcloseup}
-		driftSlerpMap = [
+script cameracuts_sethandcamparams \{amplitudeposition = 0.01
+		amplituderotation = -0.01}
+	ccam_enablehandcam \{shakeenabled = true
+		driftenabled = true}
+	if gotparam \{handcamcloseup}
+		driftslerpmap = [
 			(0.0, 1.0)
 			(0.03, 0.2)
 		]
 	else
-		driftSlerpMap = [
+		driftslerpmap = [
 			(0.0, 0.8)
 			(0.05, 1.0)
 		]
 	endif
-	CCam_SetHandcamParams {
-		motionX = {
+	ccam_sethandcamparams {
+		motionx = {
 			amplitude = 0.033999998
 			center = 0.0
-			periodBase = 0.012999999
-			periodMultiples = [
+			periodbase = 0.012999999
+			periodmultiples = [
 				1 , 3 , 4
 			]
 		}
-		motionY = {
+		motiony = {
 			amplitude = 0.04
 			center = 0.0
-			periodBase = 0.016999999
-			periodMultiples = [
+			periodbase = 0.016999999
+			periodmultiples = [
 				1 , 3 , 4
 			]
 		}
-		amplitudePosition = {
-			amplitude = <amplitudePosition>
+		amplitudeposition = {
+			amplitude = <amplitudeposition>
 			center = 0.0
-			periodBase = 0.0023
-			periodMultiples = [
+			periodbase = 0.0023
+			periodmultiples = [
 				1 , 16
 			]
 		}
-		amplitudeRotation = {
-			amplitude = <amplitudeRotation>
+		amplituderotation = {
+			amplitude = <amplituderotation>
 			center = 0.0
-			periodBase = 0.0023
-			periodMultiples = [
+			periodbase = 0.0023
+			periodmultiples = [
 				1
 			]
 		}
-		zoomStabilityMap = [
+		zoomstabilitymap = [
 			(1.3, 0.7)
 			(30.0, 100.0)
 		]
-		driftSlerpMap = <driftSlerpMap>
-		zoomDriftMap = [
+		driftslerpmap = <driftslerpmap>
+		zoomdriftmap = [
 			(1.2, 0.6)
 			(30.0, 100.0)
 		]
-		driftAllowedAmplitude = {
+		driftallowedamplitude = {
 			amplitude = 0.4
 			center = 1.0
-			periodBase = 0.02
-			periodMultiples = [
+			periodbase = 0.02
+			periodmultiples = [
 				1
 			]
 		}
 	}
 endscript
 
-script CameraCuts_HandCamZoom2 
-	CCam_DoMorph
+script cameracuts_handcamzoom2 
+	ccam_domorph
 	zooming = false
 	if (<zooming> = true)
-		amplitudePosition = 0.01
-		amplitudeRotation = -0.01
+		amplitudeposition = 0.01
+		amplituderotation = -0.01
 	else
-		amplitudePosition = ($handcam_amplitudePosition)
-		amplitudeRotation = ($handcam_amplitudeRotation)
+		amplitudeposition = ($handcam_amplitudeposition)
+		amplituderotation = ($handcam_amplituderotation)
 	endif
-	CameraCuts_SetHandCamParams <...>
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 2
-	CCam_DoMorph <...> FOV = 50 time = 0.6 motion = smooth
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 0.1
-	CCam_DoMorph <...> FOV = 53 time = 0.25 motion = smooth
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 0.03
-	CCam_DoMorph <...> FOV = 51 time = 0.3 motion = smooth
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CCam_DoMorph <...> FOV = 51
-	CameraCuts_CalcTime force_time = <force_time>
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_sethandcamparams <...>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 2
+	ccam_domorph <...> fov = 50 time = 0.6 motion = smooth
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 0.1
+	ccam_domorph <...> fov = 53 time = 0.25 motion = smooth
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 0.03
+	ccam_domorph <...> fov = 51 time = 0.3 motion = smooth
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	ccam_domorph <...> fov = 51
+	cameracuts_calctime force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_QuickZoom 
-	CCam_DoMorph
+script cameracuts_quickzoom 
+	ccam_domorph
 	zooming = false
 	if (<zooming> = true)
-		amplitudePosition = 0.01
-		amplitudeRotation = -0.01
+		amplitudeposition = 0.01
+		amplituderotation = -0.01
 	else
-		amplitudePosition = ($handcam_amplitudePosition)
-		amplitudeRotation = ($handcam_amplitudeRotation)
+		amplitudeposition = ($handcam_amplitudeposition)
+		amplituderotation = ($handcam_amplituderotation)
 	endif
-	CameraCuts_SetHandCamParams <...>
-	CCam_DoMorph {
-		<Cam1>
+	cameracuts_sethandcamparams <...>
+	ccam_domorph {
+		<cam1>
 	}
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 2
-	CCam_DoMorph {
-		<Cam1>
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 2
+	ccam_domorph {
+		<cam1>
 	}
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CCam_DoMorph {
-		<Cam2>
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	ccam_domorph {
+		<cam2>
 		time = 0.75
 		motion = smooth
 	}
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CCam_DoMorph {
-		<Cam2>
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	ccam_domorph {
+		<cam2>
 	}
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CameraCuts_CalcTime force_time = <force_time>
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	cameracuts_calctime force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_Pan 
-	CameraCuts_SetHandCamParams {
-		amplitudePosition = ($handcam_amplitudePosition)
-		amplitudeRotation = ($handcam_amplitudeRotation)
+script cameracuts_pan 
+	cameracuts_sethandcamparams {
+		amplitudeposition = ($handcam_amplitudeposition)
+		amplituderotation = ($handcam_amplituderotation)
 	}
-	CCam_DoMorph {
-		<Cam1>
+	ccam_domorph {
+		<cam1>
 		time = 0
 	}
-	CameraCuts_WaitForTimeOrSongTime camera_songtime = <camera_songtime> seconds = 2
-	CCam_DoMorph {
-		<Cam2>
+	cameracuts_waitfortimeorsongtime camera_songtime = <camera_songtime> seconds = 2
+	ccam_domorph {
+		<cam2>
 		time = 1
 		motion = smooth
 	}
-	CameraCuts_WaitForMorphOrSongTime camera_songtime = <camera_songtime>
-	CameraCuts_CalcTime force_time = <force_time>
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitformorphorsongtime camera_songtime = <camera_songtime>
+	cameracuts_calctime force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_ThreePos 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_SplineMorph {
+script cameracuts_threepos 
+	cameracuts_calctime force_time = <force_time>
+	ccam_splinemorph {
 		keyframes =
 		[
 			{
-				<Cam1>
+				<cam1>
 			}
 			{
-				<Cam2>
+				<cam2>
 			}
 			{
-				<Cam3>
+				<cam3>
 			}
 		]
 		total_time = <camera_time>
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 
-script CameraCuts_FourPos 
-	CameraCuts_CalcTime force_time = <force_time>
-	CCam_SplineMorph {
+script cameracuts_fourpos 
+	cameracuts_calctime force_time = <force_time>
+	ccam_splinemorph {
 		keyframes =
 		[
 			{
-				<Cam1>
+				<cam1>
 			}
 			{
-				<Cam2>
+				<cam2>
 			}
 			{
-				<Cam3>
+				<cam3>
 			}
 			{
-				<Cam4>
+				<cam4>
 			}
 		]
 		total_time = <camera_time>
 	}
-	CameraCuts_WaitScript camera_songtime = <camera_songtime> force_time = <force_time>
+	cameracuts_waitscript camera_songtime = <camera_songtime> force_time = <force_time>
 endscript
 jumbotron_focus = none
 
-script Jumbotron_SetOverride 
+script jumbotron_setoverride 
 	change jumbotron_focus = <focus>
 endscript

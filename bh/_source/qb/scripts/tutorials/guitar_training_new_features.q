@@ -65,13 +65,13 @@ training_using_slider = 0
 
 script training_new_features_tutorial_startup 
 	training_init_session
-	ReloadSfx \{mode = tutorials
-		tutorial = new_features}
-	LaunchEvent \{type = unfocus
+	0xc1c4e84c \{mode = tutorials
+		tutorial = 0x0756afc0}
+	launchevent \{type = unfocus
 		target = root_window}
 	create_training_pause_handler
 	training_create_narrator_icons
-	if IsGuitarTouchController controller = ($player1_status.controller)
+	if isguitartouchcontroller controller = ($player1_status.controller)
 		change \{training_using_slider = 1}
 	else
 		change \{training_using_slider = 0}
@@ -80,16 +80,16 @@ endscript
 
 script training_5_1_show_title 
 	change \{g_training_lessons_completed = 0}
-	training_show_title \{title = qs("New Features Tutorial")}
+	training_show_title \{title = qs(0x2e341e7e)}
 	begin
 	if ($transitions_locked = 0)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	create_training_pause_handler
-	Wait \{3
+	wait \{3
 		seconds}
 	training_destroy_title
 endscript
@@ -102,27 +102,27 @@ script training_5_1_start_gem_scroller
 			0
 			0
 		]
-		song = Tut_Gtr_ExtSus
+		song = tut_gtr_extsus
 		disable_hud}
-	KillSpawnedScript \{name = update_score_fast}
+	killspawnedscript \{name = update_score_fast}
 	training_wait_for_gem_scroller_startup
 endscript
 
 script training_5_1_explain 
-	Wait \{3.5
+	wait \{3.5
 		seconds
 		ignoreslomo}
-	training_set_lesson_header_text \{number = qs("\L1")
-		text = qs("EXTENDED SUSTAINS")}
+	training_set_lesson_header_text \{number = qs(0x22ee76e7)
+		text = qs(0x3e3b12b6)}
 	training_add_lesson_body_text \{number = 1
-		text = qs("PLAY and HOLD the Long Note")}
+		text = qs(0xd99e5c44)}
 	training_add_lesson_body_text \{number = 2
-		text = qs("STRUM to play the other notes while holding the long note")}
+		text = qs(0x4be951b1)}
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'guitarist'}
 	training_pause_gem_scroller
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -138,45 +138,45 @@ script training_5_1_explain
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
-	LoadTutorialSFX \{mode = Tut_Gtr_Sustains}
-	training_play_sound \{Sound = 'Tut_Gtr_Sustains_01_GTR'
-		Wait}
-	Wait \{0.5
+	0x4de05aff \{mode = 0x5612d804}
+	training_play_sound \{sound = 'Tut_Gtr_Sustains_01_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_play_sound \{Sound = 'Tut_Gtr_Sustains_02_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_Sustains_02_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_play_sound \{Sound = 'Tut_Gtr_Sustains_03_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_Sustains_03_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_set_task_header_body \{text = qs("Hit 6 notes with extended sustain")}
+	training_set_task_header_body \{text = qs(0xba01bd96)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 6}
-	training_play_sound \{Sound = 'Tut_Gtr_Sustains_04_GTR'
-		Wait}
-	Wait \{1
+	training_play_sound \{sound = 'Tut_Gtr_Sustains_04_GTR'
+		wait}
+	wait \{1
 		seconds
 		ignoreslomo}
 	training_resume_gem_scroller
 endscript
 
 script lesson5_extended_sustain_note 
-	Wait \{1
+	wait \{1
 		gameframe}
-	GetPlayerInfo \{1
+	getplayerinfo \{1
 		extended_sustain_percent_hold}
 	if NOT (<extended_sustain_percent_hold> < 1.0)
 		change training_extended_sustains_played = ($training_extended_sustains_played + 1)
 	endif
-	if ScreenElementExists \{id = LessonHeader}
+	if screenelementexists \{id = lessonheader}
 		training_display_notes_hit notes_hit = ($training_extended_sustains_played) notes_required = 6
 	endif
 endscript
@@ -191,60 +191,60 @@ script training_5_1_wait_for_extended_sustains
 	if ($training_extended_sustains_played >= 6)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 		create_training_pause_handler
 	endif
-	Wait \{1
+	wait \{1
 		seconds
 		ignoreslomo}
 endscript
 
 script training_5_1_complete_message 
-	if ScreenElementExists \{id = notes_hit_text}
-		DestroyScreenElement \{id = notes_hit_text}
+	if screenelementexists \{id = notes_hit_text}
+		destroyscreenelement \{id = notes_hit_text}
 	endif
-	Wait \{0.75
+	wait \{0.75
 		seconds
 		ignoreslomo}
 	training_hide_lesson_header
 	training_destroy_gem_scroller
-	SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+	soundevent \{event = tutorial_mode_finish_chord}
 	training_hide_narrator
 	spawnscriptnow \{create_exploding_text
 		id = training_spawned_script
 		params = {
 			parent = 'lesson_complete'
-			text = qs("Lesson Complete")
+			text = qs(0xd50843f0)
 			text_physics = 0
 		}}
-	training_play_sound \{Sound = 'Tut_Gtr_Sustains_13_GTR'
-		Wait}
-	Wait \{5
+	training_play_sound \{sound = 'Tut_Gtr_Sustains_13_GTR'
+		wait}
+	wait \{5
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = create_exploding_text}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_exploding_text \{parent = 'lesson_complete'}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_01_GTR'
-		Wait}
-	Wait \{1
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_01_GTR'
+		wait}
+	wait \{1
 		seconds
 		ignoreslomo}
 	change g_training_lessons_completed = ($g_training_lessons_completed + 1)
 endscript
 
 script training_5_2_start_gem_scroller 
-	training_set_lesson_header_text \{number = qs("\L2")
-		text = qs("THE SLIDER / TAPPING")}
+	training_set_lesson_header_text \{number = qs(0x09c32524)
+		text = qs(0xc1be6d8a)}
 	training_clear_lesson_body_text
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'guitarist'}
-	LoadTutorialSFX \{mode = Tut_Gtr_SliderTap}
+	0x4de05aff \{mode = 0xef6f6ccd}
 	training_start_gem_scroller \{part = guitar
 		bot_array = [
 			0
@@ -252,65 +252,65 @@ script training_5_2_start_gem_scroller
 			0
 			0
 		]
-		song = Tut_Gtr_Slide
+		song = tut_gtr_slide
 		disable_hud}
-	KillSpawnedScript \{name = update_score_fast}
+	killspawnedscript \{name = update_score_fast}
 	change \{training_slider_notes_played = 0}
 	training_wait_for_gem_scroller_startup
 endscript
 training_slider_notes_played = 0
 
 script training_5_2_explain 
-	Wait \{3
+	wait \{3
 		seconds
 		ignoreslomo}
 	training_pause_gem_scroller
 	training_add_lesson_body_text \{number = 1
-		text = qs("Slide your fingers on the Slider or tap the touch zones to play the notes")}
+		text = qs(0xa2b3e3de)}
 	training_add_lesson_body_text \{number = 2
-		text = qs("Don't hold any Fret Buttons down when using the Slider")}
+		text = qs(0x5bf0a85e)}
 	training_add_lesson_body_text \{number = 3
-		text = qs("If you miss a note, release the Slider to try again")}
+		text = qs(0xab7a9154)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_02_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_02_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_03_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_03_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_04_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_04_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_05_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_05_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_06_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_06_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_set_task_header_body \{text = qs("Hit 8 notes using the slider or by tapping")}
+	training_set_task_header_body \{text = qs(0x58f9c563)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_07_GTR'
-		Wait}
-	Wait \{1
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_07_GTR'
+		wait}
+	wait \{1
 		seconds
 		ignoreslomo}
 	training_resume_gem_scroller
 endscript
 
 script training_5_2_wait_for_slider_tapping 
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -326,7 +326,7 @@ script training_5_2_wait_for_slider_tapping
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	change \{training_slider_notes_played = 0}
 	change \{training_song_over = 0}
@@ -337,16 +337,16 @@ script training_5_2_wait_for_slider_tapping
 	if ($training_slider_notes_played >= 8)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 		create_training_pause_handler
 	endif
-	Wait \{1
+	wait \{1
 		seconds
 		ignoreslomo}
 endscript
@@ -359,43 +359,43 @@ script lesson5_slider_note
 endscript
 
 script training_5_2_complete_message 
-	if ScreenElementExists \{id = notes_hit_text}
-		DestroyScreenElement \{id = notes_hit_text}
+	if screenelementexists \{id = notes_hit_text}
+		destroyscreenelement \{id = notes_hit_text}
 	endif
-	Wait \{0.75
+	wait \{0.75
 		seconds
 		ignoreslomo}
 	training_hide_lesson_header
 	training_destroy_gem_scroller
-	if IsGuitarTouchController controller = ($player1_status.controller)
+	if isguitartouchcontroller controller = ($player1_status.controller)
 		change \{training_using_slider = 1}
 	else
 		change \{training_using_slider = 0}
 	endif
 	if ($training_using_slider = 0)
 		training_show_narrator \{narrator = 'guitarist'}
-		training_play_sound \{Sound = 'Tut_Gtr_SliderTap_14_GTR'
-			Wait}
-		Wait \{0.5
+		training_play_sound \{sound = 'Tut_Gtr_SliderTap_14_GTR'
+			wait}
+		wait \{0.5
 			seconds
 			ignoreslomo}
-		training_play_sound \{Sound = 'Tut_Gtr_SliderTap_17_GTR'
-			Wait}
-		Wait \{0.5
+		training_play_sound \{sound = 'Tut_Gtr_SliderTap_17_GTR'
+			wait}
+		wait \{0.5
 			seconds
 			ignoreslomo}
-		training_play_sound \{Sound = 'Tut_Gtr_SliderTap_18_GTR'
-			Wait}
+		training_play_sound \{sound = 'Tut_Gtr_SliderTap_18_GTR'
+			wait}
 		training_hide_narrator \{narrator = 'guitarist'}
-		Wait \{0.5
+		wait \{0.5
 			seconds
 			ignoreslomo}
-		SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+		soundevent \{event = tutorial_mode_finish_chord}
 		spawnscriptnow \{create_exploding_text
 			id = training_spawned_script
 			params = {
 				parent = 'lesson_complete'
-				text = qs("New Features Tutorial")
+				text = qs(0x2e341e7e)
 				text_physics = 0
 				placement = ps2_tut_top
 			}}
@@ -403,25 +403,25 @@ script training_5_2_complete_message
 			id = training_spawned_script
 			params = {
 				parent = 'complete_text'
-				text = qs("Complete!")
+				text = qs(0x232d1eaf)
 				text_physics = 0
 				placement = ps2_tut_bottom
 			}}
 	else
-		SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+		soundevent \{event = tutorial_mode_finish_chord}
 		spawnscriptnow \{create_exploding_text
 			id = training_spawned_script
 			params = {
 				parent = 'lesson_complete'
-				text = qs("Lesson Complete")
+				text = qs(0xd50843f0)
 				text_physics = 0
 			}}
 	endif
 	training_hide_narrator \{narrator = 'guitarist'}
-	Wait \{7
+	wait \{7
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = create_exploding_text}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_all_exploding_text
 	change g_training_lessons_completed = ($g_training_lessons_completed + 1)
 endscript
@@ -430,8 +430,8 @@ script training_5_3_start_gem_scroller
 	if ($training_using_slider = 0)
 		return
 	endif
-	training_set_lesson_header_text \{number = qs("\L3")
-		text = qs("STRUMMING WITH THE SLIDER")}
+	training_set_lesson_header_text \{number = qs(0x10d81465)
+		text = qs(0x00304991)}
 	training_clear_lesson_body_text
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'guitarist'}
@@ -442,9 +442,9 @@ script training_5_3_start_gem_scroller
 			0
 			0
 		]
-		song = Tut_Gtr_DiffNotes
+		song = tut_gtr_diffnotes
 		disable_hud}
-	KillSpawnedScript \{name = update_score_fast}
+	killspawnedscript \{name = update_score_fast}
 	change \{training_slider_notes_played = 0}
 	training_wait_for_gem_scroller_startup
 endscript
@@ -453,26 +453,26 @@ script training_5_3_explain
 	if ($training_using_slider = 0)
 		return
 	endif
-	Wait \{3
+	wait \{3
 		seconds
 		ignoreslomo}
 	training_pause_gem_scroller
 	training_add_lesson_body_text \{number = 1
-		text = qs("HOLD Fret Button to CHOOSE the correctly colored note as it approaches the Strike Line")}
+		text = qs(0xa9b65c41)}
 	training_add_lesson_body_text \{number = 2
-		text = qs("TAP The Slider to PLAY the note as it crosses the Strike Line")}
+		text = qs(0x5eec2760)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_14_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_14_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_set_task_header_body \{text = qs("Hit 8 notes using the slider to strum")}
+	training_set_task_header_body \{text = qs(0xe8266e5a)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_15_GTR'
-		Wait}
-	Wait \{1
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_15_GTR'
+		wait}
+	wait \{1
 		seconds
 		ignoreslomo}
 	training_resume_gem_scroller
@@ -482,8 +482,8 @@ script training_5_3_wait_for_slider_strumming
 	if ($training_using_slider = 0)
 		return
 	endif
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -499,7 +499,7 @@ script training_5_3_wait_for_slider_strumming
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	change \{training_slider_notes_played = 0}
 	change \{training_song_over = 0}
@@ -510,16 +510,16 @@ script training_5_3_wait_for_slider_strumming
 	if ($training_slider_notes_played >= 8)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 		create_training_pause_handler
 	endif
-	Wait \{1
+	wait \{1
 		seconds
 		ignoreslomo}
 endscript
@@ -535,27 +535,27 @@ script training_5_3_complete_message
 	if ($training_using_slider = 0)
 		return
 	endif
-	if ScreenElementExists \{id = notes_hit_text}
-		DestroyScreenElement \{id = notes_hit_text}
+	if screenelementexists \{id = notes_hit_text}
+		destroyscreenelement \{id = notes_hit_text}
 	endif
-	Wait \{0.75
+	wait \{0.75
 		seconds
 		ignoreslomo}
 	training_hide_lesson_header
 	training_destroy_gem_scroller
-	SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+	soundevent \{event = tutorial_mode_finish_chord}
 	spawnscriptnow \{create_exploding_text
 		id = training_spawned_script
 		params = {
 			parent = 'lesson_complete'
-			text = qs("Lesson Complete")
+			text = qs(0xd50843f0)
 			text_physics = 0
 		}}
 	training_hide_narrator \{narrator = 'guitarist'}
-	Wait \{7
+	wait \{7
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = create_exploding_text}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_all_exploding_text
 endscript
 
@@ -563,8 +563,8 @@ script training_5_4_start_gem_scroller
 	if ($training_using_slider = 0)
 		return
 	endif
-	training_set_lesson_header_text \{number = qs("\L4")
-		text = qs("SLIDER WAH")}
+	training_set_lesson_header_text \{number = qs(0x5f9982a2)
+		text = qs(0x610d9df6)}
 	training_clear_lesson_body_text
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'guitarist'}
@@ -575,9 +575,9 @@ script training_5_4_start_gem_scroller
 			0
 			0
 		]
-		song = Tut_Gtr_LongNotes
+		song = tut_gtr_longnotes
 		disable_hud}
-	KillSpawnedScript \{name = update_score_fast}
+	killspawnedscript \{name = update_score_fast}
 	change \{training_slider_notes_played = 0}
 	training_wait_for_gem_scroller_startup
 endscript
@@ -586,26 +586,26 @@ script training_5_4_explain
 	if ($training_using_slider = 0)
 		return
 	endif
-	Wait \{3
+	wait \{3
 		seconds
 		ignoreslomo}
 	training_pause_gem_scroller
 	training_add_lesson_body_text \{number = 1
-		text = qs("PLAY the long note as usual")}
+		text = qs(0xe6ce9e4b)}
 	training_add_lesson_body_text \{number = 2
-		text = qs("SLIDE your finger on The Slider to add Wah")}
+		text = qs(0xd5ea06d3)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_17_GTR'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_17_GTR'
+		wait}
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_set_task_header_body \{text = qs("Hit 8 notes and use Slider Wah")}
+	training_set_task_header_body \{text = qs(0xfbf25629)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_07_GTR'
-		Wait}
-	Wait \{1
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_07_GTR'
+		wait}
+	wait \{1
 		seconds
 		ignoreslomo}
 	training_resume_gem_scroller
@@ -615,8 +615,8 @@ script training_5_4_wait_for_slider_wah
 	if ($training_using_slider = 0)
 		return
 	endif
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -632,7 +632,7 @@ script training_5_4_wait_for_slider_wah
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	change \{training_slider_notes_played = 0}
 	change \{training_song_over = 0}
@@ -643,22 +643,22 @@ script training_5_4_wait_for_slider_wah
 	if ($training_slider_notes_played >= 8)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 		create_training_pause_handler
 	endif
-	Wait \{1
+	wait \{1
 		seconds
 		ignoreslomo}
 endscript
 
 script lesson5_slider_wah 
-	if (<touch_wah> = 1 || <partial_wah> = 1)
+	if (<touch_wah> = 1 || <0xde2b9abf> = 1)
 		change training_slider_notes_played = ($training_slider_notes_played + 1)
 		training_display_notes_hit notes_hit = ($training_slider_notes_played)
 	endif
@@ -668,20 +668,20 @@ script training_5_4_complete_message
 	if ($training_using_slider = 0)
 		return
 	endif
-	if ScreenElementExists \{id = notes_hit_text}
-		DestroyScreenElement \{id = notes_hit_text}
+	if screenelementexists \{id = notes_hit_text}
+		destroyscreenelement \{id = notes_hit_text}
 	endif
-	Wait \{0.75
+	wait \{0.75
 		seconds
 		ignoreslomo}
 	training_hide_lesson_header
 	training_destroy_gem_scroller
-	SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+	soundevent \{event = tutorial_mode_finish_chord}
 	spawnscriptnow \{create_exploding_text
 		id = training_spawned_script
 		params = {
 			parent = 'lesson_complete'
-			text = qs("New Features Tutorial")
+			text = qs(0x2e341e7e)
 			text_physics = 0
 			placement = ps2_tut_top
 		}}
@@ -689,36 +689,36 @@ script training_5_4_complete_message
 		id = training_spawned_script
 		params = {
 			parent = 'complete_text'
-			text = qs("Complete!")
+			text = qs(0x232d1eaf)
 			text_physics = 0
 			placement = ps2_tut_bottom
 		}}
 	training_hide_narrator \{narrator = 'guitarist'}
-	training_play_sound \{Sound = 'Tut_Gtr_SliderTap_18_GTR'}
-	Wait \{7
+	training_play_sound \{sound = 'Tut_Gtr_SliderTap_18_GTR'}
+	wait \{7
 		seconds
 		ignoreslomo}
-	training_wait_for_sound \{Sound = 'Tut_Gtr_SliderTap_18_GTR'}
-	KillSpawnedScript \{name = create_exploding_text}
+	training_wait_for_sound \{sound = 'Tut_Gtr_SliderTap_18_GTR'}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_all_exploding_text
 endscript
 
 script training_new_features_tutorial_1_end 
-	training_container :GetTags
+	training_container :gettags
 	if ($g_training_lessons_completed = 2)
-		SetGlobalTags \{practice
+		setglobaltags \{practice
 			params = {
 				new_features_lesson = complete
 			}}
 	endif
 	training_kill_session
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
 	training_destroy_narrator_icons
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		event_handlers = [
 			{
 				pad_start
@@ -733,7 +733,7 @@ endscript
 script training_check_for_all_tutorials_finished 
 	if NOT ($is_attract_mode = 1)
 	endif
-	GetGlobalTags \{practice}
+	getglobaltags \{practice}
 	if (<basic_lesson> != complete)
 		return
 	endif

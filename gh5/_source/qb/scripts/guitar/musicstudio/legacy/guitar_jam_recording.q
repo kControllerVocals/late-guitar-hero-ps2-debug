@@ -7,11 +7,11 @@ script jam_update_volume \{volume = 0}
 	if (<volume> = 0)
 		<new_vol> = 100
 	endif
-	GetSongInfo
-	GetPlayerInfo <player> part
+	getsonginfo
+	getplayerinfo <player> part
 	if (<part> = guitar)
 		inst = <playback_track1>
-	elseif (<part> = Bass)
+	elseif (<part> = bass)
 		inst = <playback_track2>
 	else
 		return
@@ -19,7 +19,7 @@ script jam_update_volume \{volume = 0}
 	if ((<inst> < 0) || (<inst> > 4))
 		return
 	endif
-	GetTrackInfo track = ($jam_tracks [<inst>].id)
+	gettrackinfo track = ($jam_tracks [<inst>].id)
 	new_vol = ((10 - <volume>) * 2)
 	vocals_get_num_vocalists
 	if (<num_vocalists> > 0 && <inst> = 4)
@@ -28,35 +28,35 @@ script jam_update_volume \{volume = 0}
 	switch <inst>
 		case 0
 		if (<update_volume> = 0)
-			HackSetSlotMute \{slot = 4}
+			0xd535eb88 \{slot = 4}
 		else
-			HackSetSlotMute \{slot = 4
-				muted = 0}
-			change jam_rhythm_volume = (<volume> * 10)
+			0xd535eb88 \{slot = 4
+				0x0533119f = 0}
+			change 0xd0f42bdf = (<volume> * 10)
 		endif
 		case 1
 		if (<update_volume> = 0)
-			HackSetSlotMute \{slot = 5}
+			0xd535eb88 \{slot = 5}
 		else
-			HackSetSlotMute \{slot = 5
-				muted = 0}
-			change jam_lead_volume = (<volume> * 10)
+			0xd535eb88 \{slot = 5
+				0x0533119f = 0}
+			change 0xb483d0a1 = (<volume> * 10)
 		endif
 		case 2
 		if (<update_volume> = 0)
-			HackSetSlotMute \{slot = 6}
+			0xd535eb88 \{slot = 6}
 		else
-			HackSetSlotMute \{slot = 6
-				muted = 0}
-			change jam_bass_volume = (<volume> * 10)
+			0xd535eb88 \{slot = 6
+				0x0533119f = 0}
+			change 0x1b560918 = (<volume> * 10)
 		endif
 		case 4
 		if (<update_volume> = 0)
-			HackSetSlotMute \{slot = 8}
+			0xd535eb88 \{slot = 8}
 		else
-			HackSetSlotMute \{slot = 8
-				muted = 0}
-			change jam_key_volume = (<volume> * 10)
+			0xd535eb88 \{slot = 8
+				0x0533119f = 0}
+			change 0xaf59d0a1 = (<volume> * 10)
 		endif
 	endswitch
 endscript

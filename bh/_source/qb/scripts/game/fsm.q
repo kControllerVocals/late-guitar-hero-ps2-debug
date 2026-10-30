@@ -1,6 +1,6 @@
 
-script Fsm_Set \{replacement = child}
-	Fsm_Replace {
+script fsm_set \{replacement = child}
+	fsm_replace {
 		hierarchy = current
 		replacement = <replacement>
 		state = <state>
@@ -8,5 +8,5 @@ script Fsm_Set \{replacement = child}
 	}
 endscript
 
-script Register_Fsm_States 
+script register_fsm_states 
 endscript

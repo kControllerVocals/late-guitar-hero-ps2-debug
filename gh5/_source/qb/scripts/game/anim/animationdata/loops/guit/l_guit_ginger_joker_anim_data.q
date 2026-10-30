@@ -1,36 +1,36 @@
-L_GUIT_ginger_joker_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_ginger_joker_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
+				slow = [
 					guit_ginger_joker_075_01
 				]
-				Med = [
+				med = [
 					guit_ginger_joker_100_01
 				]
-				Fast = [
+				fast = [
 					guit_ginger_joker_120_01
 				]
 			}
-			Normal = {
-				Slow = [
+			normal = {
+				slow = [
 					guit_ginger_joker_075_01
 				]
-				Med = [
+				med = [
 					guit_ginger_joker_100_01
 				]
-				Fast = [
+				fast = [
 					guit_ginger_joker_120_01
 				]
 			}
-			Bad = {
-				Slow = [
+			bad = {
+				slow = [
 					guit_ginger_joker_075_01
 				]
-				Med = [
+				med = [
 					guit_ginger_joker_100_01
 				]
-				Fast = [
+				fast = [
 					guit_ginger_joker_120_01
 				]
 			}

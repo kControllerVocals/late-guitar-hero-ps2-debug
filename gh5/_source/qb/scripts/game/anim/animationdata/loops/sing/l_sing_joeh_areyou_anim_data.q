@@ -1,37 +1,37 @@
-L_SING_JoeH_AreYou_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_joeh_areyou_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_JoeH_AreYou_075_01
+				slow = [
+					sing_joeh_areyou_075_01
 				]
-				Med = [
-					Sing_JoeH_AreYou_100_01
+				med = [
+					sing_joeh_areyou_100_01
 				]
-				Fast = [
-					Sing_JoeH_AreYou_120_01
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_JoeH_AreYou_075_01
-				]
-				Med = [
-					Sing_JoeH_AreYou_100_01
-				]
-				Fast = [
-					Sing_JoeH_AreYou_120_01
+				fast = [
+					sing_joeh_areyou_120_01
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_JoeH_AreYou_075_01
+			normal = {
+				slow = [
+					sing_joeh_areyou_075_01
 				]
-				Med = [
-					Sing_JoeH_AreYou_100_01
+				med = [
+					sing_joeh_areyou_100_01
 				]
-				Fast = [
-					Sing_JoeH_AreYou_120_01
+				fast = [
+					sing_joeh_areyou_120_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_joeh_areyou_075_01
+				]
+				med = [
+					sing_joeh_areyou_100_01
+				]
+				fast = [
+					sing_joeh_areyou_120_01
 				]
 			}
 		}

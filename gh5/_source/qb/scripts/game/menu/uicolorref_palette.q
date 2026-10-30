@@ -1,5 +1,5 @@
-UIColorRef_Palette = {
-	NTSCWhite = {
+uicolorref_palette = {
+	ntscwhite = {
 		rgba = [
 			230
 			230
@@ -39,7 +39,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_gold_md = {
+	gh5_gold_md = {
 		rgba = [
 			235
 			187
@@ -47,7 +47,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_blue_lt = {
+	gh5_blue_lt = {
 		rgba = [
 			150
 			220
@@ -55,7 +55,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_blue_xdk = {
+	gh5_blue_xdk = {
 		rgba = [
 			10
 			35
@@ -63,7 +63,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_blue_subtract = {
+	gh5_blue_subtract = {
 		rgba = [
 			245
 			220
@@ -71,7 +71,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_beginner = {
+	gh5_dif_beginner = {
 		rgba = [
 			195
 			215
@@ -79,7 +79,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_easy = {
+	gh5_dif_easy = {
 		rgba = [
 			130
 			175
@@ -87,7 +87,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_medium = {
+	gh5_dif_medium = {
 		rgba = [
 			90
 			135
@@ -95,7 +95,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_hard = {
+	gh5_dif_hard = {
 		rgba = [
 			160
 			80
@@ -103,7 +103,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_expert = {
+	gh5_dif_expert = {
 		rgba = [
 			50
 			50
@@ -111,7 +111,7 @@ UIColorRef_Palette = {
 			255
 		]
 	}
-	GH5_dif_xxpert = {
+	gh5_dif_xxpert = {
 		rgba = [
 			200
 			155

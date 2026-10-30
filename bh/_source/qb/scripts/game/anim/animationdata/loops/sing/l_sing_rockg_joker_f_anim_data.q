@@ -1,37 +1,37 @@
-L_SING_Rockg_Joker_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_rockg_joker_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_RockG_Joker_075_F_01
+				slow = [
+					sing_rockg_joker_075_f_01
 				]
-				Med = [
-					Sing_RockG_Joker_100_F_01
+				med = [
+					sing_rockg_joker_100_f_01
 				]
-				Fast = [
-					Sing_RockG_Joker_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_RockG_Joker_075_F_01
-				]
-				Med = [
-					Sing_RockG_Joker_100_F_01
-				]
-				Fast = [
-					Sing_RockG_Joker_120_F
+				fast = [
+					sing_rockg_joker_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_RockG_Joker_075_F_01
+			normal = {
+				slow = [
+					sing_rockg_joker_075_f_01
 				]
-				Med = [
-					Sing_RockG_Joker_100_F_01
+				med = [
+					sing_rockg_joker_100_f_01
 				]
-				Fast = [
-					Sing_RockG_Joker_120_F
+				fast = [
+					sing_rockg_joker_120_f
+				]
+			}
+			bad = {
+				slow = [
+					sing_rockg_joker_075_f_01
+				]
+				med = [
+					sing_rockg_joker_100_f_01
+				]
+				fast = [
+					sing_rockg_joker_120_f
 				]
 			}
 		}

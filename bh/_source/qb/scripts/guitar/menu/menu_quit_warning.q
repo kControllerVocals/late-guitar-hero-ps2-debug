@@ -1,24 +1,24 @@
 
 script create_quit_warning_menu \{player = 1
-		option1_text = qs("CANCEL")
-		option2_text = qs("QUIT")
+		option1_text = qs(0xf7723015)
+		option2_text = qs(0x67d9c56d)
 		option1_func = generic_event_back
 		option1_func_params = {
 		}
 		option2_func = quit_warning_select_quit
 		option2_func_params = {
 		}
-		skip_song = false}
+		0xe0bfc5fc = false}
 	disable_pause
 	player_device = ($last_start_pressed_device)
-	if (<skip_song> = true)
+	if (<0xe0bfc5fc> = true)
 		body_text = qs(0x88152393)
-		option2_text = qs("SKIP SONG")
+		option2_text = qs(0xef74f7d2)
 		option2_func = quickplay_skip_song
-	elseif NOT game_is_scored
+	elseif NOT 0xf99301bb
 		body_text = qs(0xe4b9c437)
 	else
-		body_text = qs("You will lose all unsaved progress for this song if you quit. Are you sure you want to quit?")
+		body_text = qs(0xb681c26c)
 	endif
 	create_dialog_box {
 		body_text = <body_text>
@@ -54,20 +54,20 @@ script quit_warning_select_quit \{player = 1
 			state = uistate_pausemenu_song_ended
 		}}
 	restore_player_part_settings
-	if GotParam \{quit_career_confirm}
-		GameMode_GetType
+	if gotparam \{quit_career_confirm}
+		gamemode_gettype
 		if (<type> = career)
 			career_song_ended_select_quit
 		endif
 	endif
-	if isXenon
+	if isxenon
 		if NOT ($current_song = jamsession)
-			WriteSongDataToFile \{incomplete = 1}
+			writesongdatatofile \{incomplete = 1}
 		endif
 	endif
 	end_singleplayer_game
-	ResetScoreUpdateReady
-	GH3_SFX_fail_song_stop_sounds
+	resetscoreupdateready
+	gh3_sfx_fail_song_stop_sounds
 	hide_glitch \{num_frames = 3}
 	<callback> data = <data> no_sound
 endscript

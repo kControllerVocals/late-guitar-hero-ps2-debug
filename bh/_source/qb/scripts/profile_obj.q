@@ -1,8 +1,8 @@
-Object_Default_RigidBody = {
-	Bouncy
+object_default_rigidbody = {
+	bouncy
 	sound_type = `default`
 }
-Object_Skateable_RigidBody = {
-	Bouncy
+object_skateable_rigidbody = {
+	bouncy
 	tier = interactive
 }

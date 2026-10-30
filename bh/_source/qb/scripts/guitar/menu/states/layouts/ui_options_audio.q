@@ -1,23 +1,23 @@
-Restart_Menu_Music = 0
-Stereo_Switch_Warning = 0
+0x1199917d = 0
+0x398a4959 = 0
 
 script ui_create_options_audio 
-	if ($Menu_Music_On_Flag = 1)
-		Menu_Music_Off
-		change \{Restart_Menu_Music = 1}
+	if ($menu_music_on_flag = 1)
+		menu_music_off
+		change \{0x1199917d = 1}
 	endif
-	if GotParam \{from_pause}
-		change \{Stereo_Switch_Warning = 1}
+	if gotparam \{from_pause}
+		change \{0x398a4959 = 1}
 	else
-		change \{Stereo_Switch_Warning = 0}
+		change \{0x398a4959 = 0}
 	endif
-	if NOT GotParam \{device_num}
+	if NOT gotparam \{device_num}
 		device_num = ($primary_controller)
 	endif
 	player = 1
 	i = 1
 	begin
-	GetPlayerInfo <i> controller
+	getplayerinfo <i> controller
 	if (<controller> = <device_num>)
 		player = <i>
 		break
@@ -25,26 +25,26 @@ script ui_create_options_audio
 	i = (<i> + 1)
 	repeat ($current_num_players)
 	vocals_mute_all_mics \{mute = false}
-	GetPlayerInfo <player> checksum
+	getplayerinfo <player> checksum
 	get_savegame_from_player_status player_status = <checksum>
-	GetGlobalTags user_options savegame = <savegame>
+	getglobaltags user_options savegame = <savegame>
 	volume = [0 0 0 0 0 0]
-	SetArrayElement ArrayName = volume index = 0 newvalue = (<volumes>.guitar.guitar.vol)
-	SetArrayElement ArrayName = volume index = 1 newvalue = (<volumes>.guitar.Bass.vol)
-	SetArrayElement ArrayName = volume index = 2 newvalue = (<volumes>.guitar.drum.vol)
-	SetArrayElement ArrayName = volume index = 3 newvalue = (<volumes>.guitar.Band.vol)
-	SetArrayElement ArrayName = volume index = 4 newvalue = (<volumes>.guitar.mic.vol)
-	SetArrayElement ArrayName = volume index = 5 newvalue = (<volumes>.guitar.sfx.vol)
+	setarrayelement arrayname = volume index = 0 newvalue = (<volumes>.guitar.guitar.vol)
+	setarrayelement arrayname = volume index = 1 newvalue = (<volumes>.guitar.bass.vol)
+	setarrayelement arrayname = volume index = 2 newvalue = (<volumes>.guitar.drum.vol)
+	setarrayelement arrayname = volume index = 3 newvalue = (<volumes>.guitar.band.vol)
+	setarrayelement arrayname = volume index = 4 newvalue = (<volumes>.guitar.mic.vol)
+	setarrayelement arrayname = volume index = 5 newvalue = (<volumes>.guitar.sfx.vol)
 	eq = [1 1 1 1]
-	SetArrayElement ArrayName = eq index = 0 newvalue = (<volumes>.guitar.guitar.eq)
-	SetArrayElement ArrayName = eq index = 1 newvalue = (<volumes>.guitar.Bass.eq)
-	SetArrayElement ArrayName = eq index = 2 newvalue = (<volumes>.guitar.drum.eq)
-	SetArrayElement ArrayName = eq index = 3 newvalue = (<volumes>.guitar.mic.rev)
+	setarrayelement arrayname = eq index = 0 newvalue = (<volumes>.guitar.guitar.eq)
+	setarrayelement arrayname = eq index = 1 newvalue = (<volumes>.guitar.bass.eq)
+	setarrayelement arrayname = eq index = 2 newvalue = (<volumes>.guitar.drum.eq)
+	setarrayelement arrayname = eq index = 3 newvalue = (<volumes>.guitar.mic.rev)
 	initial_volume = [7 7 7 7 7 7]
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
-		id = AudioInterface
-		type = DescInterface
+		id = audiointerface
+		type = descinterface
 		desc = 'options_audio_mixer'
 		tags = {volume = <volume> eq = <eq> dolby_digital = <dolby_digital>
 			initial_volume = <initial_volume> initial_eq = <eq>
@@ -52,10 +52,10 @@ script ui_create_options_audio
 		z_priority = 650
 		exclusive_device = <device_num>
 	}
-	AudioInterface :SE_SetProps \{mixer_channel_lamp_alpha = 0.0}
-	if AudioInterface :Desc_ResolveAlias \{name = alias_audio_mixer_menu}
-		AssignAlias id = <resolved_id> alias = current_menu
-		current_menu :SE_SetProps \{event_handlers = [
+	audiointerface :se_setprops \{mixer_channel_lamp_alpha = 0.0}
+	if audiointerface :desc_resolvealias \{name = alias_audio_mixer_menu}
+		assignalias id = <resolved_id> alias = current_menu
+		current_menu :se_setprops \{event_handlers = [
 				{
 					pad_back
 					ui_options_check_settings
@@ -66,7 +66,7 @@ script ui_create_options_audio
 				}
 				{
 					pad_option2
-					ui_options_audio_stereo_warning
+					0x3fd6c048
 				}
 				{
 					pad_up
@@ -77,12 +77,12 @@ script ui_create_options_audio
 					sound_options_scroll
 				}
 			]}
-		if GetScreenElementChildren \{id = current_menu}
-			GetArraySize <children>
+		if getscreenelementchildren \{id = current_menu}
+			getarraysize <children>
 			i = 0
 			begin
 			<current_item> = (<children> [<i>])
-			<current_item> :SE_SetProps {
+			<current_item> :se_setprops {
 				event_handlers = [
 					{focus ui_options_audio_focus_text_menu params = {text_idx = <i>}}
 					{unfocus ui_options_audio_unfocus_text_menu}
@@ -96,13 +96,13 @@ script ui_create_options_audio
 			repeat (<array_size>)
 		endif
 	endif
-	if AudioInterface :Desc_ResolveAlias \{name = alias_faders_container}
-		if GetScreenElementChildren id = <resolved_id>
-			GetArraySize <children>
+	if audiointerface :desc_resolvealias \{name = alias_faders_container}
+		if getscreenelementchildren id = <resolved_id>
+			getarraysize <children>
 			i = 0
 			begin
 			<current_item> = (<children> [<i>])
-			<current_item> :SE_SetProps {
+			<current_item> :se_setprops {
 				event_handlers = [
 					{focus ui_options_audio_focus_fader_menu}
 					{unfocus ui_options_audio_unfocus_fader_menu}
@@ -124,69 +124,69 @@ script ui_create_options_audio
 	endif
 	ui_options_audio_set_values
 	ui_options_audio_set_default_volume_lights default_volumes = <initial_volume>
-	GetGlobalTags \{user_options}
-	if (<PS2_Stereo_Sound> = 1)
-		stereo_text_alpha = 1.0
-		mono_text_alpha = 0.5
+	getglobaltags \{user_options}
+	if (<ps2_stereo_sound> = 1)
+		0xb753b03c = 1.0
+		0x6c1e171c = 0.5
 	else
-		stereo_text_alpha = 0.5
-		mono_text_alpha = 1.0
+		0xb753b03c = 0.5
+		0x6c1e171c = 1.0
 	endif
-	AudioInterface :SE_SetProps {
-		stereo_text_alpha = <stereo_text_alpha>
-		mono_text_alpha = <mono_text_alpha>
+	audiointerface :se_setprops {
+		0xb753b03c = <0xb753b03c>
+		0x6c1e171c = <0x6c1e171c>
 	}
-	AudioInterface :obj_spawnscript \{highlight_motion
+	audiointerface :obj_spawnscript \{highlight_motion
 		params = {
-			menu_id = AudioInterface
+			menu_id = audiointerface
 			alias_name = alias_mixer_menu_highlight
 		}}
-	ui_options_audio_add_helpers
+	0x385d3d7c
 	ui_options_set_settings
 endscript
 
 script ui_destroy_options_audio 
-	spawnscriptnow \{No_Dolby_Digital_Sounds}
+	spawnscriptnow \{no_dolby_digital_sounds}
 	vocals_mute_all_mics \{mute = true}
-	if ($Restart_Menu_Music = 1)
+	if ($0x1199917d = 1)
 		menu_music_on
-		change \{Restart_Menu_Music = 0}
+		change \{0x1199917d = 0}
 	endif
-	DestroyScreenElement \{id = AudioInterface}
+	destroyscreenelement \{id = audiointerface}
 	generic_ui_destroy
 endscript
 
 script ui_options_audio_reset_values 
-	AudioInterface :GetTags
-	AudioInterface :SetTags {volume = <initial_volume> eq = <initial_eq>}
+	audiointerface :gettags
+	audiointerface :settags {volume = <initial_volume> eq = <initial_eq>}
 	ui_options_audio_set_values \{time = 0.1}
-	SoundEvent \{event = Menu_Audio_Options_Reset}
+	soundevent \{event = menu_audio_options_reset}
 endscript
 
 script ui_options_audio_set_values \{time = 0.0}
-	AudioInterface :GetTags
-	if AudioInterface :Desc_ResolveAlias \{name = alias_faders_container}
-		if GetScreenElementChildren id = <resolved_id>
-			GetArraySize <volume>
+	audiointerface :gettags
+	if audiointerface :desc_resolvealias \{name = alias_faders_container}
+		if getscreenelementchildren id = <resolved_id>
+			getarraysize <volume>
 			i = 0
 			begin
 			posx = 3
 			posy = (-27 + (265 * (1.0 - ((<volume> [<i>]) / 11.0))))
 			<fader> = (<children> [<i>])
-			<fader> :SE_SetProps {
+			<fader> :se_setprops {
 				mixer_fader_pos = (((1.0, 0.0) * <posx>) + ((0.0, 1.0) * <posy>))
 				time = <time>
 			}
 			j = 1
 			alpha_value = 0
 			begin
-			FormatText checksumname = fader_light 'lights_ON_%a_alpha' a = <j>
+			formattext checksumname = fader_light 'lights_ON_%a_alpha' a = <j>
 			<alpha_value> = 0
 			if (<j> <= (<volume> [<i>]))
 				<alpha_value> = 1
 			endif
-			AddParam structure_name = fader_light_alpha_struct name = <fader_light> value = <alpha_value>
-			<fader> :SE_SetProps {
+			addparam structure_name = fader_light_alpha_struct name = <fader_light> value = <alpha_value>
+			<fader> :se_setprops {
 				<fader_light_alpha_struct>
 				time = <time>
 			}
@@ -196,133 +196,133 @@ script ui_options_audio_set_values \{time = 0.0}
 			repeat (<array_size>)
 		endif
 	endif
-	ui_options_audio_save_volumes
+	0x38f6560b
 	ui_options_audio_update_all_volumes
-	SongSetPlayerEQSettings
+	songsetplayereqsettings
 endscript
 
-script ui_options_audio_save_volumes 
-	AudioInterface :GetSingleTag \{volume}
-	AudioInterface :GetSingleTag \{player}
-	GetPlayerInfo <player> controller
-	if PlayerInfoEquals <player> bot_play = 1
+script 0x38f6560b 
+	audiointerface :getsingletag \{volume}
+	audiointerface :getsingletag \{player}
+	getplayerinfo <player> controller
+	if playerinfoequals <player> bot_play = 1
 		<controller> = 0
 	endif
-	UpdateVolumesTag part = guitar name = guitar params = {vol = (<volume> [0])}
-	UpdateVolumesTag part = guitar name = Bass params = {vol = (<volume> [1])}
-	UpdateVolumesTag part = guitar name = drum params = {vol = (<volume> [2])}
-	UpdateVolumesTag part = guitar name = Band params = {vol = (<volume> [3])}
-	UpdateVolumesTag part = guitar name = mic params = {vol = (<volume> [4])} controller = <controller>
-	UpdateVolumesTag part = guitar name = sfx params = {vol = (<volume> [5])}
+	updatevolumestag part = guitar name = guitar params = {vol = (<volume> [0])}
+	updatevolumestag part = guitar name = bass params = {vol = (<volume> [1])}
+	updatevolumestag part = guitar name = drum params = {vol = (<volume> [2])}
+	updatevolumestag part = guitar name = band params = {vol = (<volume> [3])}
+	updatevolumestag part = guitar name = mic params = {vol = (<volume> [4])} controller = <controller>
+	updatevolumestag part = guitar name = sfx params = {vol = (<volume> [5])}
 endscript
 
 script ui_options_audio_focus_text_menu 
-	SoundEvent \{event = UI_Fader}
+	soundevent \{event = ui_fader}
 
-	if ScreenElementExists \{id = AudioInterface}
+	if screenelementexists \{id = audiointerface}
 		initial_highlight_pos = (-100.0, -143.0)
-		GetTags
-		Obj_GetID
-		GetScreenElementPosition id = <ObjID>
-		SE_SetProps \{alpha = 1.0}
-		AudioInterface :SE_GetProps
+		gettags
+		obj_getid
+		getscreenelementposition id = <objid>
+		se_setprops \{alpha = 1.0}
+		audiointerface :se_getprops
 		switch <text_idx>
 			case 0
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_dims = (95.0, 42.0)}
+			audiointerface :se_setprops \{mixer_menu_highlight_dims = (95.0, 42.0)}
 			spacing = (115.0, 0.0)
 			case 1
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_dims = (105.0, 42.0)}
+			audiointerface :se_setprops \{mixer_menu_highlight_dims = (105.0, 42.0)}
 			spacing = (157.0, 0.0)
 			case 2
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_dims = (105.0, 42.0)}
+			audiointerface :se_setprops \{mixer_menu_highlight_dims = (105.0, 42.0)}
 			spacing = (162.0, 0.0)
 			case 3
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_dims = (180.0, 42.0)}
+			audiointerface :se_setprops \{mixer_menu_highlight_dims = (180.0, 42.0)}
 			spacing = (150.0, 0.0)
 			case 4
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_dims = (95.0, 42.0)}
+			audiointerface :se_setprops \{mixer_menu_highlight_dims = (95.0, 42.0)}
 			spacing = (165.0, 0.0)
 			case 5
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_dims = (120.0, 42.0)}
+			audiointerface :se_setprops \{mixer_menu_highlight_dims = (120.0, 42.0)}
 			spacing = (162.0, 0.0)
 			default
 
 		endswitch
 		if NOT (<mixer_menu_highlight_alpha> = 0.3)
-			AudioInterface :SE_SetProps \{mixer_menu_highlight_alpha = 0.3
+			audiointerface :se_setprops \{mixer_menu_highlight_alpha = 0.3
 				time = 0.1}
 		endif
-		AudioInterface :SE_SetProps mixer_menu_highlight_pos = (<initial_highlight_pos> + (<spacing> * <text_idx>)) time = 0.1
-		if ScreenElementExists \{id = mixer_text_menu}
-			mixer_text_menu :SetTags {current_focused_idx = <text_idx>}
-			mixer_text_menu :SE_SetProps \{alpha = 1
+		audiointerface :se_setprops mixer_menu_highlight_pos = (<initial_highlight_pos> + (<spacing> * <text_idx>)) time = 0.1
+		if screenelementexists \{id = mixer_text_menu}
+			mixer_text_menu :settags {current_focused_idx = <text_idx>}
+			mixer_text_menu :se_setprops \{alpha = 1
 				time = 0.1}
 		endif
 	endif
 endscript
 
 script ui_options_audio_unfocus_text_menu 
-	GetTags
-	if NOT GotParam \{dolby_option}
+	gettags
+	if NOT gotparam \{dolby_option}
 	else
-		AudioInterface :SE_SetProps \{mixer_stereo_toggle_text_color = [
+		audiointerface :se_setprops \{0xc9719ae7 = [
 				128
 				128
 				128
 				255
 			]}
 	endif
-	GetTags
-	Obj_GetID
-	GetScreenElementPosition id = <ObjID>
-	SE_SetProps \{alpha = 0.5}
+	gettags
+	obj_getid
+	getscreenelementposition id = <objid>
+	se_setprops \{alpha = 0.5}
 endscript
 
 script ui_options_audio_choose 
 	clean_up_user_control_helpers
 	menu_finish
-	GetTags
-	if AudioInterface :Desc_ResolveAlias \{name = alias_faders_container}
-		if ResolveScreenElementId id = {<resolved_id> child = <index>}
-			AudioInterface :SE_SetProps \{mixer_channel_lamp_alpha = 1.0
+	gettags
+	if audiointerface :desc_resolvealias \{name = alias_faders_container}
+		if resolvescreenelementid id = {<resolved_id> child = <index>}
+			audiointerface :se_setprops \{mixer_channel_lamp_alpha = 1.0
 				time = 0.1}
-			LaunchEvent \{type = unfocus
+			launchevent \{type = unfocus
 				target = current_menu}
-			<resolved_id> :SE_GetProps
-			AudioInterface :GetSingleTag \{volume}
-			<resolved_id> :SetTags current = slider highlight = slider volume = (<volume> [<index>])
-			LaunchEvent type = focus target = <resolved_id>
+			<resolved_id> :se_getprops
+			audiointerface :getsingletag \{volume}
+			<resolved_id> :settags current = slider highlight = slider volume = (<volume> [<index>])
+			launchevent type = focus target = <resolved_id>
 		endif
 	endif
-	current_menu :SE_SetProps \{alpha = 0.5
+	current_menu :se_setprops \{alpha = 0.5
 		time = 0.1}
 	ui_options_sound_event \{choose}
 endscript
 
 script ui_options_audio_dolby_flash 
-	AudioInterface :SE_SetProps \{mixer_red_light_OFF_alpha = 1.0}
+	audiointerface :se_setprops \{mixer_red_light_off_alpha = 1.0}
 	begin
-	AudioInterface :SE_SetProps dolby_highlight_container_alpha = RandomFloat (0.2, 0.5)
-	Wait \{0.1
+	audiointerface :se_setprops dolby_highlight_container_alpha = RandomFloat (0.2, 0.5)
+	wait \{0.1
 		seconds
 		ignoreslomo}
 	repeat
 endscript
 
-script ui_options_audio_stereo_warning 
-	if ($Stereo_Switch_Warning = 0)
-		ui_options_audio_choose_stereo <...>
+script 0x3fd6c048 
+	if ($0x398a4959 = 0)
+		0x90e7f6c5 <...>
 		return
 	endif
 	disable_pause
-	LaunchEvent \{type = unfocus
-		target = AudioInterface}
+	launchevent \{type = unfocus
+		target = audiointerface}
 	player_device = ($last_start_pressed_device)
 	<num_players> = ($current_num_players)
 	if (<num_players> > 0)
 		i = 1
 		begin
-		GetPlayerInfo <i> controller
+		getplayerinfo <i> controller
 		if (<controller> = <player_device>)
 			player = <i>
 			break
@@ -336,65 +336,65 @@ script ui_options_audio_stereo_warning
 		no_background
 		options = [
 			{
-				func = ui_options_audio_destroy_stereo_warning
-				text = qs("CANCEL")
+				func = 0x3555c37a
+				text = qs(0xf7723015)
 			}
 			{
-				func = ui_options_audio_choose_stereo
+				func = 0x90e7f6c5
 				func_params = {player = <player>}
-				text = qs("RESTART")
+				text = qs(0xb8790f2f)
 			}
 		]
-		back_button_script = ui_options_audio_destroy_stereo_warning
+		back_button_script = 0x3555c37a
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = dialog_box_vmenu}
 endscript
 
-script ui_options_audio_destroy_stereo_warning 
-	LaunchEvent \{type = unfocus
+script 0x3555c37a 
+	launchevent \{type = unfocus
 		target = dialog_box_vmenu}
 	enable_pause
 	destroy_dialog_box
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = current_menu}
-	ui_options_audio_add_helpers
+	0x385d3d7c
 endscript
 
-script ui_options_audio_choose_stereo 
-	GetGlobalTags \{user_options}
-	if (<PS2_Stereo_Sound> = 1)
-		SetGlobalTags \{user_options
+script 0x90e7f6c5 
+	getglobaltags \{user_options}
+	if (<ps2_stereo_sound> = 1)
+		setglobaltags \{user_options
 			params = {
-				PS2_Stereo_Sound = 0
+				ps2_stereo_sound = 0
 			}}
-		SetStereoSound \{0}
+		0xf2b96a22 \{0}
 	else
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
-				PS2_Stereo_Sound = 1
+				ps2_stereo_sound = 1
 			}}
-		SetStereoSound \{1}
+		0xf2b96a22 \{1}
 	endif
 	ui_options_audio_set_values
-	AudioInterface :GetTags
-	GetGlobalTags \{user_options}
-	if (<PS2_Stereo_Sound> = 1)
-		stereo_text_alpha = 1.0
-		mono_text_alpha = 0.5
-		Sound = Dolby_On
+	audiointerface :gettags
+	getglobaltags \{user_options}
+	if (<ps2_stereo_sound> = 1)
+		0xb753b03c = 1.0
+		0x6c1e171c = 0.5
+		sound = dolby_on
 	else
-		stereo_text_alpha = 0.5
-		mono_text_alpha = 1.0
-		Sound = Dolby_Off
+		0xb753b03c = 0.5
+		0x6c1e171c = 1.0
+		sound = dolby_off
 	endif
-	AudioInterface :SE_SetProps {
-		stereo_text_alpha = <stereo_text_alpha>
-		mono_text_alpha = <mono_text_alpha>
+	audiointerface :se_setprops {
+		0xb753b03c = <0xb753b03c>
+		0x6c1e171c = <0x6c1e171c>
 	}
-	SoundEvent <Sound>
-	if ($Stereo_Switch_Warning = 1)
-		ui_options_audio_destroy_stereo_warning
+	soundevent <sound>
+	if ($0x398a4959 = 1)
+		0x3555c37a
 		ui_destroy_options_audio
 		if ($game_mode = practice)
 			practice_restart_song
@@ -405,48 +405,48 @@ script ui_options_audio_choose_stereo
 endscript
 
 script ui_options_audio_focus_fader_menu 
-	GetTags
+	gettags
 	if (<current> = none)
 		if (<highlight> = slider)
-			SE_SetProps \{knob_highlight_alpha = 0.0
+			se_setprops \{knob_highlight_alpha = 0.0
 				mixer_fader_highlight_alpha = 0.5}
 		else
-			SE_SetProps \{knob_highlight_alpha = 0.5
+			se_setprops \{knob_highlight_alpha = 0.5
 				mixer_fader_highlight_alpha = 0.0}
 		endif
 	elseif (<current> = slider)
-		SE_SetProps \{knob_highlight_alpha = 0.0
+		se_setprops \{knob_highlight_alpha = 0.0
 			mixer_fader_highlight_alpha = 1.0}
 	else
-		SE_SetProps \{knob_highlight_alpha = 1.0
+		se_setprops \{knob_highlight_alpha = 1.0
 			mixer_fader_highlight_alpha = 0.0}
 	endif
 endscript
 
 script ui_options_audio_unfocus_fader_menu 
-	GetTags
-	SE_SetProps \{knob_highlight_alpha = 0.0
+	gettags
+	se_setprops \{knob_highlight_alpha = 0.0
 		mixer_fader_highlight_alpha = 0.0}
 endscript
 
 script ui_options_audio_fader_choose 
-	GetTags
-	SE_GetProps
-	ui_options_audio_add_helpers
+	gettags
+	se_getprops
+	0x385d3d7c
 	if (<current> = none)
-		SetTags \{current = slider
+		settags \{current = slider
 			highlight = slider}
 	elseif (<current> = slider)
-		SetTags \{current = none}
-		LaunchEvent \{type = focus
+		settags \{current = none}
+		launchevent \{type = focus
 			target = current_menu}
-		current_menu :SE_SetProps \{alpha = 1.0
+		current_menu :se_setprops \{alpha = 1.0
 			time = 0.1}
-		LaunchEvent type = unfocus target = <ObjID>
+		launchevent type = unfocus target = <objid>
 		ui_options_sound_event \{choose}
 		return
 	else
-		SetTags \{current = none
+		settags \{current = none
 			highlight = dial}
 	endif
 	generic_menu_pad_choose_sound
@@ -454,49 +454,49 @@ script ui_options_audio_fader_choose
 endscript
 
 script ui_options_audio_fader_back 
-	GetTags
-	Obj_GetID
-	SE_GetProps
-	ui_options_audio_add_helpers
+	gettags
+	obj_getid
+	se_getprops
+	0x385d3d7c
 	if (<current> = none)
-		LaunchEvent \{type = focus
+		launchevent \{type = focus
 			target = current_menu}
-		current_menu :SE_SetProps \{alpha = 1.0
+		current_menu :se_setprops \{alpha = 1.0
 			time = 0.1}
-		LaunchEvent type = unfocus target = <ObjID>
+		launchevent type = unfocus target = <objid>
 	elseif (<current> = slider)
 		ui_options_sound_event \{back}
-		SetTags \{current = none}
-		LaunchEvent \{type = focus
+		settags \{current = none}
+		launchevent \{type = focus
 			target = current_menu}
-		current_menu :SE_SetProps \{alpha = 1.0
+		current_menu :se_setprops \{alpha = 1.0
 			time = 0.1}
-		LaunchEvent type = unfocus target = <ObjID>
-		GetSingleTag \{volume}
+		launchevent type = unfocus target = <objid>
+		getsingletag \{volume}
 		old_volume = <volume>
-		AudioInterface :GetSingleTag \{volume}
+		audiointerface :getsingletag \{volume}
 		if (old_volume != (<volume> [<index>]))
-			SetArrayElement ArrayName = volume index = <index> newvalue = <old_volume>
-			AudioInterface :SetTags volume = <volume>
+			setarrayelement arrayname = volume index = <index> newvalue = <old_volume>
+			audiointerface :settags volume = <volume>
 			ui_options_audio_set_values \{time = 0.1}
 		endif
 	else
-		SetTags \{current = none}
+		settags \{current = none}
 		ui_options_audio_focus_fader_menu
 	endif
 endscript
 
 script ui_options_audio_fader_dir 
-	GetTags
+	gettags
 	if (<current> = none)
-		SetTags \{highlight = slider}
+		settags \{highlight = slider}
 		generic_menu_up_or_down_sound
 	elseif (<current> = slider)
-		AudioInterface :GetTags
+		audiointerface :gettags
 		new_volume = 0
 		min_volume = 0
 		dolby_changed = 0
-		if GotParam \{down}
+		if gotparam \{down}
 			new_volume = (<volume> [<index>])
 			if (<index> < 4)
 				min_volume = 5
@@ -515,8 +515,8 @@ script ui_options_audio_fader_dir
 		if (<new_volume> = (<volume> [<index>]))
 			return
 		endif
-		SetArrayElement ArrayName = volume index = <index> newvalue = <new_volume>
-		AudioInterface :SetTags volume = <volume>
+		setarrayelement arrayname = volume index = <index> newvalue = <new_volume>
+		audiointerface :settags volume = <volume>
 		ui_options_audio_set_values \{time = 0.1}
 		ui_options_sound_event slider index = <index>
 	endif
@@ -524,65 +524,65 @@ script ui_options_audio_fader_dir
 endscript
 
 script ui_options_sound_event 
-	AudioInterface :GetTags
-	if GotParam \{slider}
+	audiointerface :gettags
+	if gotparam \{slider}
 		current_volume = (<volume> [<index>])
 		switch (<index>)
 			case 0
-			SoundEvent \{event = UI_SFX_Scroll_Down}
+			soundevent \{event = ui_sfx_scroll_down}
 			spawnscriptnow \{playing_sound_fader
 				params = {
 					instrument = guitar
 					time = 1.3379999
 				}}
 			case 1
-			SoundEvent \{event = UI_SFX_Scroll_Down}
+			soundevent \{event = ui_sfx_scroll_down}
 			spawnscriptnow \{playing_sound_fader
 				params = {
-					instrument = Bass
+					instrument = bass
 					time = 1.235
 				}}
 			case 2
-			SoundEvent \{event = UI_SFX_Scroll_Down}
+			soundevent \{event = ui_sfx_scroll_down}
 			spawnscriptnow \{playing_sound_fader
 				params = {
-					instrument = Drums
+					instrument = drums
 					time = 1.8379999
 				}}
 			case 3
-			SoundEvent \{event = UI_SFX_Scroll_Down}
+			soundevent \{event = ui_sfx_scroll_down}
 			spawnscriptnow \{playing_sound_fader
 				params = {
 					instrument = mic
 					time = 2.826
 				}}
 			case 4
-			SoundEvent \{event = UI_SFX_Scroll_Down}
+			soundevent \{event = ui_sfx_scroll_down}
 			spawnscriptnow \{playing_sound_fader
 				params = {
-					instrument = Instruments
+					instrument = instruments
 					time = 1.938
 				}}
 			case 5
-			SoundEvent \{event = UI_SFX_Scroll_Down}
+			soundevent \{event = ui_sfx_scroll_down}
 			spawnscriptnow \{playing_sound_fader
 				params = {
 					instrument = sfx
 					time = 2.612
 				}}
 		endswitch
-	elseif GotParam \{knob}
+	elseif gotparam \{knob}
 		current_volume = (<eq> [<index>])
-		SoundEvent \{event = UI_Knob}
+		soundevent \{event = ui_knob}
 		switch (<index>)
 			case 0
-			if GotParam \{newvalue}
+			if gotparam \{newvalue}
 				switch <newvalue>
 					case 1
-					if issoundplaying \{Audio_Options_Guitar}
+					if issoundplaying \{audio_options_guitar}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_GuitarLead_Crisp
+									$eq_guitarlead_crisp
 									name = audiooptionssound
 								}
 							]
@@ -590,16 +590,16 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_GuitarLead_Crisp
+								eq_setting = $eq_guitarlead_crisp
 								instrument = guitar
 							}}
 					endif
-					change \{Guitar_Knob_Effects_Position = 1}
+					change \{guitar_knob_effects_position = 1}
 					case 2
-					if issoundplaying \{Audio_Options_Guitar}
+					if issoundplaying \{audio_options_guitar}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_GuitarLead_Edgy
+									$eq_guitarlead_edgy
 									name = audiooptionssound
 								}
 							]
@@ -607,16 +607,16 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_GuitarLead_Edgy
+								eq_setting = $eq_guitarlead_edgy
 								instrument = guitar
 							}}
 					endif
-					change \{Guitar_Knob_Effects_Position = 2}
+					change \{guitar_knob_effects_position = 2}
 					case 3
-					if issoundplaying \{Audio_Options_Guitar}
+					if issoundplaying \{audio_options_guitar}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_GuitarLead_Fuzz
+									$eq_guitarlead_fuzz
 									name = audiooptionssound
 								}
 							]
@@ -624,21 +624,21 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_GuitarLead_Fuzz
+								eq_setting = $eq_guitarlead_fuzz
 								instrument = guitar
 							}}
 					endif
-					change \{Guitar_Knob_Effects_Position = 3}
+					change \{guitar_knob_effects_position = 3}
 				endswitch
 			endif
 			case 1
-			if GotParam \{newvalue}
+			if gotparam \{newvalue}
 				switch <newvalue>
 					case 1
-					if issoundplaying \{Audio_Options_Bass}
+					if issoundplaying \{audio_options_bass}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_Bass_Bari
+									$eq_bass_bari
 									name = audiooptionssound
 								}
 							]
@@ -646,16 +646,16 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_Bass_Bari
-								instrument = Bass
+								eq_setting = $eq_bass_bari
+								instrument = bass
 							}}
 					endif
-					change \{Bass_Knob_Effects_Position = 1}
+					change \{bass_knob_effects_position = 1}
 					case 2
-					if issoundplaying \{Audio_Options_Bass}
+					if issoundplaying \{audio_options_bass}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_Bass_Boomy
+									$eq_bass_boomy
 									name = audiooptionssound
 								}
 							]
@@ -663,16 +663,16 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_Bass_Boomy
-								instrument = Bass
+								eq_setting = $eq_bass_boomy
+								instrument = bass
 							}}
 					endif
-					change \{Bass_Knob_Effects_Position = 2}
+					change \{bass_knob_effects_position = 2}
 					case 3
-					if issoundplaying \{Audio_Options_Bass}
+					if issoundplaying \{audio_options_bass}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_Bass_Fretty
+									$eq_bass_fretty
 									name = audiooptionssound
 								}
 							]
@@ -680,21 +680,21 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_Bass_Fretty
-								instrument = Bass
+								eq_setting = $eq_bass_fretty
+								instrument = bass
 							}}
 					endif
-					change \{Bass_Knob_Effects_Position = 3}
+					change \{bass_knob_effects_position = 3}
 				endswitch
 			endif
 			case 2
-			if GotParam \{newvalue}
+			if gotparam \{newvalue}
 				switch <newvalue>
 					case 1
-					if issoundplaying \{Audio_Options_Drum}
+					if issoundplaying \{audio_options_drum}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_Drum_Punch
+									$eq_drum_punch
 									name = audiooptionssound
 								}
 							]
@@ -702,16 +702,16 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_Drum_Punch
-								instrument = Drums
+								eq_setting = $eq_drum_punch
+								instrument = drums
 							}}
 					endif
-					change \{Drum_Knob_Effects_Position = 1}
+					change \{drum_knob_effects_position = 1}
 					case 2
-					if issoundplaying \{Audio_Options_Drum}
+					if issoundplaying \{audio_options_drum}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_Drum_Crack
+									$eq_drum_crack
 									name = audiooptionssound
 								}
 							]
@@ -719,16 +719,16 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_Drum_Crack
-								instrument = Drums
+								eq_setting = $eq_drum_crack
+								instrument = drums
 							}}
 					endif
-					change \{Drum_Knob_Effects_Position = 2}
+					change \{drum_knob_effects_position = 2}
 					case 3
-					if issoundplaying \{Audio_Options_Drum}
+					if issoundplaying \{audio_options_drum}
 						setsoundbusseffects \{effects = [
 								{
-									$EQ_Drum_Sizzle
+									$eq_drum_sizzle
 									name = audiooptionssound
 								}
 							]
@@ -736,69 +736,69 @@ script ui_options_sound_event
 					else
 						spawnscriptnow \{playing_sound_knob
 							params = {
-								eq_setting = $EQ_Drum_Sizzle
-								instrument = Drums
+								eq_setting = $eq_drum_sizzle
+								instrument = drums
 							}}
 					endif
-					change \{Drum_Knob_Effects_Position = 3}
+					change \{drum_knob_effects_position = 3}
 				endswitch
 			endif
 			case 3
 		endswitch
-	elseif GotParam \{back}
-		SoundEvent \{event = Sound_Options_Back}
-		StopSound \{Audio_Options_Guitar
+	elseif gotparam \{back}
+		soundevent \{event = sound_options_back}
+		stopsound \{audio_options_guitar
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Bass
+		stopsound \{audio_options_bass
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Drum
+		stopsound \{audio_options_drum
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Mic
+		stopsound \{audio_options_mic
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_SFX
+		stopsound \{audio_options_sfx
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Instruments
+		stopsound \{audio_options_instruments
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Vocals
+		stopsound \{audio_options_vocals
 			fade_time = 0.3
 			fade_type = linear}
-		spawnscriptnow \{No_Dolby_Digital_Sounds}
-	elseif GotParam \{backgeneric}
+		spawnscriptnow \{no_dolby_digital_sounds}
+	elseif gotparam \{backgeneric}
 		generic_menu_pad_back_sound
-	elseif GotParam \{choose}
-		StopSound \{Audio_Options_Guitar
+	elseif gotparam \{choose}
+		stopsound \{audio_options_guitar
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Bass
+		stopsound \{audio_options_bass
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Drum
+		stopsound \{audio_options_drum
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Mic
+		stopsound \{audio_options_mic
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_SFX
+		stopsound \{audio_options_sfx
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Instruments
+		stopsound \{audio_options_instruments
 			fade_time = 0.3
 			fade_type = linear}
-		StopSound \{Audio_Options_Vocals
+		stopsound \{audio_options_vocals
 			fade_time = 0.3
 			fade_type = linear}
-		SoundEvent \{event = Sound_Options_Select}
-		spawnscriptnow \{No_Dolby_Digital_Sounds}
+		soundevent \{event = sound_options_select}
+		spawnscriptnow \{no_dolby_digital_sounds}
 	endif
 endscript
 
-script ChangeSpinalTapVolume \{spinal_tap_volume_max = 11}
+script changespinaltapvolume \{spinal_tap_volume_max = 11}
 	<spinal_tap_volume> = (<spinal_tap_volume> + <change>)
 	if (<spinal_tap_volume> < 0)
 		<spinal_tap_volume> = 0
@@ -808,13 +808,13 @@ script ChangeSpinalTapVolume \{spinal_tap_volume_max = 11}
 	return volume = <spinal_tap_volume>
 endscript
 
-script ui_options_audio_update_buss 
+script 0x21a2d321 
 
 	ui_options_audio_get_buss_volume volume = <volume> buss = <buss>
-	BindToId id = <buss> value = {vol = <vol>}
-	SoundBussUnlock <buss>
-	SetSoundBussParams <variable>
-	SoundBussLock <buss>
+	0x1147ffb8 id = <buss> value = {vol = <vol>}
+	soundbussunlock <buss>
+	setsoundbussparams <variable>
+	soundbusslock <buss>
 endscript
 
 script ui_options_audio_get_buss_volume 
@@ -829,33 +829,33 @@ script ui_options_audio_get_buss_volume
 		endif
 		adjustment = ((<adjustment>) * 0.4)
 	endif
-	base_volume = (($Default_BussSet).<buss>.vol)
+	base_volume = (($default_bussset).<buss>.vol)
 	vol = (<base_volume> + <adjustment>)
 	return vol = <vol>
 endscript
 
 script ui_options_audio_update_all_volumes \{time = 0}
-	AudioInterface :GetTags
+	audiointerface :gettags
 	update_all_volumes <...>
 endscript
 
 script update_all_volumes \{time = 0
 		player = 1}
-	GetPlayerInfo <player> checksum
+	getplayerinfo <player> checksum
 	get_savegame_from_player_status player_status = <checksum>
-	GetGlobalTags user_options savegame = <savegame>
-	ui_options_audio_update_buss volume = (<volumes>.guitar.guitar.vol) buss = User_LeadGTR
-	ui_options_audio_update_buss volume = (<volumes>.guitar.guitar.vol) buss = User_RhythmGTR
-	ui_options_audio_update_buss volume = (<volumes>.guitar.Bass.vol) buss = User_Bass
-	ui_options_audio_update_buss volume = (<volumes>.guitar.drum.vol) buss = User_Drums
-	ui_options_audio_update_buss volume = (<volumes>.guitar.mic.vol) buss = User_LeadVox
+	getglobaltags user_options savegame = <savegame>
+	0x21a2d321 volume = (<volumes>.guitar.guitar.vol) buss = user_leadgtr
+	0x21a2d321 volume = (<volumes>.guitar.guitar.vol) buss = user_rhythmgtr
+	0x21a2d321 volume = (<volumes>.guitar.bass.vol) buss = user_bass
+	0x21a2d321 volume = (<volumes>.guitar.drum.vol) buss = user_drums
+	0x21a2d321 volume = (<volumes>.guitar.mic.vol) buss = user_leadvox
 	ui_options_audio_update_mic_volume player = <player>
-	ui_options_audio_update_buss volume = (<volumes>.guitar.Band.vol) buss = User_Band
-	ui_options_audio_update_buss volume = (<volumes>.guitar.sfx.vol) buss = User_Sfx
+	0x21a2d321 volume = (<volumes>.guitar.band.vol) buss = user_band
+	0x21a2d321 volume = (<volumes>.guitar.sfx.vol) buss = user_sfx
 endscript
 
 script ui_options_audio_update_mic_volume \{player = 1}
-	if PlayerInfoEquals <player> is_local_client = 0
+	if playerinfoequals <player> is_local_client = 0
 		return
 	endif
 	if is_mic_volume_shared
@@ -864,15 +864,15 @@ script ui_options_audio_update_mic_volume \{player = 1}
 		<share_mic_settings> = 0
 	endif
 	if (<share_mic_settings> = 1)
-		GetGlobalTags \{user_options}
+		getglobaltags \{user_options}
 	else
-		GetPlayerInfo <player> checksum
+		getplayerinfo <player> checksum
 		get_savegame_from_player_status player_status = <checksum>
-		GetGlobalTags savegame = <savegame> user_options
+		getglobaltags savegame = <savegame> user_options
 	endif
 	micvolume = (<volumes>.guitar.mic.vol)
 	if (<share_mic_settings> = 1)
-		GameMode_GetNumPlayersShown
+		gamemode_getnumplayersshown
 		<player> = 1
 		begin
 		mic_set_device_volume player = <player> micvolume = <micvolume>
@@ -885,22 +885,22 @@ endscript
 
 script mic_set_device_volume 
 
-	if PlayerInfoEquals <player> bot_play = 1
+	if playerinfoequals <player> bot_play = 1
 		return
 	endif
-	GetInputHandlerBotIndex player = <player>
+	getinputhandlerbotindex player = <player>
 	<bot_controller> = <controller>
-	GetPlayerInfo <player> controller
+	getplayerinfo <player> controller
 	if (<bot_controller> = <controller>)
 		return
 	endif
-	if PlayerInfoEquals <player> is_local_client = 0
+	if playerinfoequals <player> is_local_client = 0
 		return
 	endif
-	if NOT PlayerInfoEquals <player> part = Vocals
+	if NOT playerinfoequals <player> part = vocals
 		return
 	endif
-	if IsPs3
+	if isps3
 		switch <micvolume>
 			case 11
 			<micgain> = 0.0
@@ -1011,20 +1011,20 @@ script mic_set_device_volume
 			<gainmakeup> = 4
 		endswitch
 	endif
-	Vocals_SetMicGain player = <player> gain = <micvolume>
+	vocals_setmicgain player = <player> gain = <micvolume>
 endscript
 
 script ui_options_audio_set_default_volume_lights 
 
 	num_mixer_light_children = ((11 * 2) - 1)
-	if ScreenElementExists \{id = AudioInterface}
-		if AudioInterface :Desc_ResolveAlias \{name = alias_faders_container
+	if screenelementexists \{id = audiointerface}
+		if audiointerface :desc_resolvealias \{name = alias_faders_container
 				param = fader_menu_id}
-			GetScreenElementChildren id = <fader_menu_id>
+			getscreenelementchildren id = <fader_menu_id>
 			fader_children = <children>
-			GetArraySize <fader_children>
+			getarraysize <fader_children>
 			faders_size = <array_size>
-			GetArraySize <default_volumes>
+			getarraysize <default_volumes>
 			default_volumes_size = <array_size>
 			if (<faders_size> != <default_volumes_size>)
 
@@ -1032,21 +1032,21 @@ script ui_options_audio_set_default_volume_lights
 			if (<faders_size> > 0)
 				i = 0
 				begin
-				if (<fader_children> [<i>]) :Desc_ResolveAlias name = alias_lights param = lights_id
+				if (<fader_children> [<i>]) :desc_resolvealias name = alias_lights param = lights_id
 					child_pos_to_retrieve = (<num_mixer_light_children> - ((<default_volumes> [<i>]) * 2))
-					GetScreenElementChildren id = <lights_id>
-					GetArraySize <children>
+					getscreenelementchildren id = <lights_id>
+					getarraysize <children>
 					if (<array_size> > 0)
-						GetScreenElementPosition id = (<children> [<child_pos_to_retrieve>]) local
-						FormatText checksumname = lights_alpha 'lights_ON_%a_alpha' a = (<default_volumes> [<i>])
-						AddParam structure_name = fader_light_alpha_struct name = <lights_alpha> value = 0
+						getscreenelementposition id = (<children> [<child_pos_to_retrieve>]) local
+						formattext checksumname = lights_alpha 'lights_ON_%a_alpha' a = (<default_volumes> [<i>])
+						addparam structure_name = fader_light_alpha_struct name = <lights_alpha> value = 0
 						x_pos = (<screenelementpos> [0])
 						y_pos = (<screenelementpos> [1])
-						CastToInteger \{x_pos}
-						CastToInteger \{y_pos}
-						(<fader_children> [<i>]) :SE_SetProps {
-							amber_lights_ON_pos = (((1.0, 0.0) * <x_pos>) + ((0.0, 1.0) * <y_pos>))
-							amber_lights_OFF_pos = (((1.0, 0.0) * <x_pos>) + ((0.0, 1.0) * <y_pos>))
+						casttointeger \{x_pos}
+						casttointeger \{y_pos}
+						(<fader_children> [<i>]) :se_setprops {
+							amber_lights_on_pos = (((1.0, 0.0) * <x_pos>) + ((0.0, 1.0) * <y_pos>))
+							amber_lights_off_pos = (((1.0, 0.0) * <x_pos>) + ((0.0, 1.0) * <y_pos>))
 							<fader_light_alpha_struct>
 						}
 					endif
@@ -1059,21 +1059,21 @@ script ui_options_audio_set_default_volume_lights
 endscript
 
 script ui_options_audio_set_dolby_digital 
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<dolby_digital> = 0)
-		DisableDolbyDigital
+		disabledolbydigital
 	else
-		EnableDolbyDigital
+		enabledolbydigital
 	endif
 endscript
 
-script ui_options_audio_add_helpers 
+script 0x385d3d7c 
 	clean_up_user_control_helpers
 	menu_finish
-	add_user_control_helper \{text = qs("RESET")
-		button = Blue
+	add_user_control_helper \{text = qs(0x38ee4773)
+		button = blue
 		z = 100000}
 	add_user_control_helper \{text = qs(0xb1818a4d)
-		button = Yellow
+		button = yellow
 		z = 100000}
 endscript

@@ -7,22 +7,22 @@ guitar_touch_patterns = [
 	{
 		touch_value = -98
 		touch_pattern = 65536
-		pattern_string = qs("G----")
+		pattern_string = qs(0xcb20c733)
 	}
 	{
 		touch_value = -73
 		touch_pattern = 69632
-		pattern_string = qs("GR---")
+		pattern_string = qs(0xbe50440f)
 	}
 	{
 		touch_value = -48
 		touch_pattern = 4096
-		pattern_string = qs("-R---")
+		pattern_string = qs(0x7895d0b6)
 	}
 	{
 		touch_value = -23
 		touch_pattern = 4352
-		pattern_string = qs("-RY--")
+		pattern_string = qs(0xe8269f61)
 	}
 	{
 		touch_value = 0
@@ -32,30 +32,30 @@ guitar_touch_patterns = [
 	{
 		touch_value = 27
 		touch_pattern = 256
-		pattern_string = qs("--Y--")
+		pattern_string = qs(0x9d561c5d)
 	}
 	{
 		touch_value = 47
 		touch_pattern = 272
-		pattern_string = qs("--YB-")
+		pattern_string = qs(0xfe13fb08)
 	}
 	{
 		touch_value = 72
 		touch_pattern = 16
-		pattern_string = qs("---B-")
+		pattern_string = qs(0x6ea0b4df)
 	}
 	{
 		touch_value = 97
 		touch_pattern = 17
-		pattern_string = qs("---BO")
+		pattern_string = qs(0x396bbdfa)
 	}
 	{
 		touch_value = 127
 		touch_pattern = 1
-		pattern_string = qs("----O")
+		pattern_string = qs(0x5a2e5aaf)
 	}
 ]
-proto_guitar_touch_patterns = [
+0xe3492d41 = [
 	{
 		touch_value = -128
 		touch_pattern = 1048576
@@ -64,47 +64,47 @@ proto_guitar_touch_patterns = [
 	{
 		touch_value = -88
 		touch_pattern = 65536
-		pattern_string = qs("G----")
+		pattern_string = qs(0xcb20c733)
 	}
 	{
 		touch_value = -59
 		touch_pattern = 69632
-		pattern_string = qs("GR---")
+		pattern_string = qs(0xbe50440f)
 	}
 	{
 		touch_value = -30
 		touch_pattern = 4096
-		pattern_string = qs("-R---")
+		pattern_string = qs(0x7895d0b6)
 	}
 	{
 		touch_value = -1
 		touch_pattern = 4352
-		pattern_string = qs("-RY--")
+		pattern_string = qs(0xe8269f61)
 	}
 	{
 		touch_value = 29
 		touch_pattern = 256
-		pattern_string = qs("--Y--")
+		pattern_string = qs(0x9d561c5d)
 	}
 	{
 		touch_value = 58
 		touch_pattern = 272
-		pattern_string = qs("--YB-")
+		pattern_string = qs(0xfe13fb08)
 	}
 	{
 		touch_value = 87
 		touch_pattern = 16
-		pattern_string = qs("---B-")
+		pattern_string = qs(0x6ea0b4df)
 	}
 	{
 		touch_value = 116
 		touch_pattern = 17
-		pattern_string = qs("---BO")
+		pattern_string = qs(0x396bbdfa)
 	}
 	{
 		touch_value = 127
 		touch_pattern = 1
-		pattern_string = qs("----O")
+		pattern_string = qs(0x5a2e5aaf)
 	}
 ]
 touch_glow_props = [
@@ -276,10 +276,10 @@ touch_glow_fade_out_time = 0.05
 
 script guitar_touch_update_hilite \{player = 1
 		color_num = 0}
-	GetPlayerInfo <player> text
+	getplayerinfo <player> text
 	player_text = <text>
-	GetPlayerInfo <player> lefthanded_gems
-	GetArraySize \{$gem_colors}
+	getplayerinfo <player> lefthanded_gems
+	getarraysize \{$gem_colors}
 	array_count = 0
 	begin
 	if NOT (<lefthanded_gems> = 1)
@@ -289,13 +289,13 @@ script guitar_touch_update_hilite \{player = 1
 	endif
 	color = ($gem_colors [<color_count>])
 	color_string = (($button_up_models [(<player> -1)]).<color>.name_string)
-	FormatText checksumname = touch_glow '%s_touch_glow%p' s = <color_string> p = <player_text> AddToStringLookup = true
+	formattext checksumname = touch_glow '%s_touch_glow%p' s = <color_string> p = <player_text> addtostringlookup = true
 	if (<array_count> = <color_num>)
-		if ScreenElementExists id = <touch_glow>
+		if screenelementexists id = <touch_glow>
 			spawnscriptnow fade_touch_glow params = {touch_glow = <touch_glow> rgba = ($touch_glow_props [<array_count>].rgba) in}
 		endif
 	else
-		if ScreenElementExists id = <touch_glow>
+		if screenelementexists id = <touch_glow>
 			spawnscriptnow fade_touch_glow params = {touch_glow = <touch_glow> rgba = ($touch_glow_props [<array_count>].rgba)}
 		endif
 	endif
@@ -304,28 +304,28 @@ script guitar_touch_update_hilite \{player = 1
 endscript
 
 script fade_touch_glow 
-	if GotParam \{in}
-		if ScreenElementExists id = <touch_glow>
-			<touch_glow> :SE_SetProps alpha = ($touch_glow_fade_in_alpha) rgba = <rgba> time = ($touch_glow_fade_in_time)
+	if gotparam \{in}
+		if screenelementexists id = <touch_glow>
+			<touch_glow> :se_setprops alpha = ($touch_glow_fade_in_alpha) rgba = <rgba> time = ($touch_glow_fade_in_time)
 		endif
 	else
-		if ScreenElementExists id = <touch_glow>
-			<touch_glow> :SE_SetProps alpha = 0 rgba = <rgba> time = ($touch_glow_fade_out_time)
+		if screenelementexists id = <touch_glow>
+			<touch_glow> :se_setprops alpha = 0 rgba = <rgba> time = ($touch_glow_fade_out_time)
 		endif
 	endif
 endscript
 
 script drum_fill_update_hilite \{player = 1}
-	GetPlayerInfo <player> text
+	getplayerinfo <player> text
 	player_text = <text>
-	GetArraySize \{$gem_colors}
+	getarraysize \{$gem_colors}
 	array_count = 0
 	begin
 	color = ($gem_colors [<array_count>])
 	color_string = (($button_up_models [(<player> -1)]).<color>.name_string)
-	FormatText checksumname = touch_glow '%s_touch_glow%p' s = <color_string> p = <player_text> AddToStringLookup = true
+	formattext checksumname = touch_glow '%s_touch_glow%p' s = <color_string> p = <player_text> addtostringlookup = true
 	if (<array_count> = <color_num>)
-		if ScreenElementExists id = <touch_glow>
+		if screenelementexists id = <touch_glow>
 			spawnscriptnow pulse_touch_glow params = {touch_glow = <touch_glow> alpha = <alpha>}
 		endif
 	endif
@@ -334,52 +334,52 @@ script drum_fill_update_hilite \{player = 1}
 endscript
 
 script pulse_touch_glow \{alpha = 1.0}
-	if ScreenElementExists id = <touch_glow>
-		<touch_glow> :SE_SetProps alpha = <alpha> time = 0.05
+	if screenelementexists id = <touch_glow>
+		<touch_glow> :se_setprops alpha = <alpha> time = 0.05
 	endif
-	Wait \{0.1
+	wait \{0.1
 		seconds}
-	if ScreenElementExists id = <touch_glow>
-		<touch_glow> :SE_SetProps alpha = 0 time = 0.05
+	if screenelementexists id = <touch_glow>
+		<touch_glow> :se_setprops alpha = 0 time = 0.05
 	endif
 endscript
-guitar_string_bend = -1.0
+0x70ae4aba = -1.0
 
 script guitar_touch_start_eq 
-	GetPlayerInfo <player> part
+	getplayerinfo <player> part
 	if (<part> = guitar)
-		change guitar_string_bend = <touch_zone>
-		SetStreamPitchBend stream_id = $guitar_unique_bend_id bend = 0.0 part = <part>
-	elseif (<part> = Bass)
-		change guitar_string_bend = <touch_zone>
-		SetStreamPitchBend stream_id = $guitar_unique_bend_id bend = 0.0 part = <part>
+		change 0x70ae4aba = <touch_zone>
+		0x627ebdce stream_id = $0x84acfb5b bend = 0.0 part = <part>
+	elseif (<part> = bass)
+		change 0x70ae4aba = <touch_zone>
+		0x627ebdce stream_id = $0x84acfb5b bend = 0.0 part = <part>
 	endif
 endscript
 
 script guitar_touch_update_eq 
-	GetPlayerInfo <player> part
+	getplayerinfo <player> part
 	if (<part> = guitar)
-		if (($guitar_string_bend) >= 0)
-			SetStreamPitchBend stream_id = $guitar_unique_bend_id bend = (($guitar_string_bend - <touch_zone>) / 8.0) part = <part>
+		if (($0x70ae4aba) >= 0)
+			0x627ebdce stream_id = $0x84acfb5b bend = (($0x70ae4aba - <touch_zone>) / 8.0) part = <part>
 		else
-			change guitar_string_bend = <touch_zone>
+			change 0x70ae4aba = <touch_zone>
 		endif
-	elseif (<part> = Bass)
-		if (($guitar_string_bend) >= 0)
-			SetStreamPitchBend stream_id = $guitar_unique_bend_id bend = (($guitar_string_bend - <touch_zone>) / 8.0) part = <part>
+	elseif (<part> = bass)
+		if (($0x70ae4aba) >= 0)
+			0x627ebdce stream_id = $0x84acfb5b bend = (($0x70ae4aba - <touch_zone>) / 8.0) part = <part>
 		else
-			change guitar_string_bend = <touch_zone>
+			change 0x70ae4aba = <touch_zone>
 		endif
 	endif
 endscript
 
 script guitar_touch_stop_eq 
-	GetPlayerInfo <player> part
+	getplayerinfo <player> part
 	if (<part> = guitar)
-		change \{guitar_string_bend = -1.0}
-		SetStreamPitchBend stream_id = $guitar_unique_bend_id bend = 0.0 part = <part>
-	elseif (<part> = Bass)
-		change \{guitar_string_bend = -1.0}
-		SetStreamPitchBend stream_id = $guitar_unique_bend_id bend = 0.0 part = <part>
+		change \{0x70ae4aba = -1.0}
+		0x627ebdce stream_id = $0x84acfb5b bend = 0.0 part = <part>
+	elseif (<part> = bass)
+		change \{0x70ae4aba = -1.0}
+		0x627ebdce stream_id = $0x84acfb5b bend = 0.0 part = <part>
 	endif
 endscript

@@ -1,11 +1,11 @@
 ccam_min_fov_interp = 5
 ccam_max_fov_interp = 100
 
-script CameraCutsEffect_FOVPulse_GetType 
+script cameracutseffect_fovpulse_gettype 
 
 	switch <type>
 		case pulse1
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, -0.05)}
 				{(0.3, -0.05)}
@@ -18,7 +18,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case pulse2
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, -0.2)}
 				{(1.0, -0.2)}
@@ -30,7 +30,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case pulse3
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				(0.0, -10.0)
 				(1.0, -10.0)
@@ -42,7 +42,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case pulse4
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, -0.025)}
 				{(0.3, -0.025)}
@@ -55,7 +55,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case pulse5
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, -0.017499998)}
 				{(0.3, -0.017499998)}
@@ -68,7 +68,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_in_quick_small
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -81,7 +81,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_in_quick_large
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -94,7 +94,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_in_slow_small
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -107,7 +107,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_in_slow_large
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -120,7 +120,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_out_quick_small
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -133,7 +133,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_out_quick_large
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -146,7 +146,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_out_slow_small
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -159,7 +159,7 @@ script CameraCutsEffect_FOVPulse_GetType
 			frequency = 15
 		}
 		case zoom_out_slow_large
-		<pulseParams> = {
+		<pulseparams> = {
 			amplitude_curve = [
 				{(0.0, 0.0)}
 				{(1.0, 0.0)}
@@ -174,5 +174,5 @@ script CameraCutsEffect_FOVPulse_GetType
 		default
 
 	endswitch
-	return pulseParams = <pulseParams>
+	return pulseparams = <pulseparams>
 endscript

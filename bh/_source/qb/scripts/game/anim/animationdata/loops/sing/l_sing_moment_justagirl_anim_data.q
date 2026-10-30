@@ -1,37 +1,37 @@
-L_SING_Moment_JustAGirl_anims_set = {
-	Stance_A = {
-		Idle = {
+0x94607979 = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					S_JustAGirl_02
+				slow = [
+					0x94a95d4e
 				]
-				Med = [
-					S_JustAGirl_03
+				med = [
+					0xe3ae6dd8
 				]
-				Fast = [
-					S_JustAGirl_02
-				]
-			}
-			Normal = {
-				Slow = [
-					S_JustAGirl_02
-				]
-				Med = [
-					S_JustAGirl_03
-				]
-				Fast = [
-					S_JustAGirl_02
+				fast = [
+					0x94a95d4e
 				]
 			}
-			Bad = {
-				Slow = [
-					S_JustAGirl_02
+			normal = {
+				slow = [
+					0x94a95d4e
 				]
-				Med = [
-					S_JustAGirl_03
+				med = [
+					0xe3ae6dd8
 				]
-				Fast = [
-					S_JustAGirl_02
+				fast = [
+					0x94a95d4e
+				]
+			}
+			bad = {
+				slow = [
+					0x94a95d4e
+				]
+				med = [
+					0xe3ae6dd8
+				]
+				fast = [
+					0x94a95d4e
 				]
 			}
 		}

@@ -1,103 +1,103 @@
-career_intro_exists = 0
-qi_focus_color = [
+0x0bc3fd19 = 0
+0x07522fb3 = [
 	0
 	0
 	0
 	255
 ]
-qi_unfocus_color = [
+0xd8de2537 = [
 	255
 	255
 	255
 	255
 ]
-qi_disable_color = [
+0x743e7c6a = [
 	150
 	150
 	150
 	255
 ]
-menu_in_select_character = [
+0x7e329c37 = [
 	false
 	false
 	false
 	false
 ]
 
-script qi_initialize 
-	push_loading_screen \{full}
-	OnExitRun \{pop_loading_screen}
+script 0xf2d3e5f3 
+	0xd3f993c8 \{full}
+	onexitrun \{0xe5a305c6}
 	frontend_load_soundcheck
-	qi_initialize_main_menu
-	qi_initialize_characters
-	qi_animate_all_highlights
-	qi_initialize_object mode = <mode>
-	KillSkaterCamAnim \{all}
-	get_frontend_venue_player_start_checksums
-	GetWaypointPos name = <Microphone_Start>
-	PlayIGCCam {
-		name = Bandmode_camera
+	0xc30968ab
+	0x63cba909
+	0x6b650292
+	0x3dd7e2c1 mode = <mode>
+	killskatercamanim \{all}
+	0xce0505af
+	getwaypointpos name = <0x607528c5>
+	playigccam {
+		name = 0x716ccbe1
 		viewport = bg_viewport
 		pos = (<pos> + (0.0, 1.0, 4.5))
-		Quat = (0.0, 1.0, 0.0)
-		FOV = 43.0
-		Play_hold = 1
+		quat = (0.0, 1.0, 0.0)
+		fov = 43.0
+		play_hold = 1
 		interrupt_current
 	}
-	SpawnScriptLater \{qi_attach_event_handlers}
+	spawnscriptlater \{0x647c20cc}
 	return
 endscript
 
-script qi_attach_event_handlers 
-	Wait \{1
+script 0x647c20cc 
+	wait \{1
 		gameframe}
-	qi_main_menu :SetProps \{replace_handlers
+	0x23fc9d2c :setprops \{replace_handlers
 		event_handlers = [
 			{
 				pad_up
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 1
 				}
 			}
 			{
 				pad_down
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 2
 				}
 			}
 			{
 				pad_choose
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 3
 				}
 			}
 			{
 				pad_back
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 4
 				}
 			}
 			{
 				pad_option2
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 5
 				}
 			}
 			{
 				pad_option
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 6
 				}
 			}
 			{
 				pad_start
-				QI_SendInputEvent
+				0x89f9a306
 				params = {
 					event_id = 8
 				}
@@ -105,18 +105,18 @@ script qi_attach_event_handlers
 		]}
 endscript
 
-script qi_destroy 
-	qi_set_control_helper
-	if GotParam \{kill_rocker}
+script 0x981ef6bf 
+	0xf58f6324
+	if gotparam \{0xb4e99147}
 		cas_destroy_all_characters
 	endif
-	if ScreenElementExists \{id = qi_main_menu}
-		qi_main_menu :GetSingleTag \{menus}
-		GetArraySize <menus>
+	if screenelementexists \{id = 0x23fc9d2c}
+		0x23fc9d2c :getsingletag \{menus}
+		getarraysize <menus>
 		i = 0
 		begin
-		if NOT GotParam \{kill_rocker}
-			qi_get_rocker_id menu_index = <i>
+		if NOT gotparam \{0xb4e99147}
+			0xe41bfcc2 menu_index = <i>
 			if (<rocker_id> = none)
 				cas_queue_kill_player player = (<i> + 1)
 			else
@@ -128,227 +128,227 @@ script qi_destroy
 		repeat <array_size>
 		i = 0
 		begin
-		qi_create_menu menu_index = <i>
+		0x098ed7d6 menu_index = <i>
 		i = (<i> + 1)
 		repeat <array_size>
-		qi_main_menu :Die
+		0x23fc9d2c :die
 	endif
 	generic_ui_destroy
 endscript
 
-script qi_initialize_characters 
-	get_frontend_venue_player_start_checksums
-	cas_set_object_node_pos player = 1 node = <player1_start>
-	cas_set_object_node_pos player = 2 node = <player2_start>
-	cas_set_object_node_pos player = 3 node = <player3_start>
-	cas_set_object_node_pos player = 4 node = <player4_start>
-	GameMode_GetType
+script 0x63cba909 
+	0xce0505af
+	cas_set_object_node_pos player = 1 node = <0xae37e78a>
+	cas_set_object_node_pos player = 2 node = <0x9fdffd17>
+	cas_set_object_node_pos player = 3 node = <0x39a8f6a3>
+	cas_set_object_node_pos player = 4 node = <0xfc0fc82d>
+	gamemode_gettype
 	if (<type> = pro_faceoff)
-		cas_set_object_node_pos player = 2 node = <player4_start>
+		cas_set_object_node_pos player = 2 node = <0xfc0fc82d>
 	endif
 endscript
 
-script qi_initialize_main_menu 
-	if NOT ScreenElementExists \{id = qi_main_menu}
-		SetScreenElementProps \{id = root_window
+script 0xc30968ab 
+	if NOT screenelementexists \{id = 0x23fc9d2c}
+		setscreenelementprops \{id = root_window
 			event_handlers = [
 			]
 			replace_handlers}
-		CreateScreenElement \{id = qi_main_menu
-			type = DescInterface
+		createscreenelement \{id = 0x23fc9d2c
+			type = descinterface
 			parent = root_window
 			desc = 'band_play'}
-		LaunchEvent \{type = focus
-			target = qi_main_menu}
+		launchevent \{type = focus
+			target = 0x23fc9d2c}
 		menu_array = []
 		desc_array = []
-		if NOT qi_main_menu :Desc_ResolveAlias \{name = alias_hmenu}
-			debug_ScriptAssert \{'Unable to find the hmenu structure within the band_play ui descriptor'}
+		if NOT 0x23fc9d2c :desc_resolvealias \{name = alias_hmenu}
+			0x93d8d5cf \{'Unable to find the hmenu structure within the band_play ui descriptor'}
 		endif
 		band_hmenu = <resolved_id>
 		i = 0
 		begin
-		ResolveScreenElementId id = [
+		resolvescreenelementid id = [
 			{id = <band_hmenu>}
 			{index = <i>}
 		]
-		<resolved_id> :SE_SetProps reposition_pos = (0.0, 500.0)
-		<resolved_id> :SE_WaitProps
-		AddArrayElement array = <desc_array> element = <resolved_id>
+		<resolved_id> :se_setprops reposition_pos = (0.0, 500.0)
+		<resolved_id> :se_waitprops
+		addarrayelement array = <desc_array> element = <resolved_id>
 		desc_array = <array>
-		if NOT <resolved_id> :Desc_ResolveAlias name = alias_menu
-			debug_ScriptAssert \{'Unable to find the alias_menu structure within the band_hmenu ui descriptor'}
+		if NOT <resolved_id> :desc_resolvealias name = alias_menu
+			0x93d8d5cf \{'Unable to find the alias_menu structure within the band_hmenu ui descriptor'}
 		endif
-		<resolved_id> :SetTags {
+		<resolved_id> :settags {
 			menu = join
-			current_rocker_id = none
+			0xc4c72650 = none
 		}
-		AddArrayElement array = <menu_array> element = <resolved_id>
+		addarrayelement array = <menu_array> element = <resolved_id>
 		menu_array = <array>
 		i = (<i> + 1)
 		repeat 4
-		qi_get_valid_rocker_list \{part = guitar}
-		GetArraySize \{valid_rocker_list}
-		qi_main_menu :SetTags {
+		0x7b218542 \{part = guitar}
+		getarraysize \{0xe93a8721}
+		0x23fc9d2c :settags {
 			menus = <menu_array>
 			descs = <desc_array>
-			headtohead = 0
-			valid_rocker_list = <valid_rocker_list>
-			valid_rocker_list_size = <array_size>
+			0xa66f59fe = 0
+			0xe93a8721 = <0xe93a8721>
+			0x46a803b9 = <array_size>
 		}
 	endif
 	return
 endscript
 
-script qi_initialize_head_to_head 
-	if NOT ScreenElementExists \{id = qi_main_menu}
-		debug_ScriptAssert \{'qi must be initialized'}
+script 0xba9c37d2 
+	if NOT screenelementexists \{id = 0x23fc9d2c}
+		0x93d8d5cf \{'qi must be initialized'}
 	endif
-	if NOT qi_main_menu :GetSingleTag \{headtohead}
-		debug_ScriptAssert \{'cant find flag: headtohead.  is qi initialized?'}
+	if NOT 0x23fc9d2c :getsingletag \{0xa66f59fe}
+		0x93d8d5cf \{'cant find flag: headtohead.  is qi initialized?'}
 	endif
-	if (<headtohead> != 0)
-		debug_ScriptAssert \{'is head to head already initialized?'}
+	if (<0xa66f59fe> != 0)
+		0x93d8d5cf \{'is head to head already initialized?'}
 	endif
-	if NOT qi_main_menu :Desc_ResolveAlias \{name = alias_hmenu}
-		debug_ScriptAssert \{'cant find description alias: alias_hmenu'}
+	if NOT 0x23fc9d2c :desc_resolvealias \{name = alias_hmenu}
+		0x93d8d5cf \{'cant find description alias: alias_hmenu'}
 	endif
 	band_hmenu = <resolved_id>
-	<band_hmenu> :SE_SetProps spacing_between = 515
+	<band_hmenu> :se_setprops spacing_between = 515
 	i = 3
 	begin
-	ResolveScreenElementId id = [
+	resolvescreenelementid id = [
 		{id = <band_hmenu>}
 		{index = <i>}
 	]
-	<resolved_id> :Die
+	<resolved_id> :die
 	i = (<i> - 1)
 	repeat 2
-	Wait \{2
+	wait \{2
 		gameframes}
 	menu_array = []
 	desc_array = []
 	i = 0
 	begin
-	ResolveScreenElementId id = [
+	resolvescreenelementid id = [
 		{id = <band_hmenu>}
 		{index = <i>}
 	]
-	AddArrayElement array = <desc_array> element = <resolved_id>
+	addarrayelement array = <desc_array> element = <resolved_id>
 	desc_array = <array>
-	if NOT <resolved_id> :Desc_ResolveAlias name = alias_menu
-		debug_ScriptAssert \{'Unable to find the alias_menu structure within the band_hmenu ui descriptor'}
+	if NOT <resolved_id> :desc_resolvealias name = alias_menu
+		0x93d8d5cf \{'Unable to find the alias_menu structure within the band_hmenu ui descriptor'}
 	endif
-	<resolved_id> :SetTags {
+	<resolved_id> :settags {
 		menu = join
-		current_rocker_id = none
+		0xc4c72650 = none
 	}
-	AddArrayElement array = <menu_array> element = <resolved_id>
+	addarrayelement array = <menu_array> element = <resolved_id>
 	menu_array = <array>
 	i = (<i> + 1)
 	repeat 2
-	qi_main_menu :SetTags {
+	0x23fc9d2c :settags {
 		menus = <menu_array>
 		descs = <desc_array>
-		headtohead = 1
+		0xa66f59fe = 1
 	}
 endscript
 
-script qi_find_menu 
-	if NOT GotParam \{menu_index}
+script 0x167005ac 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'qi_find_menu needs argument: menu_index'}
+		0x93d8d5cf \{'qi_find_menu needs argument: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
 	return current_menu = <current_menu>
 endscript
 
-script qi_create_menu 
-	if NOT GotParam \{menu_index}
+script 0x098ed7d6 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'qi_create_menu needs argument: menu_index'}
+		0x93d8d5cf \{'qi_create_menu needs argument: menu_index'}
 	endif
-	qi_find_menu menu_index = <menu_index>
-	if NOT <current_menu> :GetSingleTag highlight_container_id
-		menu_create_highlight_bar \{parent_id = qi_main_menu
+	0x167005ac menu_index = <menu_index>
+	if NOT <current_menu> :getsingletag 0x638b9bc5
+		0x05039c3f \{parent_id = 0x23fc9d2c
 			alpha = 0.0
 			z_priority = 4.0
 			pos = (-20.0, -2.5)}
-		<current_menu> :SetTags highlight_container_id = <highlight_container_id>
+		<current_menu> :settags 0x638b9bc5 = <0x638b9bc5>
 	else
-		<highlight_container_id> :SE_SetProps parent = qi_main_menu alpha = 0.0
+		<0x638b9bc5> :se_setprops parent = 0x23fc9d2c alpha = 0.0
 	endif
-	qi_scroll_arrows menu_index = <menu_index> hide_arrows
-	if NOT GotParam \{preserve_ready}
-		qi_destroy_ready_menu menu_index = <menu_index>
+	0x7a32bb4f menu_index = <menu_index> 0x74f1b510
+	if NOT gotparam \{0x80f7c4fa}
+		0xefdfd1df menu_index = <menu_index>
 	endif
-	<current_menu> :qi_create_menu_elements menu_definition = <menu_definition> is_disconnect_menu = <is_disconnect_menu>
-	qi_focus_element menu_index = <menu_index> element_index = -1
+	<current_menu> :0x1860d142 0xb66264f5 = <0xb66264f5> 0x88cd2213 = <0x88cd2213>
+	0x931b6ce7 menu_index = <menu_index> 0xbbaeec67 = -1
 	return
 endscript
 
-script qi_is_this_disconnect_menu 
-	if NOT GotParam \{menu_index}
+script 0x20f22c78 
+	if NOT gotparam \{menu_index}
 		return \{false
-			menu_not_found}
-		debug_ScriptAssert \{'qi_is_this_disconnect_menu needs argument: menu_index'}
+			0xee8f0635}
+		0x93d8d5cf \{'qi_is_this_disconnect_menu needs argument: menu_index'}
 	endif
-	qi_find_menu menu_index = <menu_index>
-	if <current_menu> :GetSingleTag is_disconnect_menu
+	0x167005ac menu_index = <menu_index>
+	if <current_menu> :getsingletag 0x88cd2213
 		return \{true
-			is_disconnect_menu}
+			0x88cd2213}
 	endif
 	return \{false}
 endscript
 
-script qi_remove_disconnect_tag 
-	if NOT GotParam \{menu_index}
+script 0x45623875 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'qi_remove_disconnect_tag needs argument: menu_index'}
+		0x93d8d5cf \{'qi_remove_disconnect_tag needs argument: menu_index'}
 	endif
-	qi_find_menu menu_index = <menu_index>
-	<current_menu> :RemoveTags [is_disconnect_menu]
+	0x167005ac menu_index = <menu_index>
+	<current_menu> :removetags [0x88cd2213]
 endscript
 
-script qi_create_menu_elements 
-	Obj_GetID
-	DestroyScreenElement id = <ObjID> preserve_parent
-	if GotParam \{menu_definition}
-		if NOT StructureContains Structure = <menu_definition> name = menu_name
+script 0x1860d142 
+	obj_getid
+	destroyscreenelement id = <objid> preserve_parent
+	if gotparam \{0xb66264f5}
+		if NOT structurecontains structure = <0xb66264f5> name = menu_name
 			return
-			debug_ScriptAssert \{'menu_definition argument must contain: menu_name'}
+			0x93d8d5cf \{'menu_definition argument must contain: menu_name'}
 		endif
-		if NOT StructureContains Structure = <menu_definition> name = menu_elements
+		if NOT structurecontains structure = <0xb66264f5> name = 0x97e4bd34
 			return
-			debug_ScriptAssert \{'menu_definition argument must contain an array of elements (menu_elements)'}
+			0x93d8d5cf \{'menu_definition argument must contain an array of elements (menu_elements)'}
 		endif
-		menu_name = (<menu_definition>.menu_name)
-		menu_elements = (<menu_definition>.menu_elements)
-		GetArraySize <menu_elements>
+		menu_name = (<0xb66264f5>.menu_name)
+		0x97e4bd34 = (<0xb66264f5>.0x97e4bd34)
+		getarraysize <0x97e4bd34>
 		i = 0
 		begin
-		current_element = (<menu_elements> [<i>])
-		if NOT StructureContains Structure = <current_element> name = text
-			debug_ScriptAssert 'current_element (%i) must contain a text element' i = <i>
+		0x14b22443 = (<0x97e4bd34> [<i>])
+		if NOT structurecontains structure = <0x14b22443> name = text
+			0x93d8d5cf 'current_element (%i) must contain a text element' i = <i>
 		endif
-		element_text = (<current_element>.text)
-		FormatText TextName = element_id '%n%i' n = <menu_name> i = <i>
-		CreateScreenElement {
+		element_text = (<0x14b22443>.text)
+		formattext textname = element_id '%n%i' n = <menu_name> i = <i>
+		createscreenelement {
 			id = <element_id>
-			type = TextBlockElement
+			type = textblockelement
 			fit_width = `scale each line if larger`
 			fit_height = `scale down if larger`
-			parent = <ObjID>
+			parent = <objid>
 			text = <element_text>
 			font = fontgrid_text_a8
 			dims = (190.0, 30.0)
-			rgba = $qi_unfocus_color
+			rgba = $0xd8de2537
 			internal_scale = 0.6
 			just = [center center]
 			internal_just = [center center]
@@ -358,278 +358,278 @@ script qi_create_menu_elements
 		}
 		i = (<i> + 1)
 		repeat <array_size>
-		<ObjID> :SetTags {menu_name = <menu_name> is_disconnect_menu = <is_disconnect_menu>}
+		<objid> :settags {menu_name = <menu_name> 0x88cd2213 = <0x88cd2213>}
 	endif
 	return
 endscript
 
-script qi_animate_all_highlights 
-	if NOT ScreenElementExists \{id = qi_main_menu}
+script 0x6b650292 
+	if NOT screenelementexists \{id = 0x23fc9d2c}
 		return
-		debug_ScriptAssert \{'qi must be initialized'}
+		0x93d8d5cf \{'qi must be initialized'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
+	0x23fc9d2c :getsingletag \{descs}
 	index = 0
 	begin
 	current_desc = (<descs> [<index>])
-	<current_desc> :obj_spawnscript qi_animate_single_ready_banner
+	<current_desc> :obj_spawnscript 0x7868a6f6
 	index = (<index> + 1)
 	repeat 4
 	return
 endscript
 
-script qi_animate_single_ready_banner 
-	if NOT Desc_ResolveAlias \{name = alias_ready_banner}
+script 0x7868a6f6 
+	if NOT desc_resolvealias \{name = alias_ready_banner}
 		return
-		debug_ScriptAssert \{'Cant find alias_ready_banner.'}
+		0x93d8d5cf \{'Cant find alias_ready_banner.'}
 	endif
-	if NOT GetScreenElementChildren id = <resolved_id>
+	if NOT getscreenelementchildren id = <resolved_id>
 		return
-		debug_ScriptAssert \{'No children found?  Highlight needs children to animate.'}
+		0x93d8d5cf \{'No children found?  Highlight needs children to animate.'}
 	endif
-	GetArraySize <children>
+	getarraysize <children>
 	current_index = 0
 	begin
-	(<children> [(<current_index>)]) :SE_SetProps alpha = 0.0
-	GetRandomValue name = random_number a = 0 b = (<array_size> - 2) Integer
-	Mod a = (<current_index> + <random_number> + 1) b = <array_size>
-	current_index = <Mod>
-	current_highlight = (<children> [<Mod>])
-	<current_highlight> :SE_SetProps alpha = 1.0
-	Wait \{0.1
+	(<children> [(<current_index>)]) :se_setprops alpha = 0.0
+	getrandomvalue name = 0x79819557 a = 0 b = (<array_size> - 2) integer
+	mod a = (<current_index> + <0x79819557> + 1) b = <array_size>
+	current_index = <mod>
+	current_highlight = (<children> [<mod>])
+	<current_highlight> :se_setprops alpha = 1.0
+	wait \{0.1
 		second}
 	repeat
 endscript
 
-script qi_create_ready_menu 
-	if NOT GotParam \{menu_index}
+script 0xf9e618d3 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize <descs>
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize <descs>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	qi_create_menu menu_index = <menu_index>
-	<current_desc> :Obj_KillSpawnedScript name = qi_animate_ready
-	<current_desc> :Obj_KillSpawnedScript name = qi_animate_unready
-	<current_desc> :Obj_SpawnScriptNow qi_animate_ready
+	0x098ed7d6 menu_index = <menu_index>
+	<current_desc> :obj_killspawnedscript name = 0x93fc812a
+	<current_desc> :obj_killspawnedscript name = 0xff353deb
+	<current_desc> :obj_spawnscriptnow 0x93fc812a
 endscript
 
-script qi_destroy_ready_menu 
-	if NOT GotParam \{menu_index}
+script 0xefdfd1df 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize <descs>
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize <descs>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	<current_desc> :Obj_KillSpawnedScript name = qi_animate_ready
-	<current_desc> :Obj_KillSpawnedScript name = qi_animate_unready
-	<current_desc> :Obj_SpawnScriptNow qi_animate_unready
+	<current_desc> :obj_killspawnedscript name = 0x93fc812a
+	<current_desc> :obj_killspawnedscript name = 0xff353deb
+	<current_desc> :obj_spawnscriptnow 0xff353deb
 endscript
 
-script qi_animate_ready 
-	Obj_GetID
-	<ObjID> :SE_SetProps ready_banner_pos = (0.0, -90.0) time = 0.1 motion = ease_out
-	<ObjID> :SE_WaitProps
-	Wait \{0.1
+script 0x93fc812a 
+	obj_getid
+	<objid> :se_setprops ready_banner_pos = (0.0, -90.0) time = 0.1 motion = ease_out
+	<objid> :se_waitprops
+	wait \{0.1
 		second}
-	<ObjID> :SE_SetProps ready_banner_scale = 1.2 time = 0.1 motion = ease_out
-	<ObjID> :SE_WaitProps
-	<ObjID> :SE_SetProps ready_banner_scale = 0.9 time = 0.1 motion = ease_in
-	<ObjID> :SE_WaitProps
-	<ObjID> :SE_SetProps ready_banner_scale = 1.1 time = 0.1 motion = ease_out
-	<ObjID> :SE_WaitProps
-	<ObjID> :SE_SetProps ready_banner_scale = 1.0 time = 0.1 motion = ease_in
+	<objid> :se_setprops ready_banner_scale = 1.2 time = 0.1 motion = ease_out
+	<objid> :se_waitprops
+	<objid> :se_setprops ready_banner_scale = 0.9 time = 0.1 motion = ease_in
+	<objid> :se_waitprops
+	<objid> :se_setprops ready_banner_scale = 1.1 time = 0.1 motion = ease_out
+	<objid> :se_waitprops
+	<objid> :se_setprops ready_banner_scale = 1.0 time = 0.1 motion = ease_in
 endscript
 
-script qi_animate_unready 
-	Obj_GetID
-	<ObjID> :SE_SetProps ready_banner_pos = (0.0, 500.0) time = 0.1 motion = ease_in
-	<ObjID> :SE_WaitProps
+script 0xff353deb 
+	obj_getid
+	<objid> :se_setprops ready_banner_pos = (0.0, 500.0) time = 0.1 motion = ease_in
+	<objid> :se_waitprops
 endscript
 
-script qi_show_card 
-	debug_Printf 'showing card in menu: %i' i = <menu_index>
-	if NOT GotParam \{menu_index}
+script 0x74a9dbcd 
+	0x8dbdaee4 'showing card in menu: %i' i = <menu_index>
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize <descs>
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize <descs>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	<current_desc> :Obj_KillSpawnedScript name = qi_animate_card
-	<current_desc> :Obj_SpawnScriptNow qi_animate_card
+	<current_desc> :obj_killspawnedscript name = 0x7b3d6e40
+	<current_desc> :obj_spawnscriptnow 0x7b3d6e40
 endscript
 
-script qi_hide_card 
-	debug_Printf 'hiding card in menu: %i' i = <menu_index>
-	if NOT GotParam \{menu_index}
+script 0xda8ff095 
+	0x8dbdaee4 'hiding card in menu: %i' i = <menu_index>
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize <descs>
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize <descs>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	<current_desc> :Obj_KillSpawnedScript name = qi_animate_card
-	<current_desc> :Obj_SpawnScriptNow qi_animate_card params = {hide}
+	<current_desc> :obj_killspawnedscript name = 0x7b3d6e40
+	<current_desc> :obj_spawnscriptnow 0x7b3d6e40 params = {hide}
 endscript
 
-script qi_animate_card 
-	Obj_GetID
-	if GotParam \{hide}
-		debug_Printf \{'HIDING'}
-		<ObjID> :SE_SetProps reposition_pos = (0.0, 500.0) time = 0.1 motion = ease_in
+script 0x7b3d6e40 
+	obj_getid
+	if gotparam \{hide}
+		0x8dbdaee4 \{'HIDING'}
+		<objid> :se_setprops reposition_pos = (0.0, 500.0) time = 0.1 motion = ease_in
 	else
-		debug_Printf \{'SHOWING'}
-		<ObjID> :SE_SetProps reposition_pos = (0.0, 0.0) time = 0.1 motion = ease_out
+		0x8dbdaee4 \{'SHOWING'}
+		<objid> :se_setprops reposition_pos = (0.0, 0.0) time = 0.1 motion = ease_out
 	endif
-	<ObjID> :SE_WaitProps
+	<objid> :se_waitprops
 endscript
 
-script qi_set_join_text 
-	if NOT GotParam \{menu_index}
+script 0xda68b2d3 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize <descs>
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize <descs>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	if GotParam \{show}
-		buttonchar = qs("\L\m0")
+	if gotparam \{show}
+		buttonchar = qs(0xac29f74c)
 		switch <menu_index>
 			case 0
 			case 1
-			buttonchar = qs("\L\b4")
+			buttonchar = qs(0x9026221e)
 			case 2
 			case 3
 			default
-			buttonchar = qs("\L\b3")
+			buttonchar = qs(0xdf67b4d9)
 		endswitch
 		join_text = (<buttonchar> + qs(0x0b91bdc8))
-		<current_desc> :SE_SetProps join_text = <join_text>
+		<current_desc> :se_setprops join_text = <join_text>
 	else
-		<current_desc> :SE_SetProps join_text = qs("\L")
+		<current_desc> :se_setprops join_text = qs(0x03ac90f0)
 	endif
 endscript
 
-script qi_menu_element 
-	if NOT GotParam \{menu_index}
+script 0x29b4ea99 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'Cant find param: menu_index'}
+		0x93d8d5cf \{'Cant find param: menu_index'}
 	endif
-	if NOT GotParam \{element_index}
+	if NOT gotparam \{0xbbaeec67}
 		return
-		debug_ScriptAssert \{'Cant find param: element_index'}
+		0x93d8d5cf \{'Cant find param: element_index'}
 	endif
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index (menus): %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index (menus): %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	GetScreenElementChildren id = <current_menu>
-	if NOT GotParam \{children}
+	getscreenelementchildren id = <current_menu>
+	if NOT gotparam \{children}
 		return
-		debug_ScriptAssert 'Trying to manipulate child (%e) when no children exist!' e = <element_index>
+		0x93d8d5cf 'Trying to manipulate child (%e) when no children exist!' e = <0xbbaeec67>
 	endif
-	GetArraySize <children>
-	if (<element_index> < 0 || <element_index> >= <array_size>)
+	getarraysize <children>
+	if (<0xbbaeec67> < 0 || <0xbbaeec67> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <element_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <0xbbaeec67> s = <array_size>
 	endif
-	current_element = (<children> [<element_index>])
-	if GotParam \{disable}
-		<current_element> :SetProps rgba = $qi_disable_color
+	0x14b22443 = (<children> [<0xbbaeec67>])
+	if gotparam \{disable}
+		<0x14b22443> :setprops rgba = $0x743e7c6a
 	else
-		<current_element> :SetProps rgba = $qi_unfocus_color
-		if <current_menu> :GetSingleTag highlighted_index
-			if (<highlighted_index> = <element_index>)
-				<current_element> :SetProps rgba = $qi_focus_color
+		<0x14b22443> :setprops rgba = $0xd8de2537
+		if <current_menu> :getsingletag 0x4a3dc2a0
+			if (<0x4a3dc2a0> = <0xbbaeec67>)
+				<0x14b22443> :setprops rgba = $0x07522fb3
 			endif
 		endif
 	endif
 	return
 endscript
 
-script qi_focus_element 
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+script 0x931b6ce7 
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
-		debug_ScriptAssert 'Illegal menu_index (descs): %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index (descs): %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	<current_menu> :GetSingleTag highlight_container_id
-	<highlight_container_id> :SE_SetProps alpha = 0.0 parent = qi_main_menu
-	if GetScreenElementChildren id = <current_menu>
-		if <current_menu> :GetSingleTag highlighted_index
-			if (<highlighted_index> != -1)
-				GetArraySize <children>
-				if (<highlighted_index> < <array_size>)
-					(<children> [<highlighted_index>]) :SE_SetProps rgba = ($qi_unfocus_color)
+	<current_menu> :getsingletag 0x638b9bc5
+	<0x638b9bc5> :se_setprops alpha = 0.0 parent = 0x23fc9d2c
+	if getscreenelementchildren id = <current_menu>
+		if <current_menu> :getsingletag 0x4a3dc2a0
+			if (<0x4a3dc2a0> != -1)
+				getarraysize <children>
+				if (<0x4a3dc2a0> < <array_size>)
+					(<children> [<0x4a3dc2a0>]) :se_setprops rgba = ($0xd8de2537)
 				endif
 			endif
 		endif
-		if GotParam \{element_index}
-			<current_menu> :SetTags highlighted_index = <element_index>
-			if (<element_index> != -1)
-				(<children> [<element_index>]) :SE_SetProps rgba = ($qi_focus_color)
-				<highlight_container_id> :SE_SetProps parent = (<children> [<element_index>]) alpha = 1.0
+		if gotparam \{0xbbaeec67}
+			<current_menu> :settags 0x4a3dc2a0 = <0xbbaeec67>
+			if (<0xbbaeec67> != -1)
+				(<children> [<0xbbaeec67>]) :se_setprops rgba = ($0x07522fb3)
+				<0x638b9bc5> :se_setprops parent = (<children> [<0xbbaeec67>]) alpha = 1.0
 			endif
 		endif
 	endif
 	return
 endscript
 
-script qi_band_leader 
-	if NOT GotParam \{menu_index}
+script 0xf98ca72a 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize \{descs}
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize \{descs}
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
-	if GotParam \{hide}
-		(<descs> [<menu_index>]) :SE_SetProps leader_indicator_alpha = 0.0
+	if gotparam \{hide}
+		(<descs> [<menu_index>]) :se_setprops leader_indicator_alpha = 0.0
 	else
-		(<descs> [<menu_index>]) :SE_SetProps leader_indicator_alpha = 1.0
+		(<descs> [<menu_index>]) :se_setprops leader_indicator_alpha = 1.0
 	endif
 endscript
 
-script qi_set_instrument \{instrument = -1}
-	if NOT GotParam \{menu_index}
+script 0x7dc4c295 \{instrument = -1}
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'Must have param: menu_index'}
+		0x93d8d5cf \{'Must have param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize \{descs}
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize \{descs}
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index (%i) for array_size (%s)' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index (%i) for array_size (%s)' i = <menu_index> s = <array_size>
 	endif
 	switch <instrument>
 		case 3
@@ -647,132 +647,132 @@ script qi_set_instrument \{instrument = -1}
 	else
 		instrument_alpha = 0.0
 	endif
-	(<descs> [<menu_index>]) :SE_SetProps instrument_alpha = <instrument_alpha> instrument_texture = <instrument_checksum>
+	(<descs> [<menu_index>]) :se_setprops instrument_alpha = <instrument_alpha> instrument_texture = <instrument_checksum>
 	return
 endscript
 
-script qi_set_character_name 
-	if NOT GotParam \{menu_index}
+script 0x2e06a6ea 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	if NOT GotParam \{qi_character_name}
-		qi_character_name = qs("")
+	if NOT gotparam \{0x734dbcdd}
+		0x734dbcdd = qs(0x00000000)
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize \{descs}
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize \{descs}
 	if ((<menu_index> < 0) || (<menu_index> >= <array_size>))
 		return
-		debug_ScriptAssert 'illegal menu_index (%i) in array size (%s)' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'illegal menu_index (%i) in array size (%s)' i = <menu_index> s = <array_size>
 	endif
-	if ((($menu_in_select_character) [<menu_index>]) = true)
+	if ((($0x7e329c37) [<menu_index>]) = true)
 		name_offset = (0.0, 70.0)
 	else
 		name_offset = (0.0, 20.0)
 	endif
 	current_desc = (<descs> [<menu_index>])
-	<current_desc> :SE_GetProps
-	if (<name_text> != <qi_character_name>)
-		<current_desc> :Obj_KillSpawnedScript name = qi_character_name_scroll
-		<current_desc> :SE_SetProps name_text = <qi_character_name> name_dims = (0.0, 40.0) nameMenu_dims = (0.0, 40.0)
-		<current_desc> :SE_GetProps
+	<current_desc> :se_getprops
+	if (<name_text> != <0x734dbcdd>)
+		<current_desc> :obj_killspawnedscript name = 0xf7bd247f
+		<current_desc> :se_setprops name_text = <0x734dbcdd> name_dims = (0.0, 40.0) namemenu_dims = (0.0, 40.0)
+		<current_desc> :se_getprops
 		x = ((248 - (<name_dims> [0])) / 2)
-		<current_desc> :SE_SetProps name_pos = (<name_offset> + ((1.0, 0.0) * <x>))
+		<current_desc> :se_setprops name_pos = (<name_offset> + ((1.0, 0.0) * <x>))
 		if ((<name_dims> [0]) >= 248)
-			<current_desc> :SE_SetProps name_alpha = 1
-			<current_desc> :Obj_SpawnScriptNow qi_character_name_scroll
+			<current_desc> :se_setprops name_alpha = 1
+			<current_desc> :obj_spawnscriptnow 0xf7bd247f
 		else
-			<current_desc> :SE_SetProps name_alpha = 0
+			<current_desc> :se_setprops name_alpha = 0
 		endif
 	endif
 	return
 endscript
 
-script qi_character_name_scroll 
-	Wait \{2
+script 0xf7bd247f 
+	wait \{2
 		gameframes}
-	SE_GetProps
-	width = ((<nameMenu_dims> [0]) + 100.0)
+	se_getprops
+	width = ((<namemenu_dims> [0]) + 100.0)
 	pos = ((0.5, 0.0) * <width>)
 	time = (2.0 * (<width> / 500.0))
 	begin
-	SE_SetProps name_pos = {(-1.0 * <pos>) relative} time = <time>
-	Wait <time> seconds ignoreslomo
-	SE_SetProps name_pos = {<pos> relative}
+	se_setprops name_pos = {(-1.0 * <pos>) relative} time = <time>
+	wait <time> seconds ignoreslomo
+	se_setprops name_pos = {<pos> relative}
 	repeat
 endscript
 
-script qi_set_gamertag 
-	if NOT GotParam \{menu_index}
+script 0x944da186 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	if NOT GotParam \{qi_gamertag}
-		qi_gamertag = qs("")
+	if NOT gotparam \{0x04646ef1}
+		0x04646ef1 = qs(0x00000000)
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize \{descs}
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize \{descs}
 	if ((<menu_index> < 0) || (<menu_index> >= <array_size>))
 		return
-		debug_ScriptAssert 'illegal menu_index (%i) in array size (%s)' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'illegal menu_index (%i) in array size (%s)' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	<current_desc> :SE_GetProps
-	if (<gamertag_text> != <qi_gamertag>)
-		<current_desc> :Obj_KillSpawnedScript name = qi_gamertag_scroll
-		<current_desc> :SE_SetProps gamertag_text = <qi_gamertag> gamertag_dims = (0.0, 40.0) gamertagMenu_dims = (0.0, 40.0)
-		<current_desc> :SE_GetProps
+	<current_desc> :se_getprops
+	if (<gamertag_text> != <0x04646ef1>)
+		<current_desc> :obj_killspawnedscript name = 0x9a6f1fe3
+		<current_desc> :se_setprops gamertag_text = <0x04646ef1> gamertag_dims = (0.0, 40.0) gamertagmenu_dims = (0.0, 40.0)
+		<current_desc> :se_getprops
 		x = ((248 - (<gamertag_dims> [0])) / 2)
-		<current_desc> :SE_SetProps GamerTag_pos = ((0.0, -20.0) + ((1.0, 0.0) * <x>))
+		<current_desc> :se_setprops gamertag_pos = ((0.0, -20.0) + ((1.0, 0.0) * <x>))
 		if ((<gamertag_dims> [0]) >= 248)
-			<current_desc> :Obj_SpawnScriptNow qi_gamertag_scroll
+			<current_desc> :obj_spawnscriptnow 0x9a6f1fe3
 		endif
 	endif
 	return
 endscript
 
-script qi_gamertag_scroll 
-	Wait \{2
+script 0x9a6f1fe3 
+	wait \{2
 		gameframes}
-	SE_GetProps
-	width = ((<gamertagMenu_dims> [0]) + 100)
+	se_getprops
+	width = ((<gamertagmenu_dims> [0]) + 100)
 	pos = ((0.5, 0.0) * <width>)
 	time = (2.0 * (<width> / 500.0))
 	begin
-	SE_SetProps GamerTag_pos = {(-1.0 * <pos>) relative} time = <time>
-	Wait <time> seconds ignoreslomo
-	SE_SetProps GamerTag_pos = {<pos> relative}
+	se_setprops gamertag_pos = {(-1.0 * <pos>) relative} time = <time>
+	wait <time> seconds ignoreslomo
+	se_setprops gamertag_pos = {<pos> relative}
 	repeat
 endscript
 
-script qi_set_control_helper controller = ($primary_controller)
+script 0xf58f6324 controller = ($primary_controller)
 	if (<controller> < 0)
-		RemoveParameter \{controller}
+		removeparameter \{controller}
 	endif
 	clean_up_user_control_helpers
-	if GotParam \{select}
-		add_user_control_helper all_buttons text = qs("SELECT") button = green controller = <controller> z = 100000
+	if gotparam \{select}
+		add_user_control_helper all_buttons text = qs(0xc18d5e76) button = green controller = <controller> z = 100000
 	endif
-	if GotParam \{back}
-		add_user_control_helper all_buttons text = qs("BACK") button = red controller = <controller> z = 100000
+	if gotparam \{back}
+		add_user_control_helper all_buttons text = qs(0xaf4d5dd2) button = red controller = <controller> z = 100000
 	endif
-	if GotParam \{band_leader}
-		add_user_control_helper all_buttons text = qs("BAND LEADER") button = Blue controller = <controller> z = 100000
+	if gotparam \{band_leader}
+		add_user_control_helper all_buttons text = qs(0x6f9fb401) button = blue controller = <controller> z = 100000
 	endif
-	if GotParam \{continue}
-		add_user_control_helper all_buttons text = qs("CONTINUE") button = start controller = <controller> z = 100000
+	if gotparam \{continue}
+		add_user_control_helper all_buttons text = qs(0x182f0173) button = start controller = <controller> z = 100000
 	endif
 	return
 endscript
 
-script qi_ticker_display_message_helper \{delay = 2}
-	if NOT GotParam \{message}
+script 0x86c308c7 \{delay = 2}
+	if NOT gotparam \{message}
 		return
-		debug_ScriptAssert \{'Missing param: message'}
+		0x93d8d5cf \{'Missing param: message'}
 	endif
-	ResolveScreenElementId \{id = [
+	resolvescreenelementid \{id = [
 			{
-				id = qi_main_menu
+				id = 0x23fc9d2c
 			}
 			{
 				local_id = band_menu_container
@@ -784,592 +784,592 @@ script qi_ticker_display_message_helper \{delay = 2}
 				local_id = online_ticker_vert_text
 			}
 		]}
-	if NOT GotParam \{resolved_id}
+	if NOT gotparam \{resolved_id}
 		return
-		debug_ScriptAssert \{'Cant find ticker'}
+		0x93d8d5cf \{'Cant find ticker'}
 	endif
-	<resolved_id> :SE_GetProps
+	<resolved_id> :se_getprops
 	if (<text> != <message>)
-		qi_main_menu :SE_SetProps \{online_ticker_window_element_alpha = 0.0
+		0x23fc9d2c :se_setprops \{online_ticker_window_element_alpha = 0.0
 			time = 0.5}
-		qi_main_menu :SE_WaitProps
-		<resolved_id> :SE_SetProps text = <message> alpha = 1.0
-		<resolved_id> :SE_WaitProps
+		0x23fc9d2c :se_waitprops
+		<resolved_id> :se_setprops text = <message> alpha = 1.0
+		<resolved_id> :se_waitprops
 	endif
-	qi_main_menu :SE_SetProps \{online_ticker_window_element_alpha = 1.0
+	0x23fc9d2c :se_setprops \{online_ticker_window_element_alpha = 1.0
 		time = 0.5}
-	qi_main_menu :SE_WaitProps
-	Wait <delay> second
-	qi_main_menu :SE_SetProps \{online_ticker_window_element_alpha = 0.0
+	0x23fc9d2c :se_waitprops
+	wait <delay> second
+	0x23fc9d2c :se_setprops \{online_ticker_window_element_alpha = 0.0
 		time = 0.5}
-	qi_main_menu :SE_WaitProps
+	0x23fc9d2c :se_waitprops
 	return
 endscript
 
-script qi_get_ticker_message \{index = 0}
-	ticker_message = qs("")
+script 0x8bb957cd \{index = 0}
+	0x3694ef58 = qs(0x00000000)
 	switch (<message_id>)
-		case mic_needed
-		ticker_message = qs(0xd35f811b)
-		case only_band_leader
-		ticker_message = qs("Only the band leader can select to continue.")
-		case start_to_proceed
+		case 0x310ad9c9
+		0x3694ef58 = qs(0xd35f811b)
+		case 0xb925c87e
+		0x3694ef58 = qs(0xce4db331)
+		case 0x1afe4572
 		user_control_helper_get_buttonchar button = start controller = <index>
-		FormatText TextName = ticker_message qs("Press %b to proceed.") b = <buttonchar>
+		formattext textname = 0x3694ef58 qs(0x72f9ae62) b = <buttonchar>
 		case more_players_needed
-		ticker_message = qs("More players are needed for band play.")
-		case everyone_needs_ready
-		ticker_message = qs(0xc8cc661c)
-		case player1_controls_vocalist
-		FormatText \{TextName = ticker_message
+		0x3694ef58 = qs(0xf5f5bb37)
+		case 0x15074ef0
+		0x3694ef58 = qs(0xc8cc661c)
+		case 0x6d57cd9e
+		formattext \{textname = 0x3694ef58
 			qs(0x3220c43e)}
-		case player2_controls_vocalist
-		FormatText \{TextName = ticker_message
+		case 0xce014b37
+		formattext \{textname = 0x3694ef58
 			qs(0x149ff047)}
-		case player3_controls_vocalist
-		FormatText \{TextName = ticker_message
+		case 0x19e3cb6f
+		formattext \{textname = 0x3694ef58
 			qs(0x090ae390)}
-		case player4_controls_vocalist
-		FormatText \{TextName = ticker_message
+		case 0x53dd4024
+		formattext \{textname = 0x3694ef58
 			qs(0x59e198b5)}
 		case has_guitar
-		ticker_message = qs(0x2edd6d41)
-		case has_drum
-		ticker_message = qs(0x5b210181)
-		case has_vocals
-		ticker_message = qs(0xd679f884)
-		case illegal_setup
-		ticker_message = qs("The current instrument setup is not supported for this game mode.")
+		0x3694ef58 = qs(0x2edd6d41)
+		case 0x019db780
+		0x3694ef58 = qs(0x5b210181)
+		case 0xc4c4ba50
+		0x3694ef58 = qs(0xd679f884)
+		case 0x4f07f25f
+		0x3694ef58 = qs(0x2d14c74a)
 		default
 	endswitch
-	return ticker_message = <ticker_message>
+	return 0x3694ef58 = <0x3694ef58>
 endscript
 
-script qi_ticker_display_message 
-	if GotParam \{message_id}
-		if GotParam \{index}
-			qi_get_ticker_message message_id = <message_id> index = <index>
-			qi_main_menu :Obj_KillSpawnedScript \{name = qi_ticker_display_message_helper}
-			if (ticker_message != qs(""))
-				qi_main_menu :Obj_SpawnScriptNow qi_ticker_display_message_helper params = {message = <ticker_message> delay = <delay>}
+script 0x95ee358a 
+	if gotparam \{message_id}
+		if gotparam \{index}
+			0x8bb957cd message_id = <message_id> index = <index>
+			0x23fc9d2c :obj_killspawnedscript \{name = 0x86c308c7}
+			if (0x3694ef58 != qs(0x00000000))
+				0x23fc9d2c :obj_spawnscriptnow 0x86c308c7 params = {message = <0x3694ef58> delay = <delay>}
 			endif
 		endif
 	endif
 	return
 endscript
 
-script qi_select_character_menu 
-	spawnscriptnow qi_update_character_icon params = {menu_index = <menu_index>}
+script 0xccee9e29 
+	spawnscriptnow 0x948b7327 params = {menu_index = <menu_index>}
 endscript
 
-script qi_update_character_icon 
-	if NOT GotParam \{menu_index}
+script 0x948b7327 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_create_menu menu_index = <menu_index>
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x098ed7d6 menu_index = <menu_index>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	<current_menu> :GetSingleTag current_rocker_id
-	if GotParam \{rocker_id}
-		current_rocker_id = <rocker_id>
+	<current_menu> :getsingletag 0xc4c72650
+	if gotparam \{rocker_id}
+		0xc4c72650 = <rocker_id>
 	endif
 	get_musician_profile_size \{savegame = 0}
-	get_musician_profile_struct_by_id id = <current_rocker_id> savegame = 0
+	get_musician_profile_struct_by_id id = <0xc4c72650> savegame = 0
 	character_id = (<profile_struct>.name)
 	get_car_photo_icon profile_struct = <profile_struct> character_id = <character_id> savegame = 0
-	qi_scroll_arrows menu_index = <menu_index> show_arrows
+	0x7a32bb4f menu_index = <menu_index> 0xaa2f352a
 	return
 endscript
 
-script qi_set_special_rocker 
-	if NOT GotParam \{rocker_id}
+script 0x41749df7 
+	if NOT gotparam \{rocker_id}
 		return
-		debug_ScriptAssert \{'need param: rocker_id'}
+		0x93d8d5cf \{'need param: rocker_id'}
 	endif
-	if NOT GotParam \{menu_index}
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
 	get_musician_profile_struct_by_id id = <rocker_id> savegame = 0
-	if NOT GotParam \{profile_struct}
+	if NOT gotparam \{profile_struct}
 		return
-		debug_ScriptAssert 'unable to find rocker with rocker id: %r' r = <rocker_id>
+		0x93d8d5cf 'unable to find rocker with rocker id: %r' r = <rocker_id>
 	endif
-	qi_set_rocker_id_helper rocker_id = <rocker_id> menu_index = <menu_index>
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x3abc240d rocker_id = <rocker_id> menu_index = <menu_index>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	<current_menu> :Obj_KillSpawnedScript name = qi_spawn_rocker_delay
-	<current_menu> :Obj_SpawnScriptNow qi_spawn_rocker_delay params = {delay = 0 appearance = (<profile_struct>.appearance) player = (<menu_index> + 1)}
+	<current_menu> :obj_killspawnedscript name = 0x623496d8
+	<current_menu> :obj_spawnscriptnow 0x623496d8 params = {delay = 0 appearance = (<profile_struct>.appearance) player = (<menu_index> + 1)}
 endscript
 
-script qi_spawn_rocker_delay \{delay = 1}
-	if NOT GotParam \{appearance}
+script 0x623496d8 \{delay = 1}
+	if NOT gotparam \{appearance}
 		return
-		debug_ScriptAssert \{'need param: appearance'}
+		0x93d8d5cf \{'need param: appearance'}
 	endif
-	if NOT GotParam \{player}
+	if NOT gotparam \{player}
 		return
-		debug_ScriptAssert \{'need param: player'}
+		0x93d8d5cf \{'need param: player'}
 	endif
-	Wait <delay> second
+	wait <delay> second
 	cas_queue_wait
 	cas_queue_add_request appearance = <appearance> player = <player> instrument = guitar
 endscript
 
-script qi_set_rocker_id_helper 
-	if NOT GotParam \{rocker_id}
+script 0x3abc240d 
+	if NOT gotparam \{rocker_id}
 		return
-		debug_ScriptAssert \{'need param: rocker_id'}
+		0x93d8d5cf \{'need param: rocker_id'}
 	endif
-	if NOT GotParam \{menu_index}
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	<current_menu> :SetTags {current_rocker_id = <rocker_id>}
+	<current_menu> :settags {0xc4c72650 = <rocker_id>}
 endscript
 
-script qi_get_rocker_id 
-	if NOT GotParam \{menu_index}
+script 0xe41bfcc2 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	<current_menu> :GetSingleTag current_rocker_id
-	if NOT GotParam \{current_rocker_id}
+	<current_menu> :getsingletag 0xc4c72650
+	if NOT gotparam \{0xc4c72650}
 		return
-		debug_ScriptAssert \{'cant find param: current_rocker_id  in current menu'}
+		0x93d8d5cf \{'cant find param: current_rocker_id  in current menu'}
 	endif
-	return rocker_id = <current_rocker_id>
+	return rocker_id = <0xc4c72650>
 endscript
 
-script qi_set_rocker_id \{rocker_id = none
+script 0x90a5308e \{rocker_id = none
 		delay = 0}
-	if NOT GotParam \{menu_index}
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{menus}
-	GetArraySize <menus>
+	0x23fc9d2c :getsingletag \{menus}
+	getarraysize <menus>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_menu = (<menus> [<menu_index>])
-	<current_menu> :GetSingleTag current_rocker_id
-	if (<current_rocker_id> != <rocker_id>)
-		<current_menu> :Obj_KillSpawnedScript name = qi_spawn_rocker_delay
+	<current_menu> :getsingletag 0xc4c72650
+	if (<0xc4c72650> != <rocker_id>)
+		<current_menu> :obj_killspawnedscript name = 0x623496d8
 		if (<rocker_id> = none)
 			cas_queue_kill_player player = (<menu_index> + 1)
 		endif
-		qi_set_character_name menu_index = <menu_index>
-		qi_set_rocker_id_helper rocker_id = none menu_index = <menu_index>
+		0x2e06a6ea menu_index = <menu_index>
+		0x3abc240d rocker_id = none menu_index = <menu_index>
 	endif
 	if (<rocker_id> != none)
 		get_musician_profile_struct_by_id id = <rocker_id> savegame = 0
-		if NOT GotParam \{profile_struct}
+		if NOT gotparam \{profile_struct}
 			return
-			debug_ScriptAssert 'rocker: %t  not found' t = <rocker_id>
+			0x93d8d5cf 'rocker: %t  not found' t = <rocker_id>
 		endif
 		character_full_name = (<profile_struct>.fullname)
-		qi_set_character_name menu_index = <menu_index> qi_character_name = <character_full_name>
-		qi_set_rocker_id_helper rocker_id = <rocker_id> menu_index = <menu_index>
-		<current_menu> :Obj_KillSpawnedScript name = qi_spawn_rocker_delay
-		<current_menu> :Obj_SpawnScriptNow qi_spawn_rocker_delay params = {delay = <delay> appearance = (<profile_struct>.appearance) player = (<menu_index> + 1)}
+		0x2e06a6ea menu_index = <menu_index> 0x734dbcdd = <character_full_name>
+		0x3abc240d rocker_id = <rocker_id> menu_index = <menu_index>
+		<current_menu> :obj_killspawnedscript name = 0x623496d8
+		<current_menu> :obj_spawnscriptnow 0x623496d8 params = {delay = <delay> appearance = (<profile_struct>.appearance) player = (<menu_index> + 1)}
 	endif
 endscript
 
-script qi_check_character_taken 
-	is_taken = 0
+script 0xbd3bf680 
+	0x0cebca87 = 0
 	get_musician_profile_struct_by_id id = <rocker_id> savegame = 0
-	if StructureContains Structure = <profile_struct> limited
+	if structurecontains structure = <profile_struct> 0x275fa9d8
 		i = 0
 		begin
-		qi_get_rocker_id menu_index = <i>
+		0xe41bfcc2 menu_index = <i>
 		if NOT (<i> = <menu_index>)
-			debug_Printf qs(0x2f9404d0) t = (<profile_struct>.name) y = <rocker_id>
+			0x8dbdaee4 qs(0x2f9404d0) t = (<profile_struct>.name) y = <rocker_id>
 			if ((<profile_struct>.name) = <rocker_id>)
-				is_taken = 1
+				0x0cebca87 = 1
 			endif
 		endif
 		i = (<i> + 1)
 		repeat 4
-		debug_Printf qs(0x74be8d51) r = <is_taken>
+		0x8dbdaee4 qs(0x74be8d51) r = <0x0cebca87>
 	endif
-	return is_taken = <is_taken>
+	return 0x0cebca87 = <0x0cebca87>
 endscript
 
-script qi_get_valid_rocker_list 
-	if NOT GotParam \{part}
-		debug_ScriptAssert \{'need param: part'}
+script 0x7b218542 
+	if NOT gotparam \{part}
+		0x93d8d5cf \{'need param: part'}
 	endif
 	get_musician_profile_size \{savegame = 0}
-	valid_rockers = []
+	0x892113ef = []
 	range = 0
 	i = 0
 	begin
 	get_musician_profile_struct_by_index index = <i> savegame = 0
-	if display_character_logic profile_struct = <profile_struct> savegame = 0 part = <part> bandplay only_purchased
+	if display_character_logic profile_struct = <profile_struct> savegame = 0 part = <part> bandplay 0x2f8e5ba4
 		range = (<range> + 1)
-		AddArrayElement array = <valid_rockers> element = (<profile_struct>.name)
-		valid_rockers = <array>
+		addarrayelement array = <0x892113ef> element = (<profile_struct>.name)
+		0x892113ef = <array>
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	debug_Printf '%i unlocked, valid rockers to choose from' i = <range>
-	return valid_rocker_list = <valid_rockers>
+	0x8dbdaee4 '%i unlocked, valid rockers to choose from' i = <range>
+	return 0xe93a8721 = <0x892113ef>
 endscript
 
-script qi_get_next_rocker 
-	if NOT GotParam \{menu_index}
-		return \{next_rocker_id = none}
-		debug_ScriptAssert \{'need param: menu_index'}
+script 0x1a55bc3f 
+	if NOT gotparam \{menu_index}
+		return \{0x586b42cf = none}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	if NOT GotParam \{current_rocker_id}
-		return \{next_rocker_id = none}
-		debug_ScriptAssert \{'need param: current_rocker_id'}
+	if NOT gotparam \{0xc4c72650}
+		return \{0x586b42cf = none}
+		0x93d8d5cf \{'need param: current_rocker_id'}
 	endif
-	if NOT GotParam \{part}
-		return \{next_rocker_id = none}
-		debug_ScriptAssert \{'need param: part'}
+	if NOT gotparam \{part}
+		return \{0x586b42cf = none}
+		0x93d8d5cf \{'need param: part'}
 	endif
-	qi_main_menu :GetSingleTag \{valid_rocker_list}
-	qi_main_menu :GetSingleTag \{valid_rocker_list_size}
+	0x23fc9d2c :getsingletag \{0xe93a8721}
+	0x23fc9d2c :getsingletag \{0x46a803b9}
 	i = 0
 	begin
-	if (<current_rocker_id> = (<valid_rocker_list> [<i>]))
+	if (<0xc4c72650> = (<0xe93a8721> [<i>]))
 		break
 	endif
 	i = (<i> + 1)
-	repeat <valid_rocker_list_size>
-	if (<i> < 0 || <i> >= <valid_rocker_list_size>)
-		return \{next_rocker_id = none}
-		debug_ScriptAssert 'profile not found in the array of selectable characters.  index: %i  valid_rocker_list_size: %s' i = <i> s = <valid_rocker_list_size>
+	repeat <0x46a803b9>
+	if (<i> < 0 || <i> >= <0x46a803b9>)
+		return \{0x586b42cf = none}
+		0x93d8d5cf 'profile not found in the array of selectable characters.  index: %i  valid_rocker_list_size: %s' i = <i> s = <0x46a803b9>
 	endif
-	next_rocker_index = <i>
-	if GotParam \{Increment}
-		next_rocker_index = (<next_rocker_index> + 1)
-		Mod a = (<valid_rocker_list_size> + <next_rocker_index>) b = <valid_rocker_list_size>
-		next_rocker_index = <Mod>
-		qi_scroll_arrows menu_index = <menu_index> down
-	elseif GotParam \{decrement}
-		next_rocker_index = (<next_rocker_index> - 1)
-		Mod a = (<valid_rocker_list_size> + <next_rocker_index>) b = <valid_rocker_list_size>
-		next_rocker_index = <Mod>
-		qi_scroll_arrows menu_index = <menu_index> up
+	0xe4eba106 = <i>
+	if gotparam \{increment}
+		0xe4eba106 = (<0xe4eba106> + 1)
+		mod a = (<0x46a803b9> + <0xe4eba106>) b = <0x46a803b9>
+		0xe4eba106 = <mod>
+		0x7a32bb4f menu_index = <menu_index> down
+	elseif gotparam \{0x065242b0}
+		0xe4eba106 = (<0xe4eba106> - 1)
+		mod a = (<0x46a803b9> + <0xe4eba106>) b = <0x46a803b9>
+		0xe4eba106 = <mod>
+		0x7a32bb4f menu_index = <menu_index> up
 	else
-		return \{next_rocker_id = none}
-		debug_ScriptAssert \{'unhandled increment/decrement'}
+		return \{0x586b42cf = none}
+		0x93d8d5cf \{'unhandled increment/decrement'}
 	endif
-	if (<next_rocker_index> < 0 || <next_rocker_index> >= <valid_rocker_list_size>)
-		return \{next_rocker_id = none}
-		debug_ScriptAssert 'Illegal next_rocker_index: %i  valid_rocker_list_size: %s' i = <next_rocker_index> s = <valid_rocker_list_size>
+	if (<0xe4eba106> < 0 || <0xe4eba106> >= <0x46a803b9>)
+		return \{0x586b42cf = none}
+		0x93d8d5cf 'Illegal next_rocker_index: %i  valid_rocker_list_size: %s' i = <0xe4eba106> s = <0x46a803b9>
 	endif
-	get_musician_profile_struct_by_id id = (<valid_rocker_list> [<next_rocker_index>]) savegame = 0
-	next_rocker = (<profile_struct>.name)
-	qi_update_character_icon menu_index = <menu_index> rocker_id = <next_rocker>
-	qi_check_character_taken rocker_id = <next_rocker> menu_index = <menu_index>
-	if (<is_taken> = 1)
-		if GotParam \{Increment}
-			qi_get_next_rocker current_rocker_id = <next_rocker> menu_index = <menu_index> part = <part> Increment
+	get_musician_profile_struct_by_id id = (<0xe93a8721> [<0xe4eba106>]) savegame = 0
+	0x81f0e468 = (<profile_struct>.name)
+	0x948b7327 menu_index = <menu_index> rocker_id = <0x81f0e468>
+	0xbd3bf680 rocker_id = <0x81f0e468> menu_index = <menu_index>
+	if (<0x0cebca87> = 1)
+		if gotparam \{increment}
+			0x1a55bc3f 0xc4c72650 = <0x81f0e468> menu_index = <menu_index> part = <part> increment
 		else
-			qi_get_next_rocker current_rocker_id = <next_rocker> menu_index = <menu_index> part = <part> decrement
+			0x1a55bc3f 0xc4c72650 = <0x81f0e468> menu_index = <menu_index> part = <part> 0x065242b0
 		endif
-		next_rocker = <next_rocker_id>
+		0x81f0e468 = <0x586b42cf>
 	endif
-	return next_rocker_id = <next_rocker>
+	return 0x586b42cf = <0x81f0e468>
 endscript
 
-script qi_get_random_rocker_id 
-	if NOT GotParam \{menu_index}
-		return \{random_rocker_id = none}
-		debug_ScriptAssert \{'need param: menu_index'}
+script 0x7f49a758 
+	if NOT gotparam \{menu_index}
+		return \{0xb6c55f94 = none}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	if NOT GotParam \{exclude_id}
-		return \{random_rocker_id = none}
-		debug_ScriptAssert \{'need param: exclude_id'}
+	if NOT gotparam \{0xd017ee55}
+		return \{0xb6c55f94 = none}
+		0x93d8d5cf \{'need param: exclude_id'}
 	endif
-	if NOT GotParam \{part}
-		return \{random_rocker_id = none}
-		debug_ScriptAssert \{'need param: part'}
+	if NOT gotparam \{part}
+		return \{0xb6c55f94 = none}
+		0x93d8d5cf \{'need param: part'}
 	endif
-	qi_main_menu :GetSingleTag \{valid_rocker_list}
-	qi_main_menu :GetSingleTag \{valid_rocker_list_size}
-	excluded_list_pos = -1
+	0x23fc9d2c :getsingletag \{0xe93a8721}
+	0x23fc9d2c :getsingletag \{0x46a803b9}
+	0xc4d685d7 = -1
 	i = 0
 	begin
-	rocker_iter = (<valid_rocker_list> [<i>])
-	if (<rocker_iter> = <exclude_id>)
-		excluded_list_pos = <i>
+	0x6cc59b35 = (<0xe93a8721> [<i>])
+	if (<0x6cc59b35> = <0xd017ee55>)
+		0xc4d685d7 = <i>
 	endif
 	i = (<i> + 1)
-	repeat <valid_rocker_list_size>
-	if (<valid_rocker_list_size> < 2)
-		return \{random_rocker_id = none}
-		debug_ScriptAssert \{'rocker list is hella tiny (handle it)'}
+	repeat <0x46a803b9>
+	if (<0x46a803b9> < 2)
+		return \{0xb6c55f94 = none}
+		0x93d8d5cf \{'rocker list is hella tiny (handle it)'}
 	endif
-	range = (<valid_rocker_list_size> - 1)
-	GetRandomValue name = rocker_index a = 0 b = <range> Integer
-	rocker_id = (<valid_rocker_list> [<rocker_index>])
-	if (<exclude_id> = <rocker_id>)
-		rocker_index = (<rocker_index> + 1)
-		if (<rocker_index> > <range>)
-			rocker_index = 0
+	range = (<0x46a803b9> - 1)
+	getrandomvalue name = 0x33e4a1ec a = 0 b = <range> integer
+	rocker_id = (<0xe93a8721> [<0x33e4a1ec>])
+	if (<0xd017ee55> = <rocker_id>)
+		0x33e4a1ec = (<0x33e4a1ec> + 1)
+		if (<0x33e4a1ec> > <range>)
+			0x33e4a1ec = 0
 		endif
-		rocker_id = (<valid_rocker_list> [<rocker_index>])
+		rocker_id = (<0xe93a8721> [<0x33e4a1ec>])
 	endif
-	qi_check_character_taken rocker_id = <rocker_id> menu_index = <menu_index>
-	if (<is_taken> = 1)
-		qi_get_random_rocker_id exclude_id = <exclude_id> menu_index = <menu_index> part = <part>
-		rocker_id = <random_rocker_id>
+	0xbd3bf680 rocker_id = <rocker_id> menu_index = <menu_index>
+	if (<0x0cebca87> = 1)
+		0x7f49a758 0xd017ee55 = <0xd017ee55> menu_index = <menu_index> part = <part>
+		rocker_id = <0xb6c55f94>
 	endif
-	return random_rocker_id = <rocker_id>
+	return 0xb6c55f94 = <rocker_id>
 endscript
 
-script qi_scroll_arrows 
-	if NOT GotParam \{menu_index}
+script 0x7a32bb4f 
+	if NOT gotparam \{menu_index}
 		return
-		debug_ScriptAssert \{'need param: menu_index'}
+		0x93d8d5cf \{'need param: menu_index'}
 	endif
-	qi_main_menu :GetSingleTag \{descs}
-	GetArraySize <descs>
+	0x23fc9d2c :getsingletag \{descs}
+	getarraysize <descs>
 	if (<menu_index> < 0 || <menu_index> >= <array_size>)
 		return
-		debug_ScriptAssert 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
+		0x93d8d5cf 'Illegal menu_index: %i  array_size: %s' i = <menu_index> s = <array_size>
 	endif
 	current_desc = (<descs> [<menu_index>])
-	<current_desc> :Obj_KillSpawnedScript name = qi_scroll_arrows_helper
-	if GotParam \{up}
-		<current_desc> :Obj_SpawnScriptNow qi_animate_up_arrow
-	elseif GotParam \{down}
-		<current_desc> :Obj_SpawnScriptNow qi_animate_down_arrow
+	<current_desc> :obj_killspawnedscript name = 0xfe450e75
+	if gotparam \{up}
+		<current_desc> :obj_spawnscriptnow 0xc68a2f8d
+	elseif gotparam \{down}
+		<current_desc> :obj_spawnscriptnow 0x56fc564d
 	endif
-	<current_desc> :Obj_SpawnScriptNow qi_scroll_arrows_helper params = {<...>}
+	<current_desc> :obj_spawnscriptnow 0xfe450e75 params = {<...>}
 endscript
 
-script qi_scroll_arrows_helper 
-	Obj_GetID
-	<current_desc> :SE_GetProps
-	if GotParam \{show_arrows}
-		<ObjID> :SE_SetProps scroll_arrow_alpha = 1.0
-		SetArrayElement ArrayName = menu_in_select_character GlobalArray index = <menu_index> newvalue = true
-		qi_set_character_name menu_index = <menu_index>
-		qi_set_character_name menu_index = <menu_index> qi_character_name = <name_text>
-	elseif GotParam \{hide_arrows}
-		<ObjID> :SE_SetProps scroll_arrow_alpha = 0.0
-		SetArrayElement ArrayName = menu_in_select_character GlobalArray index = <menu_index> newvalue = false
-		qi_set_character_name menu_index = <menu_index>
-		qi_set_character_name menu_index = <menu_index> qi_character_name = <name_text>
+script 0xfe450e75 
+	obj_getid
+	<current_desc> :se_getprops
+	if gotparam \{0xaa2f352a}
+		<objid> :se_setprops scroll_arrow_alpha = 1.0
+		setarrayelement arrayname = 0x7e329c37 globalarray index = <menu_index> newvalue = true
+		0x2e06a6ea menu_index = <menu_index>
+		0x2e06a6ea menu_index = <menu_index> 0x734dbcdd = <name_text>
+	elseif gotparam \{0x74f1b510}
+		<objid> :se_setprops scroll_arrow_alpha = 0.0
+		setarrayelement arrayname = 0x7e329c37 globalarray index = <menu_index> newvalue = false
+		0x2e06a6ea menu_index = <menu_index>
+		0x2e06a6ea menu_index = <menu_index> 0x734dbcdd = <name_text>
 	endif
 	return
 endscript
 
-script qi_animate_up_arrow 
-	SetSpawnInstanceLimits \{max = 1
+script 0xc68a2f8d 
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	if Desc_ResolveAlias \{name = alias_name_arrow_up}
-		<resolved_id> :SE_SetProps scale = 1.2 time = 0.04 relative_scale
-		<resolved_id> :SE_WaitProps
-		<resolved_id> :SE_SetProps scale = 1.0 time = 0.04 relative_scale
-		<resolved_id> :SE_WaitProps
+	if desc_resolvealias \{name = alias_name_arrow_up}
+		<resolved_id> :se_setprops scale = 1.2 time = 0.04 relative_scale
+		<resolved_id> :se_waitprops
+		<resolved_id> :se_setprops scale = 1.0 time = 0.04 relative_scale
+		<resolved_id> :se_waitprops
 	endif
 endscript
 
-script qi_animate_down_arrow 
-	SetSpawnInstanceLimits \{max = 1
+script 0x56fc564d 
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	if Desc_ResolveAlias \{name = alias_name_arrow_down}
-		<resolved_id> :SE_SetProps scale = 1.2 time = 0.04 relative_scale
-		<resolved_id> :SE_WaitProps
-		<resolved_id> :SE_SetProps scale = 1.0 time = 0.04 relative_scale
-		<resolved_id> :SE_WaitProps
+	if desc_resolvealias \{name = 0x3c22e067}
+		<resolved_id> :se_setprops scale = 1.2 time = 0.04 relative_scale
+		<resolved_id> :se_waitprops
+		<resolved_id> :se_setprops scale = 1.0 time = 0.04 relative_scale
+		<resolved_id> :se_waitprops
 	endif
 endscript
 
-script qi_create_rocker_menu 
-	qi_rocker_menu = {
+script 0x7fc24d06 
+	0x8906069e = {
 		menu_name = 'rocker'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
 				text = qs(0x855fd6b0)
 			}
 			{
-				text = qs("SELECT ROCKER")
+				text = qs(0xebd11692)
 			}
 			{
-				text = qs("READY")
+				text = qs(0x7be2fdcb)
 			}
 		]
 	}
-	return menu = <qi_rocker_menu>
+	return menu = <0x8906069e>
 endscript
 
-script qi_create_instrument_menu 
-	qi_instrument_menu = {
+script 0x68040a43 
+	0x9777e44a = {
 		menu_name = 'instrument'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
-				text = qs("GUITAR")
+				text = qs(0x9504b94a)
 			}
 			{
-				text = qs("BASS")
+				text = qs(0x7d4f9214)
 			}
 			{
-				text = qs("DRUMS")
+				text = qs(0x388cd3db)
 			}
 			{
-				text = qs("VOCALS")
+				text = qs(0x1b9f6f84)
 			}
 		]
 	}
-	return menu = <qi_instrument_menu>
+	return menu = <0x9777e44a>
 endscript
 
-script qi_create_handedness_menu 
-	qi_handedness_menu = {
+script 0x157884e8 
+	0xea0b6ae1 = {
 		menu_name = 'handedness'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
-				text = qs("STANDARD")
+				text = qs(0x7b0518c0)
 			}
 			{
-				text = qs("LEFTY FLIP")
+				text = qs(0x2e9b1b43)
 			}
 		]
 	}
-	return menu = <qi_handedness_menu>
+	return menu = <0xea0b6ae1>
 endscript
 
-script qi_create_vocaltext_menu 
-	qi_vocaltext_menu = {
+script 0x35bc6233 
+	0x49381bea = {
 		menu_name = 'vocaltext'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
-				text = qs("STATIC")
+				text = qs(0x305014bd)
 			}
 			{
-				text = qs("SCROLLING")
+				text = qs(0x737839f5)
 			}
 		]
 	}
-	return menu = <qi_vocaltext_menu>
+	return menu = <0x49381bea>
 endscript
 
-script qi_create_difficulty_menu 
-	qi_difficulty_menu = {
+script 0x68cc2d19 
+	0x97bfc310 = {
 		menu_name = 'difficulty'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
-				text = qs("BEGINNER")
+				text = qs(0x74d6a0a0)
 			}
 			{
-				text = qs("EASY")
+				text = qs(0x8d657387)
 			}
 			{
-				text = qs("MEDIUM")
+				text = qs(0x6ef11a01)
 			}
 			{
-				text = qs("HARD")
+				text = qs(0x51b06d2f)
 			}
 			{
-				text = qs("EXPERT")
+				text = qs(0x334908ac)
 			}
 		]
 	}
-	return menu = <qi_difficulty_menu>
+	return menu = <0x97bfc310>
 endscript
 
-script qi_create_difficulty_plus_menu 
-	qi_difficulty_plus_menu = {
+script 0x1d7b242a 
+	0xe3585b2b = {
 		menu_name = 'difficulty_plus'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
-				text = qs("BEGINNER")
+				text = qs(0x74d6a0a0)
 			}
 			{
-				text = qs("EASY")
+				text = qs(0x8d657387)
 			}
 			{
-				text = qs("MEDIUM")
+				text = qs(0x6ef11a01)
 			}
 			{
-				text = qs("HARD")
+				text = qs(0x51b06d2f)
 			}
 			{
-				text = qs("EXPERT")
+				text = qs(0x334908ac)
 			}
 			{
-				text = qs("EXPERT+")
+				text = qs(0x7a19b5f7)
 			}
 		]
 	}
-	return menu = <qi_difficulty_plus_menu>
+	return menu = <0xe3585b2b>
 endscript
 
-script qi_create_add_vocalist_menu 
-	if NOT GotParam \{controller}
-		debug_ScriptAssert \{'need param: controller'}
+script 0xd2893c9d 
+	if NOT gotparam \{controller}
+		0x93d8d5cf \{'need param: controller'}
 	endif
-	user_control_helper_get_buttonchar button = Yellow controller = <controller>
-	qi_add_vocalist_menu = {
+	user_control_helper_get_buttonchar button = yellow controller = <controller>
+	0x44f9b7d8 = {
 		menu_name = 'add_vocalist'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
-				text = qs("")
+				text = qs(0x00000000)
 			}
 			{
-				text = qs("")
+				text = qs(0x00000000)
 			}
 			{
-				text = qs("")
+				text = qs(0x00000000)
 			}
 			{
-				text = qs("")
+				text = qs(0x00000000)
 			}
 			{
 				text = (<buttonchar> + qs(0xcc207794))
 			}
 			{
-				text = qs("")
+				text = qs(0x00000000)
 			}
 		]
 	}
-	menu = <qi_add_vocalist_menu>
+	menu = <0x44f9b7d8>
 endscript
 
-script qi_create_disconnect_menu 
+script 0x6b31782a 
 	controller_text = qs(0x8bcc0ba3)
-	if GotParam \{guitar}
-		controller_text = qs("GUITAR")
-	elseif GotParam \{drum}
-		controller_text = qs("DRUMS")
+	if gotparam \{guitar}
+		controller_text = qs(0x9504b94a)
+	elseif gotparam \{drum}
+		controller_text = qs(0x388cd3db)
 	endif
-	qi_disconnect_menu = {
+	0x94429623 = {
 		menu_name = 'disconnect'
-		menu_elements = [
+		0x97e4bd34 = [
 			{
 				text = qs(0xcd188afe)
 			}
@@ -1381,176 +1381,176 @@ script qi_create_disconnect_menu
 			}
 		]
 	}
-	return menu = <qi_disconnect_menu>
+	return menu = <0x94429623>
 endscript
 
-script qi_initialize_object 
-	if NOT GotParam \{mode}
-		debug_ScriptAssert \{'need param: mode'}
+script 0x3dd7e2c1 
+	if NOT gotparam \{mode}
+		0x93d8d5cf \{'need param: mode'}
 	endif
-	GameMode_GetType
+	gamemode_gettype
 	switch <type>
 		case pro_faceoff
 		if (<mode> = character_hub)
-			qi_path_headtohead_a \{direction = enter}
+			0x78e63fc5 \{direction = enter}
 		elseif (<mode> = band_difficulty)
-			qi_path_headtohead_b \{direction = enter}
+			0xe1ef6e7f \{direction = enter}
 		else
-			debug_ScriptAssert \{'illegal mode'}
+			0x93d8d5cf \{'illegal mode'}
 		endif
 		case quickplay
 		if (<mode> = band_mode)
-			qi_path_quickplay_a \{direction = enter}
+			0x54ecda2b \{direction = enter}
 		elseif (<mode> = band_difficulty)
-			qi_path_quickplay_b \{direction = enter}
+			0xcde58b91 \{direction = enter}
 		else
-			debug_ScriptAssert \{'illegal mode'}
+			0x93d8d5cf \{'illegal mode'}
 		endif
 		case career
-		if qi_is_career_intro_beaten
+		if 0x549823c6
 			if (<mode> = band_mode)
-				qi_path_career_post_intro_a \{direction = enter}
+				0x49c4e0fb \{direction = enter}
 			elseif (<mode> = band_difficulty)
-				qi_path_career_post_intro_b \{direction = enter}
+				0xd0cdb141 \{direction = enter}
 			else
-				debug_ScriptAssert \{'illegal mode'}
+				0x93d8d5cf \{'illegal mode'}
 			endif
 		else
 			if (<mode> = band_mode)
-				qi_path_career_pre_intro_a \{direction = enter}
+				0xd7659270 \{direction = enter}
 			elseif (<mode> = band_difficulty)
-				qi_path_career_pre_intro_b \{direction = enter}
+				0x4e6cc3ca \{direction = enter}
 			else
-				debug_ScriptAssert \{'illegal mode'}
+				0x93d8d5cf \{'illegal mode'}
 			endif
 		endif
 		default
-		debug_ScriptAssert \{'illegal game type'}
+		0x93d8d5cf \{'illegal game type'}
 	endswitch
 endscript
 
-script qi_path_back_out 
-	qi_path_wait_for_cas
-	if GotParam \{kill_rocker}
+script 0x05f27c34 
+	0x50228f94
+	if gotparam \{0xb4e99147}
 		cas_destroy_all_characters
 	endif
 	generic_event_back
 endscript
 
-script qi_path_wait_for_cas 
+script 0x50228f94 
 	if cas_queue_is_busy
-		push_loading_screen \{full}
+		0xd3f993c8 \{full}
 		cas_queue_wait
-		pop_loading_screen
+		0xe5a305c6
 	endif
 endscript
 
-script qi_path_quickplay_a 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0x54ecda2b 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'QUICKPLAY: A ~ ENTER'}
-		QI_SendScreenStateEvent \{state_id = 0}
-		QI_SendScreenStateEvent \{state_id = 1}
+		0x8dbdaee4 \{'QUICKPLAY: A ~ ENTER'}
+		0xda3c21ee \{0xfa27c33e = 0}
+		0xda3c21ee \{0xfa27c33e = 1}
 		case next
-		debug_Printf \{'QUICKPLAY: A ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy
-		spawnscriptnow qi_path_quick_play_a_advance params = {num_ready = <num_ready>}
+		0x8dbdaee4 \{'QUICKPLAY: A ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf
+		spawnscriptnow 0xbcb41c09 params = {num_ready = <num_ready>}
 		case back
-		debug_Printf \{'QUICKPLAY: A ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy \{kill_rocker}
-		spawnscriptnow \{qi_path_back_out
+		0x8dbdaee4 \{'QUICKPLAY: A ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf \{0xb4e99147}
+		spawnscriptnow \{0x05f27c34
 			params = {
-				kill_rocker
+				0xb4e99147
 			}}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_quick_play_a_advance 
-	qi_path_wait_for_cas
-	change_num_players num = <num_ready>
-	if ($is_partyplay_mode = 1)
+script 0xbcb41c09 
+	0x50228f94
+	0x04d11dea num = <num_ready>
+	if ($0xc7e670d7 = 1)
 		generic_event_choose no_sound state = uistate_band_difficulty data = {continue_data = {state = uistate_play_song <...>}}
 	else
 		generic_event_choose no_sound state = uistate_setlist data = {use_all_controllers num_band_players = <num_ready> band_controller_types = <band_controller_types>}
 	endif
 endscript
 
-script qi_path_quickplay_b 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0xcde58b91 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'QUICKPLAY: B ~ ENTER'}
-		QI_SendScreenStateEvent \{state_id = 4}
-		QI_SendScreenStateEvent \{state_id = 5}
+		0x8dbdaee4 \{'QUICKPLAY: B ~ ENTER'}
+		0xda3c21ee \{0xfa27c33e = 4}
+		0xda3c21ee \{0xfa27c33e = 5}
 		case next
-		debug_Printf \{'QUICKPLAY: B ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy
-		spawnscriptnow \{qi_path_quick_play_b_advance}
+		0x8dbdaee4 \{'QUICKPLAY: B ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf
+		spawnscriptnow \{0x853920cc}
 		case back
-		debug_Printf \{'QUICKPLAY: B ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy
-		spawnscriptnow \{qi_path_back_out}
+		0x8dbdaee4 \{'QUICKPLAY: B ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf
+		spawnscriptnow \{0x05f27c34}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_quick_play_b_advance 
+script 0x853920cc 
 	create_loading_screen
-	qi_path_wait_for_cas
+	0x50228f94
 	generic_event_choose \{state = uistate_play_song}
 endscript
 
-script qi_path_headtohead_a 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0x78e63fc5 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'HEADTOHEAD: A ~ ENTER'}
-		qi_initialize_head_to_head
-		QI_SendScreenStateEvent \{state_id = 0}
-		QI_SendScreenStateEvent \{state_id = 1}
+		0x8dbdaee4 \{'HEADTOHEAD: A ~ ENTER'}
+		0xba9c37d2
+		0xda3c21ee \{0xfa27c33e = 0}
+		0xda3c21ee \{0xfa27c33e = 1}
 		case next
-		debug_Printf \{'HEADTOHEAD: A ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy
-		spawnscriptnow \{qi_path_headtohead_a_advance}
+		0x8dbdaee4 \{'HEADTOHEAD: A ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf
+		spawnscriptnow \{0x9339ea9e}
 		case back
-		debug_Printf \{'HEADTOHEAD: A ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy \{kill_rocker}
-		spawnscriptnow \{qi_path_back_out
+		0x8dbdaee4 \{'HEADTOHEAD: A ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf \{0xb4e99147}
+		spawnscriptnow \{0x05f27c34
 			params = {
-				kill_rocker
+				0xb4e99147
 			}}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_headtohead_a_advance 
-	qi_path_wait_for_cas
+script 0x9339ea9e 
+	0x50228f94
 	generic_event_choose \{no_sound
 		state = uistate_setlist
 		data = {
@@ -1559,293 +1559,293 @@ script qi_path_headtohead_a_advance
 		}}
 endscript
 
-script qi_path_headtohead_b 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0xe1ef6e7f 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'HEADTOHEAD: B ~ ENTER'}
-		qi_initialize_head_to_head
-		QI_SendScreenStateEvent \{state_id = 4}
-		QI_SendScreenStateEvent \{state_id = 5}
+		0x8dbdaee4 \{'HEADTOHEAD: B ~ ENTER'}
+		0xba9c37d2
+		0xda3c21ee \{0xfa27c33e = 4}
+		0xda3c21ee \{0xfa27c33e = 5}
 		case next
-		debug_Printf \{'HEADTOHEAD: B ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy
-		spawnscriptnow \{qi_path_headtohead_b_advance}
+		0x8dbdaee4 \{'HEADTOHEAD: B ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf
+		spawnscriptnow \{0xaab4d65b}
 		case back
-		debug_Printf \{'HEADTOHEAD: B ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy
-		spawnscriptnow \{qi_path_back_out}
+		0x8dbdaee4 \{'HEADTOHEAD: B ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf
+		spawnscriptnow \{0x05f27c34}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_headtohead_b_advance 
+script 0xaab4d65b 
 	create_loading_screen
-	qi_path_wait_for_cas
+	0x50228f94
 	generic_event_choose \{state = uistate_play_song}
 endscript
 
-script qi_path_career_pre_intro_a 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0xd7659270 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'CAREER PRE-INTRO: A ~ ENTER'}
-		QI_SendScreenStateEvent \{state_id = 0}
-		QI_SendScreenStateEvent \{state_id = 1}
+		0x8dbdaee4 \{'CAREER PRE-INTRO: A ~ ENTER'}
+		0xda3c21ee \{0xfa27c33e = 0}
+		0xda3c21ee \{0xfa27c33e = 1}
 		case next
-		debug_Printf \{'CAREER PRE-INTRO: A ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy
-		spawnscriptnow \{qi_path_career_pre_intro_a_advance}
+		0x8dbdaee4 \{'CAREER PRE-INTRO: A ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf
+		spawnscriptnow \{0x4100eec2}
 		case back
-		debug_Printf \{'CAREER PRE-INTRO: A ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy \{kill_rocker}
-		spawnscriptnow \{qi_path_back_out
+		0x8dbdaee4 \{'CAREER PRE-INTRO: A ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf \{0xb4e99147}
+		spawnscriptnow \{0x05f27c34
 			params = {
-				kill_rocker
+				0xb4e99147
 			}}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_career_pre_intro_a_advance 
-	qi_path_wait_for_cas
+script 0x4100eec2 
+	0x50228f94
 	generic_event_choose \{state = uistate_band_difficulty}
 endscript
 
-script qi_path_career_pre_intro_b 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0x4e6cc3ca 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'CAREER PRE-INTRO: B ~ ENTER'}
-		QI_SendScreenStateEvent \{state_id = 4}
-		QI_SendScreenStateEvent \{state_id = 5}
+		0x8dbdaee4 \{'CAREER PRE-INTRO: B ~ ENTER'}
+		0xda3c21ee \{0xfa27c33e = 4}
+		0xda3c21ee \{0xfa27c33e = 5}
 		case next
-		debug_Printf \{'CAREER PRE-INTRO: B ~ NEXT'}
+		0x8dbdaee4 \{'CAREER PRE-INTRO: B ~ NEXT'}
 		get_band_difficulty
 		get_progression_globals ($current_progression_flag) game_mode = ($game_mode)
 		format_globaltag_song_checksum part = ($<tier_global>.part) song = ($<tier_global>.tier1.songs [0]) difficulty = <band_difficulty>
-		GetGlobalTags <song_checksum> param = unlocked
+		getglobaltags <song_checksum> param = unlocked
 		if (<unlocked> = 0)
-			QI_SendScreenStateEvent \{state_id = 6}
-			QI_SendScreenStateEvent \{state_id = 7}
-			qi_destroy
-			spawnscriptnow \{qi_path_career_pre_intro_b_advance}
+			0xda3c21ee \{0xfa27c33e = 6}
+			0xda3c21ee \{0xfa27c33e = 7}
+			0x981ef6bf
+			spawnscriptnow \{0x788dd207}
 		else
-			GetArraySize ($gh4_1_intro_tier.songs)
+			getarraysize ($gh4_1_intro_tier.songs)
 			change current_song = ($gh4_1_intro_tier.songs [(<array_size> - 1)])
 			change current_level = ($gh4_1_intro_tier.level)
-			QI_SendScreenStateEvent \{state_id = 6}
-			QI_SendScreenStateEvent \{state_id = 7}
-			qi_destroy
-			spawnscriptnow \{qi_path_career_pre_intro_b_advance
+			0xda3c21ee \{0xfa27c33e = 6}
+			0xda3c21ee \{0xfa27c33e = 7}
+			0x981ef6bf
+			spawnscriptnow \{0x788dd207
 				params = {
 					unlocked
 				}}
 		endif
 		case back
-		debug_Printf \{'CAREER PRE-INTRO: B ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy \{kill_rocker}
-		spawnscriptnow \{qi_path_back_out
+		0x8dbdaee4 \{'CAREER PRE-INTRO: B ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf \{0xb4e99147}
+		spawnscriptnow \{0x05f27c34
 			params = {
-				kill_rocker
+				0xb4e99147
 			}}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_career_pre_intro_b_advance 
+script 0x788dd207 
 	create_loading_screen
-	qi_path_wait_for_cas
-	if GotParam \{unlocked}
+	0x50228f94
+	if gotparam \{unlocked}
 		generic_event_choose state = uistate_play_song data = {selected_level = ($gh4_1_intro_tier.level)}
 	else
 		generic_event_choose state = uistate_play_song data = {progression_flag = ($current_progression_flag) gig_num = 1}
 	endif
 endscript
 
-script qi_path_career_post_intro_a 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0x49c4e0fb 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'CAREER POST-INTRO: A ~ ENTER'}
-		QI_SendScreenStateEvent \{state_id = 0}
-		QI_SendScreenStateEvent \{state_id = 1}
+		0x8dbdaee4 \{'CAREER POST-INTRO: A ~ ENTER'}
+		0xda3c21ee \{0xfa27c33e = 0}
+		0xda3c21ee \{0xfa27c33e = 1}
 		case next
-		debug_Printf \{'CAREER POST-INTRO: A ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy
-		spawnscriptnow \{qi_path_career_post_intro_a_advance}
+		0x8dbdaee4 \{'CAREER POST-INTRO: A ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf
+		spawnscriptnow \{0x88d0ed76}
 		case back
-		debug_Printf \{'CAREER POST-INTRO: A ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 2}
-		QI_SendScreenStateEvent \{state_id = 3}
-		qi_destroy \{kill_rocker}
-		spawnscriptnow \{qi_path_back_out
+		0x8dbdaee4 \{'CAREER POST-INTRO: A ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 2}
+		0xda3c21ee \{0xfa27c33e = 3}
+		0x981ef6bf \{0xb4e99147}
+		spawnscriptnow \{0x05f27c34
 			params = {
-				kill_rocker
+				0xb4e99147
 			}}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_career_post_intro_a_advance 
-	qi_path_wait_for_cas
+script 0x88d0ed76 
+	0x50228f94
 	generic_event_choose \{state = uistate_band_difficulty}
 endscript
 
-script qi_path_career_post_intro_b 
-	if NOT GotParam \{direction}
-		debug_ScriptAssert \{'need param: direction'}
+script 0xd0cdb141 
+	if NOT gotparam \{direction}
+		0x93d8d5cf \{'need param: direction'}
 	endif
 	switch <direction>
 		case enter
-		debug_Printf \{'CAREER POST-INTRO: B ~ ENTER'}
-		QI_SendScreenStateEvent \{state_id = 4}
-		QI_SendScreenStateEvent \{state_id = 5}
+		0x8dbdaee4 \{'CAREER POST-INTRO: B ~ ENTER'}
+		0xda3c21ee \{0xfa27c33e = 4}
+		0xda3c21ee \{0xfa27c33e = 5}
 		case next
-		debug_Printf \{'CAREER POST-INTRO: B ~ NEXT'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy
-		spawnscriptnow \{qi_path_career_post_intro_b_advance}
+		0x8dbdaee4 \{'CAREER POST-INTRO: B ~ NEXT'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf
+		spawnscriptnow \{0xb15dd1b3}
 		case back
-		debug_Printf \{'CAREER POST-INTRO: B ~ BACK'}
-		QI_SendScreenStateEvent \{state_id = 6}
-		QI_SendScreenStateEvent \{state_id = 7}
-		qi_destroy \{kill_rocker}
-		spawnscriptnow \{qi_path_back_out
+		0x8dbdaee4 \{'CAREER POST-INTRO: B ~ BACK'}
+		0xda3c21ee \{0xfa27c33e = 6}
+		0xda3c21ee \{0xfa27c33e = 7}
+		0x981ef6bf \{0xb4e99147}
+		spawnscriptnow \{0x05f27c34
 			params = {
-				kill_rocker
+				0xb4e99147
 			}}
 		default
-		debug_ScriptAssert \{'illegal direction'}
+		0x93d8d5cf \{'illegal direction'}
 	endswitch
 	return
 endscript
 
-script qi_path_career_post_intro_b_advance 
+script 0xb15dd1b3 
 	if NOT current_band_has_band_name
 		generic_event_choose \{state = uistate_band_name_logo
 			data = {
-				from_career_progression
+				0xfb0d36f3
 			}}
 	else
 		create_loading_screen
-		qi_path_wait_for_cas
+		0x50228f94
 		generic_event_choose \{state = uistate_select_venue}
 	endif
 endscript
 
-script qi_clear_object 
-	QI_SendScreenStateEvent \{state_id = 100}
+script 0xc0a98a59 
+	0xda3c21ee \{0xfa27c33e = 100}
 endscript
 
-script qi_is_career_intro_beaten 
-	if NOT ($career_intro_exists)
+script 0x549823c6 
+	if NOT ($0x0bc3fd19)
 		return \{true}
 	endif
 	get_current_band_info
-	GetGlobalTags <band_info>
+	getglobaltags <band_info>
 	if (<career_intro_band_complete> = 1)
-		debug_Printf \{'CAREER INTRO BEATEN'}
+		0x8dbdaee4 \{'CAREER INTRO BEATEN'}
 		return \{true}
 	endif
-	debug_Printf \{'CAREER INTRO NOT BEATEN'}
+	0x8dbdaee4 \{'CAREER INTRO NOT BEATEN'}
 	return \{false}
 endscript
 
-script qi_is_headtohead 
-	is_headtohead = false
-	if ScreenElementExists \{id = qi_main_menu}
-		qi_main_menu :GetSingleTag \{headtohead}
-		if NOT GotParam \{headtohead}
-			debug_ScriptAssert \{'qi_main_menu doesnt have param: headtohead'}
+script 0xac77dfe2 
+	0x7b65dd5a = false
+	if screenelementexists \{id = 0x23fc9d2c}
+		0x23fc9d2c :getsingletag \{0xa66f59fe}
+		if NOT gotparam \{0xa66f59fe}
+			0x93d8d5cf \{'qi_main_menu doesnt have param: headtohead'}
 		endif
-		if (<headtohead> = 1)
-			is_headtohead = true
+		if (<0xa66f59fe> = 1)
+			0x7b65dd5a = true
 		endif
 	endif
-	return <is_headtohead>
+	return <0x7b65dd5a>
 endscript
 
-script qi_print_globals 
+script 0x62d9f083 
 	get_current_band_info
-	GetGlobalTags <band_info>
-	debug_Printf \{'*******************************'}
-	debug_Printf \{'**** PRINTING SOME GLOBALS ****'}
-	debug_Printf \{'*******************************'}
-	debug_Printf \{''}
-	debug_PrintStruct <...>
-	qi_print_struct \{globalname = band_mode_menu_tags}
-	qi_print_struct \{globalname = band_mode_actual_devices}
-	qi_print_struct \{globalname = player_status_array}
-	qi_print_struct \{globalname = player_status}
-	qi_print_struct \{globalname = band_mode_menu_tags_instrument}
-	qi_print_struct \{globalname = net_band_mode_menu}
-	qi_print_struct \{globalname = net_band_members}
-	qi_print_struct \{globalname = net_career_selected_song}
-	qi_print_struct \{globalname = players_in_uistate}
-	qi_print_struct \{globalname = band_info}
-	qi_print_struct \{globalname = player_has_no_controller}
-	qi_print_struct \{globalname = num_quickplay_song_list}
-	qi_print_struct \{globalname = quickplay_song_list}
-	qi_print_struct \{globalname = quickplay_song_list_current}
-	qi_print_struct \{globalname = jam_curr_directory_listing}
-	qi_print_struct \{globalname = jam_song_assets}
+	getglobaltags <band_info>
+	0x8dbdaee4 \{'*******************************'}
+	0x8dbdaee4 \{'**** PRINTING SOME GLOBALS ****'}
+	0x8dbdaee4 \{'*******************************'}
+	0x8dbdaee4 \{''}
+	0xe6b61ea6 <...>
+	0x567a0082 \{globalname = band_mode_menu_tags}
+	0x567a0082 \{globalname = band_mode_actual_devices}
+	0x567a0082 \{globalname = 0x2994109a}
+	0x567a0082 \{globalname = player_status}
+	0x567a0082 \{globalname = band_mode_menu_tags_instrument}
+	0x567a0082 \{globalname = net_band_mode_menu}
+	0x567a0082 \{globalname = net_band_members}
+	0x567a0082 \{globalname = net_career_selected_song}
+	0x567a0082 \{globalname = players_in_uistate}
+	0x567a0082 \{globalname = band_info}
+	0x567a0082 \{globalname = player_has_no_controller}
+	0x567a0082 \{globalname = num_quickplay_song_list}
+	0x567a0082 \{globalname = quickplay_song_list}
+	0x567a0082 \{globalname = quickplay_song_list_current}
+	0x567a0082 \{globalname = jam_curr_directory_listing}
+	0x567a0082 \{globalname = jam_song_assets}
 	i = 1
 	begin
-	GetPlayerInfo (<i>)
-	debug_PrintStruct <playerinfo>
+	getplayerinfo (<i>)
+	0xe6b61ea6 <playerinfo>
 	i = (<i> + 1)
 	repeat 4
-	debug_Printf \{'*** DUMPING PLAYER STATUS ARRAY ***'}
+	0x8dbdaee4 \{'*** DUMPING PLAYER STATUS ARRAY ***'}
 	i = 1
 	begin
-	<player_status> = ($player_status_array [<i>])
-	debug_Printf '** PLAYER %i **' i = <i>
-	debug_PrintStruct ($<player_status>)
+	<player_status> = ($0x2994109a [<i>])
+	0x8dbdaee4 '** PLAYER %i **' i = <i>
+	0xe6b61ea6 ($<player_status>)
 	i = (<i> + 1)
 	repeat 8
-	debug_Printf \{''}
-	debug_Printf \{'*******************************'}
-	debug_Printf \{'*******************************'}
+	0x8dbdaee4 \{''}
+	0x8dbdaee4 \{'*******************************'}
+	0x8dbdaee4 \{'*******************************'}
 endscript
 
-script qi_print_struct 
-	if (GlobalExists name = <globalname>)
-		debug_Printf '%i:' i = <globalname> DoNotResolve
-		debug_PrintStruct ($<globalname>)
+script 0x567a0082 
+	if (globalexists name = <globalname>)
+		0x8dbdaee4 '%i:' i = <globalname> donotresolve
+		0xe6b61ea6 ($<globalname>)
 	else
-		debug_Printf '%i not found' i = <globalname> DoNotResolve
+		0x8dbdaee4 '%i not found' i = <globalname> donotresolve
 	endif
-	debug_Printf \{''}
-	debug_Printf \{'***************'}
-	debug_Printf \{''}
+	0x8dbdaee4 \{''}
+	0x8dbdaee4 \{'***************'}
+	0x8dbdaee4 \{''}
 endscript

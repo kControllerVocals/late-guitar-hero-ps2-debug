@@ -1,37 +1,37 @@
-L_SING_josh_dammit_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_josh_dammit_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_josh_dammit_075_F_1
+				slow = [
+					sing_josh_dammit_075_f_1
 				]
-				Med = [
-					Sing_josh_dammit_100_F_1
+				med = [
+					sing_josh_dammit_100_f_1
 				]
-				Fast = [
-					Sing_josh_dammit_120_F_1
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_josh_dammit_075_F_1
-				]
-				Med = [
-					Sing_josh_dammit_100_F_1
-				]
-				Fast = [
-					Sing_josh_dammit_120_F_1
+				fast = [
+					sing_josh_dammit_120_f_1
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_josh_dammit_075_F_1
+			normal = {
+				slow = [
+					sing_josh_dammit_075_f_1
 				]
-				Med = [
-					Sing_josh_dammit_100_F_1
+				med = [
+					sing_josh_dammit_100_f_1
 				]
-				Fast = [
-					Sing_josh_dammit_120_F_1
+				fast = [
+					sing_josh_dammit_120_f_1
+				]
+			}
+			bad = {
+				slow = [
+					sing_josh_dammit_075_f_1
+				]
+				med = [
+					sing_josh_dammit_100_f_1
+				]
+				fast = [
+					sing_josh_dammit_120_f_1
 				]
 			}
 		}

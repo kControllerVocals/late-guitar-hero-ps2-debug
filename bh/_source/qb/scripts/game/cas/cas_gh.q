@@ -5,19 +5,19 @@ cas_current_player = 1
 cas_current_player_name = cas_player1
 cas_editing_new_character = false
 charselect_previous_character_id = judy
-CAS_node_name = Z_SoundCheck_TRG_Waypoint_CAR_Start
+cas_node_name = z_soundcheck_trg_waypoint_car_start
 cas_empty_heap_score = 0.25
 
 script get_section_index_from_desc_id 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
-	if GotParam \{sections}
-		GetArraySize \{sections}
+	if gotparam \{sections}
+		getarraysize \{sections}
 		i = 0
 		begin
 		if ((<sections> [<i>].desc_id) = <target_desc_id>)
@@ -30,7 +30,7 @@ endscript
 
 script find_bone_deform_info 
 
-	GetArraySize <deform_bones> GlobalArray
+	getarraysize <deform_bones> globalarray
 	i = 0
 	begin
 	if (((($<deform_bones>) [<i>]).group_name) = <group_name>)
@@ -42,41 +42,41 @@ script find_bone_deform_info
 endscript
 
 script reset_bone_deform_info 
-	SetCASAppearanceBones part = <part> bones = {}
-	UpdateCurrentCASModel \{buildScript = reskin_model_from_appearance}
+	setcasappearancebones part = <part> bones = {}
+	updatecurrentcasmodel \{buildscript = reskin_model_from_appearance}
 endscript
 
 script reset_additional_bone_deform_info 
-	SetCASAppearanceAdditionalBones part = <part> additional_bone_transforms = []
-	UpdateCurrentCASModel \{buildScript = reskin_model_from_appearance}
+	setcasappearanceadditionalbones part = <part> additional_bone_transforms = []
+	updatecurrentcasmodel \{buildscript = reskin_model_from_appearance}
 endscript
 
 script exit_to_customize_character 
 	ui_event \{event = menu_change
 		data = {
-			state = UIstate_customize_character
+			state = uistate_customize_character
 		}}
 endscript
 
 script verify_genre_data 
-	if NOT CD
-		ForEachIn \{$master_editable_list
+	if NOT cd
+		foreachin \{$master_editable_list
 			do = verify_genre_data_foreach}
 	endif
 endscript
 
 script verify_genre_data_foreach 
-	if GlobalExists name = <part> type = array
-		ForEachIn ($<part>) do = verify_genre_data_foreach_part
+	if globalexists name = <part> type = array
+		foreachin ($<part>) do = verify_genre_data_foreach_part
 	endif
 endscript
 
 script verify_genre_data_foreach_part 
-	if GotParam \{genre}
-		if NOT IsArray (<genre>)
+	if gotparam \{genre}
+		if NOT isarray (<genre>)
 
 		else
-			ForEachIn <genre> do = verify_genre_data_foreach_part_genre params = {piece = <desc_id>}
+			foreachin <genre> do = verify_genre_data_foreach_part_genre params = {piece = <desc_id>}
 		endif
 	endif
 endscript
@@ -90,16 +90,16 @@ endscript
 
 script verify_genre 
 	i = 0
-	GetArraySize ($Genre_List)
+	getarraysize ($genre_list)
 	begin
-	if (((($Genre_List) [<i>]).desc_id) = <genre>)
+	if (((($genre_list) [<i>]).desc_id) = <genre>)
 		found = 1
 		break
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	if NOT GotParam \{found}
-		if NOT GotParam \{piece}
+	if NOT gotparam \{found}
+		if NOT gotparam \{piece}
 			piece = none
 		endif
 
@@ -107,53 +107,53 @@ script verify_genre
 endscript
 
 script create_cas_cache_pak \{heap = heap_cas}
-	if NOT CompositeObjectExists \{name = Global_Cas_Cache}
-		CreateCompositeObject \{Components = [
+	if NOT compositeobjectexists \{name = global_cas_cache}
+		createcompositeobject \{components = [
 				{
-					Component = ModelBuilder
+					component = modelbuilder
 					create_cache
 				}
 			]
 			params = {
-				name = Global_Cas_Cache
+				name = global_cas_cache
 			}}
-		Global_Cas_Cache :ModelBuilder_CreateDynamicPak heap = <heap> size = <size> vram_size = <vram_size>
+		global_cas_cache :modelbuilder_createdynamicpak heap = <heap> size = <size> vram_size = <vram_size>
 	else
 
 	endif
 endscript
 
 script free_cas_cache_pak 
-	if CompositeObjectExists \{name = Global_Cas_Cache}
-		CasCancelLoading
-		Global_Cas_Cache :Die
-		FlushDeadObjects
+	if compositeobjectexists \{name = global_cas_cache}
+		cascancelloading
+		global_cas_cache :die
+		flushdeadobjects
 	endif
 endscript
 
-script CASCacheFlushVRAM 
-	if CompositeObjectExists \{name = Global_Cas_Cache}
-		Global_Cas_Cache :ModelBuilder_FlushDynamicPakVRAM
+script cascacheflushvram 
+	if compositeobjectexists \{name = global_cas_cache}
+		global_cas_cache :modelbuilder_flushdynamicpakvram
 	endif
 endscript
 
-script CASCacheModel async = 0 object_name = ($cas_current_object)
-	(<object_name>) :Obj_ClearGeoms
+script cascachemodel async = 0 object_name = ($cas_current_object)
+	(<object_name>) :obj_cleargeoms
 	if (<async> = 1)
-		KillSpawnedScript \{name = ps2_cas_model_caching}
-		SpawnScriptLater ps2_cas_model_caching params = {heap = heap_musician1 asset_context = heap_musician1 <...>}
+		killspawnedscript \{name = ps2_cas_model_caching}
+		spawnscriptlater ps2_cas_model_caching params = {heap = heap_musician1 asset_context = heap_musician1 <...>}
 	else
-		UnloadAppearancePaks asset_context = heap_musician1 appearance = <appearance>
-		LoadAppearancePaks appearance = <appearance> heap = heap_musician1 asset_context = heap_musician1
+		unloadappearancepaks asset_context = heap_musician1 appearance = <appearance>
+		loadappearancepaks appearance = <appearance> heap = heap_musician1 asset_context = heap_musician1
 		<callback> {<callbackparams> appearance = <appearance>}
 	endif
 endscript
 
 script ps2_cas_model_caching 
-	Wait \{1
+	wait \{1
 		seconds}
-	UnloadAppearancePaks async = 1 <...>
-	LoadAppearancePaks async = 1 <...>
+	unloadappearancepaks async = 1 <...>
+	loadappearancepaks async = 1 <...>
 	<callback> {<callbackparams> appearance = <appearance>}
 endscript
 
@@ -168,24 +168,24 @@ script flush_cas_cache
 endscript
 
 script cas_artist_flush 
-	if NOT CD
-		if CasArtist
+	if NOT cd
+		if casartist
 			if NOT ($cas_heap_state = in_game)
 				stars
 
 				stars
 				flush_cas_cache
 				cas_rawpak_clear
-				DisableCASArchive
-				CasCancelLoading
-				CasBlockForComposite
-				CASBlockForLoading
+				disablecasarchive
+				cascancelloading
+				casblockforcomposite
+				casblockforloading
 				cas_queue_wait
-				GetCurrentCASObject
-				<cas_object> :Obj_ClearGeoms
-				FinishRendering
-				<cas_object> :ModelBuilder_Unload
-				RebuildCurrentCASModel
+				getcurrentcasobject
+				<cas_object> :obj_cleargeoms
+				finishrendering
+				<cas_object> :modelbuilder_unload
+				rebuildcurrentcasmodel
 			endif
 		else
 			stars
@@ -199,18 +199,18 @@ script cas_edit_character_profile
 
 	change \{cas_current_instrument = none}
 	get_musician_profile_struct_by_id id = <character_id> savegame = <savegame>
-	SetCASAppearance appearance = (<profile_struct>.appearance)
+	setcasappearance appearance = (<profile_struct>.appearance)
 	change cas_current_profile = <character_id>
 	change cas_current_savegame = <savegame>
 endscript
 
 script cas_get_player_status 
-	<player_status> = ($player_status_array [$cas_current_player])
+	<player_status> = ($0x2994109a [$cas_current_player])
 	return player_status = <player_status>
 endscript
 
 script cas_fix_cameras_for_game 
-	KillCamAnim \{all}
+	killcamanim \{all}
 	destroy_bg_viewport
 	setup_bg_viewport
 	restore_dummy_bg_camera
@@ -218,19 +218,19 @@ endscript
 
 script cas_load_and_setup_resources 
 	mark_unsafe_for_shutdown
-	CASWaitForUnloads \{Block}
-	FinishRendering
-	if NOT ((GotParam album_art) || (GotParam band_logo))
-		GetPakManCurrent \{map = zones}
-		if ChecksumEquals a = <pak> b = z_soundcheck
+	caswaitforunloads \{block}
+	finishrendering
+	if NOT ((gotparam album_art) || (gotparam band_logo))
+		getpakmancurrent \{map = zones}
+		if checksumequals a = <pak> b = z_soundcheck
 			if ($autolaunch_cas_artist = 1)
-				SetPakManCurrentBlock \{map = zones
+				setpakmancurrentblock \{map = zones
 					pak = z_objviewer_cas
 					block_scripts = 1}
-				LightShow_InitEventMappings \{force_pakname = 'z_objviewer'}
-				LightShow_DummyLoop
+				lightshow_initeventmappings \{force_pakname = 'z_objviewer'}
+				lightshow_dummyloop
 			else
-				SetPakManCurrentBlock \{map = zones
+				setpakmancurrentblock \{map = zones
 					pak = z_soundcheck_cas
 					block_scripts = 1}
 			endif
@@ -239,69 +239,69 @@ script cas_load_and_setup_resources
 		endif
 		set_cas_heap_state \{state = in_cas}
 	endif
-	SetShadowRenderingFlags \{enable = 'true'
+	setshadowrenderingflags \{enable = 'true'
 		object = 'skin'}
-	SetShadowMapParams \{far = 16.0}
-	if NOT GotParam \{no_cam}
+	setshadowmapparams \{far = 16.0}
+	if NOT gotparam \{no_cam}
 		destroy_bg_viewport
 		setup_bg_viewport
 		restore_dummy_bg_camera
-		if NOT GotParam \{album_art}
-			PlayIGCCam \{id = cas_view_cam_id
+		if NOT gotparam \{album_art}
+			playigccam \{id = cas_view_cam_id
 				name = cas_view_cam
 				viewport = bg_viewport
-				LockTo = world
+				lockto = world
 				pos = (2.028921, 0.879576, -0.059630997)
-				Quat = (-0.000911, 0.9990699, 0.027344998)
-				FOV = 72.0
-				Play_hold = 1
+				quat = (-0.000911, 0.9990699, 0.027344998)
+				fov = 72.0
+				play_hold = 1
 				interrupt_current}
 		else
-			PlayIGCCam \{id = cas_view_cam_id
+			playigccam \{id = cas_view_cam_id
 				name = cas_view_cam
 				viewport = bg_viewport
-				LockTo = world
+				lockto = world
 				pos = (-0.536864, 2.1043458, 15.148574)
-				Quat = (0.0052940003, 0.02768, -0.000218)
-				FOV = 72.0
-				Play_hold = 1
+				quat = (0.0052940003, 0.02768, -0.000218)
+				fov = 72.0
+				play_hold = 1
 				interrupt_current}
 		endif
 	endif
-	if NOT ((GotParam album_art) || (GotParam band_logo))
+	if NOT ((gotparam album_art) || (gotparam band_logo))
 		cas_rawpak_setup
 	endif
 	mark_safe_for_shutdown
 endscript
 
 script cas_free_resources \{block_scripts = 0}
-	SetScriptCannotPause
+	setscriptcannotpause
 	mark_unsafe_for_shutdown
-	FinishRendering
-	CASBlockForLoading
-	KillAllCompositeTextures
-	CASTemporariesFlush
-	CASWaitForUnloads \{Block}
+	finishrendering
+	casblockforloading
+	killallcompositetextures
+	castemporariesflush
+	caswaitforunloads \{block}
 	cas_rawpak_free
 	set_cas_heap_state \{state = in_game}
 	if ($shutdown_game_for_signin_change_flag = 0)
 
-		if NOT PakFilesAreCached
+		if NOT pakfilesarecached
 			destroy_loading_screen
 		endif
 	endif
-	if NOT GotParam \{no_fix_camera}
+	if NOT gotparam \{no_fix_camera}
 		cas_fix_cameras_for_game
 	endif
 	mark_safe_for_shutdown
 	change \{cas_free_cam_active = 0}
 endscript
 
-script RefreshCASProfile 
-	if CD
+script refreshcasprofile 
+	if cd
 		return
 	endif
-	if NOT CasArtist
+	if NOT casartist
 		stars
 
 		stars
@@ -310,23 +310,23 @@ script RefreshCASProfile
 	if ($cas_heap_state = in_game)
 
 	endif
-	if NOT GetCurrentCASObject
+	if NOT getcurrentcasobject
 
 	endif
 	cas_queue_new_character_profile id = ($cas_current_profile) player = ($cas_current_player) savegame = ($cas_current_savegame)
 	get_musician_profile_struct_by_id id = ($cas_current_profile) savegame = ($cas_current_savegame)
-	SetCASAppearance appearance = (<profile_struct>.appearance)
+	setcasappearance appearance = (<profile_struct>.appearance)
 endscript
 
-script CreateAssetStorageFromBudgetBlock 
-	if NOT GotParam \{slopheap}
+script createassetstoragefrombudgetblock 
+	if NOT gotparam \{slopheap}
 		slopheap = <name>
 	endif
-	if NOT GotParam \{assetcontext}
+	if NOT gotparam \{assetcontext}
 		assetcontext = <name>
 	endif
-	CASSetupAssetStorage name = <name> params = {
-		Allocator = Budget
+	cassetupassetstorage name = <name> params = {
+		allocator = budget
 		blockname = <name>
 		assetcontext = <assetcontext>
 		slopheap = <slopheap>
@@ -334,26 +334,26 @@ script CreateAssetStorageFromBudgetBlock
 endscript
 
 script set_new_car_preset_physique 
-	if NOT GetCASAppearancePart \{part = cas_physique}
+	if NOT getcasappearancepart \{part = cas_physique}
 
 	endif
-	if NOT GetActualCASOptionStruct part = cas_physique desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = cas_physique desc_id = <desc_id>
 
 	endif
-	if NOT GotParam \{preset_builds}
+	if NOT gotparam \{preset_builds}
 
 	endif
-	if NOT GotParam \{default_car_preset_build_index}
+	if NOT gotparam \{default_car_preset_build_index}
 
 	endif
 	chosen = (<preset_builds> [<default_car_preset_build_index>])
-	SetCASAppearanceAdditionalBones part = cas_physique additional_bone_transforms = (<chosen>.additional_bone_transforms)
+	setcasappearanceadditionalbones part = cas_physique additional_bone_transforms = (<chosen>.additional_bone_transforms)
 	return preset_physique_index = <default_car_preset_build_index>
 endscript
 
 script generate_random_appearance 
 
-	if GotParam \{new_car_character}
+	if gotparam \{new_car_character}
 		if (<is_female> = 1)
 			change cas_current_appearance = ($default_custom_musician_profile_female.appearance)
 		else
@@ -368,25 +368,25 @@ endscript
 script generate_random_name 
 
 	if (<is_female> = 1)
-		GetRandomArrayElement ($gh_random_car_female_names)
+		getrandomarrayelement ($gh_random_car_female_names)
 	else
-		GetRandomArrayElement ($gh_random_car_male_names)
+		getrandomarrayelement ($gh_random_car_male_names)
 	endif
 	return random_name = <element>
 endscript
 
 script generate_random_genre 
 	takeaway = 2
-	if GotParam \{allow_mixed}
+	if gotparam \{allow_mixed}
 		takeaway = 1
 	endif
-	GetArraySize \{$Genre_List}
-	GetRandomValue a = 0 b = (<array_size> - <takeaway>) name = genre_index Integer
-	return genre = ($Genre_List [<genre_index>].desc_id)
+	getarraysize \{$genre_list}
+	getrandomvalue a = 0 b = (<array_size> - <takeaway>) name = genre_index integer
+	return genre = ($genre_list [<genre_index>].desc_id)
 endscript
 
 script cas_change_current_character_gender 
-	if NOT GotParam \{genre}
+	if NOT gotparam \{genre}
 		genre = (($cas_current_appearance).genre)
 	endif
 	generate_random_name is_female = <is_female>
@@ -408,29 +408,29 @@ script cas_soak_test
 endscript
 
 script cas_free_resources_camera_fix 
-	if ScriptIsRunning \{cas_free_resources}
+	if scriptisrunning \{cas_free_resources}
 		begin
-		if NOT ScriptIsRunning \{cas_free_resources}
+		if NOT scriptisrunning \{cas_free_resources}
 			break
 		endif
-		Wait \{1
+		wait \{1
 			gameframe}
 		repeat
 		spawnscriptnow task_menu_default_anim_in params = {base_name = <base_name>}
-	elseif GotParam \{alwaysfix}
+	elseif gotparam \{alwaysfix}
 		spawnscriptnow task_menu_default_anim_in params = {base_name = <base_name>}
 	endif
 endscript
 
 script is_part_editable 
 
-	GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	getactualcasoptionstruct part = <part> desc_id = <desc_id>
 	if part_has_sections part = <part> desc_id = <desc_id>
 		return \{true}
 	elseif part_has_materials part = <part> desc_id = <desc_id>
 		return \{true}
 	else
-		if ((GotParam color_all_materials) || (GotParam materials))
+		if ((gotparam color_all_materials) || (gotparam materials))
 			return \{true}
 		endif
 		return \{false}
@@ -439,8 +439,8 @@ endscript
 
 script part_has_sections 
 
-	GetActualCASOptionStruct part = <part> desc_id = <desc_id>
-	if GotParam \{sections}
+	getactualcasoptionstruct part = <part> desc_id = <desc_id>
+	if gotparam \{sections}
 		return \{true}
 	endif
 	return \{false}
@@ -448,22 +448,22 @@ endscript
 
 script part_has_materials 
 
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 		return \{false}
 	endif
-	if GotParam \{materials}
-		GetArraySize <materials>
+	if gotparam \{materials}
+		getarraysize <materials>
 		if (<array_size> > 0)
 			return \{true}
 		endif
 	else
-		if GotParam \{material_groups}
-			GetArraySize <material_groups>
+		if gotparam \{material_groups}
+			getarraysize <material_groups>
 			if (<array_size> > 0)
 				return \{true}
 			endif
 		else
-			if GotParam \{modify_all_materials}
+			if gotparam \{modify_all_materials}
 				return \{true}
 			endif
 		endif
@@ -475,17 +475,17 @@ script cas_drum_stick_bake_transforms
 
 
 
-	switch <SkeletonName>
+	switch <skeletonname>
 		case drummer_skeleton0m
 		case drummer_skeleton1m
 		case drummer_skeleton2m
 		case drummer_skeleton3m
 		if (<material_index> = 0)
 			pos = (0.0, 0.0, 0.0)
-			Orientation = (0.0, 0.0, 0.0)
+			orientation = (0.0, 0.0, 0.0)
 		else
 			pos = (0.0, 0.0, 0.0)
-			Orientation = (0.0, 0.0, 0.0)
+			orientation = (0.0, 0.0, 0.0)
 		endif
 		case drummer_skeleton0f
 		case drummer_skeleton1f
@@ -495,220 +495,220 @@ script cas_drum_stick_bake_transforms
 		if (<material_index> = 0)
 
 			pos = (-0.09081, 0.09465001, 0.014779999)
-			Orientation = (0.0, 0.0, 0.0)
+			orientation = (0.0, 0.0, 0.0)
 		else
 
 			pos = (0.09079, 0.09463001, 0.014779999)
-			Orientation = (0.0, 0.0, 0.0)
+			orientation = (0.0, 0.0, 0.0)
 		endif
-		case gh_drummer_rocktopus
+		case 0xd0ef43ee
 		case gh_drummer_axel_1
-		Axel_Drumstick_Offset <...>
-		case gh_drummer_Casey_1
-		Casey_Drumstick_Offset <...>
-		case gh_drummer_Clive_1
-		Clive_Drumstick_Offset <...>
-		case gh_drummer_Eddie_1
-		Eddie_Drumstick_Offset <...>
-		case gh_drummer_Izzy_1
-		Izzy_Drumstick_Offset <...>
-		case gh_drummer_Johnny_1
-		Johnny_Drumstick_Offset <...>
-		case GH_drummer_ShirleyManson_1
-		ShirleyManson_Drumstick_Offset <...>
-		case gh_drummer_Judy_1
-		Judy_Drumstick_Offset <...>
+		axel_drumstick_offset <...>
+		case gh_drummer_casey_1
+		casey_drumstick_offset <...>
+		case gh_drummer_clive_1
+		clive_drumstick_offset <...>
+		case gh_drummer_eddie_1
+		eddie_drumstick_offset <...>
+		case gh_drummer_izzy_1
+		izzy_drumstick_offset <...>
+		case gh_drummer_johnny_1
+		johnny_drumstick_offset <...>
+		case gh_drummer_shirleymanson_1
+		shirleymanson_drumstick_offset <...>
+		case gh_drummer_judy_1
+		judy_drumstick_offset <...>
 		case gh_drummer_lars_1
-		Lars_Drumstick_Offset <...>
-		case gh_drummer_Midori_1
-		Midori_Drumstick_Offset <...>
-		case gh_drummer_Pandora_1
-		Pandora_Drumstick_Offset <...>
-		case gh_drummer_GwenStefani
-		GwenStefani_Drumstick_Offset <...>
-		case gh_drummer_TaylorSwift_1
-		TaylorSwift_Drumstick_Offset <...>
+		lars_drumstick_offset <...>
+		case gh_drummer_midori_1
+		midori_drumstick_offset <...>
+		case gh_drummer_pandora_1
+		pandora_drumstick_offset <...>
+		case 0x69a20442
+		0xba5bb2eb <...>
+		case 0x420b5681
+		0x6b9e2218 <...>
 		default
 		if (<material_index> = 0)
 			pos = (0.0, 0.0, 0.0)
-			Orientation = (0.0, 0.0, 0.0)
+			orientation = (0.0, 0.0, 0.0)
 		else
 			pos = (0.0, 0.0, 0.0)
-			Orientation = (0.0, 0.0, 0.0)
+			orientation = (0.0, 0.0, 0.0)
 		endif
 	endswitch
-	Obj_BakeTransform geom = <part> pos = <pos>
+	obj_baketransform geom = <part> pos = <pos>
 endscript
 
-script Axel_Drumstick_Offset 
+script axel_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.159723, -0.021472, 0.0023196302)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (-0.159739, -0.0214857, 0.0023173501)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Casey_Drumstick_Offset 
+script casey_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (-0.09135061, 0.093663804, -0.0147257)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.0913313, 0.09364941, -0.0147287)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Clive_Drumstick_Offset 
+script clive_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.0, 0.0, 0.0)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.0, 0.0, 0.0)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Eddie_Drumstick_Offset 
+script eddie_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.0298674, -0.000279784, 0.0007670819)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (-0.0298583, -0.00026887702, 0.00076697)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Izzy_Drumstick_Offset 
+script izzy_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.0, 0.0, 0.0)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.0, 0.0, 0.0)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Johnny_Drumstick_Offset 
+script johnny_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.0, 0.0, 0.0)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.0, 0.0, 0.0)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script JohnnyCash_Drumstick_Offset 
+script johnnycash_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.029867599, -0.00027984398, 0.000767075)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (-0.0298582, -0.00026875702, 0.00076712697)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script ShirleyManson_Drumstick_Offset 
+script shirleymanson_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (-0.091300905, 0.09368741, -0.014790599)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.0912823, 0.0936723, -0.014792499)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Judy_Drumstick_Offset 
+script judy_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (-0.09135061, 0.093663804, -0.0147257)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.0913313, 0.09364941, -0.0147287)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Lars_Drumstick_Offset 
+script lars_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (0.12968501, -0.0029761803, 0.0201722)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (-0.129701, -0.0029930503, 0.0201723)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Midori_Drumstick_Offset 
+script midori_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (-0.091301, 0.09368741, -0.014790599)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.091282204, 0.0936726, -0.014792499)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script Pandora_Drumstick_Offset 
+script pandora_drumstick_offset 
 
 	if (<material_index> = 0)
 		pos = (-0.091301, 0.09368741, -0.014790599)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.091282204, 0.0936726, -0.014792499)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script GwenStefani_Drumstick_Offset 
+script 0xba5bb2eb 
 	if (<material_index> = 0)
 		pos = (-0.091301, 0.09368741, -0.014790599)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.091282204, 0.0936726, -0.014792499)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script TaylorSwift_Drumstick_Offset 
+script 0x6b9e2218 
 	if (<material_index> = 0)
 		pos = (-0.091301, 0.09368741, -0.014790599)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	else
 		pos = (0.091282204, 0.0936726, -0.014792499)
-		Orientation = (0.0, 0.0, 0.0)
+		orientation = (0.0, 0.0, 0.0)
 	endif
 	return <...>
 endscript
 
-script boombox_bounce 
-	Anim_Command \{target = misc_diff_strength
-		command = Modulate_SetStrength
+script 0x64ec3628 
+	anim_command \{target = 0x4bfccdcb
+		command = modulate_setstrength
 		params = {
 			strength = 1.0
 		}}

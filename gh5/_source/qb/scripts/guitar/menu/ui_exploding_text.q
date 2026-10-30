@@ -6,15 +6,15 @@ g_ui_ps2_exploding_text_tut_bottom_pos = (640.0, 280.0)
 g_ui_exploding_text_top_height = 380
 
 script create_exploding_text \{parent = 'you_rock_physics'
-		text = qs("You Rock!")
+		text = qs(0x6f6d143d)
 		placement = top
 		just = [
 			center
 			bottom
 		]
 		text_physics = 1}
-	FormatText checksumname = cont_id '%p' p = <parent>
-	if ScreenElementExists id = <cont_id>
+	formattext checksumname = cont_id '%p' p = <parent>
+	if screenelementexists id = <cont_id>
 		return
 	endif
 	cont_scale = 1.0
@@ -28,12 +28,12 @@ script create_exploding_text \{parent = 'you_rock_physics'
 	else
 		cont_pos = $g_ui_exploding_text_bottom_pos
 	endif
-	StringLength string = <text>
+	stringlength string = <text>
 	if (<str_len> >= 20)
 		<cont_scale> = (0.94 - 0.05 * (<str_len> - 20))
 	endif
 	check_screen_for_physics
-	if NOT ScreenElementExists \{id = exploding_particle_container}
+	if NOT screenelementexists \{id = exploding_particle_container}
 		create_exploding_particles
 		<explode> = 1
 	else
@@ -65,7 +65,7 @@ script create_exploding_text \{parent = 'you_rock_physics'
 		}
 		centered
 	}
-	if GotParam \{debug}
+	if gotparam \{debug}
 		do_text_slam {
 			parent = <parent>
 			explode = <explode>
@@ -75,7 +75,7 @@ script create_exploding_text \{parent = 'you_rock_physics'
 			debug
 		}
 	elseif ($g_in_tutorial = 1)
-		do_gh4style_text_slam {
+		0x1d8ab795 {
 			parent = <parent>
 			explode = <explode>
 			text_physics = <text_physics>
@@ -94,63 +94,63 @@ script create_exploding_text \{parent = 'you_rock_physics'
 endscript
 
 script destroy_exploding_text \{parent = 'you_rock_physics'}
-	FormatText checksumname = cont_id '%p' p = <parent>
-	if ScreenElementExists id = <cont_id>
-		DestroyScreenElement id = <cont_id>
+	formattext checksumname = cont_id '%p' p = <parent>
+	if screenelementexists id = <cont_id>
+		destroyscreenelement id = <cont_id>
 	endif
-	if ScreenElementExists \{id = exploding_particle_container}
-		DestroyScreenElement \{id = exploding_particle_container}
+	if screenelementexists \{id = exploding_particle_container}
+		destroyscreenelement \{id = exploding_particle_container}
 	endif
 endscript
 
 script destroy_all_exploding_text 
-	FormatText \{checksumname = cont_id_1
+	formattext \{checksumname = cont_id_1
 		'you_rock_physics'}
-	FormatText \{checksumname = cont_id_2
+	formattext \{checksumname = cont_id_2
 		'you_rock_2_physics'}
-	FormatText \{checksumname = cont_id_3
+	formattext \{checksumname = cont_id_3
 		'you_rock_legend_physics'}
-	FormatText \{checksumname = cont_id_4
+	formattext \{checksumname = cont_id_4
 		'lesson_complete'}
-	FormatText \{checksumname = cont_id_5
+	formattext \{checksumname = cont_id_5
 		'complete_text'}
-	if ScreenElementExists id = <cont_id_1>
-		DestroyScreenElement id = <cont_id_1>
+	if screenelementexists id = <cont_id_1>
+		destroyscreenelement id = <cont_id_1>
 	endif
-	if ScreenElementExists id = <cont_id_2>
-		DestroyScreenElement id = <cont_id_2>
+	if screenelementexists id = <cont_id_2>
+		destroyscreenelement id = <cont_id_2>
 	endif
-	if ScreenElementExists id = <cont_id_3>
-		DestroyScreenElement id = <cont_id_3>
+	if screenelementexists id = <cont_id_3>
+		destroyscreenelement id = <cont_id_3>
 	endif
-	if ScreenElementExists id = <cont_id_4>
-		DestroyScreenElement id = <cont_id_4>
+	if screenelementexists id = <cont_id_4>
+		destroyscreenelement id = <cont_id_4>
 	endif
-	if ScreenElementExists id = <cont_id_5>
-		DestroyScreenElement id = <cont_id_5>
+	if screenelementexists id = <cont_id_5>
+		destroyscreenelement id = <cont_id_5>
 	endif
-	if ScreenElementExists \{id = exploding_particle_container}
-		DestroyScreenElement \{id = exploding_particle_container}
+	if screenelementexists \{id = exploding_particle_container}
+		destroyscreenelement \{id = exploding_particle_container}
 	endif
 endscript
 
 script create_exploding_particles 
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		id = exploding_particle_container
 		parent = root_window
 		pos = (0.0, 0.0)}
 	<i> = 0
 	begin
-	FormatText checksumname = particle_id 'particle_%i' i = <i>
-	GetRandomValue \{a = 280.0
+	formattext checksumname = particle_id 'particle_%i' i = <i>
+	getrandomvalue \{a = 280.0
 		b = 980.0
 		name = rand_x}
-	GetRandomValue \{a = 200.0
+	getrandomvalue \{a = 200.0
 		b = 400.0
 		name = rand_y}
 	<new_pos> = ((<rand_x> * (1.0, 0.0)) + (<rand_y> * (0.0, 1.0)))
-	CreateScreenElement {
-		type = PhysicsElement
+	createscreenelement {
+		type = physicselement
 		id = <particle_id>
 		parent = exploding_particle_container
 		alpha = 0
@@ -160,16 +160,16 @@ script create_exploding_particles
 		radius = 2.83
 		elasticity = 0.75
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <particle_id>
-		texture = JOW_Spark02
+		texture = jow_spark02
 		rgba = [100 200 255 120]
 		dims = (5.0, 5.0)
 		pos = (0.0, 0.0)
 		just = [left top]
 		z_priority = 30
-		blend = Add
+		blend = add
 	}
 	<i> = (<i> + 1)
 	repeat $num_exploding_particles
@@ -227,117 +227,117 @@ script do_text_slam \{time = 1.5}
 	<orig_pos> = <cont_pos>
 	<orig_alpha> = 0
 	<orig_scale> = 2.5
-	FormatText checksumname = cont_id '%p' p = <parent>
-	GetScreenElementProps id = <cont_id>
+	formattext checksumname = cont_id '%p' p = <parent>
+	getscreenelementprops id = <cont_id>
 	<final_pos> = <pos>
 	<final_alpha> = 1
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_setprops {
 		pos = <orig_pos>
 		alpha = <orig_alpha>
 		scale = <orig_scale>
 		relative_scale
 	}
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_setprops {
 		pos = <final_pos>
 		alpha = <final_alpha>
 		scale = <scale_2>
 		time = <zoom_time_1>
 		motion = ease_in
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_3>
 		scale = <scale_3>
 		time = <zoom_time_2>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_4>
 		scale = <scale_4>
 		time = <zoom_time_3>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_5>
 		scale = <scale_5>
 		time = <zoom_time_4>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_6>
 		scale = <scale_6>
 		time = <zoom_time_5>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_7>
 		scale = <scale_7>
 		time = <zoom_time_6>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_8>
 		scale = <scale_8>
 		time = <zoom_time_7>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_9>
 		scale = <scale_9>
 		time = <zoom_time_8>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_10>
 		scale = <scale_10>
 		time = <zoom_time_9>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_11>
 		scale = <scale_11>
 		time = <zoom_time_10>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_12>
 		scale = <scale_12>
 		time = <zoom_time_11>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_13>
 		scale = <scale_13>
 		time = <zoom_time_12>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_14>
 		scale = <scale_14>
 		time = <zoom_time_13>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <pos_15>
 		scale = <scale_15>
 		time = <zoom_time_14>
 		alpha = 1
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		pos = <hiccup_pos>
 		scale = <hiccup_scale>
 		time = <hiccup_time>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <scale_7>
 		time = <hiccup_time>
 	}
-	<cont_id> :SE_WaitProps
+	<cont_id> :se_waitprops
 	if (<explode> = 1)
-		DestroyScreenElement \{id = et_white_frame}
-		CreateScreenElement \{type = SpriteElement
+		destroyscreenelement \{id = et_white_frame}
+		createscreenelement \{type = spriteelement
 			id = et_white_frame
 			parent = root_window
 			texture = white
@@ -354,10 +354,10 @@ script do_text_slam \{time = 1.5}
 				center
 			]
 			z_priority = 1000}
-		if NOT GotParam \{debug}
+		if NOT gotparam \{debug}
 			spawnscriptnow \{do_extra_exploding_particles}
 		endif
-		RunScriptOnScreenElement id = <id> explode_white_screens
+		runscriptonscreenelement id = <id> explode_white_screens
 		if (<text_physics> = 1)
 			do_exploding_text_physics {
 				parent = <parent>
@@ -380,15 +380,15 @@ endscript
 script do_extra_exploding_particles \{z_priority = 8.0
 		pos = (640.0, 200.0)
 		parent = exploding_particle_container}
-	if ScreenElementExists \{id = extra_particles}
-		Destroy2DParticleSystem \{id = extra_particles}
+	if screenelementexists \{id = extra_particles}
+		destroy2dparticlesystem \{id = extra_particles}
 	endif
-	Create2DParticleSystem {
+	create2dparticlesystem {
 		id = extra_particles
 		pos = <pos>
 		parent = <parent>
 		z_priority = <z_priority>
-		material = sys_Particle_Spark01_sys_Particle_Spark01
+		material = sys_particle_spark01_sys_particle_spark01
 		start_color = [100 200 255 100]
 		end_color = [100 200 255 0]
 		start_scale = (2.0, 2.0)
@@ -407,30 +407,30 @@ script do_extra_exploding_particles \{z_priority = 8.0
 	}
 	if NOT ($in_tutorial_mode = 1)
 	endif
-	if NOT isSoundEventPlaying \{Crowd_Fail_Song_SFX}
-		spawnscriptnow \{Surge_After_Explosion}
+	if NOT issoundeventplaying \{crowd_fail_song_sfx}
+		spawnscriptnow \{surge_after_explosion}
 	endif
-	Wait \{1.5
+	wait \{1.5
 		seconds}
-	Destroy2DParticleSystem \{id = extra_particles
+	destroy2dparticlesystem \{id = extra_particles
 		kill_when_empty}
 	return
 endscript
 
 script explode_white_screens 
-	et_white_frame :SE_SetProps \{alpha = 0
+	et_white_frame :se_setprops \{alpha = 0
 		time = 0.1}
-	if ScreenElementExists \{id = et_excite_frame}
-		et_excite_frame :SE_SetProps \{alpha = 0
+	if screenelementexists \{id = et_excite_frame}
+		et_excite_frame :se_setprops \{alpha = 0
 			time = 0.4
 			scale = 1.5
 			motion = ease_out}
 	endif
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	DestroyScreenElement \{id = et_white_frame}
-	if ScreenElementExists \{id = et_excite_frame}
-		DestroyScreenElement \{id = et_excite_frame}
+	destroyscreenelement \{id = et_white_frame}
+	if screenelementexists \{id = et_excite_frame}
+		destroyscreenelement \{id = et_excite_frame}
 	endif
 endscript
 
@@ -439,23 +439,23 @@ script do_exploding_text_physics
 	<explode_const> = 9000000
 	<i> = 0
 	begin
-	FormatText checksumname = physics_container '%p_%i' p = <parent> i = <i>
-	GetScreenElementProps id = <physics_container>
-	SetScreenElementProps id = <physics_container> apply_gravity = true apply_drag = true
+	formattext checksumname = physics_container '%p_%i' p = <parent> i = <i>
+	getscreenelementprops id = <physics_container>
+	setscreenelementprops id = <physics_container> apply_gravity = true apply_drag = true
 	<force> = (<pos> + <cont_pos> - <force_pos> + (RandomFloat (-300.0, 300.0) * (1.0, 0.0)))
 	normalize_vector vect = <force>
-	<physics_container> :ApplyForce force = (<vect> * <explode_const>)
+	<physics_container> :applyforce force = (<vect> * <explode_const>)
 	if ((<vect>.(1.0, 0.0)) < 0)
 		<rot> = -280.0
 	else
 		<rot> = 280.0
 	endif
 	<rot> = (<rot> * RandomFloat (0.5, 3.0))
-	GetRandomValue \{a = 3
+	getrandomvalue \{a = 3
 		b = 7
 		name = rand_time}
-	SetScreenElementProps id = <physics_container> rot_angle = <rot> time = <rand_time> motion = ease_out
-	RunScriptOnScreenElement id = <physics_container> check_screen_collisions params = {id = <physics_container> top_offset = -100 bottom_offset = 300}
+	setscreenelementprops id = <physics_container> rot_angle = <rot> time = <rand_time> motion = ease_out
+	runscriptonscreenelement id = <physics_container> check_screen_collisions params = {id = <physics_container> top_offset = -100 bottom_offset = 300}
 	<i> = (<i> + 1)
 	repeat <exploding_text_array_size>
 endscript
@@ -465,48 +465,48 @@ script do_exploding_text_particle_physics
 	<explode_const> = 7000000
 	<i> = 0
 	begin
-	FormatText checksumname = particle_id 'particle_%i' i = <i>
-	SetScreenElementProps id = <particle_id> alpha = 1.0 time = 0.5
-	SetScreenElementProps id = <particle_id> scale = 3.0 relative_scale time = 1.0
-	GetScreenElementProps id = <particle_id>
-	SetScreenElementProps id = <particle_id> apply_gravity = true
+	formattext checksumname = particle_id 'particle_%i' i = <i>
+	setscreenelementprops id = <particle_id> alpha = 1.0 time = 0.5
+	setscreenelementprops id = <particle_id> scale = 3.0 relative_scale time = 1.0
+	getscreenelementprops id = <particle_id>
+	setscreenelementprops id = <particle_id> apply_gravity = true
 	<force> = (<pos> - <force_pos>)
 	normalize_vector vect = <force>
-	<particle_id> :ApplyForce force = (<vect> * <explode_const>)
-	RunScriptOnScreenElement id = <particle_id> check_screen_collisions params = {id = <particle_id> top_offset = -100 bottom_offset = 200}
+	<particle_id> :applyforce force = (<vect> * <explode_const>)
+	runscriptonscreenelement id = <particle_id> check_screen_collisions params = {id = <particle_id> top_offset = -100 bottom_offset = 200}
 	<i> = (<i> + 1)
 	repeat ($num_exploding_particles)
-	Wait \{1.0
+	wait \{1.0
 		seconds}
 	<i> = 0
 	begin
-	FormatText checksumname = particle_id 'particle_%i' i = <i>
-	GetRandomValue \{a = 0.1
+	formattext checksumname = particle_id 'particle_%i' i = <i>
+	getrandomvalue \{a = 0.1
 		b = 3.0
 		name = rand_time}
-	SetScreenElementProps id = <particle_id> alpha = 0 time = <rand_time>
+	setscreenelementprops id = <particle_id> alpha = 0 time = <rand_time>
 	<i> = (<i> + 1)
 	repeat ($num_exploding_particles)
 endscript
 
-script split_text_into_physics_array_elements \{text = qs("You Rock!")
+script split_text_into_physics_array_elements \{text = qs(0x6f6d143d)
 		text_pos = (0.0, 0.0)
 		space_between = (0.0, 0.0)
 		flags = {
 		}}
-	StringToCharArray string = <text>
-	GetArraySize <char_array>
+	stringtochararray string = <text>
+	getarraysize <char_array>
 	<fit_scale> = 1.0
-	if GotParam \{fit_dims}
-		CreateScreenElement {
-			type = TextElement
+	if gotparam \{fit_dims}
+		createscreenelement {
+			type = textelement
 			parent = root_window
 			text = <text>
 			font = (<flags>.font)
 			scale = (<flags>.scale * (2.0, 2.0))
 		}
-		GetScreenElementDims id = <id>
-		StringLength string = <text>
+		getscreenelementdims id = <id>
+		stringlength string = <text>
 		avg_width = (<width> / <str_len>)
 		<fudge_factor> = 10
 		avg_width = (<avg_width> + <fudge_factor>)
@@ -518,40 +518,40 @@ script split_text_into_physics_array_elements \{text = qs("You Rock!")
 		endif
 		<y_offset> = 0
 		if (<fit_scale> < 1.0)
-			<y_offset> = ((<Height> - (<Height> * <fit_scale>)) / 2)
+			<y_offset> = ((<height> - (<height> * <fit_scale>)) / 2)
 			<text_pos> = (<text_pos> + (<y_offset> * (0.0, 1.0)))
 		endif
-		<Height> = (<Height> * <fit_scale>)
+		<height> = (<height> * <fit_scale>)
 		if (<placement> = top)
-			change g_ui_exploding_text_top_height = <Height>
+			change g_ui_exploding_text_top_height = <height>
 		elseif (<placement> = ps2_tut_bottom)
 			<cont_pos_x> = ($g_ui_ps2_exploding_text_tut_top_pos.(1.0, 0.0))
-			<cont_pos_y> = (($g_ui_ps2_exploding_text_tut_top_pos.(0.0, 1.0)) + (($g_ui_exploding_text_top_height + <Height>) / 2))
+			<cont_pos_y> = (($g_ui_ps2_exploding_text_tut_top_pos.(0.0, 1.0)) + (($g_ui_exploding_text_top_height + <height>) / 2))
 			<cont_pos> = ((<cont_pos_x> * (1.0, 0.0)) + (<cont_pos_y> * (0.0, 1.0)))
 		else
 			<cont_pos_x> = ($g_ui_exploding_text_top_pos.(1.0, 0.0))
-			<cont_pos_y> = (($g_ui_exploding_text_top_pos.(0.0, 1.0)) + (($g_ui_exploding_text_top_height + <Height>) / 2))
+			<cont_pos_y> = (($g_ui_exploding_text_top_pos.(0.0, 1.0)) + (($g_ui_exploding_text_top_height + <height>) / 2))
 			<cont_pos> = ((<cont_pos_x> * (1.0, 0.0)) + (<cont_pos_y> * (0.0, 1.0)))
 		endif
 		<space_between> = ((<avg_width> * <fit_scale>) * (1.0, 0.0))
 		destroy_menu menu_id = <id>
 	endif
-	if GotParam \{centered}
+	if gotparam \{centered}
 		half_width = ((<array_size> - 1) * (<space_between>.(1.0, 0.0)) * 0.5)
 		<text_pos> = (<text_pos> - <half_width> * (1.0, 0.0))
 	endif
-	FormatText checksumname = cont_id '%p' p = <parent>
-	CreateScreenElement {
-		type = ContainerElement
+	formattext checksumname = cont_id '%p' p = <parent>
+	createscreenelement {
+		type = containerelement
 		id = <cont_id>
 		parent = root_window
 		pos = <cont_pos>
 	}
 	i = 0
 	begin
-	FormatText checksumname = physics_container '%p_%i' p = <parent> i = <i>
-	CreateScreenElement {
-		type = PhysicsElement
+	formattext checksumname = physics_container '%p_%i' p = <parent> i = <i>
+	createscreenelement {
+		type = physicselement
 		id = <physics_container>
 		parent = <cont_id>
 		pos = <text_pos>
@@ -561,13 +561,13 @@ script split_text_into_physics_array_elements \{text = qs("You Rock!")
 		just = <just>
 	}
 	if ((<i> + 1) < <array_size>)
-		if ((<char_array> [<i>] = qs(0xf2bd630d)) && (<char_array> [<i> + 1] = qs("\L_")))
+		if ((<char_array> [<i>] = qs(0xf2bd630d)) && (<char_array> [<i> + 1] = qs(0xd99030ce)))
 			<i> = (<i> + 1)
-			SetArrayElement ArrayName = char_array index = <i> newvalue = qs("\L ")
+			setarrayelement arrayname = char_array index = <i> newvalue = qs(0x713755f7)
 		endif
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = <physics_container>
 		pos = (0.0, 0.0)
 		text = (<char_array> [<i>])
@@ -576,15 +576,15 @@ script split_text_into_physics_array_elements \{text = qs("You Rock!")
 		internal_scale = (2.0, 2.0)
 		alpha = (<flags>.alpha)
 	}
-	GetScreenElementDims id = <id>
+	getscreenelementdims id = <id>
 	if (<width> > 50)
 		<mass> = (<width> * 2.0)
 	else
 		<mass> = 100.0
 	endif
-	SetScreenElementProps id = <physics_container> mass = <mass>
-	CreateScreenElement {
-		type = TextElement
+	setscreenelementprops id = <physics_container> mass = <mass>
+	createscreenelement {
+		type = textelement
 		parent = <physics_container>
 		text = (<char_array> [<i>])
 		<flags>
@@ -595,8 +595,8 @@ script split_text_into_physics_array_elements \{text = qs("You Rock!")
 		alpha = (<flags>.alpha)
 		internal_scale = (<flags>.scale * (2.3, 2.2) * <fit_scale>)
 	}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = <physics_container>
 		text = (<char_array> [<i>])
 		<flags>
@@ -616,7 +616,7 @@ script split_text_into_physics_array_elements \{text = qs("You Rock!")
 	return exploding_text_array_size = <array_size>
 endscript
 
-script do_gh4style_text_slam \{time = 1.5}
+script 0x1d8ab795 \{time = 1.5}
 	<zoom_time_1> = 0.3
 	<zoom_time_2> = 0.2
 	<zoom_time_3> = 0.15
@@ -634,71 +634,71 @@ script do_gh4style_text_slam \{time = 1.5}
 	<orig_pos> = <cont_pos>
 	<orig_alpha> = 0.25
 	<orig_scale> = 2
-	FormatText checksumname = cont_id '%p' p = <parent>
-	GetScreenElementProps id = <cont_id>
+	formattext checksumname = cont_id '%p' p = <parent>
+	getscreenelementprops id = <cont_id>
 	<final_pos> = <pos>
 	<final_alpha> = 0.575
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <cont_id>
 		pos = <orig_pos>
 		alpha = <orig_alpha>
 		scale = <orig_scale>
 		relative_scale
 	}
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_setprops {
 		pos = <final_pos>
 		alpha = <final_alpha>
 		scale = <scale_2>
 		time = <zoom_time_1>
 		motion = ease_in
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <scale_3>
 		time = <zoom_time_2>
 		motion = ease_out
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <scale_4>
 		time = <zoom_time_3>
 		motion = ease_in
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <scale_5>
 		time = <zoom_time_4>
 		motion = ease_out
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <scale_6>
 		time = <zoom_time_5>
 		motion = ease_in
 	}
-	<cont_id> :SE_WaitProps
-	Wait \{0.5
+	<cont_id> :se_waitprops
+	wait \{0.5
 		seconds}
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_setprops {
 		scale = <scale_7>
 		time = <zoom_time_6>
 		motion = smooth
 		alpha = 1.0
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <hiccup_scale>
 		time = <hiccup_time>
 	}
-	<cont_id> :SE_WaitProps
-	<cont_id> :SE_SetProps {
+	<cont_id> :se_waitprops
+	<cont_id> :se_setprops {
 		scale = <scale_7>
 		time = <hiccup_time>
 	}
-	<cont_id> :SE_WaitProps
+	<cont_id> :se_waitprops
 	if (<explode> = 1)
-		DestroyScreenElement \{id = et_white_frame}
-		CreateScreenElement \{type = SpriteElement
+		destroyscreenelement \{id = et_white_frame}
+		createscreenelement \{type = spriteelement
 			id = et_white_frame
 			parent = root_window
 			texture = white
@@ -715,10 +715,10 @@ script do_gh4style_text_slam \{time = 1.5}
 				center
 			]
 			z_priority = 1000}
-		if NOT GotParam \{debug}
+		if NOT gotparam \{debug}
 			spawnscriptnow \{do_extra_exploding_particles}
 		endif
-		RunScriptOnScreenElement id = <id> explode_white_screens
+		runscriptonscreenelement id = <id> explode_white_screens
 		if (<text_physics> = 1)
 			do_exploding_text_physics {
 				parent = <parent>

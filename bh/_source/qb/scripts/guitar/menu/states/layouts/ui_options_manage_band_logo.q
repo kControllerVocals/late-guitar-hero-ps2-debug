@@ -2,10 +2,10 @@
 script ui_create_options_manage_band_logo 
 	get_current_band_info
 	bandname_id = <band_info>
-	GetGlobalTags <bandname_id>
-	FormatText TextName = the_bands_name qs(0xb213c4fe) n = <name>
+	getglobaltags <bandname_id>
+	formattext textname = the_bands_name qs(0xb213c4fe) n = <name>
 	spawnscriptnow \{menu_manage_band_edit_logo_focus}
-	make_generic_menu \{title = qs("BAND INFO")
+	make_generic_menu \{title = qs(0x9baf87e5)
 		pad_back_script = band_logo_backout
 		vmenu_id = create_options_manage_band_vmenu}
 	setup_cas_menu_handlers_restricted \{vmenu_id = create_options_manage_band_vmenu}
@@ -17,10 +17,10 @@ script ui_create_options_manage_band_logo
 		heading
 	}
 	add_generic_menu_text_item \{text = qs(0x520dad0f)
-		choose_state = UIstate_cap_main
+		choose_state = uistate_cap_main
 		choose_state_data = {
-			text = qs("Edit Band Logo")
-			part = CAS_Band_Logo
+			text = qs(0x9a6bb96f)
+			part = cas_band_logo
 			cam_name = 'options_manage_band_logo'
 			num_icons = 0
 		}}
@@ -37,59 +37,59 @@ script ui_destroy_options_manage_band_logo
 endscript
 
 script init_band_logo controller = ($primary_controller)
-	CASBlockForLoading
+	casblockforloading
 	cas_load_and_setup_resources \{no_cam
 		no_bink
 		band_logo}
 	change \{cas_editing_new_character = false}
 	ensure_band_logo_object_created
-	SetCASAppearance \{appearance = {
-			CAS_Band_Logo = {
-				desc_id = CAS_Band_Logo_id
+	setcasappearance \{appearance = {
+			cas_band_logo = {
+				desc_id = cas_band_logo_id
 			}
 		}}
-	change \{cas_override_object = BandLogoObject}
+	change \{cas_override_object = bandlogoobject}
 	get_savegame_from_controller controller = ($band_name_logo_controller)
 	get_current_band_info
-	GetGlobalTags savegame = <savegame> <band_info>
-	if GotParam \{band_logo}
-		SetCASAppearanceCAP part = CAS_Band_Logo cap = <band_logo>
+	getglobaltags savegame = <savegame> <band_info>
+	if gotparam \{band_logo}
+		setcasappearancecap part = cas_band_logo cap = <band_logo>
 		cas_update_band_logo controller = <controller>
 	endif
 endscript
 
 script ensure_band_logo_object_created 
 	return
-	if NOT CompositeObjectExists \{name = BandLogoObject}
-		lightgroup = [Band Alt_Band]
-		CreateCompositeObject {
+	if NOT compositeobjectexists \{name = bandlogoobject}
+		lightgroup = [band alt_band]
+		createcompositeobject {
 			params = {
-				name = BandLogoObject
+				name = bandlogoobject
 				pos = (0.0, 0.0, 0.0)
-				assetcontext = ($CAS_Band_Logo_Details.assetcontext)
+				assetcontext = ($cas_band_logo_details.assetcontext)
 			}
-			Components = [
+			components = [
 				{
-					Component = skeleton
-					SkeletonName = GH_Rocker_Female_original
+					component = skeleton
+					skeletonname = gh_rocker_female_original
 				}
 				{
-					Component = SetDisplayMatrix
+					component = setdisplaymatrix
 				}
 				{
-					Component = AnimTree
+					component = animtree
 				}
 				{
-					Component = Model
+					component = model
 					lightgroup = <lightgroup>
 				}
 				{
-					Component = ModelBuilder
+					component = modelbuilder
 					global_storage = band_logo_block
 				}
 			]
 		}
-		BandLogoObject :SetTags {
+		bandlogoobject :settags {
 			no_bone_work
 			instrument = none
 			lightgroup = <lightgroup>
@@ -101,29 +101,29 @@ script ensure_band_logo_object_created
 				temporary_heap = heap_cas
 			}
 			appearance = {
-				CAS_Band_Logo = {desc_id = CAS_Band_Logo_id}
+				cas_band_logo = {desc_id = cas_band_logo_id}
 			}
 		}
-		BandLogoObject :ModelBuilder_Preload <params>
-		BandLogoObject :ModelBuilder_LoadAssets <params>
-		BandLogoObject :ModelBuilder_Build <params>
-		BandLogoObject :SwitchOffAtomic \{CAS_Band_Logo}
+		bandlogoobject :modelbuilder_preload <params>
+		bandlogoobject :modelbuilder_loadassets <params>
+		bandlogoobject :modelbuilder_build <params>
+		bandlogoobject :switchoffatomic \{cas_band_logo}
 	endif
-	return \{object_name = BandLogoObject}
+	return \{object_name = bandlogoobject}
 endscript
 
 script cas_update_band_logo controller = ($band_name_logo_controller)
-	CASWaitForUnloads \{Block}
-	CASBlockForLoading
-	CasBlockForComposite
-	if GotParam \{album_art}
+	caswaitforunloads \{block}
+	casblockforloading
+	casblockforcomposite
+	if gotparam \{album_art}
 		band_logo = ($editable_jam_album_cover)
-		if NOT IsArray <band_logo>
+		if NOT isarray <band_logo>
 			band_logo = ($default_album_cover)
 		else
-			GetArraySize \{band_logo}
+			getarraysize \{band_logo}
 			if (<array_size> > 0)
-				if NOT StructureContains Structure = (<band_logo> [0]) base_tex
+				if NOT structurecontains structure = (<band_logo> [0]) base_tex
 					band_logo = ($default_album_cover)
 				endif
 			else
@@ -133,17 +133,17 @@ script cas_update_band_logo controller = ($band_name_logo_controller)
 	else
 		get_savegame_from_controller controller = <controller>
 		get_current_band_info
-		GetGlobalTags savegame = <savegame> <band_info>
-		if NOT GotParam \{band_logo}
+		getglobaltags savegame = <savegame> <band_info>
+		if NOT gotparam \{band_logo}
 
 			return
 		endif
 	endif
-	if GotParam \{band_logo}
-		if IsChecksum <band_logo>
-			if GetActualCASOptionStruct part = CAS_Select_A_Logo desc_id = <band_logo>
-				if GotParam \{with1}
-					GenerateCAGTexture single_texture = (<with1>)
+	if gotparam \{band_logo}
+		if ischecksum <band_logo>
+			if getactualcasoptionstruct part = 0x197f6b46 desc_id = <band_logo>
+				if gotparam \{with1}
+					generatecagtexture single_texture = (<with1>)
 				endif
 			endif
 		endif
@@ -152,29 +152,29 @@ script cas_update_band_logo controller = ($band_name_logo_controller)
 endscript
 
 script band_logo_backout 
-	if NOT GetCASAppearance
+	if NOT getcasappearance
 
 	endif
-	if StructureContains Structure = (<appearance>.CAS_Band_Logo) cap
+	if structurecontains structure = (<appearance>.cas_band_logo) cap
 		get_savegame_from_controller controller = ($band_name_logo_controller)
 		get_current_band_info
-		GetGlobalTags savegame = <savegame> <band_info>
-		if GotParam \{band_logo}
-			GenerateChecksumFromArray \{ArrayName = band_logo}
+		getglobaltags savegame = <savegame> <band_info>
+		if gotparam \{band_logo}
+			generatechecksumfromarray \{arrayname = band_logo}
 			old_save_checksum = <array_checksum>
-			new_cap = ((<appearance>.CAS_Band_Logo).cap)
-			GenerateChecksumFromArray \{ArrayName = new_cap}
-			if ChecksumEquals a = <old_save_checksum> b = <array_checksum>
+			new_cap = ((<appearance>.cas_band_logo).cap)
+			generatechecksumfromarray \{arrayname = new_cap}
+			if checksumequals a = <old_save_checksum> b = <array_checksum>
 				generic_event_back
 			else
-				SetGlobalTags savegame = <savegame> <band_info> params = {band_logo = ((<appearance>.CAS_Band_Logo).cap)}
+				setglobaltags savegame = <savegame> <band_info> params = {band_logo = ((<appearance>.cas_band_logo).cap)}
 				ui_memcard_autosave \{event = menu_back
 					data = {
 						num_states = 2
 					}}
 			endif
 		else
-			SetGlobalTags savegame = <savegame> <band_info> params = {band_logo = ((<appearance>.CAS_Band_Logo).cap)}
+			setglobaltags savegame = <savegame> <band_info> params = {band_logo = ((<appearance>.cas_band_logo).cap)}
 			ui_memcard_autosave \{event = menu_back
 				data = {
 					num_states = 2

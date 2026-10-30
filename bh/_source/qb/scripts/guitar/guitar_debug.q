@@ -1,29 +1,29 @@
 
 script debug_gem_text 
 	if (<pattern> && 65536)
-		FormatText TextName = text qs("\L%t%pG") t = <text> p = <prefix>
+		formattext textname = text qs(0x14db9cdc) t = <text> p = <prefix>
 	else
-		FormatText TextName = text qs("\L%t%p.") t = <text> p = <prefix>
+		formattext textname = text qs(0xa0e44c32) t = <text> p = <prefix>
 	endif
 	if (<pattern> && 4096)
-		FormatText TextName = text qs("\L%tR") t = <text>
+		formattext textname = text qs(0xfadeba75) t = <text>
 	else
-		FormatText TextName = text qs("\L%t.") t = <text>
+		formattext textname = text qs(0x79548c8f) t = <text>
 	endif
 	if (<pattern> && 256)
-		FormatText TextName = text qs("\L%tY") t = <text>
+		formattext textname = text qs(0x192a63be) t = <text>
 	else
-		FormatText TextName = text qs("\L%t.") t = <text>
+		formattext textname = text qs(0x79548c8f) t = <text>
 	endif
 	if (<pattern> && 16)
-		FormatText TextName = text qs("\L%tB") t = <text>
+		formattext textname = text qs(0xb01ca824) t = <text>
 	else
-		FormatText TextName = text qs("\L%t.") t = <text>
+		formattext textname = text qs(0x79548c8f) t = <text>
 	endif
 	if (<pattern> && 1)
-		FormatText TextName = text qs("\L%tO ") t = <text>
+		formattext textname = text qs(0x4e0b861f) t = <text>
 	else
-		FormatText TextName = text qs("\L%t. ") t = <text>
+		formattext textname = text qs(0xcd911679) t = <text>
 	endif
 	return <...>
 endscript
@@ -31,88 +31,88 @@ endscript
 script debug_output 
 	if ($output_log_file = 1)
 		<showtime> = (<time> - ($check_time_early * 1000.0))
-		FormatText TextName = text qs("\L%t: (%c)") t = <showtime> c = ($<player_status>.controller)
+		formattext textname = text qs(0x6f973620) t = <showtime> c = ($<player_status>.controller)
 		if (<ignore_time> >= 0)
-			debug_gem_text text = <text> pattern = <ignore_strum> prefix = qs("\LIg: ")
+			debug_gem_text text = <text> pattern = <ignore_strum> prefix = qs(0x10ec1370)
 		else
-			FormatText TextName = text qs("\L%tIg: ..... ") t = <text>
+			formattext textname = text qs(0xbf0b68d5) t = <text>
 		endif
-		GetHeldPattern controller = ($<player_status>.controller) player = ($<player_status>.player) nobrokenstring
-		debug_gem_text text = <text> pattern = <strummed_pattern> prefix = qs("\LLS: ")
-		debug_gem_text text = <text> pattern = <original_strum> prefix = qs("\LOr: ")
-		debug_gem_text text = <text> pattern = <hold_pattern> prefix = qs("\LHe: ")
+		getheldpattern controller = ($<player_status>.controller) player = ($<player_status>.player) nobrokenstring
+		debug_gem_text text = <text> pattern = <strummed_pattern> prefix = qs(0xc7e758af)
+		debug_gem_text text = <text> pattern = <original_strum> prefix = qs(0x859889df)
+		debug_gem_text text = <text> pattern = <hold_pattern> prefix = qs(0x918eb2e5)
 		if (<hit_strum> = 1)
 			if (<fake_strum> = 1)
-				FormatText TextName = text qs("\L%t H ") t = <text>
+				formattext textname = text qs(0x5b352041) t = <text>
 			else
-				FormatText TextName = text qs("\L%t S ") t = <text>
+				formattext textname = text qs(0xdc2df0df) t = <text>
 			endif
 		else
 			if (<fake_strum> = 1)
-				FormatText TextName = text qs("\L%t F ") t = <text>
+				formattext textname = text qs(0xbbea5772) t = <text>
 			else
-				FormatText TextName = text qs("\L%t . ") t = <text>
+				formattext textname = text qs(0x4578889e) t = <text>
 			endif
 		endif
 		if (<strummed_before_forming> >= 0.0)
-			FormatText TextName = text qs("\L%t T ") t = <text>
+			formattext textname = text qs(0x41fac866) t = <text>
 		else
-			FormatText TextName = text qs("\L%t   ") t = <text>
+			formattext textname = text qs(0xa5a7ffad) t = <text>
 		endif
 		if (<tapping> = 1)
-			action_tap = qs(" TAP ")
+			action_tap = qs(0x18c99bac)
 		else
-			action_tap = qs("\L     ")
+			action_tap = qs(0x92e2c9d5)
 		endif
 		get_input_debug_text <...>
-		FormatText TextName = text qs("\L%t%h%m%u%l%k%i") t = <text> h = <action_hit> m = <action_mis> u = <action_unn> l = <action_tol> i = <input_text> k = <action_tap>
-		FormatText TextName = text qs("\L%t :%o: %n") t = <text> o = ($<player_status>.hammer_on_tolerance) n = <notes_open>
-		GetArraySize <strum_hits>
+		formattext textname = text qs(0x4793bf41) t = <text> h = <action_hit> m = <action_mis> u = <action_unn> l = <action_tol> i = <input_text> k = <action_tap>
+		formattext textname = text qs(0xd30b02ca) t = <text> o = ($<player_status>.hammer_on_tolerance) n = <notes_open>
+		getarraysize <strum_hits>
 		if (<array_size> > 0)
-			FormatText TextName = text qs("\L%t S(") t = <text>
+			formattext textname = text qs(0x14f47ad7) t = <text>
 			<index> = 0
 			begin
 			<strum> = (<strum_hits> [<index>])
-			debug_gem_text text = <text> pattern = <strum> prefix = qs("\L")
+			debug_gem_text text = <text> pattern = <strum> prefix = qs(0x03ac90f0)
 			<index> = (<index> + 1)
 			repeat <array_size>
-			FormatText TextName = text qs("\L%t)") t = <text>
+			formattext textname = text qs(0x36151a48) t = <text>
 		endif
-		GetArraySize <hammer_hits>
+		getarraysize <hammer_hits>
 		if (<array_size> > 0)
-			FormatText TextName = text qs("\L%t H(") t = <text>
+			formattext textname = text qs(0x93ecaa49) t = <text>
 			<index> = 0
 			begin
 			<strum> = (<hammer_hits> [<index>])
-			debug_gem_text text = <text> pattern = <strum> prefix = qs("\L")
+			debug_gem_text text = <text> pattern = <strum> prefix = qs(0x03ac90f0)
 			<index> = (<index> + 1)
 			repeat <array_size>
-			FormatText TextName = text qs("\L%t)") t = <text>
+			formattext textname = text qs(0x36151a48) t = <text>
 		endif
-		if GotParam \{off_note}
-			GetGlobalTags \{user_options}
-			if GotParam \{lag_calibration}
-				CastToInteger \{lag_calibration}
-				Mod a = <lag_calibration> b = 1000
-				<video_offset> = <Mod>
+		if gotparam \{off_note}
+			getglobaltags \{user_options}
+			if gotparam \{lag_calibration}
+				casttointeger \{lag_calibration}
+				mod a = <lag_calibration> b = 1000
+				<video_offset> = <mod>
 				<audio_offset> = ((<lag_calibration> / 1000) - 1)
 				<off_note> = (0 - (<off_note> - ($time_input_offset + <audio_offset> + <video_offset>)))
-				CastToInteger \{off_note}
+				casttointeger \{off_note}
 			endif
-			FormatText TextName = text qs("\L%t (%oms)") t = <text> o = <off_note>
+			formattext textname = text qs(0x7fe80a6d) t = <text> o = <off_note>
 		endif
-		ExtendCRC log ($<player_status>.text) out = log_channel
+		extendcrc log ($<player_status>.text) out = log_channel
 
 	endif
 endscript
 
-script FlexParticleWarning 
-	SetScreenElementLock \{id = root_window
+script flexparticlewarning 
+	setscreenelementlock \{id = root_window
 		off}
-	if ObjectExists \{id = particle_warn_anchor}
-		DestroyScreenElement \{id = particle_warn_anchor}
+	if objectexists \{id = particle_warn_anchor}
+		destroyscreenelement \{id = particle_warn_anchor}
 	endif
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = particle_warn_anchor
 		pos = (25.0, 80.0)
@@ -124,11 +124,11 @@ script FlexParticleWarning
 			left
 			center
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = particle_warn_anchor
 		id = particle_warn_text
 		pos = (0.0, 0.0)
-		text = qs("\LParticle failed: Too many at once")
+		text = qs(0x475886ae)
 		font = debug
 		rgba = [
 			255
@@ -140,19 +140,19 @@ script FlexParticleWarning
 			left
 			top
 		]}
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		on}
-	Wait \{2
+	wait \{2
 		seconds}
-	if ObjectExists \{id = particle_warn_anchor}
-		DestroyScreenElement \{id = particle_warn_anchor}
+	if objectexists \{id = particle_warn_anchor}
+		destroyscreenelement \{id = particle_warn_anchor}
 	endif
 endscript
 
 script charge_star_power \{player = 1}
-	<player_status> = ($player_status_array [<player>])
-	if (GameMode_IsBandScoring)
-		GetBandIndexByPlayer player = ($<player_status>.player)
+	<player_status> = ($0x2994109a [<player>])
+	if (gamemode_isbandscoring)
+		getbandindexbyplayer player = ($<player_status>.player)
 		band_id = ($band_ids [<band_index>])
 		change structurename = <band_id> star_power_amount = 100
 	else
@@ -161,18 +161,18 @@ script charge_star_power \{player = 1}
 endscript
 
 script activate_star_power \{player = 1}
-	<player_status> = ($player_status_array [<player>])
-	<player_text> = ($player_text_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
+	<player_text> = ($0x57e22f28 [<player>])
 	star_power_activate_and_drain <...>
 endscript
 
 script wait_until_ingame \{player = 1}
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	begin
 	if NOT (($<player_status>.playline_song_measure_time) = 0)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe
 		ignoreslomo}
 	repeat
@@ -184,7 +184,7 @@ script auto_infinite_star_power \{player = 1}
 	spawnscriptnow activate_star_power params = {player = <player> infinite_drain}
 	begin
 	charge_star_power player = <player>
-	Wait \{1
+	wait \{1
 		gameframe
 		ignoreslomo}
 	repeat
@@ -192,7 +192,7 @@ endscript
 
 script auto_trigger_star_power \{player = 1}
 	wait_until_ingame player = <player>
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	begin
 	if (($<player_status>.star_power_amount) >= 50.0)
 		activate_star_power player = <player>
@@ -200,7 +200,7 @@ script auto_trigger_star_power \{player = 1}
 	if (($band1_status.star_power_amount) >= 50.0)
 		activate_star_power player = <player>
 	endif
-	Wait \{1
+	wait \{1
 		gameframe
 		ignoreslomo}
 	repeat
@@ -208,19 +208,19 @@ endscript
 
 script auto_full_star_power \{player = 1}
 	wait_until_ingame player = <player>
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	begin
 	if (($<player_status>.star_power_used) = 0)
 		charge_star_power player = <player>
 	endif
-	Wait \{1
+	wait \{1
 		gameframe
 		ignoreslomo}
 	repeat
 endscript
 
 script init_star_power_debug \{player = 1}
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	if (($<player_status>.star_power_debug_mode) = 1)
 		spawnscriptnow auto_infinite_star_power params = {player = <player>}
 	else
@@ -235,132 +235,132 @@ script init_star_power_debug \{player = 1}
 endscript
 
 script deinit_star_power_debug 
-	KillSpawnedScript \{name = auto_infinite_star_power}
-	KillSpawnedScript \{name = auto_trigger_star_power}
-	KillSpawnedScript \{name = auto_full_star_power}
-	KillSpawnedScript \{name = activate_star_power}
+	killspawnedscript \{name = auto_infinite_star_power}
+	killspawnedscript \{name = auto_trigger_star_power}
+	killspawnedscript \{name = auto_full_star_power}
+	killspawnedscript \{name = activate_star_power}
 endscript
 
 script update_rock_meter_debug_text 
 	begin
-	if ScreenElementExists id = <id>
+	if screenelementexists id = <id>
 		if ($current_num_players > 1)
 			<player> = 1
 			begin
-			<player_status> = ($player_status_array [<player>])
-			<part> = qs("\L?")
-			if (($<player_status>.part) = Bass)
-				<part> = qs("\LB")
+			<player_status> = ($0x2994109a [<player>])
+			<part> = qs(0xbc6d5b69)
+			if (($<player_status>.part) = bass)
+				<part> = qs(0x26fc5cd2)
 			endif
 			if (($<player_status>.part) = guitar)
-				<part> = qs("\LG")
+				<part> = qs(0x5b8ba897)
 			endif
 			if (($<player_status>.part) = drum)
-				<part> = qs("\LD")
+				<part> = qs(0x70a6fb54)
 			endif
-			if (($<player_status>.part) = Vocals)
-				<part> = qs("\LV")
+			if (($<player_status>.part) = vocals)
+				<part> = qs(0x08528b87)
 			endif
-			FormatText checksumname = rmdt 'rock_meter_debug_text%i' i = <player> AddToStringLookup
-			FormatText TextName = string qs("\L%p:%v") p = <part> v = ($<player_status>.current_health)
-			SetScreenElementProps id = <rmdt> text = <string>
+			formattext checksumname = rmdt 'rock_meter_debug_text%i' i = <player> addtostringlookup
+			formattext textname = string qs(0x589fda4a) p = <part> v = ($<player_status>.current_health)
+			setscreenelementprops id = <rmdt> text = <string>
 			<player> = (<player> + 1)
 			repeat $current_num_players
 		endif
-		FormatText \{TextName = text_string
-			qs("\L%a")
+		formattext \{textname = text_string
+			qs(0x0bc409e2)
 			a = $current_crowd}
-		SetScreenElementProps id = <id> text = <text_string>
+		setscreenelementprops id = <id> text = <text_string>
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
 script setlist_quit_song_menu_input 
-	SetScriptCannotPause
+	setscriptcannotpause
 	<return_to_base_selection> = 0
 	begin
-	Block \{type = setlist_created}
-	Wait RandomFloat (1.0, 2.0) seconds
+	block \{type = setlist_created}
+	wait RandomFloat (1.0, 2.0) seconds
 	begin
-	if ScreenElementExists \{id = setlist_menu}
+	if screenelementexists \{id = setlist_menu}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 
 	if (<return_to_base_selection> > 0)
 		begin
-		LaunchEvent \{type = pad_up
+		launchevent \{type = pad_up
 			target = setlist_menu}
-		Wait RandomFloat (0.2, 0.6) seconds
+		wait RandomFloat (0.2, 0.6) seconds
 		repeat <return_to_base_selection>
 	endif
 	<count> = RandomInteger (1.0, 8.0)
 	<return_to_base_selection> = <count>
 	begin
-	LaunchEvent \{type = pad_down
+	launchevent \{type = pad_down
 		target = setlist_menu}
-	Wait RandomFloat (0.2, 0.6) seconds
+	wait RandomFloat (0.2, 0.6) seconds
 	repeat <count>
-	setlist_menu :Menu_GetSelectedIndex
-	LaunchEvent type = pad_choose target = {setlist_menu child = <selected_index>}
-	Block \{type = song_started}
-	Wait RandomFloat (5.0, 60.0) seconds
+	setlist_menu :menu_getselectedindex
+	launchevent type = pad_choose target = {setlist_menu child = <selected_index>}
+	block \{type = song_started}
+	wait RandomFloat (5.0, 60.0) seconds
 
-	LaunchEvent \{type = pad_start
+	launchevent \{type = pad_start
 		target = root_window}
-	Block \{type = pause_menu_created}
-	Wait RandomFloat (1.0, 2.0) seconds
+	block \{type = pause_menu_created}
+	wait RandomFloat (1.0, 2.0) seconds
 	begin
-	if ScreenElementExists \{id = current_menu}
+	if screenelementexists \{id = current_menu}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 
 	begin
-	LaunchEvent \{type = pad_down
+	launchevent \{type = pad_down
 		target = current_menu}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
 	repeat 5
-	current_menu :Menu_GetSelectedIndex
-	LaunchEvent type = pad_choose target = {current_menu child = <selected_index>}
-	Block \{type = popup_created}
-	Wait RandomFloat (1.0, 2.0) seconds
+	current_menu :menu_getselectedindex
+	launchevent type = pad_choose target = {current_menu child = <selected_index>}
+	block \{type = popup_created}
+	wait RandomFloat (1.0, 2.0) seconds
 	begin
-	if ScreenElementExists \{id = dialog_box_vmenu}
+	if screenelementexists \{id = dialog_box_vmenu}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 
-	LaunchEvent \{type = pad_down
+	launchevent \{type = pad_down
 		target = dialog_box_vmenu}
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	dialog_box_vmenu :Menu_GetSelectedIndex
-	LaunchEvent type = pad_choose target = {dialog_box_vmenu child = <selected_index>}
-	Block \{type = popup_created}
-	Wait RandomFloat (1.0, 2.0) seconds
+	dialog_box_vmenu :menu_getselectedindex
+	launchevent type = pad_choose target = {dialog_box_vmenu child = <selected_index>}
+	block \{type = popup_created}
+	wait RandomFloat (1.0, 2.0) seconds
 	begin
-	if ScreenElementExists \{id = dialog_box_vmenu}
+	if screenelementexists \{id = dialog_box_vmenu}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframes}
 	repeat
 
-	LaunchEvent \{type = pad_down
+	launchevent \{type = pad_down
 		target = dialog_box_vmenu}
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	dialog_box_vmenu :Menu_GetSelectedIndex
-	LaunchEvent type = pad_choose target = {dialog_box_vmenu child = <selected_index>}
+	dialog_box_vmenu :menu_getselectedindex
+	launchevent type = pad_choose target = {dialog_box_vmenu child = <selected_index>}
 	repeat
 endscript

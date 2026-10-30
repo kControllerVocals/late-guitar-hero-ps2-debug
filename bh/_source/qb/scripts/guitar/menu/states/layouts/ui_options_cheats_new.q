@@ -1,32 +1,32 @@
 
 script ui_create_options_cheats_new 
-	Menu_Music_Off
-	CreateScreenElement \{parent = root_window
-		id = CheatsInterface
-		type = DescInterface
+	menu_music_off
+	createscreenelement \{parent = root_window
+		id = cheatsinterface
+		type = descinterface
 		desc = 'new_cheat'}
-	if CheatsInterface :Desc_ResolveAlias \{name = alias_key_bars}
-		AssignAlias id = <resolved_id> alias = current_menu
+	if cheatsinterface :desc_resolvealias \{name = alias_key_bars}
+		assignalias id = <resolved_id> alias = current_menu
 		<pad_green> = pad_r2
 		<pad_red> = pad_btn_right
 		<pad_blue> = pad_btn_bottom
 		<pad_yellow> = pad_btn_top
-		if IsDrumController \{controller = $primary_controller}
+		if isdrumcontroller \{controller = $primary_controller}
 			<pad_green> = pad_btn_bottom
 			<pad_blue> = pad_btn_left
 		endif
 		disable_pause
-		current_menu :SE_SetProps {
+		current_menu :se_setprops {
 			event_handlers = [
 				{pad_start ui_options_cheats_new_back}
 				{<pad_green> ui_options_cheats_new_enter params = {key = green}}
 				{<pad_red> ui_options_cheats_new_enter params = {key = red}}
-				{<pad_blue> ui_options_cheats_new_enter params = {key = Blue}}
-				{<pad_yellow> ui_options_cheats_new_enter params = {key = Yellow}}
-				{<pad_green> ui_options_cheats_new_sound_events params = {Sound = Input key = green}}
-				{<pad_red> ui_options_cheats_new_sound_events params = {Sound = Input key = red}}
-				{<pad_blue> ui_options_cheats_new_sound_events params = {Sound = Input key = Blue}}
-				{<pad_yellow> ui_options_cheats_new_sound_events params = {Sound = Input key = Yellow}}
+				{<pad_blue> ui_options_cheats_new_enter params = {key = blue}}
+				{<pad_yellow> ui_options_cheats_new_enter params = {key = yellow}}
+				{<pad_green> ui_options_cheats_new_sound_events params = {sound = input key = green}}
+				{<pad_red> ui_options_cheats_new_sound_events params = {sound = input key = red}}
+				{<pad_blue> ui_options_cheats_new_sound_events params = {sound = input key = blue}}
+				{<pad_yellow> ui_options_cheats_new_sound_events params = {sound = input key = yellow}}
 			]
 			tags = {
 				index = 0
@@ -35,195 +35,195 @@ script ui_create_options_cheats_new
 			exclusive_device = ($primary_controller)
 		}
 	endif
-	if CheatsInterface :Desc_ResolveAlias \{name = alias_volume_bars}
-		AssignAlias id = <resolved_id> alias = bar_menu
+	if cheatsinterface :desc_resolvealias \{name = alias_volume_bars}
+		assignalias id = <resolved_id> alias = bar_menu
 	endif
-	if CheatsInterface :Desc_ResolveAlias \{name = alias_cheat_tv_glow}
+	if cheatsinterface :desc_resolvealias \{name = alias_cheat_tv_glow}
 		<resolved_id> :obj_spawnscript ui_options_cheats_new_tv_glow
 	endif
-	if CheatsInterface :Desc_ResolveAlias \{name = alias_info_container}
-		AssignAlias id = <resolved_id> alias = info_container
+	if cheatsinterface :desc_resolvealias \{name = alias_info_container}
+		assignalias id = <resolved_id> alias = info_container
 	endif
-	add_user_control_helper \{text = qs("DONE")
+	add_user_control_helper \{text = qs(0x3fc1c076)
 		button = start
 		z = 100000}
 endscript
 
 script ui_destroy_options_cheats_new 
 	spawnscriptnow \{menu_music_on}
-	DestroyScreenElement \{id = CheatsInterface}
+	destroyscreenelement \{id = cheatsinterface}
 	generic_ui_destroy
 endscript
 
 script ui_options_cheats_new_back 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = current_menu}
 	ui_options_cheats_new_reset_bars
 	generic_event_back
 endscript
 
 script ui_options_cheats_new_enter 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	SE_SetProps \{block_events}
-	GetTags
-	GetScreenElementChildren \{id = bar_menu}
+	se_setprops \{block_events}
+	gettags
+	getscreenelementchildren \{id = bar_menu}
 	current_key = (<children> [<index>])
-	SetArrayElement ArrayName = cheat_array index = <index> newvalue = <key>
-	SetTags {cheat_array = <cheat_array>}
-	GetScreenElementChildren \{id = current_menu}
+	setarrayelement arrayname = cheat_array index = <index> newvalue = <key>
+	settags {cheat_array = <cheat_array>}
+	getscreenelementchildren \{id = current_menu}
 	switch (<key>)
 		case green
-		<current_key> :SE_SetProps rgba = [38 229 38 255]
-		<current_key> :SE_SetProps alpha = 1.0
+		<current_key> :se_setprops rgba = [38 229 38 255]
+		<current_key> :se_setprops alpha = 1.0
 		current_bar = (<children> [0])
-		<current_bar> :SE_SetProps alpha = 1.0 time = 0.1
-		<current_bar> :SE_WaitProps
-		<current_bar> :SE_SetProps alpha = 0.0 time = 0.1
+		<current_bar> :se_setprops alpha = 1.0 time = 0.1
+		<current_bar> :se_waitprops
+		<current_bar> :se_setprops alpha = 0.0 time = 0.1
 		case red
-		<current_key> :SE_SetProps rgba = [210 19 19 255]
-		<current_key> :SE_SetProps alpha = 1.0
+		<current_key> :se_setprops rgba = [210 19 19 255]
+		<current_key> :se_setprops alpha = 1.0
 		current_bar = (<children> [1])
-		<current_bar> :SE_SetProps alpha = 1.0 time = 0.1
-		<current_bar> :SE_WaitProps
-		<current_bar> :SE_SetProps alpha = 0.0 time = 0.1
-		case Yellow
-		<current_key> :SE_SetProps rgba = [248 248 57 255]
-		<current_key> :SE_SetProps alpha = 1.0
+		<current_bar> :se_setprops alpha = 1.0 time = 0.1
+		<current_bar> :se_waitprops
+		<current_bar> :se_setprops alpha = 0.0 time = 0.1
+		case yellow
+		<current_key> :se_setprops rgba = [248 248 57 255]
+		<current_key> :se_setprops alpha = 1.0
 		current_bar = (<children> [2])
-		<current_bar> :SE_SetProps alpha = 1.0 time = 0.1
-		<current_bar> :SE_WaitProps
-		<current_bar> :SE_SetProps alpha = 0.0 time = 0.1
-		case Blue
-		<current_key> :SE_SetProps rgba = [7 7 198 255]
-		<current_key> :SE_SetProps alpha = 1.0
+		<current_bar> :se_setprops alpha = 1.0 time = 0.1
+		<current_bar> :se_waitprops
+		<current_bar> :se_setprops alpha = 0.0 time = 0.1
+		case blue
+		<current_key> :se_setprops rgba = [7 7 198 255]
+		<current_key> :se_setprops alpha = 1.0
 		current_bar = (<children> [3])
-		<current_bar> :SE_SetProps alpha = 1.0 time = 0.1
-		<current_bar> :SE_WaitProps
-		<current_bar> :SE_SetProps alpha = 0.0 time = 0.1
-		case Clear
+		<current_bar> :se_setprops alpha = 1.0 time = 0.1
+		<current_bar> :se_waitprops
+		<current_bar> :se_setprops alpha = 0.0 time = 0.1
+		case clear
 		ui_options_cheats_new_reset_bars
-		SE_SetProps \{unblock_events}
+		se_setprops \{unblock_events}
 		return
 	endswitch
-	FormatText TextName = channel_text qs("\L0%i") i = (<index> + 1)
-	CheatsInterface :SE_SetProps channel_text = <channel_text>
+	formattext textname = channel_text qs(0xe6c6aea2) i = (<index> + 1)
+	cheatsinterface :se_setprops channel_text = <channel_text>
 	if (<index> >= 7)
-		Wait \{0.25
+		wait \{0.25
 			seconds}
 		ui_options_cheats_new_check_valid
-		if GotParam \{cheat}
-			if NOT GotParam \{already_unlocked}
-				CheatsInterface :SE_SetProps info_text = ((<cheat>.name_text) + qs(" UNLOCKED!!!"))
+		if gotparam \{cheat}
+			if NOT gotparam \{already_unlocked}
+				cheatsinterface :se_setprops info_text = ((<cheat>.name_text) + qs(0x51b4ec34))
 				cheat_sound = unlocked
 			else
-				CheatsInterface :SE_SetProps info_text = ((<cheat>.name_text) + qs(" ALREADY UNLOCKED!!!"))
+				cheatsinterface :se_setprops info_text = ((<cheat>.name_text) + qs(0xf80b24a4))
 				cheat_sound = already_unlocked
 			endif
 		else
-			CheatsInterface :SE_SetProps {
+			cheatsinterface :se_setprops {
 				info_text = Random (
-					@ qs("WRONG!!!")
-					@ qs("INCORRECT!!!")
-					@ qs("BETTER LUCK NEXT TIME!!!")
-					@ qs("NO DICE!!!")
-					@ qs("NICE TRY!!!")
-					@ qs("TRY AGAIN!!!")
-					@ qs("NO CHEATS FOR YOU!!!")
-					@ qs("BAD CHEAT!!!")
-					@ qs("QUIT GUESSING!!!")
-					@ qs("THERE ARE ONLY 65,536 COMBINATIONS!!!")
-					@ qs("KEEP GUESSING!!!")
-					@ qs("NOT THIS TIME!!!")
-					@ qs("NOOOOOOO!!!")
-					@ qs("OH NOES!!!")
-					@ qs("PLACEBO CHEAT ACTIVATED!!!")
-					@ qs("YOU'RE GETTING WARMER!!!")
-					@ qs("NOT A VALID CHEAT... OR WAS IT?!?")
-					@ qs("ONE DOWN, 65,535 TO GO!!!")
-					@ qs("\L:(")
-					@ qs("GIVE UP WHILE YOU'RE AHEAD!!!")
-					@ qs("WHAT ARE YOU DOING?!?")
-					@ qs("COMBO KILLER!!!")
-					@ qs("*MISSED\_NOTE\_SOUND*")
-					@ qs("BZZZZZT!!!")
-					@ qs("DIVIDE BY ZERO!!!")
-					@ qs("DOES NOT COMPUTE!!!")
+					@ qs(0x59bc54c6)
+					@ qs(0x23c99803)
+					@ qs(0x990282d6)
+					@ qs(0x3e29aefc)
+					@ qs(0xc232764c)
+					@ qs(0x585fe6a2)
+					@ qs(0xb2e8b83e)
+					@ qs(0x7d8f46bb)
+					@ qs(0xe2dde6cd)
+					@ qs(0xbfbb839f)
+					@ qs(0x75550725)
+					@ qs(0x75a6fa78)
+					@ qs(0x611c6866)
+					@ qs(0x30a0a84e)
+					@ qs(0x966b0b57)
+					@ qs(0xcb743e45)
+					@ qs(0x4ef0c271)
+					@ qs(0x5f5565f1)
+					@ qs(0x2205ba67)
+					@ qs(0x8cc02678)
+					@ qs(0x85abaa11)
+					@ qs(0xb5fc3df3)
+					@ qs(0x585af892)
+					@ qs(0xb1966aaa)
+					@ qs(0x39b54e6d)
+					@ qs(0x97e40c7c)
 					)
 			}
 			cheat_sound = incorrect
 		endif
-		obj_spawnscript ui_options_cheats_new_sound_events params = {Sound = down cheat = <cheat_sound>}
-		info_container :SE_SetProps \{pos = {
+		obj_spawnscript ui_options_cheats_new_sound_events params = {sound = down cheat = <cheat_sound>}
+		info_container :se_setprops \{pos = {
 				(0.0, -100.0)
 				relative
 			}}
-		info_container :SE_WaitProps
-		info_container :SE_SetProps \{alpha = 1.0}
-		info_container :SE_SetProps \{pos = {
+		info_container :se_waitprops
+		info_container :se_setprops \{alpha = 1.0}
+		info_container :se_setprops \{pos = {
 				(0.0, 100.0)
 				relative
 			}
 			time = 0.1}
-		info_container :SE_WaitProps
-		obj_spawnscript ui_options_cheats_new_sound_events params = {Sound = shake cheat = <cheat_sound>}
+		info_container :se_waitprops
+		obj_spawnscript ui_options_cheats_new_sound_events params = {sound = shake cheat = <cheat_sound>}
 		begin
-		info_container :SE_SetProps \{pos = {
+		info_container :se_setprops \{pos = {
 				(0.0, 5.0)
 				relative
 			}
 			time = 0.075}
-		info_container :SE_WaitProps
-		info_container :SE_SetProps \{pos = {
+		info_container :se_waitprops
+		info_container :se_setprops \{pos = {
 				(0.0, -5.0)
 				relative
 			}
 			time = 0.075}
-		info_container :SE_WaitProps
+		info_container :se_waitprops
 		repeat 10
-		obj_spawnscript ui_options_cheats_new_sound_events params = {Sound = up cheat = <cheat_sound>}
-		info_container :SE_SetProps \{pos = {
+		obj_spawnscript ui_options_cheats_new_sound_events params = {sound = up cheat = <cheat_sound>}
+		info_container :se_setprops \{pos = {
 				(0.0, -100.0)
 				relative
 			}
 			time = 0.1}
-		info_container :SE_WaitProps
-		info_container :SE_SetProps \{alpha = 0.0}
-		info_container :SE_SetProps \{pos = {
+		info_container :se_waitprops
+		info_container :se_setprops \{alpha = 0.0}
+		info_container :se_setprops \{pos = {
 				(0.0, 100.0)
 				relative
 			}}
 		ui_options_cheats_new_reset_bars
 	else
-		SetTags {index = (<index> + 1)}
+		settags {index = (<index> + 1)}
 	endif
-	SE_SetProps \{unblock_events}
+	se_setprops \{unblock_events}
 endscript
 
 script ui_options_cheats_new_reset_bars 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	current_menu :GetTags
+	current_menu :gettags
 	if (<index> = 0)
 		return
 	endif
-	if GetScreenElementChildren \{id = bar_menu}
-		GetArraySize <children>
+	if getscreenelementchildren \{id = bar_menu}
+		getarraysize <children>
 		array_size = (<index> + 1)
 		i = <index>
 		begin
 		current_key = (<children> [<i>])
-		FormatText TextName = channel_text qs("\L0%i") i = <i>
-		current_menu :obj_spawnscript ui_options_cheats_new_sound_events params = {Sound = Clear key = (<cheat_array> [<i>])}
-		<current_key> :SE_SetProps alpha = 0.0 time = 0.1
-		CheatsInterface :SE_SetProps channel_text = <channel_text>
-		<current_key> :SE_WaitProps
+		formattext textname = channel_text qs(0xe6c6aea2) i = <i>
+		current_menu :obj_spawnscript ui_options_cheats_new_sound_events params = {sound = clear key = (<cheat_array> [<i>])}
+		<current_key> :se_setprops alpha = 0.0 time = 0.1
+		cheatsinterface :se_setprops channel_text = <channel_text>
+		<current_key> :se_waitprops
 		i = (<i> - 1)
 		repeat <array_size>
-		Wait \{0.1
+		wait \{0.1
 			seconds}
 	endif
-	current_menu :SetTags \{index = 0
+	current_menu :settags \{index = 0
 		cheat_array = [
 			none
 			none
@@ -237,24 +237,24 @@ script ui_options_cheats_new_reset_bars
 endscript
 
 script unlock_cheat 
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	cheat = ($guitar_hero_cheats [<cheat_index>])
-	FormatText checksumname = cheat_checksum 'unlock_Cheat_%a' a = (<cheat>.name)
-	if GotParam <cheat_checksum>
+	formattext checksumname = cheat_checksum 'unlock_Cheat_%a' a = (<cheat>.name)
+	if gotparam <cheat_checksum>
 		if ((<...>.<cheat_checksum>) = 0)
-			AddParam structure_name = params name = <cheat_checksum> value = 1
-			SetArrayElement ArrayName = guitar_hero_cheat_index GlobalArray index = <cheat_index> newvalue = 0
-			FormatText checksumname = cheat_idx 'cheat_index%a' a = <cheat_index>
-			AddParam structure_name = params name = <cheat_idx> value = 0
-			SetGlobalTags user_options params = <params>
-			if StructureContains Structure = <cheat> options
+			addparam structure_name = params name = <cheat_checksum> value = 1
+			setarrayelement arrayname = guitar_hero_cheat_index globalarray index = <cheat_index> newvalue = 0
+			formattext checksumname = cheat_idx 'cheat_index%a' a = <cheat_index>
+			addparam structure_name = params name = <cheat_idx> value = 0
+			setglobaltags user_options params = <params>
+			if structurecontains structure = <cheat> options
 				option_array = (<cheat>.options)
 				option_struct = (<option_array> [0])
 				globals = (<option_struct>.globals)
 				cheat_set_globals globals = <globals>
 				exclude_option option_struct = <option_struct> no_menu_update
 			endif
-			if StructureContains Structure = <cheat> unlock_script
+			if structurecontains structure = <cheat> unlock_script
 				unlock_script = (<cheat>.unlock_script)
 				<unlock_script>
 			endif
@@ -267,16 +267,16 @@ script unlock_cheat
 endscript
 
 script ui_options_cheats_new_check_valid 
-	current_menu :GetTags
-	GetArraySize ($guitar_hero_cheats)
-	GetGlobalTags \{user_options}
+	current_menu :gettags
+	getarraysize ($guitar_hero_cheats)
+	getglobaltags \{user_options}
 	<found> = 0
 	if (<array_size> > 0)
 		i = 0
 		begin
 		j = 0
 		begin
-		if NOT StructureContains Structure = ($guitar_hero_cheats [<i>]) unlock_pattern
+		if NOT structurecontains structure = ($guitar_hero_cheats [<i>]) unlock_pattern
 			break
 		endif
 		if NOT ((($guitar_hero_cheats [<i>]).unlock_pattern [<j>]) = (<cheat_array> [<j>]))
@@ -285,10 +285,10 @@ script ui_options_cheats_new_check_valid
 		j = (<j> + 1)
 		repeat 8
 		if (<j> = 8)
-			RemoveParameter \{already_unlocked}
+			removeparameter \{already_unlocked}
 			if unlock_cheat cheat_index = <i>
 				found = 1
-				if GotParam \{already_unlocked}
+				if gotparam \{already_unlocked}
 					found = 2
 				endif
 			endif
@@ -302,7 +302,7 @@ script ui_options_cheats_new_check_valid
 	if (<found> = 2)
 		return {cheat = <cheat> already_unlocked}
 	endif
-	GetArraySize ($guitar_hero_hidden_cheats)
+	getarraysize ($guitar_hero_hidden_cheats)
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -324,36 +324,36 @@ endscript
 
 script ui_options_cheats_new_tv_glow 
 	begin
-	SE_SetProps alpha = RandomFloat (0.15, 0.25) time = RandomFloat (0.025, 0.07)
-	SE_WaitProps
-	SE_SetProps alpha = 0.1 time = RandomFloat (0.025, 0.07)
-	SE_WaitProps
-	Wait \{1
+	se_setprops alpha = RandomFloat (0.15, 0.25) time = RandomFloat (0.025, 0.07)
+	se_waitprops
+	se_setprops alpha = 0.1 time = RandomFloat (0.025, 0.07)
+	se_waitprops
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
 script ui_options_cheats_new_sound_events 
-	switch (<Sound>)
-		case Input
+	switch (<sound>)
+		case input
 		switch (<key>)
 			case green
-			SoundEvent \{event = Menu_Cheat_Enter_Green}
+			soundevent \{event = menu_cheat_enter_green}
 			case red
-			SoundEvent \{event = Menu_Cheat_Enter_Red}
-			case Yellow
-			SoundEvent \{event = Menu_Cheat_Enter_Yellow}
-			case Blue
-			SoundEvent \{event = Menu_Cheat_Enter_Blue}
+			soundevent \{event = menu_cheat_enter_red}
+			case yellow
+			soundevent \{event = menu_cheat_enter_yellow}
+			case blue
+			soundevent \{event = menu_cheat_enter_blue}
 		endswitch
 		case down
 		switch (<cheat>)
 			case unlocked
-			SoundEvent \{event = Enter_Band_Name_Finish}
+			soundevent \{event = enter_band_name_finish}
 			case already_unlocked
-			SoundEvent \{event = Menu_Warning_SFX}
+			soundevent \{event = menu_warning_sfx}
 			case incorrect
-			SoundEvent \{event = Menu_Warning_SFX}
+			soundevent \{event = menu_warning_sfx}
 		endswitch
 		case shake
 		switch (<cheat>)
@@ -361,22 +361,22 @@ script ui_options_cheats_new_sound_events
 		case up
 		switch (<cheat>)
 			caseendswitch
-		case Clear
+		case clear
 		switch (<key>)
 			case green
-			PlaySound \{Menu_EnterName_Scroll_1
+			playsound \{menu_entername_scroll_1
 				vol = -1
 				buss = front_end}
 			case red
-			PlaySound \{Menu_EnterName_Scroll_1
+			playsound \{menu_entername_scroll_1
 				vol = -1
 				buss = front_end}
-			case Yellow
-			PlaySound \{Menu_EnterName_Scroll_1
+			case yellow
+			playsound \{menu_entername_scroll_1
 				vol = -1
 				buss = front_end}
-			case Blue
-			PlaySound \{Menu_EnterName_Scroll_1
+			case blue
+			playsound \{menu_entername_scroll_1
 				vol = -1
 				buss = front_end}
 		endswitch

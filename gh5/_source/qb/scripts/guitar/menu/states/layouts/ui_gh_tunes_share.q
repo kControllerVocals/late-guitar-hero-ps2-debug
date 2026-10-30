@@ -1,13 +1,13 @@
 
 script ui_create_gh_tunes_share 
-	CreateScreenElement \{parent = root_window
-		id = MyInterfaceElement
-		type = DescInterface
+	createscreenelement \{parent = root_window
+		id = myinterfaceelement
+		type = descinterface
 		desc = 'gh_tunes_share'}
 endscript
 
 script ui_destroy_gh_tunes_share 
-	if ScreenElementExists \{id = MyInterfaceElement}
-		MyInterfaceElement :Die
+	if screenelementexists \{id = myinterfaceelement}
+		myinterfaceelement :die
 	endif
 endscript

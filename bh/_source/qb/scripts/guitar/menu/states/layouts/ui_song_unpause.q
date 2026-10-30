@@ -1,63 +1,63 @@
 
-script ui_init_song_unpause 
+script 0x57ddb8a5 
 	disable_pause
 endscript
 
 script ui_create_song_unpause 
 	if ($transition_playing = true)
-		debug_ScriptAssert \{'Attempted to put up unpause countdown when a transition was playing.'}
+		0x93d8d5cf \{'Attempted to put up unpause countdown when a transition was playing.'}
 		spawnscriptnow \{unpausegh3}
 		return
 	endif
-	CreateScreenElement \{parent = root_window
+	createscreenelement \{parent = root_window
 		id = song_unpause
-		type = DescInterface
+		type = descinterface
 		desc = 'song_unpause'
 		z_priority = 10000
 		alpha = 0.0}
-	if song_unpause :Desc_ResolveAlias \{name = alias_dude2_container
-			param = unpause_dotted_id}
-		<unpause_dotted_id> :obj_spawnscript ui_rotate_scale_03
+	if song_unpause :desc_resolvealias \{name = alias_dude2_container
+			param = 0xc992c555}
+		<0xc992c555> :obj_spawnscript ui_rotate_scale_03
 	else
 
 	endif
-	if song_unpause :Desc_ResolveAlias \{name = alias_dude_container
-			param = unpause_circle_id}
-		<unpause_circle_id> :obj_spawnscript ui_rotate_scale_04
+	if song_unpause :desc_resolvealias \{name = alias_dude_container
+			param = 0xa333a316}
+		<0xa333a316> :obj_spawnscript 0x1a6095a7
 	else
 
 	endif
 	song_unpause :obj_spawnscript \{ui_song_unpause}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = song_unpause}
 endscript
 
 script ui_destroy_song_unpause 
-	DestroyScreenElement \{id = song_unpause}
+	destroyscreenelement \{id = song_unpause}
 	if ($calibrate_lag_enabled = 1)
 		setup_pause \{pad_start_script = calibrate_hit_pause}
 	endif
 endscript
 
 script ui_song_unpause 
-	GMan_SongTool_GetCurrentSong
-	SetScriptCannotPause
+	gman_songtool_getcurrentsong
+	setscriptcannotpause
 	get_song_title song = <current_song>
-	FormatText TextName = title_text qs("Get Ready!\n\cD%s\c0 will resume in...") s = <song_title>
-	SE_SetProps title_text = <title_text> number_text = qs("4")
+	formattext textname = title_text qs(0x373caef2) s = <song_title>
+	se_setprops title_text = <title_text> number_text = qs(0x050c1ef7)
 	ui_event_wait_for_safe
-	GetSongTime
-	SongFileManager func = get_song_end_time song_name = <current_song>
+	getsongtime
+	songfilemanager func = get_song_end_time song_name = <current_song>
 
 	if ((<songtime> < 0.0) || ((<songtime> * 1000) >= <total_end_time>))
 		ui_song_unpause_done
 		return
 	endif
 	songtime = (<songtime> * 1000)
-	SongFileManager func = get_num_fretbar_notes song_name = <current_song>
+	songfilemanager func = get_num_fretbar_notes song_name = <current_song>
 	i = 0
 	begin
-	SongFileManager func = get_fretbar_note song_name = <current_song> index = <i>
+	songfilemanager func = get_fretbar_note song_name = <current_song> index = <i>
 	if (<songtime> < <fretbar_time>)
 		i = (<i> - 1)
 		break
@@ -67,54 +67,54 @@ script ui_song_unpause
 	if (<i> < 4)
 		i = 4
 	endif
-	song_unpause :SE_SetProps \{alpha = 1.0}
+	song_unpause :se_setprops \{alpha = 1.0}
 	times = [0.0 0.0 0.0 0.0]
-	SongFileManager func = get_fretbar_note song_name = <current_song> index = (<i> + 1)
+	songfilemanager func = get_fretbar_note song_name = <current_song> index = (<i> + 1)
 	<time> = <fretbar_time>
 	j = 0
 	begin
-	SongFileManager func = get_fretbar_note song_name = <current_song> index = (<i> - <j>)
-	SetArrayElement ArrayName = times index = (3 - <j>) newvalue = (<time> - <fretbar_time>)
+	songfilemanager func = get_fretbar_note song_name = <current_song> index = (<i> - <j>)
+	setarrayelement arrayname = times index = (3 - <j>) newvalue = (<time> - <fretbar_time>)
 	time = <fretbar_time>
 	j = (<j> + 1)
 	repeat 4
-	SoundEvent \{event = Countoff_SFX_Sticks_Normal_Hard}
-	Wait ((<times> [0]) / 1000.0) seconds ignoreslomo
+	soundevent \{event = countoff_sfx_sticks_normal_hard}
+	wait ((<times> [0]) / 1000.0) seconds ignoreslomo
 	i = 3
 	begin
 	if (<i> = 1)
-		disable_time = ((<times> [(4 - <i>)]) / 1000.0 + 0.1)
-		spawnscriptnow ps2_block_input_interval params = {time = <disable_time>}
+		0xa0f36ddb = ((<times> [(4 - <i>)]) / 1000.0 + 0.1)
+		spawnscriptnow 0xc20c8a0d params = {time = <0xa0f36ddb>}
 	endif
-	FormatText TextName = number_text qs("\L%i") i = <i>
-	SE_SetProps number_text = <number_text>
-	SoundEvent \{event = Countoff_SFX_Sticks_Normal_Hard}
-	Wait ((<times> [(4 - <i>)]) / 1000.0) seconds ignoreslomo
+	formattext textname = number_text qs(0xc31d83ea) i = <i>
+	se_setprops number_text = <number_text>
+	soundevent \{event = countoff_sfx_sticks_normal_hard}
+	wait ((<times> [(4 - <i>)]) / 1000.0) seconds ignoreslomo
 	i = (<i> - 1)
 	repeat 3
 	ui_song_unpause_done
 endscript
 
 script ui_song_unpause_done 
-	push_loading_screen \{sustain}
-	OnExitRun \{pop_loading_screen}
-	SetScriptCannotPause
+	0xd3f993c8 \{sustain}
+	onexitrun \{0xe5a305c6}
+	setscriptcannotpause
 	ui_event_wait_for_safe
 	spawnscriptnow \{unpausegh3}
-	Block
+	block
 endscript
 
 script ui_song_unpause_repause 
-	SetScriptCannotPause
-	SetSpawnInstanceLimits \{max = 1
+	setscriptcannotpause
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 	disable_pause
-	KillSpawnedScript \{name = ui_song_unpause}
-	ui_event_wait event = menu_replace state = UIstate_pausemenu data = {device_num = <device_num>} wait_for_statechange
+	killspawnedscript \{name = ui_song_unpause}
+	ui_event_wait event = menu_replace state = uistate_pausemenu data = {device_num = <device_num>} 0xd1b494c2
 endscript
 
-script ps2_block_input_interval \{time = 1.0}
-	SetButtonEventMappings \{block_menu_input}
-	Wait <time> seconds ignoreslomo
-	SetButtonEventMappings \{unblock_menu_input}
+script 0xc20c8a0d \{time = 1.0}
+	setbuttoneventmappings \{block_menu_input}
+	wait <time> seconds ignoreslomo
+	setbuttoneventmappings \{unblock_menu_input}
 endscript

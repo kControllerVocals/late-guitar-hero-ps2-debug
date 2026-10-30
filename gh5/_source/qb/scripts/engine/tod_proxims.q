@@ -1,33 +1,33 @@
-SE_Brightness = 5
-currentTODSettings = Default_tod_manager
+se_brightness = 5
+currenttodsettings = default_tod_manager
 
-script TOD_Proxim_Create_LightFX 
-	ScreenFX_ClearFXInstances \{viewport = 0}
-	if InSplitScreenGame
-		ScreenFX_ClearFXInstances \{viewport = 0}
+script tod_proxim_create_lightfx 
+	screenfx_clearfxinstances \{viewport = 0}
+	if insplitscreengame
+		screenfx_clearfxinstances \{viewport = 0}
 	endif
-	TOD_Proxim_Update_LightFX \{viewport = bg_viewport
+	tod_proxim_update_lightfx \{viewport = bg_viewport
 		time = 0}
 endscript
 
-script TOD_Proxim_Update_LightFX 
-	TOD_Proxim_Update_LightFX_Viewport viewport = bg_viewport <...>
+script tod_proxim_update_lightfx 
+	tod_proxim_update_lightfx_viewport viewport = bg_viewport <...>
 endscript
 
 script toggle_default_sceenfx 
-	TOD_Proxim_Update_LightFX_Viewport
+	tod_proxim_update_lightfx_viewport
 endscript
 
-script TOD_Proxim_Update_LightFX_Viewport \{fxParam = $Default_tod_manager
+script tod_proxim_update_lightfx_viewport \{fxparam = $default_tod_manager
 		viewport = bg_viewport
 		time = 1}
 
-	ScreenFX_ClearFXInstances viewport = <viewport>
-	if StructureContains \{Structure = fxParam
+	screenfx_clearfxinstances viewport = <viewport>
+	if structurecontains \{structure = fxparam
 			screen_fx}
 		begin
-		if GetNextArrayElement (<fxParam>.screen_fx)
-			ScreenFX_AddFXInstance {
+		if getnextarrayelement (<fxparam>.screen_fx)
+			screenfx_addfxinstance {
 				viewport = <viewport>
 				<element>
 			}
@@ -37,190 +37,190 @@ script TOD_Proxim_Update_LightFX_Viewport \{fxParam = $Default_tod_manager
 		repeat
 	endif
 endscript
-METALLICA_WORSTCASE_SCREENFX = 0
-APPLY_GH4_FX = 0
+metallica_worstcase_screenfx = 0
+apply_gh4_fx = 0
 
-script TOD_Proxim_Reapply_LightFX 
-	TOD_Proxim_Update_LightFX \{fxParam = $currentTODSettings
+script tod_proxim_reapply_lightfx 
+	tod_proxim_update_lightfx \{fxparam = $currenttodsettings
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Remove_MetallicaFX 
-	TOD_Proxim_Update_LightFX \{fxParam = $Remove_MetallicaFX_tod_manager
+script tod_proxim_remove_metallicafx 
+	tod_proxim_update_lightfx \{fxparam = $remove_metallicafx_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Reapply_MetallicaFX 
-	TOD_Proxim_Update_LightFX \{fxParam = $Default_tod_manager
+script tod_proxim_reapply_metallicafx 
+	tod_proxim_update_lightfx \{fxparam = $default_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_BW_Contrast 
-	if ($METALLICA_WORSTCASE_SCREENFX = 1)
-		TOD_Proxim_Update_LightFX \{fxParam = $Metal_Vignette_tod_manager
+script tod_proxim_apply_bw_contrast 
+	if ($metallica_worstcase_screenfx = 1)
+		tod_proxim_update_lightfx \{fxparam = $metal_vignette_tod_manager
 			viewport = bg_viewport
 			time = 0.0}
 		return
 	endif
-	if ($APPLY_GH4_FX = 1)
-		TOD_Proxim_Update_LightFX \{fxParam = $GH4_OldFX_tod_manager
+	if ($apply_gh4_fx = 1)
+		tod_proxim_update_lightfx \{fxparam = $gh4_oldfx_tod_manager
 			viewport = bg_viewport
 			time = 0.0}
 		return
 	endif
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_Contrast_tod_manager
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_contrast_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Vignette 
-	if ($METALLICA_WORSTCASE_SCREENFX = 1)
-		TOD_Proxim_Update_LightFX \{fxParam = $Metal_Vignette_tod_manager
+script tod_proxim_apply_vignette 
+	if ($metallica_worstcase_screenfx = 1)
+		tod_proxim_update_lightfx \{fxparam = $metal_vignette_tod_manager
 			viewport = bg_viewport
 			time = 0.0}
 		return
 	endif
-	if ($APPLY_GH4_FX = 1)
-		TOD_Proxim_Update_LightFX \{fxParam = $GH4_OldFX_tod_manager
+	if ($apply_gh4_fx = 1)
+		tod_proxim_update_lightfx \{fxparam = $gh4_oldfx_tod_manager
 			viewport = bg_viewport
 			time = 0.0}
 		return
 	endif
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_Vignette_tod_manager
+	tod_proxim_update_lightfx \{fxparam = $metal_vignette_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_BW_Grainy2 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_Grainy2_tod_manager
+script tod_proxim_apply_bw_grainy2 
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_grainy2_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_BW_Grainy 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_Grainy_tod_manager
+script tod_proxim_apply_bw_grainy 
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_grainy_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_CoolBlue 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BlueTint_tod_manager
+script tod_proxim_apply_coolblue 
+	tod_proxim_update_lightfx \{fxparam = $metal_bluetint_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_HotBlue 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_HotBlue_tod_manager
+script tod_proxim_apply_hotblue 
+	tod_proxim_update_lightfx \{fxparam = $metal_hotblue_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Sepia 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_Sepia_tod_manager
+script tod_proxim_apply_sepia 
+	tod_proxim_update_lightfx \{fxparam = $metal_sepia_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Yellow 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_Yellow_tod_manager
+script tod_proxim_apply_yellow 
+	tod_proxim_update_lightfx \{fxparam = $metal_yellow_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Green 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_Green_tod_manager
+script tod_proxim_apply_green 
+	tod_proxim_update_lightfx \{fxparam = $metal_green_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Forest 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_Forest_tod_manager
+script tod_proxim_apply_forest 
+	tod_proxim_update_lightfx \{fxparam = $metal_forest_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_DesatRed 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_DesatRed_tod_manager
+script tod_proxim_apply_desatred 
+	tod_proxim_update_lightfx \{fxparam = $metal_desatred_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_InkBlotch_Red 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_InkBlotch_tod_manager
+script tod_proxim_apply_inkblotch_red 
+	tod_proxim_update_lightfx \{fxparam = $metal_inkblotch_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_InkBlotch2 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_InkBlotch_tod_manager
+script tod_proxim_apply_inkblotch2 
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_inkblotch_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_CareerIntroFX 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_CareerIntro_tod_manager
+script tod_proxim_apply_careerintrofx 
+	tod_proxim_update_lightfx \{fxparam = $metal_careerintro_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_CareerIntro_02_FX 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_CareerIntro_02_tod_manager
+script tod_proxim_apply_careerintro_02_fx 
+	tod_proxim_update_lightfx \{fxparam = $metal_careerintro_02_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_CareerIntro_Cut1_FX 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_CareerIntro_Cut1_tod_manager
+script tod_proxim_apply_careerintro_cut1_fx 
+	tod_proxim_update_lightfx \{fxparam = $metal_careerintro_cut1_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Noisy 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_NoisyDefault_tod_manager
+script tod_proxim_apply_noisy 
+	tod_proxim_update_lightfx \{fxparam = $metal_noisydefault_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_Inkblotch3 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_InkBlotch3_tod_manager
+script tod_proxim_apply_inkblotch3 
+	tod_proxim_update_lightfx \{fxparam = $metal_inkblotch3_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_WarmStreaks 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_SatRedStreaks_tod_manager
+script tod_proxim_apply_warmstreaks 
+	tod_proxim_update_lightfx \{fxparam = $metal_satredstreaks_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_CoolStreaks 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_TurqPinkStreaks_tod_manager
+script tod_proxim_apply_coolstreaks 
+	tod_proxim_update_lightfx \{fxparam = $metal_turqpinkstreaks_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_BW_Splots 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_Splots_tod_manager
+script tod_proxim_apply_bw_splots 
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_splots_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_ContrastyVignette 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_ContrastyVignette_tod_manager
+script tod_proxim_apply_contrastyvignette 
+	tod_proxim_update_lightfx \{fxparam = $metal_contrastyvignette_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_BW_Grungy 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_Grungy_tod_manager
+script tod_proxim_apply_bw_grungy 
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_grungy_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript
 
-script TOD_Proxim_Apply_BW_Streaks 
-	TOD_Proxim_Update_LightFX \{fxParam = $Metal_BW_Streaks_tod_manager
+script tod_proxim_apply_bw_streaks 
+	tod_proxim_update_lightfx \{fxparam = $metal_bw_streaks_tod_manager
 		viewport = bg_viewport
 		time = 0.0}
 endscript

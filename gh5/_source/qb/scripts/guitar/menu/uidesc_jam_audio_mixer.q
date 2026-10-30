@@ -1,5 +1,5 @@
 uidesc_jam_audio_mixer = {
-	DescVersion = 8
+	descversion = 8
 	name = uidesc_jam_audio_mixer
 	rect = [
 		0.0
@@ -11,17 +11,17 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 0
-					validateLocalID = audio_mixer_menu_container
-					includeParentOwned = false
+					validatelocalid = audio_mixer_menu_container
+					includeparentowned = false
 				}
 				{
 					index = 0
-					validateLocalID = audio_mixer_menu
-					includeParentOwned = false
+					validatelocalid = audio_mixer_menu
+					includeparentowned = false
 				}
 			]
 			name = alias_audio_mixer_menu
@@ -29,12 +29,12 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 1
-					validateLocalID = faders_container
-					includeParentOwned = false
+					validatelocalid = faders_container
+					includeparentowned = false
 				}
 			]
 			name = alias_faders_container
@@ -42,32 +42,32 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 2
-					validateLocalID = VU_lights_container
-					includeParentOwned = false
+					validatelocalid = vu_lights_container
+					includeparentowned = false
 				}
 			]
-			name = alias_VU_lights_container
+			name = alias_vu_lights_container
 		}
 	]
 	props = [
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 4
-					validateLocalID = info_area
-					includeParentOwned = false
+					validatelocalid = info_area
+					includeparentowned = false
 				}
 				{
 					index = 1
-					validateLocalID = mixer_info
-					includeParentOwned = false
+					validatelocalid = mixer_info
+					includeparentowned = false
 				}
 			]
 			name = mixer_info_text
@@ -77,12 +77,12 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 3
-					validateLocalID = mixer_channel_lamp
-					includeParentOwned = false
+					validatelocalid = mixer_channel_lamp
+					includeparentowned = false
 				}
 			]
 			name = mixer_channel_lamp_pos
@@ -92,17 +92,17 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 0
-					validateLocalID = audio_mixer_menu_container
-					includeParentOwned = false
+					validatelocalid = audio_mixer_menu_container
+					includeparentowned = false
 				}
 				{
 					index = 1
-					validateLocalID = mixer_menu_highlight
-					includeParentOwned = false
+					validatelocalid = mixer_menu_highlight
+					includeparentowned = false
 				}
 			]
 			name = mixer_menu_highlight_pos
@@ -112,17 +112,17 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 0
-					validateLocalID = audio_mixer_menu_container
-					includeParentOwned = false
+					validatelocalid = audio_mixer_menu_container
+					includeparentowned = false
 				}
 				{
 					index = 1
-					validateLocalID = mixer_menu_highlight
-					includeParentOwned = false
+					validatelocalid = mixer_menu_highlight
+					includeparentowned = false
 				}
 			]
 			name = mixer_menu_highlight_alpha
@@ -132,12 +132,12 @@ uidesc_jam_audio_mixer = {
 		{
 			path = [
 				{
-					validateLocalID = AudioMixer_master_container
+					validatelocalid = audiomixer_master_container
 				}
 				{
 					index = 3
-					validateLocalID = mixer_channel_lamp
-					includeParentOwned = false
+					validatelocalid = mixer_channel_lamp
+					includeparentowned = false
 				}
 			]
 			name = mixer_channel_lamp_alpha
@@ -147,12 +147,12 @@ uidesc_jam_audio_mixer = {
 	]
 	materials = [
 	]
-	FormatVersion = 2
+	formatversion = 2
 	elements = {
 		props = {
-			local_id = AudioMixer_master_container
-			type = ContainerElement
-			hiddenLocal = false
+			local_id = audiomixer_master_container
+			type = containerelement
+			hiddenlocal = false
 			alpha = 1.0
 			dims = (10.0, 10.0)
 			just = [
@@ -180,8 +180,8 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					local_id = audio_mixer_menu_container
-					type = ContainerElement
-					hiddenLocal = false
+					type = containerelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (30.0, 30.0)
 					just = [
@@ -209,8 +209,8 @@ uidesc_jam_audio_mixer = {
 					{
 						props = {
 							local_id = audio_mixer_menu
-							type = MenuElement
-							hiddenLocal = false
+							type = menuelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (120.0, 471.0)
 							just = [
@@ -233,7 +233,7 @@ uidesc_jam_audio_mixer = {
 							]
 							events_blocked = 0
 							preserve_local_orientation = false
-							isVertical = true
+							isvertical = true
 							internal_just = [
 								0.0
 								0.0
@@ -252,8 +252,8 @@ uidesc_jam_audio_mixer = {
 							{
 								props = {
 									local_id = menu_item_rhythm
-									type = TextBlockElement
-									hiddenLocal = false
+									type = textblockelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (135.0, 30.0)
 									just = [
@@ -276,14 +276,14 @@ uidesc_jam_audio_mixer = {
 									]
 									events_blocked = 0
 									preserve_local_orientation = false
-									text = qs("RHYTHM")
+									text = qs(0x1f0659c1)
 									font = fontgrid_text_a3
 									material = 0x00000000
 									single_line = false
 									fit_width = `scale each line if larger`
 									fit_height = `scale down if larger`
 									scale_mode = `per axis`
-									text_case = Original
+									text_case = original
 									internal_just = [
 										0.0
 										0.0
@@ -307,8 +307,8 @@ uidesc_jam_audio_mixer = {
 							{
 								props = {
 									local_id = menu_item_lead
-									type = TextBlockElement
-									hiddenLocal = false
+									type = textblockelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (135.0, 30.0)
 									just = [
@@ -331,14 +331,14 @@ uidesc_jam_audio_mixer = {
 									]
 									events_blocked = 0
 									preserve_local_orientation = false
-									text = qs("LEAD")
+									text = qs(0x0cc7d9b2)
 									font = fontgrid_text_a3
 									material = 0x00000000
 									single_line = false
 									fit_width = `scale each line if larger`
 									fit_height = `scale down if larger`
 									scale_mode = `per axis`
-									text_case = Original
+									text_case = original
 									internal_just = [
 										0.0
 										0.0
@@ -361,9 +361,9 @@ uidesc_jam_audio_mixer = {
 							}
 							{
 								props = {
-									local_id = menu_item_BASS
-									type = TextBlockElement
-									hiddenLocal = false
+									local_id = menu_item_bass
+									type = textblockelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (135.0, 30.0)
 									just = [
@@ -386,14 +386,14 @@ uidesc_jam_audio_mixer = {
 									]
 									events_blocked = 0
 									preserve_local_orientation = false
-									text = qs("BASS")
+									text = qs(0x7d4f9214)
 									font = fontgrid_text_a3
 									material = 0x00000000
 									single_line = false
 									fit_width = `scale each line if larger`
 									fit_height = `scale down if larger`
 									scale_mode = `per axis`
-									text_case = Original
+									text_case = original
 									internal_just = [
 										0.0
 										0.0
@@ -416,9 +416,9 @@ uidesc_jam_audio_mixer = {
 							}
 							{
 								props = {
-									local_id = menu_item_DRUMS
-									type = TextBlockElement
-									hiddenLocal = false
+									local_id = menu_item_drums
+									type = textblockelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (135.0, 30.0)
 									just = [
@@ -441,14 +441,14 @@ uidesc_jam_audio_mixer = {
 									]
 									events_blocked = 0
 									preserve_local_orientation = false
-									text = qs("DRUMS")
+									text = qs(0x388cd3db)
 									font = fontgrid_text_a3
 									material = 0x00000000
 									single_line = false
 									fit_width = `scale each line if larger`
 									fit_height = `scale down if larger`
 									scale_mode = `per axis`
-									text_case = Original
+									text_case = original
 									internal_just = [
 										0.0
 										0.0
@@ -472,8 +472,8 @@ uidesc_jam_audio_mixer = {
 							{
 								props = {
 									local_id = menu_item_keyboard
-									type = TextBlockElement
-									hiddenLocal = false
+									type = textblockelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (135.0, 30.0)
 									just = [
@@ -496,14 +496,14 @@ uidesc_jam_audio_mixer = {
 									]
 									events_blocked = 0
 									preserve_local_orientation = false
-									text = qs("KEYBOARD")
+									text = qs(0x58ce03d1)
 									font = fontgrid_text_a3
 									material = 0x00000000
 									single_line = false
 									fit_width = `scale each line if larger`
 									fit_height = `scale down if larger`
 									scale_mode = `per axis`
-									text_case = Original
+									text_case = original
 									internal_just = [
 										0.0
 										0.0
@@ -531,8 +531,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_menu_highlight
 							local_id = mixer_menu_highlight
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (170.0, 35.0)
 							just = [
@@ -560,8 +560,8 @@ uidesc_jam_audio_mixer = {
 					{
 						props = {
 							local_id = tape_stops
-							type = ContainerElement
-							hiddenLocal = false
+							type = containerelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (100.0, 100.0)
 							just = [
@@ -591,8 +591,8 @@ uidesc_jam_audio_mixer = {
 									blend = blend
 									texture = mix_tape_001
 									local_id = mix_tape_001
-									type = SpriteElement
-									hiddenLocal = false
+									type = spriteelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (128.0, 64.0)
 									just = [
@@ -622,8 +622,8 @@ uidesc_jam_audio_mixer = {
 									blend = blend
 									texture = mix_tape_003
 									local_id = mix_tape_003
-									type = SpriteElement
-									hiddenLocal = false
+									type = spriteelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (128.0, 64.0)
 									just = [
@@ -653,8 +653,8 @@ uidesc_jam_audio_mixer = {
 									blend = blend
 									texture = mix_tape_004
 									local_id = mix_tape_004
-									type = SpriteElement
-									hiddenLocal = false
+									type = spriteelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (128.0, 64.0)
 									just = [
@@ -684,8 +684,8 @@ uidesc_jam_audio_mixer = {
 									blend = blend
 									texture = mix_tape_005
 									local_id = mix_tape_005
-									type = SpriteElement
-									hiddenLocal = false
+									type = spriteelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (128.0, 64.0)
 									just = [
@@ -715,8 +715,8 @@ uidesc_jam_audio_mixer = {
 									blend = blend
 									texture = mix_tape_006
 									local_id = mix_tape_006
-									type = SpriteElement
-									hiddenLocal = false
+									type = spriteelement
+									hiddenlocal = false
 									alpha = 1.0
 									dims = (128.0, 64.0)
 									just = [
@@ -748,8 +748,8 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					local_id = faders_container
-					type = MenuElement
-					hiddenLocal = false
+					type = menuelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (650.0, 550.0)
 					just = [
@@ -772,7 +772,7 @@ uidesc_jam_audio_mixer = {
 					]
 					events_blocked = 0
 					preserve_local_orientation = false
-					isVertical = false
+					isvertical = false
 					internal_just = [
 						-1.0
 						0.0
@@ -791,8 +791,8 @@ uidesc_jam_audio_mixer = {
 					{
 						props = {
 							local_id = fader_rhythm_desc
-							type = DescInterface
-							hiddenLocal = false
+							type = descinterface
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (130.0, 550.0)
 							just = [
@@ -816,7 +816,7 @@ uidesc_jam_audio_mixer = {
 							events_blocked = 0
 							preserve_local_orientation = false
 							desc = 'options_audio_mixer_fader_desc'
-							autoSizeDims = true
+							autosizedims = true
 							knob_highlight_alpha = 0.0
 							mixer_knob_rot_angle = 90.0
 							mixer_fader_highlight_alpha = 0.0
@@ -837,14 +837,14 @@ uidesc_jam_audio_mixer = {
 								154
 								255
 							]
-							knob_note_text = qs("")
+							knob_note_text = qs(0x00000000)
 						}
 					}
 					{
 						props = {
 							local_id = fader_lead_desc
-							type = DescInterface
-							hiddenLocal = false
+							type = descinterface
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (130.0, 550.0)
 							just = [
@@ -868,7 +868,7 @@ uidesc_jam_audio_mixer = {
 							events_blocked = 0
 							preserve_local_orientation = false
 							desc = 'options_audio_mixer_fader_desc'
-							autoSizeDims = true
+							autosizedims = true
 							knob_highlight_alpha = 0.0
 							mixer_knob_rot_angle = 90.0
 							mixer_fader_highlight_alpha = 0.0
@@ -889,14 +889,14 @@ uidesc_jam_audio_mixer = {
 								154
 								255
 							]
-							knob_note_text = qs("")
+							knob_note_text = qs(0x00000000)
 						}
 					}
 					{
 						props = {
 							local_id = fader_bass_desc
-							type = DescInterface
-							hiddenLocal = false
+							type = descinterface
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (130.0, 550.0)
 							just = [
@@ -920,7 +920,7 @@ uidesc_jam_audio_mixer = {
 							events_blocked = 0
 							preserve_local_orientation = false
 							desc = 'options_audio_mixer_fader_desc'
-							autoSizeDims = true
+							autosizedims = true
 							knob_highlight_alpha = 0.0
 							mixer_knob_rot_angle = 90.0
 							mixer_fader_highlight_alpha = 0.0
@@ -941,14 +941,14 @@ uidesc_jam_audio_mixer = {
 								154
 								255
 							]
-							knob_note_text = qs("")
+							knob_note_text = qs(0x00000000)
 						}
 					}
 					{
 						props = {
 							local_id = fader_drums_desc
-							type = DescInterface
-							hiddenLocal = false
+							type = descinterface
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (130.0, 550.0)
 							just = [
@@ -972,7 +972,7 @@ uidesc_jam_audio_mixer = {
 							events_blocked = 0
 							preserve_local_orientation = false
 							desc = 'options_audio_mixer_fader_desc'
-							autoSizeDims = true
+							autosizedims = true
 							knob_highlight_alpha = 0.0
 							mixer_knob_rot_angle = 90.0
 							mixer_fader_highlight_alpha = 0.0
@@ -993,14 +993,14 @@ uidesc_jam_audio_mixer = {
 								154
 								255
 							]
-							knob_note_text = qs("")
+							knob_note_text = qs(0x00000000)
 						}
 					}
 					{
 						props = {
 							local_id = fader_keyboard_desc
-							type = DescInterface
-							hiddenLocal = false
+							type = descinterface
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (130.0, 550.0)
 							just = [
@@ -1024,7 +1024,7 @@ uidesc_jam_audio_mixer = {
 							events_blocked = 0
 							preserve_local_orientation = false
 							desc = 'options_audio_mixer_fader_desc'
-							autoSizeDims = true
+							autosizedims = true
 							knob_highlight_alpha = 0.0
 							mixer_knob_rot_angle = 90.0
 							mixer_fader_highlight_alpha = 0.0
@@ -1045,16 +1045,16 @@ uidesc_jam_audio_mixer = {
 								154
 								255
 							]
-							knob_note_text = qs("")
+							knob_note_text = qs(0x00000000)
 						}
 					}
 				]
 			}
 			{
 				props = {
-					local_id = VU_lights_container
-					type = MenuElement
-					hiddenLocal = false
+					local_id = vu_lights_container
+					type = menuelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (20.0, 245.0)
 					just = [
@@ -1077,7 +1077,7 @@ uidesc_jam_audio_mixer = {
 					]
 					events_blocked = 0
 					preserve_local_orientation = false
-					isVertical = true
+					isvertical = true
 					internal_just = [
 						0.0
 						0.0
@@ -1098,8 +1098,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_01
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1129,8 +1129,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_02
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1160,8 +1160,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_03
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1191,8 +1191,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_04
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1222,8 +1222,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_05
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1253,8 +1253,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_06
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1284,8 +1284,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_07
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1315,8 +1315,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_08
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1346,8 +1346,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_09
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1377,8 +1377,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_bulb
 							local_id = mixer_bulb_10
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (20.0, 20.0)
 							just = [
@@ -1408,10 +1408,10 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					texture = mixer_channel_lamp
-					blend = Add
+					blend = add
 					local_id = mixer_channel_lamp
-					type = SpriteElement
-					hiddenLocal = false
+					type = spriteelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (180.0, 650.0)
 					just = [
@@ -1439,8 +1439,8 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					local_id = info_area
-					type = ContainerElement
-					hiddenLocal = false
+					type = containerelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (100.0, 100.0)
 					just = [
@@ -1470,8 +1470,8 @@ uidesc_jam_audio_mixer = {
 							blend = blend
 							texture = mixer_info_area
 							local_id = mixer_info_frame
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (760.0, 100.0)
 							just = [
@@ -1499,8 +1499,8 @@ uidesc_jam_audio_mixer = {
 					{
 						props = {
 							local_id = mixer_info
-							type = TextBlockElement
-							hiddenLocal = false
+							type = textblockelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (600.00006, 70.0)
 							just = [
@@ -1523,14 +1523,14 @@ uidesc_jam_audio_mixer = {
 							]
 							events_blocked = 0
 							preserve_local_orientation = false
-							text = qs("USE THIS TO ADJUST THE VOLUME OF YOUR GUITAR")
+							text = qs(0xbc3aebfc)
 							font = fontgrid_text_a6
 							material = 0x00000000
 							single_line = false
 							fit_width = wrap
 							fit_height = `scale down if larger`
 							scale_mode = proportional
-							text_case = Original
+							text_case = original
 							internal_just = [
 								0.0
 								0.0
@@ -1556,10 +1556,10 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					blend = blend
-					texture = mixer_BG
-					local_id = mixer_BG
-					type = SpriteElement
-					hiddenLocal = false
+					texture = mixer_bg
+					local_id = mixer_bg
+					type = spriteelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (1280.0, 720.0)
 					just = [
@@ -1587,8 +1587,8 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					local_id = mixer_screws
-					type = ContainerElement
-					hiddenLocal = false
+					type = containerelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (50.0, 50.0)
 					just = [
@@ -1617,9 +1617,9 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							texture = mixer_screw
-							local_id = mixer_screw_TL
-							type = SpriteElement
-							hiddenLocal = false
+							local_id = mixer_screw_tl
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (45.0, 45.0)
 							just = [
@@ -1648,9 +1648,9 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							texture = mixer_screw
-							local_id = mixer_screw_BR
-							type = SpriteElement
-							hiddenLocal = false
+							local_id = mixer_screw_br
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (40.0, 40.0)
 							just = [
@@ -1679,9 +1679,9 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							texture = mixer_screw
-							local_id = mixer_screw_TR
-							type = SpriteElement
-							hiddenLocal = false
+							local_id = mixer_screw_tr
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (40.0, 40.0)
 							just = [
@@ -1710,9 +1710,9 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							texture = mixer_screw
-							local_id = mixer_screw_BL
-							type = SpriteElement
-							hiddenLocal = false
+							local_id = mixer_screw_bl
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 1.0
 							dims = (55.0, 55.0)
 							just = [
@@ -1742,8 +1742,8 @@ uidesc_jam_audio_mixer = {
 			{
 				props = {
 					local_id = dividers
-					type = ContainerElement
-					hiddenLocal = false
+					type = containerelement
+					hiddenlocal = false
 					alpha = 1.0
 					dims = (100.0, 100.0)
 					just = [
@@ -1772,8 +1772,8 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							local_id = divider_01
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 0.2
 							dims = (3.0, 540.0)
 							just = [
@@ -1802,8 +1802,8 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							local_id = divider_02
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 0.2
 							dims = (3.0, 540.0)
 							just = [
@@ -1832,8 +1832,8 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							local_id = divider_03
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 0.2
 							dims = (3.0, 540.0)
 							just = [
@@ -1862,8 +1862,8 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							local_id = divider_04
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 0.2
 							dims = (3.0, 540.0)
 							just = [
@@ -1892,8 +1892,8 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							local_id = divider_05
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 0.2
 							dims = (3.0, 540.0)
 							just = [
@@ -1922,8 +1922,8 @@ uidesc_jam_audio_mixer = {
 						props = {
 							blend = blend
 							local_id = divider_06
-							type = SpriteElement
-							hiddenLocal = false
+							type = spriteelement
+							hiddenlocal = false
 							alpha = 0.2
 							dims = (3.0, 540.0)
 							just = [
@@ -1954,8 +1954,8 @@ uidesc_jam_audio_mixer = {
 	}
 }
 uidesc_jam_audio_mixer_nxgui = {
-	WorkspaceForm = {
-		ExpansionState = [
+	workspaceform = {
+		expansionstate = [
 			1
 			2
 			9
@@ -1964,6 +1964,6 @@ uidesc_jam_audio_mixer_nxgui = {
 			42
 		]
 	}
-	EditMaterialForm = {
+	editmaterialform = {
 	}
 }

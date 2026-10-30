@@ -1,37 +1,37 @@
-L_GUIT_Tara_BleedMe_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_tara_bleedme_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Tara_BleedMe_075_F
+				slow = [
+					guit_tara_bleedme_075_f
 				]
-				Med = [
-					guit_Tara_BleedMe_100_F
+				med = [
+					guit_tara_bleedme_100_f
 				]
-				Fast = [
-					guit_Tara_BleedMe_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Tara_BleedMe_075_F
-				]
-				Med = [
-					guit_Tara_BleedMe_100_F
-				]
-				Fast = [
-					guit_Tara_BleedMe_120_F
+				fast = [
+					guit_tara_bleedme_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Tara_BleedMe_075_F
+			normal = {
+				slow = [
+					guit_tara_bleedme_075_f
 				]
-				Med = [
-					guit_Tara_BleedMe_100_F
+				med = [
+					guit_tara_bleedme_100_f
 				]
-				Fast = [
-					guit_Tara_BleedMe_120_F
+				fast = [
+					guit_tara_bleedme_120_f
+				]
+			}
+			bad = {
+				slow = [
+					guit_tara_bleedme_075_f
+				]
+				med = [
+					guit_tara_bleedme_100_f
+				]
+				fast = [
+					guit_tara_bleedme_120_f
 				]
 			}
 		}

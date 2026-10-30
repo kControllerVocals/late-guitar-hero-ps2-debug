@@ -1,44 +1,44 @@
 
-script make_generic_stripe_menu {
+script 0x5e1a3a04 {
 		pad_back_script = generic_event_back
 		exclusive_device = ($primary_controller)
 	}
 	set_focus_color
 	set_unfocus_color
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 	else
 		add_gamertag_helper exclusive_device = <exclusive_device>
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		parent = root_window
 		id = current_menu_anchor
 		desc = 'generic_stripe_menu'
 		just = [center center]
 		exclusive_device = <exclusive_device>
 	}
-	<stripe_id> = <id>
-	if <stripe_id> :Desc_ResolveAlias name = alias_menu
-		AssignAlias id = <resolved_id> alias = current_menu
+	<0xc0e4ef67> = <id>
+	if <0xc0e4ef67> :desc_resolvealias name = alias_menu
+		assignalias id = <resolved_id> alias = current_menu
 	else
 
 	endif
-	if NOT <stripe_id> :Desc_ResolveAlias name = alias_menu_window param = menu_window_id
+	if NOT <0xc0e4ef67> :desc_resolvealias name = 0x035b354d param = 0x67b68786
 
 	endif
-	if NOT <stripe_id> :Desc_ResolveAlias name = alias_menu_up param = menu_up_id
+	if NOT <0xc0e4ef67> :desc_resolvealias name = 0xf334fdea param = 0x6b7cf884
 
 	endif
-	if NOT <stripe_id> :Desc_ResolveAlias name = alias_menu_down param = menu_down_id
+	if NOT <0xc0e4ef67> :desc_resolvealias name = 0x5236112a param = 0x6518488b
 
 	endif
-	if GotParam \{title}
-		<stripe_id> :SE_SetProps menu_title = <title>
+	if gotparam \{title}
+		<0xc0e4ef67> :se_setprops menu_title = <title>
 	endif
-	CreateScreenElement {
-		type = SpriteElement
-		id = stripe_menu_background_id
+	createscreenelement {
+		type = spriteelement
+		id = 0x80ac0b16
 		parent = <id>
 		rgba = [255 255 255 255]
 		pos = (640.0, 360.0)
@@ -47,26 +47,26 @@ script make_generic_stripe_menu {
 		z_priority = 9.0
 		texture = song_summary_bg
 	}
-	if GotParam \{option_arrows}
-		current_menu :SetTags \{smooth_morph_time = 0.1}
-		current_menu :SE_SetProps {
+	if gotparam \{option_arrows}
+		current_menu :settags \{smooth_morph_time = 0.1}
+		current_menu :se_setprops {
 			event_handlers = [
-				{pad_up generic_stripe_menu_scroll params = {arrow_id = <menu_up_id> up}}
-				{pad_up SmoothMenuScroll params = {dir = -1 isVertical = true}}
-				{pad_down generic_stripe_menu_scroll params = {arrow_id = <menu_down_id> down}}
-				{pad_down SmoothMenuScroll params = {dir = 1 isVertical = true}}
+				{pad_up 0x8b8c56fa params = {arrow_id = <0x6b7cf884> up}}
+				{pad_up smoothmenuscroll params = {dir = -1 isvertical = true}}
+				{pad_down 0x8b8c56fa params = {arrow_id = <0x6518488b> down}}
+				{pad_down smoothmenuscroll params = {dir = 1 isvertical = true}}
 				{pad_back <pad_back_script> params = <pad_back_params>}
 			]
 			loop_view = true
 			loop_center = true
 		}
 	else
-		SetScreenElementProps {id = <menu_up_id> alpha = 0.0}
-		SetScreenElementProps {id = <menu_down_id> alpha = 0.0}
-		GetScreenElementDims id = <menu_window_id>
+		setscreenelementprops {id = <0x6b7cf884> alpha = 0.0}
+		setscreenelementprops {id = <0x6518488b> alpha = 0.0}
+		getscreenelementdims id = <0x67b68786>
 		dims = ((<width> * (1.0, 0.0)) + (0.0, 512.0))
-		SetScreenElementProps {id = <menu_window_id> dims = <dims>}
-		current_menu :SE_SetProps {
+		setscreenelementprops {id = <0x67b68786> dims = <dims>}
+		current_menu :se_setprops {
 			event_handlers = [
 				{pad_up generic_menu_up_or_down_sound params = {up}}
 				{pad_down generic_menu_up_or_down_sound params = {down}}
@@ -78,71 +78,71 @@ script make_generic_stripe_menu {
 		desc_id = current_menu_anchor}
 endscript
 
-script add_generic_stripe_menu_item {
+script 0x9d0992fe {
 		parent = current_menu
 		focus_rgba = ($menu_focus_color)
 		unfocus_rgba = ($menu_unfocus_color)
-		inactive_rgba = [64 64 64 255]
+		0xfdfdc7a4 = [64 64 64 255]
 	}
 
-	if GotParam \{option_left}
+	if gotparam \{0x6d96b274}
 		just = [left center]
 	else
 		just = [right center]
 	endif
-	has_texture = false
-	if GotParam \{option_texture}
-		has_texture = true
-	elseif GotParam \{overlay_texture}
-		has_texture = true
-	elseif GotParam \{texture}
-		has_texture = true
-	elseif GotParam \{background_texture}
-		has_texture = true
+	0x1a689a56 = false
+	if gotparam \{0x656de5f8}
+		0x1a689a56 = true
+	elseif gotparam \{overlay_texture}
+		0x1a689a56 = true
+	elseif gotparam \{texture}
+		0x1a689a56 = true
+	elseif gotparam \{background_texture}
+		0x1a689a56 = true
 	endif
-	if GotParam \{option_checkbox}
-		has_texture = true
-		overlay_texture = Options_Controller_Check
-		texture = Options_Controller_X
+	if gotparam \{0xc1f386b6}
+		0x1a689a56 = true
+		overlay_texture = options_controller_check
+		texture = options_controller_x
 	endif
-	if (<has_texture> = true)
-		if GotParam \{option_left}
+	if (<0x1a689a56> = true)
+		if gotparam \{0x6d96b274}
 			desc = 'menurow_ico_txt_desc'
 		else
 			desc = 'menurow_txt_ico_desc'
 		endif
-		CreateScreenElement {
-			type = DescInterface
+		createscreenelement {
+			type = descinterface
 			parent = <parent>
 			desc = <desc>
-			autoSizeDims = true
+			autosizedims = true
 			menurow_just = <just>
 			menurow_internal_just = <just>
 			menurow_txt_item_text = <text>
 			menurow_txt_item_font = fontgrid_title_a1
 			menurow_txt_item_rgba = <unfocus_rgba>
 		}
-		if GotParam \{overlay_texture}
-			<id> :SE_SetProps {menurow_ico_overlay_texture = <overlay_texture>}
+		if gotparam \{overlay_texture}
+			<id> :se_setprops {0x119b297a = <overlay_texture>}
 		else
-			<id> :SE_SetProps {menurow_ico_overlay_alpha = 0.0}
+			<id> :se_setprops {0xba238713 = 0.0}
 		endif
-		if GotParam \{texture}
-			<id> :SE_SetProps {menurow_ico_item_texture = <texture>}
+		if gotparam \{texture}
+			<id> :se_setprops {menurow_ico_item_texture = <texture>}
 		else
-			<id> :SE_SetProps {menurow_ico_item_alpha = 0.0}
+			<id> :se_setprops {0xc1d5f75c = 0.0}
 		endif
-		if GotParam \{background_texture}
-			<id> :SE_SetProps {menurow_ico_background_texture = <background_texture>}
+		if gotparam \{background_texture}
+			<id> :se_setprops {0x199bfdea = <background_texture>}
 		else
-			<id> :SE_SetProps {menurow_ico_background_alpha = 0.0}
+			<id> :se_setprops {0x8e7a2106 = 0.0}
 		endif
 	else
-		CreateScreenElement {
-			type = DescInterface
+		createscreenelement {
+			type = descinterface
 			parent = <parent>
 			desc = 'menurow_txt_desc'
-			autoSizeDims = true
+			autosizedims = true
 			menurow_just = <just>
 			menurow_internal_just = <just>
 			menurow_txt_item_text = <text>
@@ -150,24 +150,24 @@ script add_generic_stripe_menu_item {
 			menurow_txt_item_rgba = <unfocus_rgba>
 		}
 	endif
-	if GotParam \{blank_entry}
-		<id> :SE_SetProps {
+	if gotparam \{blank_entry}
+		<id> :se_setprops {
 			not_focusable
 		}
-	elseif GotParam \{not_focusable}
-		<id> :SE_SetProps {
+	elseif gotparam \{not_focusable}
+		<id> :se_setprops {
 			not_focusable
-			menurow_txt_item_rgba = <inactive_rgba>
+			menurow_txt_item_rgba = <0xfdfdc7a4>
 		}
 	else
-		if GotParam \{helper_text}
-			<id> :SE_SetProps menu_help = <helper_text>
+		if gotparam \{helper_text}
+			<id> :se_setprops 0x3f37531d = <helper_text>
 		endif
 		array = []
-		if GotParam \{additional_focus_script}
-			AddArrayElement array = <array> element = {
+		if gotparam \{additional_focus_script}
+			addarrayelement array = <array> element = {
 				focus
-				generic_stripe_menu_focus
+				0xf0f98915
 				params = {
 					focus_rgba = <focus_rgba>
 					additional_focus_script = <additional_focus_script>
@@ -175,16 +175,16 @@ script add_generic_stripe_menu_item {
 				}
 			}
 		else
-			AddArrayElement array = <array> element = {
+			addarrayelement array = <array> element = {
 				focus
-				generic_stripe_menu_focus
+				0xf0f98915
 				params = {focus_rgba = <focus_rgba>}
 			}
 		endif
-		if GotParam \{additional_unfocus_script}
-			AddArrayElement array = <array> element = {
+		if gotparam \{additional_unfocus_script}
+			addarrayelement array = <array> element = {
 				unfocus
-				generic_stripe_menu_unfocus
+				0x4e9d4e51
 				params = {
 					unfocus_rgba = <unfocus_rgba>
 					additional_unfocus_script = <additional_unfocus_script>
@@ -192,129 +192,129 @@ script add_generic_stripe_menu_item {
 				}
 			}
 		else
-			AddArrayElement array = <array> element = {
+			addarrayelement array = <array> element = {
 				unfocus
-				generic_stripe_menu_unfocus
+				0x4e9d4e51
 				params = {unfocus_rgba = <unfocus_rgba>}
 			}
 		endif
-		if NOT (GotParam option_checkbox)
-			if (GotParam pad_choose_sound)
-				AddArrayElement array = <array> element = {pad_choose <pad_choose_sound>}
+		if NOT (gotparam 0xc1f386b6)
+			if (gotparam pad_choose_sound)
+				addarrayelement array = <array> element = {pad_choose <pad_choose_sound>}
 			else
-				AddArrayElement array = <array> element = {pad_choose generic_menu_pad_choose_sound}
+				addarrayelement array = <array> element = {pad_choose generic_menu_pad_choose_sound}
 			endif
 		endif
-		if GotParam \{choose_state}
-			AddArrayElement array = <array> element = {
+		if gotparam \{choose_state}
+			addarrayelement array = <array> element = {
 				pad_choose
 				generic_event_choose
 				params = {state = <choose_state> data = {<choose_state_data>}}
 			}
-		elseif GotParam \{pad_choose_script}
-			AddArrayElement array = <array> element = {
+		elseif gotparam \{pad_choose_script}
+			addarrayelement array = <array> element = {
 				pad_choose
 				<pad_choose_script>
 				params = <pad_choose_params>
 			}
 		endif
-		if GotParam \{back_state}
-			AddArrayElement array = <array> element = {
+		if gotparam \{back_state}
+			addarrayelement array = <array> element = {
 				pad_back generic_event_back params = {state = <back_state>}
 			}
-		elseif GotParam \{pad_back_script}
-			AddArrayElement array = <array> element = {pad_back <pad_back_script>}
+		elseif gotparam \{pad_back_script}
+			addarrayelement array = <array> element = {pad_back <pad_back_script>}
 		endif
-		<id> :SE_SetProps event_handlers = <array>
+		<id> :se_setprops event_handlers = <array>
 	endif
 	return item_container_id = <id> item_id = <id>
 endscript
 
-script generic_stripe_menu_focus time = 0.05 grow_scale = 1.5 {
+script 0xf0f98915 time = 0.05 grow_scale = 1.5 {
 		focus_rgba = ($menu_focus_color)
 	}
-	if NOT GotParam \{id}
-		Obj_GetID
-		<id> = <ObjID>
+	if NOT gotparam \{id}
+		obj_getid
+		<id> = <objid>
 	endif
-	<id> :GetTags
-	if GotParam \{helper_text}
-		<id> :SE_SetProps menu_help = <helper_text>
+	<id> :gettags
+	if gotparam \{helper_text}
+		<id> :se_setprops 0x3f37531d = <helper_text>
 	endif
-	<id> :SE_SetProps {
+	<id> :se_setprops {
 		menurow_scale = <grow_scale>
 		menurow_txt_item_font = fontgrid_title_a1
 		menurow_txt_item_rgba = <focus_rgba>
 		motion = ease_in
 		time = <time>
 	}
-	if GotParam \{additional_focus_script}
+	if gotparam \{additional_focus_script}
 		<additional_focus_script> <additional_focus_params>
 	endif
 endscript
 
-script generic_stripe_menu_unfocus time = 0.05 {
+script 0x4e9d4e51 time = 0.05 {
 		unfocus_rgba = ($menu_unfocus_color)
 	}
-	if NOT GotParam \{id}
-		Obj_GetID
-		<id> = <ObjID>
+	if NOT gotparam \{id}
+		obj_getid
+		<id> = <objid>
 	endif
-	<id> :SE_SetProps {
+	<id> :se_setprops {
 		menurow_scale = 1.0
 		menurow_txt_item_font = fontgrid_title_a1
 		menurow_txt_item_rgba = <unfocus_rgba>
 		motion = ease_in
 		time = <time>
 	}
-	if GotParam \{additional_unfocus_script}
+	if gotparam \{additional_unfocus_script}
 		<additional_unfocus_script> <additional_unfocus_params>
 	endif
 endscript
 
-script generic_stripe_menu_scroll 
+script 0x8b8c56fa 
 
-	if GotParam \{down}
+	if gotparam \{down}
 		generic_menu_up_or_down_sound \{down}
-		<arrow_id> :obj_spawnscript stripe_menu_scroll_glow
-		<arrow_id> :obj_spawnscript stripe_menu_arrow_pulse params = {down}
+		<arrow_id> :obj_spawnscript 0x81ae5138
+		<arrow_id> :obj_spawnscript 0xf4207007 params = {down}
 	else
 		generic_menu_up_or_down_sound \{up}
-		<arrow_id> :obj_spawnscript stripe_menu_scroll_glow
-		<arrow_id> :obj_spawnscript stripe_menu_arrow_pulse
+		<arrow_id> :obj_spawnscript 0x81ae5138
+		<arrow_id> :obj_spawnscript 0xf4207007
 	endif
 endscript
 
-script stripe_menu_arrow_pulse 
-	Obj_GetID
-	<ObjID> :SE_SetProps hiddenLocal = true
-	CreateScreenElement {
-		type = SpriteElement
-		parent = <ObjID>
-		texture = Dropdown_Arrow
+script 0xf4207007 
+	obj_getid
+	<objid> :se_setprops hiddenlocal = true
+	createscreenelement {
+		type = spriteelement
+		parent = <objid>
+		texture = dropdown_arrow
 		dims = (40.0, 40.0)
 		pos = (20.0, 15.0)
 		just = [center center]
 		rgba = [225 , 225 , 225 , 200]
 		z_priority = 112
 	}
-	if GotParam \{down}
-		<id> :SE_SetProps flip_h
-		<id> :SE_SetProps pos = {(0.0, 9.0) relative}
+	if gotparam \{down}
+		<id> :se_setprops flip_h
+		<id> :se_setprops pos = {(0.0, 9.0) relative}
 	endif
-	<id> :SE_SetProps scale = 1.3 time = 0.01 relative_scale
-	<id> :SE_WaitProps
-	<id> :SE_SetProps scale = 1.0 time = 0.1 relative_scale
-	<id> :SE_WaitProps
-	<ObjID> :SE_SetProps hiddenLocal = false
-	DestroyScreenElement id = <id>
+	<id> :se_setprops scale = 1.3 time = 0.01 relative_scale
+	<id> :se_waitprops
+	<id> :se_setprops scale = 1.0 time = 0.1 relative_scale
+	<id> :se_waitprops
+	<objid> :se_setprops hiddenlocal = false
+	destroyscreenelement id = <id>
 endscript
 
-script stripe_menu_scroll_glow 
-	Obj_GetID
-	CreateScreenElement {
-		type = SpriteElement
-		parent = <ObjID>
+script 0x81ae5138 
+	obj_getid
+	createscreenelement {
+		type = spriteelement
+		parent = <objid>
 		texture = circle_gradient_64
 		dims = (64.0, 64.0)
 		pos = (20.0, 15.0)
@@ -322,10 +322,10 @@ script stripe_menu_scroll_glow
 		just = [center center]
 		z_priority = 100
 		alpha = 0.2
-		blend = Add
+		blend = add
 	}
-	<id> :SE_SetProps scale = 1.2 relative_scale
-	<id> :SE_SetProps scale = (Random (@ 2.0 @ 2.5 @ 3.0 )) alpha = 0.0 time = 0.2 relative_scale motion = ease_out
-	<id> :SE_WaitProps
-	DestroyScreenElement id = <id>
+	<id> :se_setprops scale = 1.2 relative_scale
+	<id> :se_setprops scale = (Random (@ 2.0 @ 2.5 @ 3.0 )) alpha = 0.0 time = 0.2 relative_scale motion = ease_out
+	<id> :se_waitprops
+	destroyscreenelement id = <id>
 endscript

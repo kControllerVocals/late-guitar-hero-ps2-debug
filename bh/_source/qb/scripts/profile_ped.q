@@ -1,29 +1,29 @@
-Profile_ObjViewer = {
+profile_objviewer = {
 	$objviewer_creation_params
 }
-Profile_Ped_Testlevel_Obj = {
+profile_ped_testlevel_obj = {
 	$obj_testlevel_creation_params
 	lightgroup = outdoor
 	object_type = scene_ped
-	ProfileColor = 12611584
+	profilecolor = 12611584
 	profilebudget = 100
 	use_jq
 }
-Profile_Ped_Crowd_Obj = {
-	$obj_Ped_Skinny_creation_params
+profile_ped_crowd_obj = {
+	$obj_ped_skinny_creation_params
 	object_type = real_crowd
-	ProfileColor = 49264
+	profilecolor = 49264
 	profilebudget = 160
 	use_jq
 }
-Profile_Ven_Camera_Obj = {
-	$obj_Ven_Camera_creation_params
+profile_ven_camera_obj = {
+	$obj_ven_camera_creation_params
 	lightgroup = none
 	object_type = stage_obj
-	ProfileColor = 12611584
+	profilecolor = 12611584
 	profilebudget = 100
 	use_jq
 }
-Profile_PS2_Created_Logo_Obj = {
-	lightgroup = Band
+profile_ps2_created_logo_obj = {
+	lightgroup = band
 }

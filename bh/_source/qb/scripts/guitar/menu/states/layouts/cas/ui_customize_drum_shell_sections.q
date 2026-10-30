@@ -1,4 +1,4 @@
-CAS_Drum_Shell_Sections = [
+cas_drum_shell_sections = [
 	{
 		text = qs(0x8b9b596c)
 		parts = [
@@ -13,12 +13,12 @@ CAS_Drum_Shell_Sections = [
 			gh5_shell_ld25
 			gh5_shell_ld02
 			gh5_shell_ld36
-			budshell
+			0xa6967070
 			drumshell_ds_10
 			gh5_shell_ld31
-			popshell_05
+			0xbb8dc37a
 			gh5_shell_ld52
-			popshell_06
+			0x228492c0
 			gh5_shell_ld49
 			gh5_shell_ld16
 			gh5_shell_ld33
@@ -37,8 +37,8 @@ CAS_Drum_Shell_Sections = [
 			drumshell_ds_06
 			gh5_shell_ld06
 			gh5_shell_ld22
-			popshell_03
-			popshell_08
+			0x52ee664f
+			0xc53cbfc7
 			gh5_shell_ld07
 			drumshell_ds_51
 			drumshell_ds_55
@@ -56,7 +56,7 @@ CAS_Drum_Shell_Sections = [
 		parts = [
 			none
 			drumshell_ds_43
-			popshell_02
+			0x25e956d9
 			drumshell_ds_41
 			drumshell_ds_07
 			drumshell_ds_16
@@ -67,10 +67,10 @@ CAS_Drum_Shell_Sections = [
 			gh5_shell_ld37
 			gh5_shell_ld29
 			drumshell_ds_38
-			popshell_09
+			0xb23b8f51
 			drumshell_ds_09
 			gh5_shell_ld03
-			popshell_01
+			0xbce00763
 			drumshell_ds_22
 			gh5_shell_ld13
 			drumshell_ds_49
@@ -84,11 +84,11 @@ CAS_Drum_Shell_Sections = [
 		parts = [
 			none
 			gh5_shell_ld19
-			popshell_04
+			0xcc8af3ec
 			drumshell_ds_30
 			gh5_shell_ld41
 			gh5_shell_ld04
-			popshell_10
+			0xd2fc06b4
 			gh5_shell_ld20
 			gh5_shell_ld53
 			gh5_shell_ld15
@@ -97,7 +97,7 @@ CAS_Drum_Shell_Sections = [
 			drumshell_ds_48
 			drumshell_ds_50
 			gh5_shell_ld39
-			popshell_07
+			0x5583a256
 			gh5_shell_ld38
 			gh5_shell_ld14
 			gh5_shell_ld47
@@ -106,7 +106,7 @@ CAS_Drum_Shell_Sections = [
 		]
 	}
 	{
-		text = qs("\LTama")
+		text = qs(0x9eb39dc8)
 		parts = [
 			none
 			drumshell_ds_tama02
@@ -125,7 +125,7 @@ CAS_Drum_Shell_Sections = [
 		]
 	}
 	{
-		text = qs("\LPork Pie")
+		text = qs(0x086c055d)
 		parts = [
 			none
 			drumshell_ds_pork10

@@ -1,7 +1,7 @@
 practice_enabled = 0
 
 script ui_init_select_practice_mode 
-	push_num_players \{num = 1}
+	0xfd22d1e7 \{num = 1}
 	change \{practice_enabled = 1}
 	change \{came_to_practice_from = main_menu}
 	change \{game_mode = practice}
@@ -13,87 +13,87 @@ g_training_loading_done = 0
 
 script do_training_loading 
 	change \{g_training_loading_done = 0}
-	set_loading_screen \{full}
-	if ScreenElementExists \{id = current_menu_anchor}
-		LaunchEvent \{target = current_menu_anchor
+	0xe9384b7a \{full}
+	if screenelementexists \{id = current_menu_anchor}
+		launchevent \{target = current_menu_anchor
 			type = unfocus}
 	endif
 	if NOT ($current_progression_flag = none)
 		change came_to_practice_from_progression = ($current_progression_flag)
 	endif
 	change \{current_progression_flag = none}
-	GetPlayerInfo \{1
+	getplayerinfo \{1
 		character_id}
-	if NOT (<character_id> = EmptyGuy)
+	if NOT (<character_id> = emptyguy)
 		change came_to_practice_character_id = <character_id>
-		SetPlayerInfo \{1
-			character_id = EmptyGuy}
+		setplayerinfo \{1
+			character_id = emptyguy}
 	endif
 	destroy_band
-	StopSoundsByBuss \{Encore_Events}
+	stopsoundsbybuss \{encore_events}
 	apply_band_logo_to_venue \{step = build}
-	if GotParam \{part}
+	if gotparam \{part}
 		tutorial_setup_band players = ($current_num_players) part = <part>
 	else
 		tutorial_setup_band players = ($current_num_players)
 	endif
 	change \{current_level = load_z_studio}
-	Load_Venue \{block_scripts = 0}
+	load_venue \{block_scripts = 0}
 	apply_band_logo_to_venue \{step = apply}
 	create_bandname_viewport
-	Wait \{2
+	wait \{2
 		gameframes}
 	destroy_bg_viewport
 	setup_bg_viewport
 	change \{current_num_players = 1}
-	GameMode_UpdateNumPlayers \{num_players = 1}
+	gamemode_updatenumplayers \{num_players = 1}
 	change \{g_training_loading_done = 1}
 	hide_band
 endscript
 
 script ui_create_select_practice_mode 
-	spawnscriptnow \{ui_create_select_practice_mode_spawned}
+	spawnscriptnow \{0x66cea520}
 endscript
 
-script ui_create_select_practice_mode_spawned 
-	BG_Crowd_Front_End_Silence
+script 0x66cea520 
+	bg_crowd_front_end_silence
 	begin
 	if ($g_training_loading_done = 1)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	disable_pause
-	UnPauseGame
-	make_generic_menu \{title = qs("TRAINING")
+	unpausegame
+	make_generic_menu \{title = qs(0xd093953b)
 		pad_back_script = menu_select_practice_back}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	add_generic_menu_text_item \{text = qs("PRACTICE")
+	add_generic_menu_text_item \{text = qs(0x3ea7dec9)
 		pad_choose_script = ui_select_practice_mode_choose
 		pad_choose_params = {
 			practice
 		}}
-	add_generic_menu_text_item \{text = qs("TUTORIALS")
+	add_generic_menu_text_item \{text = qs(0xc6510dd1)
 		pad_choose_script = ui_select_practice_mode_choose}
 	menu_finish
 	destroy_loading_screen
 	startrendering
-	LaunchEvent type = focus target = current_menu data = {child_index = <selected_index>}
+	launchevent type = focus target = current_menu data = {child_index = <selected_index>}
 endscript
 
 script menu_select_practice_back 
-	set_loading_screen \{full}
-	LaunchEvent \{type = unfocus
+	0xe9384b7a \{full}
+	launchevent \{type = unfocus
 		target = current_menu}
 	create_loading_screen
 	generic_ui_destroy
@@ -110,7 +110,7 @@ script ui_destroy_select_practice_mode
 endscript
 
 script ui_deinit_select_practice_mode 
-	pop_num_players
+	0x88e84c31
 	destroy_band
 	destroy_bandname_viewport
 	tutorial_disable_botplay
@@ -124,12 +124,12 @@ script ui_select_practice_mode_choose
 	change \{respond_to_signin_changed = 1}
 	change \{respond_to_signin_changed_func = none}
 
-	if GotParam \{practice}
-		set_loading_screen \{mini}
+	if gotparam \{practice}
+		0xe9384b7a \{0x9fe16047}
 		change \{training_mode = practice}
 		change \{game_mode = practice}
 	else
-		set_loading_screen \{full}
+		0xe9384b7a \{full}
 		do_training_loading
 		change \{training_mode = tutorials}
 	endif
@@ -137,19 +137,19 @@ script ui_select_practice_mode_choose
 		set_primary_controller device_num = <device_num> state = uistate_select_tutorial no_sound
 	else
 		change \{current_num_players = 1}
-		GameMode_UpdateNumPlayers \{num_players = 1}
+		gamemode_updatenumplayers \{num_players = 1}
 		clear_exclusive_devices
 		add_exclusive_device device = ($primary_controller)
 		if (($allow_controller_for_all_instruments) = 0)
-			if NOT IsGuitarController controller = <device_num>
-				if IsDrumController controller = <device_num>
+			if NOT isguitarcontroller controller = <device_num>
+				if isdrumcontroller controller = <device_num>
 					ui_select_instrument_done instrument = drum device_num = <device_num> skip
 				else
-					ui_select_instrument_done instrument = Vocals device_num = <device_num> skip
+					ui_select_instrument_done instrument = vocals device_num = <device_num> skip
 				endif
 				ui_event_wait_for_safe
 				destroy_loading_screen
-				SetButtonEventMappings \{unblock_menu_input}
+				setbuttoneventmappings \{unblock_menu_input}
 				return
 			endif
 		endif
@@ -157,24 +157,24 @@ script ui_select_practice_mode_choose
 	endif
 endscript
 
-script check_tutorial_allowances \{allow_RB_drums = 1}
+script check_tutorial_allowances \{allow_rb_drums = 1}
 	if ($allow_controller_for_all_instruments = 1)
 		return \{allowances = all}
 	endif
-	if IsGuitarController \{controller = $primary_controller}
+	if isguitarcontroller \{controller = $primary_controller}
 		<allowances> = guitar
-	elseif isRBDrum \{controller = $primary_controller}
-		if (<allow_RB_drums> = 1)
+	elseif isrbdrum \{controller = $primary_controller}
+		if (<allow_rb_drums> = 1)
 			<allowances> = drum
 		else
 			<allowances> = rb_drum
 		endif
-	elseif IsDrumController \{controller = $primary_controller}
+	elseif isdrumcontroller \{controller = $primary_controller}
 		<allowances> = drum
 	else
 		ui_get_controller_parts_allowed \{controller = $primary_controller}
-		if StructureContains Structure = <allowed> Vocals
-			<allowances> = Vocals
+		if structurecontains structure = <allowed> vocals
+			<allowances> = vocals
 		else
 			<allowances> = not_specific
 		endif

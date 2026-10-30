@@ -1,5 +1,5 @@
 
-script RegisterAllAnimEvents 
-	RegisterAnimEvents \{track = standard
-		anim_events = $AnimEvents_standard}
+script registerallanimevents 
+	registeranimevents \{track = standard
+		anim_events = $animevents_standard}
 endscript

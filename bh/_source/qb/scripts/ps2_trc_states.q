@@ -1,15 +1,15 @@
-HACK_ps2_saveload_successor = {
+hack_ps2_saveload_successor = {
 	create = stop_flow_manager_and_return_to_ui_state_machine
 }
-string_ps2_CAUTION = qs(0xb3d16ef9)
-string_ps2_MEMORY_CARD_ERROR = qs("ERROR")
-string_ps2_SAVE_NOT_FOUND = qs(0xaf217c7b)
-string_ps2_SUCCESS = qs(0x14d209cb)
-string_ps2_FORMATTING = qs(0xaf23ce9b)
+string_ps2_caution = qs(0xb3d16ef9)
+string_ps2_memory_card_error = qs(0x79597197)
+string_ps2_save_not_found = qs(0xaf217c7b)
+0x27e4f29a = qs(0x14d209cb)
+string_ps2_formatting = qs(0xaf23ce9b)
 ps2_memcard_autosave_warning_boot_fs = {
 	create = ps2_memcard_message
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = boot_autosave_warning
 	}
 	actions = [
@@ -22,20 +22,20 @@ ps2_memcard_autosave_warning_boot_fs = {
 ps2_memcard_load_check_status_boot_fs = {
 	create = ps2_memcard_load_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
 	}
 	actions = [
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_error_boot
+			flow_state_func = 0xb391c092
 			flow_state_func_params = {
 				message = no_memcard_boot
 			}
 		}
 		{
 			action = insufficient_space
-			flow_state_func = ps2_memcard_load_error_boot
+			flow_state_func = 0xb391c092
 			flow_state_func_params = {
 				message = insufficient_space_boot
 			}
@@ -53,13 +53,13 @@ ps2_memcard_load_check_status_boot_fs = {
 ps2_memcard_load_boot_fs = {
 	create = ps2_memcard_load
 	create_params = {
-		header = qs("LOADING...")
+		header = qs(0xfab8f6e7)
 		message = loading
 	}
 	actions = [
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_error_boot
+			flow_state_func = 0xb391c092
 			flow_state_func_params = {
 				message = no_memcard_boot
 			}
@@ -70,7 +70,7 @@ ps2_memcard_load_boot_fs = {
 		}
 		{
 			action = corrupt_save
-			flow_state = ps2_memcard_load_corrupt_boot_fs
+			flow_state = 0x287f25a0
 		}
 		{
 			action = no_save
@@ -78,15 +78,15 @@ ps2_memcard_load_boot_fs = {
 		}
 	]
 }
-ps2_memcard_load_error_boot_fs = {
+0x2f2e9d9b = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
-		message = $loadErrorMessage
-		option1_text = qs("RETRY")
-		option1_action = retry_load
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = disable_autosave
+		header = $string_ps2_memory_card_error
+		message = $0xe674201a
+		option1_text = qs(0x5d8b66a0)
+		0x9c953112 = retry_load
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = disable_autosave
 	}
 	actions = [
 		{
@@ -102,46 +102,46 @@ ps2_memcard_load_error_boot_fs = {
 ps2_memcard_load_no_save_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SAVE_NOT_FOUND
+		header = $string_ps2_save_not_found
 		message = no_save_boot
 		option1_text = qs(0xc08e8aaf)
-		option1_action = save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		0x9c953112 = save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
 			action = save
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = save
 				flow_state = ps2_memcard_save_check_status_boot_fs
 			}
 		}
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_boot_fs
 		}
 	]
 }
-ps2_memcard_load_corrupt_boot_fs = {
+0x287f25a0 = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = corrupt_boot
-		option1_text = qs("OVERWRITE")
-		option1_action = confirm_overwrite
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		option1_text = qs(0xf77909ae)
+		0x9c953112 = confirm_overwrite
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_boot_fs
 		}
 		{
 			action = confirm_overwrite
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = overwrite
 				flow_state = ps2_memcard_save_check_status_boot_fs
@@ -152,9 +152,9 @@ ps2_memcard_load_corrupt_boot_fs = {
 ps2_memcard_load_complete_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		message = load_successful
-		seconds_before_continue = 1
+		0x81a048de = 1
 	}
 	actions = [
 		{
@@ -166,16 +166,16 @@ ps2_memcard_load_complete_boot_fs = {
 ps2_memcard_insufficient_space_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = insufficient_space_boot
-		option1_text = qs("RETRY")
-		option1_action = load
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		option1_text = qs(0x5d8b66a0)
+		0x9c953112 = load
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_boot_fs
 		}
 		{
@@ -187,7 +187,7 @@ ps2_memcard_insufficient_space_boot_fs = {
 ps2_memcard_save_check_status_boot_fs = {
 	create = ps2_memcard_save_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
 	}
 	actions = [
@@ -209,7 +209,7 @@ ps2_memcard_save_check_status_boot_fs = {
 		}
 		{
 			action = existing_save
-			flow_state_func = ps2_memcard_existing_save_successor_overwrite
+			flow_state_func = 0x631d9140
 		}
 	]
 }
@@ -217,11 +217,11 @@ ps2_memcard_save_boot_fs = {
 	create = ps2_memcard_save
 	create_params = {
 		save = {
-			header = qs("SAVING...")
-			message = Saving
+			header = qs(0xc13ee209)
+			message = saving
 		}
 		overwrite = {
-			header = qs("OVERWRITING...")
+			header = qs(0xd99906d4)
 			message = overwriting
 		}
 	}
@@ -243,17 +243,17 @@ ps2_memcard_save_boot_fs = {
 ps2_memcard_save_no_card_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = no_memcard
 		option1_text = qs(0xf9ea2606)
-		option1_action = retry_save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = disable_autosave
+		0x9c953112 = retry_save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = disable_autosave
 	}
 	actions = [
 		{
 			action = retry_save
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = save
 				flow_state = ps2_memcard_save_check_status_boot_fs
@@ -268,17 +268,17 @@ ps2_memcard_save_no_card_boot_fs = {
 ps2_memcard_save_new_card_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = new_memcard
-		option1_text = qs("SAVE")
-		option1_action = save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = disable_autosave
+		option1_text = qs(0xe618e644)
+		0x9c953112 = save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = disable_autosave
 	}
 	actions = [
 		{
 			action = save
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = save
 				flow_state = ps2_memcard_save_check_status_boot_fs
@@ -293,7 +293,7 @@ ps2_memcard_save_new_card_boot_fs = {
 ps2_memcard_save_error_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		save = {
 			message = save_failed
 			option1_text = qs(0xf9ea2606)
@@ -302,13 +302,13 @@ ps2_memcard_save_error_boot_fs = {
 			message = overwrite_failed
 			option1_text = qs(0xf929226b)
 		}
-		option1_action = retry
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		0x9c953112 = retry
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_boot_fs
 		}
 		{
@@ -320,14 +320,14 @@ ps2_memcard_save_error_boot_fs = {
 ps2_memcard_save_complete_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		save = {
 			message = save_successful
 		}
 		overwrite = {
 			message = overwrite_successful
 		}
-		seconds_before_continue = 1
+		0x81a048de = 1
 	}
 	actions = [
 		{
@@ -339,12 +339,12 @@ ps2_memcard_save_complete_boot_fs = {
 ps2_memcard_attempt_format_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = attempt_format
-		option1_text = qs("NO")
-		option1_action = load
-		option2_text = qs("YES")
-		option2_action = format
+		option1_text = qs(0xd2915c27)
+		0x9c953112 = load
+		option2_text = qs(0x58e0a1fb)
+		0x121a36f1 = format
 	}
 	actions = [
 		{
@@ -353,23 +353,23 @@ ps2_memcard_attempt_format_boot_fs = {
 		}
 		{
 			action = format
-			flow_state = ps2_memcard_attempt_format_confirm_boot_fs
+			flow_state = 0x2e469f61
 		}
 	]
 }
-ps2_memcard_attempt_format_confirm_boot_fs = {
+0x2e469f61 = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = confirm_format
-		option1_text = qs("NO")
-		option1_action = abort_format
-		option2_text = qs("YES")
-		option2_action = format
+		option1_text = qs(0xd2915c27)
+		0x9c953112 = 0x532357e8
+		option2_text = qs(0x58e0a1fb)
+		0x121a36f1 = format
 	}
 	actions = [
 		{
-			action = abort_format
+			action = 0x532357e8
 			flow_state = ps2_memcard_load_check_status_boot_fs
 		}
 		{
@@ -381,13 +381,13 @@ ps2_memcard_attempt_format_confirm_boot_fs = {
 ps2_memcard_format_check_status_boot_fs = {
 	create = ps2_memcard_format_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
 	}
 	actions = [
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_format_error_boot
+			flow_state_func = 0xf321b8b3
 			flow_state_func_params = {
 				message = no_memcard
 			}
@@ -398,16 +398,16 @@ ps2_memcard_format_check_status_boot_fs = {
 		}
 		{
 			action = is_formatted
-			flow_state_func = ps2_memcard_format_error_boot
+			flow_state_func = 0xf321b8b3
 			flow_state_func_params = {
 				message = is_formatted
 			}
 		}
 		{
 			action = new_memcard
-			flow_state_func = ps2_memcard_format_error_boot
+			flow_state_func = 0xf321b8b3
 			flow_state_func_params = {
-				message = new_memcard_format_boot
+				message = 0xb55bb074
 			}
 		}
 	]
@@ -415,7 +415,7 @@ ps2_memcard_format_check_status_boot_fs = {
 ps2_memcard_format_boot_fs = {
 	create = ps2_memcard_format
 	create_params = {
-		header = $string_ps2_FORMATTING
+		header = $string_ps2_formatting
 		message = formatting
 	}
 	actions = [
@@ -425,22 +425,22 @@ ps2_memcard_format_boot_fs = {
 		}
 		{
 			action = error
-			flow_state_func = ps2_memcard_format_error_boot
+			flow_state_func = 0xf321b8b3
 			flow_state_func_params = {
 				message = format_failed
 			}
 		}
 	]
 }
-ps2_memcard_format_error_boot_fs = {
+0x3a26f17e = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
-		message = $formatErrorMessage
-		option1_text = qs("RETRY")
-		option1_action = load
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		header = $string_ps2_memory_card_error
+		message = $0xeb206b72
+		option1_text = qs(0x5d8b66a0)
+		0x9c953112 = load
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
@@ -448,7 +448,7 @@ ps2_memcard_format_error_boot_fs = {
 			flow_state = ps2_memcard_load_check_status_boot_fs
 		}
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_boot_fs
 		}
 	]
@@ -456,14 +456,14 @@ ps2_memcard_format_error_boot_fs = {
 ps2_memcard_format_complete_boot_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		message = format_successful
-		seconds_before_continue = 1
+		0x81a048de = 1
 	}
 	actions = [
 		{
 			action = continue
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = save
 				flow_state = ps2_memcard_save_check_status_boot_fs
@@ -474,7 +474,7 @@ ps2_memcard_format_complete_boot_fs = {
 ps2_memcard_disable_autosave_boot_fs = {
 	create = ps2_disable_autosave
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = disable_autosave
 	}
 	actions = [
@@ -484,8 +484,8 @@ ps2_memcard_disable_autosave_boot_fs = {
 		}
 	]
 }
-ps2_memcard_save_start_ingame_fs = {
-	create = ps2_memcard_save_start
+0x9d327bc2 = {
+	create = 0x785d4cd3
 	actions = [
 		{
 			action = continue
@@ -496,7 +496,7 @@ ps2_memcard_save_start_ingame_fs = {
 ps2_memcard_save_check_status_ingame_fs = {
 	create = ps2_memcard_save_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
 	}
 	actions = [
@@ -526,15 +526,15 @@ ps2_memcard_save_ingame_fs = {
 	create = ps2_memcard_save
 	create_params = {
 		save = {
-			header = qs("SAVING...")
-			message = Saving
+			header = qs(0xc13ee209)
+			message = saving
 		}
 		autosave = {
 			header = qs(0xede50683)
 			message = autosaving
 		}
 		overwrite = {
-			header = qs("OVERWRITING...")
+			header = qs(0xd99906d4)
 			message = overwriting
 		}
 	}
@@ -556,16 +556,16 @@ ps2_memcard_save_ingame_fs = {
 ps2_memcard_insufficient_space_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = insufficient_space_ingame
 		option1_text = qs(0xf9ea2606)
-		option1_action = save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		0x9c953112 = save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 		{
@@ -577,17 +577,17 @@ ps2_memcard_insufficient_space_ingame_fs = {
 ps2_memcard_save_new_card_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = new_memcard
-		option1_text = qs("SAVE")
-		option1_action = save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = disable_autosave
+		option1_text = qs(0xe618e644)
+		0x9c953112 = save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = disable_autosave
 	}
 	actions = [
 		{
 			action = save
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = save
 				flow_state = ps2_memcard_save_check_status_ingame_fs
@@ -602,21 +602,21 @@ ps2_memcard_save_new_card_ingame_fs = {
 ps2_memcard_overwrite_confirm_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = confirm_overwrite
-		option1_text = qs("CONTINUE WITHOUT SAVING")
-		option1_action = dont_save
-		option2_text = qs("OVERWRITE")
-		option2_action = overwrite
+		option1_text = qs(0x06d0b6b0)
+		0x9c953112 = 0x94e94c59
+		option2_text = qs(0xf77909ae)
+		0x121a36f1 = overwrite
 	}
 	actions = [
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 		{
 			action = overwrite
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = overwrite
 				flow_state = ps2_memcard_save_check_status_ingame_fs
@@ -627,7 +627,7 @@ ps2_memcard_overwrite_confirm_ingame_fs = {
 ps2_memcard_save_error_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		save = {
 			message = save_failed
 			option1_text = qs(0xf9ea2606)
@@ -640,13 +640,13 @@ ps2_memcard_save_error_ingame_fs = {
 			message = overwrite_failed
 			option1_text = qs(0xf929226b)
 		}
-		option1_action = save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		0x9c953112 = save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 		{
@@ -658,24 +658,24 @@ ps2_memcard_save_error_ingame_fs = {
 ps2_memcard_save_no_card_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = no_memcard
 		option1_text = qs(0xf9ea2606)
-		option1_action = save
-		option2_text = qs("CONTINUE WITHOUT SAVING")
-		option2_action = dont_save
+		0x9c953112 = save
+		option2_text = qs(0x06d0b6b0)
+		0x121a36f1 = 0x94e94c59
 	}
 	actions = [
 		{
 			action = save
-			flow_state_func = ps2_memcard_set_save_mode
+			flow_state_func = 0xdfb56609
 			flow_state_func_params = {
 				mode = save
 				flow_state = ps2_memcard_save_check_status_ingame_fs
 			}
 		}
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 	]
@@ -683,7 +683,7 @@ ps2_memcard_save_no_card_ingame_fs = {
 ps2_memcard_save_complete_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		save = {
 			message = save_successful
 		}
@@ -693,7 +693,7 @@ ps2_memcard_save_complete_ingame_fs = {
 		overwrite = {
 			message = overwrite_successful
 		}
-		seconds_before_continue = 1
+		0x81a048de = 1
 	}
 	actions = [
 		{
@@ -705,7 +705,7 @@ ps2_memcard_save_complete_ingame_fs = {
 ps2_memcard_disable_autosave_ingame_fs = {
 	create = ps2_disable_autosave
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = disable_autosave
 	}
 	actions = [
@@ -718,33 +718,33 @@ ps2_memcard_disable_autosave_ingame_fs = {
 ps2_memcard_attempt_format_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = attempt_format
-		option1_text = qs("CONTINUE WITHOUT SAVING")
-		option1_action = dont_save
-		option2_text = qs("YES")
-		option2_action = format
+		option1_text = qs(0x06d0b6b0)
+		0x9c953112 = 0x94e94c59
+		option2_text = qs(0x58e0a1fb)
+		0x121a36f1 = format
 	}
 	actions = [
 		{
 			action = format
-			flow_state = ps2_memcard_attempt_format_confirm_ingame_fs
+			flow_state = 0x30f5ae52
 		}
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 	]
 }
-ps2_memcard_attempt_format_confirm_ingame_fs = {
+0x30f5ae52 = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_CAUTION
+		header = $string_ps2_caution
 		message = confirm_format
-		option1_text = qs("CONTINUE WITHOUT SAVING")
-		option1_action = abort_format
+		option1_text = qs(0x06d0b6b0)
+		0x9c953112 = 0x532357e8
 		option2_text = qs(0x113952f8)
-		option2_action = format
+		0x121a36f1 = format
 	}
 	actions = [
 		{
@@ -752,7 +752,7 @@ ps2_memcard_attempt_format_confirm_ingame_fs = {
 			flow_state = ps2_memcard_format_check_status_ingame_fs
 		}
 		{
-			action = abort_format
+			action = 0x532357e8
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 	]
@@ -760,7 +760,7 @@ ps2_memcard_attempt_format_confirm_ingame_fs = {
 ps2_memcard_format_check_status_ingame_fs = {
 	create = ps2_memcard_format_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
 	}
 	actions = [
@@ -785,7 +785,7 @@ ps2_memcard_format_check_status_ingame_fs = {
 ps2_memcard_format_ingame_fs = {
 	create = ps2_memcard_format
 	create_params = {
-		header = $string_ps2_FORMATTING
+		header = $string_ps2_formatting
 		message = formatting
 	}
 	actions = [
@@ -802,12 +802,12 @@ ps2_memcard_format_ingame_fs = {
 ps2_memcard_retry_format_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
+		header = $string_ps2_memory_card_error
 		message = format_failed
-		option1_text = qs("CONTINUE WITHOUT SAVING")
-		option1_action = dont_save
+		option1_text = qs(0x06d0b6b0)
+		0x9c953112 = 0x94e94c59
 		option2_text = qs(0x664fb590)
-		option2_action = format
+		0x121a36f1 = format
 	}
 	actions = [
 		{
@@ -815,7 +815,7 @@ ps2_memcard_retry_format_ingame_fs = {
 			flow_state = ps2_memcard_format_check_status_ingame_fs
 		}
 		{
-			action = dont_save
+			action = 0x94e94c59
 			flow_state = ps2_memcard_disable_autosave_ingame_fs
 		}
 	]
@@ -823,9 +823,9 @@ ps2_memcard_retry_format_ingame_fs = {
 ps2_memcard_format_complete_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		message = format_successful
-		seconds_before_continue = 1
+		0x81a048de = 1
 	}
 	actions = [
 		{
@@ -837,21 +837,21 @@ ps2_memcard_format_complete_ingame_fs = {
 ps2_memcard_load_check_status_ingame_fs = {
 	create = ps2_memcard_load_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
-		check_insufficient_space = 0
+		0x76001281 = 0
 	}
 	actions = [
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_memcard
 			}
 		}
 		{
 			action = no_save
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_save_ingame
 			}
@@ -862,15 +862,15 @@ ps2_memcard_load_check_status_ingame_fs = {
 		}
 	]
 }
-ps2_memcard_load_error_ingame_fs = {
+0x30a8c721 = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
-		message = $loadErrorMessage
+		header = $string_ps2_memory_card_error
+		message = $0xe674201a
 		option1_text = qs(0x9e92cce5)
-		option1_action = disable_autosave
+		0x9c953112 = disable_autosave
 		option2_text = qs(0xb2ae3a96)
-		option2_action = load
+		0x121a36f1 = load
 	}
 	actions = [
 		{
@@ -886,7 +886,7 @@ ps2_memcard_load_error_ingame_fs = {
 ps2_memcard_load_ingame_fs = {
 	create = ps2_memcard_load
 	create_params = {
-		header = qs("LOADING...")
+		header = qs(0xfab8f6e7)
 		message = loading
 	}
 	actions = [
@@ -896,23 +896,23 @@ ps2_memcard_load_ingame_fs = {
 		}
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_memcard
 			}
 		}
 		{
 			action = no_save
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_save_ingame
 			}
 		}
 		{
 			action = corrupt_save
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
-				message = corrupt_ingame
+				message = 0x8f9625eb
 			}
 		}
 	]
@@ -920,9 +920,9 @@ ps2_memcard_load_ingame_fs = {
 ps2_memcard_load_complete_ingame_fs = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		message = load_successful
-		seconds_before_continue = 1
+		0x81a048de = 1
 	}
 	actions = [
 		{
@@ -931,17 +931,17 @@ ps2_memcard_load_complete_ingame_fs = {
 		}
 	]
 }
-ps2_memcard_load_jam_list_check_status_ingame_fs = {
-	create = ps2_memcard_load_jam_list_check_status
+0x1df77d65 = {
+	create = 0x29eee292
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
-		check_insufficient_space = 0
+		0x76001281 = 0
 	}
 	actions = [
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_jam_list_error_ingame
+			flow_state_func = 0x0b6c2529
 			flow_state_func_params = {
 				message = no_memcard
 			}
@@ -952,18 +952,18 @@ ps2_memcard_load_jam_list_check_status_ingame_fs = {
 		}
 	]
 }
-ps2_memcard_load_jam_list_ingame_fs = {
-	create = ps2_memcard_load_jam_list
+0xab51b627 = {
+	create = 0x4dc01ebe
 	create_params = {
-		header = qs("LOADING...")
-		message = loading_jams
+		header = qs(0xfab8f6e7)
+		message = 0xeabaadcd
 	}
 	actions = [
 		{
 			action = error
-			flow_state_func = ps2_memcard_load_jam_list_error_ingame
+			flow_state_func = 0x0b6c2529
 			flow_state_func_params = {
-				message = directory_list_error
+				message = 0xc6d29ab7
 			}
 		}
 		{
@@ -972,15 +972,15 @@ ps2_memcard_load_jam_list_ingame_fs = {
 		}
 	]
 }
-ps2_memcard_load_jam_list_error_ingame_fs = {
+0x062005da = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
-		message = $loadErrorMessage
+		header = $string_ps2_memory_card_error
+		message = $0xe674201a
 		option1_text = qs(0x9e92cce5)
-		option1_action = disable_autosave
+		0x9c953112 = disable_autosave
 		option2_text = qs(0xb2ae3a96)
-		option2_action = load
+		0x121a36f1 = load
 	}
 	actions = [
 		{
@@ -989,27 +989,27 @@ ps2_memcard_load_jam_list_error_ingame_fs = {
 		}
 		{
 			action = load
-			flow_state = ps2_memcard_load_jam_list_check_status_ingame_fs
+			flow_state = 0x1df77d65
 		}
 	]
 }
 ps2_memcard_delete_check_status_ingame_fs = {
 	create = ps2_memcard_delete_check_status
 	create_params = {
-		header = qs("CHECKING...")
+		header = qs(0x232eed4e)
 		message = check_memcard
 	}
 	actions = [
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_memcard
 			}
 		}
 		{
 			action = no_save
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_save
 			}
@@ -1020,15 +1020,15 @@ ps2_memcard_delete_check_status_ingame_fs = {
 		}
 	]
 }
-ps2_memcard_delete_error_ingame_fs = {
+0x12f2ab7e = {
 	create = refresh_ps2_trc_menu
 	create_params = {
-		header = $string_ps2_MEMORY_CARD_ERROR
-		message = $deleteErrorMessage
+		header = $string_ps2_memory_card_error
+		message = $0x5e74f644
 		option1_text = qs(0x5919baae)
-		option1_action = leave_saveload_flow
+		0x9c953112 = leave_saveload_flow
 		option2_text = qs(0x2c2a9e0f)
-		option2_action = retry
+		0x121a36f1 = retry
 	}
 	actions = [
 		{
@@ -1044,7 +1044,7 @@ ps2_memcard_delete_error_ingame_fs = {
 ps2_memcard_delete_ingame_fs = {
 	create = ps2_memcard_delete
 	create_params = {
-		header = qs("DELETING...")
+		header = qs(0x6b122c30)
 		message = deleting
 	}
 	actions = [
@@ -1054,14 +1054,14 @@ ps2_memcard_delete_ingame_fs = {
 		}
 		{
 			action = no_memcard
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_memcard
 			}
 		}
 		{
 			action = no_save
-			flow_state_func = ps2_memcard_load_error_ingame
+			flow_state_func = 0xbd668983
 			flow_state_func_params = {
 				message = no_save
 			}
@@ -1071,7 +1071,7 @@ ps2_memcard_delete_ingame_fs = {
 ps2_memcard_delete_complete_ingame_fs = {
 	create = ps2_memcard_delete_complete
 	create_params = {
-		header = $string_ps2_SUCCESS
+		header = $0x27e4f29a
 		message = delete_successful
 	}
 	actions = [
@@ -1080,8 +1080,8 @@ ps2_memcard_delete_complete_ingame_fs = {
 			flow_state_func = ps2_get_saveload_successor
 		}
 		{
-			action = load_jam_list
-			flow_state = ps2_memcard_load_jam_list_ingame_fs
+			action = 0xddf6d24c
+			flow_state = 0xab51b627
 		}
 	]
 }

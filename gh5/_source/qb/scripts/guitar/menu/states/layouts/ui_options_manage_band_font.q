@@ -3,17 +3,17 @@ script ui_create_options_manage_band_font
 	make_generic_menu {
 		parent = <container_id>
 		vmenu_id = create_options_manage_band_font_vmenu
-		title = qs("Band Font")
+		title = qs(0x1521f36e)
 	}
 	get_current_band_info
-	GetGlobalTags <band_info>
-	if NOT GotParam \{font}
+	getglobaltags <band_info>
+	if NOT gotparam \{font}
 		font = fontgrid_text_a6
 	endif
-	GetArraySize ($car_font_list)
+	getarraysize ($car_font_list)
 	i = 0
 	begin
-	FormatText checksumname = current_font '%j' j = ((($car_font_list) [<i>]).font)
+	formattext checksumname = current_font '%j' j = ((($car_font_list) [<i>]).font)
 	if (<font> = <current_font>)
 		selected_index = <i>
 	endif
@@ -30,7 +30,7 @@ script ui_create_options_manage_band_font
 	clean_up_user_control_helpers
 	menu_finish \{car_helper_text_cancel
 		no_rotate_zoom_text}
-	LaunchEvent type = focus target = create_options_manage_band_font_vmenu data = {child_index = <selected_index>}
+	launchevent type = focus target = create_options_manage_band_font_vmenu data = {child_index = <selected_index>}
 endscript
 
 script ui_destroy_options_manage_band_font 
@@ -38,16 +38,16 @@ script ui_destroy_options_manage_band_font
 endscript
 
 script ui_init_options_manage_band_font 
-	BandLogoObject :Obj_ApplyScaling \{scale = 0.0}
-	name = qs("\L")
+	bandlogoobject :obj_applyscaling \{scale = 0.0}
+	name = qs(0x03ac90f0)
 	get_current_band_info
-	GetGlobalTags <band_info>
-	if NOT GotParam \{font}
+	getglobaltags <band_info>
+	if NOT gotparam \{font}
 		font = fontgrid_text_a6
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
-		type = TextBlockElement
+		type = textblockelement
 		id = demo_band_font
 		text = <name>
 		font = <font>
@@ -60,24 +60,24 @@ script ui_init_options_manage_band_font
 endscript
 
 script ui_deinit_options_manage_band_font 
-	BandLogoObject :Obj_ApplyScaling \{scale = 1.0}
-	DestroyScreenElement \{id = demo_band_font}
+	bandlogoobject :obj_applyscaling \{scale = 1.0}
+	destroyscreenelement \{id = demo_band_font}
 endscript
 
 script manage_band_set_font 
 	get_current_band_info
-	FormatText checksumname = font '%j' j = <font>
-	SetGlobalTags <band_info> params = {font = <font>}
+	formattext checksumname = font '%j' j = <font>
+	setglobaltags <band_info> params = {font = <font>}
 	generic_event_back
 endscript
 
 script change_demo_font_on_focus 
-	FormatText checksumname = font '%j' j = <font>
-	demo_band_font :SE_SetProps font = <font>
+	formattext checksumname = font '%j' j = <font>
+	demo_band_font :se_setprops font = <font>
 endscript
 
 script debug_dump_current_band_font 
 	fontgrid_text_a6
-	GetGlobalTags <band_info> param = font
+	getglobaltags <band_info> param = font
 
 endscript

@@ -1,6 +1,6 @@
 
 script ui_create_options_calibrate_lag_warning 
-	if GotParam \{dialog}
+	if gotparam \{dialog}
 		create_calibrate_lag_dialog_menu <...>
 		return
 	endif
@@ -8,7 +8,7 @@ script ui_create_options_calibrate_lag_warning
 endscript
 
 script ui_destroy_options_calibrate_lag_warning \{complete_script = nullscript}
-	if GotParam \{dialog}
+	if gotparam \{dialog}
 
 		<complete_script>
 		destroy_calibrate_lag_dialog_menu <...>

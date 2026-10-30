@@ -1,4 +1,4 @@
-CompositeObjectManager_budget = 7600.0
+compositeobjectmanager_budget = 7600.0
 bandmember_budget = 2000.0
 crowd_budget = 1600.0
 real_crowd_budget = 800.0
@@ -9,59 +9,59 @@ fretbar_budget = 200.0
 gem_budget = 500.0
 button_budget = 100.0
 highway_budget = 100.0
-LightVolumes_Budget = 300.0
-LevelLight_Budget = 100.0
-LevelObject_Budget = 1100.0
-LightVolumeObject_Budget = 40.0
-LevelLightObject_Budget = 10.0
-LevelObjectObject_Budget = 20.0
-AnimTree_budget = 100.0
-Model_budget = 20.0
-ProximTrigger_budget = 20.0
-LockObj_budget = 20.0
-Motion_budget = 20.0
-Camera_budget = 20.0
-Velocity_budget = 20.0
-SetDisplayMatrix_budget = 20.0
-CinematicCamera_budget = 50.0
-DisplayOrientationDebug_budget = 40.0
-Ragdoll_budget = 20.0
-LightVolume_budget = 20.0
-DynamicLight_budget = 20.0
-PositionMorph_budget = 20.0
-ObjectProximity_budget = 250.0
-ViewerObj_budget = 250.0
-Proximity_budget = 250.0
-Skeleton_budget = 250.0
-Sound_budget = 250.0
-Collision_budget = 250.0
-CharacterCollision_budget = 250.0
-Attach_budget = 250.0
-Suspend_budget = 250.0
-RigidBody_budget = 250.0
-ParticleChain_budget = 250.0
-Stream_budget = 250.0
-NodeArray_budget = 250.0
-ObjectHookManager_budget = 250.0
-Vibration_budget = 250.0
-Trigger_budget = 250.0
-FloatingLabel_budget = 250.0
-Input_budget = 250.0
-Particle_budget = 250.0
-FlexibleParticle_budget = 250.0
-MovableContact_budget = 250.0
-Bbox_budget = 250.0
-WaitAndDie_budget = 250.0
-CutsceneUpdate_budget = 250.0
-FAM_budget = 250.0
-MatrixManipulation_budget = 250.0
-AnimInfo_budget = 250.0
-Constraint_budget = 250.0
-Hover_budget = 250.0
-InteractiveWater_budget = 250.0
-Tumble_budget = 250.0
-CollisionCache_budget = 250.0
-AnimPreview_budget = 250.0
+lightvolumes_budget = 300.0
+levellight_budget = 100.0
+levelobject_budget = 1100.0
+lightvolumeobject_budget = 40.0
+levellightobject_budget = 10.0
+levelobjectobject_budget = 20.0
+animtree_budget = 100.0
+model_budget = 20.0
+proximtrigger_budget = 20.0
+lockobj_budget = 20.0
+motion_budget = 20.0
+camera_budget = 20.0
+velocity_budget = 20.0
+setdisplaymatrix_budget = 20.0
+cinematiccamera_budget = 50.0
+displayorientationdebug_budget = 40.0
+ragdoll_budget = 20.0
+lightvolume_budget = 20.0
+dynamiclight_budget = 20.0
+positionmorph_budget = 20.0
+objectproximity_budget = 250.0
+viewerobj_budget = 250.0
+proximity_budget = 250.0
+skeleton_budget = 250.0
+sound_budget = 250.0
+collision_budget = 250.0
+charactercollision_budget = 250.0
+attach_budget = 250.0
+suspend_budget = 250.0
+rigidbody_budget = 250.0
+particlechain_budget = 250.0
+stream_budget = 250.0
+nodearray_budget = 250.0
+objecthookmanager_budget = 250.0
+vibration_budget = 250.0
+trigger_budget = 250.0
+floatinglabel_budget = 250.0
+input_budget = 250.0
+particle_budget = 250.0
+flexibleparticle_budget = 250.0
+movablecontact_budget = 250.0
+bbox_budget = 250.0
+waitanddie_budget = 250.0
+cutsceneupdate_budget = 250.0
+fam_budget = 250.0
+matrixmanipulation_budget = 250.0
+animinfo_budget = 250.0
+constraint_budget = 250.0
+hover_budget = 250.0
+interactivewater_budget = 250.0
+tumble_budget = 250.0
+collisioncache_budget = 250.0
+animpreview_budget = 250.0
 bandmember_budget_scale = 5.0
 crowd_budget_scale = 1.0
 real_crowd_budget_scale = 1.0
@@ -72,9 +72,9 @@ fretbar_budget_scale = 1.0
 gem_budget_scale = 1.0
 button_budget_scale = 1.0
 highway_budget_scale = 1.0
-LightVolume_Budget_scale = 1.0
-LevelLight_Budget_scale = 1.0
-LevelObject_Budget_scale = 1.0
+lightvolume_budget_scale = 1.0
+levellight_budget_scale = 1.0
+levelobject_budget_scale = 1.0
 create_guitar_events_budget = 1000.0
 check_for_star_power_budget = 300.0
 update_score_fast_budget = 50.0
@@ -91,12 +91,12 @@ gem_array_events_budget = 10.0
 lightshow_genericmood_event_budget = 1000.0
 fretbar_events_budget = 15.0
 guitarevent_prefretbar_budget = 150.0
-GuitarEvent_Note_Window_Open_budget = 15.0
+guitarevent_note_window_open_budget = 15.0
 igc_runcamerascript_budget = 10.0
 cameracuts_startcallback_budget = 40.0
 hero_wait_until_anim_finished_budget = 100.0
-Shadow00_budget = 800.0
-Shadow01_budget = 400.0
+shadow00_budget = 800.0
+shadow01_budget = 400.0
 ui_budget = 400.0
 crowd1_cam_viewport_budget = 200.0
 crowd2_cam_viewport_budget = 200.0
@@ -110,7 +110,7 @@ prepass_budget = 300.0
 highway_viewport_budget = 1700.0
 viewport0_name = highway_viewport
 gpu_budget = 17200.0
-Profile_Pages = [
+profile_pages = [
 	[
 		{
 			item = shadow00
@@ -265,7 +265,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = Crowd
+			item = crowd
 			text = 'Fake Crowd'
 			color = [
 				255
@@ -355,7 +355,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = LightVolume
+			item = lightvolume
 			text = 'Light Volumnes'
 			color = [
 				204
@@ -365,7 +365,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = LevelLight
+			item = levellight
 			text = 'Level Lights'
 			color = [
 				204
@@ -375,7 +375,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = LevelObject
+			item = levelobject
 			text = 'Level Objects'
 			color = [
 				204
@@ -387,7 +387,7 @@ Profile_Pages = [
 	]
 	[
 		{
-			item = FrontEnd
+			item = frontend
 			text = 'Front End'
 			color = [
 				255
@@ -398,7 +398,7 @@ Profile_Pages = [
 		}
 		{
 			item = game
-			Logic
+			logic
 			task
 			text = 'Game Logic'
 			color = [
@@ -419,8 +419,8 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = Process
-			Handlers
+			item = process
+			handlers
 			text = 'Process Handlers'
 			color = [
 				255
@@ -430,7 +430,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = MainLoopAsyncRender
+			item = mainloopasyncrender
 			text = 'MainLoopAsyncRender'
 			color = [
 				153
@@ -440,7 +440,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = MainLoopAsyncRenderSync
+			item = mainloopasyncrendersync
 			text = 'MainLoopAsyncRenderSync'
 			color = [
 				153
@@ -450,7 +450,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = CPUSkinning_module
+			item = cpuskinning_module
 			text = 'CPU Skinning'
 			color = [
 				255
@@ -482,7 +482,7 @@ Profile_Pages = [
 	]
 	[
 		{
-			item = GameServer
+			item = gameserver
 			text = 'Game Server'
 			color = [
 				255
@@ -492,7 +492,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = Crowd
+			item = crowd
 			text = 'Crowd'
 			color = [
 				255
@@ -502,7 +502,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = Arbitration
+			item = arbitration
 			text = 'Arbitration'
 			color = [
 				255
@@ -532,7 +532,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = Input
+			item = input
 			text = 'Input'
 			color = [
 				255
@@ -552,7 +552,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = CompositeObjectManager
+			item = compositeobjectmanager
 			text = 'Objects'
 			color = [
 				255
@@ -562,7 +562,7 @@ Profile_Pages = [
 			]
 		}
 		{
-			item = FrontEnd
+			item = frontend
 			text = 'Frontend (script)'
 			color = [
 				255

@@ -1,4 +1,4 @@
-WriteToBuffer_CompressionLookupTable_8 = [
+writetobuffer_compressionlookuptable_8 = [
 	unlocked
 	names
 	new_song_info
@@ -21,172 +21,172 @@ WriteToBuffer_CompressionLookupTable_8 = [
 	encore_unlocked
 	boss_unlocked
 	cash_earned
-	CAS_Mic
-	CAS_Bass_Pickups
-	CAS_Bass_Bridges
-	CAS_Guitar_Pickguards
-	CAS_Drums
-	CAS_Bass_Head
-	CAS_Bass_Body
-	CAS_Guitar_Head
-	CAS_Guitar_Body
-	CAS_Guitar_Bridges
-	CAS_Bass_Knobs
-	CAS_Guitar_Knobs
-	CAS_Guitar_Pickups
-	CAS_Bass_Neck
-	CAS_Guitar_Neck
-	CAS_Bass_Pickguards
-	CAS_Mic_Stand
-	CAS_Drums_Highway
-	CAS_Guitar_Highway
-	CAS_Bass_Highway
-	CAS_Bass_Head_Finish
-	CAS_Drum_Finish
-	CAS_Guitar_Head_Finish
-	CAS_Guitar_Finish
-	CAS_Drum_Detail
-	CAS_Bass_Finish
-	CAS_Guitar_Neck_Finish
-	CAS_Bass_Neck_Finish
+	cas_mic
+	cas_bass_pickups
+	cas_bass_bridges
+	cas_guitar_pickguards
+	cas_drums
+	cas_bass_head
+	cas_bass_body
+	cas_guitar_head
+	cas_guitar_body
+	cas_guitar_bridges
+	cas_bass_knobs
+	cas_guitar_knobs
+	cas_guitar_pickups
+	cas_bass_neck
+	cas_guitar_neck
+	cas_bass_pickguards
+	cas_mic_stand
+	cas_drums_highway
+	cas_guitar_highway
+	cas_bass_highway
+	cas_bass_head_finish
+	cas_drum_finish
+	cas_guitar_head_finish
+	cas_guitar_finish
+	cas_drum_detail
+	cas_bass_finish
+	cas_guitar_neck_finish
+	cas_bass_neck_finish
 	material2
-	CAS_Bass_Body_Detail
-	CAS_Guitar_Body_Detail
-	CAS_Male_Acc_Left
-	CAS_Male_Shoes
-	CAS_Male_Hair
-	CAS_Male_Legs
-	CAS_Male_Acc_Right
-	CAS_Male_Torso
+	cas_bass_body_detail
+	cas_guitar_body_detail
+	cas_male_acc_left
+	cas_male_shoes
+	cas_male_hair
+	cas_male_legs
+	cas_male_acc_right
+	cas_male_torso
 	vol
 	max_size
 	valid_entries
-	CAS_Bass_Head_Detail
-	CAS_Guitar_Head_Detail
-	CAS_Male_Facial_Hair
-	CAS_Male_Acc_Ears
-	CAS_Female_Shoes
-	CAS_Female_Acc_Right
-	CAS_Female_Legs
-	CAS_Female_Hair
-	CAS_Female_Torso
-	CAS_Male_Acc_Face
-	CAS_Male_Hat
-	CAS_Female_Acc_Left
+	cas_bass_head_detail
+	cas_guitar_head_detail
+	cas_male_facial_hair
+	cas_male_acc_ears
+	cas_female_shoes
+	cas_female_acc_right
+	cas_female_legs
+	cas_female_hair
+	cas_female_torso
+	cas_male_acc_face
+	cas_male_hat
+	cas_female_acc_left
 	eq
-	CAS_Female_Acc_Face
+	cas_female_acc_face
 	material3
-	CAS_Female_Hat
-	CAS_Female_Acc_Ears
-	CAS_Female_Facial_Hair
+	cas_female_hat
+	cas_female_acc_ears
+	cas_female_facial_hair
 	guitar
 	last_singleplayer_character
 	last_h2h_characters
 	last_band_characters
-	CAS_Guitar_Pickguard_Finish
+	cas_guitar_pickguard_finish
 	globaltag_checksum
 	z_tushino
-	player_drum_save_array3
-	player_mic_save_array3
+	0xc6bbede2
+	0x8e2598a3
 	first_career_setlist
 	career_using_createagig
-	player_drum_save_array4
-	player_mic_save_array4
+	0x58df7841
+	0x10410d00
 	rs_ghmix_editing_lesson
 	got_sponsored_band_t1
 	career_bass_prev_total_songs
-	player_drum_save_array5
-	load_z_Donnington
-	MommysLittleMonster
-	player_mic_save_array5
+	0x2fd848d7
+	load_z_donnington
+	mommyslittlemonster
+	0x67463d96
 	rs_melody_lesson
 	guitar_motion_neck_left_idle
 	got_sponsored_band_t2
-	player_drum_save_array6
+	0xb6d1196d
 	nothingelsematters
-	player_mic_save_array2
-	player_mic_save_array6
+	0xf922a835
+	0xfe4f6c2c
 	drum_int_lesson
 	got_sponsored_band_t3
-	player_drum_save_array7
+	0xc1d629fb
 	first_instrument_career_drum
-	player_mic_save_array7
-	unlock_Cheat_GemColor
-	unlock_Cheat_PerformanceMode
+	0x89485cba
+	unlock_cheat_gemcolor
+	unlock_cheat_performancemode
 	volumes
 	has_prompt_drum_tutorial
 	got_sponsored_band_t4
 	masterofpuppets
 	got_sponsored_band_t5
 	career_intro_drum_complete
-	player_drum_save_array2
+	0xb1bcdd74
 	got_sponsored_band_t10
-	z_Stone_drum
+	0xa362dac5
 	ps2_widescreen
 	got_sponsored_band_t6
-	z_Meadowlands_guitar
+	0xd2bffead
 	got_sponsored_band_t11
 	got_sponsored_band_t7
-	player_mic_save_array1
-	player_guitar_save_array0
+	0x602bf98f
+	0xf5e05c29
 	got_sponsored_band_t12
 	got_sponsored_band_t8
-	player_guitar_save_array1
+	0x82e76cbf
 	first_setlist_drum
-	venue_z_Forum
+	0x2492abc8
 	gem_set
 	stone_intro
 	got_sponsored_band_t9
-	player_guitar_save_array2
-	load_z_Tushino
+	0x1bee3d05
+	load_z_tushino
 	player_bass_save
-	GHM_Movie_TheShortestStraw
-	unlock_Cheat_AirInstruments
+	ghm_movie_theshorteststraw
+	unlock_cheat_airinstruments
 	gamma_brightness
-	player_guitar_save_array3
+	0x6ce90d93
 	visit_outfit
-	Hyperspeed_Guitar
+	hyperspeed_guitar
 	drum
-	player_guitar_save_array4
-	GHM_Movie_Intro
+	0xf28d9830
+	ghm_movie_intro
 	career_band_stone_movie_played
 	credits
-	z_Justice_drum
-	z_Forum_bass
-	Crowd
+	0xd03dbc1f
+	0xb51afa76
+	crowd
 	att_ballpark_band
-	player_guitar_save_array5
-	venue_z_MoP
+	0x858aa8a6
+	0x3305bc88
 	z_studio
 	visit_deformation
-	player_guitar_save_array6
+	0x1c83f91c
 	finalbandintro_transition_played_drum
-	player_guitar_save_array7
+	0x6b84c98a
 	got_sponsored_drum_t1
-	WarEnsemble
-	z_Studio2_guitar
+	warensemble
+	0x1d82c7dd
 	got_sponsored_drum_t2
 	lag_calibration
-	BrokenBeatAndScarred
-	player_mic_save_array0
+	brokenbeatandscarred
+	0x172cc919
 	got_sponsored_drum_t3
-	Progression
-	z_Tushino_drum
-	venue_z_Tushino
+	progression
+	0xbfac713e
+	0xae429b60
 	comp
-	TheMemoryRemains
+	thememoryremains
 	load_z_soundcheck2
-	unlock_Cheat_BlackHighway
-	Star_Set
+	unlock_cheat_blackhighway
+	star_set
 	career_earnings
 	load_z_meadowlands
 	got_sponsored_drum_t4
 	autosave
 	career_vocals_movies_played
 	got_sponsored_drum_t5
-	FX_Set
-	Band
-	player_drum_save_array1
+	fx_set
+	band
+	0x28b58cce
 	current_difficulty
 	career_drum_movies_played
 	got_sponsored_drum_t6
@@ -199,60 +199,60 @@ WriteToBuffer_CompressionLookupTable_8 = [
 	got_sponsored_drum_t9
 	advanced_techniques_lesson
 	stonecoldcrazy
-	AceOfSpades
-	z_Stone_guitar
-	z_MoP_band
+	aceofspades
+	0x2fea2f33
+	0xbe1fad35
 	ghtunes_num_songs_rated
 	vocals_highway_view_save
 	career_guitar_movies_played
-	z_Meadowlands_vocals
-	z_Forum_guitar
-	Evil
+	0x879c6f94
+	0x19a63b11
+	evil
 	player_guitar_save
-	FightFireWithFire
+	fightfirewithfire
 	bass_category
 	lefty_flip_p1
-	z_Stone_vocals
-	z_IceCave_guitar
-	venue_z_IceCave
+	0x7ac9be0a
+	0x090737d6
+	0x29b84234
 	lefty_flip_p2
-	GHM_Movie_SeekAndDestroy
+	ghm_movie_seekanddestroy
 	ns_logo
 	use_tilt_for_starpower_save
 	z_donnington
-	WarInsideMyHead
+	warinsidemyhead
 	lefty_flip_p3
-	player_drum_save_array0
+	0x5fb2bc58
 	cheat_index20
 	lefty_flip_p4
-	z_Donnington_drum
+	0x82d06be8
 	career_intro_vocals_complete
 	att_ballpark_bass
 	cheat_index21
 	drum_basic_lesson
 	current_song_count
-	GHM_Movie4
-	z_Justice_vocals
-	z_IceCave_vocals
+	ghm_movie4
+	0xa5cf24ad
+	0x5c24a6ef
 	cheat_index22
 	got_sponsored_vocals_t1
 	load_z_forum
-	GHM_Movie_ForWhomTheBellTolls
+	ghm_movie_forwhomthebelltolls
 	z_stone
 	cheat_index23
-	unlock_Cheat_StarColor
+	unlock_cheat_starcolor
 	got_sponsored_vocals_t2
 	got_sponsored_drum_t10
-	GHM_Movie3
+	ghm_movie3
 	cheat_index24
 	has_calibrated
 	versus_lesson
 	got_sponsored_vocals_t3
 	band_unique_id
 	hitthelights
-	z_Forum_band
-	BlackRiver
+	0xc9a513ad
+	blackriver
 	got_sponsored_drum_t11
-	DyersEve
+	dyerseve
 	cheat_index25
 ]

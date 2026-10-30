@@ -8,34 +8,34 @@ script ui_create_generic_dialogue \{choose_yes_func = nullscript
 			{
 				func = <choose_no_func>
 				func_params = <choose_no_params>
-				text = qs("No")
+				text = qs(0x47157885)
 			}
 			{
 				func = <choose_yes_func>
 				func_params = <choose_yes_params>
-				text = qs("Yes")
+				text = qs(0x6d562a67)
 			}
 		]
 		back_button_script = generic_event_back
 	}
 	clean_up_user_control_helpers
-	if GotParam \{highlight_no}
-		LaunchEvent \{type = unfocus
+	if gotparam \{highlight_no}
+		launchevent \{type = unfocus
 			target = dialog_box_vmenu}
-		LaunchEvent \{type = focus
+		launchevent \{type = focus
 			target = dialog_box_vmenu
 			data = {
 				child_index = 0
 			}}
 	endif
-	add_user_control_helper \{text = qs("SELECT")
+	add_user_control_helper \{text = qs(0xc18d5e76)
 		button = green
 		z = 100000
 		all_buttons}
-	add_user_control_helper \{text = qs("BACK")
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red
 		z = 100000}
-	SoundEvent \{Generic_Menu_Select_SFX}
+	soundevent \{0x5ea1b4e0}
 endscript
 
 script ui_destroy_generic_dialogue 

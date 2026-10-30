@@ -1,8 +1,8 @@
 
 script ui_create_options_controller 
 	ui_options_get_controller_type
-	make_menu_frontend \{screen = Guitarist
-		title = qs("Controller Settings")}
+	make_menu_frontend \{screen = guitarist
+		title = qs(0x8627f83e)}
 	menu_finish
 endscript
 
@@ -12,12 +12,12 @@ endscript
 
 script ui_options_controller_choose_lefty_flip \{popup = 0
 		player_device = $primary_controller}
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 	player = 1
 	i = 1
 	begin
-	GetPlayerInfo <i> controller
+	getplayerinfo <i> controller
 	if (<controller> = <player_device>)
 		player = <i>
 		break
@@ -28,18 +28,18 @@ script ui_options_controller_choose_lefty_flip \{popup = 0
 		generic_event_choose state = uistate_pausemenu_lefty_flip_warning data = {player = <player>}
 	else
 		ui_create_options_settings_lefty_warning
-		GetTags
-		Obj_GetID
-		toggle_lefty_flip player = <player>
+		gettags
+		obj_getid
+		0x978e7147 player = <player>
 		if (<new_flip> = 0)
-			SoundEvent \{Box_UnCheck_SFX}
-			<ObjID> :SE_SetProps check_alpha = 0
-			<ObjID> :SE_SetProps cross_alpha = 1
+			soundevent \{box_uncheck_sfx}
+			<objid> :se_setprops check_alpha = 0
+			<objid> :se_setprops cross_alpha = 1
 		else
-			SoundEvent \{Box_Check_SFX}
-			<ObjID> :SE_SetProps check_alpha = 1
-			<ObjID> :SE_SetProps cross_alpha = 0
+			soundevent \{box_check_sfx}
+			<objid> :se_setprops check_alpha = 1
+			<objid> :se_setprops cross_alpha = 0
 		endif
-		SetGlobalTags savegame = <savegame> user_options params = {lefty_flip_save = <new_flip>}
+		setglobaltags savegame = <savegame> user_options params = {lefty_flip_save = <new_flip>}
 	endif
 endscript

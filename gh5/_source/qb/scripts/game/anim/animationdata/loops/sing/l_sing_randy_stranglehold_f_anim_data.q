@@ -1,37 +1,37 @@
-L_SING_Randy_Strangle_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_randy_strangle_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Randy_Stranglehold_075_F
+				slow = [
+					sing_randy_stranglehold_075_f
 				]
-				Med = [
-					Sing_Randy_Stranglehold_100_F
+				med = [
+					sing_randy_stranglehold_100_f
 				]
-				Fast = [
-					Sing_Randy_Stranglehold_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Randy_Stranglehold_075_F
-				]
-				Med = [
-					Sing_Randy_Stranglehold_100_F
-				]
-				Fast = [
-					Sing_Randy_Stranglehold_120_F
+				fast = [
+					sing_randy_stranglehold_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Randy_Stranglehold_075_F
+			normal = {
+				slow = [
+					sing_randy_stranglehold_075_f
 				]
-				Med = [
-					Sing_Randy_Stranglehold_100_F
+				med = [
+					sing_randy_stranglehold_100_f
 				]
-				Fast = [
-					Sing_Randy_Stranglehold_120_F
+				fast = [
+					sing_randy_stranglehold_120_f
+				]
+			}
+			bad = {
+				slow = [
+					sing_randy_stranglehold_075_f
+				]
+				med = [
+					sing_randy_stranglehold_100_f
+				]
+				fast = [
+					sing_randy_stranglehold_120_f
 				]
 			}
 		}

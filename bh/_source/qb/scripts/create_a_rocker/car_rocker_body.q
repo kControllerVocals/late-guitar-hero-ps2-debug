@@ -1,19 +1,19 @@
 cas_reskin_materials = [
-	CAR_female_head
-	CAR_Female_Mouth
-	CAR_Female_Eye
-	CAR_Female_Eyebrows
-	CAR_Female_Eyelashes
-	CAR_Female_EyeShell
-	CAR_Female_Lips
-	CAR_Female_BODY
-	CAR_Male_Head
-	CAR_Male_Mouth
-	CAR_Male_Eye
-	CAR_Male_Eyebrows
-	CAR_Male_Eyelashes
-	CAR_Male_Shell
-	CAR_Male_Body
+	car_female_head
+	car_female_mouth
+	car_female_eye
+	car_female_eyebrows
+	car_female_eyelashes
+	car_female_eyeshell
+	car_female_lips
+	car_female_body
+	car_male_head
+	car_male_mouth
+	car_male_eye
+	car_male_eyebrows
+	car_male_eyelashes
+	car_male_shell
+	car_male_body
 ]
 ps2_colorable_skin_materials = [
 	{
@@ -50,134 +50,134 @@ ps2_colorable_skin_materials = [
 	}
 ]
 cas_create_a_rocker_female = {
-	skeleton = GH_Rocker_Female
+	skeleton = gh_rocker_female
 	skeleton_path = 'skeletons/GH_Rocker_Female.ske'
-	ik_params = Hero_Ik_params
-	ik_params_guitar = Hero_Ik_params
-	ik_params_drum = CAR_IK_Params
-	ik_params_vocals = CAR_IK_Params
-	ik_params_frontend = CAR_IK_Params
+	ik_params = hero_ik_params
+	ik_params_guitar = hero_ik_params
+	ik_params_drum = car_ik_params
+	ik_params_vocals = car_ik_params
+	ik_params_frontend = car_ik_params
 	is_female = 1
 	anim_struct = car_female_anim_struct
-	deform_bones = CAR_Bones_Female_Face
+	deform_bones = car_bones_female_face
 	deform_main_skeleton
 	body_specific_parts = {
-		CAS_Base_Torso = CAS_Female_Base_Torso
-		CAS_Hair = CAS_Female_Hair
-		CAS_Hat_Hair = CAS_Female_Hat_Hair
-		CAS_Hat = CAS_Female_Hat
-		CAS_Torso = CAS_Female_Torso
-		CAS_Legs = CAS_Female_Legs
-		CAS_Shoes = CAS_Female_Shoes
-		CAS_Acc_Left = CAS_Female_Acc_Left
-		CAS_Acc_Right = CAS_Female_Acc_Right
-		CAS_Acc_Face = CAS_Female_Acc_Face
-		CAS_Acc_Ears = CAS_Female_Acc_Ears
-		CAS_Age = CAS_Female_Age
-		CAS_Intro_Anim = CAS_Female_Intro_Anim
-		CAS_Win_Anim = CAS_Female_Win_Anim
-		CAS_Lose_Anim = CAS_Female_Lose_Anim
-		CAS_Teeth = CAS_Female_Teeth
+		cas_base_torso = cas_female_base_torso
+		cas_hair = cas_female_hair
+		cas_hat_hair = cas_female_hat_hair
+		cas_hat = cas_female_hat
+		cas_torso = cas_female_torso
+		cas_legs = cas_female_legs
+		cas_shoes = cas_female_shoes
+		cas_acc_left = cas_female_acc_left
+		cas_acc_right = cas_female_acc_right
+		cas_acc_face = cas_female_acc_face
+		cas_acc_ears = cas_female_acc_ears
+		cas_age = cas_female_age
+		cas_intro_anim = cas_female_intro_anim
+		cas_win_anim = cas_female_win_anim
+		cas_lose_anim = cas_female_lose_anim
+		cas_teeth = cas_female_teeth
 	}
 }
 cas_create_a_rocker_male = {
-	skeleton = GH_Rocker_Male
+	skeleton = gh_rocker_male
 	skeleton_path = 'skeletons/GH_Rocker_Male.ske'
-	ik_params = Hero_Ik_params
-	ik_params_guitar = Hero_Ik_params
-	ik_params_drum = CAR_IK_Params
-	ik_params_vocals = CAR_IK_Params
-	ik_params_frontend = CAR_IK_Params
+	ik_params = hero_ik_params
+	ik_params_guitar = hero_ik_params
+	ik_params_drum = car_ik_params
+	ik_params_vocals = car_ik_params
+	ik_params_frontend = car_ik_params
 	is_female = 0
 	anim_struct = car_male_anim_struct
-	deform_bones = CAR_Bones_Male_Face
+	deform_bones = car_bones_male_face
 	deform_main_skeleton
 	body_specific_parts = {
-		CAS_Hair = CAS_Male_Hair
-		CAS_Hat_Hair = CAS_Male_Hat_Hair
-		CAS_Hat = CAS_Male_Hat
-		CAS_Facial_Hair = CAS_Male_Facial_Hair
-		CAS_Base_Torso = CAS_Male_Base_Torso
-		CAS_Torso = CAS_Male_Torso
-		CAS_Legs = CAS_Male_Legs
-		CAS_Socks = CAS_Male_Socks
-		CAS_Shoes = CAS_Male_Shoes
-		CAS_Acc_Left = CAS_Male_Acc_Left
-		CAS_Acc_Right = CAS_Male_Acc_Right
-		CAS_Acc_Face = CAS_Male_Acc_Face
-		CAS_Acc_Ears = CAS_Male_Acc_Ears
-		CAS_Age = CAS_Male_Age
-		CAS_Teeth = CAS_Male_Teeth
-		CAS_Intro_Anim = CAS_Male_Intro_Anim
-		CAS_Win_Anim = CAS_Male_Win_Anim
-		CAS_Lose_Anim = CAS_Male_Lose_Anim
+		cas_hair = cas_male_hair
+		cas_hat_hair = cas_male_hat_hair
+		cas_hat = cas_male_hat
+		cas_facial_hair = cas_male_facial_hair
+		cas_base_torso = cas_male_base_torso
+		cas_torso = cas_male_torso
+		cas_legs = cas_male_legs
+		cas_socks = cas_male_socks
+		cas_shoes = cas_male_shoes
+		cas_acc_left = cas_male_acc_left
+		cas_acc_right = cas_male_acc_right
+		cas_acc_face = cas_male_acc_face
+		cas_acc_ears = cas_male_acc_ears
+		cas_age = cas_male_age
+		cas_teeth = cas_male_teeth
+		cas_intro_anim = cas_male_intro_anim
+		cas_win_anim = cas_male_win_anim
+		cas_lose_anim = cas_male_lose_anim
 	}
 }
-CAS_Body = [
+cas_body = [
 	{
 		$cas_create_a_rocker_female
-		desc_id = GH4_CAR_Female
-		frontend_desc = qs("FEMALE")
-		icon = icon_gender_Female
+		desc_id = gh4_car_female
+		frontend_desc = qs(0x09b7b554)
+		icon = icon_gender_female
 	}
 	{
 		$cas_create_a_rocker_male
-		desc_id = GH4_CAR_Male
-		frontend_desc = qs("MALE")
-		icon = icon_gender_Male
+		desc_id = gh4_car_male
+		frontend_desc = qs(0xb08d72a6)
+		icon = icon_gender_male
 	}
 	{
-		desc_id = NoBody
+		desc_id = nobody
 		hidden
-		skeleton = GH_Rocker_Female
+		skeleton = gh_rocker_female
 		skeleton_path = 'skeletons/GH_Rocker_Female.ske'
-		ragdoll = ragdoll_Rocker_Female
+		ragdoll = ragdoll_rocker_female
 		ragdoll_path = 'Ragdolls/CAR/Female/GH_Rocker_Female_Ragdoll.rag'
-		accessory_bones = Rocker_accessory_bones
-		ragdoll_collision_group = RagdollCollisionGroups_Rocker_Female
-		ik_params_guitar = Hero_Ik_params
-		ik_params_drum = drummer_IK_params
-		ik_params_vocals = singer_IK_Params
-		ik_params_frontend = CAR_IK_Params
+		accessory_bones = rocker_accessory_bones
+		ragdoll_collision_group = ragdollcollisiongroups_rocker_female
+		ik_params_guitar = hero_ik_params
+		ik_params_drum = drummer_ik_params
+		ik_params_vocals = singer_ik_params
+		ik_params_frontend = car_ik_params
 		is_female = 1
 		anim_struct = car_female_anim_struct
 		body_specific_parts = {
-			CAS_Intro_Anim = CAS_Female_Intro_Anim
-			CAS_Win_Anim = CAS_Female_Win_Anim
-			CAS_Lose_Anim = CAS_Female_Lose_Anim
+			cas_intro_anim = cas_female_intro_anim
+			cas_win_anim = cas_female_win_anim
+			cas_lose_anim = cas_female_lose_anim
 		}
 	}
 	{
 		$cas_create_a_rocker_female
-		desc_id = GH4_CAR_Pandora
+		desc_id = gh4_car_pandora
 		hidden
 		replace = 'tex/models/Characters/car/female/car_female_head_d.dds'
 		with = 'tex/models/Characters/car/female/car_female_headB_d.dds'
 	}
 	{
 		$cas_create_a_rocker_female
-		desc_id = GH4_CAR_Casey
+		desc_id = gh4_car_casey
 		hidden
 		replace = 'tex\\models\\Characters\\CAR\\female\\CAR_female_body_tat_o_dnc.dds'
 		with = 'tex\\models\\Characters\\CAR\\female\\CAR_Casey_TorsoTattoo_D_dnc.dds'
 	}
 	{
 		$cas_create_a_rocker_female
-		desc_id = GH4_CAR_Midori
+		desc_id = gh4_car_midori
 		hidden
 		replace = 'tex/models/Characters/car/female/car_female_head_d.dds'
 		with = 'tex/models/Characters/car/female/car_female_head_Midori_d.dds'
 	}
 	{
 		$cas_create_a_rocker_male
-		desc_id = GH4_CAR_Izzy
+		desc_id = gh4_car_izzy
 		hidden
 		replace = 'tex/models/Characters/car/male/car_male_head_d.dds'
 		with = 'tex/models/Characters/car/male/car_male_headB_d.dds'
 	}
 	{
 		$cas_create_a_rocker_male
-		desc_id = GH4_CAR_Lars
+		desc_id = gh4_car_lars
 		hidden
 		replace = 'tex/models/Characters/car/male/car_male_head_d.dds'
 		with = 'tex/models/Characters/car/male/car_male_headC_d.dds'
@@ -188,7 +188,7 @@ CAS_Body = [
 	}
 	{
 		$cas_create_a_rocker_male
-		desc_id = GH4_CAR_Eddie
+		desc_id = gh4_car_eddie
 		hidden
 		replace = 'tex\\models\\Characters\\CAR\\female\\CAR_female_ARMR_tat_O_dnc.dds'
 		with = 'tex\\models\\Characters\\CAR\\Male\\CAR_male_EddieTatR_D_dnc.dds'
@@ -197,7 +197,7 @@ CAS_Body = [
 	}
 	{
 		$cas_create_a_rocker_male
-		desc_id = GH4_CAR_Johnny
+		desc_id = gh4_car_johnny
 		hidden
 		replace = 'tex\\models\\Characters\\CAR\\female\\CAR_female_ARMR_tat_O_dnc.dds'
 		with = 'tex\\models\\Characters\\CAR\\Male\\CAR_male_JohnnyTatR_D_dnc.dds'
@@ -212,14 +212,14 @@ CAS_Body = [
 	}
 	{
 		$cas_create_a_rocker_male
-		desc_id = GH4_CAR_Zach
+		desc_id = gh4_car_zach
 		hidden
 		replace = 'tex/models/Characters/car/male/car_male_brow_d.dds'
 		with = 'tex/models/Characters/car/male/car_zach_brow_d.dds'
 	}
 	{
 		$cas_create_a_rocker_female
-		desc_id = GH4_CAR_Judy
+		desc_id = gh4_car_judy
 		hidden
 		replace = 'tex/models/Characters/car/female/car_female_head_d.dds'
 		with = 'tex/models/Characters/car/female/car_female_head_Judy_d.dds'
@@ -227,8 +227,8 @@ CAS_Body = [
 ]
 cas_physique = [
 	{
-		desc_id = FemalePhysique
-		deform_bones = CAR_Bones_Female_Body
+		desc_id = femalephysique
+		deform_bones = car_bones_female_body
 		deform_main_skeleton
 		default_car_preset_build_index = 0
 		preset_builds = [
@@ -240,105 +240,105 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.0, -0.1, -0.025)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, -0.1, -0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.0, -0.08, -0.08)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, -0.07, -0.07)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, -0.08, -0.08)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, -0.08, -0.08)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, -0.08, -0.08)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, -0.08, -0.08)
 							no_propagate
@@ -350,117 +350,117 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.0, -0.5, -0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						translation = {
 							value = (0.0, 0.01, 0.0)
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						translation = {
 							value = (0.0, 0.01, 0.0)
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.0, -0.15, -0.05)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, -0.08, -0.08)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
@@ -472,122 +472,122 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Control_Root
+						bone = control_root
 						scaling = {
 							value = (-0.01, -0.01, -0.01)
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, 0.015, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.0, -0.05, 0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.0, 0.1, 0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, 0.1, 0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						translation = {
 							value = (0.0, 0.0, -0.01)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						translation = {
 							value = (0.0, 0.0, 0.01)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, 0.1, 0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, 0.1, 0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Head
+						bone = bone_head
 						scaling = {
 							value = (0.06, 0.06, 0.06)
 						}
 					}
 					{
-						bone = Bone_Ankle_L
+						bone = bone_ankle_l
 						scaling = {
 							value = (0.1, 0.1, 0.1)
 						}
 					}
 					{
-						bone = Bone_Ankle_R
+						bone = bone_ankle_r
 						scaling = {
 							value = (0.1, 0.1, 0.1)
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, 0.15, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, 0.15, 0.15)
 							no_propagate
@@ -599,48 +599,48 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Control_Root
+						bone = control_root
 						scaling = {
 							value = (-0.005, -0.005, -0.005)
 						}
 					}
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.0, 0.0, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.0, 0.35000002, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, 0.25, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.0, 0.0, 0.0)
 							no_propagate
@@ -651,7 +651,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.0, 0.0, 0.0)
 							no_propagate
@@ -662,88 +662,88 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, 0.2, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Head
+						bone = bone_head
 						scaling = {
 							value = (0.06, 0.06, 0.06)
 						}
 					}
 					{
-						bone = Bone_Ankle_L
+						bone = bone_ankle_l
 						scaling = {
 							value = (0.15, 0.15, 0.15)
 						}
 					}
 					{
-						bone = Bone_Ankle_R
+						bone = bone_ankle_r
 						scaling = {
 							value = (0.15, 0.15, 0.15)
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, 0.35000002, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, 0.35000002, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, 0.25, 0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, 0.25, 0.25)
 							no_propagate
@@ -755,42 +755,42 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.0, 0.4, 0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, 0.4, 0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.05, 0.3, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.0, 0.5, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, 0.4, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.0, 0.0, 0.05)
 							no_propagate
@@ -801,7 +801,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.0, 0.0, 0.05)
 							no_propagate
@@ -812,88 +812,88 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, 0.45000002, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, 0.45000002, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, 0.45000002, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, 0.45000002, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, 0.35000002, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, 0.35000002, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Head
+						bone = bone_head
 						scaling = {
 							value = (0.06, 0.06, 0.06)
 						}
 					}
 					{
-						bone = Bone_Ankle_L
+						bone = bone_ankle_l
 						scaling = {
 							value = (0.2, 0.2, 0.2)
 						}
 					}
 					{
-						bone = Bone_Ankle_R
+						bone = bone_ankle_r
 						scaling = {
 							value = (0.2, 0.2, 0.2)
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, 0.5, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, 0.5, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, 0.35000002, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, 0.35000002, 0.35000002)
 							no_propagate
@@ -904,8 +904,8 @@ cas_physique = [
 		]
 	}
 	{
-		desc_id = MalePhysique
-		deform_bones = CAR_Bones_Male_Body
+		desc_id = malephysique
+		deform_bones = car_bones_male_body
 		deform_main_skeleton
 		default_car_preset_build_index = 0
 		preset_builds = [
@@ -917,82 +917,82 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, 0.0, 0.0)
 							stop_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, 0.0, 0.0)
 							stop_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Ankle_L
+						bone = bone_ankle_l
 						scaling = {
 							value = (0.0, 0.1, 0.2)
 						}
 					}
 					{
-						bone = Bone_Ankle_R
+						bone = bone_ankle_r
 						scaling = {
 							value = (0.0, 0.1, 0.2)
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, -0.3, -0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, -0.3, -0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, -0.03, -0.03)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, -0.03, -0.03)
 							no_propagate
@@ -1004,27 +1004,27 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Head
+						bone = bone_head
 						scaling = {
 							value = (0.1, 0.1, 0.1)
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (-0.0, -0.05, -0.05)
 							stop_propagate
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (-0.0, -0.15, -0.125)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, -0.5, -0.5)
 							no_propagate
@@ -1035,14 +1035,14 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, -0.5, -0.5)
 							no_propagate
@@ -1053,77 +1053,77 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Palm_R
+						bone = bone_palm_r
 						scaling = {
 							value = (0.01, 0.01, 0.01)
 							stop_propagate
 						}
 					}
 					{
-						bone = Bone_Palm_L
+						bone = bone_palm_l
 						scaling = {
 							value = (0.01, 0.01, 0.01)
 							stop_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.15, 0.15, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.15, 0.15, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, -0.4, -0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, -0.4, -0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, -0.25, -0.25)
 							no_propagate
@@ -1135,14 +1135,14 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.075, 0.075, 0.075)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.2, 0.1, 0.1)
 							no_propagate
@@ -1152,7 +1152,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.2, 0.1, 0.1)
 							no_propagate
@@ -1162,76 +1162,76 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (-0.1, -0.1, -0.1)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, 0.0, 0.0)
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, 0.2, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, 0.2, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, 0.2, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, 0.2, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, -0.2, -0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_R
+						bone = bone_knee_r
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Knee_L
+						bone = bone_knee_l
 						scaling = {
 							value = (0.0, -0.15, -0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (-0.2, -0.2, -0.2)
 							no_propagate
@@ -1242,7 +1242,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (-0.1, -0.1, -0.1)
 							no_propagate
@@ -1254,54 +1254,54 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Control_Root
+						bone = control_root
 						scaling = {
 							value = (-0.005, -0.005, -0.005)
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, 0.1, 0.2)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.1, 0.1, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.1, 0.2, 0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.0, 0.4, 0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Head
+						bone = bone_head
 						scaling = {
 							value = (0.05, 0.05, 0.05)
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.1, 0.3, 0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.0, 0.15, 0.3)
 							no_propagate
@@ -1315,7 +1315,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.0, 0.15, 0.3)
 							no_propagate
@@ -1329,41 +1329,41 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, -0.3, -0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Palm_R
+						bone = bone_palm_r
 						scaling = {
 							value = (0.0, 0.25, 0.25)
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, -0.3, -0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Palm_L
+						bone = bone_palm_l
 						scaling = {
 							value = (0.0, 0.25, 0.25)
 						}
@@ -1374,35 +1374,35 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.25, 0.25, 0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.1, 0.4, 0.4)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.1, 0.25, 0.25)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.1, 0.25, 0.15)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.2, 0.2, 0.2)
 							no_propagate
@@ -1412,7 +1412,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.2, 0.2, 0.2)
 							no_propagate
@@ -1422,67 +1422,67 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, 0.65000004, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, 0.65000004, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, 0.65000004, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, 0.65000004, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, 0.5, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, 0.5, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Palm_L
+						bone = bone_palm_l
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 						}
 					}
 					{
-						bone = Bone_Palm_R
+						bone = bone_palm_r
 						scaling = {
 							value = (0.0, 0.3, 0.3)
 						}
 					}
 					{
-						bone = Bone_Ankle_R
+						bone = bone_ankle_r
 						scaling = {
 							value = (0.13, 0.0, 0.3)
 						}
 					}
 					{
-						bone = Bone_Ankle_L
+						bone = bone_ankle_l
 						scaling = {
 							value = (0.13, 0.0, 0.3)
 						}
@@ -1493,20 +1493,20 @@ cas_physique = [
 				random_weight = 0.0
 				additional_bone_transforms = [
 					{
-						bone = Bone_Head
+						bone = bone_head
 						scaling = {
 							value = (0.1, 0.1, 0.1)
 						}
 					}
 					{
-						bone = Bone_Neck
+						bone = bone_neck
 						scaling = {
 							value = (0.3, 0.3, 0.3)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Chest
+						bone = bone_chest
 						scaling = {
 							value = (0.0, 0.65000004, 0.4)
 							no_propagate
@@ -1517,7 +1517,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						scaling = {
 							value = (0.2, 0.2, 0.2)
 							no_propagate
@@ -1527,7 +1527,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						scaling = {
 							value = (0.2, 0.2, 0.2)
 							no_propagate
@@ -1537,7 +1537,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Pelvis
+						bone = bone_pelvis
 						scaling = {
 							value = (0.0, 0.5, 0.5)
 							no_propagate
@@ -1548,101 +1548,101 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_R
+						bone = bone_twist_bicep_top_r
 						scaling = {
 							value = (0.0, 1.0, 0.65000004)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Mid_R
+						bone = bone_twist_bicep_mid_r
 						scaling = {
 							value = (0.0, 1.0, 0.8)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_R
+						bone = bone_bicep_r
 						scaling = {
 							value = (0.0, 0.8, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Top_L
+						bone = bone_twist_bicep_top_l
 						scaling = {
 							value = (0.0, 1.0, 0.65000004)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Twist_Bicep_Mid_L
+						bone = bone_twist_bicep_mid_l
 						scaling = {
 							value = (0.0, 1.0, 0.8)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Bicep_L
+						bone = bone_bicep_l
 						scaling = {
 							value = (0.0, 0.8, 0.5)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_L
+						bone = bone_forearm_l
 						scaling = {
 							value = (0.0, 0.7, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Forearm_R
+						bone = bone_forearm_r
 						scaling = {
 							value = (0.0, 0.7, 0.35000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Palm_L
+						bone = bone_palm_l
 						scaling = {
 							value = (0.1, 0.1, 0.1)
 						}
 					}
 					{
-						bone = Bone_Palm_R
+						bone = bone_palm_r
 						scaling = {
 							value = (0.1, 0.1, 0.1)
 						}
 					}
 					{
-						bone = Bone_Thigh_L
+						bone = bone_thigh_l
 						scaling = {
 							value = (0.0, 0.45000002, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Thigh_R
+						bone = bone_thigh_r
 						scaling = {
 							value = (0.0, 0.45000002, 0.45000002)
 							no_propagate
 						}
 					}
 					{
-						bone = Bone_Ankle_L
+						bone = bone_ankle_l
 						scaling = {
 							value = (-0.1, -0.1, -0.1)
 						}
 					}
 					{
-						bone = Bone_Ankle_R
+						bone = bone_ankle_r
 						scaling = {
 							value = (-0.1, -0.1, -0.1)
 						}
 					}
 					{
-						bone = Bone_Stomach_Lower
+						bone = bone_stomach_lower
 						scaling = {
 							value = (0.0, 0.6, 0.75)
 							no_propagate
@@ -1652,7 +1652,7 @@ cas_physique = [
 						}
 					}
 					{
-						bone = Bone_Stomach_Upper
+						bone = bone_stomach_upper
 						scaling = {
 							value = (0.0, 0.7, 0.75)
 							no_propagate

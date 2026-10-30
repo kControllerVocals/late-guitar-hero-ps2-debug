@@ -1,23 +1,23 @@
 
 script ui_create_cap_shape_list 
 
-	if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+	if NOT checksumequals a = <part> b = cas_band_logo
 		show_history = {show_history}
 	endif
 	make_generic_menu {
 		vmenu_id = create_cap_shape_list_vmenu
-		title = qs("Categories")
+		title = qs(0xd489d6c4)
 		<show_history>
 	}
 	add_shape_list_to_menu part = <part> div_id = <div_id> camera_list = <camera_list> zoom_camera = <zoom_camera> cam_name = <override_base_name>
-	if ChecksumEquals a = <part> b = CAS_Band_Logo
+	if checksumequals a = <part> b = cas_band_logo
 		menu_finish \{car_helper_text
 			no_rotate_zoom_text}
 	else
 		setup_cas_menu_handlers vmenu_id = create_cap_shape_list_vmenu camera_list = <camera_list> zoom_camera = <zoom_camera>
 		menu_finish \{car_helper_text}
 	endif
-	LaunchEvent type = focus target = create_cap_shape_list_vmenu data = {child_index = <selected_index>}
+	launchevent type = focus target = create_cap_shape_list_vmenu data = {child_index = <selected_index>}
 endscript
 
 script ui_destroy_cap_shape_list 
@@ -26,24 +26,24 @@ endscript
 
 script add_shape_list_to_menu 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
-	if GotParam \{sections}
-		GetArraySize \{sections}
+	if gotparam \{sections}
+		getarraysize \{sections}
 		i = 0
 		begin
-		if NOT StructureContains Structure = (<sections> [<i>]) pre_userlayer
-			if NOT StructureContains Structure = (<sections> [<i>]) post_userlayer
+		if NOT structurecontains structure = (<sections> [<i>]) pre_userlayer
+			if NOT structurecontains structure = (<sections> [<i>]) post_userlayer
 				if is_target_in_div part = <part> div_id = <div_id> target = (<sections> [<i>])
 					catagory_added = 1
 					get_catagory_icon desc_id = ((<sections> [<i>]).desc_id)
 					add_generic_menu_text_item {
 						text = ((<sections> [<i>]).frontend_desc)
-						choose_state = UIstate_cap_shape_list_subset
+						choose_state = uistate_cap_shape_list_subset
 						choose_state_data = {part = <part> section_index = <i> hist_name = ((<sections> [<i>]).frontend_desc) hist_tex = <icon> is_popup camera_list = <camera_list> zoom_camera = <zoom_camera> cam_name = <cam_name>}
 					}
 				endif
@@ -52,16 +52,16 @@ script add_shape_list_to_menu
 		i = (<i> + 1)
 		repeat <array_size>
 	endif
-	if NOT GotParam \{catagory_added}
-		if NOT CD
-			add_generic_menu_text_item \{text = qs("No Categories defined yet")
+	if NOT gotparam \{catagory_added}
+		if NOT cd
+			add_generic_menu_text_item \{text = qs(0x720310b6)
 				choose_back}
 		endif
 	endif
 endscript
 
 script ui_return_cap_shape_list 
-	if ChecksumEquals a = <part> b = CAS_Band_Logo
+	if checksumequals a = <part> b = cas_band_logo
 		menu_finish \{car_helper_text
 			no_rotate_zoom_text}
 	else
@@ -89,13 +89,13 @@ script get_catagory_icon
 		return \{icon = category_graphics}
 		case car_sponsors
 		return \{icon = category_sponsors}
-		case `Font A1`
+		case `font a1`
 		return \{icon = category_font_harbour}
-		case `Font A3`
+		case `font a3`
 		return \{icon = category_font_square40}
-		case `Font A6`
+		case `font a6`
 		return \{icon = category_font_bordello}
-		case `Font A8`
+		case `font a8`
 		return \{icon = category_font_aaux}
 		default
 		return \{icon = menu_history_unknown}

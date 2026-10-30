@@ -1,37 +1,37 @@
-L_SING_Patrick_Bulls_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_patrick_bulls_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					SING_Patrick_Bulls_075
+				slow = [
+					sing_patrick_bulls_075
 				]
-				Med = [
-					SING_Patrick_Bulls_100
+				med = [
+					sing_patrick_bulls_100
 				]
-				Fast = [
-					SING_Patrick_Bulls_120
-				]
-			}
-			Normal = {
-				Slow = [
-					SING_Patrick_Bulls_075
-				]
-				Med = [
-					SING_Patrick_Bulls_100
-				]
-				Fast = [
-					SING_Patrick_Bulls_120
+				fast = [
+					sing_patrick_bulls_120
 				]
 			}
-			Bad = {
-				Slow = [
-					SING_Patrick_Bulls_075
+			normal = {
+				slow = [
+					sing_patrick_bulls_075
 				]
-				Med = [
-					SING_Patrick_Bulls_100
+				med = [
+					sing_patrick_bulls_100
 				]
-				Fast = [
-					SING_Patrick_Bulls_120
+				fast = [
+					sing_patrick_bulls_120
+				]
+			}
+			bad = {
+				slow = [
+					sing_patrick_bulls_075
+				]
+				med = [
+					sing_patrick_bulls_100
+				]
+				fast = [
+					sing_patrick_bulls_120
 				]
 			}
 		}

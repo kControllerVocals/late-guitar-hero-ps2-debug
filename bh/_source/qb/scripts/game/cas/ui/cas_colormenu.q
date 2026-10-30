@@ -29,25 +29,25 @@ default_cas_sat = 0
 default_cas_value = 50
 
 script colormenu_set_hsv \{use_default_diffuse = 0}
-	SetCASAppearanceColor part = <part> h = <h> s = <s> v = <v> use_default_diffuse = <use_default_diffuse>
-	if ((<part> = CAS_Female_Hair) || (<part> = CAS_Male_Hair))
-		if GetCASAppearancePart part = <part>
+	setcasappearancecolor part = <part> h = <h> s = <s> v = <v> use_default_diffuse = <use_default_diffuse>
+	if ((<part> = cas_female_hair) || (<part> = cas_male_hair))
+		if getcasappearancepart part = <part>
 			cas_propogate_hair_color
 		endif
 	endif
-	RemoveParameter \{h}
-	RemoveParameter \{s}
-	RemoveParameter \{v}
-	if GetCASAppearancePart \{part = CAS_Body}
-		if GotParam \{h}
+	removeparameter \{h}
+	removeparameter \{s}
+	removeparameter \{v}
+	if getcasappearancepart \{part = cas_body}
+		if gotparam \{h}
 			change ps2_body_color_h = (<h>)
 			change ps2_body_color_s = (<s>)
 			change ps2_body_color_v = (<v>)
 			change ps2_body_color_use_default_diffuse = (<use_default_diffuse>)
-			ForEachIn ($master_editable_list) do = ps2_propegate_body_color
+			foreachin ($master_editable_list) do = ps2_propegate_body_color
 		endif
 	endif
-	cas_propogate_color_to_other_parts \{part = CAS_Body
+	cas_propogate_color_to_other_parts \{part = cas_body
 		other_parts = $ps2_fleshy_parts_array}
-	UpdateCurrentCASModel \{buildScript = color_model_from_appearance}
+	updatecurrentcasmodel \{buildscript = color_model_from_appearance}
 endscript

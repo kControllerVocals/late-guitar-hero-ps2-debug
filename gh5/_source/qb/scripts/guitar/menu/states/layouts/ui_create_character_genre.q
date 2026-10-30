@@ -1,41 +1,41 @@
 intial_genre_focus_hack = 0
 
 script ui_create_create_character_genre 
-	make_generic_menu \{title = qs("SELECT GENRE")
+	make_generic_menu \{title = qs(0x818a5b51)
 		vmenu_id = create_create_character_genre_vmenu}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
 	change \{intial_genre_focus_hack = 1}
 	current_genre = (($cas_current_appearance).genre)
-	GetArraySize ($Genre_List)
+	getarraysize ($genre_list)
 	i = 0
 	begin
-	genre = (($Genre_List) [<i>].desc_id)
+	genre = (($genre_list) [<i>].desc_id)
 	if (<genre> = <current_genre>)
 		select_index = <i>
 	endif
 	add_generic_menu_text_item {
-		icon = (($Genre_List) [<i>].icon)
-		text = (($Genre_List) [<i>].frontend_desc)
-		pad_choose_script = load_character_before_state
-		pad_choose_params = {state = UIstate_customize_character unfocus_menu = create_create_character_genre_vmenu}
+		icon = (($genre_list) [<i>].icon)
+		text = (($genre_list) [<i>].frontend_desc)
+		pad_choose_script = 0xea169d59
+		pad_choose_params = {state = uistate_customize_character 0xeec2d226 = create_create_character_genre_vmenu}
 		additional_focus_script = cas_create_character_genre_focus
 		additional_focus_params = {genre = <genre>}
 	}
 	i = (<i> + 1)
 	repeat <array_size>
 	menu_finish \{no_rotate_zoom_text}
-	LaunchEvent type = focus target = create_create_character_genre_vmenu data = {child_index = <select_index>}
-	add_user_control_helper \{text = qs("RANDOMIZE")
-		button = Yellow
+	launchevent type = focus target = create_create_character_genre_vmenu data = {child_index = <select_index>}
+	add_user_control_helper \{text = qs(0xec8fbaef)
+		button = yellow
 		z = 100000}
 endscript
 
@@ -44,15 +44,15 @@ script ui_destroy_create_character_genre
 endscript
 
 script ui_init_create_character_genre 
-	if GetCurrentCASObject
-		BandManager_ChangeStance name = <cas_object> stance = Stance_Old no_wait
+	if getcurrentcasobject
+		bandmanager_changestance name = <cas_object> stance = stance_old no_wait
 	endif
-	ui_load_cas_rawpak \{part = CAS_Body}
+	ui_load_cas_rawpak \{part = cas_body}
 endscript
-car_wait_before_load = 0.75
+0xc7b81333 = 0.75
 
 script cas_create_character_genre_focus 
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = create_create_character_genre_vmenu
 		event_handlers =
 		[
@@ -64,39 +64,39 @@ script cas_create_character_genre_focus
 		change \{intial_genre_focus_hack = 0}
 		return
 	endif
-	KillSpawnedScript \{name = generate_random_character}
+	killspawnedscript \{name = 0x4ec30caf}
 	switch <genre>
-		case Rock
-		Anim = Rock
-		case Punk
-		Anim = Punk
-		case `Heavy Metal`
-		Anim = HeavyMetal
-		case `Glam Rock`
-		Anim = Glam
-		case `Black Metal`
-		Anim = BlackMetal
-		case `Classic Rock`
-		Anim = Classic
-		case Goth
-		Anim = Goth
-		case Pop
-		Anim = Pop
+		case rock
+		anim = rock
+		case punk
+		anim = punk
+		case `heavy metal`
+		anim = heavymetal
+		case `glam rock`
+		anim = glam
+		case `black metal`
+		anim = blackmetal
+		case `classic rock`
+		anim = classic
+		case goth
+		anim = goth
+		case pop
+		anim = pop
 		default
-		Anim = Rock
+		anim = rock
 	endswitch
-	spawnscriptnow generate_random_character params = {is_female = ($cas_current_is_female) genre = <genre> Anim = <Anim> Wait genre_select}
+	spawnscriptnow 0x4ec30caf params = {is_female = ($cas_current_is_female) genre = <genre> anim = <anim> wait genre_select}
 endscript
 
 script cas_create_character_rerandomize 
-	KillSpawnedScript \{name = generate_random_character}
+	killspawnedscript \{name = 0x4ec30caf}
 	generic_menu_pad_choose_sound
-	if GotParam \{genre}
-		spawnscriptnow generate_random_character params = {is_female = ($cas_current_is_female) genre = <genre> genre_select}
+	if gotparam \{genre}
+		spawnscriptnow 0x4ec30caf params = {is_female = ($cas_current_is_female) genre = <genre> genre_select}
 	else
-		if GetCASAppearance
-			if StructureContains Structure = <appearance> genre
-				spawnscriptnow generate_random_character params = {is_female = ($cas_current_is_female) genre = (<appearance>.genre) genre_select}
+		if getcasappearance
+			if structurecontains structure = <appearance> genre
+				spawnscriptnow 0x4ec30caf params = {is_female = ($cas_current_is_female) genre = (<appearance>.genre) genre_select}
 			endif
 		endif
 	endif
@@ -104,11 +104,11 @@ endscript
 
 script cas_unblock_input_after_randomize 
 	begin
-	if NOT ScriptIsRunning \{generate_random_character}
+	if NOT scriptisrunning \{0x4ec30caf}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	SetButtonEventMappings \{unblock_menu_input}
+	setbuttoneventmappings \{unblock_menu_input}
 endscript

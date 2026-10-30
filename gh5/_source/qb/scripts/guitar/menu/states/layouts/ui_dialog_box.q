@@ -1,6 +1,6 @@
 
 script ui_create_dialog_box 
-	if GotParam \{setup_script}
+	if gotparam \{setup_script}
 		<setup_script> <setup_script_params>
 	endif
 endscript

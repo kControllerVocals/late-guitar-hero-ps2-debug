@@ -7,7 +7,7 @@ script create_lefty_flip_warning_menu
 	if (<num_players> > 0)
 		i = 1
 		begin
-		GetPlayerInfo <i> controller
+		getplayerinfo <i> controller
 		if (<controller> = <player_device>)
 			player = <i>
 			break
@@ -16,18 +16,18 @@ script create_lefty_flip_warning_menu
 		repeat <num_players>
 	endif
 	create_dialog_box {
-		body_text = qs("To change the lefty flip setting, this song must be restarted. You will lose all unsaved progress if you restart. Are you sure you want to continue?")
+		body_text = qs(0x2ba14213)
 		player_device = <player_device>
 		no_background
 		options = [
 			{
 				func = lefty_flip_warning_go_back
-				text = qs("CANCEL")
+				text = qs(0xf7723015)
 			}
 			{
 				func = menu_lefty_flip_warning_select_yes
 				func_params = {player = <player>}
-				text = qs("RESTART")
+				text = qs(0xb8790f2f)
 			}
 		]
 	}
@@ -43,11 +43,11 @@ script destroy_lefty_flip_warning_menu
 endscript
 
 script menu_lefty_flip_warning_select_yes 
-	set_loading_screen \{full}
+	0xe9384b7a \{full}
 	generic_event_back \{state = uistate_gameplay}
-	ResetScoreUpdateReady
-	GH3_SFX_fail_song_stop_sounds
-	MonitorControllerStates
-	toggle_lefty_flip player = <player>
+	resetscoreupdateready
+	gh3_sfx_fail_song_stop_sounds
+	monitorcontrollerstates
+	0x978e7147 player = <player>
 	spawnscriptnow lefty_flip_func params = {player = <player>}
 endscript

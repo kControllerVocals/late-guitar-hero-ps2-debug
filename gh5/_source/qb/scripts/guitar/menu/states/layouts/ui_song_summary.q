@@ -20,22 +20,22 @@ script ui_create_song_summary
 		case 4
 		build_page_for_4p <...>
 	endswitch
-	GameMode_GetType
+	gamemode_gettype
 
 	if (<type> = practice)
 		build_menu_for_practice_mode
 	else
-		add_user_control_helper \{text = qs("CONTINUE")
+		add_user_control_helper \{text = qs(0x182f0173)
 			button = green
 			z = 100000}
-		add_user_control_helper \{text = qs("MORE STATS")
+		add_user_control_helper \{text = qs(0x3f11367e)
 			button = red
 			z = 100000}
-		AssignAlias \{id = summary_page_id
+		assignalias \{id = summary_page_id
 			alias = current_menu}
 	endif
 	if (<type> = quickplay)
-		if NOT GotParam \{failed_song}
+		if NOT gotparam \{failed_song}
 			menu_top_rockers_check_for_new_top_score \{nowrite = 1}
 		endif
 	endif
@@ -43,16 +43,16 @@ endscript
 
 script ui_destroy_song_summary 
 	clean_up_user_control_helpers
-	DestroyScreenElement \{id = summary_page_id}
+	destroyscreenelement \{id = summary_page_id}
 endscript
 
 script my_get_player_data \{player_index = 1}
-	GetPlayerInfo <player_index> part
-	GetPlayerInfo <player_index> best_run
-	GetPlayerInfo <player_index> score
-	GetPlayerInfo <player_index> max_notes
-	GetPlayerInfo <player_index> notes_hit
-	GetPlayerInfo <player_index> stars
+	getplayerinfo <player_index> part
+	getplayerinfo <player_index> best_run
+	getplayerinfo <player_index> score
+	getplayerinfo <player_index> max_notes
+	getplayerinfo <player_index> notes_hit
+	getplayerinfo <player_index> stars
 	if (<max_notes> = 0)
 		max_notes = 1
 	endif
@@ -69,39 +69,39 @@ script my_get_player_data \{player_index = 1}
 		case 4
 		get_difficulty_text_nl difficulty = ($player4_status.difficulty)
 	endswitch
-	CastToInteger \{score}
-	FormatText TextName = player_text qs("Player %p") p = <player_index>
-	FormatText TextName = score_text qs("%s") s = <score> DecimalPlaces = 0 usecommas
-	FormatText TextName = difficulty_text qs("%d") d = <difficulty_text_nl>
-	FormatText TextName = percent_text qs("%p\%") p = (((<notes_hit> * 1.0) / <max_notes>) * 100.0) DecimalPlaces = 0
-	FormatText TextName = streak_text qs("%n") n = <best_run> DecimalPlaces = 0
+	casttointeger \{score}
+	formattext textname = player_text qs(0x5c5cedaa) p = <player_index>
+	formattext textname = score_text qs(0x4d4555da) s = <score> decimalplaces = 0 usecommas
+	formattext textname = difficulty_text qs(0x48c6d14c) d = <difficulty_text_nl>
+	formattext textname = percent_text qs(0x49412198) p = (((<notes_hit> * 1.0) / <max_notes>) * 100.0) decimalplaces = 0
+	formattext textname = streak_text qs(0xb22939c6) n = <best_run> decimalplaces = 0
 	switch (<part>)
 		case guitar
 		icon_texture = guitar_stat
-		case Bass
+		case bass
 		icon_texture = bass_stat
 		case drum
 		icon_texture = drum_stat
-		case Vocals
+		case vocals
 		icon_texture = vocal_stat
 	endswitch
 	return <...>
 endscript
 
 script build_page_for_1p 
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
 		id = summary_page_id
-		type = DescInterface
+		type = descinterface
 		desc = 'song_summary_1p'
 		event_handlers = <my_events>
 	}
-	if summary_page_id :Desc_ResolveAlias \{name = alias_song_summary_1p_collumn}
+	if summary_page_id :desc_resolvealias \{name = alias_song_summary_1p_collumn}
 	else
 
 	endif
 	my_get_player_data
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <resolved_id>
 		name_text = <player_text>
 		score_number_value_text = <score_text>
@@ -113,13 +113,13 @@ script build_page_for_1p
 		song_summary_star_empty03_texture = song_summary_star_full
 	}
 	if (<stars> > 3)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <resolved_id>
 			song_summary_star_empty04_texture = song_summary_star_full
 		}
 	endif
 	if (<stars> > 4)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <resolved_id>
 			song_summary_star_empty05_texture = song_summary_star_full
 		}
@@ -127,21 +127,21 @@ script build_page_for_1p
 endscript
 
 script build_page_for_2p 
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
 		id = summary_page_id
-		type = DescInterface
+		type = descinterface
 		desc = 'song_summary_2p'
 		event_handlers = <my_events>
 	}
-	summary_page_id :Desc_ResolveAlias \{name = alias_collumns_container}
+	summary_page_id :desc_resolvealias \{name = alias_collumns_container}
 	col_container_id = <resolved_id>
-	GetScreenElementChildren id = <col_container_id>
+	getscreenelementchildren id = <col_container_id>
 	col_cont_children = <children>
 	i = 1
 	begin
 	my_get_player_data player_index = <i>
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = (<col_cont_children> [(<i> -1)])
 		name_text = <player_text>
 		title_text = <difficulty_text>
@@ -154,13 +154,13 @@ script build_page_for_2p
 		song_summary_star_empty03_texture = song_summary_star_full
 	}
 	if (<stars> > 3)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = (<col_cont_children> [(<i> -1)])
 			song_summary_star_empty04_texture = song_summary_star_full
 		}
 	endif
 	if (<stars> > 4)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = (<col_cont_children> [(<i> -1)])
 			song_summary_star_empty05_texture = song_summary_star_full
 		}
@@ -170,21 +170,21 @@ script build_page_for_2p
 endscript
 
 script build_page_for_3p 
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
 		id = summary_page_id
-		type = DescInterface
+		type = descinterface
 		desc = 'song_summary_3p'
 		event_handlers = <my_events>
 	}
-	summary_page_id :Desc_ResolveAlias \{name = alias_collumn_container}
+	summary_page_id :desc_resolvealias \{name = alias_collumn_container}
 	col_container_id = <resolved_id>
-	GetScreenElementChildren id = <col_container_id>
+	getscreenelementchildren id = <col_container_id>
 	col_cont_children = <children>
 	i = 1
 	begin
 	my_get_player_data player_index = <i>
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = (<col_cont_children> [(<i> -1)])
 		name_text = <player_text>
 		title_text = <difficulty_text>
@@ -197,13 +197,13 @@ script build_page_for_3p
 		song_summary_star_empty03_texture = song_summary_star_full
 	}
 	if (<stars> > 3)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = (<col_cont_children> [(<i> -1)])
 			song_summary_star_empty04_texture = song_summary_star_full
 		}
 	endif
 	if (<stars> > 4)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = (<col_cont_children> [(<i> -1)])
 			song_summary_star_empty05_texture = song_summary_star_full
 		}
@@ -213,21 +213,21 @@ script build_page_for_3p
 endscript
 
 script build_page_for_4p 
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
 		id = summary_page_id
-		type = DescInterface
+		type = descinterface
 		desc = 'song_summary_4p'
 		event_handlers = <my_events>
 	}
-	summary_page_id :Desc_ResolveAlias \{name = alias_collumn_container}
+	summary_page_id :desc_resolvealias \{name = alias_collumn_container}
 	col_container_id = <resolved_id>
-	GetScreenElementChildren id = <col_container_id>
+	getscreenelementchildren id = <col_container_id>
 	col_cont_children = <children>
 	i = 1
 	begin
 	my_get_player_data player_index = <i>
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = (<col_cont_children> [(<i> -1)])
 		name_text = <player_text>
 		title_text = <difficulty_text>
@@ -240,13 +240,13 @@ script build_page_for_4p
 		instrument_texture = <icon_texture>
 	}
 	if (<stars> > 3)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = (<col_cont_children> [(<i> -1)])
 			song_summary_star_empty04_texture = song_summary_star_full
 		}
 	endif
 	if (<stars> > 4)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = (<col_cont_children> [(<i> -1)])
 			song_summary_star_empty05_texture = song_summary_star_full
 		}
@@ -259,8 +259,8 @@ script ui_song_summary_continue_next_screen
 
 
 	progression_get_new_unlocks
-	GetArraySize <new_unlocks>
-	GameMode_GetType
+	getarraysize <new_unlocks>
+	gamemode_gettype
 	if (<type> = career)
 	endif
 	if (<type> = practice)
@@ -274,16 +274,16 @@ endscript
 
 script build_menu_for_practice_mode 
 	disable_pause
-	if summary_page_id :Desc_ResolveAlias \{name = alias_my_menu}
+	if summary_page_id :desc_resolvealias \{name = alias_my_menu}
 	else
 
 	endif
 	continue_script = song_summary_continue_practice_mode
-	CreateScreenElement {
+	createscreenelement {
 		parent = <resolved_id>
-		type = TextElement
+		type = textelement
 		font = fontgrid_text_a8
-		text = qs("continue")
+		text = qs(0x5e743602)
 		rgba = ($menu_unfocus_color)
 		event_handlers = [
 			{focus retail_menu_focus}
@@ -291,11 +291,11 @@ script build_menu_for_practice_mode
 			{pad_choose ui_song_summary_continue_next_screen params = {for_practice = 1}}
 		]
 	}
-	CreateScreenElement {
+	createscreenelement {
 		parent = <resolved_id>
-		type = TextElement
+		type = textelement
 		font = fontgrid_text_a8
-		text = qs("detailed stats")
+		text = qs(0xcbd10828)
 		rgba = ($menu_unfocus_color)
 		event_handlers = [
 			{focus retail_menu_focus}
@@ -303,11 +303,11 @@ script build_menu_for_practice_mode
 			{pad_choose generic_event_choose params = {state = uistate_detailed_stats}}
 		]
 	}
-	CreateScreenElement {
+	createscreenelement {
 		parent = <resolved_id>
-		type = TextElement
+		type = textelement
 		font = fontgrid_text_a8
-		text = qs("replay song")
+		text = qs(0x0c711699)
 		rgba = ($menu_unfocus_color)
 		event_handlers = [
 			{focus retail_menu_focus}
@@ -315,11 +315,11 @@ script build_menu_for_practice_mode
 			{pad_choose practice_restart_song}
 		]
 	}
-	CreateScreenElement {
+	createscreenelement {
 		parent = <resolved_id>
-		type = TextElement
+		type = textelement
 		font = fontgrid_text_a8
-		text = qs("select speed")
+		text = qs(0x4a1f8323)
 		rgba = ($menu_unfocus_color)
 		event_handlers = [
 			{focus retail_menu_focus}
@@ -327,11 +327,11 @@ script build_menu_for_practice_mode
 			{pad_choose generic_event_back params = {state = uistate_practice_select_speed}}
 		]
 	}
-	CreateScreenElement {
+	createscreenelement {
 		parent = <resolved_id>
-		type = TextElement
+		type = textelement
 		font = fontgrid_text_a8
-		text = qs("select section")
+		text = qs(0x07b66aa5)
 		rgba = ($menu_unfocus_color)
 		event_handlers = [
 			{focus retail_menu_focus}
@@ -339,6 +339,6 @@ script build_menu_for_practice_mode
 			{pad_choose generic_event_back params = {state = uistate_select_song_section}}
 		]
 	}
-	AssignAlias id = <resolved_id> alias = current_menu
+	assignalias id = <resolved_id> alias = current_menu
 	current_menu :obj_spawnscript \{menu_music_on}
 endscript

@@ -1,41 +1,41 @@
-AnimTagTable = {
+animtagtable = {
 }
 ped_animevents = {
 }
-PreloadWinAnimStream_GuitaristID = none
-PreloadWinAnimStream_BassistID = none
+preloadwinanimstream_guitaristid = none
+preloadwinanimstream_bassistid = none
 
-script PreloadWinAnimStream 
-	Obj_GetID
-	MangleChecksums a = <ObjID> b = winanimstream
-	if (<ObjID> = Guitarist)
-		if PreloadStream <stream> buss = binkcutscenes
-			change PreloadWinAnimStream_GuitaristID = <unique_id>
+script preloadwinanimstream 
+	obj_getid
+	manglechecksums a = <objid> b = winanimstream
+	if (<objid> = guitarist)
+		if preloadstream <stream> buss = binkcutscenes
+			change preloadwinanimstream_guitaristid = <unique_id>
 		else
-			change \{PreloadWinAnimStream_GuitaristID = none}
+			change \{preloadwinanimstream_guitaristid = none}
 		endif
-	elseif (<ObjID> = bassist)
-		if PreloadStream <stream> buss = binkcutscenes
-			change PreloadWinAnimStream_BassistID = <unique_id>
+	elseif (<objid> = bassist)
+		if preloadstream <stream> buss = binkcutscenes
+			change preloadwinanimstream_bassistid = <unique_id>
 		else
-			change \{PreloadWinAnimStream_BassistID = none}
+			change \{preloadwinanimstream_bassistid = none}
 		endif
 	endif
 endscript
 
-script PlayPreLoadedWinAnimStream 
-	Obj_GetID
-	if (<ObjID> = Guitarist)
-		if (($PreloadWinAnimStream_GuitaristID) = none)
+script playpreloadedwinanimstream 
+	obj_getid
+	if (<objid> = guitarist)
+		if (($preloadwinanimstream_guitaristid) = none)
 
 		else
-			StartPreloadedStream ($PreloadWinAnimStream_GuitaristID) vol = 63 forcesafepreload = 1 buss = binkcutscenes
+			startpreloadedstream ($preloadwinanimstream_guitaristid) vol = 63 forcesafepreload = 1 buss = binkcutscenes
 		endif
-	elseif (<ObjID> = bassist)
-		if (($PreloadWinAnimStream_BassistID) = none)
+	elseif (<objid> = bassist)
+		if (($preloadwinanimstream_bassistid) = none)
 
 		else
-			StartPreloadedStream ($PreloadWinAnimStream_BassistID) vol = 63 forcesafepreload = 1 buss = binkcutscenes
+			startpreloadedstream ($preloadwinanimstream_bassistid) vol = 63 forcesafepreload = 1 buss = binkcutscenes
 		endif
 	endif
 endscript

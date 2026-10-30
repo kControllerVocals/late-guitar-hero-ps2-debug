@@ -1,103 +1,103 @@
 empty_appearance = {
-	CAS_Body = {
-		desc_id = NoBody
+	cas_body = {
+		desc_id = nobody
 	}
 }
 preset_musician_instrument_hack = {
-	CAS_Guitar_Body = {
-		desc_id = GTR31_Horizon
+	cas_guitar_body = {
+		desc_id = gtr31_horizon
 	}
-	CAS_Guitar_Finish = {
-		desc_id = GTR33_flamed
+	cas_guitar_finish = {
+		desc_id = gtr33_flamed
 	}
-	CAS_Guitar_Body_Detail = {
+	cas_guitar_body_detail = {
 		desc_id = gtr33_dtl11
 		chosen_materials = {
-			material1 = Black_1guitar
+			material1 = black_1guitar
 		}
 	}
-	CAS_Guitar_Neck = {
-		desc_id = GTR_24fret_Fretboard_03
+	cas_guitar_neck = {
+		desc_id = gtr_24fret_fretboard_03
 	}
-	CAS_Guitar_Head = {
-		desc_id = GTR31c_NeckHead_02
+	cas_guitar_head = {
+		desc_id = gtr31c_neckhead_02
 	}
-	CAS_Guitar_Head_Finish = {
+	cas_guitar_head_finish = {
 		desc_id = espcolor
 		chosen_materials = {
-			material1 = Black_1guitar
+			material1 = black_1guitar
 		}
 	}
-	CAS_Guitar_Head_Detail = {
-		desc_id = GTR37_nekhed_DTL02
+	cas_guitar_head_detail = {
+		desc_id = gtr37_nekhed_dtl02
 		chosen_materials = {
 			material1 = red_1
 		}
 	}
-	CAS_Guitar_Pickguards = {
+	cas_guitar_pickguards = {
 		desc_id = none
 	}
-	CAS_Guitar_Bridges = {
-		desc_id = GTR31_Bridge_FR
+	cas_guitar_bridges = {
+		desc_id = gtr31_bridge_fr
 	}
-	CAS_Guitar_Knobs = {
-		desc_id = GTR_32_KNOBS_B
+	cas_guitar_knobs = {
+		desc_id = gtr_32_knobs_b
 	}
-	CAS_Guitar_Pickups = {
+	cas_guitar_pickups = {
 		desc_id = gtr31_pickup_gold
 	}
-	CAS_Bass_Body = {
+	cas_bass_body = {
 		desc_id = bass17_esp_ec_01
 	}
-	CAS_Bass_Finish = {
-		desc_id = Bass17_esp_EC_LD_12
+	cas_bass_finish = {
+		desc_id = bass17_esp_ec_ld_12
 		chosen_materials = {
 			material1 = yellow_1
 		}
 	}
-	CAS_Bass_Neck = {
-		desc_id = Bass_Fretboard_24black
+	cas_bass_neck = {
+		desc_id = bass_fretboard_24black
 	}
-	CAS_Bass_Neck_Finish = {
-		desc_id = Bass_Fretboard_Inlay_01
+	cas_bass_neck_finish = {
+		desc_id = bass_fretboard_inlay_01
 	}
-	CAS_Bass_Head = {
-		desc_id = Bass14_Neckhead_04
+	cas_bass_head = {
+		desc_id = bass14_neckhead_04
 	}
-	CAS_Bass_Head_Finish = {
+	cas_bass_head_finish = {
 		desc_id = esp_solidcolor
 		chosen_materials = {
-			material1 = Black_1guitar
+			material1 = black_1guitar
 		}
 	}
-	CAS_Bass_Head_Detail = {
+	cas_bass_head_detail = {
 		desc_id = none_esp
 	}
-	CAS_Bass_Pickguards = {
+	cas_bass_pickguards = {
 		desc_id = none
 	}
-	CAS_Bass_Pickups = {
-		desc_id = Bass9_Pkup_Type3_Blk_2
+	cas_bass_pickups = {
+		desc_id = bass9_pkup_type3_blk_2
 		chosen_materials = {
 			material1 = grey_2guitar
 		}
 	}
-	CAS_Bass_Bridges = {
-		desc_id = Bass17_Bridge_4str_04
+	cas_bass_bridges = {
+		desc_id = bass17_bridge_4str_04
 	}
-	CAS_Bass_Knobs = {
-		desc_id = Bass17_ESP_Knob_10
+	cas_bass_knobs = {
+		desc_id = bass17_esp_knob_10
 		chosen_materials = {
 			material1 = grey_3guitar
 		}
 	}
-	CAS_Mic = {
+	cas_mic = {
 		desc_id = mic_standard
 	}
-	CAS_Mic_Stand = {
+	cas_mic_stand = {
 		desc_id = mic_stand_female
 	}
-	CAS_Drums = {
+	cas_drums = {
 		desc_id = singlebasskit
 	}
 	cas_drums_sticks_l = {
@@ -108,92 +108,92 @@ preset_musician_instrument_hack = {
 	}
 }
 preset_male_base_parts = {
-	CAS_Male_Base_Torso = {
+	cas_male_base_torso = {
 		desc_id = car_male_torso
 	}
 }
 preset_female_base_parts = {
-	CAS_Female_Base_Torso = {
+	cas_female_base_torso = {
 		desc_id = car_female_torso
 	}
 }
 worst_male_appearance_hack = {
 	cas_physique = {
-		desc_id = MalePhysique
+		desc_id = malephysique
 		bones = {
-			Height = 1.0
-			Physique = 1.0
+			height = 1.0
+			physique = 1.0
 		}
 	}
 }
 worst_female_appearance_hack = {
 	cas_physique = {
-		desc_id = FemalePhysique
+		desc_id = femalephysique
 		bones = {
-			Height = 1.0
-			Physique = 1.0
-			Chest = 1.0
+			height = 1.0
+			physique = 1.0
+			chest = 1.0
 		}
 	}
 }
-Preset_Musician_Profiles_Modifiable = [
+preset_musician_profiles_modifiable = [
 	{
-		name = Quinton
-		fullname = qs("\LQuincy Styles")
+		name = 0x272f09db
+		fullname = qs(0x960585a9)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		preset_icon = photo_izzy
-		blurb = qs("Quincy is a legend in his hometown - an Urban Legend; a poet, musician, innovator.  On any given day he might be mixing it up with metal bands, rocking out with a string quartet, or easy jammin' with cool jazz fools - no two days are ever the same.")
+		blurb = qs(0x7d86a5e5)
 		ghrocker
 		appearance = {
-			genre = Classic
-			CAS_Full_Body = {
-				desc_id = quinton_1
+			genre = classic
+			cas_full_body = {
+				desc_id = 0x77edc2fe
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr86_mm_axis
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr86_mm_axis_ld02
 				chosen_materials = {
 					material1 = yellow_orange_1
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr86_mm_axis_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_22fret_Fretboard_04
+			cas_guitar_neck = {
+				desc_id = gtr_22fret_fretboard_04
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = gtr84_mminlaypet22
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gt86_neckhead_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = yellow_orange_1
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr86_neckhead_dtl02
 				chosen_materials = {
 					material1 = red_1
@@ -202,37 +202,37 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr75_bridgeb
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = chromedomes_daisy2
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = zebradbl
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_esp_AX_LD_11
+			cas_bass_finish = {
+				desc_id = bass14_esp_ax_ld_11
 				chosen_materials = {
 					material1 = yellow_orange_1
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass14_esp_ax_dtl_02
 				chosen_materials = {
 					material1 = red_1
@@ -241,70 +241,70 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_02
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = yellow_orange_1
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_01
-				chosen_materials = {
-					material1 = red_1
-				}
-			}
-			CAS_Bass_Knobs = {
-				desc_id = Bass14_ESP_Knob_10_04
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_01
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Mic = {
+			cas_bass_knobs = {
+				desc_id = bass14_esp_knob_10_04
+				chosen_materials = {
+					material1 = red_1
+				}
+			}
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_pop
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 				chosen_materials = {
 					material1 = red_3
@@ -319,68 +319,68 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Casey
-		fullname = qs("\LCasey Lynch")
+		name = casey
+		fullname = qs(0xd88aefc7)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		preset_icon = photo_casey
-		blurb = qs("An intricate blend of southern-flavored boogie and California pop suffuses the elegant brew that is Casey Lynch's masterpiece recording of 2009.  Casey breathes new life into the L.A. scene with fresh guitar stylings and breathy Texan vocals.")
+		blurb = qs(0xa173ef4d)
 		ghrocker
 		appearance = {
-			genre = `Heavy Metal`
-			CAS_Full_Body = {
-				desc_id = Casey_5
+			genre = `heavy metal`
+			cas_full_body = {
+				desc_id = 0x995fe14f
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr12_esp_v_01
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr12_esp_v_series_ld_01_color
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr12_esp_v_series_dtl_19
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
 				desc_id = gtr12_esp_v_series_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld03_hero_tribal
 				chosen_materials = {
 					material1 = red_2
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr12_neckhead_07
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr33_nhead_dtl03
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_head_fade = {
@@ -389,94 +389,94 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr12_bridge_3
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr12_esp_knob_01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickups = {
-				desc_id = GTR1_ESP_EMG_Pkup_2
+			cas_guitar_pickups = {
+				desc_id = gtr1_esp_emg_pkup_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass9_ESP_AX_01
+			cas_bass_body = {
+				desc_id = bass9_esp_ax_01
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass9_ESP_AX_D_color
+			cas_bass_finish = {
+				desc_id = bass9_esp_ax_d_color
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass9_esp_ax_dtl_19
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = bass9_esp_ax_dtl_03
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24black
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24black
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = neck_inlay_fl_blank
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass9_Neckhead_01
+			cas_bass_head = {
+				desc_id = bass9_neckhead_01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = gh5_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass9_Bridge_4str_01
+			cas_bass_bridges = {
+				desc_id = bass9_bridge_4str_01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = bass9_esp_knob_10_04
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_sixties
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld65
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld39
 			}
 			cas_drums_sticks_l = {
@@ -488,98 +488,98 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Midori
-		fullname = qs("\LMidori")
+		name = midori
+		fullname = qs(0x4c47fb49)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		preset_icon = photo_casey
 		blurb = qs(0xeca9888e)
 		ghrocker
 		appearance = {
-			genre = `Heavy Metal`
-			CAS_Full_Body = {
-				desc_id = Midori_4
+			genre = `heavy metal`
+			cas_full_body = {
+				desc_id = midori_4
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr86_mm_axis
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr86_mm_axis_ld02
 				chosen_materials = {
 					material1 = green_3guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr86_mm_axis_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = gtr84_mminlaypet22
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gt86_neckhead_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = green_3guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr86_neckhead_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr75_bridgeb
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = chromedomes_daisy2
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = emg81dbl
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bas_sch_stil
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_stil_dtl01
 				chosen_materials = {
 					material1 = green_3guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bs_sch_stil_ld02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
@@ -588,28 +588,28 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = green_1guitar
 				}
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_24
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch_inl_ld40
 				chosen_materials = {
 					material1 = green_1guitar
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bas_neckhead_sch_stl
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = gh5_solidcolor
 				chosen_materials = {
 					material1 = green_3guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_sch_stl_hd_dtl01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
@@ -618,31 +618,31 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = green_1guitar
 				}
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = basslines1b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schbb104
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = chromedomes
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_blackmetal
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld53
 				chosen_materials = {
 					material1 = green_3guitar
@@ -657,83 +657,83 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Clive
-		fullname = qs("\LClive Winston")
+		name = clive
+		fullname = qs(0xccb97235)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
-		preset_icon = photo_Clive
-		blurb = qs("Clive's famous moustache took a trimming when record sales slumped in the late 1990s.  A change of moustache brought new legions of fans-Winston was able to keep his homes in Bermuda, Florida, and Nova Scotia.")
+		preset_icon = photo_clive
+		blurb = qs(0x39b4529d)
 		ghrocker
 		appearance = {
-			genre = Classic
-			CAS_Full_Body = {
-				desc_id = Clive_5
+			genre = classic
+			cas_full_body = {
+				desc_id = 0x5801dfd7
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr38_wv
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr37_rw_d_color
 				chosen_materials = {
 					material1 = navy_3
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_fboard_22
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld86_esp_dots
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr37_neckhead
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr37_nekhed
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr37_pguard01
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr37_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr37_knobs01
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = gtr37_pickup1
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bs_sch_t_body
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_mt_dtl02
 				chosen_materials = {
 					material1 = red_orange_2
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
@@ -742,55 +742,55 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = orange_3
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24c
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24c
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch_inl_ld42
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_t_nhead
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = bass_neckhead_mt
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_gh5
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_t_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emg35double
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schsimple
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = knurled
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = bass_skin_ds_01
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld14
 				chosen_materials = {
 					material1 = red_orange_3
@@ -805,38 +805,38 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Pandora
-		fullname = qs("\LPandora")
+		name = pandora
+		fullname = qs(0xd26ebef4)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
-		preset_icon = photo_Pandora
-		blurb = qs("As a child, Pandora owned a Victorian dollhouse.  Recently, she had a full scale replica built.  It has wind and smoke machines installed along with permanent moonlight streaming through the cobwebbed windows.")
+		preset_icon = photo_pandora
+		blurb = qs(0xe7fb75f4)
 		ghrocker
 		appearance = {
-			genre = Goth
-			CAS_Full_Body = {
-				desc_id = Pandora_5
+			genre = goth
+			cas_full_body = {
+				desc_id = 0x45295e71
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 				bones = {
-					Physique = 0.0
+					physique = 0.0
 				}
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr75_ibz_xpt
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr75_ibz_xpt_ld02
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr75_ibz_xpt_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -848,25 +848,25 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = blue_1
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_02
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_02
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld63_ibz_diamond
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr75_neckhead_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
@@ -875,100 +875,100 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = blue_1
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = ibz_pu_edgezero
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = chickenheads
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = humandrail
 				chosen_materials = {
 					material1 = blue_3
 				}
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass17_esp_ec_01
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass17_esp_EC_LD_11
+			cas_bass_finish = {
+				desc_id = bass17_esp_ec_ld_11
 				chosen_materials = {
 					material1 = blue_1
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass17_esp_ax_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24black
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24black
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bass_fretboard_24_inlay_01
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_03
+			cas_bass_head = {
+				desc_id = bass14_neckhead_03
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead3_dtl_01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type3_Blk_2
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type3_blk_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = bass17_bridge_4str_05
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = bass17_knob_02
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_blackmetal
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld11
 				chosen_materials = {
 					material1 = navy_1
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld31
 				chosen_materials = {
 					material1 = navy_3
@@ -983,32 +983,32 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Eddie
-		fullname = qs("\LEddie Knox")
+		name = eddie
+		fullname = qs(0x91c2e6b5)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Eddie was lined up to play Fort Knox as the jewel in his touring crown, but cancelled last minute.  Instead, he played a charity event for poor sick orphans.  You see, he has a heart of gold...")
+		preset_icon = photo_eddie
+		blurb = qs(0xbe333f05)
 		ghrocker
 		appearance = {
-			genre = Classic
-			CAS_Full_Body = {
-				desc_id = Eddie_5
+			genre = classic
+			cas_full_body = {
+				desc_id = 0x2768ebf8
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr82_prs_se1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr78_prs_sc_ld02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
@@ -1017,31 +1017,31 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr78_prs_sc_dtl7b
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld115_prs_bats
 				chosen_materials = {
 					material1 = teal_1
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr82_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
@@ -1050,40 +1050,40 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_3guitar
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr82_pguard
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = custom_color_esp
 				chosen_materials = {
 					material1 = teal_1
 				}
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_straightbridge
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = dice
 				chosen_materials = {
 					material1 = teal_1
 				}
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = soap
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass_schect_030
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_bod04_ld01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bs_sch_bod04_dtl11
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -1092,25 +1092,25 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_21d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch22_inl_ld47
 				chosen_materials = {
 					material1 = teal_1
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_030_nhead01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_gh5
 			}
 			cas_bass_head_fade = {
@@ -1119,28 +1119,28 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_030_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = capsule
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = dice
 				chosen_materials = {
 					material1 = teal_1
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -1149,59 +1149,59 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld46
 				chosen_materials = {
 					material1 = red_orange_1
 				}
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld16
 				chosen_materials = {
 					material1 = yellow_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
 		name = axel
-		fullname = qs("\LAxel Steel")
+		fullname = qs(0x0539af5a)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		preset_icon = photo_axel
 		blurb = qs(0x08b07aae)
 		ghrocker
 		appearance = {
-			genre = `Classic Rock`
-			CAS_Full_Body = {
-				desc_id = Axel_5
+			genre = `classic rock`
+			cas_full_body = {
+				desc_id = 0x62929960
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr12_esp_v_01
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr12_esp_v_series_ld_01_color
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr12_esp_v_series_dtl_7b
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
@@ -1210,64 +1210,64 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld03_hero_tribal
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr12_neckhead_07
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr33_nhead_dtl03
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr12_bridge_1
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr12_esp_knob_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickups = {
-				desc_id = GTR1_ESP_EMG_Pkup_2
+			cas_guitar_pickups = {
+				desc_id = gtr1_esp_emg_pkup_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass_schect_030
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_bod04_ld01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bs_sch_bod04_dtl21
 			}
 			cas_bass_body_fade = {
@@ -1276,22 +1276,22 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = orange_5
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch_inl_ld44
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_030_nhead01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = gh5_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_sch_04_hd_dtl09
 				chosen_materials = {
 					material1 = grey_2guitar
@@ -1300,34 +1300,34 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_030_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = basslines1b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schbb104
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_sixties
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld61
 				chosen_materials = {
 					material1 = yellow_orange_2
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld25
 				chosen_materials = {
 					material1 = yellow_orange_3
@@ -1343,88 +1343,88 @@ Preset_Musician_Profiles_Modifiable = [
 	}
 	{
 		name = judy
-		fullname = qs("\LJudy Nails")
+		fullname = qs(0xa9028c21)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		preset_icon = photo_judy
-		blurb = qs("Following the success of her album 'I Know Everything Ever', her new album 'You Can't Tell Me' features tracks: 'You're not the Boss of Me', 'Yes I am Going out Like This', and 'But Why?'.")
+		blurb = qs(0xb5a58be6)
 		ghrocker
 		appearance = {
-			genre = `Heavy Metal`
-			CAS_Full_Body = {
-				desc_id = Judy_5
+			genre = `heavy metal`
+			cas_full_body = {
+				desc_id = 0x5294abec
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr73_sch_s1
 			}
-			CAS_Guitar_Finish = {
-				desc_id = gtr73_sch_s1_ld01judy
+			cas_guitar_finish = {
+				desc_id = 0x798766f6
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22_fret_ld34_shctr_ladyluck
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr73_neckhead_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr73_neckhead_ld01
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr73_pg1
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = black
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr71_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = speedster
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = emg81dbl
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bs_sch_t_body
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_mt_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bs_sch_mt_ld02
 				chosen_materials = {
 					material1 = red_1
@@ -1436,55 +1436,55 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = red_1
 				}
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_21a
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch22_inl_ld32
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_t_nhead
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = bass_neckhead_mt
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_t_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = basslines1b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schbb104
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = knurled
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_sixties
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld21
 				chosen_materials = {
 					material1 = red_3
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld48
 				chosen_materials = {
 					material1 = red_3
@@ -1499,32 +1499,32 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Izzy
-		fullname = qs("\LIzzy Sparks")
+		name = izzy
+		fullname = qs(0x3ba5cbc5)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		preset_icon = photo_izzy
 		blurb = qs(0xfe77434d)
 		ghrocker
 		appearance = {
-			genre = Classic
-			CAS_Full_Body = {
-				desc_id = Izzy_5
+			genre = classic
+			cas_full_body = {
+				desc_id = 0xe6966e3f
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr94_dr_tomboy
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr94_dr_tomboy_ld06
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr94_dr_tomboy_dtl14
 				chosen_materials = {
 					material1 = purple_blue_1
@@ -1536,97 +1536,97 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = purple_blue_1
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld125_dr_elite
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr94_dr_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr93_neckhead01_ld07
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr94_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = starlights
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = hz
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass15_mcswain_machine
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bass15_mcswain_machine_ld2
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_21a
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = 22fret_ld06_mcswn_bolts
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bass15_neckhead_mcswain1
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = bass15_nkhd_mcswain_ld2
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = basslines1b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = mcswainbullet
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = chromedomes
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld21
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld48
 			}
 			cas_drums_sticks_l = {
@@ -1638,80 +1638,80 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Johnny
-		fullname = qs("\LJohnny Napalm")
+		name = johnny
+		fullname = qs(0x525fe42c)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
-		preset_icon = photo_Johnny
-		blurb = qs("Johnny is as tough as old boots, as hard as nails, and strikes fear into the hearts of all who behold him.  But he loves tiny, fluffy, cute kittens with sad eyes.")
+		preset_icon = photo_johnny
+		blurb = qs(0x94c83b0e)
 		ghrocker
 		appearance = {
-			genre = Punk
-			CAS_Full_Body = {
-				desc_id = Johnny_5
+			genre = punk
+			cas_full_body = {
+				desc_id = 0x8fe4b2a5
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr33_boris
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr_33_snakskul
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld103_esp_skulls2
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr33_nekhed_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr4_neckhead_d_06
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr33_bridge_fr
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr_33_knobs_a
 			}
-			CAS_Guitar_Pickups = {
-				desc_id = GTR30_EMG
+			cas_guitar_pickups = {
+				desc_id = gtr30_emg
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass63_EX
+			cas_bass_body = {
+				desc_id = bass63_ex
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bass63_ex_ld_09_color
 				chosen_materials = {
 					material1 = red_2
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass63_ex_dtl_7b
 				chosen_materials = {
 					material1 = grey_2guitar
@@ -1723,25 +1723,25 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_21d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_06
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_06
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass63_Neckhead
+			cas_bass_head = {
+				desc_id = bass63_neckhead
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = red_2
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_head_fade = {
@@ -1750,37 +1750,37 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = bass_bridges_01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = bass63_knob_type1
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = bass_skin_ds_13
 				chosen_materials = {
 					material1 = red_2
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld20
 			}
 			cas_drums_sticks_l = {
@@ -1792,113 +1792,113 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Metalhead
+		name = metalhead
 		fullname = qs(0x6fae039b)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
-		preset_icon = photo_Metalhead
+		preset_icon = 0x20d5ee57
 		blurb = qs(0x5bf8e7de)
 		locked
 		ghrocker
 		appearance = {
-			genre = `Classic Rock`
-			CAS_Full_Body = {
-				desc_id = Metalhead_1
+			genre = `classic rock`
+			cas_full_body = {
+				desc_id = 0xd0228944
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 				additional_bone_transforms = [
 					{
-						bone = Bone_Collar_R
+						bone = bone_collar_r
 						translation = {
 							value = (0.0, -0.15, 0.0)
 						}
 					}
 					{
-						bone = Bone_Collar_L
+						bone = bone_collar_l
 						translation = {
 							value = (0.0, -0.15, 0.0)
 						}
 					}
 				]
 			}
-			CAS_Guitar_Body = {
-				desc_id = rocket_body
+			cas_guitar_body = {
+				desc_id = 0xf3275b71
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = rocket_fretboard
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = rocket_neckhead01
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = customnone
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = guitarnone
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = rocket_dome
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_esp_AX_LD_11
+			cas_bass_finish = {
+				desc_id = bass14_esp_ax_ld_11
 				chosen_materials = {
 					material1 = violet_1
 				}
 			}
-			CAS_Bass_Body_Detail = {
-				desc_id = Bass14_ESP_AX_DTL_01
+			cas_bass_body_detail = {
+				desc_id = bass14_esp_ax_dtl_01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_22b
+			cas_bass_neck = {
+				desc_id = bass_fretboard_22b
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_06
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_06
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_02
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_02
 				chosen_materials = {
 					material1 = grey_3guitar
 				}
 			}
-			CAS_Bass_Knobs = {
-				desc_id = Bass14_knob_03
+			cas_bass_knobs = {
+				desc_id = bass14_knob_03
 				chosen_materials = {
 					material1 = grey_3guitar
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -1907,54 +1907,54 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = Roblobster
+		name = 0x2568d4a0
 		fullname = qs(0x97ce23c5)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		locked
-		preset_icon = photo_Metalhead
+		preset_icon = 0x20d5ee57
 		blurb = qs(0x45165d26)
 		ghrocker
 		appearance = {
-			genre = `Classic Rock`
-			CAS_Full_Body = {
-				desc_id = rob_lobster
+			genre = `classic rock`
+			cas_full_body = {
+				desc_id = 0x36fc4dab
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr70_sch_ultra
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr70_sch_ultra_ld04
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
@@ -1963,49 +1963,49 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld31_shctr_c1
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr70_neckhead_02
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr70_pg
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr70_bridge
 				chosen_materials = {
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = starlights
 				chosen_materials = {
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = duncanbodbl
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass17_esp_ec_01
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_esp_AX_LD_11
+			cas_bass_finish = {
+				desc_id = bass14_esp_ax_ld_11
 				chosen_materials = {
 					material1 = green_2guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass17_esp_ax_dtl_13
 			}
 			cas_bass_body_fade = {
@@ -2014,16 +2014,16 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = yellow_green_1guitar
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = none
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = green_2guitar
@@ -2035,28 +2035,28 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = yellow_green_2guitar
 				}
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type3_Blk_2
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type3_blk_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass17_Bridge_4str_04
-				chosen_materials = {
-					material1 = grey_3guitar
-				}
-			}
-			CAS_Bass_Knobs = {
-				desc_id = Bass17_ESP_Knob_10
+			cas_bass_bridges = {
+				desc_id = bass17_bridge_4str_04
 				chosen_materials = {
 					material1 = grey_3guitar
 				}
 			}
-			CAS_Drums = {
+			cas_bass_knobs = {
+				desc_id = bass17_esp_knob_10
+				chosen_materials = {
+					material1 = grey_3guitar
+				}
+			}
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -2065,54 +2065,54 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld19
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld94
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = Ice
+		name = 0x34b07bf1
 		fullname = qs(0x1f286295)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		locked
 		preset_icon = photo_casey
 		blurb = qs(0x8f53b4f6)
 		ghrocker
 		appearance = {
-			genre = Pop
-			CAS_Full_Body = {
-				desc_id = Ice
+			genre = pop
+			cas_full_body = {
+				desc_id = 0x34b07bf1
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr1_sch_tempest
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr1_sch_tempest_body_ld2
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
@@ -2121,22 +2121,22 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = teal_2
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = none
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr1_sch_neckhead_1
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_head_fade = {
@@ -2145,31 +2145,31 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = teal_1
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr1_sch_pickguard_01
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr12_bridge_3
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = capit
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = fg101trpl
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bas_ibz_sr505
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_ibz_sr_ld00
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bs_ibz_sr_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -2178,22 +2178,22 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24black
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24black
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = neck_inlay_fl_blank
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bas_ibz_sr_head01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = gh5_solidcolor
 				chosen_materials = {
 					material1 = red_3
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_ibz_sr_hd_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -2202,34 +2202,34 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = basslines2
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = capsule
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_sixties
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld90
 				chosen_materials = {
 					material1 = teal_3
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = drumshell_ds_20
 				chosen_materials = {
 					material1 = blue_2
@@ -2244,36 +2244,36 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Hilda
+		name = 0xac5841ce
 		fullname = qs(0xb0cf676d)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		locked
 		preset_icon = photo_casey
 		blurb = qs(0x508dc47d)
 		ghrocker
 		appearance = {
-			genre = Pop
-			CAS_Full_Body = {
-				desc_id = Hilda
+			genre = pop
+			cas_full_body = {
+				desc_id = 0xac5841ce
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr82_prs_se1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr78_prs_sc_ld02
 				chosen_materials = {
 					material1 = violet_1
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
@@ -2282,52 +2282,52 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = violet_3
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = none
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr80_neckhead_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = violet_1
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = gtr80_neckhead_dtl03
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_straightbridge
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = dice
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = chrmhum
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bass14_esp_surveyor_d
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_body_fade = {
@@ -2336,70 +2336,70 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = green_3guitar
 				}
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_02
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = green_3guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_01
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Knobs = {
-				desc_id = Bass14_ESP_Knob_10_04
+			cas_bass_knobs = {
+				desc_id = bass14_esp_knob_10_04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_sixties
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld93
 				chosen_materials = {
 					material1 = yellow_1guitar
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld17
 			}
 			cas_drums_sticks_l = {
@@ -2411,36 +2411,36 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = Flaminga
+		name = 0x762b3235
 		fullname = qs(0xb5f0972a)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		locked
-		preset_icon = photo_Pandora
+		preset_icon = photo_pandora
 		blurb = qs(0x7772795f)
 		ghrocker
 		appearance = {
-			genre = Goth
-			CAS_Full_Body = {
-				desc_id = Flaminga
+			genre = goth
+			cas_full_body = {
+				desc_id = 0x762b3235
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 				bones = {
-					Physique = 0.0
+					physique = 0.0
 				}
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr93_dr_siren
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr93_dr_siren_ld06
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr93_dr_siren_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -2449,22 +2449,22 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_22fret_Fretboard_01
+			cas_guitar_neck = {
+				desc_id = gtr_22fret_fretboard_01
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = none
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr93_dr_neckhead02
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr90_neckhead01_ld02
 				chosen_materials = {
 					material1 = violet_1
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr90_neckhead01_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -2473,98 +2473,98 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr94_bridge
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = capit_daisy1
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = hz
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass17_esp_ec_01
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass17_esp_EC_LD_11
+			cas_bass_finish = {
+				desc_id = bass17_esp_ec_ld_11
 				chosen_materials = {
 					material1 = violet_4
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass17_esp_ax_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24black
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24black
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bass_fretboard_24_inlay_01
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_03
+			cas_bass_head = {
+				desc_id = bass14_neckhead_03
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead3_dtl_01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type3_Blk_2
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type3_blk_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = bass17_bridge_4str_05
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = bass17_knob_02
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_blackmetal
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld68
 			}
-			CAS_Drum_Finish = {
-				desc_id = popshell_09
+			cas_drum_finish = {
+				desc_id = 0xb23b8f51
 			}
 			cas_drums_sticks_l = {
 				desc_id = drm_stick_l
@@ -2575,39 +2575,39 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = boombox
+		name = 0xa2de9ea8
 		fullname = qs(0x625b12a5)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		locked
 		preset_icon = photo_axel
 		blurb = qs(0xf3183df9)
 		ghrocker
 		appearance = {
-			genre = Pop
-			CAS_Full_Body = {
-				desc_id = boombox
+			genre = pop
+			cas_full_body = {
+				desc_id = 0xa2de9ea8
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr12_esp_v_01
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr12_esp_v_series_ld_01_color
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr12_esp_v_series_dtl_7b
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
@@ -2616,64 +2616,64 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_03
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld03_hero_tribal
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr12_neckhead_07
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr33_nhead_dtl03
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr12_bridge_1
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr12_esp_knob_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickups = {
-				desc_id = GTR1_ESP_EMG_Pkup_2
+			cas_guitar_pickups = {
+				desc_id = gtr1_esp_emg_pkup_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass_schect_030
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_bod04_ld01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bs_sch_bod04_dtl21
 			}
 			cas_bass_body_fade = {
@@ -2682,22 +2682,22 @@ Preset_Musician_Profiles_Modifiable = [
 					material1 = orange_5
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch_inl_ld44
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_030_nhead01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = gh5_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_sch_04_hd_dtl09
 				chosen_materials = {
 					material1 = grey_2guitar
@@ -2706,34 +2706,34 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_030_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = basslines1b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schbb104
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_sixties
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_sixties
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld61
 				chosen_materials = {
 					material1 = yellow_orange_2
 				}
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = gh5_shell_ld25
 				chosen_materials = {
 					material1 = yellow_orange_3
@@ -2748,37 +2748,37 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 	{
-		name = vbot
-		fullname = qs("\LElectrika Steel")
+		name = 0x6eb102a0
+		fullname = qs(0x24f300ab)
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		locked
-		preset_icon = photo_Pandora
-		blurb = qs("Electrika Steel")
+		preset_icon = photo_pandora
+		blurb = qs(0x5c7973e8)
 		ghrocker
-		limited
+		0x275fa9d8
 		appearance = {
-			genre = Pop
-			CAS_Full_Body = {
-				desc_id = vbot
+			genre = pop
+			cas_full_body = {
+				desc_id = 0x6eb102a0
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 				bones = {
-					Physique = 0.0
+					physique = 0.0
 				}
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr93_dr_siren
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr93_dr_siren_ld06
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr93_dr_siren_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -2787,22 +2787,22 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_22fret_Fretboard_01
+			cas_guitar_neck = {
+				desc_id = gtr_22fret_fretboard_01
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = none
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr93_dr_neckhead02
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr90_neckhead01_ld02
 				chosen_materials = {
 					material1 = violet_1
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr90_neckhead01_dtl01
 				chosen_materials = {
 					material1 = grey_5guitar
@@ -2811,98 +2811,98 @@ Preset_Musician_Profiles_Modifiable = [
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr94_bridge
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = capit_daisy1
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = hz
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass17_esp_ec_01
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass17_esp_EC_LD_11
+			cas_bass_finish = {
+				desc_id = bass17_esp_ec_ld_11
 				chosen_materials = {
 					material1 = violet_4
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass17_esp_ax_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24black
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24black
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bass_fretboard_24_inlay_01
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_03
+			cas_bass_head = {
+				desc_id = bass14_neckhead_03
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead3_dtl_01
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type3_Blk_2
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type3_blk_2
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = bass17_bridge_4str_05
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = bass17_knob_02
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_blackmetal
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = gh5_skin_ld68
 			}
-			CAS_Drum_Finish = {
-				desc_id = popshell_09
+			cas_drum_finish = {
+				desc_id = 0xb23b8f51
 			}
 			cas_drums_sticks_l = {
 				desc_id = drm_stick_l
@@ -2913,32 +2913,32 @@ Preset_Musician_Profiles_Modifiable = [
 		}
 	}
 ]
-Preset_Musician_Profiles_Locked = [
+preset_musician_profiles_locked = [
 	{
-		name = GH_Rocker_AdamLevine
-		fullname = qs("\LAdam Levine")
+		name = 0xb1e2942d
+		fullname = qs(0x1198e746)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
+		preset_icon = photo_eddie
 		blurb = qs(0xdae30c0a)
 		no_random_pick
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = adamlevine
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x34ef4e62
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr81_prs_miramt
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr81_prs_mt_ld01
 				chosen_materials = {
 					material1 = teal_5
@@ -2947,103 +2947,103 @@ Preset_Musician_Profiles_Locked = [
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_02
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_02
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld81_prs_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr81_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr81_pguard
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = custom_color_esp
 				chosen_materials = {
 					material1 = grey_5
 				}
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_bridge01
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = lampshade
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = duncanbodbl
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass_schect_030
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_mt_dtl01
 				chosen_materials = {
 					material1 = navy_4
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22c
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch22_inl_ld47
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_t_nhead
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = bass_neckhead_mt
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_gh5
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_t_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schsimple
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = knurled
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -3052,58 +3052,58 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = drumshell_ds_46
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Drum_Detail = {
-				desc_id = GH5_Skin_LD57
+			cas_drum_detail = {
+				desc_id = gh5_skin_ld57
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_AdamLevine_CareerOnly
-		fullname = qs("\LAdam Levine")
+		name = 0x3c17a2c4
+		fullname = qs(0x1198e746)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		Win_Anims = [
+		win_anims = [
 			s_jeff_win_waving
 		]
-		Lose_Anims = [
+		lose_anims = [
 			s_jeff_lose_walkoff
 		]
-		preset_icon = photo_Eddie
+		preset_icon = photo_eddie
 		blurb = qs(0xdae30c0a)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = adamlevine
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x34ef4e62
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr81_prs_miramt
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr81_prs_mt_ld01
 				chosen_materials = {
 					material1 = teal_5
@@ -3112,103 +3112,103 @@ Preset_Musician_Profiles_Locked = [
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_02
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_02
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld81_prs_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr81_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr81_pguard
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = custom_color_esp
 				chosen_materials = {
 					material1 = grey_5
 				}
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_bridge01
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = lampshade
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = duncanbodbl
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass_schect_030
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_sch_mt_dtl01
 				chosen_materials = {
 					material1 = navy_4
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22c
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bs_sch22_inl_ld47
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bs_sch_t_nhead
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = bass_neckhead_mt
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_gh5
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = bs_sch_t_pga
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = schsimple
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = knurled
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -3217,148 +3217,148 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = drumshell_ds_46
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Drum_Detail = {
-				desc_id = GH5_Skin_LD57
+			cas_drum_detail = {
+				desc_id = gh5_skin_ld57
 				chosen_materials = {
 					material1 = red_1
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TaylorSwift
-		fullname = qs("\LTaylor Swift")
+		name = 0x89438ada
+		fullname = qs(0x3a7cbe0e)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Taylor Swift.")
+		preset_icon = photo_eddie
+		blurb = qs(0x0d55e394)
 		no_random_pick
 		locked
-		limited
+		0x275fa9d8
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TaylorSwift
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x6fa5db01
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
-				desc_id = gtr142_g6e_body
+			cas_guitar_body = {
+				desc_id = 0x07a1f6b0
 			}
-			CAS_Guitar_Finish = {
-				desc_id = gtr142_dtl010
+			cas_guitar_finish = {
+				desc_id = 0xceb81032
 			}
-			CAS_Guitar_Body_Detail = {
-				desc_id = gtr142_bind001
+			cas_guitar_body_detail = {
+				desc_id = 0x7a326c77
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_22fret_Fretboard_04
+			cas_guitar_neck = {
+				desc_id = gtr_22fret_fretboard_04
 			}
-			CAS_Guitar_Neck_Finish = {
-				desc_id = 22_fret_Taylor_dots
+			cas_guitar_neck_finish = {
+				desc_id = 0x39aab659
 			}
-			CAS_Guitar_Head = {
-				desc_id = GTR142_neckhead
+			cas_guitar_head = {
+				desc_id = gtr142_neckhead
 			}
-			CAS_Guitar_Head_Finish = {
-				desc_id = gtr142_nkhead_dtl009
+			cas_guitar_head_finish = {
+				desc_id = 0x1d747ba2
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
-				desc_id = gtr142_g6e_bridg
+			cas_guitar_bridges = {
+				desc_id = 0x4d77968c
 			}
-			CAS_Guitar_Knobs = {
-				desc_id = gtr142_knob001
+			cas_guitar_knobs = {
+				desc_id = 0xeaa46f70
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = banjo1
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bass17_esp_ec_01
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bass17_esp_ax_d
 				chosen_materials = {
 					material1 = yellow_4guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_body_fade = {
 				desc_id = bass17_esp_ax_dtl_04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_05
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_05
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_03
+			cas_bass_head = {
+				desc_id = bass14_neckhead_03
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = yellow_4guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = none_gh5
 			}
 			cas_bass_head_fade = {
 				desc_id = bass9_neckhead3_dtl_04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
 					material1 = grey_2guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass17_Bridge_4str_04
+			cas_bass_bridges = {
+				desc_id = bass17_bridge_4str_04
 			}
-			CAS_Bass_Knobs = {
-				desc_id = Bass17_ESP_Knob_10
+			cas_bass_knobs = {
+				desc_id = bass17_esp_knob_10
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -3367,260 +3367,260 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
-				desc_id = GH5_Skin_LD42
+			cas_drum_detail = {
+				desc_id = gh5_skin_ld42
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TaylorSwift2
-		fullname = qs("\LTaylor Swift2")
+		name = 0xae5829c0
+		fullname = qs(0x5f2add08)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Taylor Swift2.")
+		preset_icon = photo_eddie
+		blurb = qs(0x3de61082)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TaylorSwift2
+			genre = rock
+			cas_full_body = {
+				desc_id = 0xbfbfc4cd
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
 			$preset_musician_instrument_hack
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TaylorSwift3
-		fullname = qs("\LTaylor Swift3")
+		name = 0xd95f1956
+		fullname = qs(0x4631ec49)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Taylor Swift3.")
+		preset_icon = photo_eddie
+		blurb = qs(0x855a77e7)
 		intro_anims = [
-			G_Taylor_Win_Waving
+			0x5d15ec08
 		]
-		Win_Anims = [
-			G_Taylor_Win_Waving
+		win_anims = [
+			0x5d15ec08
 		]
-		Lose_Anims = [
-			G_Taylor_Lose_Depressed
+		lose_anims = [
+			0xf3ed7646
 		]
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TaylorSwift3
+			genre = rock
+			cas_full_body = {
+				desc_id = 0xc8b8f45b
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
 			$preset_musician_instrument_hack
-			CAS_Guitar_Body = {
-				desc_id = gtr142_g6e_body
+			cas_guitar_body = {
+				desc_id = 0x07a1f6b0
 			}
-			CAS_Guitar_Finish = {
-				desc_id = gtr142_g6e_body
+			cas_guitar_finish = {
+				desc_id = 0x07a1f6b0
 			}
-			CAS_Guitar_Body_Detail = {
-				desc_id = gtr142_bind001
+			cas_guitar_body_detail = {
+				desc_id = 0x7a326c77
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_22fret_Fretboard_04
+			cas_guitar_neck = {
+				desc_id = gtr_22fret_fretboard_04
 			}
-			CAS_Guitar_Neck_Finish = {
-				desc_id = 22_fret_Taylor_dots
+			cas_guitar_neck_finish = {
+				desc_id = 0x39aab659
 			}
-			CAS_Guitar_Head = {
-				desc_id = GTR142_neckhead
+			cas_guitar_head = {
+				desc_id = gtr142_neckhead
 			}
-			CAS_Guitar_Head_Finish = {
-				desc_id = gtr142_nkhead_dtl009
+			cas_guitar_head_finish = {
+				desc_id = 0x1d747ba2
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
-				desc_id = gtr142_g6e_bridg
+			cas_guitar_bridges = {
+				desc_id = 0x4d77968c
 			}
-			CAS_Guitar_Knobs = {
-				desc_id = gtr142_knob001
+			cas_guitar_knobs = {
+				desc_id = 0xeaa46f70
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = banjo1
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_cash
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = micstand_cash
 			}
 		}
 	}
 	{
-		name = GH_Rocker_GwenStefani
-		fullname = qs("\LGwen Stefani")
+		name = 0x48d89fb1
+		fullname = qs(0x3cdee9de)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Gwen Stefani.")
+		preset_icon = photo_eddie
+		blurb = qs(0x7962e47e)
 		no_random_pick
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = GwenStefani
+			genre = rock
+			cas_full_body = {
+				desc_id = 0xae3ece6a
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr33_boris
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr33_kh2_wood_d_color
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = none_esp
 			}
-			CAS_Guitar_Neck = {
-				desc_id = GTR_24fret_Fretboard_01
+			cas_guitar_neck = {
+				desc_id = gtr_24fret_fretboard_01
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 24fret_ld86_esp_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr33_nekhed_01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr33_bridge_fr
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr_33_knobs_b
 			}
-			CAS_Guitar_Pickups = {
-				desc_id = GTR30_EMG
+			cas_guitar_pickups = {
+				desc_id = gtr30_emg
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bas_ibz_sr505
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_ibz_sr_ld00
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bass_ibz24_inlay_62
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bas_ibz_sr_head01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_ibz_sr_hd_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = ibz01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -3629,190 +3629,190 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_GwenStefani2
-		fullname = qs("\LGwen Stefani2")
+		name = 0x74f90a05
+		fullname = qs(0x2b1ddae2)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Gwen Stefani2.")
+		preset_icon = photo_eddie
+		blurb = qs(0x0713ea70)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = GwenStefani2
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x651ee708
 			}
 			cas_physique = {
-				desc_id = FemalePhysique
+				desc_id = femalephysique
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 			$preset_musician_instrument_hack
 		}
 	}
 	{
-		name = GH_Rocker_TomDumont
-		fullname = qs("\LTom Dumont")
+		name = 0xbb7f03d4
+		fullname = qs(0xe7c54951)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Tom Dumont")
+		preset_icon = photo_eddie
+		blurb = qs(0x65d18445)
 		no_random_pick
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TomDumont
+			genre = rock
+			cas_full_body = {
+				desc_id = 0xd3959486
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr73_sch_s1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr73_sch_s1_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr73_sch_s1_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22_fret_ld49_shctr_block
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr73_neckhead_04
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr73_pg1
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr72_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = speedknobs
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = emg81dbl
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_ESP_Surveyor_D_color
+			cas_bass_finish = {
+				desc_id = bass14_esp_surveyor_d_color
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass14_esp_ax_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_05
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_05
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_01
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -3821,153 +3821,153 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TonyKanal
-		fullname = qs("\LTony Kanal")
+		name = 0x35ef70f9
+		fullname = qs(0x5cb56267)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Tony Kanal")
+		preset_icon = photo_eddie
+		blurb = qs(0xdea1af73)
 		no_random_pick
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TonyKanal
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x5d05e7ab
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr82_prs_se1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr78_prs_sc_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr78_prs_sc_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
 				desc_id = gtr78_prs_sc_dtl04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld114_prs_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr82_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = gtr82_neckhead_01_dtl04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr82_pguard
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = custom_color_esp
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_bridge01
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = tophat02
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = chrmhum
 			}
-			CAS_Bass_Body = {
-				desc_id = bass110_tony1
+			cas_bass_body = {
+				desc_id = 0xf086e191
 			}
-			CAS_Bass_Finish = {
-				desc_id = bass111_tony_ld06
+			cas_bass_finish = {
+				desc_id = 0xb4e66f46
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = bass_fretboard_22_ld110_nodoubt
+			cas_bass_neck_finish = {
+				desc_id = 0xe0e1500a
 			}
-			CAS_Bass_Head = {
-				desc_id = bass110_neckhead
+			cas_bass_head = {
+				desc_id = 0x9efa255a
 			}
-			CAS_Bass_Head_Finish = {
-				desc_id = bass110_neckhead_ld02
+			cas_bass_head_finish = {
+				desc_id = 0x2122cdda
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
-				desc_id = bass111_pg
+			cas_bass_pickguards = {
+				desc_id = 0xfdd9b49c
 			}
-			CAS_Bass_Pickups = {
-				desc_id = bass110_pickup
+			cas_bass_pickups = {
+				desc_id = 0xbaf1c67b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = hardtail
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -3976,156 +3976,156 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_AdrianYoung
-		fullname = qs("\LAdrian Young")
+		name = 0xd813f600
+		fullname = qs(0x34c37d34)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Adrian Young")
+		preset_icon = photo_eddie
+		blurb = qs(0x5fd78db6)
 		no_random_pick
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = AdrianYoung
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x3ef5a7db
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr73_sch_s1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr73_sch_s1_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr73_sch_s1_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22_fret_ld49_shctr_block
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr73_neckhead_04
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr73_pg1
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr72_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = speedknobs
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = emg81dbl
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bas_ibz_sr505
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_ibz_sr_ld00
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bass_ibz24_inlay_62
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bas_ibz_sr_head01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_ibz_sr_hd_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = ibz01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -4134,169 +4134,169 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TomDumont_CareerOnly
-		fullname = qs("\LTom Dumont")
+		name = 0x47f4d11c
+		fullname = qs(0xe7c54951)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
 		intro_anims = [
-			g_noDoubt_win_waving
+			0x38b7f748
 		]
-		Win_Anims = [
-			g_noDoubt_win_waving
+		win_anims = [
+			0x38b7f748
 		]
-		Lose_Anims = [
-			g_noDoubt_lose_depressed
+		lose_anims = [
+			0xd9632956
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Tom Dumont")
+		preset_icon = photo_eddie
+		blurb = qs(0x65d18445)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TomDumont
+			genre = rock
+			cas_full_body = {
+				desc_id = 0xd3959486
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr73_sch_s1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr73_sch_s1_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr73_sch_s1_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22_fret_ld49_shctr_block
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr73_neckhead_04
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr73_pg1
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr72_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = speedknobs
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = emg81dbl
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_ESP_Surveyor_D_color
+			cas_bass_finish = {
+				desc_id = bass14_esp_surveyor_d_color
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass14_esp_ax_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_05
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_05
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_01
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -4305,163 +4305,163 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TonyKanal_CareerOnly
-		fullname = qs("\LTony Kanal")
+		name = 0x9ba6f881
+		fullname = qs(0x5cb56267)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
 		intro_anims = [
-			b_noDoubt_win_waving
+			0x133d2757
 		]
-		Win_Anims = [
-			b_noDoubt_win_waving
+		win_anims = [
+			0x133d2757
 		]
-		Lose_Anims = [
-			b_noDoubt_lose_depressed
+		lose_anims = [
+			0x3140d22e
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Tony Kanal")
+		preset_icon = photo_eddie
+		blurb = qs(0xdea1af73)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TonyKanal
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x5d05e7ab
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr82_prs_se1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr78_prs_sc_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr78_prs_sc_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
 				desc_id = gtr78_prs_sc_dtl04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld114_prs_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr82_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = gtr82_neckhead_01_dtl04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr82_pguard
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = custom_color_esp
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_bridge01
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = tophat02
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = chrmhum
 			}
-			CAS_Bass_Body = {
-				desc_id = bass110_tony1
+			cas_bass_body = {
+				desc_id = 0xf086e191
 			}
-			CAS_Bass_Finish = {
-				desc_id = bass111_tony_ld06
+			cas_bass_finish = {
+				desc_id = 0xb4e66f46
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = bass_fretboard_22_ld110_nodoubt
+			cas_bass_neck_finish = {
+				desc_id = 0xe0e1500a
 			}
-			CAS_Bass_Head = {
-				desc_id = bass110_neckhead
+			cas_bass_head = {
+				desc_id = 0x9efa255a
 			}
-			CAS_Bass_Head_Finish = {
-				desc_id = bass110_neckhead_ld02
+			cas_bass_head_finish = {
+				desc_id = 0x2122cdda
 			}
-			CAS_Bass_Head_Detail = {
-				desc_id = bass110_neckhead_dtl02
+			cas_bass_head_detail = {
+				desc_id = 0x9909e18f
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
-				desc_id = bass111_pg
+			cas_bass_pickguards = {
+				desc_id = 0xfdd9b49c
 			}
-			CAS_Bass_Pickups = {
-				desc_id = bass110_pickup
+			cas_bass_pickups = {
+				desc_id = 0xbaf1c67b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = hardtail
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -4470,169 +4470,169 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TomDumont2
-		fullname = qs("\LTom Dumont")
+		name = 0x49d2384e
+		fullname = qs(0xe7c54951)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
 		intro_anims = [
-			g_noDoubt_win_waving
+			0x38b7f748
 		]
-		Win_Anims = [
-			g_noDoubt_win_waving
+		win_anims = [
+			0x38b7f748
 		]
-		Lose_Anims = [
-			g_noDoubt_lose_depressed
+		lose_anims = [
+			0xd9632956
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Tom Dumont")
+		preset_icon = photo_eddie
+		blurb = qs(0x65d18445)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TomDumont
+			genre = rock
+			cas_full_body = {
+				desc_id = 0xd3959486
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr73_sch_s1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr73_sch_s1_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr73_sch_s1_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22_fret_ld49_shctr_block
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr73_neckhead_04
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr73_pg1
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr72_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = speedknobs
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = emg81dbl
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_ESP_Surveyor_D_color
+			cas_bass_finish = {
+				desc_id = bass14_esp_surveyor_d_color
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = bass14_esp_ax_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_05
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_05
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_01
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -4641,163 +4641,163 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TonyKanal2
-		fullname = qs("\LTony Kanal")
+		name = 0x0c83f448
+		fullname = qs(0x5cb56267)
 		allowed_parts = [
-			Bass
+			bass
 			drum
 			guitar
-			Vocals
+			vocals
 		]
 		intro_anims = [
-			b_noDoubt_win_waving
+			0x133d2757
 		]
-		Win_Anims = [
-			b_noDoubt_win_waving
+		win_anims = [
+			0x133d2757
 		]
-		Lose_Anims = [
-			b_noDoubt_lose_depressed
+		lose_anims = [
+			0x3140d22e
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Tony Kanal")
+		preset_icon = photo_eddie
+		blurb = qs(0xdea1af73)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = TonyKanal
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x5d05e7ab
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr82_prs_se1
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr78_prs_sc_ld02
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr78_prs_sc_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_guitar_body_fade = {
 				desc_id = gtr78_prs_sc_dtl04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld114_prs_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr82_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = gtr82_neckhead_01_dtl04
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr82_pguard
 			}
-			CAS_Guitar_Pickguard_Finish = {
+			cas_guitar_pickguard_finish = {
 				desc_id = custom_color_esp
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr78_bridge01
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = tophat02
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = chrmhum
 			}
-			CAS_Bass_Body = {
-				desc_id = bass110_tony1
+			cas_bass_body = {
+				desc_id = 0xf086e191
 			}
-			CAS_Bass_Finish = {
-				desc_id = bass110_tony_ld06
+			cas_bass_finish = {
+				desc_id = 0x7568b086
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
+			cas_bass_neck = {
 				desc_id = bass_fretboard_22d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = bass_fretboard_22_ld110_nodoubt
+			cas_bass_neck_finish = {
+				desc_id = 0xe0e1500a
 			}
-			CAS_Bass_Head = {
-				desc_id = bass110_neckhead
+			cas_bass_head = {
+				desc_id = 0x9efa255a
 			}
-			CAS_Bass_Head_Finish = {
-				desc_id = bass110_neckhead_d
+			cas_bass_head_finish = {
+				desc_id = 0x7cac1bb9
 			}
-			CAS_Bass_Head_Detail = {
-				desc_id = bass110_neckhead_dtl02
+			cas_bass_head_detail = {
+				desc_id = 0x9909e18f
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
-				desc_id = bass110_pg
+			cas_bass_pickguards = {
+				desc_id = 0x4565d3f9
 			}
-			CAS_Bass_Pickups = {
-				desc_id = bass110_pickup
+			cas_bass_pickups = {
+				desc_id = 0xbaf1c67b
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = hardtail
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 			}
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -4806,54 +4806,54 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = none
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Mic = {
+			cas_mic = {
 				desc_id = mic_standard
 			}
-			CAS_Mic_Stand = {
+			cas_mic_stand = {
 				desc_id = mic_stand_rock
 			}
 		}
 	}
 	{
-		name = GH_Rocker_AdrianYoung_Drummer
-		fullname = qs("\LAdrianYoung")
+		name = 0x908cf9f8
+		fullname = qs(0x7e29918f)
 		allowed_parts = [
 			drum
 		]
 		intro_anims = [
 			d_jeff_win_waving
 		]
-		Win_Anims = [
+		win_anims = [
 			d_jeff_win_waving
 		]
-		Lose_Anims = [
+		lose_anims = [
 			d_jeff_lose_depressed
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("I am Adrian Young")
+		preset_icon = photo_eddie
+		blurb = qs(0x5fd78db6)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
-			genre = Rock
-			CAS_Full_Body = {
-				desc_id = AdrianYoung
+			genre = rock
+			cas_full_body = {
+				desc_id = 0x3ef5a7db
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
 			$preset_musician_instrument_hack
-			CAS_Drums = {
-				desc_id = nodoubt_drums
+			cas_drums = {
+				desc_id = 0xb55d6fa6
 			}
 			cas_drums_sticks_l = {
 				desc_id = drm_stick_l
@@ -4861,106 +4861,106 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
-				desc_id = drumshell_nodoubt
+			cas_drum_finish = {
+				desc_id = 0xeaeb9e1a
 			}
-			CAS_Drum_Detail = {
-				desc_id = bass_skin_ocdp_d
+			cas_drum_detail = {
+				desc_id = 0x973d4a7d
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TaylorSwift_Guitarist
-		fullname = qs("\LGH_Rocker_TaylorSwift_Guitarist")
+		name = 0x6afc4e96
+		fullname = qs(0xf4cfe004)
 		allowed_parts = [
 			guitar
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Taylor Swift's Guitarist.")
+		preset_icon = photo_eddie
+		blurb = qs(0xc747b4cc)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
 			body_preset_index = 0
-			genre = Pop
-			CAS_Male_Base_Torso = {
+			genre = pop
+			cas_male_base_torso = {
 				desc_id = male_full
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Body = {
-				desc_id = GH4_CAR_Male
+			cas_body = {
+				desc_id = gh4_car_male
 				cap = [
 					{
-						base_tex = `tex/models/Characters/Global/Global_Blank_Head_dnc`
-						material = CAR_Male_Head
-						Cas_1
+						base_tex = `tex/models/characters/global/global_blank_head_dnc`
+						material = car_male_head
+						cas_1
 						post_layer = [
 							{
-								texture = `tex/models/Characters/Layers/CAR/Male/Makeup/CAR_Male_EYELINER_01`
+								texture = `tex/models/characters/layers/car/male/makeup/car_male_eyeliner_01`
 								flags = 4
 							}
 						]
 					}
 				]
 				bones = {
-					EyeShape = 0.0
-					EyeCornerShape = 0.1
-					EyePosition = -0.43
-					EyeDistance = -0.3
-					MouthScale = 0.176
-					EyebrowSize = 0.625
-					EyebrowDistance = -0.9
-					BrowPosition = 0.2
-					EyebrowAngle = 0.3
-					ChinWidth = 0.9
-					NoseWidth = 0.23300001
-					MouthPosition = 0.237
-					EyeScale = 0.614
-					EyeAngle = 0.5
-					FaceFullness = 0.7
+					eyeshape = 0.0
+					eyecornershape = 0.1
+					eyeposition = -0.43
+					eyedistance = -0.3
+					mouthscale = 0.176
+					eyebrowsize = 0.625
+					eyebrowdistance = -0.9
+					browposition = 0.2
+					eyebrowangle = 0.3
+					chinwidth = 0.9
+					nosewidth = 0.23300001
+					mouthposition = 0.237
+					eyescale = 0.614
+					eyeangle = 0.5
+					facefullness = 0.7
 				}
 			}
-			CAS_Eyes = {
+			cas_eyes = {
 				desc_id = eyes_brown
 			}
-			CAS_Male_Hair = {
-				desc_id = M_Glam_Hair_Izzy1
+			cas_male_hair = {
+				desc_id = m_glam_hair_izzy1
 				chosen_materials = {
 					material1 = carblack_1
 				}
 			}
-			CAS_Male_Torso = {
-				desc_id = M_Pop_Torso_Suit
+			cas_male_torso = {
+				desc_id = m_pop_torso_suit
 				chosen_materials = {
 					material1 = carblack_1
 					material4 = red_2
 				}
 			}
-			CAS_Male_Legs = {
-				desc_id = M_Metl_Legs_Axel5
+			cas_male_legs = {
+				desc_id = 0xe7825b3c
 			}
-			CAS_Male_Shoes = {
-				desc_id = M_Rock_Shoe_JCashChelsea
+			cas_male_shoes = {
+				desc_id = m_rock_shoe_jcashchelsea
 			}
-			CAS_Male_Age = {
-				desc_id = CAR_Male_Teen
+			cas_male_age = {
+				desc_id = car_male_teen
 			}
-			CAS_Male_Teeth = {
-				desc_id = CAR_male_teeth
+			cas_male_teeth = {
+				desc_id = car_male_teeth
 			}
 			$preset_musician_instrument_hack
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr79_prs_cstm24
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr79_prs_ctm24_dtl06
 				chosen_materials = {
 					material1 = yellow_2guitar
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gtr79_prs_ctm24_ld01
 				chosen_materials = {
 					material1 = orange_5
@@ -4972,22 +4972,22 @@ Preset_Musician_Profiles_Locked = [
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_22fret_fretboard_03
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld114_prs_dots
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr82_neckhead01
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = espcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = gtr82_neckhead_06
 			}
 			cas_guitar_head_fade = {
@@ -4996,275 +4996,275 @@ Preset_Musician_Profiles_Locked = [
 					material1 = red_1
 				}
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = none
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr79_whammy
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = lampshade
 				chosen_materials = {
 					material1 = orange_2
 				}
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = chrmhum
 				chosen_materials = {
 					material1 = yellow_4guitar
 				}
 			}
-			CAS_Guitar_Misc = {
+			cas_guitar_misc = {
 				desc_id = misc_switch
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TaylorSwift_Bassist
-		fullname = qs("\LGH_Rocker_TaylorSwift_Bassist")
+		name = 0x0e82efc2
+		fullname = qs(0x94725ecc)
 		allowed_parts = [
-			Bass
+			bass
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Taylor Swift's Bassist.")
+		preset_icon = photo_eddie
+		blurb = qs(0x8864aa53)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
 			body_preset_index = 0
-			genre = Pop
-			CAS_Male_Base_Torso = {
+			genre = pop
+			cas_male_base_torso = {
 				desc_id = male_full
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Body = {
-				desc_id = GH4_CAR_Male
+			cas_body = {
+				desc_id = gh4_car_male
 				bones = {
-					NoseWidth = 0.2
-					NoseLength = 0.6
-					NoseAngle = 0.367
-					NoseSize = 0.8
-					NoseNostrilSize = 0.7
-					NosePosition = 0.77199996
-					MouthPosition = 0.3
-					MouthDepth = 0.1
-					MouthScale = 0.3
-					LipShapeUpper = 1.0
-					LowerLipThickness = 0.0
-					MouthAngle = 0.6
-					EyeCornerShape = 0.6
-					EyeShape = 0.9
-					EyeScale = 0.514
-					EyePosition = -0.13
-					EyeDistance = -0.414
-					EyeAngle = 0.561
-					EyebrowSize = 0.0
-					EyebrowDistance = -0.556
-					BrowPosition = 0.0
-					EyebrowAngle = 0.8
-					ChinWidth = 0.0
-					ChinProminence = 0.4
-					ChinHeight = 0.2
-					CheekboneProminence = 0.6
-					ChinAngle = 0.5
-					CheekboneDepth = 0.1
-					BrowDepth = 0.0
+					nosewidth = 0.2
+					noselength = 0.6
+					noseangle = 0.367
+					nosesize = 0.8
+					nosenostrilsize = 0.7
+					noseposition = 0.77199996
+					mouthposition = 0.3
+					mouthdepth = 0.1
+					mouthscale = 0.3
+					lipshapeupper = 1.0
+					lowerlipthickness = 0.0
+					mouthangle = 0.6
+					eyecornershape = 0.6
+					eyeshape = 0.9
+					eyescale = 0.514
+					eyeposition = -0.13
+					eyedistance = -0.414
+					eyeangle = 0.561
+					eyebrowsize = 0.0
+					eyebrowdistance = -0.556
+					browposition = 0.0
+					eyebrowangle = 0.8
+					chinwidth = 0.0
+					chinprominence = 0.4
+					chinheight = 0.2
+					cheekboneprominence = 0.6
+					chinangle = 0.5
+					cheekbonedepth = 0.1
+					browdepth = 0.0
 				}
 			}
-			CAS_Eyes = {
+			cas_eyes = {
 				desc_id = eyes_hazel
 			}
-			CAS_Male_Hair = {
-				desc_id = M_Metl_Hair_Axel5
+			cas_male_hair = {
+				desc_id = 0x0078b3cc
 			}
-			CAS_Male_Facial_Hair = {
-				desc_id = M_Rock_Fhair_Stub
+			cas_male_facial_hair = {
+				desc_id = m_rock_fhair_stub
 			}
-			CAS_Male_Torso = {
-				desc_id = M_Rock_Torso_JCashVest
+			cas_male_torso = {
+				desc_id = m_rock_torso_jcashvest
 				chosen_materials = {
 					material3 = blue_5
 				}
 			}
-			CAS_Male_Legs = {
-				desc_id = M_Metl_Legs_TooSkinny
+			cas_male_legs = {
+				desc_id = m_metl_legs_tooskinny
 			}
-			CAS_Male_Shoes = {
-				desc_id = M_Spnr_Shoe_VansH_BW
+			cas_male_shoes = {
+				desc_id = m_spnr_shoe_vansh_bw
 			}
-			CAS_Male_Acc_Left = {
-				desc_id = Pop_Acc_LQuinBracelet
+			cas_male_acc_left = {
+				desc_id = 0xf2709175
 			}
-			CAS_Male_Acc_Right = {
-				desc_id = M_Pop_Acc_Rquin3
+			cas_male_acc_right = {
+				desc_id = 0xf89d4641
 			}
-			CAS_Male_Age = {
-				desc_id = CAR_Male_Teen
+			cas_male_age = {
+				desc_id = car_male_teen
 			}
-			CAS_Male_Teeth = {
-				desc_id = CAR_male_teeth
+			cas_male_teeth = {
+				desc_id = car_male_teeth
 			}
 			$preset_musician_instrument_hack
-			CAS_Bass_Body = {
+			cas_bass_body = {
 				desc_id = bas_ibz_sr505
 			}
-			CAS_Bass_Finish = {
+			cas_bass_finish = {
 				desc_id = bs_ibz_sr_ld00
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
+			cas_bass_neck_finish = {
 				desc_id = bass_ibz24_inlay_62
 				chosen_materials = {
 					material1 = teal_5
 				}
 			}
-			CAS_Bass_Head = {
+			cas_bass_head = {
 				desc_id = bas_ibz_sr_head01
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_4guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bs_ibz_sr_hd_dtl02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
+			cas_bass_pickups = {
 				desc_id = emgj
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
+			cas_bass_bridges = {
 				desc_id = ibz01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 		}
 	}
 	{
-		name = GH_Rocker_TaylorSwift_Drummer
-		fullname = qs("\LGH_Rocker_TaylorSwift_Drummer")
+		name = 0x2564c7ff
+		fullname = qs(0xcba094fb)
 		allowed_parts = [
 			drum
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Taylor Swift's Drummer.")
+		preset_icon = photo_eddie
+		blurb = qs(0x63d27e1b)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
 			body_preset_index = 0
-			genre = Pop
-			CAS_Male_Base_Torso = {
+			genre = pop
+			cas_male_base_torso = {
 				desc_id = male_full
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Body = {
-				desc_id = GH4_CAR_Male
+			cas_body = {
+				desc_id = gh4_car_male
 				bones = {
-					NoseWidth = 0.2
-					NoseLength = 0.6
-					NoseNostrilSize = 0.7
-					EyeCornerShape = 0.6
-					EyeShape = 0.9
-					EyebrowSize = 0.0
-					EyebrowDistance = -0.556
-					BrowPosition = 0.0
-					ChinWidth = 0.0
-					ChinProminence = 0.4
-					ChinHeight = 0.2
-					CheekboneProminence = 0.6
-					ChinAngle = 0.5
-					CheekboneDepth = 0.1
-					BrowDepth = 0.0
-					EyeAngle = 0.461
-					EyeDistance = 0.186
-					EyeScale = 0.7
-					NoseSize = 0.6
-					NoseBridge = 0.6
-					NoseTipLength = 0.167
-					NoseTipAngle = 0.6
-					NoseAngle = 0.467
-					LipShapeUpper = 0.0
-					MouthPosition = 0.6
-					MouthScale = 0.3
-					JawProminence = 0.9
-					EarSize = 0.333
-					EarProminence = 0.32600003
-					EyebrowAngle = 0.4
-					MouthAngle = 0.6
-					LowerLipThickness = 0.5
-					MouthDepth = 0.4
-					EyePosition = -0.8
-					NosePosition = 1.0
+					nosewidth = 0.2
+					noselength = 0.6
+					nosenostrilsize = 0.7
+					eyecornershape = 0.6
+					eyeshape = 0.9
+					eyebrowsize = 0.0
+					eyebrowdistance = -0.556
+					browposition = 0.0
+					chinwidth = 0.0
+					chinprominence = 0.4
+					chinheight = 0.2
+					cheekboneprominence = 0.6
+					chinangle = 0.5
+					cheekbonedepth = 0.1
+					browdepth = 0.0
+					eyeangle = 0.461
+					eyedistance = 0.186
+					eyescale = 0.7
+					nosesize = 0.6
+					nosebridge = 0.6
+					nosetiplength = 0.167
+					nosetipangle = 0.6
+					noseangle = 0.467
+					lipshapeupper = 0.0
+					mouthposition = 0.6
+					mouthscale = 0.3
+					jawprominence = 0.9
+					earsize = 0.333
+					earprominence = 0.32600003
+					eyebrowangle = 0.4
+					mouthangle = 0.6
+					lowerlipthickness = 0.5
+					mouthdepth = 0.4
+					eyeposition = -0.8
+					noseposition = 1.0
 				}
 			}
-			CAS_Eyes = {
+			cas_eyes = {
 				desc_id = eyes_blue
 			}
-			CAS_Male_Facial_Hair = {
-				desc_id = M_Rock_Fhair_Goatee01
+			cas_male_facial_hair = {
+				desc_id = m_rock_fhair_goatee01
 				chosen_materials = {
 					material1 = yellow_orange_1
 				}
 			}
-			CAS_Male_Torso = {
-				desc_id = M_Metl_Torso_Unbttond
+			cas_male_torso = {
+				desc_id = m_metl_torso_unbttond
 			}
-			CAS_Male_Legs = {
-				desc_id = M_Punk_Legs_Jny_5
+			cas_male_legs = {
+				desc_id = 0x2069a516
 			}
-			CAS_Male_Shoes = {
-				desc_id = M_Spnr_Shoe_ConverseCS
+			cas_male_shoes = {
+				desc_id = m_spnr_shoe_conversecs
 			}
-			CAS_Male_Acc_Left = {
-				desc_id = M_Punk_Acc_LRings
+			cas_male_acc_left = {
+				desc_id = m_punk_acc_lrings
 			}
-			CAS_Male_Acc_Right = {
-				desc_id = M_Punk_Acc_RRings
+			cas_male_acc_right = {
+				desc_id = m_punk_acc_rrings
 			}
-			CAS_Male_Acc_Ears = {
-				desc_id = M_Punk_Acc_Ring
+			cas_male_acc_ears = {
+				desc_id = m_punk_acc_ring
 			}
-			CAS_Male_Age = {
-				desc_id = CAR_Male_Mature
+			cas_male_age = {
+				desc_id = car_male_mature
 			}
-			CAS_Male_Teeth = {
-				desc_id = CAR_male_teeth
+			cas_male_teeth = {
+				desc_id = car_male_teeth
 			}
 			$preset_musician_instrument_hack
-			CAS_Drums = {
-				desc_id = taylorkit
+			cas_drums = {
+				desc_id = 0xd3bf4af5
 			}
 			cas_drums_sticks_l = {
 				desc_id = drm_stick_l
@@ -5272,436 +5272,436 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = none
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Drum_Detail = {
-				desc_id = bass_skin_swift
+			cas_drum_detail = {
+				desc_id = 0x2d0490e0
 			}
 		}
 	}
 	{
-		name = GH_Rocker_AdamLevine_Guitarist
-		fullname = qs("\LGH_Rocker_AdamLevine_Guitarist")
+		name = 0x01054cb2
+		fullname = qs(0xe08151c2)
 		allowed_parts = [
 			guitar
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Adam Levine's Guitarist.")
+		preset_icon = photo_eddie
+		blurb = qs(0xcd3f49a2)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
 			body_preset_index = 0
-			genre = Pop
-			CAS_Male_Base_Torso = {
+			genre = pop
+			cas_male_base_torso = {
 				desc_id = male_full
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Body = {
-				desc_id = GH4_CAR_Male
+			cas_body = {
+				desc_id = gh4_car_male
 				bones = {
-					NoseWidth = 0.2
-					NoseLength = 0.6
-					NoseAngle = 0.367
-					NoseSize = 0.8
-					NoseNostrilSize = 0.7
-					NosePosition = 0.77199996
-					MouthPosition = 0.3
-					MouthDepth = 0.1
-					MouthScale = 0.3
-					LipShapeUpper = 1.0
-					LowerLipThickness = 0.0
-					MouthAngle = 0.6
-					EyeCornerShape = 0.6
-					EyeShape = 0.9
-					EyeScale = 0.514
-					EyePosition = -0.13
-					EyeDistance = -0.414
-					EyeAngle = 0.561
-					EyebrowSize = 0.0
-					EyebrowDistance = -0.556
-					BrowPosition = 0.0
-					EyebrowAngle = 0.8
-					ChinWidth = 0.0
-					ChinProminence = 0.4
-					ChinHeight = 0.2
-					CheekboneProminence = 0.6
-					ChinAngle = 0.5
-					CheekboneDepth = 0.1
-					BrowDepth = 0.0
+					nosewidth = 0.2
+					noselength = 0.6
+					noseangle = 0.367
+					nosesize = 0.8
+					nosenostrilsize = 0.7
+					noseposition = 0.77199996
+					mouthposition = 0.3
+					mouthdepth = 0.1
+					mouthscale = 0.3
+					lipshapeupper = 1.0
+					lowerlipthickness = 0.0
+					mouthangle = 0.6
+					eyecornershape = 0.6
+					eyeshape = 0.9
+					eyescale = 0.514
+					eyeposition = -0.13
+					eyedistance = -0.414
+					eyeangle = 0.561
+					eyebrowsize = 0.0
+					eyebrowdistance = -0.556
+					browposition = 0.0
+					eyebrowangle = 0.8
+					chinwidth = 0.0
+					chinprominence = 0.4
+					chinheight = 0.2
+					cheekboneprominence = 0.6
+					chinangle = 0.5
+					cheekbonedepth = 0.1
+					browdepth = 0.0
 				}
 			}
-			CAS_Eyes = {
+			cas_eyes = {
 				desc_id = eyes_green
 			}
-			CAS_Male_Hair = {
-				desc_id = M_Metl_Hair_Lars
+			cas_male_hair = {
+				desc_id = m_metl_hair_lars
 				chosen_materials = {
 					material1 = carblack_1
 				}
 			}
-			CAS_Male_Torso = {
-				desc_id = M_Metl_Torso_Unbttond
+			cas_male_torso = {
+				desc_id = m_metl_torso_unbttond
 				chosen_materials = {
 					material1 = blue_3
 				}
 			}
-			CAS_Male_Legs = {
-				desc_id = M_Metl_Legs_TooSkinny
+			cas_male_legs = {
+				desc_id = m_metl_legs_tooskinny
 			}
-			CAS_Male_Shoes = {
-				desc_id = M_Spnr_Shoe_ConverseCS
+			cas_male_shoes = {
+				desc_id = m_spnr_shoe_conversecs
 			}
-			CAS_Male_Acc_Left = {
-				desc_id = M_Rock_Acc_LWatch
+			cas_male_acc_left = {
+				desc_id = m_rock_acc_lwatch
 			}
-			CAS_Male_Acc_Right = {
-				desc_id = M_Rock_Acc_RStrap
+			cas_male_acc_right = {
+				desc_id = m_rock_acc_rstrap
 			}
-			CAS_Male_Age = {
-				desc_id = CAR_Male_Teen
+			cas_male_age = {
+				desc_id = car_male_teen
 			}
-			CAS_Male_Teeth = {
-				desc_id = CAR_male_teeth
+			cas_male_teeth = {
+				desc_id = car_male_teeth
 			}
 			$preset_musician_instrument_hack
-			CAS_Guitar_Body = {
+			cas_guitar_body = {
 				desc_id = gtr38_wv
 			}
-			CAS_Guitar_Finish = {
+			cas_guitar_finish = {
 				desc_id = gtr37_rw_d_color
 				chosen_materials = {
 					material1 = yellow_orange_3
 				}
 			}
-			CAS_Guitar_Body_Detail = {
+			cas_guitar_body_detail = {
 				desc_id = gh5_none
 			}
 			cas_guitar_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Guitar_Neck = {
+			cas_guitar_neck = {
 				desc_id = gtr_fboard_22
 			}
-			CAS_Guitar_Neck_Finish = {
+			cas_guitar_neck_finish = {
 				desc_id = 22fret_ld86_esp_dots
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Guitar_Head = {
+			cas_guitar_head = {
 				desc_id = gtr37_neckhead
 			}
-			CAS_Guitar_Head_Finish = {
+			cas_guitar_head_finish = {
 				desc_id = gtr37_nekhed
 			}
-			CAS_Guitar_Head_Detail = {
+			cas_guitar_head_detail = {
 				desc_id = esp_none
 			}
 			cas_guitar_head_fade = {
 				desc_id = head_fade_none
 			}
-			CAS_Guitar_Pickguards = {
+			cas_guitar_pickguards = {
 				desc_id = gtr37_pguard01
 			}
-			CAS_Guitar_Bridges = {
+			cas_guitar_bridges = {
 				desc_id = gtr37_bridge
 			}
-			CAS_Guitar_Knobs = {
+			cas_guitar_knobs = {
 				desc_id = gtr37_knobs01
 			}
-			CAS_Guitar_Pickups = {
+			cas_guitar_pickups = {
 				desc_id = gtr37_pickup1
 			}
 		}
 	}
 	{
-		name = GH_Rocker_AdamLevine_Bassist
-		fullname = qs("\LGH_Rocker_AdamLevine_Bassist")
+		name = 0x8fdc240e
+		fullname = qs(0x0a3206ae)
 		allowed_parts = [
-			Bass
+			bass
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Adam Levine's Bassist.")
+		preset_icon = photo_eddie
+		blurb = qs(0x2dfc522b)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
 			body_preset_index = 0
-			genre = Pop
-			CAS_Male_Base_Torso = {
+			genre = pop
+			cas_male_base_torso = {
 				desc_id = male_full
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Body = {
-				desc_id = GH4_CAR_Male
+			cas_body = {
+				desc_id = gh4_car_male
 				chosen_materials = {
 					skin = skin_asian3
 				}
 				bones = {
-					NoseWidth = 0.2
-					NoseLength = 0.6
-					NoseNostrilSize = 0.7
-					EyeCornerShape = 0.6
-					EyeShape = 0.9
-					EyebrowSize = 0.0
-					EyebrowDistance = -0.556
-					BrowPosition = 0.0
-					ChinWidth = 0.0
-					ChinProminence = 0.4
-					ChinHeight = 0.2
-					CheekboneProminence = 0.6
-					ChinAngle = 0.5
-					CheekboneDepth = 0.1
-					BrowDepth = 0.0
-					EyeAngle = 0.461
-					EyeDistance = 0.186
-					EyeScale = 0.7
-					NoseSize = 0.6
-					NoseBridge = 0.6
-					NoseTipLength = 0.167
-					NoseTipAngle = 0.6
-					NoseAngle = 0.467
-					LipShapeUpper = 0.0
-					MouthPosition = 0.6
-					MouthScale = 0.3
-					JawProminence = 0.9
-					EarSize = 0.333
-					EarProminence = 0.32600003
-					EyebrowAngle = 0.4
-					MouthAngle = 0.6
-					LowerLipThickness = 0.5
-					MouthDepth = 0.4
-					EyePosition = -0.8
-					NosePosition = 1.0
+					nosewidth = 0.2
+					noselength = 0.6
+					nosenostrilsize = 0.7
+					eyecornershape = 0.6
+					eyeshape = 0.9
+					eyebrowsize = 0.0
+					eyebrowdistance = -0.556
+					browposition = 0.0
+					chinwidth = 0.0
+					chinprominence = 0.4
+					chinheight = 0.2
+					cheekboneprominence = 0.6
+					chinangle = 0.5
+					cheekbonedepth = 0.1
+					browdepth = 0.0
+					eyeangle = 0.461
+					eyedistance = 0.186
+					eyescale = 0.7
+					nosesize = 0.6
+					nosebridge = 0.6
+					nosetiplength = 0.167
+					nosetipangle = 0.6
+					noseangle = 0.467
+					lipshapeupper = 0.0
+					mouthposition = 0.6
+					mouthscale = 0.3
+					jawprominence = 0.9
+					earsize = 0.333
+					earprominence = 0.32600003
+					eyebrowangle = 0.4
+					mouthangle = 0.6
+					lowerlipthickness = 0.5
+					mouthdepth = 0.4
+					eyeposition = -0.8
+					noseposition = 1.0
 				}
 			}
-			CAS_Eyes = {
+			cas_eyes = {
 				desc_id = eyes_blue
 			}
-			CAS_Male_Hair = {
-				desc_id = M_Punk_Hair_Jny_5
+			cas_male_hair = {
+				desc_id = 0xc7934de6
 				chosen_materials = {
 					material1 = yellow_orange_1
 				}
 			}
-			CAS_Male_Torso = {
-				desc_id = M_Torso_TShirt
+			cas_male_torso = {
+				desc_id = m_torso_tshirt
 				chosen_materials = {
 					material1 = grey_3guitar
 				}
 			}
-			CAS_Male_Legs = {
-				desc_id = M_Rock_Legs_Jeans
+			cas_male_legs = {
+				desc_id = m_rock_legs_jeans
 				chosen_materials = {
 					material1 = grey_4
 				}
 			}
-			CAS_Male_Shoes = {
-				desc_id = M_Metl_Shoe_ClscRunr
+			cas_male_shoes = {
+				desc_id = m_metl_shoe_clscrunr
 				chosen_materials = {
 					material1 = carblack_3
 				}
 			}
-			CAS_Male_Acc_Left = {
-				desc_id = M_Rock_Acc_LWatch
+			cas_male_acc_left = {
+				desc_id = m_rock_acc_lwatch
 			}
-			CAS_Male_Acc_Right = {
-				desc_id = M_Rock_Acc_RStripe
+			cas_male_acc_right = {
+				desc_id = m_rock_acc_rstripe
 			}
-			CAS_Male_Age = {
-				desc_id = CAR_Male_Teen
+			cas_male_age = {
+				desc_id = car_male_teen
 			}
-			CAS_Male_Teeth = {
-				desc_id = CAR_male_teeth
+			cas_male_teeth = {
+				desc_id = car_male_teeth
 			}
 			$preset_musician_instrument_hack
-			CAS_Bass_Body = {
-				desc_id = Bass16_ESP_Surveyor_02
+			cas_bass_body = {
+				desc_id = bass16_esp_surveyor_02
 			}
-			CAS_Bass_Finish = {
-				desc_id = Bass14_ESP_Surveyor_D_color
+			cas_bass_finish = {
+				desc_id = bass14_esp_surveyor_d_color
 				chosen_materials = {
 					material1 = orange_3
 				}
 			}
-			CAS_Bass_Body_Detail = {
+			cas_bass_body_detail = {
 				desc_id = none_esp
 			}
 			cas_bass_body_fade = {
 				desc_id = fade_none
 			}
-			CAS_Bass_Neck = {
-				desc_id = Bass_Fretboard_24d
+			cas_bass_neck = {
+				desc_id = bass_fretboard_24d
 			}
-			CAS_Bass_Neck_Finish = {
-				desc_id = Bass_Fretboard_Inlay_05
+			cas_bass_neck_finish = {
+				desc_id = bass_fretboard_inlay_05
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head = {
-				desc_id = Bass14_Neckhead_04
+			cas_bass_head = {
+				desc_id = bass14_neckhead_04
 			}
-			CAS_Bass_Head_Finish = {
+			cas_bass_head_finish = {
 				desc_id = esp_solidcolor
 				chosen_materials = {
 					material1 = grey_5guitar
 				}
 			}
-			CAS_Bass_Head_Detail = {
+			cas_bass_head_detail = {
 				desc_id = bass9_neckhead4_dtl_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 			cas_bass_head_fade = {
 				desc_id = bass_head_fade_none
 			}
-			CAS_Bass_Pickguards = {
+			cas_bass_pickguards = {
 				desc_id = none
 			}
-			CAS_Bass_Pickups = {
-				desc_id = Bass9_Pkup_Type1_Blk_02
+			cas_bass_pickups = {
+				desc_id = bass9_pkup_type1_blk_02
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
-			CAS_Bass_Bridges = {
-				desc_id = Bass14_Bridge_4str_01
+			cas_bass_bridges = {
+				desc_id = bass14_bridge_4str_01
 			}
-			CAS_Bass_Knobs = {
+			cas_bass_knobs = {
 				desc_id = speedster
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 		}
 	}
 	{
-		name = GH_Rocker_AdamLevine_Drummer
-		fullname = qs("\LGH_Rocker_AdamLevine_Drummer")
+		name = 0xa43a0c33
+		fullname = qs(0x55e0cc99)
 		allowed_parts = [
 			drum
 		]
-		preset_icon = photo_Eddie
-		blurb = qs("Adam Levine's Drummer.")
+		preset_icon = photo_eddie
+		blurb = qs(0xc64a8663)
 		no_random_pick
 		selection_not_allowed
 		locked
 		appearance = {
 			body_preset_index = 0
-			genre = Pop
-			CAS_Male_Base_Torso = {
+			genre = pop
+			cas_male_base_torso = {
 				desc_id = male_full
 			}
 			cas_physique = {
-				desc_id = MalePhysique
+				desc_id = malephysique
 			}
-			CAS_Body = {
-				desc_id = GH4_CAR_Male
+			cas_body = {
+				desc_id = gh4_car_male
 				cap = [
 					{
-						base_tex = `tex/models/Characters/Global/Global_Blank_Head_dnc`
-						material = CAR_Male_Head
-						Cas_1
+						base_tex = `tex/models/characters/global/global_blank_head_dnc`
+						material = car_male_head
+						cas_1
 						post_layer = [
 							{
-								texture = `tex/models/Characters/Layers/CAR/Male/Makeup/CAR_Male_EYELINER_01`
+								texture = `tex/models/characters/layers/car/male/makeup/car_male_eyeliner_01`
 								flags = 4
 							}
 						]
 					}
 				]
 				bones = {
-					NoseWidth = 0.2
-					NoseLength = 0.6
-					NoseNostrilSize = 0.7
-					EyeCornerShape = 0.6
-					EyebrowSize = 0.0
-					EyebrowDistance = -0.556
-					BrowPosition = 0.0
-					ChinWidth = 0.0
-					ChinHeight = 0.2
-					CheekboneProminence = 0.6
-					ChinAngle = 0.5
-					CheekboneDepth = 0.1
-					BrowDepth = 0.0
-					EyeDistance = 0.186
-					NoseTipLength = 0.167
-					NoseTipAngle = 0.6
-					NoseAngle = 0.467
-					LipShapeUpper = 0.0
-					EarSize = 0.333
-					EyebrowAngle = 0.4
-					MouthAngle = 0.6
-					LowerLipThickness = 0.5
-					MouthDepth = 0.4
-					EyeScale = 0.5
-					EyeShape = 0.0
-					EyeAngle = 0.661
-					EyePosition = 0.0
-					NoseSize = 0.4
-					NoseBridge = 0.0
-					NosePosition = 0.3
-					MouthPosition = 0.0
-					MouthScale = 0.5
-					JawProminence = 0.0
-					ChinProminence = 0.9
-					EarProminence = 0.126
+					nosewidth = 0.2
+					noselength = 0.6
+					nosenostrilsize = 0.7
+					eyecornershape = 0.6
+					eyebrowsize = 0.0
+					eyebrowdistance = -0.556
+					browposition = 0.0
+					chinwidth = 0.0
+					chinheight = 0.2
+					cheekboneprominence = 0.6
+					chinangle = 0.5
+					cheekbonedepth = 0.1
+					browdepth = 0.0
+					eyedistance = 0.186
+					nosetiplength = 0.167
+					nosetipangle = 0.6
+					noseangle = 0.467
+					lipshapeupper = 0.0
+					earsize = 0.333
+					eyebrowangle = 0.4
+					mouthangle = 0.6
+					lowerlipthickness = 0.5
+					mouthdepth = 0.4
+					eyescale = 0.5
+					eyeshape = 0.0
+					eyeangle = 0.661
+					eyeposition = 0.0
+					nosesize = 0.4
+					nosebridge = 0.0
+					noseposition = 0.3
+					mouthposition = 0.0
+					mouthscale = 0.5
+					jawprominence = 0.0
+					chinprominence = 0.9
+					earprominence = 0.126
 				}
 				chosen_materials = {
-					Eyebrows = yellow_4
+					eyebrows = yellow_4
 					skin = skin_asian4
 				}
 			}
-			CAS_Eyes = {
+			cas_eyes = {
 				desc_id = eyes_hazel
 			}
-			CAS_Male_Hair = {
-				desc_id = M_Metl_Hair_Axel5
+			cas_male_hair = {
+				desc_id = 0x0078b3cc
 				chosen_materials = {
 					material1 = yellow_3
 				}
 			}
-			CAS_Male_Torso = {
+			cas_male_torso = {
 				desc_id = m_torso_layered_nostripe
 				chosen_materials = {
 					material1 = yellow_green_2
 					material2 = grey_1
 				}
 			}
-			CAS_Male_Legs = {
-				desc_id = M_Pop_Legs_Jeans
+			cas_male_legs = {
+				desc_id = m_pop_legs_jeans
 				chosen_materials = {
 					material1 = carblack_3
 				}
 			}
-			CAS_Male_Shoes = {
-				desc_id = M_Spnr_Shoe_VansH_BW
+			cas_male_shoes = {
+				desc_id = m_spnr_shoe_vansh_bw
 			}
-			CAS_Male_Acc_Left = {
-				desc_id = Pop_Acc_LQuinBracelet
+			cas_male_acc_left = {
+				desc_id = 0xf2709175
 			}
-			CAS_Male_Acc_Right = {
-				desc_id = M_Rock_Acc_RStrap
+			cas_male_acc_right = {
+				desc_id = m_rock_acc_rstrap
 			}
-			CAS_Male_Age = {
-				desc_id = CAR_Male_Teen
+			cas_male_age = {
+				desc_id = car_male_teen
 			}
-			CAS_Male_Teeth = {
-				desc_id = CAR_male_teeth
+			cas_male_teeth = {
+				desc_id = car_male_teeth
 			}
 			$preset_musician_instrument_hack
-			CAS_Drums = {
+			cas_drums = {
 				desc_id = singlebasskit
 			}
 			cas_drums_sticks_l = {
@@ -5710,24 +5710,24 @@ Preset_Musician_Profiles_Locked = [
 			cas_drums_sticks_r = {
 				desc_id = drm_stick_r
 			}
-			CAS_Drum_Finish = {
+			cas_drum_finish = {
 				desc_id = drumshell_ds_tama03
 			}
-			CAS_Drum_Detail = {
+			cas_drum_detail = {
 				desc_id = bass_skin_ds_15
 				chosen_materials = {
-					material1 = Black_1guitar
+					material1 = black_1guitar
 				}
 			}
 		}
 	}
 	{
-		name = RandomAppearance0
+		name = randomappearance0
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		random_appearance_lookup
@@ -5735,12 +5735,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = RandomAppearance1
+		name = randomappearance1
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		random_appearance_lookup
@@ -5748,12 +5748,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = RandomAppearance2
+		name = randomappearance2
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		random_appearance_lookup
@@ -5761,12 +5761,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = RandomAppearance3
+		name = randomappearance3
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		random_appearance_lookup
@@ -5774,12 +5774,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = Worstmale
+		name = 0x0a25308d
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		no_random_pick
 		selection_not_allowed
@@ -5793,12 +5793,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = Worstmale2
+		name = 0x5bd48b2d
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		no_random_pick
 		selection_not_allowed
@@ -5812,12 +5812,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = Worstfemale
+		name = 0x7c96f449
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		no_random_pick
 		selection_not_allowed
@@ -5831,12 +5831,12 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = Worstfemale2
+		name = 0xc7ab3e40
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		no_random_pick
 		selection_not_allowed
@@ -5850,17 +5850,17 @@ Preset_Musician_Profiles_Locked = [
 		}
 	}
 	{
-		name = EmptyGuy
+		name = emptyguy
 		allowed_parts = [
 			drum
-			Vocals
+			vocals
 			guitar
-			Bass
+			bass
 		]
 		selection_not_allowed
 		appearance = {
-			CAS_Body = {
-				desc_id = NoBody
+			cas_body = {
+				desc_id = nobody
 			}
 		}
 	}

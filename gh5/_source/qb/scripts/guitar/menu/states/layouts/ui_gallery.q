@@ -110,11 +110,11 @@ endscript
 
 script ui_create_gallery_spawned 
 	stoprendering
-	FormatText TextName = curr_pak 'pak/ui/gallery_%n.pak' n = ($gallery_current_pak_index)
-	LoadPak <curr_pak> heap = BottomUpHeap
+	formattext textname = curr_pak 'pak/ui/gallery_%n.pak' n = ($gallery_current_pak_index)
+	loadpak <curr_pak> heap = bottomupheap
 	startrendering
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		desc = 'gallery'
 		parent = root_window
 		id = current_menu_anchor
@@ -131,9 +131,9 @@ script ui_create_gallery_spawned
 		]
 		just = [center center]
 	}
-	<id> :SE_GetProps arrow_up_pos arrow_up_scale arrow_up_rgba
-	<id> :SE_GetProps arrow_down_pos arrow_down_scale arrow_down_rgba
-	<id> :SetTags {
+	<id> :se_getprops arrow_up_pos arrow_up_scale arrow_up_rgba
+	<id> :se_getprops arrow_down_pos arrow_down_scale arrow_down_rgba
+	<id> :settags {
 		org_arrow_up_pos = <arrow_up_pos>
 		org_arrow_up_scale = <arrow_up_scale>
 		org_arrow_up_rgba = <arrow_up_rgba>
@@ -141,140 +141,140 @@ script ui_create_gallery_spawned
 		org_arrow_down_scale = <arrow_down_scale>
 		org_arrow_down_rgba = <arrow_down_rgba>
 	}
-	<id> :SetTags {
+	<id> :settags {
 		org_arrow_up_rgba = [30 , 30 , 30 , 255]
 		org_arrow_down_rgba = [30 , 30 , 30 , 255]
 	}
 	change \{gallery_swap_index = 0}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = current_menu_anchor}
-	add_user_control_helper \{text = qs("BACK")
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red
 		z = 100000}
-	if NOT ScriptIsRunning \{song_extra_skull_a_anim}
+	if NOT scriptisrunning \{song_extra_skull_a_anim}
 		spawnscriptnow \{song_extra_skull_a_anim}
 	endif
-	if NOT ScriptIsRunning \{song_extra_skull_b_anim}
+	if NOT scriptisrunning \{song_extra_skull_b_anim}
 		spawnscriptnow \{song_extra_skull_b_anim}
 	endif
 endscript
 
 script ui_destroy_gallery 
-	if ScreenElementExists \{id = current_menu_anchor}
-		DestroyScreenElement \{id = current_menu_anchor}
+	if screenelementexists \{id = current_menu_anchor}
+		destroyscreenelement \{id = current_menu_anchor}
 	endif
 	clean_up_user_control_helpers
-	if NOT GotParam \{keep_anims_alive}
-		KillSpawnedScript \{name = song_extra_skull_a_anim}
-		KillSpawnedScript \{name = song_extra_skull_b_anim}
+	if NOT gotparam \{keep_anims_alive}
+		killspawnedscript \{name = song_extra_skull_a_anim}
+		killspawnedscript \{name = song_extra_skull_b_anim}
 	endif
-	FormatText TextName = curr_pak 'pak/ui/gallery_%n.pak' n = ($gallery_current_pak_index)
-	if IsPakLoaded <curr_pak> heap = BottomUpHeap
-		UnloadPak <curr_pak> heap = BottomUpHeap
+	formattext textname = curr_pak 'pak/ui/gallery_%n.pak' n = ($gallery_current_pak_index)
+	if ispakloaded <curr_pak> heap = bottomupheap
+		unloadpak <curr_pak> heap = bottomupheap
 	endif
 endscript
 
 script ui_gallery_switch 
-	GetArraySize ($gallery_image_array)
-	if GotParam \{up}
+	getarraysize ($gallery_image_array)
+	if gotparam \{up}
 		change gallery_swap_index = (1 - $gallery_swap_index)
 		change gallery_image_index = ($gallery_image_index - 1)
 		if ($gallery_image_index < 0)
 			change gallery_image_index = (<array_size> - 1)
 		endif
-		current_menu_anchor :Obj_SpawnScriptNow \{gallery_pulse_up_arrow}
-	elseif GotParam \{down}
+		current_menu_anchor :obj_spawnscriptnow \{gallery_pulse_up_arrow}
+	elseif gotparam \{down}
 		change gallery_swap_index = (1 - $gallery_swap_index)
 		change gallery_image_index = ($gallery_image_index + 1)
 		if ($gallery_image_index >= <array_size>)
 			change \{gallery_image_index = 0}
 		endif
-		current_menu_anchor :Obj_SpawnScriptNow \{gallery_pulse_down_arrow}
+		current_menu_anchor :obj_spawnscriptnow \{gallery_pulse_down_arrow}
 	endif
 	spawnscriptnow \{ui_gallery_update_pak}
 	if ($gallery_swap_index = 0)
-		SE_SetProps gallery_pho0_texture = (($gallery_image_array) [($gallery_image_index)])
-		SE_SetProps \{gallery_pho0_alpha = 1
+		se_setprops gallery_pho0_texture = (($gallery_image_array) [($gallery_image_index)])
+		se_setprops \{gallery_pho0_alpha = 1
 			time = 0.1}
-		SE_SetProps \{gallery_pho1_alpha = 0
+		se_setprops \{gallery_pho1_alpha = 0
 			time = 0.1}
 	else
-		SE_SetProps gallery_pho1_texture = (($gallery_image_array) [($gallery_image_index)])
-		SE_SetProps \{gallery_pho1_alpha = 1
+		se_setprops gallery_pho1_texture = (($gallery_image_array) [($gallery_image_index)])
+		se_setprops \{gallery_pho1_alpha = 1
 			time = 0.1}
-		SE_SetProps \{gallery_pho0_alpha = 0
+		se_setprops \{gallery_pho0_alpha = 0
 			time = 0.1}
 	endif
 endscript
 
 script gallery_pulse_up_arrow 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = kill_oldest}
-	GetTags
-	SE_SetProps arrow_up_pos = <org_arrow_up_pos> arrow_up_scale = <org_arrow_up_scale> arrow_up_rgba = <org_arrow_up_rgba>
-	SE_SetProps \{arrow_up_pos = {
+	gettags
+	se_setprops arrow_up_pos = <org_arrow_up_pos> arrow_up_scale = <org_arrow_up_scale> arrow_up_rgba = <org_arrow_up_rgba>
+	se_setprops \{arrow_up_pos = {
 			relative
 			(0.0, -15.0)
 		}
 		time = 0.1}
-	SE_SetProps \{arrow_up_scale = (1.2, 1.2)
+	se_setprops \{arrow_up_scale = (1.2, 1.2)
 		time = 0.1}
-	SE_SetProps \{arrow_up_rgba = [
+	se_setprops \{arrow_up_rgba = [
 			200
 			50
 			50
 			255
 		]
 		time = 0.1}
-	Wait \{0.1
+	wait \{0.1
 		seconds}
-	SE_SetProps arrow_up_pos = <org_arrow_up_pos> arrow_up_scale = <org_arrow_up_scale> arrow_up_rgba = <org_arrow_up_rgba> time = 0.1
-	Wait \{0.1
+	se_setprops arrow_up_pos = <org_arrow_up_pos> arrow_up_scale = <org_arrow_up_scale> arrow_up_rgba = <org_arrow_up_rgba> time = 0.1
+	wait \{0.1
 		seconds}
 endscript
 
 script gallery_pulse_down_arrow 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = kill_oldest}
-	GetTags
-	SE_SetProps arrow_down_pos = <org_arrow_down_pos> arrow_down_scale = <org_arrow_down_scale> arrow_down_rgba = <org_arrow_down_rgba>
-	SE_SetProps \{arrow_down_pos = {
+	gettags
+	se_setprops arrow_down_pos = <org_arrow_down_pos> arrow_down_scale = <org_arrow_down_scale> arrow_down_rgba = <org_arrow_down_rgba>
+	se_setprops \{arrow_down_pos = {
 			relative
 			(0.0, 15.0)
 		}
 		time = 0.1}
-	SE_SetProps \{arrow_down_scale = (1.2, 1.2)
+	se_setprops \{arrow_down_scale = (1.2, 1.2)
 		time = 0.1}
-	SE_SetProps \{arrow_down_rgba = [
+	se_setprops \{arrow_down_rgba = [
 			200
 			50
 			50
 			255
 		]
 		time = 0.1}
-	Wait \{0.1
+	wait \{0.1
 		seconds}
-	SE_SetProps arrow_down_pos = <org_arrow_down_pos> arrow_down_scale = <org_arrow_down_scale> arrow_down_rgba = <org_arrow_down_rgba> time = 0.1
-	Wait \{0.1
+	se_setprops arrow_down_pos = <org_arrow_down_pos> arrow_down_scale = <org_arrow_down_scale> arrow_down_rgba = <org_arrow_down_rgba> time = 0.1
+	wait \{0.1
 		seconds}
 endscript
 
 script ui_gallery_update_pak 
-	SetScriptCannotPause
-	SetSpawnInstanceLimits \{max = 1
+	setscriptcannotpause
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 	<next_pak_index> = ($gallery_image_index / 10)
 	if (<next_pak_index> != $gallery_current_pak_index)
-		FormatText TextName = curr_pak 'pak/ui/gallery_%n.pak' n = ($gallery_current_pak_index)
+		formattext textname = curr_pak 'pak/ui/gallery_%n.pak' n = ($gallery_current_pak_index)
 		change gallery_current_pak_index = <next_pak_index>
 		stoprendering
-		PauseSpawnedScripts
+		pausespawnedscripts
 		ui_destroy_gallery \{keep_anims_alive = 1}
-		if IsPakLoaded <curr_pak> heap = BottomUpHeap
-			UnloadPak <curr_pak> heap = BottomUpHeap
+		if ispakloaded <curr_pak> heap = bottomupheap
+			unloadpak <curr_pak> heap = bottomupheap
 		endif
 		ui_create_gallery
-		UnpauseSpawnedScripts
+		unpausespawnedscripts
 		startrendering
 	endif
 endscript

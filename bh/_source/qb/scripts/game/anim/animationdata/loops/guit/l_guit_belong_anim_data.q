@@ -1,37 +1,37 @@
-L_GUIT_Belong_anims_set = {
-	Stance_A = {
-		Idle = {
+0x80be5bb7 = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_belong_075
+				slow = [
+					0x8bb2ea4c
 				]
-				Med = [
-					guit_belong_100
+				med = [
+					0xb55be233
 				]
-				Fast = [
-					guit_belong_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_belong_075
-				]
-				Med = [
-					guit_belong_100
-				]
-				Fast = [
-					guit_belong_120
+				fast = [
+					0x876d80b1
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_belong_075
+			normal = {
+				slow = [
+					0x8bb2ea4c
 				]
-				Med = [
-					guit_belong_100
+				med = [
+					0xb55be233
 				]
-				Fast = [
-					guit_belong_120
+				fast = [
+					0x876d80b1
+				]
+			}
+			bad = {
+				slow = [
+					0x8bb2ea4c
+				]
+				med = [
+					0xb55be233
+				]
+				fast = [
+					0x876d80b1
 				]
 			}
 		}

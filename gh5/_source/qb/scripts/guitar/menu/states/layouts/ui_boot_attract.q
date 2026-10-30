@@ -1,32 +1,32 @@
 
 script ui_create_boot_attract 
-	PushVideoVenues
-	spawnscriptnow \{ui_create_boot_attract_spawned}
+	0x622f875f
+	spawnscriptnow \{0x29e421d6}
 endscript
 
 script ui_destroy_boot_attract 
-	PauseGh3Sounds
-	PauseGame
-	KillSpawnedScript \{name = ui_create_boot_attract_spawned}
-	if ScreenElementExists \{id = current_menu}
-		current_menu :Die
+	pausegh3sounds
+	pausegame
+	killspawnedscript \{name = 0x29e421d6}
+	if screenelementexists \{id = current_menu}
+		current_menu :die
 	endif
 	spawnscriptnow \{kill_gem_scroller}
 	destroy_magazine_viewport
 	setup_bg_viewport
 	band_builder_clear_random_appearances
 	reset_character_ids
-	UnPauseGame
-	UnpauseGh3Sounds
-	spawnscriptnow \{Attract_Mode_Ends_Sound_Script}
-	SpawnScriptLater \{Undo_attract_bots}
+	unpausegame
+	unpausegh3sounds
+	spawnscriptnow \{attract_mode_ends_sound_script}
+	spawnscriptlater \{undo_attract_bots}
 	change \{is_attract_mode = 0}
-	PopVideoVenues
+	popvideovenues
 	spawnscriptnow \{menu_music_on}
 endscript
 
-script Undo_attract_bots 
-	Wait \{2
+script undo_attract_bots 
+	wait \{2
 		gameframes}
 
 	change \{structurename = player1_status
@@ -39,24 +39,24 @@ script Undo_attract_bots
 		bot_play = 0}
 endscript
 
-script ui_create_boot_attract_spawned 
+script 0x29e421d6 
 	change \{is_attract_mode = 1}
-	spawnscriptnow \{Attract_Mode_Start_Sound_Script}
-	GetArraySize \{$Attract_Mode_Info}
+	spawnscriptnow \{attract_mode_start_sound_script}
+	getarraysize \{$attract_mode_info}
 	if (<array_size> = 1)
 		attract_mode_index = 0
 	else
 		if ($last_attract_mode >= 0)
-			GetRandomValue name = attract_mode_index Integer a = 0 b = (<array_size> - 2)
+			getrandomvalue name = attract_mode_index integer a = 0 b = (<array_size> - 2)
 			if (<attract_mode_index> >= $last_attract_mode)
 				attract_mode_index = (<attract_mode_index> + 1)
 			endif
 		else
-			GetRandomValue name = attract_mode_index Integer a = 0 b = (<array_size> - 1)
+			getrandomvalue name = attract_mode_index integer a = 0 b = (<array_size> - 1)
 		endif
 		change last_attract_mode = <attract_mode_index>
 	endif
-	AddParams ($Attract_Mode_Info [<attract_mode_index>])
+	addparams ($attract_mode_info [<attract_mode_index>])
 	change \{structurename = player1_status
 		bot_play = 1}
 	change \{structurename = player2_status
@@ -72,11 +72,11 @@ script ui_create_boot_attract_spawned
 	change \{structurename = player1_status
 		part = guitar}
 	change \{structurename = player2_status
-		part = Bass}
+		part = bass}
 	change \{structurename = player3_status
 		part = drum}
 	change \{structurename = player4_status
-		part = Vocals}
+		part = vocals}
 	change structurename = player1_status character_id = <guitar_character_id>
 	change structurename = player2_status character_id = <bass_character_id>
 	change structurename = player3_status character_id = <drum_character_id>
@@ -85,13 +85,13 @@ script ui_create_boot_attract_spawned
 	p2_difficulty = expert
 	destroy_band
 	mark_unsafe_for_shutdown
-	UnPauseGame
-	Load_Venue
-	start_gem_scroller song_name = <song> difficulty = <p1_difficulty> difficulty2 = <p2_difficulty> StartTime = 0 device_num = ($player1_status.controller)
+	unpausegame
+	load_venue
+	start_gem_scroller song_name = <song> difficulty = <p1_difficulty> difficulty2 = <p2_difficulty> starttime = 0 device_num = ($player1_status.controller)
 	destroy_loading_screen
 	get_handlers_for_all_buttons \{event_script = ui_boot_attract_wait_for_input}
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		dims = (1280.0, 720.0)
 		just = [0.0 0.0]
 		pos_anchor = [-1.0 -1.0]
@@ -101,8 +101,8 @@ script ui_create_boot_attract_spawned
 		id = current_menu
 		event_handlers = <event_handlers>
 	}
-	CreateScreenElement \{type = TextElement
-		text = qs("PRESS ANY BUTTON TO ROCK!")
+	createscreenelement \{type = textelement
+		text = qs(0xea5afc2b)
 		pos = (640.0, 637.0)
 		parent = current_menu
 		rgba = [
@@ -125,8 +125,8 @@ script ui_create_boot_attract_spawned
 			0
 			255
 		]}
-	CreateScreenElement \{texture = logo_GH5_256
-		type = SpriteElement
+	createscreenelement \{texture = logo_gh5_256
+		type = spriteelement
 		alpha = 0.75
 		dims = (256.0, 256.0)
 		just = [
@@ -139,7 +139,7 @@ script ui_create_boot_attract_spawned
 		]
 		pos = (1023.4459, 183.96547)
 		parent = current_menu}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = current_menu}
 	fadetoblack \{off
 		alpha = 1.0
@@ -149,49 +149,49 @@ script ui_create_boot_attract_spawned
 endscript
 
 script ui_boot_attract_wait_for_input 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 	wait_for_safe_shutdown
-	PauseGh3Sounds
-	set_loading_screen \{full}
+	pausegh3sounds
+	0xe9384b7a \{full}
 	ui_event \{event = menu_back}
 endscript
-Attract_Mode_Info = [
+attract_mode_info = [
 	{
-		level = load_Z_Subway
-		song = AllAlongTheWatchTower
+		level = load_z_subway
+		song = allalongthewatchtower
 		mode = p4_quickplay
-		guitar_character_id = RandomCharacter
-		bass_character_id = RandomCharacter
-		drum_character_id = RandomCharacter
-		vocals_character_id = RandomCharacter
+		guitar_character_id = randomcharacter
+		bass_character_id = randomcharacter
+		drum_character_id = randomcharacter
+		vocals_character_id = randomcharacter
 	}
 	{
-		level = load_Z_LHC
-		song = OnlyHappyWhenItRains
+		level = load_z_lhc
+		song = onlyhappywhenitrains
 		mode = p4_quickplay
-		guitar_character_id = RandomCharacter
-		bass_character_id = RandomCharacter
-		drum_character_id = RandomCharacter
-		vocals_character_id = RandomCharacter
+		guitar_character_id = randomcharacter
+		bass_character_id = randomcharacter
+		drum_character_id = randomcharacter
+		vocals_character_id = randomcharacter
 	}
 	{
-		level = load_Z_FreakShow
-		song = YouGiveLove
+		level = load_z_freakshow
+		song = yougivelove
 		mode = p4_quickplay
-		guitar_character_id = RandomCharacter
-		bass_character_id = RandomCharacter
-		drum_character_id = RandomCharacter
-		vocals_character_id = RandomCharacter
+		guitar_character_id = randomcharacter
+		bass_character_id = randomcharacter
+		drum_character_id = randomcharacter
+		vocals_character_id = randomcharacter
 	}
 	{
-		level = load_Z_NewOrleans
-		song = HurtsSoGood
+		level = load_z_neworleans
+		song = hurtssogood
 		mode = p4_quickplay
-		guitar_character_id = RandomCharacter
-		bass_character_id = RandomCharacter
-		drum_character_id = RandomCharacter
-		vocals_character_id = RandomCharacter
+		guitar_character_id = randomcharacter
+		bass_character_id = randomcharacter
+		drum_character_id = randomcharacter
+		vocals_character_id = randomcharacter
 	}
 ]
 last_attract_mode = -1

@@ -1,14 +1,14 @@
 
-script SafeCreate 
-	if IsInNodeArray <nodeName>
-		if NOT IsCreated <nodeName>
-			create name = <nodeName>
+script safecreate 
+	if isinnodearray <nodename>
+		if NOT iscreated <nodename>
+			create name = <nodename>
 		endif
 	endif
 endscript
 
-script SafeKill 
-	if IsCreated <nodeName>
-		kill name = <nodeName>
+script safekill 
+	if iscreated <nodename>
+		kill name = <nodename>
 	endif
 endscript

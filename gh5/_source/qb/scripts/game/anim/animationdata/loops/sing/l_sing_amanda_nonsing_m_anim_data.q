@@ -1,37 +1,37 @@
-L_SING_Amanda_NonSing_M_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_amanda_nonsing_m_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Amanda_NonSing_075_M_01
+				slow = [
+					sing_amanda_nonsing_075_m_01
 				]
-				Med = [
-					Sing_Amanda_NonSing_100_M_01
+				med = [
+					sing_amanda_nonsing_100_m_01
 				]
-				Fast = [
-					Sing_Amanda_NonSing_120_M_01
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Amanda_NonSing_075_M_01
-				]
-				Med = [
-					Sing_Amanda_NonSing_100_M_01
-				]
-				Fast = [
-					Sing_Amanda_NonSing_120_M_01
+				fast = [
+					sing_amanda_nonsing_120_m_01
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Amanda_NonSing_075_M_01
+			normal = {
+				slow = [
+					sing_amanda_nonsing_075_m_01
 				]
-				Med = [
-					Sing_Amanda_NonSing_100_M_01
+				med = [
+					sing_amanda_nonsing_100_m_01
 				]
-				Fast = [
-					Sing_Amanda_NonSing_120_M_01
+				fast = [
+					sing_amanda_nonsing_120_m_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_amanda_nonsing_075_m_01
+				]
+				med = [
+					sing_amanda_nonsing_100_m_01
+				]
+				fast = [
+					sing_amanda_nonsing_120_m_01
 				]
 			}
 		}

@@ -6,11 +6,11 @@ script band_builder_decide_on_heaps
 		[-1.0 -1.0 -1.0 -1.0]
 		[-1.0 -1.0 -1.0 -1.0]
 	]
-	GetArraySize \{$musician_heaps}
+	getarraysize \{$musician_heaps}
 	if NOT (<array_size> = 4)
 
 	endif
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -21,17 +21,17 @@ script band_builder_decide_on_heaps
 		begin
 		heap_name = ($musician_heaps [<heap_index>])
 		get_appearance_heap_score appearance = (<profile_struct>.appearance) heap_name = <heap_name>
-		SetArrayElement ArrayName = profile_scores index = <heap_index> newvalue = <score>
+		setarrayelement arrayname = profile_scores index = <heap_index> newvalue = <score>
 		heap_index = (<heap_index> + 1)
 		repeat 4
-		SetArrayElement ArrayName = score_table index = <i> newvalue = <profile_scores>
+		setarrayelement arrayname = score_table index = <i> newvalue = <profile_scores>
 		i = (<i> + 1)
 		repeat <array_size>
 		begin
 		band_builder_get_highest_score score_table = <score_table>
 		band_builder_kill_entries kill_heap = <best_heap> kill_character = <best_character> score_table = <score_table>
 		old_setup = ($band_builder_current_setup [<best_character>])
-		SetArrayElement ArrayName = band_builder_current_setup GlobalArray index = <best_character> newvalue = {
+		setarrayelement arrayname = band_builder_current_setup globalarray index = <best_character> newvalue = {
 			<old_setup>
 			asset_heap = ($musician_heaps [<best_heap>])
 		}
@@ -41,35 +41,35 @@ endscript
 
 script band_builder_get_highest_score 
 	best = -1.0
-	iCharacter = 0
+	icharacter = 0
 	begin
-	scores = (<score_table> [<iCharacter>])
-	iHeap = 0
+	scores = (<score_table> [<icharacter>])
+	iheap = 0
 	begin
-	specific_score = (<scores> [<iHeap>])
+	specific_score = (<scores> [<iheap>])
 	if (<specific_score> > <best>)
 		best = <specific_score>
-		best_heap = <iHeap>
-		best_character = <iCharacter>
+		best_heap = <iheap>
+		best_character = <icharacter>
 	endif
-	iHeap = (<iHeap> + 1)
+	iheap = (<iheap> + 1)
 	repeat 4
-	iCharacter = (<iCharacter> + 1)
+	icharacter = (<icharacter> + 1)
 	repeat 4
-	if NOT GotParam \{best_heap}
+	if NOT gotparam \{best_heap}
 
 	endif
 	return best_heap = <best_heap> best_character = <best_character>
 endscript
 
 script band_builder_kill_entries 
-	iCharacter = 0
+	icharacter = 0
 	begin
-	scores = (<score_table> [<iCharacter>])
-	SetArrayElement ArrayName = scores index = <kill_heap> newvalue = -1.0
-	SetArrayElement ArrayName = score_table index = <iCharacter> newvalue = <scores>
-	iCharacter = (<iCharacter> + 1)
+	scores = (<score_table> [<icharacter>])
+	setarrayelement arrayname = scores index = <kill_heap> newvalue = -1.0
+	setarrayelement arrayname = score_table index = <icharacter> newvalue = <scores>
+	icharacter = (<icharacter> + 1)
 	repeat 4
-	SetArrayElement ArrayName = score_table index = <kill_character> newvalue = [-1.0 -1.0 -1.0 -1.0]
+	setarrayelement arrayname = score_table index = <kill_character> newvalue = [-1.0 -1.0 -1.0 -1.0]
 	return score_table = <score_table>
 endscript

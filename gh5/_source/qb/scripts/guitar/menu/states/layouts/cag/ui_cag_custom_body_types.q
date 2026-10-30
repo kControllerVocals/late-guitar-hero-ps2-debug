@@ -11,29 +11,29 @@ script ui_create_cag_custom_body_types
 	get_part_current_desc_id part = <part>
 	current_part = 0
 	num_parts_added = 0
-	GetArraySize ($<part>)
+	getarraysize ($<part>)
 	i = 0
 	begin
 	if cas_item_is_visible part = <part> part_index = <i>
 		if is_part_unlocked part = <part> desc_id = ((($<part>) [<i>]).desc_id) savegame = ($cas_current_savegame)
 			<add_item> = 1
-			if GotParam \{is_esp}
+			if gotparam \{is_esp}
 				if (<is_esp> = 1)
-					if NOT StructureContains Structure = (($<part>) [<i>]) is_esp
+					if NOT structurecontains structure = (($<part>) [<i>]) is_esp
 						<add_item> = 0
 					elseif (((($<part>) [<i>]).is_esp) = 0)
 						<add_item> = 0
 					endif
 				else
-					if StructureContains Structure = (($<part>) [<i>]) is_esp
+					if structurecontains structure = (($<part>) [<i>]) is_esp
 						if (((($<part>) [<i>]).is_esp) = 1)
 							<add_item> = 0
 						endif
 					endif
 				endif
 			endif
-			if StructureContains Structure = (($<part>) [<i>]) Is_Metallica
-				if (((($<part>) [<i>]).Is_Metallica) = 1)
+			if structurecontains structure = (($<part>) [<i>]) is_metallica
+				if (((($<part>) [<i>]).is_metallica) = 1)
 					<add_item> = 0
 				endif
 			endif
@@ -43,7 +43,7 @@ script ui_create_cag_custom_body_types
 				endif
 				if NOT is_part_purchased part = <part> desc_id = ((($<part>) [<i>]).desc_id) savegame = ($cas_current_savegame)
 					price = ((($<part>) [<i>]).price)
-					FormatText TextName = pad_choose_dialogue qs("Would you like to purchase this %s?") s = ((($<part>) [<i>]).frontend_desc)
+					formattext textname = pad_choose_dialogue qs(0x50618374) s = ((($<part>) [<i>]).frontend_desc)
 				endif
 				add_list_item {
 					text = (($<part> [<i>]).frontend_desc)
@@ -56,14 +56,14 @@ script ui_create_cag_custom_body_types
 					price = <price>
 					pad_choose_dialogue = <pad_choose_dialogue>
 				}
-				if GotParam \{price}
-					RemoveParameter \{price}
+				if gotparam \{price}
+					removeparameter \{price}
 				endif
-				if GotParam \{pad_choose_dialogue}
-					RemoveParameter \{pad_choose_dialogue}
+				if gotparam \{pad_choose_dialogue}
+					removeparameter \{pad_choose_dialogue}
 				endif
-				if GotParam \{pad_back_dialogue}
-					RemoveParameter \{pad_back_dialogue}
+				if gotparam \{pad_back_dialogue}
+					removeparameter \{pad_back_dialogue}
 				endif
 				num_parts_added = (<num_parts_added> + 1)
 			endif
@@ -73,7 +73,7 @@ script ui_create_cag_custom_body_types
 	repeat <array_size>
 	clean_up_user_control_helpers
 	menu_finish \{car_helper_text_cancel}
-	LaunchEvent type = focus target = create_cag_custom_body_types_vmenu data = {child_index = <current_part>}
+	launchevent type = focus target = create_cag_custom_body_types_vmenu data = {child_index = <current_part>}
 endscript
 
 script ui_destroy_cag_custom_body_types 
@@ -81,31 +81,31 @@ script ui_destroy_cag_custom_body_types
 endscript
 
 script ui_init_cag_custom_body_types 
-	PushTemporaryCASAppearance
+	pushtemporarycasappearance
 	ui_load_cas_rawpak part = <part>
 endscript
 
 script ui_deinit_cag_custom_body_types 
-	FlushAllCompositeTextures
-	PopTemporaryCASAppearance
+	flushallcompositetextures
+	poptemporarycasappearance
 	cleanup_cas_menu_handlers
 endscript
 
 script add_cag_part 
 
-	KillAllCompositeTextures
-	DumpCompositeScratchTextures
+	killallcompositetextures
+	dumpcompositescratchtextures
 	get_part_current_desc_id part = <part>
 	if NOT (((($<part>) [<index>]).desc_id) = <current_desc_id>)
-		if GetActualCASOptionStruct part = <part> desc_id = ($<part> [<index>].desc_id)
-			if GotParam \{RandomizeFinish}
-				GetArraySize (<inclusion>)
+		if getactualcasoptionstruct part = <part> desc_id = ($<part> [<index>].desc_id)
+			if gotparam \{randomizefinish}
+				getarraysize (<inclusion>)
 				loop_size = (<array_size>)
 				i = 0
 				valid_array = none
 				begin
 				filter = (<inclusion> [<i>])
-				if (<filter>.part = <RandomizeFinish>)
+				if (<filter>.part = <randomizefinish>)
 					valid_array = (<filter>.valid)
 					break
 				endif
@@ -114,66 +114,66 @@ script add_cag_part
 				if (<valid_array> = none)
 
 				endif
-				GetArraySize (<valid_array>)
-				GetRandomValue name = rand_val a = 0 b = (<array_size> - 1) Integer
+				getarraysize (<valid_array>)
+				getrandomvalue name = rand_val a = 0 b = (<array_size> - 1) integer
 				new_desc_id = (<valid_array> [<rand_val>])
-				EditCASAppearance target = SetPart targetParams = {part = <RandomizeFinish> desc_id = <new_desc_id>}
+				editcasappearance target = setpart targetparams = {part = <randomizefinish> desc_id = <new_desc_id>}
 			endif
-			if NOT GotParam \{Finishable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Guitar_Finish
+			if NOT gotparam \{finishable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_guitar_finish
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Bass_Finish
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_bass_finish
 							desc_id = none
 						}}
 				endif
 			endif
-			if NOT GotParam \{Detailable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Guitar_Body_Detail
+			if NOT gotparam \{detailable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_guitar_body_detail
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Bass_Body_Detail
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_bass_body_detail
 							desc_id = none
 						}}
 				endif
 			endif
-			if NOT GotParam \{Logoable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
+			if NOT gotparam \{logoable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
 							part = cas_guitar_logo
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Bass_Logo
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_bass_logo
 							desc_id = none
 						}}
 				endif
 			endif
-			if NOT GotParam \{Fadeable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
+			if NOT gotparam \{fadeable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
 							part = cas_guitar_body_fade
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
 							part = cas_bass_head_fade
 							desc_id = none
 						}}
@@ -181,9 +181,9 @@ script add_cag_part
 			endif
 		endif
 		cas_part_will_conflict part_name = <part> part_desc_id = ($<part> [<index>].desc_id)
-		if GotParam \{change_parts}
+		if gotparam \{change_parts}
 
-			GetArraySize \{change_parts}
+			getarraysize \{change_parts}
 			if (<array_size> > 0)
 				i = 0
 				begin
@@ -193,21 +193,21 @@ script add_cag_part
 			endif
 		endif
 		cas_add_item_to_appearance part = <part> desc_id = ($<part> [<index>].desc_id) incremental no_rebuild
-		spawnscriptnow \{trigger_CAS_rebuild_loop}
+		spawnscriptnow \{trigger_cas_rebuild_loop}
 	else
-		GetActualCASOptionStruct part = <part> desc_id = ($<part> [<index>].desc_id)
-		if NOT GotParam \{sponsor_id}
-			sponsor_id = no_sponsor
+		getactualcasoptionstruct part = <part> desc_id = ($<part> [<index>].desc_id)
+		if NOT gotparam \{sponsor_id}
+			sponsor_id = 0xc0671aff
 		endif
-		draw_sponsor_logo sponsor_id = <sponsor_id>
+		0x4b5f92af sponsor_id = <sponsor_id>
 	endif
 endscript
 
 script add_cag_part_spin_guitar 
-	GetCurrentCASObject
+	getcurrentcasobject
 	if is_female_char
-		Band_PlaysimpleAnim name = <cas_object> Anim = car_female_select_guitar_turn_flip BlendDuration = 1.0
+		band_playsimpleanim name = <cas_object> anim = car_female_select_guitar_turn_flip blendduration = 1.0
 	else
-		Band_PlaysimpleAnim name = <cas_object> Anim = CAR_male_Select_guitar_turn_flip BlendDuration = 1.0
+		band_playsimpleanim name = <cas_object> anim = car_male_select_guitar_turn_flip blendduration = 1.0
 	endif
 endscript

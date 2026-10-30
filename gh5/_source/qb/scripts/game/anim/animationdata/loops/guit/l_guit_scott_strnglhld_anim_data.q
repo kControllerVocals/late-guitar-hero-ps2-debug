@@ -1,37 +1,37 @@
-L_GUIT_Scott_Strnglhld_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_scott_strnglhld_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Scott_Stranglehold_075
+				slow = [
+					guit_scott_stranglehold_075
 				]
-				Med = [
-					Guit_Scott_Stranglehold_100
+				med = [
+					guit_scott_stranglehold_100
 				]
-				Fast = [
-					Guit_Scott_Stranglehold_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Scott_Stranglehold_075
-				]
-				Med = [
-					Guit_Scott_Stranglehold_100
-				]
-				Fast = [
-					Guit_Scott_Stranglehold_120
+				fast = [
+					guit_scott_stranglehold_120
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Scott_Stranglehold_075
+			normal = {
+				slow = [
+					guit_scott_stranglehold_075
 				]
-				Med = [
-					Guit_Scott_Stranglehold_100
+				med = [
+					guit_scott_stranglehold_100
 				]
-				Fast = [
-					Guit_Scott_Stranglehold_120
+				fast = [
+					guit_scott_stranglehold_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_scott_stranglehold_075
+				]
+				med = [
+					guit_scott_stranglehold_100
+				]
+				fast = [
+					guit_scott_stranglehold_120
 				]
 			}
 		}

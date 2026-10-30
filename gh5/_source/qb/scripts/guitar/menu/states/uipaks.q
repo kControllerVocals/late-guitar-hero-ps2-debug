@@ -1,4 +1,4 @@
-UIPaks = {
+uipaks = {
 	pak = {
 		name = 'cas_select_part_color_options'
 	}

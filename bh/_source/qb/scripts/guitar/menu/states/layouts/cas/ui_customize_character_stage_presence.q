@@ -1,16 +1,16 @@
 
 script ui_create_customize_character_stage_presence 
 	make_generic_menu \{vmenu_id = stage_presence_vmenu
-		title = qs("Presence")
+		title = qs(0xe67f295f)
 		num_icons = 2
 		show_history}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -22,11 +22,11 @@ script ui_create_customize_character_stage_presence
 			'customize_character_stage_presence_L'
 		]
 		zoom_camera = 'customize_Presence_Zoom'}
-	add_generic_menu_text_item \{text = qs("Intros")
-		choose_state = UIstate_popout_select_part
+	add_generic_menu_text_item \{text = qs(0xef697ef2)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("Intros")
-			part = CAS_Intro_Anim
+			text = qs(0xef697ef2)
+			part = cas_intro_anim
 			camera_list = [
 				'customize_character_stage_presence'
 				'customize_character_stage_presence_R'
@@ -34,18 +34,18 @@ script ui_create_customize_character_stage_presence
 				'customize_character_stage_presence_L'
 			]
 			zoom_camera = 'customize_Presence_Zoom'
-			hist_tex = Presence_Intro
-			hist_name = qs("\LIntros")
+			hist_tex = presence_intro
+			hist_name = qs(0x7c308eb8)
 			is_popup
 			play_current_anim = true
-			noRebuildLoop
+			norebuildloop
 			disable_rotation_zoom = 1
 		}}
-	add_generic_menu_text_item \{text = qs("Wins")
-		choose_state = UIstate_popout_select_part
+	add_generic_menu_text_item \{text = qs(0x352e2ede)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("Wins")
-			part = CAS_Win_Anim
+			text = qs(0x352e2ede)
+			part = cas_win_anim
 			camera_list = [
 				'customize_character_stage_presence'
 				'customize_character_stage_presence_R'
@@ -53,18 +53,18 @@ script ui_create_customize_character_stage_presence
 				'customize_character_stage_presence_L'
 			]
 			zoom_camera = 'customize_Presence_Zoom'
-			hist_tex = Presence_Wins
-			hist_name = qs("\LWins")
+			hist_tex = presence_wins
+			hist_name = qs(0x962ec77b)
 			is_popup
 			play_current_anim = true
-			noRebuildLoop
+			norebuildloop
 			disable_rotation_zoom = 1
 		}}
-	add_generic_menu_text_item \{text = qs("Losses")
-		choose_state = UIstate_popout_select_part
+	add_generic_menu_text_item \{text = qs(0x362c5804)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("Losses")
-			part = CAS_Lose_Anim
+			text = qs(0x362c5804)
+			part = cas_lose_anim
 			camera_list = [
 				'customize_character_stage_presence'
 				'customize_character_stage_presence_R'
@@ -72,11 +72,11 @@ script ui_create_customize_character_stage_presence
 				'customize_character_stage_presence_L'
 			]
 			zoom_camera = 'customize_Presence_Zoom'
-			hist_tex = Presence_Loses
-			hist_name = qs("\LLosses")
+			hist_tex = presence_loses
+			hist_name = qs(0xa575a84e)
 			is_popup
 			play_current_anim = true
-			noRebuildLoop
+			norebuildloop
 			disable_rotation_zoom = 1
 		}}
 	menu_finish \{car_helper_text}

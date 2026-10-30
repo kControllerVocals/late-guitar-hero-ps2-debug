@@ -1,37 +1,37 @@
-L_SING_Moment_DontSpeak_anims_set = {
-	Stance_A = {
-		Idle = {
+0x1e48e711 = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					S_DontSpeak_01
+				slow = [
+					0x2b2ac87b
 				]
-				Med = [
-					S_DontSpeak_02
+				med = [
+					0xb22399c1
 				]
-				Fast = [
-					S_DontSpeak_02
-				]
-			}
-			Normal = {
-				Slow = [
-					S_DontSpeak_01
-				]
-				Med = [
-					S_DontSpeak_02
-				]
-				Fast = [
-					S_DontSpeak_02
+				fast = [
+					0xb22399c1
 				]
 			}
-			Bad = {
-				Slow = [
-					S_DontSpeak_01
+			normal = {
+				slow = [
+					0x2b2ac87b
 				]
-				Med = [
-					S_DontSpeak_02
+				med = [
+					0xb22399c1
 				]
-				Fast = [
-					S_DontSpeak_02
+				fast = [
+					0xb22399c1
+				]
+			}
+			bad = {
+				slow = [
+					0x2b2ac87b
+				]
+				med = [
+					0xb22399c1
+				]
+				fast = [
+					0xb22399c1
 				]
 			}
 		}

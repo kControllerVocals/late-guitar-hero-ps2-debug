@@ -1,6 +1,6 @@
-Table_Iron_01 = {
-	Model = 'Props\\Table_Iron_01\\Table_Iron_01.mdl'
-	CollisionMode = Geometry
+table_iron_01 = {
+	model = 'Props\\Table_Iron_01\\Table_Iron_01.mdl'
+	collisionmode = geometry
 	contacts = [
 		(-28.4546, 38.183098, -28.5078)
 		(28.460499, 38.183098, 28.432201)
@@ -20,11 +20,11 @@ Table_Iron_01 = {
 	skater_collision_rotation_factor = 0.8
 	skater_collision_assent = 6.0
 	skater_collision_radius = 44
-	SoundType = Table_Iron
+	soundtype = table_iron
 }
-Plant_big_01 = {
-	Model = 'Props\\Plant_big_01\\Plant_big_01.mdl'
-	CollisionMode = Geometry
+plant_big_01 = {
+	model = 'Props\\Plant_big_01\\Plant_big_01.mdl'
+	collisionmode = geometry
 	contacts = [
 		(0.0, 142.55501, 0.0)
 		(25.0257, 117.401, -14.4486)
@@ -53,6 +53,6 @@ Plant_big_01 = {
 	skater_collision_rotation_factor = 0.8
 	skater_collision_assent = 6.0
 	skater_collision_radius = 66
-	BounceScript = dirthit02
-	SoundType = Plant_Big
+	bouncescript = dirthit02
+	soundtype = plant_big
 }

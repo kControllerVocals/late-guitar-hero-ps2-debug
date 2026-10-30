@@ -1,124 +1,124 @@
 default_pointing_anims = {
-	Win_Anims = {
+	win_anims = {
 		guitar = {
-			Bass = g_june_win_pointbass
-			Vocals = g_june_win_pointsing
+			bass = g_june_win_pointbass
+			vocals = g_june_win_pointsing
 			drum = g_june_win_pointdrum
 		}
-		Bass = {
+		bass = {
 			guitar = b_june_win_pointguit
-			Vocals = b_june_win_pointsing
+			vocals = b_june_win_pointsing
 			drum = b_june_win_pointdrum
 		}
 		drum = {
 			guitar = d_june_win_pointguit
-			Vocals = d_june_win_pointsing
-			Bass = d_june_win_pointbass
+			vocals = d_june_win_pointsing
+			bass = d_june_win_pointbass
 		}
-		Vocals = {
+		vocals = {
 			guitar = s_june_win_pointguit
-			Bass = s_june_win_pointbass
+			bass = s_june_win_pointbass
 			drum = s_june_win_pointdrum
 		}
 	}
-	Lose_Anims = {
+	lose_anims = {
 		guitar = {
-			Bass = BDGS_G_Bassist_Lose_01
-			Vocals = BDGS_G_Singer_Lose_01
-			drum = BDGS_G_Drummer_Lose_01
+			bass = bdgs_g_bassist_lose_01
+			vocals = bdgs_g_singer_lose_01
+			drum = bdgs_g_drummer_lose_01
 		}
-		Bass = {
-			guitar = BDGS_B_Guitarist_Lose_01
-			Vocals = BDGS_B_Singer_Lose_01
-			drum = BDGS_B_Drummer_Lose_01
+		bass = {
+			guitar = bdgs_b_guitarist_lose_01
+			vocals = bdgs_b_singer_lose_01
+			drum = bdgs_b_drummer_lose_01
 		}
 		drum = {
-			guitar = BDGS_D_Guitarist_Lose_01
-			Vocals = BDGS_D_Singer_Lose_01
-			Bass = BDGS_D_Bassist_Lose_01
+			guitar = bdgs_d_guitarist_lose_01
+			vocals = bdgs_d_singer_lose_01
+			bass = bdgs_d_bassist_lose_01
 		}
-		Vocals = {
-			guitar = BDGS_S_Guitarist_Lose_01
-			Bass = BDGS_S_Bassist_Lose_01
-			drum = BDGS_S_Drummer_Lose_01
+		vocals = {
+			guitar = bdgs_s_guitarist_lose_01
+			bass = bdgs_s_bassist_lose_01
+			drum = bdgs_s_drummer_lose_01
 		}
 	}
 }
 default_female_pointing_anims = {
-	Win_Anims = {
+	win_anims = {
 		guitar = {
-			Bass = g_kris_win_pointbass
-			Vocals = g_kris_win_pointsing
+			bass = g_kris_win_pointbass
+			vocals = g_kris_win_pointsing
 			drum = g_kris_win_pointdrum
 		}
-		Bass = {
+		bass = {
 			guitar = b_kris_win_pointguit
-			Vocals = b_kris_win_pointsing
+			vocals = b_kris_win_pointsing
 			drum = b_kris_win_pointdrum
 		}
 		drum = {
 			guitar = d_kris_win_pointguit
-			Vocals = d_kris_win_pointdrum
-			Bass = d_kris_win_pointdrum
+			vocals = d_kris_win_pointdrum
+			bass = d_kris_win_pointdrum
 		}
-		Vocals = {
+		vocals = {
 			guitar = s_kris_win_pointguit
-			Bass = s_kris_win_pointbass
+			bass = s_kris_win_pointbass
 			drum = s_kris_win_pointdrum
 		}
 	}
-	Lose_Anims = {
+	lose_anims = {
 		guitar = {
-			Bass = G_Kris_Lose_PointBass
-			Vocals = G_Kris_Lose_PointSing
-			drum = G_Kris_Lose_PointDrum
+			bass = g_kris_lose_pointbass
+			vocals = g_kris_lose_pointsing
+			drum = g_kris_lose_pointdrum
 		}
-		Bass = {
-			guitar = B_Kris_Lose_PointGuit
-			Vocals = B_Kris_Lose_PointSing
-			drum = B_Kris_Lose_PointDrum
+		bass = {
+			guitar = b_kris_lose_pointguit
+			vocals = b_kris_lose_pointsing
+			drum = b_kris_lose_pointdrum
 		}
 		drum = {
-			guitar = D_Kris_Lose_PointGuit
-			Vocals = D_Kris_Lose_PointSing
-			Bass = D_Kris_Lose_PointBass
+			guitar = d_kris_lose_pointguit
+			vocals = d_kris_lose_pointsing
+			bass = d_kris_lose_pointbass
 		}
-		Vocals = {
-			guitar = S_Kris_Lose_PointGuit
-			Bass = S_Kris_Lose_PointBass
-			drum = S_Kris_Lose_PointDrum
+		vocals = {
+			guitar = s_kris_lose_pointguit
+			bass = s_kris_lose_pointbass
+			drum = s_kris_lose_pointdrum
 		}
 	}
 }
-Lemmy_pointing_anims = {
-	Win_Anims = {
-		Vocals = {
+lemmy_pointing_anims = {
+	win_anims = {
+		vocals = {
 			guitar = s_lemmy_win_pointguit
-			Bass = s_lemmy_win_pointbass
+			bass = s_lemmy_win_pointbass
 			drum = s_lemmy_win_pointdrum
 		}
 	}
-	Lose_Anims = {
-		Vocals = {
+	lose_anims = {
+		vocals = {
 			guitar = s_lemmy_lose_pointguit
-			Bass = s_lemmy_lose_pointbass
-			drum = S_Lemmy_Lose_WalkAway
+			bass = s_lemmy_lose_pointbass
+			drum = s_lemmy_lose_walkaway
 		}
 	}
 }
-KingD_pointing_anims = {
-	Win_Anims = {
-		Vocals = {
-			guitar = s_KingD_win_pointguit
-			Bass = s_KingD_win_pointbass
-			drum = s_KingD_win_pointdrum
+kingd_pointing_anims = {
+	win_anims = {
+		vocals = {
+			guitar = s_kingd_win_pointguit
+			bass = s_kingd_win_pointbass
+			drum = s_kingd_win_pointdrum
 		}
 	}
-	Lose_Anims = {
-		Vocals = {
-			guitar = s_KingD_lose_pointguit
-			Bass = s_KingD_lose_pointbass
-			drum = S_KingD_Lose_PointDrum
+	lose_anims = {
+		vocals = {
+			guitar = s_kingd_lose_pointguit
+			bass = s_kingd_lose_pointbass
+			drum = s_kingd_lose_pointdrum
 		}
 	}
 }

@@ -1,68 +1,68 @@
 guitar_hand_event_time_offset = -100
 
-script WatchForStartPlaying_iterator 
+script watchforstartplaying_iterator 
 	begin
-	GetSongTimeMs time_offset = <time_offset>
+	getsongtimems time_offset = <time_offset>
 	if (<time> >= 0)
 		wait_for_next_even_frame
-		Wait \{1
+		wait \{1
 			gameframe}
-		BandManager_EndIntroAnims
-		BandManager_StartAllFacialAnims
-		Crowd_AllPlayAnim \{Anim = Idle}
+		bandmanager_endintroanims
+		bandmanager_startallfacialanims
+		crowd_allplayanim \{anim = idle}
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
-script Drumkit_anim_iterator 
+script drumkit_anim_iterator 
 	return
 endscript
 
 script drumkit_input_playanim 
 endscript
 
-script AE_DrumKit_play_hiHat 
+script ae_drumkit_play_hihat 
 endscript
 
-script AE_DrumKit_play_Snare 
+script ae_drumkit_play_snare 
 endscript
 
-script AE_DrumKit_play_Crash1 
+script ae_drumkit_play_crash1 
 endscript
 
-script AE_DrumKit_play_Crash2 
+script ae_drumkit_play_crash2 
 endscript
 
-script AE_DrumKit_play_Tom1 
+script ae_drumkit_play_tom1 
 endscript
 
-script AE_DrumKit_play_tom2 
+script ae_drumkit_play_tom2 
 endscript
 
-script AE_DrumKit_play_Ride 
+script ae_drumkit_play_ride 
 endscript
 
-script AE_DrumKit_Stop_Crash1 
+script ae_drumkit_stop_crash1 
 endscript
 
-script AE_DrumKit_Stop_Crash2 
+script ae_drumkit_stop_crash2 
 endscript
 
-script handle_change_stance \{Speed = 1.0}
-	Obj_GetID
-	ExtendCRC <ObjID> '_Info' out = info_struct
+script handle_change_stance \{speed = 1.0}
+	obj_getid
+	extendcrc <objid> '_Info' out = info_struct
 	display_debug_info = false
 	if (should_display_debug_info)
 		display_debug_info = true
 	endif
-	if GotParam \{no_wait}
+	if gotparam \{no_wait}
 		anim_set = ($<info_struct>.anim_set)
 		old_stance = ($<info_struct>.stance)
 		if play_stance_transition_cfunc anim_set = <anim_set> old_stance = <old_stance> new_stance = <stance>
-			hero_play_anim Anim = <anim_to_run> Speed = <Speed>
+			hero_play_anim anim = <anim_to_run> speed = <speed>
 			hero_wait_until_anim_finished
 		else
 		endif
@@ -71,7 +71,7 @@ script handle_change_stance \{Speed = 1.0}
 		if (<display_debug_info> = true)
 
 		endif
-		if (<ObjID> = Guitarist || <ObjID> = bassist)
+		if (<objid> = guitarist || <objid> = bassist)
 			if (<stance> = intro || <stance> = intro_smstg || <stance> = stance_frontend || <stance> = stance_frontend_guitar)
 				change structurename = <info_struct> disable_arms = 2
 				change structurename = <info_struct> next_anim_disable_arms = 2
@@ -79,16 +79,16 @@ script handle_change_stance \{Speed = 1.0}
 				change structurename = <info_struct> disable_arms = 0
 				change structurename = <info_struct> next_anim_disable_arms = 0
 			endif
-			Obj_SwitchScript \{guitarist_idle}
+			obj_switchscript \{guitarist_idle}
 		else
-			Obj_SwitchScript \{BandMember_Idle}
+			obj_switchscript \{bandmember_idle}
 		endif
 	else
 		if (<display_debug_info> = true)
 
 		endif
 		change structurename = <info_struct> next_stance = <stance>
-		if (<ObjID> = Guitarist || <ObjID> = bassist)
+		if (<objid> = guitarist || <objid> = bassist)
 			if (<stance> = intro || <stance> = intro_smstg || <stance> = stance_frontend || <stance> = stance_frontend_guitar)
 				change structurename = <info_struct> next_anim_disable_arms = 2
 			else
@@ -99,45 +99,45 @@ script handle_change_stance \{Speed = 1.0}
 	return
 endscript
 
-script Output_Camera_Sync_Warnings 
-	GMan_SongTool_GetCurrentSong
+script output_camera_sync_warnings 
+	gman_songtool_getcurrentsong
 
 
-	GMan_SongTool_GetCurrentSong
+	gman_songtool_getcurrentsong
 	get_song_prefix song = <current_song>
-	FormatText checksumname = event_array '%s_cameras_notes' s = <song_prefix> AddToStringLookup = true
-	Sync_Cameras_To_Performance song_name = <current_song> Camera_Array = <event_array> output_results = 1
+	formattext checksumname = event_array '%s_cameras_notes' s = <song_prefix> addtostringlookup = true
+	sync_cameras_to_performance song_name = <current_song> camera_array = <event_array> output_results = 1
 endscript
 
-script Print_Camera_Sync_Warning 
-	if NOT GotParam \{output_results}
+script print_camera_sync_warning 
+	if NOT gotparam \{output_results}
 		return
 	endif
 	if (<output_results> = 1)
-		TextOutput text = <warning>
+		textoutput text = <warning>
 	endif
 
 endscript
 
-script Show_PlayClip_Time 
+script show_playclip_time 
 	if (<playclip_time_displayed> = 1)
 		return
 	endif
 	if (<end_frame> = -1)
-		FormatText TextName = warning qs("\L%a: Band_PlayClip") a = <next_anim_time>
+		formattext textname = warning qs(0x3e77c172) a = <next_anim_time>
 	else
 		length_in_frames = (<end_frame> - <start_frame>)
-		FormatText TextName = warning qs("\L%a: Band_PlayClip start-%b end-%c (length %d)  ") a = <next_anim_time> b = <start_frame> c = <end_frame> d = <length_in_frames>
+		formattext textname = warning qs(0xc191d5ab) a = <next_anim_time> b = <start_frame> c = <end_frame> d = <length_in_frames>
 	endif
-	Print_Camera_Sync_Warning <...>
+	print_camera_sync_warning <...>
 	return \{playclip_time_displayed = 1}
 endscript
 
-script Sync_Cameras_To_Performance \{output_results = 0}
+script sync_cameras_to_performance \{output_results = 0}
 endscript
-Short_Strum = 800
-Short_Pick = 666
-Init_Blend_Curve = [
+short_strum = 800
+short_pick = 666
+init_blend_curve = [
 	1.0
 	0.9936329
 	0.97541296
@@ -170,7 +170,7 @@ Init_Blend_Curve = [
 	0.000607445
 	0.0
 ]
-Idle_Blend_Curve = [
+idle_blend_curve = [
 	1.0
 	0.9916719
 	0.967925
@@ -204,23 +204,23 @@ Idle_Blend_Curve = [
 	0.0
 ]
 
-script fire_off_Idle 
+script fire_off_idle 
 	if (<idletype> = rest)
-		Idle = 'Strum_Idle_Rest'
+		idle = 'Strum_Idle_Rest'
 	endif
-	GetRandomFloat \{a = 0.0
+	getrandomfloat \{a = 0.0
 		b = 1.0}
 	startanim = <random_float>
-	ExtendCRC <strum_base> <Idle> out = Strumanim
-	ExtendCRC <strum_base> <LastBasePose> out = baseanim
-	Anim_Command target = Dynamic_strums command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <blend>
-		blendcurve = $Idle_Blend_Curve
-		Tree = $Dynamic_Strum_Idle_Branch
+	extendcrc <0x13b83749> <idle> out = strumanim
+	extendcrc <0x13b83749> <lastbasepose> out = baseanim
+	anim_command target = dynamic_strums command = degenerateblend_addbranch params = {
+		blendduration = <blend>
+		blendcurve = $idle_blend_curve
+		tree = $dynamic_strum_idle_branch
 		params = {
 			startanim = <startanim>
 			baseanim = <baseanim>
-			Strumanim = <Strumanim>
+			strumanim = <strumanim>
 		}
 	}
 endscript

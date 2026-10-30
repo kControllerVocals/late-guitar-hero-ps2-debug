@@ -1,16 +1,16 @@
 
 script ui_create_customize_character_body_art 
 	make_generic_menu \{vmenu_id = create_customize_character_body_art_vmenu
-		title = qs("TATTOOS")
+		title = qs(0x76591c6a)
 		num_icons = 2
 		show_history}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -22,13 +22,13 @@ script ui_create_customize_character_body_art
 			'customize_tat_torso_L'
 		]
 		zoom_camera = 'customize_tat_torso_zoom'}
-	add_generic_menu_text_item \{text = qs("Torso")
-		choose_state = UIstate_customize_character_sub_sections
+	add_generic_menu_text_item \{text = qs(0x7844d77c)
+		choose_state = uistate_customize_character_sub_sections
 		choose_state_data = {
-			text = qs("TORSO TATTOO")
+			text = qs(0xca13d1a3)
 			cam_name = 'customize_tat_torso'
-			part = CAS_Torso_Art
-			stance = Stance_Select_Tat_Chest
+			part = cas_torso_art
+			stance = stance_select_tat_chest
 			choose_script = ui_event
 			choose_params = {
 				event = menu_back
@@ -42,13 +42,13 @@ script ui_create_customize_character_body_art
 			]
 			zoom_camera = 'customize_character_Zoom'
 		}}
-	add_generic_menu_text_item \{text = qs("Right Arm")
-		choose_state = UIstate_customize_character_sub_sections
+	add_generic_menu_text_item \{text = qs(0xf9df288f)
+		choose_state = uistate_customize_character_sub_sections
 		choose_state_data = {
-			text = qs("RIGHT ARM")
+			text = qs(0x415e789e)
 			cam_name = 'customize_tat_right_arm'
-			part = CAS_Right_Arm_Art
-			stance = Stance_Select_Tat_Arm_R
+			part = cas_right_arm_art
+			stance = stance_select_tat_arm_r
 			choose_script = ui_event
 			choose_params = {
 				event = menu_back
@@ -61,13 +61,13 @@ script ui_create_customize_character_body_art
 			]
 			zoom_camera = 'customize_character_Zoom'
 		}}
-	add_generic_menu_text_item \{text = qs("Left Arm")
-		choose_state = UIstate_customize_character_sub_sections
+	add_generic_menu_text_item \{text = qs(0x86bc5ab4)
+		choose_state = uistate_customize_character_sub_sections
 		choose_state_data = {
-			text = qs("LEFT ARM")
+			text = qs(0x290271d8)
 			cam_name = 'customize_tat_left_arm'
-			part = CAS_Left_Arm_Art
-			stance = Stance_Select_Tat_Arm_L
+			part = cas_left_arm_art
+			stance = stance_select_tat_arm_l
 			choose_script = ui_event
 			choose_params = {
 				event = menu_back
@@ -81,7 +81,7 @@ script ui_create_customize_character_body_art
 			zoom_camera = 'customize_character_Zoom'
 		}}
 	menu_finish \{car_helper_text}
-	LaunchEvent type = focus target = create_customize_character_body_art_vmenu data = {child_index = <selected_index>}
+	launchevent type = focus target = create_customize_character_body_art_vmenu data = {child_index = <selected_index>}
 endscript
 
 script ui_destroy_customize_character_body_art 
@@ -89,43 +89,43 @@ script ui_destroy_customize_character_body_art
 endscript
 
 script hide_torso_parts_for_body_art 
-	PushTemporaryCASAppearance
-	SetCASAppearancePartInstance \{part = CAS_Acc_Left
+	pushtemporarycasappearance
+	setcasappearancepartinstance \{part = cas_acc_left
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Acc_Right
+	setcasappearancepartinstance \{part = cas_acc_right
 		part_instance = {
 			desc_id = none
 		}}
 	if is_female_char
-		SetCASAppearancePartInstance \{part = CAS_Torso
+		setcasappearancepartinstance \{part = cas_torso
 			part_instance = {
-				desc_id = F_Fun_Torso_BikiniTop
+				desc_id = f_fun_torso_bikinitop
 			}}
 	else
-		SetCASAppearancePartInstance \{part = CAS_Torso
+		setcasappearancepartinstance \{part = cas_torso
 			part_instance = {
 				desc_id = none
 			}}
 	endif
-	RebuildCurrentCASModel
+	rebuildcurrentcasmodel
 endscript
 
 script unhide_torso_parts_for_body_art 
-	MergePartIntoTemporaryCASAppearance \{part_list = [
-			CAS_Body
-			CAS_Right_Arm_Art
-			CAS_Left_Arm_Art
-			CAS_Torso_Art
+	mergepartintotemporarycasappearance \{part_list = [
+			cas_body
+			cas_right_arm_art
+			cas_left_arm_art
+			cas_torso_art
 		]}
 endscript
 
-script ui_init_customize_character_body_art 
+script 0xc905458a 
 	spawnscriptnow \{hide_torso_parts_for_body_art}
 endscript
 
-script ui_deinit_customize_character_body_art 
-	ForceCASReload
+script 0x551df1c1 
+	0xf204d5ae
 	spawnscriptnow \{unhide_torso_parts_for_body_art}
 endscript

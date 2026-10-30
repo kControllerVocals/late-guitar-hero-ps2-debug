@@ -1,65 +1,65 @@
-download_LevelZoneArray = [
+download_levelzonearray = [
 ]
-download_LevelZones = {
+download_levelzones = {
 }
-LevelZoneArray = [
+levelzonearray = [
 	viewer
-	load_Z_Cairo
-	load_Z_NewOrleans
-	load_Z_MexicoCity
-	load_Z_Nashville
+	load_z_cairo
+	load_z_neworleans
+	load_z_mexicocity
+	load_z_nashville
 	load_z_norway
-	load_Z_Dublin
-	load_Z_Vegas
-	load_Z_Subway
-	load_Z_SanFrancisco
-	load_Z_CarHenge
-	load_Z_FreakShow
-	load_Z_DragRace
-	load_Z_LHC
-	load_Z_Visualizer
+	load_z_dublin
+	load_z_vegas
+	load_z_subway
+	load_z_sanfrancisco
+	load_z_carhenge
+	load_z_freakshow
+	load_z_dragrace
+	load_z_lhc
+	load_z_visualizer
 	load_z_cube
-	load_z_frontend_cairo
-	load_z_frontend_carhenge
-	load_z_frontend_neworleans
-	load_z_frontend_norway
-	load_z_frontend_subway
+	0x16d1f3f2
+	0x01d4e416
+	0x65cb1f8f
+	0x6682191f
+	0xa383d0e6
 ]
-LevelZones = {
-	load_Z_Cairo = {
-		zone = Z_Cairo
+levelzones = {
+	load_z_cairo = {
+		zone = z_cairo
 		name = 'Z_Cairo'
-		title = qs("\LCairo Bazaar")
+		title = qs(0x7196b4d1)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_cairo
 	}
-	load_Z_NewOrleans = {
-		zone = Z_NewOrleans
+	load_z_neworleans = {
+		zone = z_neworleans
 		name = 'Z_NewOrleans'
-		title = qs("\LAngel's Crypt")
+		title = qs(0x8a2dd332)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_orleans
 	}
-	load_Z_MexicoCity = {
-		zone = Z_MexicoCity
+	load_z_mexicocity = {
+		zone = z_mexicocity
 		name = 'Z_MexicoCity'
-		title = qs("\LCalavera Square")
+		title = qs(0x4b9bbddb)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_mex
 	}
-	load_Z_Nashville = {
-		zone = Z_Nashville
+	load_z_nashville = {
+		zone = z_nashville
 		name = 'Z_Nashville'
-		title = qs("\LElectric Honky Tonk")
+		title = qs(0xa36d3d13)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
@@ -69,97 +69,97 @@ LevelZones = {
 	load_z_norway = {
 		zone = z_norway
 		name = 'z_norway'
-		title = qs("\LFjord of Swords")
+		title = qs(0xe9c20e9a)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_norway
 	}
-	load_Z_Dublin = {
-		zone = Z_Dublin
+	load_z_dublin = {
+		zone = z_dublin
 		name = 'Z_Dublin'
-		title = qs("\LO'Connell's Corner")
+		title = qs(0x2d18d9da)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_dublin
 	}
-	load_Z_Vegas = {
-		zone = Z_Vegas
+	load_z_vegas = {
+		zone = z_vegas
 		name = 'Z_Vegas'
-		title = qs("\LNeon Oasis")
+		title = qs(0xeab93c80)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_vegas
 	}
-	load_Z_Subway = {
-		zone = Z_Subway
+	load_z_subway = {
+		zone = z_subway
 		name = 'Z_Subway'
-		title = qs("\LThe 13th Rail")
+		title = qs(0xe8f17401)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_ny
 	}
-	load_Z_SanFrancisco = {
-		zone = Z_SanFrancisco
+	load_z_sanfrancisco = {
+		zone = z_sanfrancisco
 		name = 'Z_SanFrancisco'
-		title = qs("\LThe Golden Gate")
+		title = qs(0x40c9ee8a)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_sf
 	}
-	load_Z_CarHenge = {
-		zone = Z_CarHenge
+	load_z_carhenge = {
+		zone = z_carhenge
 		name = 'Z_CarHenge'
-		title = qs("\LGuitarhenge")
+		title = qs(0x8cac823e)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_guitar_henge
 	}
-	load_Z_FreakShow = {
-		zone = Z_FreakShow
+	load_z_freakshow = {
+		zone = z_freakshow
 		name = 'Z_FreakShow'
-		title = qs("\LSideshow")
+		title = qs(0x4a95dc5c)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_freak
 	}
-	load_Z_DragRace = {
-		zone = Z_Dragrace
+	load_z_dragrace = {
+		zone = z_dragrace
 		name = 'Z_DragRace'
-		title = qs("\LThe Aqueduct")
+		title = qs(0x3a84101e)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_drag
 	}
-	load_Z_LHC = {
-		zone = Z_LHC
+	load_z_lhc = {
+		zone = z_lhc
 		name = 'Z_LHC'
-		title = qs("\LClub Boson")
+		title = qs(0xa6f99d1d)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_lhc
 	}
-	load_Z_Visualizer = {
-		zone = Z_Visualizer
+	load_z_visualizer = {
+		zone = z_visualizer
 		name = 'Z_Visualizer'
-		title = qs("\LWormhole")
+		title = qs(0xc001117d)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
@@ -167,9 +167,9 @@ LevelZones = {
 		poster = venue_poster_visual
 	}
 	load_z_cube = {
-		zone = Z_Cube
+		zone = z_cube
 		name = 'Z_Cube'
-		title = qs("\LHypersphere")
+		title = qs(0x3ee59a14)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
@@ -179,7 +179,7 @@ LevelZones = {
 	viewer = {
 		zone = z_viewer
 		name = 'z_viewer'
-		title = qs("\Lviewer")
+		title = qs(0x6e2b4d97)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
@@ -190,7 +190,7 @@ LevelZones = {
 	load_z_viewer = {
 		zone = z_viewer
 		name = 'z_viewer'
-		title = qs("\Lviewer")
+		title = qs(0x6e2b4d97)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
@@ -201,7 +201,7 @@ LevelZones = {
 	load_z_studio = {
 		zone = z_studio
 		name = 'z_Studio'
-		title = qs("\LRecording Studio")
+		title = qs(0x28245ace)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
@@ -209,103 +209,103 @@ LevelZones = {
 		poster = venue_poster_gh5
 		debug_only
 	}
-	load_z_frontend_cairo = {
-		zone = z_frontend_cairo
+	0x16d1f3f2 = {
+		zone = 0x604f529a
 		name = 'z_frontend_cairo'
-		title = qs("\LCairo Bazaar")
+		title = qs(0x7196b4d1)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_cairo
 	}
-	load_z_frontend_carhenge = {
-		zone = z_frontend_carhenge
+	0x01d4e416 = {
+		zone = 0xe7bb4d13
 		name = 'z_frontend_carhenge'
-		title = qs("\LGuitarhenge")
+		title = qs(0x8cac823e)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
-		poster = venue_poster_carhenge
+		poster = 0x30755b85
 	}
-	load_z_frontend_neworleans = {
-		zone = z_frontend_neworleans
+	0x65cb1f8f = {
+		zone = 0xb7b616e9
 		name = 'z_frontend_neworleans'
-		title = qs("\LAngel's Crypt")
+		title = qs(0x8a2dd332)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
-		poster = venue_poster_neworleans
+		poster = 0x647959ea
 	}
-	load_z_frontend_norway = {
-		zone = z_frontend_norway
+	0x6682191f = {
+		zone = 0x259d6ed4
 		name = 'z_frontend_norway'
-		title = qs("\LFjord of Swords")
+		title = qs(0xe9c20e9a)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
 		poster = venue_poster_norway
 	}
-	load_z_frontend_subway = {
-		zone = z_frontend_subway
+	0xa383d0e6 = {
+		zone = 0xe09ca72d
 		name = 'z_frontend_subway'
-		title = qs("\LThe 13th Rail")
+		title = qs(0xe8f17401)
 		loading_movie = 'loading_venue_nashv'
 		unlock_movie = 'unlock_venue_nashv'
 		unlock_movie_loop_start = 18
 		unlock_movie_loop_end = 34
-		poster = venue_poster_subway
+		poster = 0x286ae7d0
 	}
 }
 
-script is_frontend_venue \{venue = $current_level}
+script 0x078ad386 \{venue = $current_level}
 	switch (<venue>)
 		case z_soundcheck
 		case z_objviewer
-		case z_frontend_cairo
-		case z_frontend_carhenge
-		case z_frontend_neworleans
-		case z_frontend_norway
-		case z_frontend_subway
+		case 0x604f529a
+		case 0xe7bb4d13
+		case 0xb7b616e9
+		case 0x259d6ed4
+		case 0xe09ca72d
 		return \{true}
 	endswitch
 	return \{false}
 endscript
-current_frontend_level = load_z_frontend_cairo
+0x645c029b = 0x16d1f3f2
 
-script get_frontend_venue_checksum \{venue = $current_level}
-	<frontend_venue> = $current_frontend_level
+script 0x72fc1318 \{venue = $current_level}
+	<0x2132a86b> = $0x645c029b
 	switch (<venue>)
-		case load_Z_Cairo
-		<frontend_venue> = load_z_frontend_cairo
-		case load_Z_CarHenge
-		<frontend_venue> = load_z_frontend_carhenge
-		case load_Z_NewOrleans
-		<frontend_venue> = load_z_frontend_neworleans
+		case load_z_cairo
+		<0x2132a86b> = 0x16d1f3f2
+		case load_z_carhenge
+		<0x2132a86b> = 0x01d4e416
+		case load_z_neworleans
+		<0x2132a86b> = 0x65cb1f8f
 		case load_z_norway
-		<frontend_venue> = load_z_frontend_norway
-		case load_Z_Subway
-		<frontend_venue> = load_z_frontend_subway
+		<0x2132a86b> = 0x6682191f
+		case load_z_subway
+		<0x2132a86b> = 0xa383d0e6
 	endswitch
-	change current_frontend_level = <frontend_venue>
-	if StructureContains Structure = $LevelZones <frontend_venue>
-		return frontend_venue = <frontend_venue> prefix = ($LevelZones.<frontend_venue>.name) prefix_crc = ($LevelZones.<frontend_venue>.zone)
+	change 0x645c029b = <0x2132a86b>
+	if structurecontains structure = $levelzones <0x2132a86b>
+		return 0x2132a86b = <0x2132a86b> prefix = ($levelzones.<0x2132a86b>.name) prefix_crc = ($levelzones.<0x2132a86b>.zone)
 	endif
-	return frontend_venue = <frontend_venue> prefix = 'z_unknown' prefix_crc = z_unknown
+	return 0x2132a86b = <0x2132a86b> prefix = 'z_unknown' prefix_crc = z_unknown
 endscript
 
-script get_frontend_venue_player_start_checksums 
-	get_frontend_venue_checksum \{venue = $current_level}
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Player1_Start' out = player1_start
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Player2_Start' out = player2_start
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Player3_Start' out = player3_start
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Player4_Start' out = player4_start
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Guitar_Start' out = Guitar_Start
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Drum_Start' out = Drum_Start
-	ExtendCRC <prefix_crc> '_TRG_Waypoint_Microphone_Start' out = Microphone_Start
-	debug_PrintStruct <...>
-	return player1_start = <player1_start> player2_start = <player2_start> player3_start = <player3_start> player4_start = <player4_start> Guitar_Start = <Guitar_Start> Drum_Start = <Drum_Start> Microphone_Start = <Microphone_Start>
+script 0xce0505af 
+	0x72fc1318 \{venue = $current_level}
+	extendcrc <prefix_crc> '_TRG_Waypoint_Player1_Start' out = 0xae37e78a
+	extendcrc <prefix_crc> '_TRG_Waypoint_Player2_Start' out = 0x9fdffd17
+	extendcrc <prefix_crc> '_TRG_Waypoint_Player3_Start' out = 0x39a8f6a3
+	extendcrc <prefix_crc> '_TRG_Waypoint_Player4_Start' out = 0xfc0fc82d
+	extendcrc <prefix_crc> '_TRG_Waypoint_Guitar_Start' out = 0x141d8652
+	extendcrc <prefix_crc> '_TRG_Waypoint_Drum_Start' out = 0xb07e72b1
+	extendcrc <prefix_crc> '_TRG_Waypoint_Microphone_Start' out = 0x607528c5
+	0xe6b61ea6 <...>
+	return 0xae37e78a = <0xae37e78a> 0x9fdffd17 = <0x9fdffd17> 0x39a8f6a3 = <0x39a8f6a3> 0xfc0fc82d = <0xfc0fc82d> 0x141d8652 = <0x141d8652> 0xb07e72b1 = <0xb07e72b1> 0x607528c5 = <0x607528c5>
 endscript

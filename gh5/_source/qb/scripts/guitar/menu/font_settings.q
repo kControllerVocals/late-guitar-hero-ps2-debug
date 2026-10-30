@@ -15,10 +15,10 @@ font_scaling = {
 }
 
 script test_font_scales 
-	DestroyScreenElement \{id = test_font_scales_container}
-	CreateScreenElement \{id = test_font_scales_container
+	destroyscreenelement \{id = test_font_scales_container}
+	createscreenelement \{id = test_font_scales_container
 		parent = root_window
-		type = VMenu
+		type = vmenu
 		just = [
 			left
 			top
@@ -26,7 +26,7 @@ script test_font_scales
 		pos = (100.0, 50.0)
 		dims = (100.0, 100.0)
 		z_priority = 10000}
-	ForEachIn \{Structure = $font_scaling
+	foreachin \{structure = $font_scaling
 		do = test_font_scales_element
 		pass_index}
 endscript
@@ -35,12 +35,12 @@ script test_font_scales_element
 	if (<foreachin_name> = `default`)
 		return
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		parent = test_font_scales_container
-		type = TextBlockElement
+		type = textblockelement
 		dims = (150.0, 50.0)
 		font = <foreachin_name>
-		text = qs("\LThe quick brown fox jumps over the lazy dog.")
+		text = qs(0x3859638d)
 		fit_width = `scale each line to fit`
 		fit_height = `scale down if larger`
 		tags = {debug_me}

@@ -1,10 +1,10 @@
 destroy_time = 1.0
 highway_guitar1 = {
-	gHighwayTiling = 1.5
+	ghighwaytiling = 1.5
 	highway_playline = 655
 	highway_height = 350
 	highway_top_width = 160.0
-	widthOffsetFactor = 2.2
+	widthoffsetfactor = 2.2
 	highway_fade = 30.0
 	gem_start_scale = [
 		0.65000004
@@ -41,11 +41,11 @@ highway_guitar1 = {
 	perspectiveexp = 1.00125
 }
 highway_guitar2 = {
-	gHighwayTiling = 1.4
+	ghighwaytiling = 1.4
 	highway_playline = 655
 	highway_height = 270
 	highway_top_width = 170.0
-	widthOffsetFactor = 1.3299999
+	widthoffsetfactor = 1.3299999
 	highway_fade = 25.0
 	gem_start_scale = [
 		0.68
@@ -82,11 +82,11 @@ highway_guitar2 = {
 	perspectiveexp = 1.00098
 }
 highway_guitar3 = {
-	gHighwayTiling = 1.4
+	ghighwaytiling = 1.4
 	highway_playline = 655
 	highway_height = 270
 	highway_top_width = 152.0
-	widthOffsetFactor = 1.2
+	widthoffsetfactor = 1.2
 	highway_fade = 25.0
 	gem_start_scale = [
 		0.64000005
@@ -122,7 +122,7 @@ highway_guitar3 = {
 	perspectivefact = 1.00087
 	perspectiveexp = 1.00095
 }
-debug_highway_material = Highway_Guitarist_axel_Outfit1_Style1
+debug_highway_material = 0x8058ddb2
 drum_fretbar_alpha = 0.5
 x_offset_p2 = 230
 x_offset_p3 = 225
@@ -175,13 +175,13 @@ sidebar_starpower1 = [
 	127
 	127
 ]
-sidebar_streak0 = [
+0x2cefcfd2 = [
 	127
 	107
 	0
 	127
 ]
-sidebar_streak1 = [
+0x5be8ff44 = [
 	64
 	52
 	0
@@ -199,7 +199,7 @@ highway_normal = [
 	160
 	255
 ]
-highway_normal_x2 = [
+0x57e04d77 = [
 	320
 	320
 	320
@@ -273,7 +273,7 @@ default_lag_settings = {
 		drum_midi_lag_ms = 54
 		prefretbar_time = 0.4
 	}
-	Ps2 = {
+	ps2 = {
 		audio_lag_ms = 0
 		gem_lag_ms = -55
 		input_lag_ms = -60
@@ -300,7 +300,7 @@ practice_slow_lag_settings = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
-	Ps2 = {
+	ps2 = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
@@ -323,7 +323,7 @@ practice_slower_lag_settings = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
-	Ps2 = {
+	ps2 = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
@@ -346,7 +346,7 @@ practice_slowest_lag_settings = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
-	Ps2 = {
+	ps2 = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
@@ -369,7 +369,7 @@ practice_drum_slow_lag_settings = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
-	Ps2 = {
+	ps2 = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
@@ -390,7 +390,7 @@ practice_drum_slower_lag_settings = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
-	Ps2 = {
+	ps2 = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
@@ -411,7 +411,7 @@ practice_drum_slowest_lag_settings = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
-	Ps2 = {
+	ps2 = {
 		gem_lag_ms = 0
 		input_lag_ms = 0
 	}
@@ -435,7 +435,7 @@ default_lag_settings_dolbydigital = {
 		drum_midi_lag_ms = 0
 		prefretbar_time = 0
 	}
-	Ps2 = {
+	ps2 = {
 		audio_lag_ms = 0
 		gem_lag_ms = 0
 		input_lag_ms = 0
@@ -465,7 +465,7 @@ health_change_bad = {
 		-0.0374
 		-0.048
 	]
-	Bass = [
+	bass = [
 		-0.01
 		-0.053
 		-0.0267
@@ -479,7 +479,7 @@ health_change_bad = {
 		-0.029
 		-0.039
 	]
-	Vocals = [
+	vocals = [
 		-0.025
 		-0.035
 		-0.041699998
@@ -495,7 +495,7 @@ health_change_good = {
 		0.013499999
 		0.012
 	]
-	Bass = [
+	bass = [
 		0.029
 		0.029
 		0.0145
@@ -509,7 +509,7 @@ health_change_good = {
 		0.013499999
 		0.012
 	]
-	Vocals = [
+	vocals = [
 		0.035
 		0.035
 		0.041699998
@@ -525,7 +525,7 @@ health_change_star_bad = {
 		-0.0374
 		-0.048
 	]
-	Bass = [
+	bass = [
 		-0.01
 		-0.053
 		-0.0267
@@ -539,7 +539,7 @@ health_change_star_bad = {
 		-0.029
 		-0.039
 	]
-	Vocals = [
+	vocals = [
 		-0.012999999
 		-0.018
 		-0.021
@@ -555,7 +555,7 @@ health_change_star = {
 		0.058000002
 		0.058000002
 	]
-	Bass = [
+	bass = [
 		0.058000002
 		0.058000002
 		0.058000002
@@ -569,7 +569,7 @@ health_change_star = {
 		0.058000002
 		0.058000002
 	]
-	Vocals = [
+	vocals = [
 		0.07
 		0.07
 		0.084
@@ -585,7 +585,7 @@ health_change_red_multi = {
 		1.3499999
 		1.3499999
 	]
-	Bass = [
+	bass = [
 		1.3499999
 		1.3499999
 		1.3499999
@@ -599,7 +599,7 @@ health_change_red_multi = {
 		1.3499999
 		1.3499999
 	]
-	Vocals = [
+	vocals = [
 		1.3499999
 		1.3499999
 		1.3499999
@@ -615,7 +615,7 @@ health_change_green_multi = {
 		0.85
 		0.85
 	]
-	Bass = [
+	bass = [
 		0.85
 		0.85
 		0.85
@@ -629,7 +629,7 @@ health_change_green_multi = {
 		0.85
 		0.85
 	]
-	Vocals = [
+	vocals = [
 		0.85
 		0.85
 		0.85
@@ -650,8 +650,8 @@ health_band_multiplier = [
 	1.5
 ]
 band_max_star_power_health_boost = 0.25
-Hyperspeed_Slowest = 1.0
-Hyperspeed_Fastest = 0.68
+hyperspeed_slowest = 1.0
+hyperspeed_fastest = 0.68
 health_invincible_time_percentage_beginner = 30.0
 health_invincible_time_percentage_easy = 20.0
 health_invincible_time_percentage_medium = 10.0
@@ -676,7 +676,7 @@ star_power_trigger_frames = 8
 allowable_hammer_on_fails = 3
 allowable_hammer_on_fails_tapping = 10
 touch_pattern_switch_frames = 0
-Song_Win_Delay = 2
+song_win_delay = 2
 calibrate_lag_tick_ms_offset = 66
 star_rating_cutoffs = {
 	star5 = [
@@ -700,6 +700,6 @@ wavecaster_seekspeed = 0.005
 wavecaster_maxrotspeed = 0.314
 wavecaster_damping = 0.96
 wavecaster_rotoffset = -1.6
-wavecaster_bonename = Bone_Guitar_Body
-wavecaster_geomname = CAS_Guitar_Body
-wavecaster_propname = GTR38_Trans_Water
+wavecaster_bonename = bone_guitar_body
+wavecaster_geomname = cas_guitar_body
+wavecaster_propname = gtr38_trans_water

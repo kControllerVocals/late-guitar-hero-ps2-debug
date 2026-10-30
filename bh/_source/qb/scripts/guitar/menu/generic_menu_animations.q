@@ -1,8 +1,8 @@
 
 script generic_alpha_fade_animation 
 
-	GetScreenElementChildren id = <container_id>
-	GetArraySize <children>
+	getscreenelementchildren id = <container_id>
+	getarraysize <children>
 	index_to_add = 1
 	finish_animation = 0
 	if (<array_size> > 1)
@@ -13,7 +13,7 @@ script generic_alpha_fade_animation
 			<finish_animation> = 1
 		endif
 		if (<finish_animation> = 0)
-			if GotParam \{reverse_loop}
+			if gotparam \{reverse_loop}
 				if (<i> = <loop_start_index>)
 					<index_to_add> = 1
 					<loop_counter> = (<loop_counter> + 1)
@@ -26,7 +26,7 @@ script generic_alpha_fade_animation
 				endif
 			endif
 		else
-			if GotParam \{reverse_loop}
+			if gotparam \{reverse_loop}
 				if (<index_to_add> = 1)
 					index_to_add = -1
 				else
@@ -46,26 +46,26 @@ script generic_alpha_fade_animation
 		endif
 		if ((<index_to_add> = 1) || (<i> = <loop_end_index>))
 			if ((<i> - 1) >= 0)
-				(<children> [(<i> - 1)]) :SE_SetProps {
+				(<children> [(<i> - 1)]) :se_setprops {
 					alpha = 0
 					time = <alpha_time>
 				}
 			endif
 		else
 			if ((<i> + 1) < <array_size>)
-				(<children> [(<i> + 1)]) :SE_SetProps {
+				(<children> [(<i> + 1)]) :se_setprops {
 					alpha = 0
 					time = <alpha_time>
 				}
 			endif
 		endif
-		(<children> [<i>]) :SE_SetProps {
+		(<children> [<i>]) :se_setprops {
 			alpha = 1
 			time = <alpha_time>
 		}
-		(<children> [<i>]) :SE_WaitProps
+		(<children> [<i>]) :se_waitprops
 		<i> = (<i> + <index_to_add>)
 		repeat
-		Die
+		die
 	endif
 endscript

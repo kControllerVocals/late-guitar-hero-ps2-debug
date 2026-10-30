@@ -1,37 +1,37 @@
-L_GUIT_Moment_DontSpeak_anims_set = {
-	Stance_A = {
-		Idle = {
+0x9957b82c = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					G_DontSpeak_01
+				slow = [
+					0x54347b0c
 				]
-				Med = [
-					G_DontSpeak_02
+				med = [
+					0xcd3d2ab6
 				]
-				Fast = [
-					G_DontSpeak_02
-				]
-			}
-			Normal = {
-				Slow = [
-					G_DontSpeak_01
-				]
-				Med = [
-					G_DontSpeak_02
-				]
-				Fast = [
-					G_DontSpeak_02
+				fast = [
+					0xcd3d2ab6
 				]
 			}
-			Bad = {
-				Slow = [
-					G_DontSpeak_01
+			normal = {
+				slow = [
+					0x54347b0c
 				]
-				Med = [
-					G_DontSpeak_02
+				med = [
+					0xcd3d2ab6
 				]
-				Fast = [
-					G_DontSpeak_02
+				fast = [
+					0xcd3d2ab6
+				]
+			}
+			bad = {
+				slow = [
+					0x54347b0c
+				]
+				med = [
+					0xcd3d2ab6
+				]
+				fast = [
+					0xcd3d2ab6
 				]
 			}
 		}

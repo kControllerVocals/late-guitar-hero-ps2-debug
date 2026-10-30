@@ -1,7 +1,7 @@
 
 script ui_create_rewards 
 	progression_get_new_unlocks
-	GetArraySize \{new_unlocks}
+	getarraysize \{new_unlocks}
 	new_unlocks_size = <array_size>
 
 	if (<new_unlocks_size> > 10)
@@ -10,26 +10,26 @@ script ui_create_rewards
 	names_array = []
 	textures_array = []
 	items_array = []
-	group_name_array = []
+	0x471822bf = []
 	checksum_array = []
-	FormatText \{checksumname = default_cs
+	formattext \{checksumname = 0xea84599f
 		''}
 	cntr = 0
 	if (<array_size> > 0)
 		begin
 		this_item = (<new_unlocks> [<cntr>])
-		name = qs("unknown")
+		name = qs(0x99b9ca8b)
 		texture = unknown
 		if ((<this_item>.type) = car_piece)
 			part = ((<this_item>.item).part)
 			desc_id = ((<this_item>.item).desc_id)
 			ps2_load_car_part_script
-			if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+			if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 			endif
 			ps2_unload_car_part_script
 			name = <frontend_desc>
-			if GotParam \{polaroid}
+			if gotparam \{polaroid}
 				texture = <polaroid>
 			else
 				texture = rewards_image_placeholder
@@ -38,23 +38,23 @@ script ui_create_rewards
 
 		elseif ((<this_item>.type) = car_pieces)
 			list_of_pieces = (<this_item>.char_pieces)
-			GetArraySize \{list_of_pieces}
+			getarraysize \{list_of_pieces}
 			if (<array_size> > 0)
 				my_item = (<list_of_pieces> [0])
 				part = (<my_item>.part)
 				desc_id = (<my_item>.desc_id)
 				ps2_load_car_part_script
-				if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+				if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 				endif
 				ps2_unload_car_part_script
-				if StructureContains \{Structure = this_item
+				if structurecontains \{structure = this_item
 						group_name}
 					name = (<this_item>.group_name)
 				else
 					name = <frontend_desc>
 				endif
-				if StructureContains \{Structure = this_item
+				if structurecontains \{structure = this_item
 						unlock_icon}
 					texture = (<this_item>.unlock_icon)
 				else
@@ -66,43 +66,43 @@ script ui_create_rewards
 			get_musician_profile_struct_by_id id = (<this_item>.item) savegame = 0
 			name = (<profile_struct>.fullname)
 			texture = (<this_item>.unlock_icon)
-			RemoveParameter \{profile_struct}
+			removeparameter \{profile_struct}
 		elseif ((<this_item>.type) = level)
 
-			name = ($LevelZones.(<this_item>.item).title)
-			FormatText checksumname = venue_image 'Venue_Reward_%t' t = ($LevelZones.(<this_item>.item).name)
-			texture = <venue_image>
+			name = ($levelzones.(<this_item>.item).title)
+			formattext checksumname = 0xe279f677 'Venue_Reward_%t' t = ($levelzones.(<this_item>.item).name)
+			texture = <0xe279f677>
 		endif
-		group_name = qs("\L")
-		if StructureContains \{Structure = this_item
+		group_name = qs(0x03ac90f0)
+		if structurecontains \{structure = this_item
 				group_name}
 			group_name = (<this_item>.group_name)
 		else
 			group_name = <name>
 		endif
-		FormatText checksumname = cs_grp_name '%s' s = <group_name>
-		if NOT (ArrayContains array = <checksum_array> contains = <cs_grp_name>)
-			AddArrayElement array = <checksum_array> element = <cs_grp_name>
+		formattext checksumname = 0x82049277 '%s' s = <group_name>
+		if NOT (arraycontains array = <checksum_array> contains = <0x82049277>)
+			addarrayelement array = <checksum_array> element = <0x82049277>
 			checksum_array = <array>
 		else
-			AddArrayElement array = <checksum_array> element = default_cs
+			addarrayelement array = <checksum_array> element = 0xea84599f
 			checksum_array = <array>
 		endif
-		AddArrayElement array = <group_name_array> element = <group_name>
-		group_name_array = <array>
-		AddArrayElement array = <names_array> element = <name>
+		addarrayelement array = <0x471822bf> element = <group_name>
+		0x471822bf = <array>
+		addarrayelement array = <names_array> element = <name>
 		names_array = <array>
-		AddArrayElement array = <textures_array> element = <texture>
+		addarrayelement array = <textures_array> element = <texture>
 		textures_array = <array>
-		AddArrayElement array = <items_array> element = <this_item>
+		addarrayelement array = <items_array> element = <this_item>
 		items_array = <array>
 		cntr = (<cntr> + 1)
 		repeat <new_unlocks_size>
 	endif
-	GetArraySize <names_array>
+	getarraysize <names_array>
 	num_unlocks = <array_size>
-	if ScreenElementExists \{id = my_rewards_id}
-		DestroyScreenElement \{id = my_rewards_id}
+	if screenelementexists \{id = my_rewards_id}
+		destroyscreenelement \{id = my_rewards_id}
 	endif
 
 	get_all_exclusive_devices
@@ -110,40 +110,40 @@ script ui_create_rewards
 	if (<texture> = video)
 		texture = black
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
 		id = my_rewards_id
-		type = DescInterface
+		type = descinterface
 		desc = 'rewards'
 		rewards_image_placeholder_texture = <texture>
 		exclusive_device = <exclusive_device>
 	}
-	SoundEvent \{event = Unlock_New_Item}
-	if my_rewards_id :Desc_ResolveAlias \{name = alias_list_menu}
+	soundevent \{event = unlock_new_item}
+	if my_rewards_id :desc_resolvealias \{name = alias_list_menu}
 	else
 
 	endif
 	i = 0
 	if (<num_unlocks> > 0)
-		debug_PrintStruct <...>
+		0xe6b61ea6 <...>
 		if (<num_unlocks> > 1)
 			<add_sound_event> = true
 		else
 			<add_sound_event> = false
 		endif
 		begin
-		if NOT ((<checksum_array> [<i>]) = default_cs)
-			CreateScreenElement {
+		if NOT ((<checksum_array> [<i>]) = 0xea84599f)
+			createscreenelement {
 				parent = <resolved_id>
-				type = DescInterface
+				type = descinterface
 				desc = 'rewards_unlockable'
-				autoSizeDims = true
-				unlockable_text = (<group_name_array> [<i>])
+				autosizedims = true
+				unlockable_text = (<0x471822bf> [<i>])
 				unlockable_control_pos = {(20.0, 0.0) relative}
 				rewards_checkbox_alpha = 0
 				unlockable_alpha = 0
 			}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <id>
 				event_handlers = [
 					{pad_choose rewards_continue_to_next_screen}
@@ -157,15 +157,15 @@ script ui_create_rewards
 		repeat <num_unlocks>
 	endif
 	spawnscriptnow set_focus_to_menu params = {menu_id = <resolved_id>}
-	if loading_screen_exists
+	if 0x8658e568
 		destroy_loading_screen
 	endif
 endscript
 
 script ui_destroy_rewards 
 	clean_up_user_control_helpers
-	DestroyScreenElement \{id = my_rewards_id}
-	KillAllMovies
+	destroyscreenelement \{id = my_rewards_id}
+	killallmovies
 endscript
 
 script ui_deinit_rewards 
@@ -174,15 +174,15 @@ script ui_deinit_rewards
 endscript
 
 script rewards_continue_to_next_screen 
-	kill_reward_sparkle_scripts
+	0x096c8481
 
-	SE_SetProps \{block_events}
+	se_setprops \{block_events}
 	progression_reset_new_unlocks
 	ui_win_song_continue_next_menu
 endscript
 
 script my_menu_focus \{add_sound_event = true}
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <id>
 		unlockable_rgba = [64 , 64 , 64 , 255]
 	}
@@ -190,61 +190,61 @@ script my_menu_focus \{add_sound_event = true}
 	if (<texture> = video)
 		texture = black
 	endif
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = my_rewards_id
 		rewards_image_placeholder_texture = <texture>
 	}
 	if ((<item_textures> [<item_index>]) = video)
-		if my_rewards_id :Desc_ResolveAlias \{name = alias_movie_parent}
+		if my_rewards_id :desc_resolvealias \{name = alias_movie_parent}
 			current_movie = ''
-			<resolved_id> :GetSingleTag current_movie
+			<resolved_id> :getsingletag current_movie
 			if NOT (<current_movie> = ($ui_select_venue_info.(<items_array> [<item_index>].item).movie))
-				if ScreenElementExists \{id = reward_movie}
-					DestroyScreenElement \{id = reward_movie}
-					KillAllMovies
+				if screenelementexists \{id = reward_movie}
+					destroyscreenelement \{id = reward_movie}
+					killallmovies
 				endif
-				Wait \{1
+				wait \{1
 					gameframe}
-				CreateScreenElement {
-					type = MovieElement
+				createscreenelement {
+					type = movieelement
 					parent = <resolved_id>
 					id = reward_movie
 					dims = (280.0, 280.0)
 					just = [center center]
 					pos_anchor = [center center]
 					pos = (3.0, 0.0)
-					TextureSlot = 1
-					TexturePri = 1000
+					textureslot = 1
+					texturepri = 1000
 					no_hold
 					movie = ($ui_select_venue_info.(<items_array> [<item_index>].item).movie)
 					z_priority = 10000
 				}
-				<resolved_id> :SetTags current_movie = ($ui_select_venue_info.(<items_array> [<item_index>].item).movie)
+				<resolved_id> :settags current_movie = ($ui_select_venue_info.(<items_array> [<item_index>].item).movie)
 			endif
 		endif
 	else
-		if ScreenElementExists \{id = reward_movie}
-			DestroyScreenElement \{id = reward_movie}
-			KillAllMovies
+		if screenelementexists \{id = reward_movie}
+			destroyscreenelement \{id = reward_movie}
+			killallmovies
 		endif
 	endif
-	Obj_GetID
-	GetTags
-	if my_rewards_id :Desc_ResolveAlias \{name = alias_highlight
+	obj_getid
+	gettags
+	if my_rewards_id :desc_resolvealias \{name = alias_highlight
 			param = highlight_id}
-		if <id> :Desc_ResolveAlias name = alias_unlockable param = text_id
-			Wait \{2
+		if <id> :desc_resolvealias name = 0xe87ad501 param = text_id
+			wait \{2
 				gameframe}
 			highlight_width = 0
 			highlight_height = 184
-			GetScreenElementProps id = <text_id>
-			text_hscale = ((1.0, 0.0).<scale>)
-			GetScreenElementChildren id = <text_id>
-			GetArraySize \{children}
+			getscreenelementprops id = <text_id>
+			0x95729801 = ((1.0, 0.0).<scale>)
+			getscreenelementchildren id = <text_id>
+			getarraysize \{children}
 			index = 0
 			begin
-			GetScreenElementDims id = (<children> [<index>])
-			text_width = (<width> * <text_hscale>)
+			getscreenelementdims id = (<children> [<index>])
+			text_width = (<width> * <0x95729801>)
 			if (<text_width> > <highlight_width>)
 				highlight_width = <text_width>
 			endif
@@ -252,26 +252,26 @@ script my_menu_focus \{add_sound_event = true}
 			repeat <array_size>
 			scale = ((1.0, 0.0) * ((<highlight_width> + 64.0) / 256.0))
 			scale = (<scale> + ((0.0, 1.0) * ((<highlight_height> + 16.0) / 64.0)))
-			GetScreenElementPosition id = <text_id> summed
-			<highlight_id> :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, 0.0))} scale = <scale>
-			<highlight_id> :SE_WaitProps
-			GetScreenElementPosition id = <text_id> summed
-			<highlight_id> :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, 10.0))} time = 0.05
-			<highlight_id> :SE_WaitProps
-			GetScreenElementPosition id = <text_id> summed
-			<highlight_id> :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, 0.0))} time = 0.05
-			<highlight_id> :SE_WaitProps
+			getscreenelementposition id = <text_id> summed
+			<highlight_id> :se_setprops pos = {absolute (<screenelementpos> + (0.0, 0.0))} scale = <scale>
+			<highlight_id> :se_waitprops
+			getscreenelementposition id = <text_id> summed
+			<highlight_id> :se_setprops pos = {absolute (<screenelementpos> + (0.0, 10.0))} time = 0.05
+			<highlight_id> :se_waitprops
+			getscreenelementposition id = <text_id> summed
+			<highlight_id> :se_setprops pos = {absolute (<screenelementpos> + (0.0, 0.0))} time = 0.05
+			<highlight_id> :se_waitprops
 		endif
 	endif
 	if (<add_sound_event> = true)
-		if NOT ScriptIsRunning \{set_focus_to_menu}
+		if NOT scriptisrunning \{set_focus_to_menu}
 			generic_menu_up_or_down_sound
 		endif
 	endif
 endscript
 
 script my_menu_unfocus 
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <id>
 		unlockable_rgba = [255 , 255 , 255 , 255]
 	}
@@ -282,63 +282,63 @@ script anim_reward
 	if (<texture> = video)
 		texture = black
 	endif
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = my_rewards_id
 		rewards_image_placeholder_texture = <texture>
 	}
-	spawnscriptnow \{rewards_sparkle_manager}
-	SE_SetProps \{unlockable_alpha = 1
+	spawnscriptnow \{0x56cf5d68}
+	se_setprops \{unlockable_alpha = 1
 		time = 0.4
-		Anim = gentle}
+		anim = gentle}
 endscript
 
 script rewards_image_pulse_anim 
-	SE_SetProps \{rewards_image_placeholder_scale = 1.4499999
+	se_setprops \{rewards_image_placeholder_scale = 1.4499999
 		time = 0.01}
-	SE_WaitProps
-	SE_SetProps \{rewards_image_placeholder_scale = 1.2
+	se_waitprops
+	se_setprops \{rewards_image_placeholder_scale = 1.2
 		time = 0.01}
-	SE_WaitProps
-	SE_SetProps \{rewards_image_placeholder_scale = 0.9
+	se_waitprops
+	se_setprops \{rewards_image_placeholder_scale = 0.9
 		time = 0.01}
-	SE_WaitProps
-	SE_SetProps \{rewards_image_placeholder_scale = 1
+	se_waitprops
+	se_setprops \{rewards_image_placeholder_scale = 1
 		time = 0.01}
-	SE_WaitProps
-	SE_SetProps \{rewards_image_placeholder_scale = 1.15
+	se_waitprops
+	se_setprops \{rewards_image_placeholder_scale = 1.15
 		time = 0.01}
-	SE_WaitProps
-	SE_SetProps \{rewards_image_placeholder_scale = 1
+	se_waitprops
+	se_setprops \{rewards_image_placeholder_scale = 1
 		time = 0.01}
 endscript
 
 script set_focus_to_menu 
-	SoundEvent \{event = Unlock_Item_Text_Appear}
-	LaunchEvent type = focus target = <menu_id>
-	add_user_control_helper \{text = qs("CONTINUE")
+	soundevent \{event = unlock_item_text_appear}
+	launchevent type = focus target = <menu_id>
+	add_user_control_helper \{text = qs(0x182f0173)
 		button = green
 		z = 100000}
 endscript
 
-script rewards_sparkle_manager 
-	if NOT my_rewards_id :Desc_ResolveAlias \{name = alias_rewards_border
-			param = rewards_border_id}
-		debug_ScriptAssert \{qs(0x01c3bdb2)}
+script 0x56cf5d68 
+	if NOT my_rewards_id :desc_resolvealias \{name = 0x5d2b3614
+			param = 0x0d04d772}
+		0x93d8d5cf \{qs(0x01c3bdb2)}
 	endif
-	parent = <rewards_border_id>
-	left_side = {xa = 0.195 xb = 0.205 ya = 0.03 yb = 0.95 time_a = 0.2 time_b = 0.8}
-	right_side = {xa = 0.8 xb = 0.815 ya = 0.03 yb = 0.95 time_a = 0.1 time_b = 0.7}
-	top = {xa = 0.196 xb = 0.82 ya = 0.03 yb = 0.04 time_a = 0.3 time_b = 1.2}
-	bottom = {xa = 0.196 xb = 0.82 ya = 0.945 yb = 0.955 time_a = 0.5 time_b = 1.5}
-	<parent> :obj_spawnscript ui_sparkle_randomly params = {<left_side> parent = <parent>}
-	<parent> :obj_spawnscript ui_sparkle_randomly params = {<top> parent = <parent>}
-	Wait RandomFloat (0.1, 0.3) seconds
-	<parent> :obj_spawnscript ui_sparkle_randomly params = {<bottom> parent = <parent>}
-	Wait RandomFloat (0.1, 0.3) seconds
-	<parent> :obj_spawnscript ui_sparkle_randomly params = {<right_side> parent = <parent>}
+	parent = <0x0d04d772>
+	left_side = {0x63754f30 = 0.195 0xfa7c1e8a = 0.205 ya = 0.03 yb = 0.95 0xca6a32f7 = 0.2 0x5363634d = 0.8}
+	right_side = {0x63754f30 = 0.8 0xfa7c1e8a = 0.815 ya = 0.03 yb = 0.95 0xca6a32f7 = 0.1 0x5363634d = 0.7}
+	top = {0x63754f30 = 0.196 0xfa7c1e8a = 0.82 ya = 0.03 yb = 0.04 0xca6a32f7 = 0.3 0x5363634d = 1.2}
+	bottom = {0x63754f30 = 0.196 0xfa7c1e8a = 0.82 ya = 0.945 yb = 0.955 0xca6a32f7 = 0.5 0x5363634d = 1.5}
+	<parent> :obj_spawnscript 0x0c6ece4e params = {<left_side> parent = <parent>}
+	<parent> :obj_spawnscript 0x0c6ece4e params = {<top> parent = <parent>}
+	wait RandomFloat (0.1, 0.3) seconds
+	<parent> :obj_spawnscript 0x0c6ece4e params = {<bottom> parent = <parent>}
+	wait RandomFloat (0.1, 0.3) seconds
+	<parent> :obj_spawnscript 0x0c6ece4e params = {<right_side> parent = <parent>}
 endscript
 
-script kill_reward_sparkle_scripts 
-	KillSpawnedScript \{name = rewards_sparkle_manager}
-	ui_kill_sparkle_scripts
+script 0x096c8481 
+	killspawnedscript \{name = 0x56cf5d68}
+	0x78b6ea53
 endscript

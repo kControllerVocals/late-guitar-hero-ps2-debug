@@ -33,64 +33,64 @@ script ui_create_singleplayer_character_hub_spawned
 		switch ($<player_status>.part)
 			case guitar
 			hist_tex = icon_progression_guitar
-			case Bass
+			case bass
 			hist_tex = icon_progression_bass
 			case drum
 			hist_tex = icon_progression_drums
-			case Vocals
+			case vocals
 			hist_tex = icon_progression_vocals
 		endswitch
 		make_generic_menu {
-			title = qs("VIP LOUNGE")
+			title = qs(0x1f05c183)
 			show_history
 			num_icons = 0
 			hist_tex = <hist_tex>
 			vmenu_id = create_singleplayer_character_hub_vmenu
 			pad_back_script = generic_event_back_block
 		}
-		if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-			<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+		if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+			<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 		else
 
 		endif
-		if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-			<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+		if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+			<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 		else
 
 		endif
-		get_frontend_venue_player_start_checksums
-		cas_set_object_node_pos player = ($cas_current_player) node = <Drum_Start>
-		add_generic_menu_text_item \{text = qs("PLAY SHOW")
+		0xce0505af
+		cas_set_object_node_pos player = ($cas_current_player) node = <0xb07e72b1>
+		add_generic_menu_text_item \{text = qs(0xb980b3ee)
 			pad_choose_script = singleplayer_player_show}
 		add_generic_menu_text_item {
-			text = qs("SELECT ROCKER")
+			text = qs(0xebd11692)
 			choose_state = uistate_character_selection
 			choose_state_data = {object = <player>}
 		}
 		get_savegame_from_player_status player_status = <player_status>
 		if profile_can_be_modified id = ($<player_status>.character_id) savegame = <savegame>
-			add_generic_menu_text_item \{text = qs("EDIT ROCKER")
+			add_generic_menu_text_item \{text = qs(0x67bd7527)
 				pad_choose_script = single_player_character_hub_edit_character}
 		endif
-		add_generic_menu_text_item \{text = qs("VIDEOS")
+		add_generic_menu_text_item \{text = qs(0x9560fb22)
 			choose_state = uistate_bonus_videos}
-		add_generic_menu_text_item \{text = qs("BAND INFO")
+		add_generic_menu_text_item \{text = qs(0x9baf87e5)
 			choose_state = uistate_band_name_logo
 			choose_state_data = {
 				from_band_info = 1
 			}}
-		if IsDrumController controller = ($primary_controller)
+		if isdrumcontroller controller = ($primary_controller)
 			focusable_flags = {not_focusable}
 		endif
 		menu_finish
-		LaunchEvent type = focus target = create_singleplayer_character_hub_vmenu data = {child_index = <selected_index>}
+		launchevent type = focus target = create_singleplayer_character_hub_vmenu data = {child_index = <selected_index>}
 	endif
 	startrendering
 	menu_music_on
 	change menu_flow_locked = ($menu_flow_locked - 1)
 	cas_queue_wait
-	if GetCurrentCASObject
-		BandManager_ChangeStance name = <cas_object> stance = Stance_Old no_wait
+	if getcurrentcasobject
+		bandmanager_changestance name = <cas_object> stance = stance_old no_wait
 	endif
 endscript
 
@@ -110,15 +110,15 @@ endscript
 first_character_hub_enter = 0
 
 script init_singleplayer_character_hub \{player = 1}
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	get_savegame_from_player_status player_status = <player_status>
-	GetGlobalTags savegame = <savegame> last_singleplayer_character
+	getglobaltags savegame = <savegame> last_singleplayer_character
 	if NOT (<last_singleplayer_character> = none)
 		change \{first_character_hub_enter = 0}
 		change structurename = <player_status> character_id = <last_singleplayer_character>
 	endif
-	if GotParam \{pass_to_gigboard}
-		spawnscriptnow cleanup_singleplayer_hub_return_tutorials params = {player = <player> Progression = <Progression> ent_player_status = <ent_player_status>}
+	if gotparam \{pass_to_gigboard}
+		spawnscriptnow cleanup_singleplayer_hub_return_tutorials params = {player = <player> progression = <progression> ent_player_status = <ent_player_status>}
 		return \{false}
 	else
 		if ($first_character_hub_enter = 0)
@@ -135,10 +135,10 @@ script init_singleplayer_character_hub \{player = 1}
 	if NOT ($game_mode = practice)
 		get_current_band_info
 		bandname_id = <band_info>
-		GetGlobalTags <bandname_id> param = first_venue_movie_played
+		getglobaltags <bandname_id> param = first_venue_movie_played
 		if (<first_venue_movie_played> = 0)
 			get_progression_globals game_mode = ($game_mode)
-			SetGlobalTags <bandname_id> params = {first_venue_movie_played = 1}
+			setglobaltags <bandname_id> params = {first_venue_movie_played = 1}
 		endif
 	endif
 	if ($first_character_hub_enter = 1)
@@ -170,8 +170,8 @@ script singleplayer_player_show
 endscript
 
 script cleanup_singleplayer_hub 
-	KillCamAnim \{name = ch_view_cam}
-	KillCamAnim \{name = gs_view_cam}
+	killcamanim \{name = ch_view_cam}
+	killcamanim \{name = gs_view_cam}
 	destroy_bg_viewport
 	disable_pause
 endscript
@@ -181,31 +181,31 @@ script cleanup_singleplayer_hub_return_tutorials
 	change globalname = <player_status> newvalue = <ent_player_status>
 	switch (<ent_player_status>.part)
 		case guitar
-		change \{current_progression_flag = Career_Guitar}
-		SetPlayerInfo \{1
+		change \{current_progression_flag = career_guitar}
+		setplayerinfo \{1
 			part = guitar}
-		case Bass
-		change \{current_progression_flag = Career_Bass}
-		SetPlayerInfo \{1
-			part = Bass}
+		case bass
+		change \{current_progression_flag = career_bass}
+		setplayerinfo \{1
+			part = bass}
 		case drum
-		change \{current_progression_flag = Career_Drum}
-		SetPlayerInfo \{1
+		change \{current_progression_flag = career_drum}
+		setplayerinfo \{1
 			part = drum}
-		case Vocals
-		change \{current_progression_flag = Career_Vocals}
-		SetPlayerInfo \{1
-			part = Vocals}
+		case vocals
+		change \{current_progression_flag = career_vocals}
+		setplayerinfo \{1
+			part = vocals}
 	endswitch
 	ui_event_remove_params \{param = ent_player_status}
 	change \{game_mode = gh4_p1_career}
 	change \{current_num_players = 1}
-	GameMode_UpdateNumPlayers \{num_players = 1}
+	gamemode_updatenumplayers \{num_players = 1}
 	create_loading_screen
 	destroy_bandname_viewport
 	destroy_band
 	frontend_load_soundcheck
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	get_savegame_from_player_status player_status = <player_status>
 	cas_fix_cameras_for_game
 	destroy_loading_screen

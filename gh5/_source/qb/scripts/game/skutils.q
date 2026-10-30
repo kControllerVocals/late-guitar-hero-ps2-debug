@@ -1,42 +1,42 @@
 check_for_unplugged_controllers = 0
-AnimLODInterleave2 = 12
-AnimLODInterleave4 = 9
-PS3_AnimLODInterleave2 = 20
-PS3_AnimLODInterleave4 = 12
-Xenon_AnimLODInterleave2 = 20
-Xenon_AnimLODInterleave4 = 12
+animlodinterleave2 = 12
+animlodinterleave4 = 9
+ps3_animlodinterleave2 = 20
+ps3_animlodinterleave4 = 12
+xenon_animlodinterleave2 = 20
+xenon_animlodinterleave4 = 12
 
 script autolaunch 
-	LockGlobalTags \{forceoff}
-	if GotParam \{level}
+	lockglobaltags \{forceoff}
+	if gotparam \{level}
 		change current_level = <level>
 		startnow = 1
 	endif
-	if GotParam \{song}
+	if gotparam \{song}
 		change current_song = <song>
 		startnow = 1
 	endif
-	if GotParam \{difficulty}
+	if gotparam \{difficulty}
 		change structurename = player1_status difficulty = <difficulty>
 		startnow = 1
 	endif
-	if GotParam \{difficulty2}
+	if gotparam \{difficulty2}
 		change structurename = player2_status difficulty = <difficulty2>
 		startnow = 1
 	endif
-	if GotParam \{difficulty3}
+	if gotparam \{difficulty3}
 		change structurename = player3_status difficulty = <difficulty3>
 		startnow = 1
 	endif
-	if GotParam \{difficulty4}
+	if gotparam \{difficulty4}
 		change structurename = player4_status difficulty = <difficulty4>
 		startnow = 1
 	endif
-	if GotParam \{StartTime}
-		change current_starttime = <StartTime>
+	if gotparam \{starttime}
+		change current_starttime = <starttime>
 		startnow = 1
 	endif
-	if GotParam \{controller}
+	if gotparam \{controller}
 		change structurename = player1_status controller = <controller>
 		change player1_device = <controller>
 		change primary_controller = <controller>
@@ -46,44 +46,44 @@ script autolaunch
 		change \{primary_controller = 0}
 		change \{primary_controller_assigned = 1}
 	endif
-	if GotParam \{controller2}
+	if gotparam \{controller2}
 		change structurename = player2_status controller = <controller2>
 		change player2_device = <controller2>
 		change primary_controller = <controller2>
 		change \{primary_controller_assigned = 1}
 		startnow = 1
 	endif
-	if GotParam \{controller3}
+	if gotparam \{controller3}
 		change structurename = player3_status controller = <controller3>
 		change player2_device = <controller3>
 		change primary_controller = <controller3>
 		change \{primary_controller_assigned = 1}
 		startnow = 1
 	endif
-	if GotParam \{controller4}
+	if gotparam \{controller4}
 		change structurename = player4_status controller = <controller4>
 		change player2_device = <controller4>
 		change primary_controller = <controller4>
 		change \{primary_controller_assigned = 1}
 		startnow = 1
 	endif
-	if GotParam \{part}
+	if gotparam \{part}
 		change structurename = player1_status part = <part>
 		startnow = 1
 	endif
-	if GotParam \{part2}
+	if gotparam \{part2}
 		change structurename = player2_status part = <part2>
 		startnow = 1
 	endif
-	if GotParam \{part3}
+	if gotparam \{part3}
 		change structurename = player3_status part = <part3>
 		startnow = 1
 	endif
-	if GotParam \{part4}
+	if gotparam \{part4}
 		change structurename = player4_status part = <part4>
 		startnow = 1
 	endif
-	if GotParam \{game_mode}
+	if gotparam \{game_mode}
 		change game_mode = <game_mode>
 		if ($game_mode = p2_pro_faceoff)
 			change \{current_num_players = 2}
@@ -94,46 +94,46 @@ script autolaunch
 		endif
 		startnow = 1
 	endif
-	if GotParam \{startnow}
+	if gotparam \{startnow}
 		change autolaunch_startnow = <startnow>
 	endif
-	if GotParam \{force_encore}
+	if gotparam \{force_encore}
 		change \{force_encore_autolaunch = 1}
 	endif
-	if GotParam \{Guitarist}
-		change structurename = player1_status character_id = <Guitarist>
+	if gotparam \{guitarist}
+		change structurename = player1_status character_id = <guitarist>
 	endif
-	if GotParam \{bassist}
+	if gotparam \{bassist}
 		change structurename = player2_status character_id = <bassist>
 	endif
-	if GotParam \{vocalist}
+	if gotparam \{vocalist}
 		change structurename = player3_status character_id = <vocalist>
 	endif
-	if GotParam \{Drummer}
-		change structurename = player4_status character_id = <Drummer>
+	if gotparam \{drummer}
+		change structurename = player4_status character_id = <drummer>
 	endif
 	translate_gamemode
 endscript
 
 script setup_4_player_bot 
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		part = guitar}
-	SetPlayerInfo \{2
+	setplayerinfo \{2
 		part = drum}
-	SetPlayerInfo \{3
-		part = Bass}
-	SetPlayerInfo \{4
-		part = Vocals}
-	SetPlayerInfo \{1
+	setplayerinfo \{3
+		part = bass}
+	setplayerinfo \{4
+		part = vocals}
+	setplayerinfo \{1
 		bot_play = 1}
-	SetPlayerInfo \{2
+	setplayerinfo \{2
 		bot_play = 1}
-	SetPlayerInfo \{3
+	setplayerinfo \{3
 		bot_play = 1}
-	SetPlayerInfo \{4
+	setplayerinfo \{4
 		bot_play = 1}
 	if ($use_worst_band = 1)
-		SetPlayerInfo \{2
+		setplayerinfo \{2
 			double_kick_drum = 1}
 		change \{force_fail_vignette_on = 1}
 	endif
@@ -144,10 +144,10 @@ script change_level
 
 endscript
 
-script KillElement3d 
-	Wait \{1
+script killelement3d 
+	wait \{1
 		gameframe}
-	Die
+	die
 endscript
 
 script script_assert 
@@ -158,8 +158,8 @@ endscript
 script nullscript 
 endscript
 
-script DumpMetrics 
-	GetMetrics
+script dumpmetrics 
+	getmetrics
 
 
 
@@ -168,22 +168,22 @@ dummy_metrics_struct = {
 	mainscene = 0
 	skyscene = 0
 	metrics = 0
-	Sectors = 0
-	ColSectors = 0
-	Verts = 0
-	BasePolys = 0
-	TextureMemory = 0
+	sectors = 0
+	colsectors = 0
+	verts = 0
+	basepolys = 0
+	texturememory = 0
 }
 
-script Restore_skater_camera 
+script restore_skater_camera 
 endscript
 
-script GetSkaterCam 
+script getskatercam 
 	camera_object = skatercam0
-	if InSplitScreenGame
-		if IsObjectScript
-			Obj_GetID
-			if NOT ChecksumEquals a = <ObjID> b = 0
+	if insplitscreengame
+		if isobjectscript
+			obj_getid
+			if NOT checksumequals a = <objid> b = 0
 				camera_object = skatercam1
 			endif
 		endif
@@ -191,24 +191,24 @@ script GetSkaterCam
 	return skatercam = <camera_object>
 endscript
 
-script SetSkaterCamOverride 
-	GetSkaterCam
-	<skatercam> :SC_SetSkaterCamOverride <...>
+script setskatercamoverride 
+	getskatercam
+	<skatercam> :sc_setskatercamoverride <...>
 endscript
 
-script ClearSkaterCamOverride 
-	GetSkaterCam
-	<skatercam> :SC_ClearSkaterCamOverride <...>
+script clearskatercamoverride 
+	getskatercam
+	<skatercam> :sc_clearskatercamoverride <...>
 endscript
 
 script empty_script 
 endscript
 
 script restore_start_key_binding 
-	if NOT GotParam \{nospam}
+	if NOT gotparam \{nospam}
 
 	endif
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		event_handlers = [
 			{
 				pad_start
@@ -219,10 +219,10 @@ script restore_start_key_binding
 endscript
 
 script kill_start_key_binding 
-	if NOT GotParam \{nospam}
+	if NOT gotparam \{nospam}
 
 	endif
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		event_handlers = [
 			{
 				pad_start
@@ -232,134 +232,134 @@ script kill_start_key_binding
 		replace_handlers}
 endscript
 
-script BlockPendingPakManLoads \{map = all
+script blockpendingpakmanloads \{map = all
 		block_scripts = 0
 		noparse = 0}
 	if (<block_scripts> = 1)
-		PendingPakManLoads map = <map> block_scripts = 1 noparse = <noparse> slot = <slot>
-		if GotParam \{loaderror}
+		pendingpakmanloads map = <map> block_scripts = 1 noparse = <noparse> slot = <slot>
+		if gotparam \{loaderror}
 			return \{false}
 		endif
 		return \{true}
 	endif
 	begin
-	if NOT (PendingPakManLoads map = <map> noparse = <noparse> slot = <slot>)
+	if NOT (pendingpakmanloads map = <map> noparse = <noparse> slot = <slot>)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
-	if GotParam \{loaderror}
+	if gotparam \{loaderror}
 		return \{false}
 	endif
 	return \{true}
 endscript
 
-script SetPakManCurrentBlock \{block_scripts = 0
+script setpakmancurrentblock \{block_scripts = 0
 		noparse = 0}
-	SetPakManCurrent map = <map> pak = <pak> pakname = <pakname> slot = <slot>
-	if NOT BlockPendingPakManLoads map = <map> block_scripts = <block_scripts> noparse = <noparse> slot = <slot>
+	setpakmancurrent map = <map> pak = <pak> pakname = <pakname> slot = <slot>
+	if NOT blockpendingpakmanloads map = <map> block_scripts = <block_scripts> noparse = <noparse> slot = <slot>
 		return \{false}
 	endif
 	if (<map> = zones)
-		GetPakManCurrentName \{map = zones}
-		if GotParam \{pakname}
-			FormatText checksumname = zone_setup '%s_setup' s = <pakname>
-			if ScriptExists <zone_setup>
-				if NOT ScriptIsRunning <zone_setup>
+		getpakmancurrentname \{map = zones}
+		if gotparam \{pakname}
+			formattext checksumname = zone_setup '%s_setup' s = <pakname>
+			if scriptexists <zone_setup>
+				if NOT scriptisrunning <zone_setup>
 					spawnscriptnow <zone_setup>
 				endif
 			endif
 		endif
 	endif
-	if ChecksumEquals a = <map> b = zones
-		LightShow_SetVenueTweakParams zone = <pak>
+	if checksumequals a = <map> b = zones
+		0x8bfa392d zone = <pak>
 	endif
 	return \{true}
 endscript
 
-script RefreshPakManCurrent 
-	SetPakManCurrentBlock map = <map> pak = <pak> pakname = <pakname>
+script refreshpakmancurrent 
+	setpakmancurrentblock map = <map> pak = <pak> pakname = <pakname>
 endscript
 
-script Zones_PakMan_Init 
+script zones_pakman_init 
 
 	zone_name = <pak_name>
 	zone_string_name = <pak_string_name>
-	FormatText checksumname = sfx_zone_name '%z_sfx' z = <zone_string_name>
-	FormatText checksumname = gfx_zone_name '%z_gfx' z = <zone_string_name>
-	FormatText checksumname = lfx_zone_name '%z_lfx' z = <zone_string_name>
-	FormatText checksumname = mfx_zone_name '%z_mfx' z = <zone_string_name>
-	FormatText checksumname = array_name '%z_NodeArray' z = <zone_string_name>
-	FormatText checksumname = sfx_array_name '%z_SFX_NodeArray' z = <zone_string_name>
-	FormatText checksumname = gfx_array_name '%z_GFX_NodeArray' z = <zone_string_name>
-	FormatText checksumname = lfx_array_name '%z_LFX_NodeArray' z = <zone_string_name>
-	FormatText checksumname = mfx_array_name '%z_MFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = sfx_zone_name '%z_sfx' z = <zone_string_name>
+	formattext checksumname = gfx_zone_name '%z_gfx' z = <zone_string_name>
+	formattext checksumname = lfx_zone_name '%z_lfx' z = <zone_string_name>
+	formattext checksumname = mfx_zone_name '%z_mfx' z = <zone_string_name>
+	formattext checksumname = array_name '%z_NodeArray' z = <zone_string_name>
+	formattext checksumname = sfx_array_name '%z_SFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = gfx_array_name '%z_GFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = lfx_array_name '%z_LFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = mfx_array_name '%z_MFX_NodeArray' z = <zone_string_name>
 	zone_init <...>
-	FormatText checksumname = script_zone_init '%z_init' z = <zone_string_name>
-	FormatText checksumname = script_zone_sfx_init '%z_sfx_init' z = <zone_string_name>
-	FormatText checksumname = script_zone_gfx_init '%z_gfx_init' z = <zone_string_name>
-	FormatText checksumname = script_zone_lfx_init '%z_lfx_init' z = <zone_string_name>
-	FormatText checksumname = script_zone_mfx_init '%z_mfx_init' z = <zone_string_name>
-	if ScriptExists <script_zone_init>
+	formattext checksumname = script_zone_init '%z_init' z = <zone_string_name>
+	formattext checksumname = script_zone_sfx_init '%z_sfx_init' z = <zone_string_name>
+	formattext checksumname = script_zone_gfx_init '%z_gfx_init' z = <zone_string_name>
+	formattext checksumname = script_zone_lfx_init '%z_lfx_init' z = <zone_string_name>
+	formattext checksumname = script_zone_mfx_init '%z_mfx_init' z = <zone_string_name>
+	if scriptexists <script_zone_init>
 		<script_zone_init>
 	endif
-	if ScriptExists <script_zone_sfx_init>
+	if scriptexists <script_zone_sfx_init>
 		<script_zone_sfx_init>
 	endif
-	if ScriptExists <script_zone_gfx_init>
+	if scriptexists <script_zone_gfx_init>
 		<script_zone_gfx_init>
 	endif
-	if ScriptExists <script_zone_lfx_init>
+	if scriptexists <script_zone_lfx_init>
 		<script_zone_lfx_init>
 	endif
-	if ScriptExists <script_zone_mfx_init>
+	if scriptexists <script_zone_mfx_init>
 		<script_zone_mfx_init>
 	endif
-	UpdatePakManVisibility \{map = zones}
+	updatepakmanvisibility \{map = zones}
 
 endscript
 
-script Zones_PakMan_DeInit 
+script zones_pakman_deinit 
 
 	zone_name = <pak_name>
 	zone_string_name = <pak_string_name>
-	FormatText checksumname = sfx_zone_name '%z_sfx' z = <zone_string_name>
-	FormatText checksumname = gfx_zone_name '%z_gfx' z = <zone_string_name>
-	FormatText checksumname = lfx_zone_name '%z_lfx' z = <zone_string_name>
-	FormatText checksumname = mfx_zone_name '%z_mfx' z = <zone_string_name>
-	FormatText checksumname = array_name '%z_NodeArray' z = <zone_string_name>
-	FormatText checksumname = sfx_array_name '%z_SFX_NodeArray' z = <zone_string_name>
-	FormatText checksumname = gfx_array_name '%z_GFX_NodeArray' z = <zone_string_name>
-	FormatText checksumname = lfx_array_name '%z_LFX_NodeArray' z = <zone_string_name>
-	FormatText checksumname = mfx_array_name '%z_MFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = sfx_zone_name '%z_sfx' z = <zone_string_name>
+	formattext checksumname = gfx_zone_name '%z_gfx' z = <zone_string_name>
+	formattext checksumname = lfx_zone_name '%z_lfx' z = <zone_string_name>
+	formattext checksumname = mfx_zone_name '%z_mfx' z = <zone_string_name>
+	formattext checksumname = array_name '%z_NodeArray' z = <zone_string_name>
+	formattext checksumname = sfx_array_name '%z_SFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = gfx_array_name '%z_GFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = lfx_array_name '%z_LFX_NodeArray' z = <zone_string_name>
+	formattext checksumname = mfx_array_name '%z_MFX_NodeArray' z = <zone_string_name>
 	zone_deinit <...>
-	FormatText checksumname = script_zone_deinit '%z_deinit' z = <zone_string_name>
-	FormatText checksumname = script_zone_sfx_deinit '%z_sfx_deinit' z = <zone_string_name>
-	FormatText checksumname = script_zone_gfx_deinit '%z_gfx_deinit' z = <zone_string_name>
-	FormatText checksumname = script_zone_lfx_deinit '%z_lfx_deinit' z = <zone_string_name>
-	FormatText checksumname = script_zone_mfx_deinit '%z_mfx_deinit' z = <zone_string_name>
-	if ScriptExists <script_zone_deinit>
+	formattext checksumname = script_zone_deinit '%z_deinit' z = <zone_string_name>
+	formattext checksumname = script_zone_sfx_deinit '%z_sfx_deinit' z = <zone_string_name>
+	formattext checksumname = script_zone_gfx_deinit '%z_gfx_deinit' z = <zone_string_name>
+	formattext checksumname = script_zone_lfx_deinit '%z_lfx_deinit' z = <zone_string_name>
+	formattext checksumname = script_zone_mfx_deinit '%z_mfx_deinit' z = <zone_string_name>
+	if scriptexists <script_zone_deinit>
 		<script_zone_deinit>
 	endif
-	if ScriptExists <script_zone_sfx_deinit>
+	if scriptexists <script_zone_sfx_deinit>
 		<script_zone_sfx_deinit>
 	endif
-	if ScriptExists <script_zone_gfx_deinit>
+	if scriptexists <script_zone_gfx_deinit>
 		<script_zone_gfx_deinit>
 	endif
-	if ScriptExists <script_zone_lfx_deinit>
+	if scriptexists <script_zone_lfx_deinit>
 		<script_zone_lfx_deinit>
 	endif
-	if ScriptExists <script_zone_mfx_deinit>
+	if scriptexists <script_zone_mfx_deinit>
 		<script_zone_mfx_deinit>
 	endif
-	DestroyParticlesByGroupID \{groupID = zoneparticles}
-	DestroyZoneEntities zone_name = <zone_name> zone_string_name = <zone_string_name>
-	ResetWaypoints pak_name = <pak_name>
-	ResetWaypoints pak_name = <gfx_zone_name>
-	ResetWaypoints pak_name = <sfx_zone_name>
-	ResetWaypoints pak_name = <lfx_zone_name>
-	UpdatePakManVisibility \{map = zones}
+	destroyparticlesbygroupid \{groupid = zoneparticles}
+	destroyzoneentities zone_name = <zone_name> zone_string_name = <zone_string_name>
+	resetwaypoints pak_name = <pak_name>
+	resetwaypoints pak_name = <gfx_zone_name>
+	resetwaypoints pak_name = <sfx_zone_name>
+	resetwaypoints pak_name = <lfx_zone_name>
+	updatepakmanvisibility \{map = zones}
 
 endscript

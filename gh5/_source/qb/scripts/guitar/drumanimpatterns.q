@@ -1,5 +1,5 @@
 drum_stick_hits_early_frames = 6
-drum_stick_hits_anim = Drum_Andy_StandardLP_Stickhits
+drum_stick_hits_anim = drum_andy_standardlp_stickhits
 drum_stick_hits_anim_blend_time = 0.1
 drum_anim_stance_patterns = [
 ]

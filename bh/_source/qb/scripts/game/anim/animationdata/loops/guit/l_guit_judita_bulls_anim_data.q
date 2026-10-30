@@ -1,37 +1,37 @@
-L_GUIT_Judita_bulls_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_judita_bulls_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Judita_bulls_075
+				slow = [
+					guit_judita_bulls_075
 				]
-				Med = [
-					guit_Judita_bulls_100
+				med = [
+					guit_judita_bulls_100
 				]
-				Fast = [
-					guit_Judita_bulls_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Judita_bulls_075
-				]
-				Med = [
-					guit_Judita_bulls_100
-				]
-				Fast = [
-					guit_Judita_bulls_120
+				fast = [
+					guit_judita_bulls_120
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Judita_bulls_075
+			normal = {
+				slow = [
+					guit_judita_bulls_075
 				]
-				Med = [
-					guit_Judita_bulls_100
+				med = [
+					guit_judita_bulls_100
 				]
-				Fast = [
-					guit_Judita_bulls_120
+				fast = [
+					guit_judita_bulls_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_judita_bulls_075
+				]
+				med = [
+					guit_judita_bulls_100
+				]
+				fast = [
+					guit_judita_bulls_120
 				]
 			}
 		}

@@ -11,11 +11,11 @@ script fadetoblack \{time = 0.5
 		texture = black
 		id = screenfader
 		parent = root_window}
-	if GotParam \{on}
-		if NOT ScreenElementExists id = <id>
-			if NOT GotParam \{create_script}
-				CreateScreenElement {
-					type = SpriteElement
+	if gotparam \{on}
+		if NOT screenelementexists id = <id>
+			if NOT gotparam \{create_script}
+				createscreenelement {
+					type = spriteelement
 					parent = <parent>
 					id = <id>
 					texture = <texture>
@@ -30,22 +30,22 @@ script fadetoblack \{time = 0.5
 				<create_script>
 			endif
 		else
-			TerminateObjectsScripts id = <id>
-			<id> :RemoveTags [waiting_to_die]
+			terminateobjectsscripts id = <id>
+			<id> :removetags [waiting_to_die]
 		endif
-		LegacyDoScreenElementMorph id = <id> time = <time> alpha = <alpha>
-	elseif GotParam \{off}
-		if ScreenElementExists id = <id>
-			LegacyDoScreenElementMorph id = <id> time = <time> alpha = 0.0
-			if GotParam \{no_wait}
-				RunScriptOnScreenElement id = <id> fadetoblack_wait_and_die params = {time = <time>}
+		legacydoscreenelementmorph id = <id> time = <time> alpha = <alpha>
+	elseif gotparam \{off}
+		if screenelementexists id = <id>
+			legacydoscreenelementmorph id = <id> time = <time> alpha = 0.0
+			if gotparam \{no_wait}
+				runscriptonscreenelement id = <id> fadetoblack_wait_and_die params = {time = <time>}
 				return
 			endif
-			<id> :SetTags waiting_to_die
-			Wait <time> seconds ignoreslomo
-			if ScreenElementExists id = <id>
-				if <id> :GetSingleTag waiting_to_die
-					<id> :Die
+			<id> :settags waiting_to_die
+			wait <time> seconds ignoreslomo
+			if screenelementexists id = <id>
+				if <id> :getsingletag waiting_to_die
+					<id> :die
 				endif
 			endif
 		endif
@@ -53,13 +53,13 @@ script fadetoblack \{time = 0.5
 endscript
 
 script fadetoblack_wait_and_die \{time = 0.0}
-	Wait <time> seconds ignoreslomo
-	Die
+	wait <time> seconds ignoreslomo
+	die
 endscript
 
 script igc_fadeout \{time = 0.75}
 	fadetoblack on alpha = 1.0 time = <time>
-	Wait (<time> + 0.1) seconds
+	wait (<time> + 0.1) seconds
 endscript
 
 script igc_fadein \{time = 0.75}

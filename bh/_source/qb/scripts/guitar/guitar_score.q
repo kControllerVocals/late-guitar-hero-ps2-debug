@@ -14,7 +14,7 @@ points_per_note_per_beat = {
 }
 
 script reset_score 
-	ResetStreakingStatus
+	0x884688f7
 	change structurename = <player_status> score = 0
 	change structurename = <player_status> guitar_performance_score = 0
 	change structurename = <player_status> current_health = 1.0
@@ -42,23 +42,23 @@ script reset_score
 		change current_section_array = <song_section_array>
 		change \{current_section_array_entry = 0}
 	endif
-	FormatText checksumname = detailstats_array '%s_last_song_detailed_stats' s = ($<player_status>.text)
+	formattext checksumname = detailstats_array '%s_last_song_detailed_stats' s = ($<player_status>.text)
 	change structurename = <player_status> current_detailedstats_array_entry = 0
 	change structurename = <player_status> current_detailedstats_array = <detailstats_array>
-	FormatText checksumname = detailstats_array_max '%s_last_song_detailed_stats_max' s = ($<player_status>.text)
+	formattext checksumname = detailstats_array_max '%s_last_song_detailed_stats_max' s = ($<player_status>.text)
 	change structurename = <player_status> current_detailedstats_max_array = <detailstats_array_max>
-	GetArraySize ($<detailstats_array>)
+	getarraysize ($<detailstats_array>)
 	array_count = 0
 	begin
-	SetArrayElement ArrayName = <detailstats_array> GlobalArray index = <array_count> newvalue = 0
-	SetArrayElement ArrayName = <detailstats_array_max> GlobalArray index = <array_count> newvalue = 0
+	setarrayelement arrayname = <detailstats_array> globalarray index = <array_count> newvalue = 0
+	setarrayelement arrayname = <detailstats_array_max> globalarray index = <array_count> newvalue = 0
 	array_count = (<array_count> + 1)
 	repeat <array_size>
 endscript
 
 script calc_songscoreinfo \{player_status = player1_status}
 	get_song_prefix song = ($current_song)
-	CalcSongScoreInfo <...>
+	calcsongscoreinfo <...>
 endscript
 
 script hit_note 
@@ -89,15 +89,15 @@ script unnecessary_note
 endscript
 
 script update_score_fast \{player_on_screen = 1}
-	UpdateScoreFastInit player_status = <player_status> player_on_screen = <player_on_screen>
+	updatescorefastinit player_status = <player_status> player_on_screen = <player_on_screen>
 	if ($game_mode = practice)
 		begin
-		GetSongTimeMs
-		UpdateScoreFastPerFrame player_status = <player_status> time = <time>
-		WaitOneGameFrame
+		getsongtimems
+		updatescorefastperframe player_status = <player_status> time = <time>
+		waitonegameframe
 		repeat
 	else
-		Block
+		block
 	endif
 endscript
 
@@ -118,38 +118,38 @@ endscript
 
 script set_song_section_array 
 
-	GetPlayerInfo <player> part
+	getplayerinfo <player> part
 	switch <part>
-		case Vocals
+		case vocals
 		<part_string> = 'vocals'
 		default
 		<part_string> = 'guitar'
 	endswitch
 	get_song_prefix song = ($current_song)
-	FormatText checksumname = song_section_array '%s_%p_markers' s = <song_prefix> p = <part_string>
-	<player_status> = ($player_status_array [<player>])
+	formattext checksumname = song_section_array '%s_%p_markers' s = <song_prefix> p = <part_string>
+	<player_status> = ($0x2994109a [<player>])
 	change structurename = <player_status> current_song_section_array = <song_section_array>
 endscript
 
 script get_song_section_array \{player = 1}
-	if NOT GotParam \{player}
-		GetFirstPlayer
+	if NOT gotparam \{player}
+		getfirstplayer
 	endif
-	GetPlayerInfo <player> part
-	GMan_SongTool_GetCurrentSong
-	SongFileManager func = get_marker_array song_name = <current_song> part = <part>
+	getplayerinfo <player> part
+	gman_songtool_getcurrentsong
+	songfilemanager func = get_marker_array song_name = <current_song> part = <part>
 	return song_section_array = <marker_array>
 endscript
 
 script get_average_multiplier 
 
-	GetPlayerInfo <player> base_score
+	getplayerinfo <player> base_score
 	if (<base_score> > 0)
-		GetPlayerInfo <player> score
+		getplayerinfo <player> score
 		if ($game_mode != p2_pro_faceoff)
 			avg = ((1.0 * <score>) / (1.0 * <base_score>))
 		else
-			GetPlayerInfo <player> sim_bot_score
+			getplayerinfo <player> sim_bot_score
 			<avg_sim_bot> = (($player1_status.sim_bot_score + $player2_status.sim_bot_score) / 2.0)
 			<avg> = ((<score> * <sim_bot_score>) / (<base_score> * <avg_sim_bot>))
 		endif
@@ -174,10 +174,10 @@ script adjust_percent_for_display
 			return \{adjusted_percent = 1}
 		else
 			int_percent = (<percent> * 1000)
-			CastToInteger \{int_percent}
-			Mod a = <int_percent> b = 1000
-			MathFloor <percent>
-			if (<Mod> >= 500)
+			casttointeger \{int_percent}
+			mod a = <int_percent> b = 1000
+			mathfloor <percent>
+			if (<mod> >= 500)
 				return adjusted_percent = (<floor> + 1)
 			else
 				return adjusted_percent = <floor>

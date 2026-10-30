@@ -1,29 +1,29 @@
 
-script Song_Affirmation 
-	SoundEvent \{Generic_Menu_Select_SFX}
+script song_affirmation 
+	soundevent \{0x5ea1b4e0}
 endscript
-Crowd_Fail_Song_SFX_container = {
-	Default_Buss = Crowd_Boos
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
+crowd_fail_song_sfx_container = {
+	default_buss = crowd_boos
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
 	slot = 2
-	Sounds = [
+	sounds = [
 		{
-			Crowd_Fail_Song
+			crowd_fail_song
 			vol = -10.41
 		}
 	]
 }
-Crowd_Fail_Song_SFX_softer_container = {
-	Default_Buss = Crowd_Boos
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
+crowd_fail_song_sfx_softer_container = {
+	default_buss = crowd_boos
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
 	slot = 2
-	Sounds = [
+	sounds = [
 		{
-			Crowd_Fail_Song
+			crowd_fail_song
 			vol = 0
 			pan1x = -0.9
 			pan1y = -0.55
@@ -32,138 +32,138 @@ Crowd_Fail_Song_SFX_softer_container = {
 		}
 	]
 }
-Star_Power_Awarded_SFX_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+star_power_awarded_sfx_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
 			sp_awarded1
 			vol = -4
 		}
 	]
 }
-Star_Power_Awarded_SFX_P1_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+star_power_awarded_sfx_p1_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
 			sp_awarded1
 			vol = -4
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Awarded_SFX_P2_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+star_power_awarded_sfx_p2_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
 			sp_awarded1
 			vol = -4
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Awarded_SFX_P3_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+star_power_awarded_sfx_p3_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
 			sp_awarded1
 			vol = -4
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Ready_SFX_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_ready_sfx_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			sp_available1
 			vol = -5.17
 		}
 	]
 }
-Star_Power_Ready_SFX_P1_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_ready_sfx_p1_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			sp_available1
 			vol = -7.51
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Ready_SFX_P2_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_ready_sfx_p2_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			sp_available1
 			vol = -7.51
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Deployed_SFX_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_deployed_sfx_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -5
 		}
 	]
 }
-Star_Power_Deployed_SFX_P1_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_deployed_sfx_p1_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -5
 		}
 	]
 }
-Star_Power_Deployed_SFX_P2_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_deployed_sfx_p2_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -5
 		}
 	]
 }
-Star_Power_Deployed_Cheer_SFX_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	command = Obj_PlaySound
-	Randomness = none
-	Sounds = [
+star_power_deployed_cheer_sfx_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	command = obj_playsound
+	randomness = none
+	sounds = [
 		{
 			sp_cheer1
 			vol = -6.5
@@ -172,261 +172,261 @@ Star_Power_Deployed_Cheer_SFX_container = {
 		}
 	]
 }
-Star_Power_Deployed_Cheer_SFX_P1_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_deployed_cheer_sfx_p1_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			sp_cheer1
 			vol = -6.5
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Deployed_Cheer_SFX_P2_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_deployed_cheer_sfx_p2_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			sp_cheer1
 			vol = -6.5
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Deployed_Cheer_SFX_P3_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+star_power_deployed_cheer_sfx_p3_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
 			sp_cheer1
 			vol = -6.5
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Outro_One_Star_container = {
-	Default_Buss = UI_InGame
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+outro_one_star_container = {
+	default_buss = ui_ingame
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			outro_one_star
 		}
 	]
 }
-Outro_Two_Stars_container = {
-	Default_Buss = UI_InGame
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+outro_two_stars_container = {
+	default_buss = ui_ingame
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			outro_two_stars
 		}
 	]
 }
-Outro_Three_Stars_container = {
-	Default_Buss = UI_InGame
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+outro_three_stars_container = {
+	default_buss = ui_ingame
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			outro_three_stars
 		}
 	]
 }
-Outro_Four_Stars_container = {
-	Default_Buss = UI_InGame
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+outro_four_stars_container = {
+	default_buss = ui_ingame
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			outro_four_stars
 		}
 	]
 }
-Outro_Five_Stars_container = {
-	Default_Buss = UI_InGame
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+outro_five_stars_container = {
+	default_buss = ui_ingame
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			outro_five_stars
 		}
 	]
 }
 ui_sfx_scroll_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.03
-	InstanceLimit = 6
-	Randomness = none
+	default_buss = front_end
+	norepeatfor = 0.03
+	instancelimit = 6
+	randomness = none
 	slot = 1
-	Sounds = [
+	sounds = [
 		{
 			scroll
 		}
 	]
 }
-GH_SFX_BattleMode_Lightning_Player1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_lightning_player1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_Lightning
+			gh3_battlemode_lightning
 			vol = -4.42
 		}
 	]
 }
-GH_SFX_BattleMode_Lightning_Player2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_lightning_player2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_Lightning
+			gh3_battlemode_lightning
 			vol = -4.42
 		}
 	]
 }
-GH_SFX_BeatSoundEvent_container = {
-	Default_Buss = Test_Tones
-	NoRepeatFor = 0.001
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+gh_sfx_beatsoundevent_container = {
+	default_buss = test_tones
+	norepeatfor = 0.001
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			GH3_Beat_Sound
+			gh3_beat_sound
 			vol = -3
 			pitch = 12
 		}
 	]
 }
-GH_SFX_Calibration_BeatSoundEvent_container = {
-	Default_Priority = 90
-	Default_Buss = Test_Tones
-	NoRepeatFor = 0.001
-	InstanceManagement = stop_oldest
-	InstanceLimit = 8
-	command = PlaySound
-	Randomness = none
-	Sounds = [
+gh_sfx_calibration_beatsoundevent_container = {
+	default_priority = 90
+	default_buss = test_tones
+	norepeatfor = 0.001
+	instancemanagement = stop_oldest
+	instancelimit = 8
+	command = playsound
+	randomness = none
+	sounds = [
 		{
-			GH3_Beat_Sound
+			gh3_beat_sound
 			vol = -9
 			pitch = 15.860001
 		}
 	]
 }
-GH_SFX_BeatWindowOpenSoundEvent_container = {
-	Default_Buss = Test_Tones
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+gh_sfx_beatwindowopensoundevent_container = {
+	default_buss = test_tones
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			GH3_Beat_Sound
+			gh3_beat_sound
 			vol = 6
 			pitch = 7.02
 		}
 	]
 }
-GH_SFX_BeatWindowCloseSoundEvent_container = {
-	Default_Buss = Test_Tones
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+gh_sfx_beatwindowclosesoundevent_container = {
+	default_buss = test_tones
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			GH3_Beat_Sound
+			gh3_beat_sound
 			vol = 6
 			pitch = -2.81
 		}
 	]
 }
-DoNothing_OneShot_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+donothing_oneshot_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 }
-Crowd_Swell_Short_Large_EXT_container = {
-	Default_Buss = Crowd_Cheers
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+0x31926793 = {
+	default_buss = crowd_cheers
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			EXT_LG_Crowd_Swell_SH_01
+			0x0a0edbfb
 			vol = -16.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Soft_Large_EXT_container = {
-	Default_Buss = Crowd_Cheers
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+0x7f4dc080 = {
+	default_buss = crowd_cheers
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			EXT_LG_Crowd_Swell_SH_01
+			0x0a0edbfb
 			vol = -19.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Med_Large_EXT_container = {
-	Default_Buss = Crowd_Cheers
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+0xf66c9b4e = {
+	default_buss = crowd_cheers
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			EXT_LG_Crowd_Swell_MD_01
+			0x9f084da0
 			vol = -19.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Long_Large_EXT_container = {
-	Default_Buss = Crowd_Cheers
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+0x02dcdbc0 = {
+	default_buss = crowd_cheers
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			EXT_LG_Crowd_Swell_MD_01
+			0x9f084da0
 			vol = -19.5
 		}
 	]
 }
-Crowd_OneShots_Boo_Close_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 1.5
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_oneshots_boo_close_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 1.5
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Boo_Sm_01
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_01
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -434,9 +434,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_02
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_02
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -444,9 +444,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_03
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_03
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -454,9 +454,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_04
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_04
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -464,9 +464,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_05
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_05
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -474,9 +474,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_06
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_06
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -484,9 +484,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_07
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_07
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -494,9 +494,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_08
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_08
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -504,9 +504,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_09
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_09
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -514,9 +514,9 @@ Crowd_OneShots_Boo_Close_container = {
 			}
 		}
 		{
-			Crowd_Boo_Sm_10
-			RandomVol = {
-				type = RandomRangeType
+			crowd_boo_sm_10
+			randomvol = {
+				type = randomrangetype
 				vals = [
 					1.09
 					2.06
@@ -525,823 +525,823 @@ Crowd_OneShots_Boo_Close_container = {
 		}
 	]
 }
-Menu_Warning_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.5
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+menu_warning_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.5
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_Warning_01
+			menu_warning_01
 			vol = -6
 		}
 	]
 }
-Menu_Warning_SFX_softer_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.5
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+menu_warning_sfx_softer_container = {
+	default_buss = front_end
+	norepeatfor = 0.5
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_Warning_01
+			menu_warning_01
 			vol = -8
 		}
 	]
 }
-Generic_Menu_Select_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
+0x5ed3cc68 = {
+	default_buss = front_end
+	norepeatfor = 0.02
+	instancelimit = 6
 	slot = 1
-	Randomness = none
-	Sounds = [
+	randomness = none
+	sounds = [
 		{
 			ui_sound_05
 			vol = -2
 		}
 	]
 }
-Generic_Menu_Back_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
+generic_menu_back_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
 	slot = 1
-	Sounds = [
+	sounds = [
 		{
-			UI_Sound_09
+			ui_sound_09
 			vol = -2
 		}
 	]
 }
-Notes_Ripple_Up_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.5
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+notes_ripple_up_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.5
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Notes_Ripple_Up_01
+			notes_ripple_up_01
 			vol = -3.73
 		}
 	]
 }
-Crowd_Transition_Large_EXT_Good_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_large_ext_good_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			LG_Crowd_Good_To_Neutral_01
+			lg_crowd_good_to_neutral_01
 			vol = -6.5
 		}
 	]
 }
-Crowd_Transition_Medium_EXT_Good_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_ext_good_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Good_To_Neutral_01
+			md_crowd_good_to_neutral_01
 			vol = -9.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_INT_Good_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_int_good_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Good_To_Neutral_01
+			md_crowd_good_to_neutral_01
 			vol = -8.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Small_INT_Good_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_small_int_good_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SM_Crowd_Good_To_Neutral_03
+			sm_crowd_good_to_neutral_03
 			vol = -8.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Large_EXT_Med_To_Good_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_large_ext_med_to_good_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			LG_Crowd_Neutral_To_Good_01
+			lg_crowd_neutral_to_good_01
 			vol = -8.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_EXT_Med_To_Good_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_ext_med_to_good_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Neutral_To_Good_01
+			md_crowd_neutral_to_good_01
 			vol = -6.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_INT_Med_To_Good_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_int_med_to_good_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Neutral_To_Good_01
+			md_crowd_neutral_to_good_01
 			vol = -6.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Small_INT_Med_To_Good_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_small_int_med_to_good_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SM_Crowd_Neutral_To_Good_03
+			sm_crowd_neutral_to_good_03
 			vol = -19.0
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Large_EXT_Med_To_Poor_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_large_ext_med_to_poor_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			LG_Crowd_Neutral_To_Bad_01
+			lg_crowd_neutral_to_bad_01
 			vol = -19.0
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_EXT_Med_To_Poor_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_ext_med_to_poor_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Neutral_To_Bad_02
+			md_crowd_neutral_to_bad_02
 			vol = -20.0
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_INT_Med_To_Poor_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_int_med_to_poor_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Neutral_To_Bad_02
+			md_crowd_neutral_to_bad_02
 			vol = -19.0
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Small_INT_Med_To_Poor_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_small_int_med_to_poor_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SM_Crowd_Neutral_To_Bad_03
+			sm_crowd_neutral_to_bad_03
 			vol = -18.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Large_EXT_Poor_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_large_ext_poor_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			LG_Crowd_Bad_To_Neutral_01
+			lg_crowd_bad_to_neutral_01
 			vol = -8.0
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_EXT_Poor_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_ext_poor_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Bad_To_Neutral_01
+			md_crowd_bad_to_neutral_01
 			vol = 3.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Medium_INT_Poor_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_medium_int_poor_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			MD_Crowd_Bad_To_Neutral_01
+			md_crowd_bad_to_neutral_01
 			vol = 3.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Transition_Small_INT_Poor_To_Med_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_transition_small_int_poor_to_med_container = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SM_Crowd_Bad_To_Neutral_01
+			sm_crowd_bad_to_neutral_01
 			vol = -2.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Long_Medium_EXT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x0c77ca08 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_LG_02
+			0xefe527ab
 			vol = -21.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Long_Medium_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x75e83bef = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_MD_Crowd_Swell_LG_01
+			0x215f20c6
 			vol = -21.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Long_Small_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x5f0500c2 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_SM_Crowd_Swell_LG_02
+			0x9f2b0ce3
 			vol = -18.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Med_Medium_EXT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x0683d46f = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_MD_02
+			0xc030a1f5
 			vol = -19.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Med_Medium_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x7f1c2588 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_MD_Crowd_Swell_MD_02
+			0x9783f722
 			vol = -21.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Med_Small_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0xabb5404c = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_SM_Crowd_Swell_MD_01
+			0x29f7db07
 			vol = -20.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Medium_EXT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0xfe2684fa = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_SH_01
+			0xcc3f6614
 			vol = -16.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Soft_Medium_EXT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x7ad61a83 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_SH_01
+			0xcc3f6614
 			vol = -19.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Medium_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x87b9751d = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_MD_Crowd_Swell_SH_02
+			0x02856179
 			vol = -18.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Soft_Medium_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x0349eb64 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_MD_Crowd_Swell_SH_02
+			0x02856179
 			vol = -21.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Small_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x6c4bbc91 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_SM_Crowd_Swell_SH_03
+			0x52ff2c70
 			vol = -16.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Swell_Short_Soft_Small_INT_container = {
-	Default_Buss = Crowd_Transitions
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x22941b82 = {
+	default_buss = crowd_transitions
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_SM_Crowd_Swell_SH_03
+			0x52ff2c70
 			vol = -20.5
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Box_Check_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+box_check_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			CheckBox_Check_SFX
+			checkbox_check_sfx
 			vol = 1
 		}
 	]
 }
-Box_UnCheck_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+box_uncheck_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			CheckBox_Uncheck_SFX
+			checkbox_uncheck_sfx
 			vol = 1
 		}
 	]
 }
-Cash_Sound_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+cash_sound_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Cash
+			cash
 			vol = -4.42
 		}
 	]
 }
-You_Rock_End_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+you_rock_end_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			You_Rock_Front
+			you_rock_front
 		}
 	]
 }
 ui_sfx_scroll_add_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			UI_Scroll_Add2
+			ui_scroll_add2
 			vol = -4.14
 		}
 	]
 }
-UI_SFX_Lose_Multiplier_2X_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ui_sfx_lose_multiplier_2x_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH5_1_Lose_Multiplier
+			0x510b41c1
 			vol = -8.38
 			pitch = 1.65
 		}
 	]
 }
-UI_SFX_Lose_Multiplier_3X_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ui_sfx_lose_multiplier_3x_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH5_1_Lose_Multiplier
+			0x510b41c1
 			vol = -4.8700004
 			pitch = 0.84000003
 		}
 	]
 }
-UI_SFX_Lose_Multiplier_4X_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ui_sfx_lose_multiplier_4x_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH5_1_Lose_Multiplier
+			0x510b41c1
 			vol = -2.49
 			pitch = 0
 		}
 	]
 }
-Lose_Multiplier_Crowd_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+lose_multiplier_crowd_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 }
-Song_Intro_Kick_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+song_intro_kick_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 	slot = 1
-	Sounds = [
+	sounds = [
 		{
-			UI_Song_Intro_Kick
+			ui_song_intro_kick
 			vol = -2.58
 		}
 	]
 }
-Song_Intro_Highway_Up_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+song_intro_highway_up_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Highway_Rise
+			highway_rise
 			vol = -2.21
 		}
 	]
 }
-GH_SFX_BattleMode_DiffUp_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_diffup_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_Battle_DifficultyRampUp
+			gh3_battle_difficultyrampup
 			vol = -7.9300003
 		}
 	]
 }
-GH_SFX_BattleMode_DoubleNote_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_doublenote_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_DoubleNoteAttack
+			gh3_battlemode_doublenoteattack
 			vol = -3.09
 		}
 	]
 }
-GH_SFX_BattleMode_Lefty_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_lefty_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_LeftyAttack
+			gh3_battlemode_leftyattack
 		}
 	]
 }
-GH_SFX_BattleMode_Steal_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_steal_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_StealPowerup
+			gh3_battlemode_stealpowerup
 			vol = -6
 		}
 	]
 }
-GH_SFX_BattleMode_StringBreak_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_stringbreak_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_StringBreakAttack
+			gh3_battlemode_stringbreakattack
 			vol = -4.42
 		}
 	]
 }
-GH_SFX_BattleMode_WhammyAttack_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_whammyattack_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_WhammyAttack
+			gh3_battlemode_whammyattack
 			vol = -7.9300003
 		}
 	]
 }
-GH_SFX_BattleMode_DiffUp_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_diffup_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_Battle_DifficultyRampUp
+			gh3_battle_difficultyrampup
 			vol = -7.9300003
 		}
 	]
 }
-GH_SFX_BattleMode_DoubleNote_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_doublenote_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_DoubleNoteAttack
+			gh3_battlemode_doublenoteattack
 			vol = -3.09
 		}
 	]
 }
-GH_SFX_BattleMode_Lefty_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_lefty_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_LeftyAttack
+			gh3_battlemode_leftyattack
 		}
 	]
 }
-GH_SFX_BattleMode_Steal_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_steal_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_StealPowerup
+			gh3_battlemode_stealpowerup
 			vol = -6
 		}
 	]
 }
-GH_SFX_BattleMode_StringBreak_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_stringbreak_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_StringBreakAttack
+			gh3_battlemode_stringbreakattack
 			vol = -4.42
 		}
 	]
 }
-GH_SFX_BattleMode_WhammyAttack_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_whammyattack_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_WhammyAttack
+			gh3_battlemode_whammyattack
 			vol = -7.9300003
 		}
 	]
 }
-GH_SFX_BossBattle_PlayerDies_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_bossbattle_playerdies_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_DeathFromSlash
+			gh3_battlemode_deathfromslash
 		}
 	]
 }
-GH_SFX_You_Lose_Single_Player_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_you_lose_single_player_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_Sudden_Death
+			gh3_sudden_death
 			vol = -2.49
 		}
 	]
 }
-GH_SFX_BattleMode_Attack_Over_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_attack_over_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_Attack_Over
+			gh3_battlemode_attack_over
 			vol = -6.9100003
 		}
 	]
 }
-GH_SFX_BattleMode_Attack_Over_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_attack_over_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_Attack_Over
+			gh3_battlemode_attack_over
 			vol = -6.9100003
 		}
 	]
 }
-Battle_Power_Awarded_SFX_P1_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+battle_power_awarded_sfx_p1_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
 			sp_awarded1
 			vol = -3.73
 		}
 	]
 }
-Battle_Power_Awarded_SFX_P2_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+battle_power_awarded_sfx_p2_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
 			sp_awarded1
 			vol = -3.73
 		}
 	]
 }
-GH_SFX_HitNoteSoundEvent_container = {
-	Default_Buss = Test_Tones
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+gh_sfx_hitnotesoundevent_container = {
+	default_buss = test_tones
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			GH3_Beat_Sound
+			gh3_beat_sound
 			vol = 6
 			pitch = 15.860001
 		}
 	]
 }
-Countoff_SFX_Sticks_Normal_Hard_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_normal_hard_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickMed
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclickmed
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-3.09
 					-2.84
@@ -1349,8 +1349,8 @@ Countoff_SFX_Sticks_Normal_Hard_container = {
 					-2.3799999
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.51
 					0.34
@@ -1362,16 +1362,16 @@ Countoff_SFX_Sticks_Normal_Hard_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Normal_Med_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_normal_med_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickMed
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclickmed
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-3.73
 					-4.14
@@ -1379,8 +1379,8 @@ Countoff_SFX_Sticks_Normal_Med_container = {
 					-6.0
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.17
 					0.0
@@ -1392,16 +1392,16 @@ Countoff_SFX_Sticks_Normal_Med_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Normal_Soft_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_normal_soft_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickMed
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclickmed
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-9.09
 					-8.610001
@@ -1409,8 +1409,8 @@ Countoff_SFX_Sticks_Normal_Soft_container = {
 					-7.51
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.17
 					-0.35000002
@@ -1422,24 +1422,24 @@ Countoff_SFX_Sticks_Normal_Soft_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat01_Hard_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat01_hard_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			HiHatClosed01
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatclosed01
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.90999997
 					-0.44
 					0.0
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.51
 					0.34
@@ -1451,24 +1451,24 @@ Countoff_SFX_HiHat01_Hard_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat01_Med_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat01_med_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			HiHatClosed01
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatclosed01
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.90999997
 					-0.44
 					0.0
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.17
 					0.0
@@ -1480,24 +1480,24 @@ Countoff_SFX_HiHat01_Med_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat01_Soft_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat01_soft_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			HiHatClosed01
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatclosed01
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.90999997
 					-0.44
 					0.0
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.17
 					-0.35000002
@@ -1509,24 +1509,24 @@ Countoff_SFX_HiHat01_Soft_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat02_Hard_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat02_hard_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			HiHatOpen02
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatopen02
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.42000002
 					0.83
 					1.21
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.17
 					0.0
@@ -1536,24 +1536,24 @@ Countoff_SFX_HiHat02_Hard_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat02_Med_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat02_med_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			HiHatOpen02
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatopen02
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.42000002
 					0.83
 					1.21
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.0
 					-0.17
@@ -1563,24 +1563,24 @@ Countoff_SFX_HiHat02_Med_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat02_Soft_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat02_soft_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			HiHatOpen02
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatopen02
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.42000002
 					0.83
 					1.21
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.17
 					-0.35000002
@@ -1590,24 +1590,24 @@ Countoff_SFX_HiHat02_Soft_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat03_Hard_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat03_hard_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			HiHatPedal02
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatpedal02
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.83
 					1.58
 					2.27
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.17
 					0.0
@@ -1617,24 +1617,24 @@ Countoff_SFX_HiHat03_Hard_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat03_Med_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat03_med_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			HiHatPedal02
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatpedal02
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.83
 					1.58
 					2.27
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.0
 					-0.17
@@ -1644,24 +1644,24 @@ Countoff_SFX_HiHat03_Med_container = {
 		}
 	]
 }
-Countoff_SFX_HiHat03_Soft_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_hihat03_soft_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			HiHatPedal02
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			hihatpedal02
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.83
 					1.58
 					2.27
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.17
 					-0.35000002
@@ -1671,16 +1671,16 @@ Countoff_SFX_HiHat03_Soft_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Huge_Hard_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_huge_hard_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickLarge
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclicklarge
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-3.09
 					-2.84
@@ -1688,8 +1688,8 @@ Countoff_SFX_Sticks_Huge_Hard_container = {
 					-2.3799999
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.51
 					0.34
@@ -1701,16 +1701,16 @@ Countoff_SFX_Sticks_Huge_Hard_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Huge_Med_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_huge_med_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickLarge
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclicklarge
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-3.09
 					-2.84
@@ -1718,8 +1718,8 @@ Countoff_SFX_Sticks_Huge_Med_container = {
 					-2.3799999
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.17
 					0.0
@@ -1731,16 +1731,16 @@ Countoff_SFX_Sticks_Huge_Med_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Huge_Soft_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_huge_soft_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickLarge
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclicklarge
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-3.09
 					-2.84
@@ -1748,8 +1748,8 @@ Countoff_SFX_Sticks_Huge_Soft_container = {
 					-2.3799999
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.17
 					-0.35000002
@@ -1761,24 +1761,24 @@ Countoff_SFX_Sticks_Huge_Soft_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Tiny_Hard_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_tiny_hard_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickSmall
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclicksmall
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-1.41
 					-0.90999997
 					-0.44
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.51
 					0.34
@@ -1790,24 +1790,24 @@ Countoff_SFX_Sticks_Tiny_Hard_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Tiny_Med_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_tiny_med_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickSmall
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclicksmall
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-1.41
 					-0.90999997
 					-0.44
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					0.17
 					0.0
@@ -1819,24 +1819,24 @@ Countoff_SFX_Sticks_Tiny_Med_container = {
 		}
 	]
 }
-Countoff_SFX_Sticks_Tiny_Soft_container = {
-	Default_Buss = Countoffs
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+countoff_sfx_sticks_tiny_soft_container = {
+	default_buss = countoffs
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			StickClickSmall
-			RandomVol = {
-				type = RandomNoRepeatLastTwoType
+			stickclicksmall
+			randomvol = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-1.41
 					-0.90999997
 					-0.44
 				]
 			}
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					-0.17
 					-0.35000002
@@ -1848,587 +1848,587 @@ Countoff_SFX_Sticks_Tiny_Soft_container = {
 		}
 	]
 }
-Jam_Mode_Metronome_container = {
-	Default_Buss = JamMode_Drums
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	command = PlaySound
-	Randomness = none
+jam_mode_metronome_container = {
+	default_buss = jammode_drums
+	norepeatfor = 0.1
+	instancelimit = 2
+	command = playsound
+	randomness = none
 }
-Cheat_Single_Strum_Note_1_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_single_strum_note_1_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_pk_A3_S2_F12_01
+			sg_b_pk_a3_s2_f12_01
 		}
 		{
-			sg_b_pk_A3_S2_F12_02
+			sg_b_pk_a3_s2_f12_02
 		}
 		{
-			sg_b_pk_A3_S2_F12_03
+			sg_b_pk_a3_s2_f12_03
 		}
 	]
 }
-Cheat_Single_Strum_Note_2_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_single_strum_note_2_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_pk_Bb3_S4_F3_01
+			sg_b_pk_bb3_s4_f3_01
 		}
 		{
-			sg_b_pk_Bb3_S4_F3_02
+			sg_b_pk_bb3_s4_f3_02
 		}
 		{
-			sg_b_pk_Bb3_S4_F3_03
-		}
-	]
-}
-Cheat_Single_Strum_Note_3_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_pk_D4_S4_F7_01
-		}
-		{
-			sg_b_pk_D4_S4_F7_02
-		}
-		{
-			sg_b_pk_D4_S4_F7_03
+			sg_b_pk_bb3_s4_f3_03
 		}
 	]
 }
-Cheat_Single_Strum_Note_4_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_single_strum_note_3_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_pk_E4_S6_F0_01
+			sg_b_pk_d4_s4_f7_01
 		}
 		{
-			sg_b_pk_E4_S6_F0_02
+			sg_b_pk_d4_s4_f7_02
 		}
 		{
-			sg_b_pk_E4_S6_F0_03
-		}
-	]
-}
-Cheat_Single_Strum_Note_5_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_pk_G4_S6_F3_01
-		}
-		{
-			sg_b_pk_G4_S6_F3_02
-		}
-		{
-			sg_b_pk_G4_S6_F3_03
+			sg_b_pk_d4_s4_f7_03
 		}
 	]
 }
-Cheat_Chord_Strum_1_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_single_strum_note_4_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_chrd_down_E5_S1_F0_01
+			sg_b_pk_e4_s6_f0_01
 		}
 		{
-			sg_b_chrd_down_E5_S1_F0_02
+			sg_b_pk_e4_s6_f0_02
 		}
 		{
-			sg_b_chrd_down_E5_S1_F0_03
-		}
-	]
-}
-Cheat_Chord_Strum_2_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_chrd_down_G5_S1_F3_01
-		}
-		{
-			sg_b_chrd_down_G5_S1_F3_02
-		}
-		{
-			sg_b_chrd_down_G5_S1_F3_03
+			sg_b_pk_e4_s6_f0_03
 		}
 	]
 }
-Cheat_Chord_Strum_3_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_single_strum_note_5_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_chrd_down_A5_S1_F5_01
+			sg_b_pk_g4_s6_f3_01
 		}
 		{
-			sg_b_chrd_down_A5_S1_F5_02
+			sg_b_pk_g4_s6_f3_02
 		}
 		{
-			sg_b_chrd_down_A5_S1_F5_03
+			sg_b_pk_g4_s6_f3_03
 		}
 	]
 }
-Cheat_Chord_Strum_4_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_chord_strum_1_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_chrd_down_F5_S1_F1_01
+			sg_b_chrd_down_e5_s1_f0_01
+		}
+		{
+			sg_b_chrd_down_e5_s1_f0_02
+		}
+		{
+			sg_b_chrd_down_e5_s1_f0_03
+		}
+	]
+}
+cheat_chord_strum_2_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			sg_b_chrd_down_g5_s1_f3_01
+		}
+		{
+			sg_b_chrd_down_g5_s1_f3_02
+		}
+		{
+			sg_b_chrd_down_g5_s1_f3_03
+		}
+	]
+}
+cheat_chord_strum_3_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			sg_b_chrd_down_a5_s1_f5_01
+		}
+		{
+			sg_b_chrd_down_a5_s1_f5_02
+		}
+		{
+			sg_b_chrd_down_a5_s1_f5_03
+		}
+	]
+}
+cheat_chord_strum_4_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			sg_b_chrd_down_f5_s1_f1_01
 			pitch = 1
 		}
 		{
-			sg_b_chrd_down_F5_S1_F1_02
+			sg_b_chrd_down_f5_s1_f1_02
 			pitch = 1
 		}
 		{
-			sg_b_chrd_down_F5_S1_F1_03
-			pitch = 1
-		}
-	]
-}
-Cheat_Chord_Strum_5_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_chrd_down_C5_S2_F3_01
-		}
-		{
-			sg_b_chrd_down_C5_S2_F3_02
-		}
-		{
-			sg_b_chrd_down_C5_S2_F3_03
-		}
-	]
-}
-Cheat_Chord_Strum_6_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_chrd_down_B5_S1_F7_01
-		}
-		{
-			sg_b_chrd_down_B5_S1_F7_02
-		}
-		{
-			sg_b_chrd_down_B5_S1_F7_03
-		}
-	]
-}
-Cheat_Chord_Strum_7_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_chrd_down_D5_S2_F5_01
-		}
-		{
-			sg_b_chrd_down_D5_S2_F5_02
-		}
-		{
-			sg_b_chrd_down_D5_S2_F5_03
-		}
-	]
-}
-Cheat_Chord_Strum_8_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_chrd_down_F5_S1_F1_01
-			pitch = 1
-		}
-		{
-			sg_b_chrd_down_F5_S1_F1_02
-			pitch = 1
-		}
-		{
-			sg_b_chrd_down_F5_S1_F1_03
+			sg_b_chrd_down_f5_s1_f1_03
 			pitch = 1
 		}
 	]
 }
-Cheat_Chord_Strum_9_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_chord_strum_5_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_chrd_down_E5_S1_F0_01
+			sg_b_chrd_down_c5_s2_f3_01
 		}
 		{
-			sg_b_chrd_down_E5_S1_F0_02
+			sg_b_chrd_down_c5_s2_f3_02
 		}
 		{
-			sg_b_chrd_down_E5_S1_F0_03
+			sg_b_chrd_down_c5_s2_f3_03
 		}
 	]
 }
-GH_SFX_BattleMode_WhammyAttack_Received_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+cheat_chord_strum_6_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			GH3_BattleMode_WhammyAttack_Received
+			sg_b_chrd_down_b5_s1_f7_01
+		}
+		{
+			sg_b_chrd_down_b5_s1_f7_02
+		}
+		{
+			sg_b_chrd_down_b5_s1_f7_03
+		}
+	]
+}
+cheat_chord_strum_7_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			sg_b_chrd_down_d5_s2_f5_01
+		}
+		{
+			sg_b_chrd_down_d5_s2_f5_02
+		}
+		{
+			sg_b_chrd_down_d5_s2_f5_03
+		}
+	]
+}
+cheat_chord_strum_8_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			sg_b_chrd_down_f5_s1_f1_01
+			pitch = 1
+		}
+		{
+			sg_b_chrd_down_f5_s1_f1_02
+			pitch = 1
+		}
+		{
+			sg_b_chrd_down_f5_s1_f1_03
+			pitch = 1
+		}
+	]
+}
+cheat_chord_strum_9_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			sg_b_chrd_down_e5_s1_f0_01
+		}
+		{
+			sg_b_chrd_down_e5_s1_f0_02
+		}
+		{
+			sg_b_chrd_down_e5_s1_f0_03
+		}
+	]
+}
+gh_sfx_battlemode_whammyattack_received_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
+		{
+			gh3_battlemode_whammyattack_received
 			vol = -9.09
 		}
 	]
 }
-GH_SFX_BattleMode_WhammyAttack_Received_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_whammyattack_received_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_BattleMode_WhammyAttack_Received
+			gh3_battlemode_whammyattack_received
 			vol = -9.09
 		}
 	]
 }
-Cheat_Chord_Strum_10_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_chord_strum_10_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_chrd_down_F5_S1_F1_01
+			sg_b_chrd_down_f5_s1_f1_01
 		}
 		{
-			sg_b_chrd_down_F5_S1_F1_02
+			sg_b_chrd_down_f5_s1_f1_02
 		}
 		{
-			sg_b_chrd_down_F5_S1_F1_03
-		}
-	]
-}
-Cheat_Chord_Strum_11_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			sg_b_chrd_down_A5_S1_F5_01
-		}
-		{
-			sg_b_chrd_down_A5_S1_F5_02
-		}
-		{
-			sg_b_chrd_down_A5_S1_F5_03
+			sg_b_chrd_down_f5_s1_f1_03
 		}
 	]
 }
-Cheat_Chord_Strum_12_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+cheat_chord_strum_11_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			sg_b_chrd_down_C5_S2_F3_01
+			sg_b_chrd_down_a5_s1_f5_01
 		}
 		{
-			sg_b_chrd_down_C5_S2_F3_02
+			sg_b_chrd_down_a5_s1_f5_02
 		}
 		{
-			sg_b_chrd_down_C5_S2_F3_03
+			sg_b_chrd_down_a5_s1_f5_03
 		}
 	]
 }
-Whammy_Test_SFX_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 5
-	Randomness = none
-	Sounds = [
+cheat_chord_strum_12_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Whammy_Test_SFX
+			sg_b_chrd_down_c5_s2_f3_01
+		}
+		{
+			sg_b_chrd_down_c5_s2_f3_02
+		}
+		{
+			sg_b_chrd_down_c5_s2_f3_03
+		}
+	]
+}
+whammy_test_sfx_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 5
+	randomness = none
+	sounds = [
+		{
+			whammy_test_sfx
 			vol = -3.09
 		}
 	]
 }
-POW_SFX_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = RandomNoRepeatType
-	Sounds = [
+pow_sfx_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			POW_SFX_02
+			pow_sfx_02
 			vol = 6
 		}
 		{
-			POW_SFX_05
+			pow_sfx_05
 			vol = 6
 		}
 		{
-			POW_SFX_07
+			pow_sfx_07
 			vol = 6
 		}
 	]
 }
-Tutorial_Mode_Finish_Chord_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_mode_finish_chord_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Finish_Chord
+			finish_chord
 			vol = 2.27
 		}
 	]
 }
-UI_SFX_Hot_Start_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x5acfd516 = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			UI_SFX_50_Note_Streak
+			ui_sfx_50_note_streak
 			vol = -3
 		}
 	]
 }
-UI_SFX_50_Note_Streak_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0xa25f400c = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			UI_SFX_50_Note_Streak
+			ui_sfx_50_note_streak
 			vol = -3
 		}
 	]
 }
-UI_SFX_100_Note_Streak_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x5a0c91a6 = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			UI_SFX_50_Note_Streak
+			ui_sfx_50_note_streak
 			vol = -3
 		}
 	]
 }
-Tutorial_Missed_HOPO_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_missed_hopo_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Tutorial_Missed_HOPO_Free
+			tutorial_missed_hopo_free
 			vol = 3.51
 		}
 	]
 }
-Tutorial_String_1_HOPO_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_string_1_hopo_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Tutorial_String_1_HOPO_Free
+			tutorial_string_1_hopo_free
 			vol = 3.51
 		}
 	]
 }
-Tutorial_String_1_Strum_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_string_1_strum_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Tutorial_String_1_Strum_Free
+			tutorial_string_1_strum_free
 			vol = 3.51
 		}
 	]
 }
-Tutorial_String_2_HOPO_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_string_2_hopo_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Tutorial_String_2_HOPO_Free
+			tutorial_string_2_hopo_free
 			vol = 3.51
 		}
 	]
 }
-Tutorial_String_2_Strum_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_string_2_strum_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Tutorial_String_2_Strum_Free
+			tutorial_string_2_strum_free
 			vol = 3.51
 		}
 	]
 }
-Tutorial_String_3_HOPO_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+tutorial_string_3_hopo_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Tutorial_String_3_HOPO_Free
+			tutorial_string_3_hopo_free
 			vol = 3.51
 		}
 	]
 }
-Tutorial_String_3_Strum_Free_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+tutorial_string_3_strum_free_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Tutorial_String_3_Strum_Free
+			tutorial_string_3_strum_free
 			vol = 3.51
 		}
 	]
 }
-Crowd_Applause_Large_EXT_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0xeafd6fc0 = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			EXT_LG_Crowd_Applause_01
+			0xcd9525fb
 			vol = -8
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Applause_Medium_EXT_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x0c9febbc = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Applause_02
+			0x92adc9ae
 			vol = -12
 		}
 	]
 }
-Crowd_Applause_Medium_INT_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0x75001a5b = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_MD_Crowd_Applause_02
+			0xc51e9f79
 			vol = -14
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Crowd_Applause_Small_INT_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+0xb724b4c2 = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			INT_SM_Crowd_Applause_01
+			0x7b6ab35c
 			vol = -13
 			dropoff = 6000
 			dropoff_function = inv_exponential
 		}
 	]
 }
-Battlemode_HeartBeat_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+battlemode_heartbeat_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_Battlemode_Heartbeat
+			gh3_battlemode_heartbeat
 			vol = -9.09
 			num_loops = -1
 		}
 	]
 }
-Battlemode_HeartBeat_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+battlemode_heartbeat_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GH3_Battlemode_Heartbeat
+			gh3_battlemode_heartbeat
 			vol = -9.09
 			num_loops = -1
 		}
 	]
 }
-GH3_Star_FlyIn_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+gh3_star_flyin_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Fly_In_Whoosh
+			fly_in_whoosh
 			vol = -5.17
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					1.01
 					0.68
@@ -2440,17 +2440,17 @@ GH3_Star_FlyIn_container = {
 		}
 	]
 }
-Battle_Boss_FlyIn_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+battle_boss_flyin_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Fly_In_Whoosh
+			fly_in_whoosh
 			vol = 0
-			RandomPitch = {
-				type = RandomNoRepeatLastTwoType
+			randompitch = {
+				type = randomnorepeatlasttwotype
 				vals = [
 					1.01
 					0.68
@@ -2462,352 +2462,352 @@ Battle_Boss_FlyIn_container = {
 		}
 	]
 }
-GH3_Score_FlyIn_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+gh3_score_flyin_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Fly_In_Whoosh
+			fly_in_whoosh
 			vol = -0.90999997
 			pitch = -7.46
 		}
 	]
 }
-GH3_Cash_FlyIn_container = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+gh3_cash_flyin_container = {
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Fly_In_Whoosh
+			fly_in_whoosh
 			vol = -1.41
 			pitch = -5.9300003
 		}
 	]
 }
-GH3_Score_FlyIn_Hit_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh3_score_flyin_hit_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			UI_Song_Intro_Kick
+			ui_song_intro_kick
 			vol = -7.9300003
 		}
 	]
 }
-GH3_Cash_FlyIn_Hit_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh3_cash_flyin_hit_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Cash
+			cash
 			vol = -4.42
 		}
 	]
 }
 jam_sounds_template = {
-	Default_Buss = `default`
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
+	default_buss = `default`
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
 }
-Star_Power_Deployed_Front_Gh4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 5
-	Randomness = none
-	Sounds = [
+star_power_deployed_front_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 5
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -5
 		}
 	]
 }
-Star_Power_Deployed_LFE_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_lfe_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Deployed_LFE
-			LFEOnly = true
-			LFE_vol = -5
+			star_deployed_lfe
+			lfeonly = true
+			lfe_vol = -5
 		}
 	]
 }
-Star_Power_Available_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_available_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Available
+			star_available
 			vol = -10
 		}
 	]
 }
-Star_Power_Release_Front_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_front_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Front
+			star_release_front
 			vol = -8
 		}
 	]
 }
-Star_Power_Deployed_Back_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_back_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Deployed_Back
+			star_deployed_back
 			vol = -5
 		}
 	]
 }
-Star_Power_Release_Center_Gh4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_center_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Center
+			star_release_center
 			vol = -8
 		}
 	]
 }
-Star_Power_Available_P2_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_available_p2_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Available
+			star_available
 			vol = -10
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Available_P3_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_available_p3_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Available
+			star_available
 			vol = -10
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Deployed_Back_P1_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_back_p1_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Deployed_Back
+			star_deployed_back
 			vol = -7
 		}
 	]
 }
-Star_Power_Release_Center_P1_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_center_p1_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Center
+			star_release_center
 			vol = -8
 		}
 	]
 }
-Star_Power_Deployed_Back_P2_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_back_p2_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Deployed_Back
+			star_deployed_back
 			vol = -7
 		}
 	]
 }
-Star_Power_Deployed_Back_P3_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_back_p3_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Deployed_Back
+			star_deployed_back
 			vol = -7
 		}
 	]
 }
-Star_Power_Release_Front_P2_Gh4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_front_p2_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Front
+			star_release_front
 			vol = -8
 		}
 	]
 }
-Star_Power_Release_Front_P3_Gh4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_front_p3_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Front
+			star_release_front
 			vol = -8
 		}
 	]
 }
-Star_Power_Deployed_Front_P2_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_front_p2_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -7
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Deployed_Front_P3_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_front_p3_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -7
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Available_P1_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_available_p1_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Available
+			star_available
 			vol = -10
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Release_Center_P2_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_center_p2_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Center
+			star_release_center
 			vol = -8
 		}
 	]
 }
-Star_Power_Release_Center_P3_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_center_p3_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Center
+			star_release_center
 			vol = -8
 		}
 	]
 }
-Star_Power_Deployed_Front_P1_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_front_p1_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			star_deployed_front
 			vol = -7
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-Star_Power_Deployed_LFE_P1_GH4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_deployed_lfe_p1_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Deployed_LFE
-			LFEOnly = true
-			LFE_vol = -7
+			star_deployed_lfe
+			lfeonly = true
+			lfe_vol = -7
 		}
 	]
 }
-Star_Power_Release_Front_P1_Gh4_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+star_power_release_front_p1_gh4_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Star_Release_Front
+			star_release_front
 			vol = -8
 		}
 	]
 }
-Jam_Session_Rhythm_Guitar_Template_template = {
-	Default_Buss = JamMode_RhythmGuitar
-	NoRepeatFor = 0
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
+jam_session_rhythm_guitar_template_template = {
+	default_buss = jammode_rhythmguitar
+	norepeatfor = 0
+	instancelimit = 8
+	randomness = randomnorepeattype
 }
-Jam_Fret_Noise_Rhythm_container = {
-	Default_Buss = JamMode_RhythmGuitar
-	NoRepeatFor = 0
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+jam_fret_noise_rhythm_container = {
+	default_buss = jammode_rhythmguitar
+	norepeatfor = 0
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Fret_Noise_01
+			fret_noise_01
 			vol = -12
 			priority = 1
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -2815,11 +2815,11 @@ Jam_Fret_Noise_Rhythm_container = {
 			}
 		}
 		{
-			Fret_Noise_02
+			fret_noise_02
 			vol = -12
 			priority = 1
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -2827,11 +2827,11 @@ Jam_Fret_Noise_Rhythm_container = {
 			}
 		}
 		{
-			Fret_Noise_03
+			fret_noise_03
 			vol = -12
 			priority = 1
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -2839,11 +2839,11 @@ Jam_Fret_Noise_Rhythm_container = {
 			}
 		}
 		{
-			Fret_Noise_05
+			fret_noise_05
 			vol = -12
 			priority = 1
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -2851,11 +2851,11 @@ Jam_Fret_Noise_Rhythm_container = {
 			}
 		}
 		{
-			Fret_Noise_06
+			fret_noise_06
 			vol = -12
 			priority = 1
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -2864,2592 +2864,2592 @@ Jam_Fret_Noise_Rhythm_container = {
 		}
 	]
 }
-Crowd_Whistle_Large_EXT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_whistle_large_ext_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			EXT_LG_Crowd_Whistle_01
+			ext_lg_crowd_whistle_01
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_02
+			ext_lg_crowd_whistle_02
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_03
+			ext_lg_crowd_whistle_03
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_04
+			ext_lg_crowd_whistle_04
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_05
+			ext_lg_crowd_whistle_05
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_06
+			ext_lg_crowd_whistle_06
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_07
+			ext_lg_crowd_whistle_07
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_08
+			ext_lg_crowd_whistle_08
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_09
+			ext_lg_crowd_whistle_09
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_10
+			ext_lg_crowd_whistle_10
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_11
+			ext_lg_crowd_whistle_11
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_12
+			ext_lg_crowd_whistle_12
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_13
+			ext_lg_crowd_whistle_13
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_14
+			ext_lg_crowd_whistle_14
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_15
+			ext_lg_crowd_whistle_15
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_16
+			ext_lg_crowd_whistle_16
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_17
+			ext_lg_crowd_whistle_17
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_18
+			ext_lg_crowd_whistle_18
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_19
+			ext_lg_crowd_whistle_19
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_20
+			ext_lg_crowd_whistle_20
 			vol = -5.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 	]
 }
-Crowd_Whistle_Large_INT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_whistle_large_int_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			INT_LG_Crowd_Whistle_01
+			int_lg_crowd_whistle_01
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_02
+			int_lg_crowd_whistle_02
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_03
+			int_lg_crowd_whistle_03
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_04
+			int_lg_crowd_whistle_04
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_05
+			int_lg_crowd_whistle_05
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_06
+			int_lg_crowd_whistle_06
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_07
+			int_lg_crowd_whistle_07
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_08
+			int_lg_crowd_whistle_08
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_09
+			int_lg_crowd_whistle_09
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_10
+			int_lg_crowd_whistle_10
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_11
+			int_lg_crowd_whistle_11
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_12
+			int_lg_crowd_whistle_12
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_13
+			int_lg_crowd_whistle_13
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_14
+			int_lg_crowd_whistle_14
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_15
+			int_lg_crowd_whistle_15
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_16
+			int_lg_crowd_whistle_16
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_17
+			int_lg_crowd_whistle_17
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_18
+			int_lg_crowd_whistle_18
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_19
+			int_lg_crowd_whistle_19
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_LG_Crowd_Whistle_20
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-	]
-}
-Crowd_Whistle_Medium_EXT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			EXT_MD_Crowd_Whistle_01
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_02
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_03
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_04
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_05
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_06
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_07
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_08
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_09
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_10
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_11
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_12
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_13
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_14
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_15
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_16
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_17
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_18
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_19
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_20
-			vol = -8.3
-			dropoff = 50
-			dropoff_function = linear
-		}
-	]
-}
-Crowd_Whistle_Medium_INT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			INT_MD_Crowd_Whistle_01
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_02
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_03
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_04
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_05
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_06
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_07
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_08
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_09
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_10
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_11
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_12
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_13
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_14
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_15
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_16
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_17
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_18
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_19
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_20
-			vol = -9.0
-			dropoff = 50
-			dropoff_function = linear
-		}
-	]
-}
-Crowd_Whistle_Small_EXT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			EXT_SM_Crowd_Whistle_01
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_02
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_03
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_04
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_05
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_06
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_07
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_08
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_09
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_10
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_11
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_12
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_13
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_14
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_15
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_16
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_17
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_18
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_19
-			vol = -3.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_SM_Crowd_Whistle_20
+			int_lg_crowd_whistle_20
 			vol = -3.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 	]
 }
-Crowd_Whistle_Small_INT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_whistle_medium_ext_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			INT_SM_Crowd_Whistle_01
+			ext_md_crowd_whistle_01
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_02
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_03
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_04
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_05
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_06
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_07
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_08
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_09
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_10
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_11
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_12
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_13
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_14
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_15
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_16
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_17
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_18
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_19
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_20
+			vol = -8.3
+			dropoff = 50
+			dropoff_function = linear
+		}
+	]
+}
+crowd_whistle_medium_int_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			int_md_crowd_whistle_01
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_02
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_03
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_04
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_05
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_06
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_07
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_08
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_09
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_10
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_11
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_12
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_13
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_14
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_15
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_16
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_17
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_18
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_19
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_20
+			vol = -9.0
+			dropoff = 50
+			dropoff_function = linear
+		}
+	]
+}
+crowd_whistle_small_ext_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			ext_sm_crowd_whistle_01
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_02
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_03
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_04
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_05
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_06
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_07
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_08
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_09
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_10
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_11
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_12
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_13
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_14
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_15
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_16
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_17
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_18
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_19
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_sm_crowd_whistle_20
+			vol = -3.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+	]
+}
+crowd_whistle_small_int_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			int_sm_crowd_whistle_01
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_02
+			int_sm_crowd_whistle_02
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_03
+			int_sm_crowd_whistle_03
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_04
+			int_sm_crowd_whistle_04
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_05
+			int_sm_crowd_whistle_05
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_06
+			int_sm_crowd_whistle_06
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_07
+			int_sm_crowd_whistle_07
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_08
+			int_sm_crowd_whistle_08
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_09
+			int_sm_crowd_whistle_09
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_10
+			int_sm_crowd_whistle_10
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_11
+			int_sm_crowd_whistle_11
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_12
+			int_sm_crowd_whistle_12
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_13
+			int_sm_crowd_whistle_13
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_14
+			int_sm_crowd_whistle_14
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_15
+			int_sm_crowd_whistle_15
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_16
+			int_sm_crowd_whistle_16
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_17
+			int_sm_crowd_whistle_17
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_18
+			int_sm_crowd_whistle_18
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_19
+			int_sm_crowd_whistle_19
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_20
+			int_sm_crowd_whistle_20
 			vol = -10
 			dropoff = 50
 			dropoff_function = linear
 		}
 	]
 }
-Crowd_OneShot_Large_EXT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_large_ext_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			Crowd_Cheer_LG_EXT_SG_01
+			crowd_cheer_lg_ext_sg_01
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_02
+			crowd_cheer_lg_ext_sg_02
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_03
+			crowd_cheer_lg_ext_sg_03
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_04
+			crowd_cheer_lg_ext_sg_04
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_05
+			crowd_cheer_lg_ext_sg_05
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_06
+			crowd_cheer_lg_ext_sg_06
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_07
+			crowd_cheer_lg_ext_sg_07
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_08
+			crowd_cheer_lg_ext_sg_08
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_09
+			crowd_cheer_lg_ext_sg_09
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LG_EXT_SG_10
+			crowd_cheer_lg_ext_sg_10
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_01
+			crowd_cheer_lrg_ext_gr_01
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_02
+			crowd_cheer_lrg_ext_gr_02
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_03
+			crowd_cheer_lrg_ext_gr_03
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_04
+			crowd_cheer_lrg_ext_gr_04
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_05
+			crowd_cheer_lrg_ext_gr_05
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_06
+			crowd_cheer_lrg_ext_gr_06
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_08
+			crowd_cheer_lrg_ext_gr_08
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_09
+			crowd_cheer_lrg_ext_gr_09
 			vol = -9.5
 		}
 		{
-			Crowd_Cheer_LRG_EXT_GR_10
+			crowd_cheer_lrg_ext_gr_10
 			vol = -9.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_01
+			ext_lg_crowd_whistle_01
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_02
+			ext_lg_crowd_whistle_02
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_03
+			ext_lg_crowd_whistle_03
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_04
+			ext_lg_crowd_whistle_04
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_05
+			ext_lg_crowd_whistle_05
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_06
+			ext_lg_crowd_whistle_06
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_07
+			ext_lg_crowd_whistle_07
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_08
+			ext_lg_crowd_whistle_08
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_09
+			ext_lg_crowd_whistle_09
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_10
+			ext_lg_crowd_whistle_10
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_11
+			ext_lg_crowd_whistle_11
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_12
+			ext_lg_crowd_whistle_12
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_13
+			ext_lg_crowd_whistle_13
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_14
+			ext_lg_crowd_whistle_14
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_15
+			ext_lg_crowd_whistle_15
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_16
+			ext_lg_crowd_whistle_16
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_17
+			ext_lg_crowd_whistle_17
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_18
+			ext_lg_crowd_whistle_18
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_19
+			ext_lg_crowd_whistle_19
 			vol = -7.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_20
+			ext_lg_crowd_whistle_20
 			vol = -7.5
 		}
 	]
 }
-Crowd_OneShot_Large_INT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_large_int_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			EXT_LG_Crowd_Whistle_01
+			ext_lg_crowd_whistle_01
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_02
+			ext_lg_crowd_whistle_02
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_03
+			ext_lg_crowd_whistle_03
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_04
+			ext_lg_crowd_whistle_04
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_05
+			ext_lg_crowd_whistle_05
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_06
+			ext_lg_crowd_whistle_06
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_07
+			ext_lg_crowd_whistle_07
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_08
+			ext_lg_crowd_whistle_08
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_09
+			ext_lg_crowd_whistle_09
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_10
+			ext_lg_crowd_whistle_10
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_11
+			ext_lg_crowd_whistle_11
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_12
+			ext_lg_crowd_whistle_12
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_13
+			ext_lg_crowd_whistle_13
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_14
+			ext_lg_crowd_whistle_14
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_15
+			ext_lg_crowd_whistle_15
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_16
+			ext_lg_crowd_whistle_16
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_17
+			ext_lg_crowd_whistle_17
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_18
+			ext_lg_crowd_whistle_18
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_19
+			ext_lg_crowd_whistle_19
 			vol = -6.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_20
+			ext_lg_crowd_whistle_20
 			vol = -6.5
 		}
 	]
 }
-Crowd_OneShot_Medium_EXT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_medium_ext_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			Crowd_Cheer_MD_EXT_SG_01
+			crowd_cheer_md_ext_sg_01
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_02
+			crowd_cheer_md_ext_sg_02
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_03
+			crowd_cheer_md_ext_sg_03
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_04
+			crowd_cheer_md_ext_sg_04
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_05
+			crowd_cheer_md_ext_sg_05
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_06
+			crowd_cheer_md_ext_sg_06
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_07
+			crowd_cheer_md_ext_sg_07
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_08
+			crowd_cheer_md_ext_sg_08
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_09
+			crowd_cheer_md_ext_sg_09
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MD_EXT_SG_10
+			crowd_cheer_md_ext_sg_10
 			vol = -14.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_01
+			crowd_cheer_med_ext_gr_01
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_02
+			crowd_cheer_med_ext_gr_02
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_03
+			crowd_cheer_med_ext_gr_03
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_04
+			crowd_cheer_med_ext_gr_04
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_05
+			crowd_cheer_med_ext_gr_05
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_06
+			crowd_cheer_med_ext_gr_06
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_07
+			crowd_cheer_med_ext_gr_07
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_08
+			crowd_cheer_med_ext_gr_08
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_09
+			crowd_cheer_med_ext_gr_09
 			vol = -11.5
 		}
 		{
-			Crowd_Cheer_MED_EXT_GR_10
+			crowd_cheer_med_ext_gr_10
 			vol = -11.5
 		}
 		{
-			EXT_MD_Crowd_Whistle_01
+			ext_md_crowd_whistle_01
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_02
+			ext_md_crowd_whistle_02
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_03
+			ext_md_crowd_whistle_03
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_04
+			ext_md_crowd_whistle_04
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_05
+			ext_md_crowd_whistle_05
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_06
+			ext_md_crowd_whistle_06
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_07
+			ext_md_crowd_whistle_07
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_08
+			ext_md_crowd_whistle_08
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_09
+			ext_md_crowd_whistle_09
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_10
+			ext_md_crowd_whistle_10
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_11
+			ext_md_crowd_whistle_11
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_12
+			ext_md_crowd_whistle_12
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_13
+			ext_md_crowd_whistle_13
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_14
+			ext_md_crowd_whistle_14
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_15
+			ext_md_crowd_whistle_15
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_16
+			ext_md_crowd_whistle_16
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_17
+			ext_md_crowd_whistle_17
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_18
+			ext_md_crowd_whistle_18
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_19
+			ext_md_crowd_whistle_19
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			EXT_MD_Crowd_Whistle_20
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-	]
-}
-Crowd_OneShot_Medium_EXT_Good_01_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 0.1
-	InstanceLimit = 5
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Cheer_MD_EXT_SG_01
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_02
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_03
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_04
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_05
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_06
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_07
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_08
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_09
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MD_EXT_SG_10
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_01
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_02
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_03
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_04
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_05
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_06
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_07
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_08
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_09
-			vol = -15.5
-		}
-		{
-			Crowd_Cheer_MED_EXT_GR_10
-			vol = -15.5
-		}
-		{
-			EXT_MD_Crowd_Whistle_01
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_02
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_03
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_04
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_05
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_06
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_07
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_08
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_09
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_10
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_11
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_12
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_13
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_14
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_15
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_16
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_17
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_18
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_19
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			EXT_MD_Crowd_Whistle_20
-			vol = -15.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-	]
-}
-Crowd_OneShot_Medium_INT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Cheer_MD_INT_SG_01
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_02
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_03
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_04
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_05
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_06
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_07
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_08
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_09
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MD_INT_SG_10
-			vol = -14.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_01
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_02
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_03
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_04
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_05
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_06
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_07
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_08
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_09
-			vol = -11.5
-		}
-		{
-			Crowd_Cheer_MED_INT_GR_10
-			vol = -11.5
-		}
-		{
-			INT_MD_Crowd_Whistle_01
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_02
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_03
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_04
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_05
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_06
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_07
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_08
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_09
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_10
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_11
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_12
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_13
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_14
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_15
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_16
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_17
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_18
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_19
-			vol = -10.5
-			dropoff = 50
-			dropoff_function = linear
-		}
-		{
-			INT_MD_Crowd_Whistle_20
+			ext_md_crowd_whistle_20
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 	]
 }
-Crowd_OneShot_Small_EXT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_medium_ext_good_01_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 0.1
+	instancelimit = 5
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			EXT_LG_Crowd_Whistle_01
+			crowd_cheer_md_ext_sg_01
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_02
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_03
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_04
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_05
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_06
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_07
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_08
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_09
+			vol = -15.5
+		}
+		{
+			crowd_cheer_md_ext_sg_10
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_01
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_02
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_03
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_04
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_05
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_06
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_07
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_08
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_09
+			vol = -15.5
+		}
+		{
+			crowd_cheer_med_ext_gr_10
+			vol = -15.5
+		}
+		{
+			ext_md_crowd_whistle_01
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_02
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_03
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_04
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_05
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_06
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_07
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_08
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_09
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_10
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_11
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_12
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_13
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_14
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_15
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_16
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_17
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_18
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_19
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			ext_md_crowd_whistle_20
+			vol = -15.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+	]
+}
+crowd_oneshot_medium_int_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			crowd_cheer_md_int_sg_01
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_02
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_03
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_04
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_05
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_06
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_07
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_08
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_09
+			vol = -14.5
+		}
+		{
+			crowd_cheer_md_int_sg_10
+			vol = -14.5
+		}
+		{
+			crowd_cheer_med_int_gr_01
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_02
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_03
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_04
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_05
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_06
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_07
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_08
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_09
+			vol = -11.5
+		}
+		{
+			crowd_cheer_med_int_gr_10
+			vol = -11.5
+		}
+		{
+			int_md_crowd_whistle_01
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_02
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_03
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_04
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_05
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_06
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_07
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_08
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_09
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_10
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_11
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_12
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_13
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_14
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_15
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_16
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_17
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_18
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_19
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+		{
+			int_md_crowd_whistle_20
+			vol = -10.5
+			dropoff = 50
+			dropoff_function = linear
+		}
+	]
+}
+crowd_oneshot_small_ext_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			ext_lg_crowd_whistle_01
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_02
+			ext_lg_crowd_whistle_02
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_03
+			ext_lg_crowd_whistle_03
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_04
+			ext_lg_crowd_whistle_04
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_05
+			ext_lg_crowd_whistle_05
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_06
+			ext_lg_crowd_whistle_06
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_07
+			ext_lg_crowd_whistle_07
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_08
+			ext_lg_crowd_whistle_08
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_09
+			ext_lg_crowd_whistle_09
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_10
+			ext_lg_crowd_whistle_10
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_11
+			ext_lg_crowd_whistle_11
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_12
+			ext_lg_crowd_whistle_12
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_13
+			ext_lg_crowd_whistle_13
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_14
+			ext_lg_crowd_whistle_14
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_15
+			ext_lg_crowd_whistle_15
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_16
+			ext_lg_crowd_whistle_16
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_17
+			ext_lg_crowd_whistle_17
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_18
+			ext_lg_crowd_whistle_18
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_19
+			ext_lg_crowd_whistle_19
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 		{
-			EXT_LG_Crowd_Whistle_20
+			ext_lg_crowd_whistle_20
 			vol = -4.5
 			dropoff = 6000
 			dropoff_function = linear
 		}
 	]
 }
-Crowd_OneShot_Small_INT_Good_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_small_int_good_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			Crowd_Cheer_SM_INT_GR_01
+			crowd_cheer_sm_int_gr_01
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_02
+			crowd_cheer_sm_int_gr_02
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_03
+			crowd_cheer_sm_int_gr_03
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_04
+			crowd_cheer_sm_int_gr_04
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_05
+			crowd_cheer_sm_int_gr_05
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_06
+			crowd_cheer_sm_int_gr_06
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_07
+			crowd_cheer_sm_int_gr_07
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_08
+			crowd_cheer_sm_int_gr_08
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_09
+			crowd_cheer_sm_int_gr_09
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_GR_10
+			crowd_cheer_sm_int_gr_10
 			vol = -8.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_01
+			crowd_cheer_sm_int_sg_01
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_02
+			crowd_cheer_sm_int_sg_02
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_03
+			crowd_cheer_sm_int_sg_03
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_04
+			crowd_cheer_sm_int_sg_04
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_05
+			crowd_cheer_sm_int_sg_05
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_06
+			crowd_cheer_sm_int_sg_06
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_07
+			crowd_cheer_sm_int_sg_07
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_08
+			crowd_cheer_sm_int_sg_08
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_09
+			crowd_cheer_sm_int_sg_09
 			vol = -12.5
 		}
 		{
-			Crowd_Cheer_SM_INT_SG_10
+			crowd_cheer_sm_int_sg_10
 			vol = -12.5
 		}
 		{
-			INT_SM_Crowd_Whistle_01
+			int_sm_crowd_whistle_01
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_02
+			int_sm_crowd_whistle_02
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_03
+			int_sm_crowd_whistle_03
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_04
+			int_sm_crowd_whistle_04
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_05
+			int_sm_crowd_whistle_05
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_06
+			int_sm_crowd_whistle_06
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_07
+			int_sm_crowd_whistle_07
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_08
+			int_sm_crowd_whistle_08
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_09
+			int_sm_crowd_whistle_09
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_10
+			int_sm_crowd_whistle_10
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_11
+			int_sm_crowd_whistle_11
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_12
+			int_sm_crowd_whistle_12
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_13
+			int_sm_crowd_whistle_13
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_14
+			int_sm_crowd_whistle_14
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_15
+			int_sm_crowd_whistle_15
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_16
+			int_sm_crowd_whistle_16
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_17
+			int_sm_crowd_whistle_17
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_18
+			int_sm_crowd_whistle_18
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_19
+			int_sm_crowd_whistle_19
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 		{
-			INT_SM_Crowd_Whistle_20
+			int_sm_crowd_whistle_20
 			vol = -10.5
 			dropoff = 50
 			dropoff_function = linear
 		}
 	]
 }
-Crowd_OneShot_Large_EXT_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_large_ext_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			Crowd_Boo_GRP_Large_EXT_01
+			crowd_boo_grp_large_ext_01
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_02
+			crowd_boo_grp_large_ext_02
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_03
+			crowd_boo_grp_large_ext_03
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_04
+			crowd_boo_grp_large_ext_04
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_05
+			crowd_boo_grp_large_ext_05
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_06
+			crowd_boo_grp_large_ext_06
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_07
+			crowd_boo_grp_large_ext_07
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_08
+			crowd_boo_grp_large_ext_08
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_09
+			crowd_boo_grp_large_ext_09
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_GRP_Large_EXT_10
+			crowd_boo_grp_large_ext_10
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_01
+			crowd_boo_lrg_outdoor_sg_01
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_02
+			crowd_boo_lrg_outdoor_sg_02
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_03
+			crowd_boo_lrg_outdoor_sg_03
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_04
+			crowd_boo_lrg_outdoor_sg_04
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_05
+			crowd_boo_lrg_outdoor_sg_05
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_06
+			crowd_boo_lrg_outdoor_sg_06
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_07
+			crowd_boo_lrg_outdoor_sg_07
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_08
+			crowd_boo_lrg_outdoor_sg_08
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_09
+			crowd_boo_lrg_outdoor_sg_09
 			vol = -1.5
 		}
 		{
-			Crowd_Boo_LRG_Outdoor_SG_10
-			vol = -1.5
-		}
-	]
-}
-Crowd_OneShot_Large_INT_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Boo_Sm_01
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_02
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_03
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_04
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_05
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_06
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_07
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_08
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_09
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_10
-			vol = -4.5
-		}
-	]
-}
-Crowd_OneShot_Medium_EXT_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Boo_GRP_Medium_EXT_01
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_02
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_03
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_04
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_05
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_06
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_07
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_08
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_09
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_EXT_10
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_01
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_02
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_03
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_04
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_05
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_06
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_07
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_08
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_09
-			vol = 1.5
-		}
-		{
-			Crowd_Boo_MED_Outdoor_SG_10
-			vol = 1.5
-		}
-	]
-}
-Crowd_OneShot_Medium_INT_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Boo_GRP_Medium_INT_01
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_02
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_03
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_04
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_05
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_06
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_07
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_08
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_09
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_GRP_Medium_INT_10
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_01
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_02
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_03
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_04
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_05
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_06
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_07
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_08
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_09
-			vol = 2.5
-		}
-		{
-			Crowd_Boo_MED_Indoor_SG_10
-			vol = 2.5
-		}
-	]
-}
-Crowd_OneShot_Small_EXT_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Boo_Sm_01
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_02
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_03
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_04
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_05
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_06
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_07
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_08
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_09
-			vol = -4.5
-		}
-		{
-			Crowd_Boo_Sm_10
-			vol = -4.5
-		}
-	]
-}
-Crowd_OneShot_Small_INT_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Crowd_Boo_GRP_Small_INT_01
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_02
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_03
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_04
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_05
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_06
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_07
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_08
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_09
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_GRP_Small_INT_10
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_01
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_02
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_03
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_04
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_05
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_06
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_07
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_08
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_09
-			vol = -1.5
-		}
-		{
-			Crowd_Boo_SM_Indoor_SG_10
+			crowd_boo_lrg_outdoor_sg_10
 			vol = -1.5
 		}
 	]
 }
-Large_EXT_Crowd_Positive_Swell_Layer_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+crowd_oneshot_large_int_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			EXT_LG_Crowd_Whistle_01
+			crowd_boo_sm_01
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_02
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_03
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_04
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_05
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_06
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_07
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_08
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_09
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_10
+			vol = -4.5
+		}
+	]
+}
+crowd_oneshot_medium_ext_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			crowd_boo_grp_medium_ext_01
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_02
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_03
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_04
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_05
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_06
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_07
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_08
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_09
+			vol = 1.5
+		}
+		{
+			crowd_boo_grp_medium_ext_10
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_01
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_02
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_03
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_04
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_05
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_06
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_07
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_08
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_09
+			vol = 1.5
+		}
+		{
+			crowd_boo_med_outdoor_sg_10
+			vol = 1.5
+		}
+	]
+}
+crowd_oneshot_medium_int_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			crowd_boo_grp_medium_int_01
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_02
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_03
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_04
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_05
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_06
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_07
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_08
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_09
+			vol = 2.5
+		}
+		{
+			crowd_boo_grp_medium_int_10
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_01
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_02
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_03
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_04
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_05
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_06
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_07
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_08
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_09
+			vol = 2.5
+		}
+		{
+			crowd_boo_med_indoor_sg_10
+			vol = 2.5
+		}
+	]
+}
+crowd_oneshot_small_ext_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			crowd_boo_sm_01
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_02
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_03
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_04
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_05
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_06
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_07
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_08
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_09
+			vol = -4.5
+		}
+		{
+			crowd_boo_sm_10
+			vol = -4.5
+		}
+	]
+}
+crowd_oneshot_small_int_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			crowd_boo_grp_small_int_01
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_02
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_03
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_04
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_05
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_06
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_07
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_08
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_09
+			vol = -1.5
+		}
+		{
+			crowd_boo_grp_small_int_10
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_01
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_02
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_03
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_04
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_05
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_06
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_07
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_08
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_09
+			vol = -1.5
+		}
+		{
+			crowd_boo_sm_indoor_sg_10
+			vol = -1.5
+		}
+	]
+}
+large_ext_crowd_positive_swell_layer_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			ext_lg_crowd_whistle_01
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_02
+			ext_lg_crowd_whistle_02
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_03
+			ext_lg_crowd_whistle_03
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_04
+			ext_lg_crowd_whistle_04
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_05
+			ext_lg_crowd_whistle_05
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_06
+			ext_lg_crowd_whistle_06
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_07
+			ext_lg_crowd_whistle_07
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_08
+			ext_lg_crowd_whistle_08
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_09
+			ext_lg_crowd_whistle_09
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_10
+			ext_lg_crowd_whistle_10
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_11
+			ext_lg_crowd_whistle_11
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_12
+			ext_lg_crowd_whistle_12
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_13
+			ext_lg_crowd_whistle_13
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_14
+			ext_lg_crowd_whistle_14
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_15
+			ext_lg_crowd_whistle_15
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_16
+			ext_lg_crowd_whistle_16
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_17
+			ext_lg_crowd_whistle_17
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_18
+			ext_lg_crowd_whistle_18
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_19
+			ext_lg_crowd_whistle_19
 			vol = 4.5
 		}
 		{
-			EXT_LG_Crowd_Whistle_20
+			ext_lg_crowd_whistle_20
 			vol = 4.5
 		}
 	]
 }
-Jam_Rhythm_Event_container = {
-	Template = Jam_Session_Rhythm_Guitar_Template
-	Randomness = RandomNoRepeatType
+jam_rhythm_event_container = {
+	template = jam_session_rhythm_guitar_template
+	randomness = randomnorepeattype
 }
-Jam_Lead_Event_container = {
-	Default_Buss = JamMode_LeadGuitar
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
+jam_lead_event_container = {
+	default_buss = jammode_leadguitar
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
 }
-Jam_Bass_Event_container = {
-	Default_Buss = JamMode_Bass
-	NoRepeatFor = 0
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
+jam_bass_event_container = {
+	default_buss = jammode_bass
+	norepeatfor = 0
+	instancelimit = 8
+	randomness = randomnorepeattype
 }
-JamVoxTest_C5_container = {
-	Default_Buss = JamMode_Vox
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jamvoxtest_c5_container = {
+	default_buss = jammode_vox
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			C5loop
+			c5loop
 			num_loops = -1
 		}
 	]
 }
-JamVoxTest_C3_container = {
-	Default_Buss = JamMode_Vox
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jamvoxtest_c3_container = {
+	default_buss = jammode_vox
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			C3loop
+			c3loop
 			num_loops = -1
 			vol = 12
 		}
 	]
 }
-JamVoxTest_C4_container = {
-	Default_Buss = JamMode_Vox
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jamvoxtest_c4_container = {
+	default_buss = jammode_vox
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			C4loop
+			c4loop
 			num_loops = -1
 		}
 	]
 }
-GH4_Jam_Mode_Bass_Template_template = {
-	Default_Buss = JamMode_Bass
-	NoRepeatFor = 0
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
+gh4_jam_mode_bass_template_template = {
+	default_buss = jammode_bass
+	norepeatfor = 0
+	instancelimit = 8
+	randomness = randomnorepeattype
 }
-Jam_Fret_Noise_bass_short_container = {
-	Default_Buss = JamMode_Bass
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jam_fret_noise_bass_short_container = {
+	default_buss = jammode_bass
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			fj_b_fretnoise_s_01
 			vol = -2
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-0.5
 					0.5
@@ -5459,8 +5459,8 @@ Jam_Fret_Noise_bass_short_container = {
 		{
 			fj_b_fretnoise_s_02
 			vol = -2
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-0.5
 					0.5
@@ -5470,8 +5470,8 @@ Jam_Fret_Noise_bass_short_container = {
 		{
 			fj_b_fretnoise_s_03
 			vol = -2
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-0.5
 					0.5
@@ -5480,17 +5480,17 @@ Jam_Fret_Noise_bass_short_container = {
 		}
 	]
 }
-Jam_Fret_Noise_bass_medium_container = {
-	Default_Buss = JamMode_Bass
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jam_fret_noise_bass_medium_container = {
+	default_buss = jammode_bass
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			fj_b_fretnoise_m_01
 			vol = -7
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-0.5
 					0.5
@@ -5500,8 +5500,8 @@ Jam_Fret_Noise_bass_medium_container = {
 		{
 			fj_b_fretnoise_m_02
 			vol = -7
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-0.5
 					0.5
@@ -5511,8 +5511,8 @@ Jam_Fret_Noise_bass_medium_container = {
 		{
 			fj_b_fretnoise_m_03
 			vol = -7
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-0.5
 					0.5
@@ -5521,911 +5521,911 @@ Jam_Fret_Noise_bass_medium_container = {
 		}
 	]
 }
-Guitar_Affirmation_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.5
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+guitar_affirmation_container = {
+	default_buss = front_end
+	norepeatfor = 0.5
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Guitar_Select_Affirmation_1
+			guitar_select_affirmation_1
 			vol = -11
 		}
 	]
 }
-Guitar_Lick_Crowd_Swell_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+guitar_lick_crowd_swell_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 }
-Drum_Affirmation_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+drum_affirmation_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Drum_Select_Affirmation_01
+			drum_select_affirmation_01
 		}
 	]
 }
 
-script Vocals_Affirmation 
-	SoundEvent \{Mic_Affirmation}
+script 0xc3a711b0 
+	soundevent \{mic_affirmation}
 endscript
-Mic_Affirmation_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+mic_affirmation_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Mic_Select_Affirmation_01
+			mic_select_affirmation_01
 			vol = 2
 		}
 	]
 }
-Vocal_Selection_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+vocal_selection_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Menu_Select_Microphone_2
+			menu_select_microphone_2
 		}
 	]
 }
-Drum_Selection_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+drum_selection_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Menu_Select_Drums_1
+			menu_select_drums_1
 		}
 	]
 }
-Guitar_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+guitar_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Menu_Select_Guitar_3
+			menu_select_guitar_3
 			vol = -7
 		}
 	]
 }
-Bass_Selection_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+bass_selection_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Bass_Select_Affirmation_03
+			bass_select_affirmation_03
 			vol = -2
 		}
 	]
 }
-Bass_Affirmation_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+bass_affirmation_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Bass_Select_Affirmation_02
+			bass_select_affirmation_02
 		}
 	]
 }
-Crowd_Clap_To_Beat_Small_INT_Normal_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_small_int_normal_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Small_INT_01
+			crowd_clap_small_int_01
 			vol = -8.5
 		}
 		{
-			Crowd_Clap_Small_INT_02
+			crowd_clap_small_int_02
 			vol = -8.5
 		}
 		{
-			Crowd_Clap_Small_INT_03
+			crowd_clap_small_int_03
 			vol = -8.5
 		}
 		{
-			Crowd_Clap_Small_INT_04
+			crowd_clap_small_int_04
 			vol = -8.5
 		}
 		{
-			Crowd_Clap_Small_INT_05
+			crowd_clap_small_int_05
 			vol = -8.5
 		}
 		{
-			Crowd_Clap_Small_INT_06
-			vol = -8.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Small_INT_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Small_INT_01
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_02
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_03
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_04
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_05
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_06
-			vol = -16.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Small_INT_Right_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Small_INT_01
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_02
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_03
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_04
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_05
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_06
-			vol = -16.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Small_INT_Left_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Small_INT_01
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_02
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_03
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_04
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_05
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_06
-			vol = -16.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Small_INT_Right_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Small_INT_01
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_02
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_03
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_04
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_05
-			vol = -16.5
-		}
-		{
-			Crowd_Clap_Small_INT_06
-			vol = -16.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Small_INT_Left_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Small_INT_01
-			vol = -8.5
-		}
-		{
-			Crowd_Clap_Small_INT_02
-			vol = -8.5
-		}
-		{
-			Crowd_Clap_Small_INT_03
-			vol = -8.5
-		}
-		{
-			Crowd_Clap_Small_INT_04
-			vol = -8.5
-		}
-		{
-			Crowd_Clap_Small_INT_05
-			vol = -8.5
-		}
-		{
-			Crowd_Clap_Small_INT_06
+			crowd_clap_small_int_06
 			vol = -8.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_INT_Normal_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.3
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_small_int_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_INT_01
+			crowd_clap_small_int_01
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_02
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_03
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_04
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_05
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_06
+			vol = -16.5
+		}
+	]
+}
+crowd_clap_to_beat_small_int_right_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_small_int_01
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_02
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_03
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_04
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_05
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_06
+			vol = -16.5
+		}
+	]
+}
+crowd_clap_to_beat_small_int_left_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_small_int_01
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_02
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_03
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_04
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_05
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_06
+			vol = -16.5
+		}
+	]
+}
+crowd_clap_to_beat_small_int_right_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_small_int_01
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_02
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_03
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_04
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_05
+			vol = -16.5
+		}
+		{
+			crowd_clap_small_int_06
+			vol = -16.5
+		}
+	]
+}
+crowd_clap_to_beat_small_int_left_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_small_int_01
+			vol = -8.5
+		}
+		{
+			crowd_clap_small_int_02
+			vol = -8.5
+		}
+		{
+			crowd_clap_small_int_03
+			vol = -8.5
+		}
+		{
+			crowd_clap_small_int_04
+			vol = -8.5
+		}
+		{
+			crowd_clap_small_int_05
+			vol = -8.5
+		}
+		{
+			crowd_clap_small_int_06
+			vol = -8.5
+		}
+	]
+}
+crowd_clap_to_beat_medium_int_normal_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.3
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_medium_int_01
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_02
+			crowd_clap_medium_int_02
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_03
+			crowd_clap_medium_int_03
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_04
+			crowd_clap_medium_int_04
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_05
+			crowd_clap_medium_int_05
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_06
+			crowd_clap_medium_int_06
 			vol = -17.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_INT_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.3
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_medium_int_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.3
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_INT_01
+			crowd_clap_medium_int_01
 			vol = -14.5
 		}
 		{
-			Crowd_Clap_Medium_INT_02
+			crowd_clap_medium_int_02
 			vol = -14.5
 		}
 		{
-			Crowd_Clap_Medium_INT_03
+			crowd_clap_medium_int_03
 			vol = -14.5
 		}
 		{
-			Crowd_Clap_Medium_INT_04
+			crowd_clap_medium_int_04
 			vol = -14.5
 		}
 		{
-			Crowd_Clap_Medium_INT_05
+			crowd_clap_medium_int_05
 			vol = -14.5
 		}
 		{
-			Crowd_Clap_Medium_INT_06
-			vol = -14.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Medium_INT_Left_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.3
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Medium_INT_01
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_02
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_03
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_04
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_05
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_06
-			vol = -17.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Medium_INT_Right_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.3
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Medium_INT_01
-			vol = -14.5
-		}
-		{
-			Crowd_Clap_Medium_INT_02
-			vol = -14.5
-		}
-		{
-			Crowd_Clap_Medium_INT_03
-			vol = -14.5
-		}
-		{
-			Crowd_Clap_Medium_INT_04
-			vol = -14.5
-		}
-		{
-			Crowd_Clap_Medium_INT_05
-			vol = -14.5
-		}
-		{
-			Crowd_Clap_Medium_INT_06
+			crowd_clap_medium_int_06
 			vol = -14.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_INT_Left_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.3
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_medium_int_left_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.3
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_INT_01
+			crowd_clap_medium_int_01
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_02
+			crowd_clap_medium_int_02
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_03
+			crowd_clap_medium_int_03
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_04
+			crowd_clap_medium_int_04
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_05
+			crowd_clap_medium_int_05
 			vol = -17.5
 		}
 		{
-			Crowd_Clap_Medium_INT_06
-			vol = -17.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Medium_INT_Right_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.3
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Medium_INT_01
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_02
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_03
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_04
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_05
-			vol = -17.5
-		}
-		{
-			Crowd_Clap_Medium_INT_06
+			crowd_clap_medium_int_06
 			vol = -17.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Large_EXT_Normal_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_medium_int_right_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.3
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Large_EXT_01
+			crowd_clap_medium_int_01
+			vol = -14.5
+		}
+		{
+			crowd_clap_medium_int_02
+			vol = -14.5
+		}
+		{
+			crowd_clap_medium_int_03
+			vol = -14.5
+		}
+		{
+			crowd_clap_medium_int_04
+			vol = -14.5
+		}
+		{
+			crowd_clap_medium_int_05
+			vol = -14.5
+		}
+		{
+			crowd_clap_medium_int_06
+			vol = -14.5
+		}
+	]
+}
+crowd_clap_to_beat_medium_int_left_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.3
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_medium_int_01
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_02
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_03
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_04
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_05
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_06
+			vol = -17.5
+		}
+	]
+}
+crowd_clap_to_beat_medium_int_right_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.3
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_medium_int_01
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_02
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_03
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_04
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_05
+			vol = -17.5
+		}
+		{
+			crowd_clap_medium_int_06
+			vol = -17.5
+		}
+	]
+}
+crowd_clap_to_beat_large_ext_normal_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_large_ext_01
 			vol = -11.5
 		}
 		{
-			Crowd_Clap_Large_EXT_02
+			crowd_clap_large_ext_02
 			vol = -11.5
 		}
 		{
-			Crowd_Clap_Large_EXT_03
+			crowd_clap_large_ext_03
 			vol = -11.5
 		}
 		{
-			Crowd_Clap_Large_EXT_04
+			crowd_clap_large_ext_04
 			vol = -11.5
 		}
 		{
-			Crowd_Clap_Large_EXT_05
+			crowd_clap_large_ext_05
 			vol = -11.5
 		}
 		{
-			Crowd_Clap_Large_EXT_06
+			crowd_clap_large_ext_06
 			vol = -11.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Large_EXT_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_large_ext_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Large_EXT_01
+			crowd_clap_large_ext_01
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_02
+			crowd_clap_large_ext_02
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_03
+			crowd_clap_large_ext_03
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_04
+			crowd_clap_large_ext_04
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_05
+			crowd_clap_large_ext_05
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_06
-			vol = -13.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Large_EXT_Right_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Large_EXT_01
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_02
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_03
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_04
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_05
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_06
+			crowd_clap_large_ext_06
 			vol = -13.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Large_EXT_Left_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_large_ext_right_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Large_EXT_01
+			crowd_clap_large_ext_01
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_02
+			crowd_clap_large_ext_02
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_03
+			crowd_clap_large_ext_03
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_04
+			crowd_clap_large_ext_04
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_05
+			crowd_clap_large_ext_05
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_06
-			vol = -13.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Large_EXT_Right_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Large_EXT_01
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_02
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_03
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_04
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_05
-			vol = -13.5
-		}
-		{
-			Crowd_Clap_Large_EXT_06
+			crowd_clap_large_ext_06
 			vol = -13.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Large_EXT_Left_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_large_ext_left_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Large_EXT_01
+			crowd_clap_large_ext_01
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_02
+			crowd_clap_large_ext_02
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_03
+			crowd_clap_large_ext_03
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_04
+			crowd_clap_large_ext_04
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_05
+			crowd_clap_large_ext_05
 			vol = -13.5
 		}
 		{
-			Crowd_Clap_Large_EXT_06
+			crowd_clap_large_ext_06
 			vol = -13.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_EXT_Normal_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_large_ext_right_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_EXT_01
+			crowd_clap_large_ext_01
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_02
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_03
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_04
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_05
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_06
+			vol = -13.5
+		}
+	]
+}
+crowd_clap_to_beat_large_ext_left_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_large_ext_01
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_02
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_03
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_04
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_05
+			vol = -13.5
+		}
+		{
+			crowd_clap_large_ext_06
+			vol = -13.5
+		}
+	]
+}
+crowd_clap_to_beat_medium_ext_normal_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_medium_ext_01
 			vol = -10.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_02
+			crowd_clap_medium_ext_02
 			vol = -10.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_03
+			crowd_clap_medium_ext_03
 			vol = -10.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_04
+			crowd_clap_medium_ext_04
 			vol = -10.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_05
+			crowd_clap_medium_ext_05
 			vol = -10.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_06
+			crowd_clap_medium_ext_06
 			vol = -10.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_EXT_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_medium_ext_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_EXT_01
+			crowd_clap_medium_ext_01
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_02
+			crowd_clap_medium_ext_02
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_03
+			crowd_clap_medium_ext_03
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_04
+			crowd_clap_medium_ext_04
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_05
+			crowd_clap_medium_ext_05
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_06
-			vol = -12.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Medium_EXT_Left_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Medium_EXT_01
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_02
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_03
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_04
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_05
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_06
+			crowd_clap_medium_ext_06
 			vol = -12.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_EXT_Right_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_medium_ext_left_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_EXT_01
+			crowd_clap_medium_ext_01
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_02
+			crowd_clap_medium_ext_02
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_03
+			crowd_clap_medium_ext_03
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_04
+			crowd_clap_medium_ext_04
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_05
+			crowd_clap_medium_ext_05
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_06
-			vol = -12.5
-		}
-	]
-}
-Crowd_Clap_To_Beat_Medium_EXT_Left_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Crowd_Clap_Medium_EXT_01
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_02
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_03
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_04
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_05
-			vol = -12.5
-		}
-		{
-			Crowd_Clap_Medium_EXT_06
+			crowd_clap_medium_ext_06
 			vol = -12.5
 		}
 	]
 }
-Crowd_Clap_To_Beat_Medium_EXT_Right_Middle_container = {
-	Default_Buss = Crowd_Star_Power
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+crowd_clap_to_beat_medium_ext_right_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Crowd_Clap_Medium_EXT_01
+			crowd_clap_medium_ext_01
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_02
+			crowd_clap_medium_ext_02
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_03
+			crowd_clap_medium_ext_03
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_04
+			crowd_clap_medium_ext_04
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_05
+			crowd_clap_medium_ext_05
 			vol = -12.5
 		}
 		{
-			Crowd_Clap_Medium_EXT_06
+			crowd_clap_medium_ext_06
 			vol = -12.5
 		}
 	]
 }
-Menu_Scroll_End_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_clap_to_beat_medium_ext_left_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Menu_Select_Negative
+			crowd_clap_medium_ext_01
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_02
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_03
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_04
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_05
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_06
+			vol = -12.5
+		}
+	]
+}
+crowd_clap_to_beat_medium_ext_right_middle_container = {
+	default_buss = crowd_star_power
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			crowd_clap_medium_ext_01
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_02
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_03
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_04
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_05
+			vol = -12.5
+		}
+		{
+			crowd_clap_medium_ext_06
+			vol = -12.5
+		}
+	]
+}
+menu_scroll_end_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
+		{
+			menu_select_negative
 			vol = -6
 		}
 	]
 }
-Audio_Options_Fader_End_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.5
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+audio_options_fader_end_container = {
+	default_buss = front_end
+	norepeatfor = 0.5
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_Select_Negative
+			menu_select_negative
 			vol = -1
 		}
 	]
 }
-Jam_Fret_Noise_Lead_container = {
-	Default_Buss = JamMode_LeadGuitar
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+jam_fret_noise_lead_container = {
+	default_buss = jammode_leadguitar
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Fret_Noise_07
+			fret_noise_07
 			vol = -6
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -6433,10 +6433,10 @@ Jam_Fret_Noise_Lead_container = {
 			}
 		}
 		{
-			Fret_Noise_08
+			fret_noise_08
 			vol = -6
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -6444,10 +6444,10 @@ Jam_Fret_Noise_Lead_container = {
 			}
 		}
 		{
-			Fret_Noise_09
+			fret_noise_09
 			vol = -6
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -6455,10 +6455,10 @@ Jam_Fret_Noise_Lead_container = {
 			}
 		}
 		{
-			Fret_Noise_10
+			fret_noise_10
 			vol = -6
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -6466,10 +6466,10 @@ Jam_Fret_Noise_Lead_container = {
 			}
 		}
 		{
-			Fret_Noise_11
+			fret_noise_11
 			vol = -6
-			RandomPitch = {
-				type = RandomRangeType
+			randompitch = {
+				type = randomrangetype
 				vals = [
 					-1
 					1
@@ -6478,1674 +6478,1674 @@ Jam_Fret_Noise_Lead_container = {
 		}
 	]
 }
-Crowd_Reaction_Bad_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 15
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+crowd_reaction_bad_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 15
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Crowd_Reaction_Bad
+			crowd_reaction_bad
 			vol = 0.5
 		}
 	]
 }
-You_Rock_Explosion_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+you_rock_explosion_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			You_Rock_Explosion
+			you_rock_explosion
 			vol = 1
 		}
 	]
 }
-StartTestTones_Sine_container = {
-	Default_Buss = Master
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+starttesttones_sine_container = {
+	default_buss = master
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 }
-StartTestTones_Pink_container = {
-	Default_Buss = Master
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+starttesttones_pink_container = {
+	default_buss = master
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 }
-UI_Fader_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.0
-	InstanceLimit = 10
-	Randomness = none
-	Sounds = [
+ui_fader_container = {
+	default_buss = front_end
+	norepeatfor = 0.0
+	instancelimit = 10
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Fader_Move
+			menu_options_sound_fader_move
 		}
 	]
 }
-UI_Knob_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.0
-	InstanceLimit = 10
-	Randomness = none
-	Sounds = [
+ui_knob_container = {
+	default_buss = front_end
+	norepeatfor = 0.0
+	instancelimit = 10
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_EQKnob_Move
+			menu_options_sound_eqknob_move
 		}
 	]
 }
-Dolby_Off_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+dolby_off_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_DolbyDigitalDisable
+			menu_options_sound_dolbydigitaldisable
 		}
 	]
 }
-Dolby_On_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+dolby_on_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_DolbyDigitalEnable
+			menu_options_sound_dolbydigitalenable
 		}
 	]
 }
-Sound_Options_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+sound_options_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Select
+			menu_options_sound_select
 		}
 	]
 }
-Sound_Options_Back_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+sound_options_back_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Back
+			menu_options_sound_back
 			vol = -5
 		}
 	]
 }
-Menu_HeadToHead_ZoomOut_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_headtohead_zoomout_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomOut_HeadToHead
+			menu_zoomout_headtohead
 		}
 	]
 }
-GigBoard_Zoom_Left_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gigboard_zoom_left_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Gigboard_CameraPan_Left
+			menu_gigboard_camerapan_left
 			vol = -11
 		}
 	]
 }
-Boss_Battle_Press_Sound_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+boss_battle_press_sound_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Gigboard_CameraPan_Left
+			menu_gigboard_camerapan_left
 			vol = 0
 		}
 	]
 }
-GigBoard_Zoom_Right_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gigboard_zoom_right_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Gigboard_CameraPan_Right
+			menu_gigboard_camerapan_right
 			vol = -11
 		}
 	]
 }
-Menu_Career_ZoomIn_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+menu_career_zoomin_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomIn_Career
+			menu_zoomin_career
 			vol = -4
 		}
 	]
 }
-Menu_Career_ZoomOut_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_career_zoomout_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomOut_Career
+			menu_zoomout_career
 			vol = 0
 		}
 	]
 }
-Menu_Options_ZoomIn_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_options_zoomin_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomIn_Options
+			menu_zoomin_options
 			vol = 1
 		}
 	]
 }
-Menu_HeadToHead_ZoomIn_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_headtohead_zoomin_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomIn_HeadToHead
+			menu_zoomin_headtohead
 			vol = -4
 		}
 	]
 }
-ColorWheel_Rotate_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+colorwheel_rotate_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_Rotate
+			menu_colorwheel_rotate
 		}
 	]
 }
-ColorWheel_Deselect_PiePiece_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+colorwheel_deselect_piepiece_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_Deselect_PiePiece
+			menu_colorwheel_deselect_piepiece
 		}
 	]
 }
-ColorWheel_HighLight_Up_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+colorwheel_highlight_up_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_HighLight_Up_Down_3
+			menu_colorwheel_highlight_up_down_3
 			pitch = -2
 		}
 	]
 }
-ColorWheel_SelectColor_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+colorwheel_selectcolor_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_SelectColor
+			menu_colorwheel_selectcolor
 		}
 	]
 }
-ColorWheel_GradientSelect_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+colorwheel_gradientselect_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_GradientSelect
+			menu_colorwheel_gradientselect
 		}
 	]
 }
-ColorWheel_SelectPie_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+colorwheel_selectpie_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_SelectPie
+			menu_colorwheel_selectpie
 		}
 	]
 }
-ColorWheel_SelectShade_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+colorwheel_selectshade_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_SelectShade
+			menu_colorwheel_selectshade
 		}
 	]
 }
-Enter_Band_Name_Scroll_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
-	Sounds = [
+enter_band_name_scroll_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Menu_EnterName_Scroll_1
+			menu_entername_scroll_1
 			vol = -1
 		}
 	]
 }
-Enter_Band_Name_Scroll_Up_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+enter_band_name_scroll_up_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_EnterName_Scroll_1
+			menu_entername_scroll_1
 			pitch = 1
 			vol = -1
 		}
 	]
 }
-Enter_Band_Name_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+enter_band_name_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_EnterName_Select
+			menu_entername_select
 			vol = 3
 		}
 	]
 }
-GuitarCenter_Guitar_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+guitarcenter_guitar_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			GuitarCenter_RandomNoodling_Guitar_1
+			guitarcenter_randomnoodling_guitar_1
 			vol = -3
 		}
 		{
-			GuitarCenter_RandomNoodling_Guitar_2
+			guitarcenter_randomnoodling_guitar_2
 			vol = -3
 		}
 		{
-			GuitarCenter_RandomNoodling_Guitar_3
+			guitarcenter_randomnoodling_guitar_3
 			vol = -3
 		}
 		{
-			GuitarCenter_RandomNoodling_Guitar_4
-			vol = -3
-		}
-	]
-}
-GuitarCenter_Drums_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			GuitarCenter_RandomNoodling_Drums_1
-			vol = -3
-		}
-		{
-			GuitarCenter_RandomNoodling_Drums_2
-			vol = -3
-		}
-		{
-			GuitarCenter_RandomNoodling_Drums_3
-			vol = -3
-		}
-		{
-			GuitarCenter_RandomNoodling_Drums_4
-			vol = -3
-		}
-		{
-			GuitarCenter_RandomNoodling_Drums_5
+			guitarcenter_randomnoodling_guitar_4
 			vol = -3
 		}
 	]
 }
-GuitarCenter_Mic_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+guitarcenter_drums_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			GuitarCenter_RandomNoodling_mic_1
+			guitarcenter_randomnoodling_drums_1
 			vol = -3
 		}
 		{
-			GuitarCenter_RandomNoodling_mic_3
+			guitarcenter_randomnoodling_drums_2
 			vol = -3
 		}
 		{
-			GuitarCenter_RandomNoodling_mic_5
+			guitarcenter_randomnoodling_drums_3
 			vol = -3
 		}
 		{
-			GuitarCenter_RandomNoodling_mic_6
+			guitarcenter_randomnoodling_drums_4
+			vol = -3
+		}
+		{
+			guitarcenter_randomnoodling_drums_5
 			vol = -3
 		}
 	]
 }
-Recording_Start_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+guitarcenter_mic_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			JamMode_DPad_RecordingStart
+			guitarcenter_randomnoodling_mic_1
+			vol = -3
+		}
+		{
+			guitarcenter_randomnoodling_mic_3
+			vol = -3
+		}
+		{
+			guitarcenter_randomnoodling_mic_5
+			vol = -3
+		}
+		{
+			guitarcenter_randomnoodling_mic_6
+			vol = -3
+		}
+	]
+}
+recording_start_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
+		{
+			jammode_dpad_recordingstart
 			vol = 0
 		}
 	]
 }
-Recording_Stop_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+recording_stop_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_RecordingStop
+			jammode_dpad_recordingstop
 			vol = -5
 		}
 	]
 }
-DPad_Stop_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+dpad_stop_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Stop
+			jammode_dpad_stop
 			vol = -5
 		}
 	]
 }
-DPad_Play_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+dpad_play_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Play
+			jammode_dpad_play
 			vol = 0
 		}
 	]
 }
-GhMix_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+ghmix_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Play
+			jammode_dpad_play
 			vol = 5
 		}
 	]
 }
-GhMix_Back_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+ghmix_back_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Stop
+			jammode_dpad_stop
 			vol = -5
 		}
 	]
 }
-GhMix_Scroll_Up_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.01
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+ghmix_scroll_up_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.01
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Fader_Move
+			menu_options_sound_fader_move
 			vol = 6
 		}
 	]
 }
-Line6_Scroll_Up_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+line6_scroll_up_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Fader_Move
+			menu_options_sound_fader_move
 			vol = 6
 		}
 	]
 }
-Line6_Scroll_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+line6_scroll_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Fader_Move
+			menu_options_sound_fader_move
 			vol = 6
 		}
 	]
 }
-Online_Instrument_Change_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+online_instrument_change_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Play
+			jammode_dpad_play
 			vol = 5
 		}
 	]
 }
-Scale_Scroll_Up_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+scale_scroll_up_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Play
+			jammode_dpad_play
 			vol = 5
 			pitch = 1
 		}
 	]
 }
-Scale_Scroll_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+scale_scroll_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			JamMode_DPad_Play
+			jammode_dpad_play
 			vol = 5
 		}
 	]
 }
 audio_options_up_down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_Options_Sound_Fader_Move
+			menu_options_sound_fader_move
 			vol = 6
 		}
 	]
 }
-Audio_Options_Menu_Guitar_container = {
-	Default_Buss = Options_Guitar
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_guitar_container = {
+	default_buss = options_guitar
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_Guitar
+			audio_options_guitar
 			vol = -12
 		}
 	]
 }
-Audio_Options_Menu_Bass_container = {
-	Default_Buss = Options_Bass
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_bass_container = {
+	default_buss = options_bass
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_Bass
+			audio_options_bass
 			vol = -12
 		}
 	]
 }
-Audio_Options_Menu_Drums_container = {
-	Default_Buss = Options_Drums
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_drums_container = {
+	default_buss = options_drums
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_Drum
+			audio_options_drum
 			vol = -12
 		}
 	]
 }
-Audio_Options_Menu_Vocals_container = {
-	Default_Buss = Options_Vox
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_vocals_container = {
+	default_buss = options_vox
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_Vocals
+			audio_options_vocals
 			vol = -12
 		}
 	]
 }
-Audio_Options_Menu_SFX_container = {
-	Default_Buss = Options_Crowd
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_sfx_container = {
+	default_buss = options_crowd
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_SFX
+			audio_options_sfx
 			vol = -4
 		}
 	]
 }
-GHTunes_UI_Scroll_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghtunes_ui_scroll_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHTunes_Menu_Scroll
+			ghtunes_menu_scroll
 			vol = -2
 			pitch = 4
 		}
 	]
 }
-GHTunes_UI_Scroll_Pan_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.01
-	InstanceLimit = 6
-	Randomness = none
+ghtunes_ui_scroll_pan_container = {
+	default_buss = front_end
+	norepeatfor = 0.01
+	instancelimit = 6
+	randomness = none
 }
-GHTunes_UI_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghtunes_ui_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHTunes_Select
+			ghtunes_select
 		}
 	]
 }
-GHTunes_UI_Back_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghtunes_ui_back_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHTunes_Back
+			ghtunes_back
 		}
 	]
 }
-Pause_Menu_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+pause_menu_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Into_PauseMenu
+			menu_into_pausemenu
 			vol = -4
 		}
 	]
 }
-Enter_Band_Name_Finish_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+enter_band_name_finish_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_EnterName_Finish_01
+			menu_entername_finish_01
 			vol = -2
 		}
 	]
 }
-Enter_Band_Name_Back_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+enter_band_name_back_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_EnterName_Back
+			menu_entername_back
 			vol = 3
 		}
 	]
 }
-Band_Mode_Career_Ready_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+band_mode_career_ready_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_EnterName_Finish_01
+			menu_entername_finish_01
 			vol = -6
 		}
 	]
 }
-Gh4_GigComplete_TransitionToResults_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh4_gigcomplete_transitiontoresults_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_To_Results
+			gig_complete_to_results
 		}
 	]
 }
-GH4_GigComplete_CashAward_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh4_gigcomplete_cashaward_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Cash_Award
+			gig_complete_cash_award
 		}
 	]
 }
-GH4_GigComplete_Unlock_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh4_gigcomplete_unlock_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Unlock
+			gig_complete_unlock
 		}
 	]
 }
-Gh4_GigComplete_Sponsor_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh4_gigcomplete_sponsor_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Sponsor
+			gig_complete_sponsor
 			vol = -1
 		}
 	]
 }
-Gh4_GigComplete_MagUnfold_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh4_gigcomplete_magunfold_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Mag_Unfold
+			gig_complete_mag_unfold
 		}
 	]
 }
-Gh4_GigComplete_Highlight_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gh4_gigcomplete_highlight_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Highlight
+			gig_complete_highlight
 		}
 	]
 }
-JamMode_Effects_UI_HUD_OffScreen_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jammode_effects_ui_hud_offscreen_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			JamMode_Effects_HUD_OffScreen
+			jammode_effects_hud_offscreen
 		}
 	]
 }
-JamMode_Effects_UI_HUD_Zoom_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jammode_effects_ui_hud_zoom_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			JamMode_Effects_HUD_Zoom
+			jammode_effects_hud_zoom
 		}
 	]
 }
-Achievement_Unlock_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+achievement_unlock_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			AchievementUnlock
+			achievementunlock
 		}
 	]
 }
-Audio_Options_Menu_Enter_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_enter_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_Enter
+			audio_options_enter
 		}
 	]
 }
-Calibration_Menu_Exit_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+calibration_menu_exit_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Calibration_Exit
+			calibration_exit
 		}
 	]
 }
-Audio_Options_Menu_Exit_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+audio_options_menu_exit_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Audio_Options_Exit
+			audio_options_exit
 		}
 	]
 }
-Calibration_Menu_Enter_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+calibration_menu_enter_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Calibration_Enter
+			calibration_enter
 		}
 	]
 }
-Calibration_Menu_Whammy_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+calibration_menu_whammy_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Calibration_Whammy
+			calibration_whammy
 		}
 	]
 }
-Menu_Cheat_Correct_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_cheat_correct_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Cheat_Correct
+			cheat_correct
 		}
 	]
 }
-Menu_Purchase_Item_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_purchase_item_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Purchase_Item
+			purchase_item
 			vol = -3
 		}
 	]
 }
-Menu_Awarded_Cash_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_awarded_cash_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Awarded_Cash
+			awarded_cash
 		}
 	]
 }
-Menu_Award_Large_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_award_large_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Award_Large
+			award_large
 		}
 	]
 }
-Menu_Cheat_Incorrect_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_cheat_incorrect_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Cheat_Incorrect
+			cheat_incorrect
 		}
 	]
 }
-Menu_Award_Medium_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_award_medium_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Award_Medium
+			award_medium
 		}
 	]
 }
-Menu_Award_Small_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_award_small_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Award_Small
+			award_small
 		}
 	]
 }
-Menu_Text_Zoom_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_text_zoom_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Text_Zoom_In
+			text_zoom_in
 		}
 	]
 }
-Menu_Text_Zoom_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_text_zoom_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Text_Zoom_Out
+			text_zoom_out
 		}
 	]
 }
-Menu_Character_Bio_Panel_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_character_bio_panel_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Character_Bio
+			character_bio
 			vol = -10
 		}
 	]
 }
-Camera_Transition_Difficulty_to_VIP_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+camera_transition_difficulty_to_vip_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Transition_Difficulty_to_VIP
+			transition_difficulty_to_vip
 		}
 	]
 }
-Customize_Character_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+customize_character_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Edit_Character_Out
+			edit_character_out
 		}
 	]
 }
-Customize_Character_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+customize_character_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Edit_Character_In
+			edit_character_in
 		}
 	]
 }
-Pause_Menu_Exit_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+pause_menu_exit_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_OutOf_PauseMenu
+			menu_outof_pausemenu
 			vol = -7
 		}
 	]
 }
-ColorWheel_HighLight_4_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+colorwheel_highlight_4_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_HighLight_Up_Down_3
+			menu_colorwheel_highlight_up_down_3
 			pitch = 1
 		}
 	]
 }
-ColorWheel_HighLight_1_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+colorwheel_highlight_1_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_HighLight_Up_Down_3
+			menu_colorwheel_highlight_up_down_3
 			pitch = -2
 		}
 	]
 }
-ColorWheel_HighLight_2_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+colorwheel_highlight_2_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_HighLight_Up_Down_3
+			menu_colorwheel_highlight_up_down_3
 			pitch = -1
 		}
 	]
 }
-ColorWheel_HighLight_3_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+colorwheel_highlight_3_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_HighLight_Up_Down_3
+			menu_colorwheel_highlight_up_down_3
 		}
 	]
 }
-ColorWheel_HighLight_5_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+colorwheel_highlight_5_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_ColorWheel_HighLight_Up_Down_3
+			menu_colorwheel_highlight_up_down_3
 			pitch = 2
 		}
 	]
 }
-Menu_Recording_Pause_Panel_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_recording_pause_panel_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_In
+			jam_pause_panel_in
 			vol = -14
 		}
 	]
 }
-Jam_Advanced_Record_Pause_Panel_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jam_advanced_record_pause_panel_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_Out
+			jam_pause_panel_out
 			vol = -14
 		}
 	]
 }
-Jam_Advanced_Record_Pause_Panel_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+jam_advanced_record_pause_panel_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_In
+			jam_pause_panel_in
 			vol = -14
 		}
 	]
 }
-Online_Panel_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+online_panel_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_Out
+			jam_pause_panel_out
 			vol = -14
 		}
 	]
 }
-Online_Panel_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+online_panel_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_In
+			jam_pause_panel_in
 			vol = -14
 		}
 	]
 }
-Online_Main_Panel_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+online_main_panel_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_In
+			jam_pause_panel_in
 			vol = -14
 		}
 	]
 }
-Menu_Recording_Pause_Panel_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 4
-	Randomness = none
-	Sounds = [
+menu_recording_pause_panel_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 4
+	randomness = none
+	sounds = [
 		{
-			Jam_Pause_Panel_Out
+			jam_pause_panel_out
 			vol = -14
 		}
 	]
 }
-Band_Drums_Choose_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+band_drums_choose_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Drum_Choose
+			drum_choose
 		}
 	]
 }
-Band_Bass_Choose_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+band_bass_choose_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Bass_Choose
+			bass_choose
 		}
 	]
 }
-Band_Guitar_Choose_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+band_guitar_choose_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Guitar_Choose
+			guitar_choose
 		}
 	]
 }
-Band_Mic_Choose_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+band_mic_choose_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Mic_Choose
+			mic_choose
 		}
 	]
 }
-OneShotsBetweenSongs_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 3
-	InstanceLimit = 2
-	Randomness = RandomNoRepeatLastTwoType
+oneshotsbetweensongs_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 3
+	instancelimit = 2
+	randomness = randomnorepeatlasttwotype
 }
-SurgeBetweenSongs_container = {
-	Default_Buss = Crowd_Cheers
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
+surgebetweensongs_container = {
+	default_buss = crowd_cheers
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
 }
-Large_EXT_Crowd_Song_Transition_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+large_ext_crowd_song_transition_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Large_EXT_Crowd_Song_Transition
+			large_ext_crowd_song_transition
 			vol = -10.5
 		}
 	]
 }
-Medium_INT_Crowd_Song_Transition_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+medium_int_crowd_song_transition_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Medium_INT_Crowd_Song_Transition
+			medium_int_crowd_song_transition
 			vol = -10.5
 		}
 	]
 }
-UI_SFX_Scroll_Up_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+ui_sfx_scroll_up_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_Scroll_Up
+			menu_scroll_up
 			vol = 6
 		}
 	]
 }
-UI_SFX_Scroll_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 6
-	Randomness = none
-	Sounds = [
+ui_sfx_scroll_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 6
+	randomness = none
+	sounds = [
 		{
-			Menu_Scroll_Down
+			menu_scroll_down
 			vol = 6
 		}
 	]
 }
-UI_SFX_Negative_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 8
-	Randomness = none
-	Sounds = [
+ui_sfx_negative_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 8
+	randomness = none
+	sounds = [
 		{
-			Menu_Select_Negative
+			menu_select_negative
 			vol = 6
 		}
 	]
 }
-Enter_Band_Name_Caps_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+enter_band_name_caps_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_EnterName_Caps
+			menu_entername_caps
 			vol = -4
 		}
 	]
 }
-Menu_Character_Bio_Panel_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_character_bio_panel_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Character_Bio_Out
+			character_bio_out
 			vol = -18
 		}
 	]
 }
-Song_Wizard_On_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+song_wizard_on_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_JamMode_SongWizard_ON
+			menu_jammode_songwizard_on
 			vol = -1
 		}
 	]
 }
-Song_Wizard_Off_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+song_wizard_off_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_JamMode_SongWizard_OFF
+			menu_jammode_songwizard_off
 			vol = -1
 		}
 	]
 }
-Jam_Mode_FXHUD_Off_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jam_mode_fxhud_off_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_JamMode_FXHUD_Off
+			menu_jammode_fxhud_off
 			vol = -2
 		}
 	]
 }
-Jam_Mode_FXHUD_ON_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+jam_mode_fxhud_on_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_JamMode_FXHUD_On
+			menu_jammode_fxhud_on
 			vol = -10
 		}
 	]
 }
-Menu_Audio_Options_Reset_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_audio_options_reset_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SoundOptions_Menu_Reset
+			soundoptions_menu_reset
 			vol = 0
 		}
 	]
 }
-Menu_Cheat_Enter_Red_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+menu_cheat_enter_red_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_Cheat_Red
+			menu_cheat_red
 			vol = -2
 		}
 	]
 }
-Menu_Cheat_Enter_Green_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+menu_cheat_enter_green_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_Cheat_Green
+			menu_cheat_green
 			vol = -2
 		}
 	]
 }
-Menu_Cheat_Enter_Blue_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+menu_cheat_enter_blue_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_Cheat_Blue
+			menu_cheat_blue
 			vol = -2
 		}
 	]
 }
-Menu_Cheat_Enter_Yellow_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+menu_cheat_enter_yellow_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_Cheat_Yellow
+			menu_cheat_yellow
 			vol = -2
 		}
 	]
 }
-Gig_Board_Zoom_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gig_board_zoom_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomOut_Career
+			menu_zoomout_career
 			vol = -1
 		}
 	]
 }
-Gig_Board_Zoom_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gig_board_zoom_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomIn_Career
+			menu_zoomin_career
 			vol = -15
 		}
 	]
 }
-Large_Guitar_Smash_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+large_guitar_smash_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Guitar_Smash_Large_GH4_01
+			guitar_smash_large_gh4_01
 			vol = -1.5
 		}
 	]
 }
-Medium_Guitar_Smash_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+medium_guitar_smash_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Guitar_Smash_Medium_GH4_01
+			guitar_smash_medium_gh4_01
 			vol = -1.5
 		}
 	]
 }
-Mic_Feedback_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = RandomNoRepeatType
-	Sounds = [
+mic_feedback_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Mic_Feedback_GH4_01
+			mic_feedback_gh4_01
 			vol = -6.5
 		}
 		{
-			Mic_Feedback_GH4_02
+			mic_feedback_gh4_02
 			vol = -6.5
 		}
 		{
-			Mic_Feedback_GH4_03
+			mic_feedback_gh4_03
 			vol = -6.5
 		}
 		{
-			Mic_Feedback_GH4_04
+			mic_feedback_gh4_04
 			vol = -6.5
 		}
 	]
 }
-Small_Guitar_Smash_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+small_guitar_smash_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Guitar_Smash_Small_GH4_01
+			guitar_smash_small_gh4_01
 			vol = -7.5
 		}
 	]
 }
-Mic_Grab_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+mic_grab_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Mic_Grab_GH4_04
+			mic_grab_gh4_04
 			vol = 0.5
 		}
 		{
-			Mic_Grab_GH4_05
+			mic_grab_gh4_05
 			vol = 0.5
 		}
 	]
 }
-Singer_Anims_WIN_01_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+singer_anims_win_01_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Singer_Win_Anim_1_02
+			singer_win_anim_1_02
 			vol = -10.5
 		}
 		{
-			Singer_Win_Anim_2_01
+			singer_win_anim_2_01
 			vol = -10.5
 		}
 		{
-			Singer_Win_Anim_3_01
+			singer_win_anim_3_01
 			vol = -13.5
 		}
 		{
-			Singer_Win_Anim_2_02
+			singer_win_anim_2_02
 			vol = -10.5
 		}
 	]
 }
-Bass_Anims_WIN_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+bass_anims_win_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			Bass_Win_Anim_1_01
+			bass_win_anim_1_01
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_1_02
+			bass_win_anim_1_02
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_2_01
+			bass_win_anim_2_01
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_2_02
+			bass_win_anim_2_02
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_3_01
+			bass_win_anim_3_01
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_3_02
+			bass_win_anim_3_02
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_4_01
+			bass_win_anim_4_01
 			vol = -10.5
 		}
 		{
-			Bass_Win_Anim_4_02
-			vol = -10.5
-		}
-	]
-}
-Guitar_Anims_WIN_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
-		{
-			Guitar_Win_Anim_1_01
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_1_02
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_2_01
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_2_02
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_3_01
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_3_02
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_4_01
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_4_02
-			vol = -10.5
-		}
-		{
-			Guitar_Win_Anim_5_01
+			bass_win_anim_4_02
 			vol = -10.5
 		}
 	]
 }
-Drum_Anims_WIN_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatLastTwoType
-	Sounds = [
+guitar_anims_win_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeatlasttwotype
+	sounds = [
 		{
-			Drum_Win_Anim_1_01
+			guitar_win_anim_1_01
 			vol = -10.5
 		}
 		{
-			Drum_Win_Anim_1_02
+			guitar_win_anim_1_02
 			vol = -10.5
 		}
 		{
-			Drum_Win_Anim_2_01
+			guitar_win_anim_2_01
 			vol = -10.5
 		}
 		{
-			Drum_Win_Anim_2_02
+			guitar_win_anim_2_02
 			vol = -10.5
 		}
 		{
-			Drum_Win_Anim_3_01
+			guitar_win_anim_3_01
 			vol = -10.5
 		}
 		{
-			Drum_Win_Anim_3_02
+			guitar_win_anim_3_02
+			vol = -10.5
+		}
+		{
+			guitar_win_anim_4_01
+			vol = -10.5
+		}
+		{
+			guitar_win_anim_4_02
+			vol = -10.5
+		}
+		{
+			guitar_win_anim_5_01
+			vol = -10.5
+		}
+	]
+}
+drum_anims_win_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeatlasttwotype
+	sounds = [
+		{
+			drum_win_anim_1_01
+			vol = -10.5
+		}
+		{
+			drum_win_anim_1_02
+			vol = -10.5
+		}
+		{
+			drum_win_anim_2_01
+			vol = -10.5
+		}
+		{
+			drum_win_anim_2_02
+			vol = -10.5
+		}
+		{
+			drum_win_anim_3_01
+			vol = -10.5
+		}
+		{
+			drum_win_anim_3_02
 			vol = -10.5
 		}
 	]
 }
 z_fairgrounds_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Fairgrounds_Intro
+			fairgrounds_intro
 			vol = -4.5
 		}
 	]
 }
 z_military_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Military_Intro
+			military_intro
 			vol = 1.5
 		}
 	]
 }
 z_studio_intro_1_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			z_studio_intro
 			vol = 1.5
@@ -8153,23 +8153,23 @@ z_studio_intro_1_container = {
 	]
 }
 z_scifi_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			scifi_intro
 			vol = -7.5
 		}
 	]
 }
-z_Frathouse_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+z_frathouse_intro_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			frathouse_intro
 			vol = -1.5
@@ -8177,11 +8177,11 @@ z_Frathouse_intro_container = {
 	]
 }
 z_metalfest_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			metalfest_intro
 			vol = -4.5
@@ -8189,11 +8189,11 @@ z_metalfest_intro_container = {
 	]
 }
 z_harbor_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			harbor_intro
 			vol = 1.5
@@ -8201,307 +8201,307 @@ z_harbor_intro_container = {
 	]
 }
 z_castle_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			castle_intro
 			vol = 1.5
 		}
 	]
 }
-Ozzy_Bucket_Water_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ozzy_bucket_water_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Ozzy_Splash
+			ozzy_splash
 			vol = -10.5
 		}
 	]
 }
-Ozzy_Bucket_Throw_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ozzy_bucket_throw_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Ozzy_Bucket
+			ozzy_bucket
 			vol = -10.5
 		}
 	]
 }
-Drummer_Sticks_Throw_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = RandomNoRepeatType
-	Sounds = [
+drummer_sticks_throw_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Drummer_StickThrow_02
+			drummer_stickthrow_02
 			vol = -6.5
 		}
 		{
-			Drummer_StickThrow_03
+			drummer_stickthrow_03
 			vol = -6.5
 		}
 		{
-			Drummer_StickThrow_04
+			drummer_stickthrow_04
 			vol = -6.5
 		}
 	]
 }
-Drummer_Tom_Hit_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = RandomNoRepeatType
-	Sounds = [
+drummer_tom_hit_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Drummer_Tom_01
+			drummer_tom_01
 			vol = -10.5
 		}
 		{
-			Drummer_Tom_02
-			vol = -10.5
-		}
-	]
-}
-Drummer_Snare_Hit_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Drummer_Snare_01
-			vol = -10.5
-		}
-		{
-			Drummer_Snare_02
+			drummer_tom_02
 			vol = -10.5
 		}
 	]
 }
-Large_Bass_Smash_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
-	Sounds = [
+drummer_snare_hit_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Bass_Smash_Large_GH4_01
+			drummer_snare_01
+			vol = -10.5
+		}
+		{
+			drummer_snare_02
+			vol = -10.5
+		}
+	]
+}
+large_bass_smash_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 8
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			bass_smash_large_gh4_01
 			vol = -5.5
 		}
 		{
-			Bass_Smash_Large_GH4_02
+			bass_smash_large_gh4_02
 			vol = -5.5
 		}
 	]
 }
-Medium_Bass_Smash_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
-	Sounds = [
+medium_bass_smash_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 8
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Bass_Smash_Medium_GH4_01
+			bass_smash_medium_gh4_01
 			vol = -5.5
 		}
 		{
-			Bass_Smash_Medium_GH4_02
-			vol = -5.5
-		}
-	]
-}
-Small_Bass_Smash_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 8
-	Randomness = RandomNoRepeatType
-	Sounds = [
-		{
-			Bass_Smash_Small_GH4_01
-			vol = -5.5
-		}
-		{
-			Bass_Smash_Small_GH4_02
+			bass_smash_medium_gh4_02
 			vol = -5.5
 		}
 	]
 }
-Mic_Hit_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.01
-	InstanceLimit = 3
-	Randomness = RandomNoRepeatType
-	Sounds = [
+small_bass_smash_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 8
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Mic_Grab_GH4_02
+			bass_smash_small_gh4_01
+			vol = -5.5
+		}
+		{
+			bass_smash_small_gh4_02
+			vol = -5.5
+		}
+	]
+}
+mic_hit_container = {
+	default_buss = crowd_beds
+	norepeatfor = 0.01
+	instancelimit = 3
+	randomness = randomnorepeattype
+	sounds = [
+		{
+			mic_grab_gh4_02
 			vol = 3.5
 		}
 		{
-			Mic_Grab_GH4_03
+			mic_grab_gh4_03
 			vol = 3.5
 		}
 	]
 }
-Select_Band_Leader_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+select_band_leader_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Band_leader_affirmation
+			band_leader_affirmation
 			vol = -1
 		}
 	]
 }
-Save_Confirmed_SFX_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+save_confirmed_sfx_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Band_leader_affirmation
+			band_leader_affirmation
 			vol = -4
 		}
 	]
 }
-Gigboard_Select_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+gigboard_select_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
 			ui_sound_05
 			vol = -3
 		}
 	]
 }
-Gigboard_Select_back_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+gigboard_select_back_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			UI_Sound_09
+			ui_sound_09
 			vol = -5.5
 		}
 	]
 }
-QuickPlay_Remove_Song_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+quickplay_remove_song_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_QuickPlay_RemoveAllSongs
+			menu_quickplay_removeallsongs
 			vol = 0
 		}
 	]
 }
-QuickPlay_Select_Song_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+quickplay_select_song_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_QuickPlay_SelectSong
+			menu_quickplay_selectsong
 			vol = -1
 		}
 	]
 }
-QuickPlay_Remove_All_Songs_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+quickplay_remove_all_songs_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			Menu_QuickPlay_RemoveSong
+			menu_quickplay_removesong
 		}
 	]
 }
-Front_End_Main_Menu_Intro_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+front_end_main_menu_intro_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_Main_Intro
+			menu_main_intro
 			vol = -2
 		}
 	]
 }
-Menu_Song_Complete_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_song_complete_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SongComplete_Out
+			songcomplete_out
 			vol = -10
 		}
 	]
 }
-Menu_Song_Complete_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_song_complete_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			SongComplete_In
+			songcomplete_in
 			vol = -9
 		}
 	]
 }
-Unlock_New_Item_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+unlock_new_item_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GigComplete_Unlock_New_Item
+			gigcomplete_unlock_new_item
 			vol = -5
 		}
 	]
 }
-Menu_Band_Ready_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_band_ready_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Band_Mode_Ready
+			band_mode_ready
 		}
 	]
 }
-GH_SFX_BattleMode_Mine_Explode_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 20
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_mine_explode_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 20
+	randomness = none
+	sounds = [
 		{
-			Battle_MineAttack_Explode
+			battle_mineattack_explode
 			vol = -6
 			pan1x = 1
 			pan1y = 0.44339618
@@ -8510,14 +8510,14 @@ GH_SFX_BattleMode_Mine_Explode_P2_container = {
 		}
 	]
 }
-GH_SFX_BattleMode_Mine_Explode_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 20
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_mine_explode_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 20
+	randomness = none
+	sounds = [
 		{
-			Battle_MineAttack_Explode
+			battle_mineattack_explode
 			vol = -6
 			pan1x = -1
 			pan1y = 0.5707547
@@ -8526,270 +8526,270 @@ GH_SFX_BattleMode_Mine_Explode_P1_container = {
 		}
 	]
 }
-GH_SFX_BattleMode_Mine_Release_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_mine_release_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Battle_MineAttack_Release
+			battle_mineattack_release
 			pan1x = -1
 			pan1y = 0.68867916
 			pan2x = -0.6179245
 			pan2y = 1
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-GH_SFX_BattleMode_Mine_Release_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+gh_sfx_battlemode_mine_release_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Battle_MineAttack_Release
+			battle_mineattack_release
 			pan1x = 1
 			pan1y = 0.5707547
 			pan2x = 0.5707547
 			pan2y = 1
-			panRemoveCenter = true
+			panremovecenter = true
 		}
 	]
 }
-GHTunes_On_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghtunes_on_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_JamMode_SongWizard_ON
+			menu_jammode_songwizard_on
 			vol = -1
 			pitch = 2
 		}
 	]
 }
-GHTunes_Off_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghtunes_off_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_JamMode_SongWizard_OFF
+			menu_jammode_songwizard_off
 			vol = -1
 			pitch = 4
 		}
 	]
 }
-Menu_CAR_ZoomIn_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+menu_car_zoomin_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomOut_Career
+			menu_zoomout_career
 			vol = -4
 			pitch = 7
 		}
 	]
 }
-Menu_CAR_ZoomOut_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+menu_car_zoomout_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Menu_ZoomOut_Career
+			menu_zoomout_career
 			vol = -4
 			pitch = 3
 		}
 	]
 }
-Vocal_Highway_Appear_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+vocal_highway_appear_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Highway_Vocal_Remix_NoFeedBack
+			highway_vocal_remix_nofeedback
 			vol = -6
 		}
 	]
 }
-Character_Reset_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 2
-	Randomness = none
-	Sounds = [
+character_reset_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 2
+	randomness = none
+	sounds = [
 		{
-			Menu_Restore_Defaults
+			menu_restore_defaults
 			vol = 5
 		}
 	]
 }
-GHTunes_Warning_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghtunes_warning_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHTunes_Scroll_Warning
+			ghtunes_scroll_warning
 		}
 	]
 }
-Boss_Logo_First_Part_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+boss_logo_first_part_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Boss_Logo_1
+			boss_logo_1
 			vol = 6
 		}
 	]
 }
-Boss_Logo_Second_Part_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+boss_logo_second_part_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Boss_Logo_2
+			boss_logo_2
 			vol = -6
 		}
 	]
 }
-Do_Or_Die_SFX_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+do_or_die_sfx_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			DoOrDie
+			doordie
 			vol = -3
 		}
 	]
 }
-Medium_EXT_Encore_Crowd_container = {
-	Default_Buss = Encore_Loops
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+medium_ext_encore_crowd_container = {
+	default_buss = encore_loops
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 	slot = 3
-	Sounds = [
+	sounds = [
 		{
-			Medium_EXT_Encore_Crowd
+			medium_ext_encore_crowd
 			num_loops = -1
 			vol = -9
 		}
 	]
 }
-Large_EXT_Encore_Crowd_container = {
-	Default_Buss = Encore_Loops
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+large_ext_encore_crowd_container = {
+	default_buss = encore_loops
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 	slot = 3
-	Sounds = [
+	sounds = [
 		{
-			Large_EXT_Encore_Crowd
+			large_ext_encore_crowd
 			num_loops = -1
 			vol = -11
 		}
 	]
 }
-Medium_INT_Encore_Crowd_container = {
-	Default_Buss = Encore_Loops
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+medium_int_encore_crowd_container = {
+	default_buss = encore_loops
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 	slot = 3
-	Sounds = [
+	sounds = [
 		{
-			Medium_INT_Encore_Crowd
+			medium_int_encore_crowd
 			num_loops = -1
 			vol = -9
 		}
 	]
 }
-Small_INT_Encore_Crowd_container = {
-	Default_Buss = Encore_Loops
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
+small_int_encore_crowd_container = {
+	default_buss = encore_loops
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
 	slot = 3
-	Sounds = [
+	sounds = [
 		{
-			Small_INT_Encore_Crowd
+			small_int_encore_crowd
 			num_loops = -1
 			vol = -11
 		}
 	]
 }
-Gigboard_Scroll_Up_Down_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+gigboard_scroll_up_down_container = {
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			UI_GigBoard_Scroll
+			ui_gigboard_scroll
 			vol = -9
 		}
 	]
 }
-Gigboard_Gig_Unlock_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gigboard_gig_unlock_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Unlock
+			gig_unlock
 			vol = -3
 		}
 	]
 }
-Unlock_Item_Text_Appear_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 3
-	Randomness = none
-	Sounds = [
+unlock_item_text_appear_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 3
+	randomness = none
+	sounds = [
 		{
-			GigComplete_Unlock_Item_Text_Appear
+			gigcomplete_unlock_item_text_appear
 		}
 	]
 }
-Battle_Boss_Whoosh2_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+battle_boss_whoosh2_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GigComplete_Unlock_Item_Text_Appear
+			gigcomplete_unlock_item_text_appear
 			vol = 4
 		}
 	]
 }
 z_credits_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			intro_z_credits
 			vol = -10.5
@@ -8797,153 +8797,153 @@ z_credits_intro_container = {
 	]
 }
 z_tool_intro_container = {
-	Default_Buss = Crowd_Beds
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+	default_buss = crowd_beds
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
 			intro_z_tool
 			vol = -10.5
 		}
 	]
 }
-GigComplete_Magazine_Out_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gigcomplete_magazine_out_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Magazine_Out
+			gig_complete_magazine_out
 			vol = 5
 		}
 	]
 }
-GigComplete_Magazine_In_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+gigcomplete_magazine_in_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Gig_Complete_Magazine_In
+			gig_complete_magazine_in
 			vol = 5
 		}
 	]
 }
-Loading_Crowd_Long_Burst_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 0.1
-	InstanceLimit = 20
-	Randomness = none
-	Sounds = [
+loading_crowd_long_burst_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 0.1
+	instancelimit = 20
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_LG_L_02
+			ext_md_crowd_swell_lg_l_02
 			vol = -3.5
 			pan1x = -1
 			pan1y = 1
 		}
 		{
-			EXT_MD_Crowd_Swell_LG_R_02
+			ext_md_crowd_swell_lg_r_02
 			vol = -3.5
 			pan1x = 1
 			pan1y = 1
 		}
 	]
 }
-Loading_Crowd_Medium_Burst_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 0.1
-	InstanceLimit = 20
-	Randomness = none
-	Sounds = [
+loading_crowd_medium_burst_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 0.1
+	instancelimit = 20
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_MD_L_02
+			ext_md_crowd_swell_md_l_02
 			vol = -3.5
 			pan1x = -1
 			pan1y = 1
 		}
 		{
-			EXT_MD_Crowd_Swell_MD_R_02
+			ext_md_crowd_swell_md_r_02
 			vol = -3.5
 			pan1x = 1
 			pan1y = 1
 		}
 	]
 }
-Loading_Crowd_Short_Burst_container = {
-	Default_Buss = Crowd_One_Shots
-	NoRepeatFor = 0.1
-	InstanceLimit = 20
-	Randomness = none
-	Sounds = [
+loading_crowd_short_burst_container = {
+	default_buss = crowd_one_shots
+	norepeatfor = 0.1
+	instancelimit = 20
+	randomness = none
+	sounds = [
 		{
-			EXT_MD_Crowd_Swell_SH_L_01
+			ext_md_crowd_swell_sh_l_01
 			vol = -3.5
 			pan1x = -1
 			pan1y = 1
 		}
 		{
-			EXT_MD_Crowd_Swell_SH_R_01
+			ext_md_crowd_swell_sh_r_01
 			vol = -3.5
 			pan1x = 1
 			pan1y = 1
 		}
 	]
 }
-Fireworks_Last_Venue_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+fireworks_last_venue_container = {
+	default_buss = front_end
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Last_Venue_Fireworks
+			last_venue_fireworks
 		}
 	]
 }
-Pyro_container = {
-	Default_Buss = UI_Star_Power
-	NoRepeatFor = 0.1
-	InstanceLimit = 6
-	Randomness = RandomNoRepeatType
-	Sounds = [
+pyro_container = {
+	default_buss = ui_star_power
+	norepeatfor = 0.1
+	instancelimit = 6
+	randomness = randomnorepeattype
+	sounds = [
 		{
-			Pyro_1
+			pyro_1
 			vol = -3
 		}
 		{
-			Pyro_2
+			pyro_2
 			vol = -3
 		}
 		{
-			Pyro_3
+			pyro_3
 			vol = -3
 		}
 	]
 }
-PreCutscene_Sfx_container = {
-	Default_Buss = binkcutscenes
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	command = PlaySound
-	Randomness = none
-	Sounds = [
+precutscene_sfx_container = {
+	default_buss = binkcutscenes
+	norepeatfor = 0.1
+	instancelimit = 1
+	command = playsound
+	randomness = none
+	sounds = [
 		{
-			Pre_Cutscence_SFX
+			pre_cutscence_sfx
 			vol = -18
 		}
 	]
 }
-GHM_TrappedUnderIce_Release_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_trappedunderice_release_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_TrappedUnderIce_Release
+			ghm_trappedunderice_release
 			vol = -4
 			pan1x = -1
 			pan1y = 1
@@ -8952,14 +8952,14 @@ GHM_TrappedUnderIce_Release_P1_container = {
 		}
 	]
 }
-GHM_HitTheLights_Release_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_hitthelights_release_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_HitTheLights_Release
+			ghm_hitthelights_release
 			vol = -1.5
 			pan1x = 1
 			pan1y = 1
@@ -8968,14 +8968,14 @@ GHM_HitTheLights_Release_P2_container = {
 		}
 	]
 }
-GHM_DamageInc_Attack_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_damageinc_attack_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_DamageInc_Attack
+			ghm_damageinc_attack
 			vol = -2
 			pan1x = -1
 			pan1y = 1
@@ -8984,14 +8984,14 @@ GHM_DamageInc_Attack_P1_container = {
 		}
 	]
 }
-GHM_RideTheLightning_Attack_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_ridethelightning_attack_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_RideTheLightning_Attack
+			ghm_ridethelightning_attack
 			vol = -4
 			pan1x = 1
 			pan1y = 1
@@ -9000,14 +9000,14 @@ GHM_RideTheLightning_Attack_P2_container = {
 		}
 	]
 }
-GHM_RideTheLightning_Release_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_ridethelightning_release_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_RideTheLightning_Release
+			ghm_ridethelightning_release
 			vol = -4
 			pan1x = 1
 			pan1y = 1
@@ -9016,14 +9016,14 @@ GHM_RideTheLightning_Release_P2_container = {
 		}
 	]
 }
-GHM_HitTheLights_Attack_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_hitthelights_attack_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_HitTheLights_Attack
+			ghm_hitthelights_attack
 			vol = -1
 			pan1x = -1
 			pan1y = 1
@@ -9032,14 +9032,14 @@ GHM_HitTheLights_Attack_P1_container = {
 		}
 	]
 }
-GHM_TrappedUnderIce_Attack_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_trappedunderice_attack_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_TrappedUnderIce_Attack
+			ghm_trappedunderice_attack
 			vol = -5
 			pan1x = -1
 			pan1y = 1
@@ -9048,14 +9048,14 @@ GHM_TrappedUnderIce_Attack_P1_container = {
 		}
 	]
 }
-GHM_TrappedUnderIce_Attack_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_trappedunderice_attack_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_TrappedUnderIce_Attack
+			ghm_trappedunderice_attack
 			vol = -5
 			pan1x = 1
 			pan1y = 1
@@ -9064,14 +9064,14 @@ GHM_TrappedUnderIce_Attack_P2_container = {
 		}
 	]
 }
-GHM_TrappedUnderIce_Release_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_trappedunderice_release_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_TrappedUnderIce_Release
+			ghm_trappedunderice_release
 			vol = -4
 			pan1x = 1
 			pan1y = 1
@@ -9080,14 +9080,14 @@ GHM_TrappedUnderIce_Release_P2_container = {
 		}
 	]
 }
-GHM_RideTheLightning_Attack_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_ridethelightning_attack_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_RideTheLightning_Attack
+			ghm_ridethelightning_attack
 			vol = -4
 			pan1x = -1
 			pan1y = 1
@@ -9096,14 +9096,14 @@ GHM_RideTheLightning_Attack_P1_container = {
 		}
 	]
 }
-GHM_HitTheLights_Attack_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_hitthelights_attack_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_HitTheLights_Attack
+			ghm_hitthelights_attack
 			vol = -1
 			pan1x = 1
 			pan1y = 1
@@ -9112,14 +9112,14 @@ GHM_HitTheLights_Attack_P2_container = {
 		}
 	]
 }
-GHM_DamageInc_Attack_P2_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_damageinc_attack_p2_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_DamageInc_Attack
+			ghm_damageinc_attack
 			vol = -2
 			pan1x = 1
 			pan1y = 1
@@ -9128,14 +9128,14 @@ GHM_DamageInc_Attack_P2_container = {
 		}
 	]
 }
-GHM_HitTheLights_Release_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_hitthelights_release_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_HitTheLights_Release
+			ghm_hitthelights_release
 			vol = -1.5
 			pan1x = -1
 			pan1y = 1
@@ -9144,14 +9144,14 @@ GHM_HitTheLights_Release_P1_container = {
 		}
 	]
 }
-GHM_RideTheLightning_Release_P1_container = {
-	Default_Buss = UI_Battle_Mode
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+ghm_ridethelightning_release_p1_container = {
+	default_buss = ui_battle_mode
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			GHM_RideTheLightning_Release
+			ghm_ridethelightning_release
 			vol = -4
 			pan1x = -1
 			pan1y = 1
@@ -9161,102 +9161,102 @@ GHM_RideTheLightning_Release_P1_container = {
 	]
 }
 ui_band_mode_choose_sound_spawned_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 4
-	Randomness = none
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 4
+	randomness = none
 }
 ui_band_mode_choose_sound_ready_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.05
-	InstanceLimit = 4
-	Randomness = none
+	default_buss = front_end
+	norepeatfor = 0.05
+	instancelimit = 4
+	randomness = none
 }
-Band_Screen_UI_Sound_container = {
-	Default_Buss = front_end
-	NoRepeatFor = 0.02
-	InstanceLimit = 6
-	Randomness = none
+band_screen_ui_sound_container = {
+	default_buss = front_end
+	norepeatfor = 0.02
+	instancelimit = 6
+	randomness = none
 }
-Band_Failed_X_SFX_container = {
-	Default_Buss = Crowd_Boos
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+band_failed_x_sfx_container = {
+	default_buss = crowd_boos
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Band_Failed_X_SFX
+			band_failed_x_sfx
 			vol = 8
 		}
 	]
 }
-Fail_Screen_SFX_container = {
-	Default_Buss = Crowd_Boos
-	NoRepeatFor = 0.1
-	InstanceLimit = 1
-	Randomness = none
-	Sounds = [
+fail_screen_sfx_container = {
+	default_buss = crowd_boos
+	norepeatfor = 0.1
+	instancelimit = 1
+	randomness = none
+	sounds = [
 		{
-			Band_Failed_X_SFX
+			band_failed_x_sfx
 			vol = 4
 		}
 	]
 }
-ui_Crowd_vol_container = {
-	Default_Buss = Encore_Events
-	NoRepeatFor = 0.02
-	InstanceLimit = 3
+ui_crowd_vol_container = {
+	default_buss = encore_events
+	norepeatfor = 0.02
+	instancelimit = 3
 	slot = 1
-	Randomness = RandomNoRepeatType
-	Sounds = {
-		Sound1 = {
-			Crowd_Group_Clap_01
+	randomness = randomnorepeattype
+	sounds = {
+		sound1 = {
+			crowd_group_clap_01
 			vol_percent = 100
 		}
-		Sound2 = {
-			Crowd_Group_Clap_02
+		sound2 = {
+			crowd_group_clap_02
 			vol_percent = 100
 		}
-		Sound3 = {
-			Crowd_Group_Clap_03
+		sound3 = {
+			crowd_group_clap_03
 			vol_percent = 100
 		}
-		Sound4 = {
-			Crowd_Group_Clap_04
+		sound4 = {
+			crowd_group_clap_04
 			vol_percent = 100
 		}
-		Sound5 = {
-			Crowd_Group_Clap_05
+		sound5 = {
+			crowd_group_clap_05
 			vol_percent = 100
 		}
-		Sound6 = {
-			Crowd_Group_Clap_06
+		sound6 = {
+			crowd_group_clap_06
 			vol_percent = 100
 		}
 	}
 }
-ui_Guitar_vol_container = {
-	Default_Buss = First_Player_Lead_Playback
-	NoRepeatFor = 0.02
-	InstanceLimit = 3
+ui_guitar_vol_container = {
+	default_buss = first_player_lead_playback
+	norepeatfor = 0.02
+	instancelimit = 3
 	slot = 1
-	Randomness = none
-	Sounds = {
-		Sound1 = {
+	randomness = none
+	sounds = {
+		sound1 = {
 			bad_note_bass4
 			vol_percent = 55
 		}
 	}
 }
-ui_Band_vol_container = {
-	Default_Buss = Band_Playback
-	NoRepeatFor = 0.02
-	InstanceLimit = 3
+ui_band_vol_container = {
+	default_buss = band_playback
+	norepeatfor = 0.02
+	instancelimit = 3
 	slot = 1
-	Randomness = none
-	Sounds = {
-		Sound1 = {
-			StickClickMed
+	randomness = none
+	sounds = {
+		sound1 = {
+			stickclickmed
 			vol_percent = 45
 		}
 	}

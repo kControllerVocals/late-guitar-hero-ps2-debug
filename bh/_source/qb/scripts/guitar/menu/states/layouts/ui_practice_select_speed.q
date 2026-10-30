@@ -1,16 +1,16 @@
 
 script ui_create_practice_select_speed 
 	change menu_flow_locked = ($menu_flow_locked + 1)
-	GetPlayerInfo \{1
+	getplayerinfo \{1
 		part}
-	if (<part> = Vocals && $game_mode = practice)
-		SpawnScriptLater \{menu_choose_practice_speed_auto_go_to_gameplay_for_vocals}
+	if (<part> = vocals && $game_mode = practice)
+		spawnscriptlater \{menu_choose_practice_speed_auto_go_to_gameplay_for_vocals}
 		change menu_flow_locked = ($menu_flow_locked - 1)
 		return
 	endif
-	if GotParam \{from_pause}
+	if gotparam \{from_pause}
 		make_generic_menu {
-			title = qs("PRACTICE SPEED")
+			title = qs(0x452d8770)
 			exclusive_device = <player_device>
 			centered
 			extra_z = 1000
@@ -18,45 +18,45 @@ script ui_create_practice_select_speed
 			title_bg_pos = (620.0, 50.0)
 		}
 	else
-		make_generic_stripe_menu \{title = qs("PRACTICE SPEED")}
+		0x5e1a3a04 \{title = qs(0x452d8770)}
 	endif
 	<speeds> = [
 		{
-			text = qs("Full Speed")
-			Speed = full
+			text = qs(0xe73aac0d)
+			speed = full
 		}
 		{
-			text = qs("Slow")
-			Speed = Slow
+			text = qs(0x3d7913f6)
+			speed = slow
 		}
 		{
-			text = qs("Slower")
-			Speed = slower
+			text = qs(0x0a09c6b9)
+			speed = slower
 		}
 		{
-			text = qs("Slowest")
-			Speed = slowest
+			text = qs(0xb4efa3ea)
+			speed = slowest
 		}
 	]
-	GetPlayerInfo \{1
+	getplayerinfo \{1
 		part}
-	GetArraySize <speeds>
+	getarraysize <speeds>
 	i = 0
 	begin
-	if (<part> = Vocals && (<speeds> [<i>].Speed) != full)
+	if (<part> = vocals && (<speeds> [<i>].speed) != full)
 		focusable = {not_focusable}
 	else
-		RemoveParameter \{focusable}
+		removeparameter \{focusable}
 	endif
-	if GotParam \{from_pause}
+	if gotparam \{from_pause}
 		add_menu_frontend_item {
 			text = (<speeds> [<i>].text)
 			pad_choose_script = menu_choose_practice_speed_set_speed
-			pad_choose_params = {Speed = (<speeds> [<i>].Speed) from_pause = <from_pause> from_song_breakdown = <from_song_breakdown>}
+			pad_choose_params = {speed = (<speeds> [<i>].speed) from_pause = <from_pause> from_song_breakdown = <from_song_breakdown>}
 			<focusable>
 		}
-	elseif StructureContains Structure = <focusable> not_focusable
-		add_generic_stripe_menu_item {
+	elseif structurecontains structure = <focusable> not_focusable
+		0x9d0992fe {
 			text = (<speeds> [<i>].text)
 			pad_choose_script = nullscript
 			pad_choose_sound = ui_bonus_videos_negative_sfx
@@ -64,42 +64,42 @@ script ui_create_practice_select_speed
 			unfocus_rgba = [160 150 140 175]
 		}
 	else
-		add_generic_stripe_menu_item {
+		0x9d0992fe {
 			text = (<speeds> [<i>].text)
 			pad_choose_script = menu_choose_practice_speed_set_speed
-			pad_choose_params = {Speed = (<speeds> [<i>].Speed) from_pause = <from_pause> from_song_breakdown = <from_song_breakdown>}
+			pad_choose_params = {speed = (<speeds> [<i>].speed) from_pause = <from_pause> from_song_breakdown = <from_song_breakdown>}
 		}
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	ui_create_particle_circle \{z_offset = 200.0}
+	0x87679bf6 \{z_offset = 200.0}
 	menu_finish
 	change menu_flow_locked = ($menu_flow_locked - 1)
 endscript
 
 script ui_destroy_practice_select_speed 
 	change menu_flow_locked = ($menu_flow_locked + 1)
-	ui_destroy_particle_circle
+	0xafd96096
 	generic_ui_destroy
 	change menu_flow_locked = ($menu_flow_locked - 1)
 endscript
 
-script menu_choose_practice_speed_set_speed \{Speed = full}
-	change \{ui_select_song_section_disable_back = 1}
-	switch <Speed>
+script menu_choose_practice_speed_set_speed \{speed = full}
+	change \{0x0fda6dc9 = 1}
+	switch <speed>
 		case full
 		change \{current_speedfactor = 1.0}
-		case Slow
+		case slow
 		change \{current_speedfactor = 0.8}
 		case slower
 		change \{current_speedfactor = 0.66666675}
 		case slowest
 		change \{current_speedfactor = 0.5}
 	endswitch
-	if GotParam \{from_song_breakdown}
+	if gotparam \{from_song_breakdown}
 		practice_restart_song
 		generic_event_back \{state = uistate_gameplay}
-	elseif NOT GotParam \{from_pause}
+	elseif NOT gotparam \{from_pause}
 		generic_event_choose \{state = uistate_play_song}
 	else
 		restart_warning_select_restart \{dont_save_song_data}

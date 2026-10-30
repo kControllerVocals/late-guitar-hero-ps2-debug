@@ -1,22 +1,22 @@
-CAS_Drum_Skin_Sections = [
+cas_drum_skin_sections = [
 	{
 		text = qs(0x5e898d21)
 		parts = [
 			none
 			gh5_skin_ld46
 			bass_skin_ds_37
-			popskin_03
+			0x32a853bf
 			bass_skin_ds_02
 			gh5_skin_ld49
-			popskin_08
+			0xa57a8a37
 			bass_skin_ds_75
 			bandlogosingle
 			bass_skin_ds_32
 			bass_skin_ds_24
 			bass_skin_ds_38
-			popskin_15
-			budcat01
-			popskin_12
+			0xc2d0c7cb
+			0xa54e5e2e
+			0x5cb45268
 			gh5_skin_ld66
 			gh5_skin_ld40
 			gh5_skin_ld61
@@ -30,21 +30,21 @@ CAS_Drum_Skin_Sections = [
 			gh5_skin_ld68
 			gh5_skin_ld10
 			gh5_skin_ld54
-			popskin_14
+			0xb5d7f75d
 			gh5_skin_ld19
 			bass_skin_gk_08
 			bass_skin_ds_77
-			popskin_05
+			0xdbcbf68a
 			gh5_skin_ld45
 			bass_skin_ds_80
-			GH5_Skin_LD42
-			GH5_Skin_LD57
+			gh5_skin_ld42
+			gh5_skin_ld57
 			gh5_skin_ld22
 			bass_skin_ds_40
 			bass_skin_gk_04
 			gh5_skin_ld97
 			bass_skin_ds_47
-			popskin_09
+			0xd27dbaa1
 			gh5_skin_ld08
 		]
 	}
@@ -70,7 +70,7 @@ CAS_Drum_Skin_Sections = [
 			gh5_skin_ld09
 			bass_skin_ds_07
 			bass_skin_ds_90
-			popskin_06
+			0x42c2a730
 			gh5_skin_ld11
 		]
 	}
@@ -80,7 +80,7 @@ CAS_Drum_Skin_Sections = [
 			none
 			bass_skin_ds_11
 			bass_skin_gk_03
-			popskin_10
+			0xb2ba3344
 			bass_skin_rm_05
 			gh5_skin_ld100
 			gh5_skin_ld94
@@ -98,7 +98,7 @@ CAS_Drum_Skin_Sections = [
 			bass_skin_ds_13
 			bass_skin_ds_55
 			bass_skin_ds_12
-			popskin_02
+			0x45af6329
 		]
 	}
 	{
@@ -114,13 +114,13 @@ CAS_Drum_Skin_Sections = [
 			gh5_skin_ld48
 			gh5_skin_ld59
 			gh5_skin_ld103
-			popskin_07
+			0x35c597a6
 			gh5_skin_ld32b
-			popskin_11
+			0xc5bd03d2
 			bass_skin_ds_20
 			gh5_skin_ld21b
 			gh5_skin_ld63
-			popskin_13
+			0x2bb362fe
 			gh5_skin_ld52
 			gh5_skin_ld12
 			gh5_skin_ld37
@@ -135,7 +135,7 @@ CAS_Drum_Skin_Sections = [
 			bass_skin_ds_76
 			bass_skin_ds_23
 			gh5_skin_ld16
-			popskin_01
+			0xdca63293
 			gh5_skin_ld93
 			bass_skin_ds_21
 			gh5_skin_ld28
@@ -153,7 +153,7 @@ CAS_Drum_Skin_Sections = [
 		]
 	}
 	{
-		text = qs("\LPork Pie")
+		text = qs(0x086c055d)
 		parts = [
 			none
 			bass_skin_ds_pork1

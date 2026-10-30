@@ -6,10 +6,10 @@ script ui_create_select_mp_mode
 	change \{respond_to_signin_changed_func = none}
 	cas_reset_random_human_picking
 	change \{band_mode_menu_tags = none}
-	make_menu_frontend \{title = qs("Mode")
-		screen = Drummer
+	make_menu_frontend \{title = qs(0x7d29b593)
+		screen = drummer
 		use_all_controllers}
-	add_menu_frontend_item \{text = qs("PRO FACE-OFF")
+	add_menu_frontend_item \{text = qs(0x46577877)
 		pad_choose_script = mp_select_mode_menu_select_mode
 		pad_choose_params = {
 			mode = p2_pro_faceoff

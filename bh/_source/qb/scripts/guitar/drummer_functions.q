@@ -1,36 +1,36 @@
-Drumtest = 1
+drumtest = 1
 
-script Drummer_Kill_Spawnscripts 
-	KillSpawnedScript \{name = DrumDroid_Timers}
-	KillSpawnedScript \{name = hide_Non_Drummers}
-	KillSpawnedScript \{name = Hit_DrumKit_Piece}
-	KillSpawnedScript \{name = Default_Kit_anims}
-	KillSpawnedScript \{name = Default_drummer_State}
-	KillSpawnedScript \{name = Drummer_ControlScript}
-	KillSpawnedScript \{name = Drummer_Transit_Base_Short}
-	KillSpawnedScript \{name = Drummer_Transit_Base_Long}
-	KillSpawnedScript \{name = Drummer_Transit_Arm_R}
-	KillSpawnedScript \{name = Drummer_Transit_Arm_L}
-	KillSpawnedScript \{name = Drummer_Transit_Loops}
-	KillSpawnedScript \{name = Drummer_Transit_Idles}
-	KillSpawnedScript \{name = Drummer_Current_Tempo}
-	KillSpawnedScript \{name = Set_drummer_Active_Values}
-	KillSpawnedScript \{name = Hold_Transit_requests}
-	KillSpawnedScript \{name = Hold_Transit_Arms}
-	KillSpawnedScript \{name = Hold_Active_Values}
-	KillSpawnedScript \{name = Drummer_Anticipation_Arms}
-	KillSpawnedScript \{name = Hold_Drummer_Anticipation_Arms}
-	KillSpawnedScript \{name = Hold_DrumKit_Piece}
-	KillSpawnedScript \{name = hold_Body_Trans}
-	KillSpawnedScript \{name = Hold_Body_Loops}
-	KillSpawnedScript \{name = Idle_Check}
+script drummer_kill_spawnscripts 
+	killspawnedscript \{name = drumdroid_timers}
+	killspawnedscript \{name = hide_non_drummers}
+	killspawnedscript \{name = hit_drumkit_piece}
+	killspawnedscript \{name = default_kit_anims}
+	killspawnedscript \{name = default_drummer_state}
+	killspawnedscript \{name = drummer_controlscript}
+	killspawnedscript \{name = drummer_transit_base_short}
+	killspawnedscript \{name = drummer_transit_base_long}
+	killspawnedscript \{name = drummer_transit_arm_r}
+	killspawnedscript \{name = drummer_transit_arm_l}
+	killspawnedscript \{name = drummer_transit_loops}
+	killspawnedscript \{name = drummer_transit_idles}
+	killspawnedscript \{name = drummer_current_tempo}
+	killspawnedscript \{name = set_drummer_active_values}
+	killspawnedscript \{name = hold_transit_requests}
+	killspawnedscript \{name = hold_transit_arms}
+	killspawnedscript \{name = hold_active_values}
+	killspawnedscript \{name = drummer_anticipation_arms}
+	killspawnedscript \{name = hold_drummer_anticipation_arms}
+	killspawnedscript \{name = hold_drumkit_piece}
+	killspawnedscript \{name = hold_body_trans}
+	killspawnedscript \{name = hold_body_loops}
+	killspawnedscript \{name = idle_check}
 endscript
 
-script Drummer_Reset_Globals 
-	change \{Use_DB_Branch_L = 1}
-	change \{Use_DB_Branch_R = 1}
-	change \{Use_DB_Base = 1}
-	change \{Current_DB_Base = 1}
-	change \{Drummer_Idle = true}
-	Drummer_Kill_Spawnscripts
+script drummer_reset_globals 
+	change \{use_db_branch_l = 1}
+	change \{use_db_branch_r = 1}
+	change \{use_db_base = 1}
+	change \{current_db_base = 1}
+	change \{drummer_idle = true}
+	drummer_kill_spawnscripts
 endscript

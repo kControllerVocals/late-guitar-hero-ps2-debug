@@ -1,37 +1,37 @@
-L_SING_Amanda_Dammit_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_amanda_dammit_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Amanda_Dammit_075
+				slow = [
+					sing_amanda_dammit_075
 				]
-				Med = [
-					Sing_Amanda_Dammit_100
+				med = [
+					sing_amanda_dammit_100
 				]
-				Fast = [
-					Sing_Amanda_Dammit_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Amanda_Dammit_075
-				]
-				Med = [
-					Sing_Amanda_Dammit_100
-				]
-				Fast = [
-					Sing_Amanda_Dammit_120
+				fast = [
+					sing_amanda_dammit_120
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Amanda_Dammit_075
+			normal = {
+				slow = [
+					sing_amanda_dammit_075
 				]
-				Med = [
-					Sing_Amanda_Dammit_100
+				med = [
+					sing_amanda_dammit_100
 				]
-				Fast = [
-					Sing_Amanda_Dammit_120
+				fast = [
+					sing_amanda_dammit_120
+				]
+			}
+			bad = {
+				slow = [
+					sing_amanda_dammit_075
+				]
+				med = [
+					sing_amanda_dammit_100
+				]
+				fast = [
+					sing_amanda_dammit_120
 				]
 			}
 		}

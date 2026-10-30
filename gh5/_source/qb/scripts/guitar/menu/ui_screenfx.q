@@ -1,98 +1,98 @@
-g_ui_fx = {
-	forbid = 0
+0xacdf635c = {
+	0xff775071 = 0
 }
 
-script ui_fx_forbid 
-	if ($g_ui_fx.forbid < 100)
-		if ($g_ui_fx.forbid = 0)
-			_ui_fx_forbid
+script 0x6f5e5f74 
+	if ($0xacdf635c.0xff775071 < 100)
+		if ($0xacdf635c.0xff775071 = 0)
+			0x35053ddd
 		else
-			change structurename = g_ui_fx forbid = ($g_ui_fx.forbid + 1)
+			change structurename = 0xacdf635c 0xff775071 = ($0xacdf635c.0xff775071 + 1)
 		endif
 	else
 
 	endif
 endscript
 
-script ui_fx_permit 
-	if ($g_ui_fx.forbid > 0)
-		if ($g_ui_fx.forbid = 1)
-			_ui_fx_permit
+script 0xe68af10a 
+	if ($0xacdf635c.0xff775071 > 0)
+		if ($0xacdf635c.0xff775071 = 1)
+			0xbcd193a3
 		else
-			change structurename = g_ui_fx forbid = ($g_ui_fx.forbid - 1)
+			change structurename = 0xacdf635c 0xff775071 = ($0xacdf635c.0xff775071 - 1)
 		endif
 	else
 
 	endif
 endscript
 
-script _ui_fx_forbid 
-	change \{structurename = g_ui_fx
-		forbid = 1}
-	KillSpawnedScript \{id = ui_fx_noise_interpolation}
-	if ScreenFX_FxInstanceExists \{viewport = ui
-			name = uiNoise}
-		ScreenFX_RemoveFXInstance \{viewport = ui
-			name = uiNoise}
+script 0x35053ddd 
+	change \{structurename = 0xacdf635c
+		0xff775071 = 1}
+	killspawnedscript \{id = ui_fx_noise_interpolation}
+	if screenfx_fxinstanceexists \{viewport = ui
+			name = uinoise}
+		screenfx_removefxinstance \{viewport = ui
+			name = uinoise}
 	endif
-	KillSpawnedScript \{id = ui_fx_dof_interpolation}
-	if ScreenFX_FxInstanceExists \{viewport = ui
-			name = uiDOF}
-		ScreenFX_RemoveFXInstance \{viewport = ui
-			name = uiDOF}
+	killspawnedscript \{id = ui_fx_dof_interpolation}
+	if screenfx_fxinstanceexists \{viewport = ui
+			name = uidof}
+		screenfx_removefxinstance \{viewport = ui
+			name = uidof}
 	endif
 endscript
 
-script _ui_fx_permit 
-	change \{structurename = g_ui_fx
-		forbid = 0}
+script 0xbcd193a3 
+	change \{structurename = 0xacdf635c
+		0xff775071 = 0}
 endscript
 
-script _ui_fx_is_allowed 
-	if ($g_ui_fx.forbid > 0)
-		return false forbid = ($g_ui_fx.forbid)
+script 0x3b3ed942 
+	if ($0xacdf635c.0xff775071 > 0)
+		return false 0xff775071 = ($0xacdf635c.0xff775071)
 	endif
-	return true forbid = ($g_ui_fx.forbid)
+	return true 0xff775071 = ($0xacdf635c.0xff775071)
 endscript
 
 script ui_fx_set_effect 
 
-	AddParam structure_name = effectParams name = <amountParamName> value = <amount>
+	addparam structure_name = effectparams name = <amountparamname> value = <amount>
 	<tolerance> = 0.01
 	if (<amount> > <tolerance>)
-		if ScreenFX_FxInstanceExists viewport = <viewport> name = <effectName>
-			ScreenFX_UpdateFXInstanceParams {
-				<effectParams>
+		if screenfx_fxinstanceexists viewport = <viewport> name = <effectname>
+			screenfx_updatefxinstanceparams {
+				<effectparams>
 				viewport = <viewport>
-				name = <effectName>
+				name = <effectname>
 			}
 		else
 
-			ScreenFX_AddFXInstance {
-				<effectParams>
+			screenfx_addfxinstance {
+				<effectparams>
 				viewport = <viewport>
-				name = <effectName>
+				name = <effectname>
 			}
 		endif
 	else
-		if ScreenFX_FxInstanceExists viewport = <viewport> name = <effectName>
+		if screenfx_fxinstanceexists viewport = <viewport> name = <effectname>
 
-			ScreenFX_RemoveFXInstance viewport = <viewport> name = <effectName>
+			screenfx_removefxinstance viewport = <viewport> name = <effectname>
 		endif
 	endif
 endscript
 
 script ui_fx_get_start_value 
 
-	<startValue> = 0.0
-	if ScreenFX_FxInstanceExists viewport = <viewport> name = <effectName>
-		if ScreenFX_GetActiveScreenFXInstances viewport = <viewport> effectName = <effectName>
-			if StructureContains Structure = <curEffect> <amountParamName>
-				<startValue> = (<curEffect>.<amountParamName>)
+	<startvalue> = 0.0
+	if screenfx_fxinstanceexists viewport = <viewport> name = <effectname>
+		if screenfx_getactivescreenfxinstances viewport = <viewport> effectname = <effectname>
+			if structurecontains structure = <cureffect> <amountparamname>
+				<startvalue> = (<cureffect>.<amountparamname>)
 			endif
 		endif
 	endif
-	return startValue = <startValue>
+	return startvalue = <startvalue>
 endscript
 
 script ui_fx_adjust_effect 
@@ -101,37 +101,37 @@ script ui_fx_adjust_effect
 		ui_fx_set_effect {
 			viewport = <viewport>
 			amount = <amount>
-			amountParamName = <amountParamName>
-			effectName = <effectName>
-			effectParams = <effectParams>
+			amountparamname = <amountparamname>
+			effectname = <effectname>
+			effectparams = <effectparams>
 		}
 	else
-		ui_fx_get_start_value viewport = <viewport> effectName = <effectName> amountParamName = <amountParamName>
+		ui_fx_get_start_value viewport = <viewport> effectname = <effectname> amountparamname = <amountparamname>
 
-		GetTrueStartTime
-		<StartTimeSeconds> = (<StartTime> / 1000.0)
+		gettruestarttime
+		<starttimeseconds> = (<starttime> / 1000.0)
 		begin
-		GetTrueStartTime
-		<CurTimeSeconds> = (<StartTime> / 1000.0)
-		<ElapsedTimeSeconds> = (<CurTimeSeconds> - <StartTimeSeconds>)
-		if (<ElapsedTimeSeconds> >= <time>)
-			<ElapsedTimeSeconds> = <time>
+		gettruestarttime
+		<curtimeseconds> = (<starttime> / 1000.0)
+		<elapsedtimeseconds> = (<curtimeseconds> - <starttimeseconds>)
+		if (<elapsedtimeseconds> >= <time>)
+			<elapsedtimeseconds> = <time>
 			<done> = true
 		else
 			<done> = false
 		endif
-		InterpolateParameters a = {value = <startValue>} b = {value = <amount>} proportion = (<ElapsedTimeSeconds> / <time>)
+		interpolateparameters a = {value = <startvalue>} b = {value = <amount>} proportion = (<elapsedtimeseconds> / <time>)
 		ui_fx_set_effect {
 			viewport = <viewport>
 			amount = (<interpolated>.value)
-			amountParamName = <amountParamName>
-			effectName = <effectName>
-			effectParams = <effectParams>
+			amountparamname = <amountparamname>
+			effectname = <effectname>
+			effectparams = <effectparams>
 		}
 		if (<done> = true)
 			break
 		endif
-		Wait \{1
+		wait \{1
 			gameframes}
 		repeat
 	endif
@@ -140,14 +140,14 @@ endscript
 script ui_fx_set_noise \{amount = 0.5
 		time = 0
 		viewport = ui}
-	<effectParams> = {
+	<effectparams> = {
 		on = 1
 		type = noise2
 		color = [0.5 0.5 0.5 0.5]
 		uv = [8.0 6.0 0.0 0.0]
 	}
-	KillSpawnedScript \{id = ui_fx_noise_interpolation}
-	if NOT _ui_fx_is_allowed
+	killspawnedscript \{id = ui_fx_noise_interpolation}
+	if NOT 0x3b3ed942
 		return
 	endif
 	spawnscriptnow {
@@ -157,9 +157,9 @@ script ui_fx_set_noise \{amount = 0.5
 			viewport = <viewport>
 			time = <time>
 			amount = <amount>
-			amountParamName = intensity
-			effectName = uiNoise
-			effectParams = <effectParams>
+			amountparamname = intensity
+			effectname = uinoise
+			effectparams = <effectparams>
 		}
 	}
 endscript
@@ -167,15 +167,15 @@ endscript
 script ui_fx_set_blur \{amount = 0.5
 		time = 0
 		viewport = ui}
-	effectParams = {
+	effectparams = {
 		on = 1
 		type = dof3
 		nearblurend = 0.0
 		farblurbegin = 0.0
 		farblurend = 0.0
 	}
-	KillSpawnedScript \{id = ui_fx_dof_interpolation}
-	if NOT _ui_fx_is_allowed
+	killspawnedscript \{id = ui_fx_dof_interpolation}
+	if NOT 0x3b3ed942
 		return
 	endif
 	spawnscriptnow {
@@ -185,9 +185,9 @@ script ui_fx_set_blur \{amount = 0.5
 			viewport = <viewport>
 			time = <time>
 			amount = <amount>
-			amountParamName = strength
-			effectName = uiDOF
-			effectParams = <effectParams>
+			amountparamname = strength
+			effectname = uidof
+			effectparams = <effectparams>
 		}
 	}
 endscript

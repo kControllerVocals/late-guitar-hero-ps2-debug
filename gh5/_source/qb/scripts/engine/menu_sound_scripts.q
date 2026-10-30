@@ -1,53 +1,53 @@
 
 script menu_soundevent_in 
-	if NOT GotParam \{base_name}
+	if NOT gotparam \{base_name}
 		return
 	endif
 	switch <base_name>
 		case 'setlist'
-		change \{crowd_in_Front_End_state = 1}
+		change \{crowd_in_front_end_state = 1}
 		case 'gig_posters'
-		change \{crowd_in_Front_End_state = 1}
+		change \{crowd_in_front_end_state = 1}
 		case 'game_mode'
-		if GotParam \{no_camera}
+		if gotparam \{no_camera}
 			return
 		else
-			if NOT GotParam \{old_base_name}
-				SoundEvent \{event = Menu_Career_ZoomIn}
-			elseif GotParam \{old_base_name}
+			if NOT gotparam \{old_base_name}
+				soundevent \{event = menu_career_zoomin}
+			elseif gotparam \{old_base_name}
 				switch <old_base_name>
 					case 'select_practice_mode'
 					spawnscriptnow \{menu_music_on}
-					Skate8_SFX_Backgrounds_New_Area \{BG_SFX_Area = FrontEnd_Menu_Music}
+					skate8_sfx_backgrounds_new_area \{bg_sfx_area = frontend_menu_music}
 				endswitch
 			endif
 		endif
 
 		case 'mainmenu'
-		change \{crowd_in_Front_End_state = 1}
-		spawnscriptnow \{Menu_Music_Panning_Vol
+		change \{crowd_in_front_end_state = 1}
+		spawnscriptnow \{menu_music_panning_vol
 			params = {
 				reset
 			}}
-		Skate8_SFX_Backgrounds_New_Area \{BG_SFX_Area = FrontEnd_Menu_Music}
-		if GotParam \{no_camera}
+		skate8_sfx_backgrounds_new_area \{bg_sfx_area = frontend_menu_music}
+		if gotparam \{no_camera}
 			return
 		else
-			if GotParam \{back}
-				if GotParam \{old_base_name}
+			if gotparam \{back}
+				if gotparam \{old_base_name}
 					switch <old_base_name>
 						case 'select_controller'
-						SoundEvent \{event = Menu_HeadToHead_ZoomOut}
+						soundevent \{event = menu_headtohead_zoomout}
 						case 'band_choose'
-						SoundEvent \{event = Menu_Career_ZoomOut}
+						soundevent \{event = menu_career_zoomout}
 						case 'game_mode'
-						SoundEvent \{event = Menu_Career_ZoomOut}
+						soundevent \{event = menu_career_zoomout}
 						case 'options'
-						SoundEvent \{event = Menu_Options_ZoomOut}
+						soundevent \{event = menu_options_zoomout}
 						case 'band_name_enter'
-						SoundEvent \{event = Menu_Career_ZoomOut}
+						soundevent \{event = menu_career_zoomout}
 						case 'downloads'
-						SoundEvent \{event = Menu_HeadToHead_ZoomOut}
+						soundevent \{event = menu_headtohead_zoomout}
 						case 'jam'
 						menu_music_fade \{in
 							time = 1.01}
@@ -60,35 +60,35 @@ script menu_soundevent_in
 		endif
 
 		case 'options'
-		if GotParam \{no_camera}
+		if gotparam \{no_camera}
 			return
 		else
-			if NOT GotParam \{old_base_name}
-				SoundEvent \{event = Menu_Options_ZoomIn}
+			if NOT gotparam \{old_base_name}
+				soundevent \{event = menu_options_zoomin}
 			endif
 		endif
 		case 'select_controller'
-		if GotParam \{no_camera}
+		if gotparam \{no_camera}
 			return
-		elseif GotParam \{old_base_name}
+		elseif gotparam \{old_base_name}
 			if (<old_base_name> = 'signin_warning')
-				NullSound
+				nullsound
 			endif
 		else
-			SoundEvent \{event = Menu_HeadToHead_ZoomIn}
+			soundevent \{event = menu_headtohead_zoomin}
 		endif
 		case 'motd'
-		if GotParam \{no_camera}
+		if gotparam \{no_camera}
 			return
 		endif
 		case 'downloads'
-		if GotParam \{no_camera}
+		if gotparam \{no_camera}
 			return
 		else
-			SoundEvent \{event = Menu_HeadToHead_ZoomIn}
+			soundevent \{event = menu_headtohead_zoomin}
 		endif
 		case 'select_instrument'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist_quit_warning'
 				case 'setlist'
@@ -97,20 +97,20 @@ script menu_soundevent_in
 		endif
 
 		case 'select_difficulty'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'character_selection'
-				Menu_Music_Panning_Vol \{reset}
+				menu_music_panning_vol \{reset}
 				case 'singleplayer_character_hub'
-				Menu_Music_Panning_Vol \{reset}
+				menu_music_panning_vol \{reset}
 			endswitch
 		endif
 
 		case 'character_selection'
-		Menu_Music_Panning_Vol \{panandlowervol}
+		menu_music_panning_vol \{panandlowervol}
 
 		case 'singleplayer_character_hub'
-		Menu_Music_Panning_Vol \{panandlowervol}
+		menu_music_panning_vol \{panandlowervol}
 
 		case 'customize_character'
 
@@ -119,16 +119,16 @@ script menu_soundevent_in
 
 		return
 		case 'cag_main'
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
 
 		case 'cadrm_main'
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
 		case 'customize_character_mic'
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
 		case 'create_character_gender'
@@ -139,21 +139,21 @@ script menu_soundevent_in
 			volume = 10
 			time = 0.5}
 		case 'band_mode'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist'
 				spawnscriptnow \{menu_music_on}
 			endswitch
 		endif
 		case 'character_hub'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist'
 				spawnscriptnow \{menu_music_on}
 			endswitch
 		endif
 		case 'online'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'online_quit_warning'
 				spawnscriptnow \{menu_music_on}
@@ -161,10 +161,10 @@ script menu_soundevent_in
 		endif
 		case 'play_song'
 		if NOT ($game_mode = practice || $game_mode = tutorial || $game_mode = practice)
-			spawnscriptnow \{Loading_Screen_Crowd_Swell}
+			spawnscriptnow \{loading_screen_crowd_swell}
 		endif
 		case 'leaderboard_instrument'
-		if GotParam \{old_base_name}
+		if gotparam \{old_base_name}
 			switch <old_base_name>
 				case 'setlist'
 				spawnscriptnow \{menu_music_on}
@@ -175,7 +175,7 @@ script menu_soundevent_in
 endscript
 
 script menu_soundevent_out 
-	if NOT GotParam \{base_name}
+	if NOT gotparam \{base_name}
 		return
 	endif
 	switch (<base_name>)
@@ -202,7 +202,7 @@ script menu_soundevent_out
 		return
 		case 'select_difficulty'
 
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
 		ui_event_get_stack
@@ -218,7 +218,7 @@ script menu_soundevent_out
 					return
 				endif
 			else
-				Menu_Music_Off
+				menu_music_off
 				return
 			endif
 		endif
@@ -237,12 +237,12 @@ script menu_soundevent_out
 
 		return
 		case 'cag_main'
-		if GotParam \{back}
+		if gotparam \{back}
 			if (<back> = 1)
 				if ((<instrument_info>.desc_id) = guitar)
-					SoundEvent \{event = Guitar_Affirmation}
-				elseif ((<instrument_info>.desc_id) = Bass)
-					SoundEvent \{event = Bass_Affirmation}
+					soundevent \{event = guitar_affirmation}
+				elseif ((<instrument_info>.desc_id) = bass)
+					soundevent \{event = bass_affirmation}
 				else
 
 				endif
@@ -252,20 +252,20 @@ script menu_soundevent_out
 
 		return
 		case 'gig_posters'
-		if GotParam \{back}
+		if gotparam \{back}
 			return
 		endif
-		Menu_Music_Off
+		menu_music_off
 		case 'cadrm_main'
-		if GotParam \{back}
+		if gotparam \{back}
 			if (<back> = 1)
-				SoundEvent \{event = Drum_Affirmation}
+				soundevent \{event = drum_affirmation}
 			endif
 		endif
 		case 'customize_character_mic'
-		if GotParam \{back}
+		if gotparam \{back}
 			if (<back> = 1)
-				SoundEvent \{event = Mic_Affirmation}
+				soundevent \{event = mic_affirmation}
 			endif
 		endif
 		case 'options_audio'

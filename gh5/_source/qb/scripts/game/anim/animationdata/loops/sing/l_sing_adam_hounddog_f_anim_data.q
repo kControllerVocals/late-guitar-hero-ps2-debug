@@ -1,37 +1,37 @@
-L_SING_Adam_Hounddog_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_adam_hounddog_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Adam_hounddog_075_F
+				slow = [
+					sing_adam_hounddog_075_f
 				]
-				Med = [
-					Sing_Adam_hounddog_100_F
+				med = [
+					sing_adam_hounddog_100_f
 				]
-				Fast = [
-					Sing_Adam_hounddog_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Adam_hounddog_075_F
-				]
-				Med = [
-					Sing_Adam_hounddog_100_F
-				]
-				Fast = [
-					Sing_Adam_hounddog_120_F
+				fast = [
+					sing_adam_hounddog_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Adam_hounddog_075_F
+			normal = {
+				slow = [
+					sing_adam_hounddog_075_f
 				]
-				Med = [
-					Sing_Adam_hounddog_100_F
+				med = [
+					sing_adam_hounddog_100_f
 				]
-				Fast = [
-					Sing_Adam_hounddog_120_F
+				fast = [
+					sing_adam_hounddog_120_f
+				]
+			}
+			bad = {
+				slow = [
+					sing_adam_hounddog_075_f
+				]
+				med = [
+					sing_adam_hounddog_100_f
+				]
+				fast = [
+					sing_adam_hounddog_120_f
 				]
 			}
 		}

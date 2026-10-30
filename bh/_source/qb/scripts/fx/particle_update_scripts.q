@@ -1,26 +1,26 @@
 
-script align_to_vel_update \{ObjID = skater
-		bone = Bone_Board_Truck_Back
+script align_to_vel_update \{objid = skater
+		bone = bone_board_truck_back
 		update_pos = 0
 		emit_offset = (0.0, 0.5, 0.0)
 		emit_scale = -1.0
 		pos_offset = (0.0, -2.0, 0.0)}
 	pos0_offset = <pos_offset>
-	<parentId> = <ObjID>
+	<parentid> = <objid>
 	begin
-	if ShouldEmit
-		if CompositeObjectExists name = <ObjID>
-			<ObjID> :Obj_GetVelocity
-			NormalizeVector <vel>
-			SetEmitTarget target = (<emit_offset> + (<emit_scale> * <norm>))
+	if shouldemit
+		if compositeobjectexists name = <objid>
+			<objid> :obj_getvelocity
+			normalizevector <vel>
+			setemittarget target = (<emit_offset> + (<emit_scale> * <norm>))
 			if NOT (<update_pos> = 0)
 				<x> = 0
 				<y> = 0
 				<z> = 0
-				if GotParam \{get_bone_script}
-					<get_bone_script> ObjID = <parentId>
+				if gotparam \{get_bone_script}
+					<get_bone_script> objid = <parentid>
 				endif
-				<ObjID> :Obj_GetBonePosition bone = <bone>
+				<objid> :obj_getboneposition bone = <bone>
 				<pos_offset> = (<pos0_offset> + <x> * (1.0, 0.0, 0.0))
 				<pos_offset> = (<pos_offset> + <y> * (0.0, 1.0, 0.0))
 				<pos_offset> = (<pos_offset> + <z> * (0.0, 0.0, 1.0))
@@ -28,140 +28,140 @@ script align_to_vel_update \{ObjID = skater
 			endif
 		endif
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript
 
-script emitRate_Speed \{ObjID = skater
-		minRate = 0
-		maxRate = 64
-		minSpeed = 0
-		maxSpeed = 12}
-	speedDiff = (<maxSpeed> - <minSpeed>)
-	rateDiff = (<maxRate> - <minRate>)
-	if (<ObjID> = parent)
-		LockObj_GetParent
+script emitrate_speed \{objid = skater
+		minrate = 0
+		maxrate = 64
+		minspeed = 0
+		maxspeed = 12}
+	speeddiff = (<maxspeed> - <minspeed>)
+	ratediff = (<maxrate> - <minrate>)
+	if (<objid> = parent)
+		lockobj_getparent
 
-		ObjID = <parent>
+		objid = <parent>
 	endif
 	begin
-	<ObjID> :Obj_GetVelocity
-	NormalizeVector <vel>
-	if (<length> < <minSpeed>)
-		newRate = <minRate>
+	<objid> :obj_getvelocity
+	normalizevector <vel>
+	if (<length> < <minspeed>)
+		newrate = <minrate>
 	else
-		if (<length> > <maxSpeed>)
-			newRate = <maxRate>
+		if (<length> > <maxspeed>)
+			newrate = <maxrate>
 		else
-			factor = ((<length> - <minSpeed>) / <speedDiff>)
-			newRate = (<minRate> + (<factor> * <rateDiff>))
+			factor = ((<length> - <minspeed>) / <speeddiff>)
+			newrate = (<minrate> + (<factor> * <ratediff>))
 		endif
 	endif
-	EmitRate rate = <newRate>
-	Wait \{1
+	emitrate rate = <newrate>
+	wait \{1
 		frame}
 	repeat
 endscript
 
-script emitRate_Size_Speed \{ObjID = skater
-		minRate = 0
-		maxRate = 64
-		minStartSize = (0.4, 0.4)
-		minEndSize = (1.5, 1.5)
-		maxStartSize = (0.8, 0.8)
-		maxEndSize = (3.0, 3.0)
-		minSpeed = 0
-		maxSpeed = 12}
-	JOW_Stars \{'emitRate_Size_Speed'}
-	speedDiff = (<maxSpeed> - <minSpeed>)
-	rateDiff = (<maxRate> - <minRate>)
-	JOW_Stars \{'calc size'}
-	sizeDiffStart = (<maxStartSize> - <minStartSize>)
-	sizeDiffEnd = (<maxEndSize> - <minEndSize>)
+script emitrate_size_speed \{objid = skater
+		minrate = 0
+		maxrate = 64
+		minstartsize = (0.4, 0.4)
+		minendsize = (1.5, 1.5)
+		maxstartsize = (0.8, 0.8)
+		maxendsize = (3.0, 3.0)
+		minspeed = 0
+		maxspeed = 12}
+	jow_stars \{'emitRate_Size_Speed'}
+	speeddiff = (<maxspeed> - <minspeed>)
+	ratediff = (<maxrate> - <minrate>)
+	jow_stars \{'calc size'}
+	sizediffstart = (<maxstartsize> - <minstartsize>)
+	sizediffend = (<maxendsize> - <minendsize>)
 
-	JOW_Stars \{'begin'}
+	jow_stars \{'begin'}
 	begin
-	<ObjID> :Obj_GetVelocity
-	NormalizeVector <vel>
-	if (<length> < <minSpeed>)
-		newRate = <minRate>
-		newSize = <minSize>
+	<objid> :obj_getvelocity
+	normalizevector <vel>
+	if (<length> < <minspeed>)
+		newrate = <minrate>
+		newsize = <minsize>
 	else
-		if (<length> > <maxSpeed>)
-			newRate = <maxRate>
-			newSize = <maxSize>
+		if (<length> > <maxspeed>)
+			newrate = <maxrate>
+			newsize = <maxsize>
 		else
-			factor = ((<length> - <minSpeed>) / <speedDiff>)
-			newRate = (<minRate> + (<factor> * <rateDiff>))
-			newStartSize = (<minStartSize> + (<factor> * <sizeDiffStart>))
-			newEndSize = (<minEndSize> + (<factor> * <sizeDiffEnd>))
+			factor = ((<length> - <minspeed>) / <speeddiff>)
+			newrate = (<minrate> + (<factor> * <ratediff>))
+			newstartsize = (<minstartsize> + (<factor> * <sizediffstart>))
+			newendsize = (<minendsize> + (<factor> * <sizediffend>))
 		endif
 	endif
-	EmitRate rate = <newRate>
-	SetParticleSize sw = (<newStartSize>.(1.0, 0.0)) sh = (<newStartSize>.(0.0, 1.0)) ew = (<newEndSize>.(1.0, 0.0)) eh = (<newEndSize>.(0.0, 1.0))
-	Wait \{1
+	emitrate rate = <newrate>
+	setparticlesize sw = (<newstartsize>.(1.0, 0.0)) sh = (<newstartsize>.(0.0, 1.0)) ew = (<newendsize>.(1.0, 0.0)) eh = (<newendsize>.(0.0, 1.0))
+	wait \{1
 		frame}
 	repeat
 endscript
 
-script rotDir_Turn \{ObjID = skater
-		minRot = 0.0
-		maxRot = 0.3}
+script rotdir_turn \{objid = skater
+		minrot = 0.0
+		maxrot = 0.3}
 	begin
-	if <ObjID> :IsTurningLeft
-		SetRotate min = (-1 * <minRot>) max = (-1 * <maxRot>)
-	elseif <ObjID> :IsTurningRight
-		SetRotate min = <minRot> max = <maxRot>
+	if <objid> :isturningleft
+		setrotate min = (-1 * <minrot>) max = (-1 * <maxrot>)
+	elseif <objid> :isturningright
+		setrotate min = <minrot> max = <maxrot>
 	else
-		SetRotate min = (-1 * <minRot>) max = <minRot>
+		setrotate min = (-1 * <minrot>) max = <minrot>
 	endif
-	Wait \{0.1
+	wait \{0.1
 		seconds}
 	repeat
 endscript
 
-script starPower_Butterflies \{sMinW = 1.0
-		sMaxW = 0.4
-		eMinH = 0.2
-		sMaxW = 0.1
-		sMinH = 0.05
-		sMaxH = 0.5
-		eMinH = 0.02
-		sMaxH = 0.1
-		cycleTime = 0.5
-		updateTime = 0.05}
-	numSteps = (<cycleTime> / <updateTime>)
-	sWStepSize = (2.0 * (<sMaxW> - <sMinW>) / <numSteps>)
-	eWStepSize = (2.0 * (<eMaxW> - <eMinW>) / <numSteps>)
-	sHStepSize = (2.0 * (<sMaxH> - <sMinH>) / <numSteps>)
-	eHStepSize = (2.0 * (<eMaxH> - <eMinH>) / <numSteps>)
-	f = <numSteps>
-	CastToInteger \{f}
+script starpower_butterflies \{sminw = 1.0
+		smaxw = 0.4
+		eminh = 0.2
+		smaxw = 0.1
+		sminh = 0.05
+		smaxh = 0.5
+		eminh = 0.02
+		smaxh = 0.1
+		cycletime = 0.5
+		updatetime = 0.05}
+	numsteps = (<cycletime> / <updatetime>)
+	swstepsize = (2.0 * (<smaxw> - <sminw>) / <numsteps>)
+	ewstepsize = (2.0 * (<emaxw> - <eminw>) / <numsteps>)
+	shstepsize = (2.0 * (<smaxh> - <sminh>) / <numsteps>)
+	ehstepsize = (2.0 * (<emaxh> - <eminh>) / <numsteps>)
+	f = <numsteps>
+	casttointeger \{f}
 	f = (0.1 * RandomInteger (0.0, 10.0) * <f>)
-	sCurW = (<sMinW> + (<f> * <sHStepSize>))
-	eCurW = (<eMinW> + (<f> * <sHStepSize>))
-	sCurH = (<sMinH> + (<f> * <sHStepSize>))
-	eCurH = (<eMinH> + (<f> * <sHStepSize>))
+	scurw = (<sminw> + (<f> * <shstepsize>))
+	ecurw = (<eminw> + (<f> * <shstepsize>))
+	scurh = (<sminh> + (<f> * <shstepsize>))
+	ecurh = (<eminh> + (<f> * <shstepsize>))
 	factor = 1.0
 	begin
-	if (<sCurH> < <sMinH> || <eCurH> < <eMinH>)
-		sCurW = <sMinW>
-		eCurW = <eMinW>
-		sCurH = <sMinH>
-		eCurH = <eMinH>
+	if (<scurh> < <sminh> || <ecurh> < <eminh>)
+		scurw = <sminw>
+		ecurw = <eminw>
+		scurh = <sminh>
+		ecurh = <eminh>
 		factor = (-1.0 * <factor>)
-	elseif (<sCurH> > <sMaxH> || <eCurH> > <eMaxH>)
-		sCurW = <sMaxW>
-		eCurW = <eMaxW>
-		sCurH = <sMaxH>
-		eCurH = <eMaxH>
+	elseif (<scurh> > <smaxh> || <ecurh> > <emaxh>)
+		scurw = <smaxw>
+		ecurw = <emaxw>
+		scurh = <smaxh>
+		ecurh = <emaxh>
 		factor = (-1.0 * <factor>)
 	endif
-	SetParticleSize sw = <sCurW> ew = <eCurW> sh = <sCurH> eh = <eCurH>
-	sCurW = (<sCurW> + (<factor> * <sWStepSize>))
-	eCurW = (<eCurW> + (<factor> * <eWStepSize>))
-	sCurH = (<sCurH> + (<factor> * <sHStepSize>))
-	eCurH = (<eCurH> + (<factor> * <eHStepSize>))
-	Wait <updateTime> seconds
+	setparticlesize sw = <scurw> ew = <ecurw> sh = <scurh> eh = <ecurh>
+	scurw = (<scurw> + (<factor> * <swstepsize>))
+	ecurw = (<ecurw> + (<factor> * <ewstepsize>))
+	scurh = (<scurh> + (<factor> * <shstepsize>))
+	ecurh = (<ecurh> + (<factor> * <ehstepsize>))
+	wait <updatetime> seconds
 	repeat
 endscript

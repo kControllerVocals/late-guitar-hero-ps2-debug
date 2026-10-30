@@ -1,7 +1,7 @@
-DEBUG_ROCK_RECORD = 1
+debug_rock_record = 1
 rock_record_main_stats = [
 	{
-		text = qs("Total Score:")
+		text = qs(0x3f309f11)
 		columns = [
 			0
 		]
@@ -15,21 +15,21 @@ rock_record_main_stats = [
 		format_script = rr_use_single_column
 	}
 	{
-		text = qs("Total Notes:")
+		text = qs(0xfdcb8490)
 		columns = [
 			4
 		]
 		format_script = rr_use_single_column
 	}
 	{
-		text = qs("Number of Songs:")
+		text = qs(0xcc8c90fd)
 		columns = [
 			2
 		]
 		format_script = rr_use_single_column
 	}
 	{
-		text = qs("Longest Note Streak:")
+		text = qs(0x5adadd00)
 		columns = [
 			3
 		]
@@ -44,14 +44,14 @@ rock_record_main_stats = [
 		format_script = rr_slash_divider
 	}
 	{
-		text = qs("Total Time:")
+		text = qs(0x32c5f66f)
 		columns = [
 			7
 		]
 		format_script = rr_get_time_string
 	}
 	{
-		text = qs("Preferred Instrument:")
+		text = qs(0xed3e879a)
 		columns = [
 			8
 			9
@@ -68,7 +68,7 @@ rock_record_main_stats = [
 		format_script = rr_use_single_column
 	}
 	{
-		text = qs("Average Multiplier:")
+		text = qs(0x22661b1b)
 		columns = [
 			13
 			14
@@ -90,7 +90,7 @@ rock_record_main_stats = [
 		format_script = rr_get_time_string
 	}
 	{
-		text = qs("Preferred Bass Difficulty:")
+		text = qs(0x7c36f641)
 		columns = [
 			17
 			18
@@ -101,7 +101,7 @@ rock_record_main_stats = [
 		format_script = rr_get_preferred_difficulty
 	}
 	{
-		text = qs("Preferred Guitar Difficulty:")
+		text = qs(0x9decf296)
 		columns = [
 			22
 			23
@@ -112,7 +112,7 @@ rock_record_main_stats = [
 		format_script = rr_get_preferred_difficulty
 	}
 	{
-		text = qs("Preferred Vocals Difficulty:")
+		text = qs(0xf1025d1c)
 		columns = [
 			27
 			28
@@ -123,7 +123,7 @@ rock_record_main_stats = [
 		format_script = rr_get_preferred_difficulty
 	}
 	{
-		text = qs("Preferred Drum Difficulty:")
+		text = qs(0xc42d5d5f)
 		columns = [
 			32
 			33
@@ -135,7 +135,7 @@ rock_record_main_stats = [
 		format_script = rr_get_preferred_difficulty
 	}
 	{
-		text = qs("Number of Cooperative Games:")
+		text = qs(0x9e516c96)
 		columns = [
 			38
 		]
@@ -152,22 +152,22 @@ rock_record_main_stats = [
 
 script rr_use_single_column 
 
-	return Stat_Value = (<data> [0])
+	return stat_value = (<data> [0])
 endscript
 
 script rr_slash_divider 
 
-	GetArraySize <data>
+	getarraysize <data>
 	if (<array_size> >= 2)
-		FormatText TextName = data_text qs("%f/%s") f = (<data> [0]) s = (<data> [1])
+		formattext textname = data_text qs(0xc68134fb) f = (<data> [0]) s = (<data> [1])
 		return data_text = <data_text>
 	endif
-	return Stat_Value = (<data> [0])
+	return stat_value = (<data> [0])
 endscript
 
 script get_max_value_index 
 
-	GetArraySize <array>
+	getarraysize <array>
 	if (<array_size> > 0)
 		<max_index> = 0
 		<index> = 1
@@ -184,57 +184,57 @@ endscript
 script rr_get_preferred_instrument 
 
 	get_max_value_index array = <data>
-	if GotParam \{index}
+	if gotparam \{index}
 		switch (<index>)
 			case 0
-			data_text = qs("GUITAR")
+			data_text = qs(0x9504b94a)
 			case 1
-			data_text = qs("BASS")
+			data_text = qs(0x7d4f9214)
 			case 2
-			data_text = qs("DRUM")
+			data_text = qs(0xcf488ba5)
 			case 3
-			data_text = qs("VOCALS")
+			data_text = qs(0x1b9f6f84)
 			default
-			data_text = qs("NA")
+			data_text = qs(0x4c1271a9)
 		endswitch
 	else
-		data_text = qs("NA")
+		data_text = qs(0x4c1271a9)
 	endif
 	return data_text = <data_text>
 endscript
 
 script rr_average_two_columns 
 
-	GetArraySize <data>
+	getarraysize <data>
 	if (<array_size> >= 2)
-		FormatText TextName = data_text qs("%a") a = (<data> [0] / (<data> [1] * 1.0))
+		formattext textname = data_text qs(0x35b12509) a = (<data> [0] / (<data> [1] * 1.0))
 		return data_text = <data_text>
 	endif
-	return Stat_Value = (<data> [0])
+	return stat_value = (<data> [0])
 endscript
 
 script rr_get_preferred_difficulty 
 
 	get_max_value_index array = <data>
-	if GotParam \{index}
+	if gotparam \{index}
 		switch (<index>)
 			case 0
-			data_text = qs("BEGINNER")
+			data_text = qs(0x74d6a0a0)
 			case 1
-			data_text = qs("EASY")
+			data_text = qs(0x8d657387)
 			case 2
-			data_text = qs("MEDIUM")
+			data_text = qs(0x6ef11a01)
 			case 3
-			data_text = qs("HARD")
+			data_text = qs(0x51b06d2f)
 			case 4
-			data_text = qs("EXPERT")
+			data_text = qs(0x334908ac)
 			case 5
 			data_text = qs(0xa841e548)
 			default
-			data_text = qs("NA")
+			data_text = qs(0x4c1271a9)
 		endswitch
 	else
-		data_text = qs("NA")
+		data_text = qs(0x4c1271a9)
 	endif
 	return data_text = <data_text>
 endscript
@@ -242,28 +242,28 @@ endscript
 script rr_get_time_string 
 
 	<total_time> = (<data> [0])
-	Mod a = <total_time> b = 60
-	<seconds> = <Mod>
+	mod a = <total_time> b = 60
+	<seconds> = <mod>
 	if (<seconds> < 10)
-		FormatText TextName = data_text qs("0%a") a = <seconds>
+		formattext textname = data_text qs(0xa14d5c1b) a = <seconds>
 	else
-		FormatText TextName = data_text qs("%a") a = <seconds>
+		formattext textname = data_text qs(0x35b12509) a = <seconds>
 	endif
 	<total_time> = (<total_time> - <seconds>)
 	if (<total_time> > 0)
-		Mod a = <total_time> b = (60 * 60)
-		<minutes> = <Mod>
-		FormatText TextName = data_text qs("%a:%t") a = (<minutes> / 60) t = <data_text>
+		mod a = <total_time> b = (60 * 60)
+		<minutes> = <mod>
+		formattext textname = data_text qs(0xd01e380d) a = (<minutes> / 60) t = <data_text>
 		<total_time> = (<total_time> - <minutes>)
 		if (<total_time> > 0)
-			Mod a = <total_time> b = (60 * 60 * 60)
-			<hours> = <Mod>
-			FormatText TextName = data_text qs("%a:%t") a = (<hours> / (60 * 60)) t = <data_text>
+			mod a = <total_time> b = (60 * 60 * 60)
+			<hours> = <mod>
+			formattext textname = data_text qs(0xd01e380d) a = (<hours> / (60 * 60)) t = <data_text>
 			<total_time> = (<total_time> - <hours>)
 			if (<total_time> > 0)
-				Mod a = <total_time> b = (60 * 60 * 60 * 24)
-				<days> = <Mod>
-				FormatText TextName = data_text qs("%a:%t") a = (<days> / (60 * 60 * 60)) t = <data_text>
+				mod a = <total_time> b = (60 * 60 * 60 * 24)
+				<days> = <mod>
+				formattext textname = data_text qs(0xd01e380d) a = (<days> / (60 * 60 * 60)) t = <data_text>
 			endif
 		endif
 	endif

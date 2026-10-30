@@ -1,4 +1,4 @@
-CAS_Gems = [
+cas_gems = [
 	{
 		desc_id = gem_set_01
 		frontend_desc = 'gem_set_01'

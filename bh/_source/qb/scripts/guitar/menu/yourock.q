@@ -1,68 +1,68 @@
 
-script YouRock_Explosions_ComboCombo 
-	Wait \{0.75
+script 0xefa229a7 
+	wait \{0.75
 		seconds}
-	SpawnScriptLater \{YouRock_Lightning_01}
-	SpawnScriptLater \{YouRock_Explosions_01_Combo}
-	SpawnScriptLater \{Lightnight_Strike}
-	Wait \{0.4
+	spawnscriptlater \{0x1c08fce3}
+	spawnscriptlater \{0xb31261d1}
+	spawnscriptlater \{0x57d9d4f9}
+	wait \{0.4
 		seconds}
-	SpawnScriptLater \{YouRock_Explosions_02_Combo}
-	SpawnScriptLater \{YouRock_Lightning_02}
-	SpawnScriptLater \{Lightnight_Strike}
-	Wait \{0.2
+	spawnscriptlater \{0x82fa7b4c}
+	spawnscriptlater \{0x8501ad59}
+	spawnscriptlater \{0x57d9d4f9}
+	wait \{0.2
 		seconds}
-	SpawnScriptLater \{YouRock_Explosions_03_Combo}
-	SpawnScriptLater \{Lightnight_Strike}
-	Wait \{0.1
+	spawnscriptlater \{0x248d70f8}
+	spawnscriptlater \{0x57d9d4f9}
+	wait \{0.1
 		seconds}
-	SpawnScriptLater \{YouRock_Explosions_04_Combo}
-	SpawnScriptLater \{YouRock_Lightning_04}
-	SpawnScriptLater \{YouRock_Explosions_06_Combo}
-	SpawnScriptLater \{Lightnight_Strike}
-	Wait \{0.2
+	spawnscriptlater \{0xe12a4e76}
+	spawnscriptlater \{0x6c62086c}
+	spawnscriptlater \{0x76b55f5f}
+	spawnscriptlater \{0x57d9d4f9}
+	wait \{0.2
 		seconds}
-	SpawnScriptLater \{YouRock_Explosions_05_Combo}
-	SpawnScriptLater \{YouRock_Lightning_05}
-	SpawnScriptLater \{YouRock_Explosions_02_Combo}
-	SpawnScriptLater \{Lightnight_Strike}
-	Wait \{0.2
+	spawnscriptlater \{0x475d45c2}
+	spawnscriptlater \{0x1b6538fa}
+	spawnscriptlater \{0x82fa7b4c}
+	spawnscriptlater \{0x57d9d4f9}
+	wait \{0.2
 		seconds}
-	SpawnScriptLater \{YouRock_Explosions_01_Combo}
-	SpawnScriptLater \{YouRock_Explosions_03_Combo}
-	SpawnScriptLater \{YouRock_Lightning_03}
-	SpawnScriptLater \{Lightnight_Strike}
-	Wait \{0.4
+	spawnscriptlater \{0xb31261d1}
+	spawnscriptlater \{0x248d70f8}
+	spawnscriptlater \{0xf2069dcf}
+	spawnscriptlater \{0x57d9d4f9}
+	wait \{0.4
 		seconds}
-	SpawnScriptLater \{YouRock_Explosions_02_BigCenter_Combo}
-	SpawnScriptLater \{Lightnight_Strike}
+	spawnscriptlater \{0x8e651f5e}
+	spawnscriptlater \{0x57d9d4f9}
 endscript
 
-script Lightnight_Strike 
-	ScreenFX_AddFXInstance \{viewport = bg_viewport
-		name = Lightnight_Strike
-		scefName = Lightnight_Strike
-		type = Tonemap
+script 0x57d9d4f9 
+	screenfx_addfxinstance \{viewport = bg_viewport
+		name = 0x57d9d4f9
+		scefname = 0x57d9d4f9
+		type = tonemap
 		on = 1
-		use_simple_version = 0
+		0x3fbf932b = 0
 		blend = 0.0}
-	Wait \{2
+	wait \{2
 		frames}
-	if ScreenFX_FxInstanceExists \{viewport = bg_viewport
-			name = Lightnight_Strike}
-		ScreenFX_RemoveFXInstance \{viewport = bg_viewport
-			name = Lightnight_Strike}
+	if screenfx_fxinstanceexists \{viewport = bg_viewport
+			name = 0x57d9d4f9}
+		screenfx_removefxinstance \{viewport = bg_viewport
+			name = 0x57d9d4f9}
 	endif
 endscript
 
-script YouRock_Explosions_AfterSparks_01 
-	Destroy2DParticleSystem \{id = AfterSparks_01}
-	Wait \{1
+script 0xefda844d 
+	destroy2dparticlesystem \{id = 0x15b6abc1}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = AfterSparks_01
+	create2dparticlesystem \{id = 0x15b6abc1
 		pos = (640.0, 300.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			225
@@ -89,37 +89,37 @@ script YouRock_Explosions_AfterSparks_01
 		velocity = 10
 		friction = (0.0, 10.0)
 		time = 5}
-	Wait \{5
+	wait \{5
 		seconds}
-	Destroy2DParticleSystem \{id = AfterSparks_01
+	destroy2dparticlesystem \{id = 0x15b6abc1
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_01_Combo 
+script 0xb31261d1 
 	begin
-	SpawnScript \{YouRock_Explosions_Glow_01}
-	Wait \{0.4
+	spawnscript \{0x853f8d0e}
+	wait \{0.4
 		seconds}
-	SpawnScript \{YouRock_Explosions_Smoke_01}
-	SpawnScript \{YouRock_Explosions_Splat_01_01}
-	SpawnScript \{YouRock_Explosions_Splat_02_01}
-	SpawnScript \{YouRock_Explosions_ASec_01}
-	SpawnScript \{YouRock_Explosions_stars_01}
-	SpawnScript \{YouRock_Explosions_RadialSparks_01}
-	SpawnScript \{YouRock_Explosions_Flare_01}
-	SpawnScript \{YouRock_Explosions_CartoonFlare_01}
-	Wait \{0.05
+	spawnscript \{0x8873f9cf}
+	spawnscript \{0xc44d49ec}
+	spawnscript \{0xd6f8e602}
+	spawnscript \{0x81a4d013}
+	spawnscript \{0x58bdbc12}
+	spawnscript \{0x22a58278}
+	spawnscript \{0x4da559b7}
+	spawnscript \{0xfb64b200}
+	wait \{0.05
 		seconds}
 	repeat 1
 endscript
 
-script YouRock_Lightning_01 
-	DestroyScreenElement \{id = Lightning01}
-	Wait \{0.03
+script 0x1c08fce3 
+	destroyscreenelement \{id = lightning01}
+	wait \{0.03
 		seconds}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Lightning01
+		id = lightning01
 		alpha = 0.95
 		scale = (0.5, 0.5)
 		just = [
@@ -128,23 +128,23 @@ script YouRock_Lightning_01
 		]
 		pos = (105.0, 130.0)
 		rot_angle = -35
-		material = sys_GH5_1_Big_Bolt01_sys_GH5_1_Big_Bolt01
+		material = 0x5d6f67fb
 		use_animated_uvs = true
 		num_uv_frames = (4.0, 1.0)
 		z_priority = 110}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	DestroyScreenElement \{id = Lightning01}
+	destroyscreenelement \{id = lightning01}
 endscript
 
-script YouRock_Explosions_Glow_01 
-	DestroyScreenElement \{id = Glow_01}
-	Wait \{1
+script 0x853f8d0e 
+	destroyscreenelement \{id = 0x5746ba36}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_01
-		texture = PH_RadialGlow_01
+		id = 0x5746ba36
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -160,47 +160,47 @@ script YouRock_Explosions_Glow_01
 			154
 			255
 		]
-		blend = Add}
-	Glow_01 :obj_spawnscript \{YouRock_Explosions_Glow_01_Anim}
+		blend = add}
+	0x5746ba36 :obj_spawnscript \{0x356cfd79}
 endscript
 
-script YouRock_Explosions_Glow_01_Anim 
-	if ScreenElementExists \{id = Glow_01}
+script 0x356cfd79 
+	if screenelementexists \{id = 0x5746ba36}
 		begin
-		Glow_01 :SE_SetProps \{scale = (0.5, 0.5)
+		0x5746ba36 :se_setprops \{scale = (0.5, 0.5)
 			alpha = 0}
-		Glow_01 :SE_SetProps \{scale = (1.0, 1.0)
+		0x5746ba36 :se_setprops \{scale = (1.0, 1.0)
 			alpha = 0.3
 			time = 0.1}
-		Glow_01 :SE_WaitProps
-		Glow_01 :SE_SetProps \{scale = (1.0, 1.0)
+		0x5746ba36 :se_waitprops
+		0x5746ba36 :se_setprops \{scale = (1.0, 1.0)
 			alpha = 0.0
 			time = 0.01}
-		Glow_01 :SE_WaitProps
+		0x5746ba36 :se_waitprops
 		repeat 2
-		Wait \{0.01
+		wait \{0.01
 			seconds}
 		begin
-		Glow_01 :SE_SetProps \{scale = (0.5, 0.5)
+		0x5746ba36 :se_setprops \{scale = (0.5, 0.5)
 			alpha = 0}
-		Glow_01 :SE_SetProps \{scale = (5.0, 5.0)
+		0x5746ba36 :se_setprops \{scale = (5.0, 5.0)
 			alpha = 0.5
 			time = 0.05}
-		Glow_01 :SE_WaitProps
-		Glow_01 :SE_SetProps \{scale = (5.0, 5.0)
+		0x5746ba36 :se_waitprops
+		0x5746ba36 :se_setprops \{scale = (5.0, 5.0)
 			alpha = 0.0
 			time = 0.5}
 		repeat 1
-		DestroyScreenElement \{id = Glow_01}
+		destroyscreenelement \{id = 0x5746ba36}
 	endif
 endscript
 
-script YouRock_Explosions_Smoke_01 
-	Destroy2DParticleSystem \{id = Smoke_01}
-	Create2DParticleSystem \{id = Smoke_01
+script 0x8873f9cf 
+	destroy2dparticlesystem \{id = 0xa0a33866}
+	create2dparticlesystem \{id = 0xa0a33866
 		pos = (260.0, 320.0)
 		z_priority = 98.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = alive_root_particle_container
 		start_color = [
 			250
@@ -227,20 +227,20 @@ script YouRock_Explosions_Smoke_01
 		velocity = 10
 		friction = (0.0, -0.5)
 		time = 0.2}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	Destroy2DParticleSystem \{id = Smoke_01
+	destroy2dparticlesystem \{id = 0xa0a33866
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_RadialSparks_01 
-	DestroyScreenElement \{id = RadialSparks_01}
-	Wait \{1
+script 0x22a58278 
+	destroyscreenelement \{id = 0xc651215c}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = RadialSparks_01
-		texture = PH_ExplosionTex_RadialSparks_01
+		id = 0xc651215c
+		texture = 0xf86604e5
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -256,31 +256,31 @@ script YouRock_Explosions_RadialSparks_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_RadialSparks_01_Anim}
+		blend = add}
+	spawnscript \{0x0a5fef48}
 endscript
 
-script YouRock_Explosions_RadialSparks_01_Anim 
-	RadialSparks_01 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x0a5fef48 
+	0xc651215c :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	RadialSparks_01 :SE_SetProps \{scale = (2.5, 2.5)
+	0xc651215c :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.6
 		time = 0.1}
-	RadialSparks_01 :SE_WaitProps
-	RadialSparks_01 :SE_SetProps \{scale = (2.5, 2.5)
+	0xc651215c :se_waitprops
+	0xc651215c :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = RadialSparks_01}
+	destroyscreenelement \{id = 0xc651215c}
 endscript
 
-script YouRock_Explosions_ASec_01 
-	DestroyScreenElement \{id = ASec_01}
-	Wait \{1
+script 0x81a4d013 
+	destroyscreenelement \{id = 0x53dde72b}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = ASec_01
-		texture = PH_ExplosionTex_ASec_02
+		id = 0x53dde72b
+		texture = 0xa51a5a40
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -296,33 +296,33 @@ script YouRock_Explosions_ASec_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_ASec_01_Anim}
+		blend = add}
+	spawnscript \{0x0151eb20}
 endscript
 
-script YouRock_Explosions_ASec_01_Anim 
-	ASec_01 :SE_SetProps \{scale = (1.5, 1.5)
+script 0x0151eb20 
+	0x53dde72b :se_setprops \{scale = (1.5, 1.5)
 		alpha = 0}
-	ASec_01 :SE_SetProps \{scale = (1.5, 1.5)
+	0x53dde72b :se_setprops \{scale = (1.5, 1.5)
 		alpha = 0.5
 		time = 0.05}
-	ASec_01 :SE_WaitProps
-	Wait \{0.1
+	0x53dde72b :se_waitprops
+	wait \{0.1
 		seconds}
-	ASec_01 :SE_SetProps \{scale = (1.5, 1.5)
+	0x53dde72b :se_setprops \{scale = (1.5, 1.5)
 		alpha = 0.0
 		time = 0.3}
-	DestroyScreenElement \{id = ASec_01}
+	destroyscreenelement \{id = 0x53dde72b}
 endscript
 
-script YouRock_Explosions_Splat_01_01 
-	DestroyScreenElement \{id = Splat_01_01}
-	Wait \{1
+script 0xc44d49ec 
+	destroyscreenelement \{id = 0x46d61bf0}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_01_01
-		texture = PH_MultiConfetti_02
+		id = 0x46d61bf0
+		texture = ph_multiconfetti_02
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -338,42 +338,42 @@ script YouRock_Explosions_Splat_01_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_01_01_Anim}
+		blend = add}
+	spawnscript \{0x2040d2ed}
 endscript
 
-script YouRock_Explosions_Splat_01_01_Anim 
-	Splat_01_01 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x2040d2ed 
+	0x46d61bf0 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Splat_01_01 :SE_SetProps \{scale = (4.3, 4.3)
+	0x46d61bf0 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_01 :SE_WaitProps
-	Splat_01_01 :SE_SetProps \{scale = (4.3, 4.3)
+	0x46d61bf0 :se_waitprops
+	0x46d61bf0 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	Splat_01_01 :SE_WaitProps
-	Splat_01_01 :SE_SetProps \{scale = (0.5, 0.5)
+	0x46d61bf0 :se_waitprops
+	0x46d61bf0 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0
 		rot_angle = 50}
-	Splat_01_01 :SE_SetProps \{scale = (4.3, 4.3)
+	0x46d61bf0 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_01 :SE_WaitProps
-	Splat_01_01 :SE_SetProps \{scale = (4.3, 4.3)
+	0x46d61bf0 :se_waitprops
+	0x46d61bf0 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	DestroyScreenElement \{id = Splat_01_01}
+	destroyscreenelement \{id = 0x46d61bf0}
 endscript
 
-script YouRock_Explosions_Splat_02_01 
-	DestroyScreenElement \{id = Splat_02_01}
-	Wait \{1
+script 0xd6f8e602 
+	destroyscreenelement \{id = 0x5463b41e}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_02_01
-		texture = PH_ExplosionTex_Splat_02
+		id = 0x5463b41e
+		texture = 0xea99e289
 		alpha = 0.0
 		scale = (0.5, 0.5)
 		just = [
@@ -389,31 +389,31 @@ script YouRock_Explosions_Splat_02_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_02_01_Anim}
+		blend = add}
+	spawnscript \{0x19cdee28}
 endscript
 
-script YouRock_Explosions_Splat_02_01_Anim 
-	Splat_02_01 :SE_SetProps \{scale = (0.3, 0.3)
+script 0x19cdee28 
+	0x5463b41e :se_setprops \{scale = (0.3, 0.3)
 		alpha = 0}
-	Splat_02_01 :SE_SetProps \{scale = (1.3, 1.3)
+	0x5463b41e :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.5
 		time = 0.05}
-	Splat_02_01 :SE_WaitProps
-	Splat_02_01 :SE_SetProps \{scale = (1.3, 1.3)
+	0x5463b41e :se_waitprops
+	0x5463b41e :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Splat_02_01}
+	destroyscreenelement \{id = 0x5463b41e}
 endscript
 
-script YouRock_Explosions_Flare_01 
-	DestroyScreenElement \{id = Flare_01}
-	Wait \{1
+script 0x4da559b7 
+	destroyscreenelement \{id = flare_01}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_01
-		texture = PH_Flare03
+		id = flare_01
+		texture = 0x5d3f0efd
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -429,31 +429,31 @@ script YouRock_Explosions_Flare_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_01_Anim}
+		blend = add}
+	spawnscript \{0x722ad9b2}
 endscript
 
-script YouRock_Explosions_Flare_01_Anim 
-	Flare_01 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x722ad9b2 
+	flare_01 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Flare_01 :SE_SetProps \{scale = (10.0, 10.0)
+	flare_01 :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.6
 		time = 0.1}
-	Flare_01 :SE_WaitProps
-	Flare_01 :SE_SetProps \{scale = (10.0, 10.0)
+	flare_01 :se_waitprops
+	flare_01 :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Flare_01}
+	destroyscreenelement \{id = flare_01}
 endscript
 
-script YouRock_Explosions_CartoonFlare_01 
-	DestroyScreenElement \{id = CartoonFlare_01}
-	Wait \{1
+script 0xfb64b200 
+	destroyscreenelement \{id = 0x1f901124}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = CartoonFlare_01
-		texture = JOW_ButtonFlare01
+		id = 0x1f901124
+		texture = jow_buttonflare01
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -469,31 +469,31 @@ script YouRock_Explosions_CartoonFlare_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_CartoonFlare_01_Anim}
+		blend = add}
+	spawnscript \{0xf3413ec6}
 endscript
 
-script YouRock_Explosions_CartoonFlare_01_Anim 
-	CartoonFlare_01 :SE_SetProps \{scale = (0.1, 0.1)
+script 0xf3413ec6 
+	0x1f901124 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	CartoonFlare_01 :SE_SetProps \{scale = (3.0, 3.0)
+	0x1f901124 :se_setprops \{scale = (3.0, 3.0)
 		alpha = 1
 		time = 0.05}
-	CartoonFlare_01 :SE_WaitProps
-	CartoonFlare_01 :SE_SetProps \{scale = (3.0, 3.0)
+	0x1f901124 :se_waitprops
+	0x1f901124 :se_setprops \{scale = (3.0, 3.0)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = CartoonFlare_01}
+	destroyscreenelement \{id = 0x1f901124}
 endscript
 
-script YouRock_Explosions_stars_01 
-	Destroy2DParticleSystem \{id = stars_01}
-	Wait \{1
+script 0x58bdbc12 
+	destroy2dparticlesystem \{id = stars_01}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = stars_01
+	create2dparticlesystem \{id = stars_01
 		pos = (260.0, 320.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			225
@@ -520,35 +520,35 @@ script YouRock_Explosions_stars_01
 		velocity = 35
 		friction = (0.0, 60.0)
 		time = 0.2}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
-	Destroy2DParticleSystem \{id = stars_01
+	destroy2dparticlesystem \{id = stars_01
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_02_Combo 
+script 0x82fa7b4c 
 	begin
-	SpawnScript \{YouRock_Explosions_Glow_02}
-	Wait \{0.4
+	spawnscript \{0x1c36dcb4}
+	wait \{0.4
 		seconds}
-	SpawnScript \{YouRock_Explosions_Smoke_02}
-	SpawnScript \{YouRock_Explosions_Splat_01_02}
-	SpawnScript \{YouRock_Explosions_Splat_02_02}
-	SpawnScript \{YouRock_Explosions_ASec_02}
-	SpawnScript \{YouRock_Explosions_stars_02}
-	SpawnScript \{YouRock_Explosions_Flare_02}
-	Wait \{0.5
+	spawnscript \{0x117aa875}
+	spawnscript \{0x5d441856}
+	spawnscript \{0x4ff1b7b8}
+	spawnscript \{0x18ad81a9}
+	spawnscript \{0xc1b4eda8}
+	spawnscript \{0xd4ac080d}
+	wait \{0.5
 		seconds}
 	repeat 1
 endscript
 
-script YouRock_Lightning_02 
-	DestroyScreenElement \{id = Lightning02}
-	Wait \{1
+script 0x8501ad59 
+	destroyscreenelement \{id = lightning02}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Lightning02
+		id = lightning02
 		alpha = 0.95
 		scale = (0.5, 0.5)
 		just = [
@@ -557,21 +557,21 @@ script YouRock_Lightning_02
 		]
 		pos = (1075.0, 130.0)
 		rot_angle = 35
-		material = sys_GH5_1_Big_Bolt01_sys_GH5_1_Big_Bolt01
+		material = 0x5d6f67fb
 		use_animated_uvs = true
 		num_uv_frames = (4.0, 1.0)
 		z_priority = 110}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	DestroyScreenElement \{id = Lightning02}
+	destroyscreenelement \{id = lightning02}
 endscript
 
-script YouRock_Explosions_Smoke_02 
-	Destroy2DParticleSystem \{id = Smoke_02}
-	Create2DParticleSystem \{id = Smoke_02
+script 0x117aa875 
+	destroy2dparticlesystem \{id = 0x39aa69dc}
+	create2dparticlesystem \{id = 0x39aa69dc
 		pos = (950.0, 340.0)
 		z_priority = 98.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = alive_root_particle_container
 		start_color = [
 			250
@@ -598,20 +598,20 @@ script YouRock_Explosions_Smoke_02
 		velocity = 10
 		friction = (0.0, -0.5)
 		time = 0.3}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	Destroy2DParticleSystem \{id = Smoke_02
+	destroy2dparticlesystem \{id = 0x39aa69dc
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_Glow_02 
-	DestroyScreenElement \{id = Glow_02}
-	Wait \{1
+script 0x1c36dcb4 
+	destroyscreenelement \{id = 0xce4feb8c}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_02
-		texture = PH_RadialGlow_01
+		id = 0xce4feb8c
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -627,47 +627,47 @@ script YouRock_Explosions_Glow_02
 			154
 			255
 		]
-		blend = Add}
-	Glow_02 :obj_spawnscript \{YouRock_Explosions_Glow_02_Anim}
+		blend = add}
+	0xce4feb8c :obj_spawnscript \{0xb3f88fd7}
 endscript
 
-script YouRock_Explosions_Glow_02_Anim 
+script 0xb3f88fd7 
 	begin
-	Glow_02 :SE_SetProps \{scale = (0.5, 0.5)
+	0xce4feb8c :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_02 :SE_SetProps \{scale = (2.0, 2.0)
+	0xce4feb8c :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.4
 		time = 0.1}
-	Glow_02 :SE_WaitProps
-	Glow_02 :SE_SetProps \{scale = (2.0, 2.0)
+	0xce4feb8c :se_waitprops
+	0xce4feb8c :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.01}
-	Glow_02 :SE_WaitProps
+	0xce4feb8c :se_waitprops
 	repeat 2
-	Wait \{0.05
+	wait \{0.05
 		seconds}
 	begin
-	Glow_02 :SE_SetProps \{scale = (0.5, 0.5)
+	0xce4feb8c :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_02 :SE_SetProps \{scale = (5.0, 5.0)
+	0xce4feb8c :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.5
 		time = 0.05}
-	Glow_02 :SE_WaitProps
-	Glow_02 :SE_SetProps \{scale = (5.0, 5.0)
+	0xce4feb8c :se_waitprops
+	0xce4feb8c :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.0
 		time = 0.5}
 	repeat 1
-	DestroyScreenElement \{id = Glow_02}
+	destroyscreenelement \{id = 0xce4feb8c}
 endscript
 
-script YouRock_Explosions_RadialSparks_02 
-	DestroyScreenElement \{id = RadialSparks_02}
-	Wait \{1
+script 0xbbacd3c2 
+	destroyscreenelement \{id = 0x5f5870e6}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = RadialSparks_02
-		texture = PH_ExplosionTex_RadialSparks_01
+		id = 0x5f5870e6
+		texture = 0xf86604e5
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -683,31 +683,31 @@ script YouRock_Explosions_RadialSparks_02
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_RadialSparks_02_Anim}
+		blend = add}
+	spawnscript \{0x8ccb9de6}
 endscript
 
-script YouRock_Explosions_RadialSparks_02_Anim 
-	RadialSparks_02 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x8ccb9de6 
+	0x5f5870e6 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	RadialSparks_02 :SE_SetProps \{scale = (2.5, 2.5)
+	0x5f5870e6 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.6
 		time = 0.1}
-	RadialSparks_02 :SE_WaitProps
-	RadialSparks_02 :SE_SetProps \{scale = (2.5, 2.5)
+	0x5f5870e6 :se_waitprops
+	0x5f5870e6 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = RadialSparks_02}
+	destroyscreenelement \{id = 0x5f5870e6}
 endscript
 
-script YouRock_Explosions_ASec_02 
-	DestroyScreenElement \{id = ASec_02}
-	Wait \{1
+script 0x18ad81a9 
+	destroyscreenelement \{id = 0xcad4b691}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = ASec_02
-		texture = PH_ExplosionTex_ASec_02
+		id = 0xcad4b691
+		texture = 0xa51a5a40
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -723,35 +723,35 @@ script YouRock_Explosions_ASec_02
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_ASec_02_Anim}
+		blend = add}
+	spawnscript \{0x87c5998e}
 endscript
 
-script YouRock_Explosions_ASec_02_Anim 
-	ASec_02 :SE_SetProps \{scale = (2.0, 2.0)
+script 0x87c5998e 
+	0xcad4b691 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0}
-	ASec_02 :SE_SetProps \{scale = (2.0, 2.0)
+	0xcad4b691 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		rot_angle = 0
 		time = 0.05}
-	ASec_02 :SE_WaitProps
-	Wait \{0.1
+	0xcad4b691 :se_waitprops
+	wait \{0.1
 		seconds}
-	ASec_02 :SE_SetProps \{scale = (2.0, 2.0)
+	0xcad4b691 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		rot_angle = 0
 		time = 0.8}
-	DestroyScreenElement \{id = ASec_02}
+	destroyscreenelement \{id = 0xcad4b691}
 endscript
 
-script YouRock_Explosions_Splat_01_02 
-	DestroyScreenElement \{id = Splat_01_02}
-	Wait \{1
+script 0x5d441856 
+	destroyscreenelement \{id = 0xdfdf4a4a}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_01_02
-		texture = PH_MultiConfetti_02
+		id = 0xdfdf4a4a
+		texture = ph_multiconfetti_02
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -767,42 +767,42 @@ script YouRock_Explosions_Splat_01_02
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_01_02_Anim}
+		blend = add}
+	spawnscript \{0xa6d4a043}
 endscript
 
-script YouRock_Explosions_Splat_01_02_Anim 
-	Splat_01_02 :SE_SetProps \{scale = (0.5, 0.5)
+script 0xa6d4a043 
+	0xdfdf4a4a :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Splat_01_02 :SE_SetProps \{scale = (4.3, 4.3)
+	0xdfdf4a4a :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_02 :SE_WaitProps
-	Splat_01_02 :SE_SetProps \{scale = (4.3, 4.3)
+	0xdfdf4a4a :se_waitprops
+	0xdfdf4a4a :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	Splat_01_02 :SE_WaitProps
-	Splat_01_02 :SE_SetProps \{scale = (0.5, 0.5)
+	0xdfdf4a4a :se_waitprops
+	0xdfdf4a4a :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0
 		rot_angle = 50}
-	Splat_01_02 :SE_SetProps \{scale = (4.3, 4.3)
+	0xdfdf4a4a :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_02 :SE_WaitProps
-	Splat_01_02 :SE_SetProps \{scale = (4.3, 4.3)
+	0xdfdf4a4a :se_waitprops
+	0xdfdf4a4a :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	DestroyScreenElement \{id = Splat_01_02}
+	destroyscreenelement \{id = 0xdfdf4a4a}
 endscript
 
-script YouRock_Explosions_Splat_02_02 
-	DestroyScreenElement \{id = Splat_02_02}
-	Wait \{1
+script 0x4ff1b7b8 
+	destroyscreenelement \{id = 0xcd6ae5a4}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_02_02
-		texture = PH_ExplosionTex_Splat_02
+		id = 0xcd6ae5a4
+		texture = 0xea99e289
 		alpha = 0.0
 		scale = (0.5, 0.5)
 		just = [
@@ -818,31 +818,31 @@ script YouRock_Explosions_Splat_02_02
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_02_02_Anim}
+		blend = add}
+	spawnscript \{0x9f599c86}
 endscript
 
-script YouRock_Explosions_Splat_02_02_Anim 
-	Splat_02_02 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x9f599c86 
+	0xcd6ae5a4 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Splat_02_02 :SE_SetProps \{scale = (1.3, 1.3)
+	0xcd6ae5a4 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.5
 		time = 0.1}
-	Splat_02_02 :SE_WaitProps
-	Splat_02_02 :SE_SetProps \{scale = (1.3, 1.3)
+	0xcd6ae5a4 :se_waitprops
+	0xcd6ae5a4 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Splat_02_02}
+	destroyscreenelement \{id = 0xcd6ae5a4}
 endscript
 
-script YouRock_Explosions_Flare_02 
-	DestroyScreenElement \{id = Flare_02}
-	Wait \{1
+script 0xd4ac080d 
+	destroyscreenelement \{id = 0xfc7cc9a4}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_02
-		texture = PH_Flare03
+		id = 0xfc7cc9a4
+		texture = 0x5d3f0efd
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -858,31 +858,31 @@ script YouRock_Explosions_Flare_02
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_02_Anim}
+		blend = add}
+	spawnscript \{0xf4beab1c}
 endscript
 
-script YouRock_Explosions_Flare_02_Anim 
-	Flare_02 :SE_SetProps \{scale = (0.1, 0.1)
+script 0xf4beab1c 
+	0xfc7cc9a4 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Flare_02 :SE_SetProps \{scale = (5.0, 5.0)
+	0xfc7cc9a4 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.6
 		time = 0.1}
-	Flare_02 :SE_WaitProps
-	Flare_02 :SE_SetProps \{scale = (0.5, 0.5)
+	0xfc7cc9a4 :se_waitprops
+	0xfc7cc9a4 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Flare_02}
+	destroyscreenelement \{id = 0xfc7cc9a4}
 endscript
 
-script YouRock_Explosions_Smoke_02_01 
-	DestroyScreenElement \{id = Smoke_02_01}
-	Wait \{1
+script 0x6d4c5b2d 
+	destroyscreenelement \{id = 0xefd70931}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Smoke_02_01
-		texture = PH_Smoke_SinglePuff_Blend_02
+		id = 0xefd70931
+		texture = ph_smoke_singlepuff_blend_02
 		alpha = 0.0
 		scale = (1.3, 1.3)
 		just = [
@@ -898,33 +898,33 @@ script YouRock_Explosions_Smoke_02_01
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Smoke_02_01_Anim}
+		blend = add}
+	spawnscript \{0x7022e105}
 endscript
 
-script YouRock_Explosions_Smoke_02_01_Anim 
-	Smoke_02_01 :SE_SetProps \{scale = (1.0, 1.0)
+script 0x7022e105 
+	0xefd70931 :se_setprops \{scale = (1.0, 1.0)
 		alpha = 0}
-	Smoke_02_01 :SE_SetProps \{scale = (1.3, 1.3)
+	0xefd70931 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.3
 		rot_angle = 10
 		time = 0.1}
-	Smoke_02_01 :SE_WaitProps
-	Smoke_02_01 :SE_SetProps \{scale = (1.3, 1.3)
+	0xefd70931 :se_waitprops
+	0xefd70931 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		rot_angle = 10
 		time = 1}
-	DestroyScreenElement \{id = Smoke_02_01}
+	destroyscreenelement \{id = 0xefd70931}
 endscript
 
-script YouRock_Explosions_stars_02 
-	Destroy2DParticleSystem \{id = stars_02}
-	Wait \{1
+script 0xc1b4eda8 
+	destroy2dparticlesystem \{id = 0xe9642c01}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = stars_02
+	create2dparticlesystem \{id = 0xe9642c01
 		pos = (950.0, 340.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			215
@@ -951,35 +951,35 @@ script YouRock_Explosions_stars_02
 		velocity = 20
 		friction = (0.0, 60.0)
 		time = 0.2}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
-	Destroy2DParticleSystem \{id = stars_02
+	destroy2dparticlesystem \{id = 0xe9642c01
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_03_Combo 
+script 0x248d70f8 
 	begin
-	SpawnScript \{YouRock_Explosions_Glow_03}
-	Wait \{0.4
+	spawnscript \{0x6b31ec22}
+	wait \{0.4
 		seconds}
-	SpawnScript \{YouRock_Explosions_Smoke_03}
-	SpawnScript \{YouRock_Explosions_Splat_01_03}
-	SpawnScript \{YouRock_Explosions_Splat_02_03}
-	SpawnScript \{YouRock_Explosions_ASec_03}
-	SpawnScript \{YouRock_Explosions_stars_03}
-	SpawnScript \{YouRock_Explosions_RadialSparks_03}
-	SpawnScript \{YouRock_Explosions_Flare_03}
+	spawnscript \{0x667d98e3}
+	spawnscript \{0x2a4328c0}
+	spawnscript \{0x38f6872e}
+	spawnscript \{0x6faab13f}
+	spawnscript \{0xb6b3dd3e}
+	spawnscript \{0xccabe354}
+	spawnscript \{0xa3ab389b}
 	repeat 1
 endscript
 
-script YouRock_Explosions_Glow_03 
-	DestroyScreenElement \{id = Glow_03}
-	Wait \{1
+script 0x6b31ec22 
+	destroyscreenelement \{id = 0xb948db1a}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_03
-		texture = PH_RadialGlow_01
+		id = 0xb948db1a
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -995,46 +995,46 @@ script YouRock_Explosions_Glow_03
 			154
 			255
 		]
-		blend = Add}
-	Glow_03 :obj_spawnscript \{YouRock_Explosions_Glow_03_Anim}
+		blend = add}
+	0xb948db1a :obj_spawnscript \{0x78a45c72}
 endscript
 
-script YouRock_Explosions_Glow_03_Anim 
+script 0x78a45c72 
 	begin
-	Glow_03 :SE_SetProps \{scale = (0.5, 0.5)
+	0xb948db1a :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_03 :SE_SetProps \{scale = (2.0, 2.0)
+	0xb948db1a :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.1}
-	Glow_03 :SE_WaitProps
-	Glow_03 :SE_SetProps \{scale = (2.0, 2.0)
+	0xb948db1a :se_waitprops
+	0xb948db1a :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.01}
-	Glow_03 :SE_WaitProps
+	0xb948db1a :se_waitprops
 	repeat 2
-	Wait \{0.05
+	wait \{0.05
 		seconds}
 	begin
-	Glow_03 :SE_SetProps \{scale = (0.5, 0.5)
+	0xb948db1a :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_03 :SE_SetProps \{scale = (5.0, 5.0)
+	0xb948db1a :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.5
 		time = 0.05}
-	Glow_03 :SE_WaitProps
-	Glow_03 :SE_SetProps \{scale = (5.0, 5.0)
+	0xb948db1a :se_waitprops
+	0xb948db1a :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.0
 		time = 0.5}
 	repeat 1
-	DestroyScreenElement \{id = Glow_03}
+	destroyscreenelement \{id = 0xb948db1a}
 endscript
 
-script YouRock_Lightning_03 
-	DestroyScreenElement \{id = Lightning03}
-	Wait \{1
+script 0xf2069dcf 
+	destroyscreenelement \{id = 0x9044b76b}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Lightning03
+		id = 0x9044b76b
 		alpha = 0.95
 		scale = (0.5, 0.5)
 		just = [
@@ -1043,23 +1043,23 @@ script YouRock_Lightning_03
 		]
 		pos = (550.0, 110.0)
 		rot_angle = -30
-		material = sys_GH5_1_Big_Bolt01_sys_GH5_1_Big_Bolt01
+		material = 0x5d6f67fb
 		use_animated_uvs = true
 		num_uv_frames = (4.0, 1.0)
 		z_priority = 110}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	DestroyScreenElement \{id = Lightning03}
+	destroyscreenelement \{id = 0x9044b76b}
 endscript
 
-script YouRock_Explosions_RadialSparks_03 
-	DestroyScreenElement \{id = RadialSparks_03}
-	Wait \{1
+script 0xccabe354 
+	destroyscreenelement \{id = 0x285f4070}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = RadialSparks_03
-		texture = PH_ExplosionTex_RadialSparks_01
+		id = 0x285f4070
+		texture = 0xf86604e5
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1075,29 +1075,29 @@ script YouRock_Explosions_RadialSparks_03
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_RadialSparks_03_Anim}
+		blend = add}
+	spawnscript \{0x47974e43}
 endscript
 
-script YouRock_Explosions_RadialSparks_03_Anim 
-	RadialSparks_03 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x47974e43 
+	0x285f4070 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	RadialSparks_03 :SE_SetProps \{scale = (2.5, 2.5)
+	0x285f4070 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.6
 		time = 0.1}
-	RadialSparks_03 :SE_WaitProps
-	RadialSparks_03 :SE_SetProps \{scale = (2.5, 2.5)
+	0x285f4070 :se_waitprops
+	0x285f4070 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = RadialSparks_03}
+	destroyscreenelement \{id = 0x285f4070}
 endscript
 
-script YouRock_Explosions_Smoke_03 
-	Destroy2DParticleSystem \{id = Smoke_03}
-	Create2DParticleSystem \{id = Smoke_03
+script 0x667d98e3 
+	destroy2dparticlesystem \{id = 0x4ead594a}
+	create2dparticlesystem \{id = 0x4ead594a
 		pos = (620.0, 260.0)
 		z_priority = 98.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = alive_root_particle_container
 		start_color = [
 			250
@@ -1124,20 +1124,20 @@ script YouRock_Explosions_Smoke_03
 		velocity = 10
 		friction = (0.0, -0.5)
 		time = 0.3}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	Destroy2DParticleSystem \{id = Smoke_03
+	destroy2dparticlesystem \{id = 0x4ead594a
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_ASec_03 
-	DestroyScreenElement \{id = ASec_03}
-	Wait \{1
+script 0x6faab13f 
+	destroyscreenelement \{id = 0xbdd38607}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = ASec_03
-		texture = PH_ExplosionTex_ASec_02
+		id = 0xbdd38607
+		texture = 0xa51a5a40
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1153,34 +1153,34 @@ script YouRock_Explosions_ASec_03
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_ASec_03_Anim}
+		blend = add}
+	spawnscript \{0x4c994a2b}
 endscript
 
-script YouRock_Explosions_ASec_03_Anim 
-	ASec_03 :SE_SetProps \{scale = (2.0, 2.0)
+script 0x4c994a2b 
+	0xbdd38607 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0
 		rot_angle = 100}
-	ASec_03 :SE_SetProps \{scale = (2.0, 2.0)
+	0xbdd38607 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.05}
-	ASec_03 :SE_WaitProps
-	Wait \{0.1
+	0xbdd38607 :se_waitprops
+	wait \{0.1
 		seconds}
-	ASec_03 :SE_SetProps \{scale = (2.0, 2.0)
+	0xbdd38607 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.3}
-	DestroyScreenElement \{id = ASec_03}
+	destroyscreenelement \{id = 0xbdd38607}
 endscript
 
-script YouRock_Explosions_Splat_01_03 
-	DestroyScreenElement \{id = Splat_01_03}
-	Wait \{1
+script 0x2a4328c0 
+	destroyscreenelement \{id = 0xa8d87adc}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_01_03
-		texture = PH_MultiConfetti_02
+		id = 0xa8d87adc
+		texture = ph_multiconfetti_02
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1196,42 +1196,42 @@ script YouRock_Explosions_Splat_01_03
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_01_03_Anim}
+		blend = add}
+	spawnscript \{0x6d8873e6}
 endscript
 
-script YouRock_Explosions_Splat_01_03_Anim 
-	Splat_01_03 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x6d8873e6 
+	0xa8d87adc :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Splat_01_03 :SE_SetProps \{scale = (4.3, 4.3)
+	0xa8d87adc :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_03 :SE_WaitProps
-	Splat_01_03 :SE_SetProps \{scale = (4.3, 4.3)
+	0xa8d87adc :se_waitprops
+	0xa8d87adc :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	Splat_01_03 :SE_WaitProps
-	Splat_01_03 :SE_SetProps \{scale = (0.5, 0.5)
+	0xa8d87adc :se_waitprops
+	0xa8d87adc :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0
 		rot_angle = 50}
-	Splat_01_03 :SE_SetProps \{scale = (4.3, 4.3)
+	0xa8d87adc :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.7
 		time = 0.05}
-	Splat_01_03 :SE_WaitProps
-	Splat_01_03 :SE_SetProps \{scale = (4.3, 4.3)
+	0xa8d87adc :se_waitprops
+	0xa8d87adc :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	DestroyScreenElement \{id = Splat_01_03}
+	destroyscreenelement \{id = 0xa8d87adc}
 endscript
 
-script YouRock_Explosions_Splat_02_03 
-	DestroyScreenElement \{id = Splat_02_03}
-	Wait \{1
+script 0x38f6872e 
+	destroyscreenelement \{id = 0xba6dd532}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_02_03
-		texture = PH_ExplosionTex_Splat_02
+		id = 0xba6dd532
+		texture = 0xea99e289
 		alpha = 0.0
 		scale = (0.5, 0.5)
 		just = [
@@ -1247,31 +1247,31 @@ script YouRock_Explosions_Splat_02_03
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_02_03_Anim}
+		blend = add}
+	spawnscript \{0x54054f23}
 endscript
 
-script YouRock_Explosions_Splat_02_03_Anim 
-	Splat_02_03 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x54054f23 
+	0xba6dd532 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Splat_02_03 :SE_SetProps \{scale = (1.3, 1.3)
+	0xba6dd532 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.5
 		time = 0.1}
-	Splat_02_03 :SE_WaitProps
-	Splat_02_03 :SE_SetProps \{scale = (1.3, 1.3)
+	0xba6dd532 :se_waitprops
+	0xba6dd532 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Splat_02_03}
+	destroyscreenelement \{id = 0xba6dd532}
 endscript
 
-script YouRock_Explosions_Flare_03 
-	DestroyScreenElement \{id = Flare_03}
-	Wait \{1
+script 0xa3ab389b 
+	destroyscreenelement \{id = 0x8b7bf932}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_03
-		texture = PH_Flare03
+		id = 0x8b7bf932
+		texture = 0x5d3f0efd
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -1287,31 +1287,31 @@ script YouRock_Explosions_Flare_03
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_03_Anim}
+		blend = add}
+	spawnscript \{0x3fe278b9}
 endscript
 
-script YouRock_Explosions_Flare_03_Anim 
-	Flare_03 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x3fe278b9 
+	0x8b7bf932 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Flare_03 :SE_SetProps \{scale = (5.0, 5.0)
+	0x8b7bf932 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.6
 		time = 0.1}
-	Flare_03 :SE_WaitProps
-	Flare_03 :SE_SetProps \{scale = (0.5, 0.5)
+	0x8b7bf932 :se_waitprops
+	0x8b7bf932 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Flare_03}
+	destroyscreenelement \{id = 0x8b7bf932}
 endscript
 
-script YouRock_Explosions_stars_03 
-	Destroy2DParticleSystem \{id = stars_03}
-	Wait \{1
+script 0xb6b3dd3e 
+	destroy2dparticlesystem \{id = 0x9e631c97}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = stars_03
+	create2dparticlesystem \{id = 0x9e631c97
 		pos = (620.0, 260.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			215
@@ -1338,35 +1338,35 @@ script YouRock_Explosions_stars_03
 		velocity = 20
 		friction = (0.0, 60.0)
 		time = 0.2}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
-	Destroy2DParticleSystem \{id = stars_03
+	destroy2dparticlesystem \{id = 0x9e631c97
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_04_Combo 
+script 0xe12a4e76 
 	begin
-	SpawnScript \{YouRock_Explosions_Glow_04}
-	Wait \{0.4
+	spawnscript \{0xf5557981}
+	wait \{0.4
 		seconds}
-	SpawnScript \{YouRock_Explosions_Smoke_04}
-	SpawnScript \{YouRock_Explosions_Splat_01_04}
-	SpawnScript \{YouRock_Explosions_Splat_02_04}
-	SpawnScript \{YouRock_Explosions_ASec_04}
-	SpawnScript \{YouRock_Explosions_stars_04}
-	SpawnScript \{YouRock_Explosions_RadialSparks_04}
-	SpawnScript \{YouRock_Explosions_Flare_04}
+	spawnscript \{0xf8190d40}
+	spawnscript \{0xb427bd63}
+	spawnscript \{0xa692128d}
+	spawnscript \{0xf1ce249c}
+	spawnscript \{0x28d7489d}
+	spawnscript \{0x52cf76f7}
+	spawnscript \{0x3dcfad38}
 	repeat 1
 endscript
 
-script YouRock_Explosions_Glow_04 
-	DestroyScreenElement \{id = Glow_04}
-	Wait \{1
+script 0xf5557981 
+	destroyscreenelement \{id = 0x272c4eb9}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_04
-		texture = PH_RadialGlow_01
+		id = 0x272c4eb9
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -1382,46 +1382,46 @@ script YouRock_Explosions_Glow_04
 			154
 			255
 		]
-		blend = Add}
-	Glow_04 :obj_spawnscript \{YouRock_Explosions_Glow_04_Anim}
+		blend = add}
+	0x272c4eb9 :obj_spawnscript \{0x65a16cca}
 endscript
 
-script YouRock_Explosions_Glow_04_Anim 
+script 0x65a16cca 
 	begin
-	Glow_04 :SE_SetProps \{scale = (0.5, 0.5)
+	0x272c4eb9 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_04 :SE_SetProps \{scale = (2.0, 2.0)
+	0x272c4eb9 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.1}
-	Glow_04 :SE_WaitProps
-	Glow_04 :SE_SetProps \{scale = (2.0, 2.0)
+	0x272c4eb9 :se_waitprops
+	0x272c4eb9 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.01}
-	Glow_04 :SE_WaitProps
+	0x272c4eb9 :se_waitprops
 	repeat 2
-	Wait \{0.05
+	wait \{0.05
 		seconds}
 	begin
-	Glow_04 :SE_SetProps \{scale = (0.5, 0.5)
+	0x272c4eb9 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_04 :SE_SetProps \{scale = (5.0, 5.0)
+	0x272c4eb9 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.5
 		time = 0.05}
-	Glow_04 :SE_WaitProps
-	Glow_04 :SE_SetProps \{scale = (5.0, 5.0)
+	0x272c4eb9 :se_waitprops
+	0x272c4eb9 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.0
 		time = 0.5}
 	repeat 1
-	DestroyScreenElement \{id = Glow_04}
+	destroyscreenelement \{id = 0x272c4eb9}
 endscript
 
-script YouRock_Lightning_04 
-	DestroyScreenElement \{id = Lightning04}
-	Wait \{1
+script 0x6c62086c 
+	destroyscreenelement \{id = 0x0e2022c8}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Lightning04
+		id = 0x0e2022c8
 		alpha = 0.95
 		scale = (0.5, 0.5)
 		just = [
@@ -1430,23 +1430,23 @@ script YouRock_Lightning_04
 		]
 		pos = (140.0, 380.0)
 		rot_angle = 240
-		material = sys_GH5_1_Big_Bolt01_sys_GH5_1_Big_Bolt01
+		material = 0x5d6f67fb
 		use_animated_uvs = true
 		num_uv_frames = (4.0, 1.0)
 		z_priority = 110}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	DestroyScreenElement \{id = Lightning04}
+	destroyscreenelement \{id = 0x0e2022c8}
 endscript
 
-script YouRock_Explosions_RadialSparks_04 
-	DestroyScreenElement \{id = RadialSparks_04}
-	Wait \{1
+script 0x52cf76f7 
+	destroyscreenelement \{id = 0xb63bd5d3}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = RadialSparks_04
-		texture = PH_ExplosionTex_RadialSparks_01
+		id = 0xb63bd5d3
+		texture = 0xf86604e5
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1462,29 +1462,29 @@ script YouRock_Explosions_RadialSparks_04
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_RadialSparks_04_Anim}
+		blend = add}
+	spawnscript \{0x5a927efb}
 endscript
 
-script YouRock_Explosions_RadialSparks_04_Anim 
-	RadialSparks_04 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x5a927efb 
+	0xb63bd5d3 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	RadialSparks_04 :SE_SetProps \{scale = (2.5, 2.5)
+	0xb63bd5d3 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.6
 		time = 0.1}
-	RadialSparks_04 :SE_WaitProps
-	RadialSparks_04 :SE_SetProps \{scale = (2.5, 2.5)
+	0xb63bd5d3 :se_waitprops
+	0xb63bd5d3 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = RadialSparks_04}
+	destroyscreenelement \{id = 0xb63bd5d3}
 endscript
 
-script YouRock_Explosions_Smoke_04 
-	Destroy2DParticleSystem \{id = Smoke_04}
-	Create2DParticleSystem \{id = Smoke_04
+script 0xf8190d40 
+	destroy2dparticlesystem \{id = 0xd0c9cce9}
+	create2dparticlesystem \{id = 0xd0c9cce9
 		pos = (465.0, 320.0)
 		z_priority = 98.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = alive_root_particle_container
 		start_color = [
 			250
@@ -1511,20 +1511,20 @@ script YouRock_Explosions_Smoke_04
 		velocity = 10
 		friction = (0.0, -0.5)
 		time = 0.3}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	Destroy2DParticleSystem \{id = Smoke_04
+	destroy2dparticlesystem \{id = 0xd0c9cce9
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_ASec_04 
-	DestroyScreenElement \{id = ASec_04}
-	Wait \{1
+script 0xf1ce249c 
+	destroyscreenelement \{id = 0x23b713a4}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = ASec_04
-		texture = PH_ExplosionTex_ASec_02
+		id = 0x23b713a4
+		texture = 0xa51a5a40
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -1540,33 +1540,33 @@ script YouRock_Explosions_ASec_04
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_ASec_04_Anim}
+		blend = add}
+	spawnscript \{0x519c7a93}
 endscript
 
-script YouRock_Explosions_ASec_04_Anim 
-	ASec_04 :SE_SetProps \{scale = (2.0, 2.0)
+script 0x519c7a93 
+	0x23b713a4 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0}
-	ASec_04 :SE_SetProps \{scale = (2.0, 2.0)
+	0x23b713a4 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.05}
-	ASec_04 :SE_WaitProps
-	Wait \{0.1
+	0x23b713a4 :se_waitprops
+	wait \{0.1
 		seconds}
-	ASec_04 :SE_SetProps \{scale = (2.0, 2.0)
+	0x23b713a4 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.3}
-	DestroyScreenElement \{id = ASec_04}
+	destroyscreenelement \{id = 0x23b713a4}
 endscript
 
-script YouRock_Explosions_Splat_01_04 
-	DestroyScreenElement \{id = Splat_01_04}
-	Wait \{1
+script 0xb427bd63 
+	destroyscreenelement \{id = 0x36bcef7f}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_01_04
-		texture = PH_MultiConfetti_02
+		id = 0x36bcef7f
+		texture = ph_multiconfetti_02
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1582,42 +1582,42 @@ script YouRock_Explosions_Splat_01_04
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_01_04_Anim}
+		blend = add}
+	spawnscript \{0x708d435e}
 endscript
 
-script YouRock_Explosions_Splat_01_04_Anim 
-	Splat_01_04 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x708d435e 
+	0x36bcef7f :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Splat_01_04 :SE_SetProps \{scale = (4.3, 4.3)
+	0x36bcef7f :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_04 :SE_WaitProps
-	Splat_01_04 :SE_SetProps \{scale = (4.3, 4.3)
+	0x36bcef7f :se_waitprops
+	0x36bcef7f :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	Splat_01_04 :SE_WaitProps
-	Splat_01_04 :SE_SetProps \{scale = (0.5, 0.5)
+	0x36bcef7f :se_waitprops
+	0x36bcef7f :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0
 		rot_angle = 50}
-	Splat_01_04 :SE_SetProps \{scale = (4.3, 4.3)
+	0x36bcef7f :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.7
 		time = 0.05}
-	Splat_01_04 :SE_WaitProps
-	Splat_01_04 :SE_SetProps \{scale = (4.3, 4.3)
+	0x36bcef7f :se_waitprops
+	0x36bcef7f :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	DestroyScreenElement \{id = Splat_01_04}
+	destroyscreenelement \{id = 0x36bcef7f}
 endscript
 
-script YouRock_Explosions_Splat_02_04 
-	DestroyScreenElement \{id = Splat_02_04}
-	Wait \{1
+script 0xa692128d 
+	destroyscreenelement \{id = 0x24094091}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_02_04
-		texture = PH_ExplosionTex_Splat_02
+		id = 0x24094091
+		texture = 0xea99e289
 		alpha = 0.0
 		scale = (0.5, 0.5)
 		just = [
@@ -1633,31 +1633,31 @@ script YouRock_Explosions_Splat_02_04
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_02_04_Anim}
+		blend = add}
+	spawnscript \{0x49007f9b}
 endscript
 
-script YouRock_Explosions_Splat_02_04_Anim 
-	Splat_02_04 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x49007f9b 
+	0x24094091 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Splat_02_04 :SE_SetProps \{scale = (1.3, 1.3)
+	0x24094091 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.5
 		time = 0.1}
-	Splat_02_04 :SE_WaitProps
-	Splat_02_04 :SE_SetProps \{scale = (1.3, 1.3)
+	0x24094091 :se_waitprops
+	0x24094091 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Splat_02_04}
+	destroyscreenelement \{id = 0x24094091}
 endscript
 
-script YouRock_Explosions_Flare_04 
-	DestroyScreenElement \{id = Flare_04}
-	Wait \{1
+script 0x3dcfad38 
+	destroyscreenelement \{id = 0x151f6c91}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_04
-		texture = PH_Flare03
+		id = 0x151f6c91
+		texture = 0x5d3f0efd
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -1673,31 +1673,31 @@ script YouRock_Explosions_Flare_04
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_04_Anim}
+		blend = add}
+	spawnscript \{0x22e74801}
 endscript
 
-script YouRock_Explosions_Flare_04_Anim 
-	Flare_04 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x22e74801 
+	0x151f6c91 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Flare_04 :SE_SetProps \{scale = (10.0, 10.0)
+	0x151f6c91 :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.6
 		time = 0.05}
-	Flare_04 :SE_WaitProps
-	Flare_04 :SE_SetProps \{scale = (10.0, 10.0)
+	0x151f6c91 :se_waitprops
+	0x151f6c91 :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Flare_04}
+	destroyscreenelement \{id = 0x151f6c91}
 endscript
 
-script YouRock_Explosions_stars_04 
-	Destroy2DParticleSystem \{id = stars_04}
-	Wait \{1
+script 0x28d7489d 
+	destroy2dparticlesystem \{id = 0x00078934}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = stars_04
+	create2dparticlesystem \{id = 0x00078934
 		pos = (465.0, 320.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			215
@@ -1724,35 +1724,35 @@ script YouRock_Explosions_stars_04
 		velocity = 35
 		friction = (0.0, 80.0)
 		time = 0.4}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
-	Destroy2DParticleSystem \{id = stars_04
+	destroy2dparticlesystem \{id = 0x00078934
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_05_Combo 
+script 0x475d45c2 
 	begin
-	SpawnScript \{YouRock_Explosions_Glow_05}
-	Wait \{0.4
+	spawnscript \{0x82524917}
+	wait \{0.4
 		seconds}
-	SpawnScript \{YouRock_Explosions_Smoke_05}
-	SpawnScript \{YouRock_Explosions_Splat_01_05}
-	SpawnScript \{YouRock_Explosions_Splat_02_05}
-	SpawnScript \{YouRock_Explosions_ASec_05}
-	SpawnScript \{YouRock_Explosions_stars_05}
-	SpawnScript \{YouRock_Explosions_RadialSparks_05}
-	SpawnScript \{YouRock_Explosions_Flare_05}
+	spawnscript \{0x8f1e3dd6}
+	spawnscript \{0xc3208df5}
+	spawnscript \{0xd195221b}
+	spawnscript \{0x86c9140a}
+	spawnscript \{0x5fd0780b}
+	spawnscript \{0x25c84661}
+	spawnscript \{0x4ac89dae}
 	repeat 1
 endscript
 
-script YouRock_Explosions_Glow_05 
-	DestroyScreenElement \{id = Glow_05}
-	Wait \{1
+script 0x82524917 
+	destroyscreenelement \{id = 0x502b7e2f}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_05
-		texture = PH_RadialGlow_01
+		id = 0x502b7e2f
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -1768,46 +1768,46 @@ script YouRock_Explosions_Glow_05
 			154
 			255
 		]
-		blend = Add}
-	Glow_05 :obj_spawnscript \{YouRock_Explosions_Glow_05_Anim}
+		blend = add}
+	0x502b7e2f :obj_spawnscript \{0xaefdbf6f}
 endscript
 
-script YouRock_Explosions_Glow_05_Anim 
+script 0xaefdbf6f 
 	begin
-	Glow_05 :SE_SetProps \{scale = (0.5, 0.5)
+	0x502b7e2f :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_05 :SE_SetProps \{scale = (2.0, 2.0)
+	0x502b7e2f :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.1}
-	Glow_05 :SE_WaitProps
-	Glow_05 :SE_SetProps \{scale = (2.0, 2.0)
+	0x502b7e2f :se_waitprops
+	0x502b7e2f :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.01}
-	Glow_05 :SE_WaitProps
+	0x502b7e2f :se_waitprops
 	repeat 2
-	Wait \{0.05
+	wait \{0.05
 		seconds}
 	begin
-	Glow_05 :SE_SetProps \{scale = (0.5, 0.5)
+	0x502b7e2f :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_05 :SE_SetProps \{scale = (5.0, 5.0)
+	0x502b7e2f :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.5
 		time = 0.05}
-	Glow_05 :SE_WaitProps
-	Glow_05 :SE_SetProps \{scale = (5.0, 5.0)
+	0x502b7e2f :se_waitprops
+	0x502b7e2f :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.0
 		time = 0.5}
 	repeat 1
-	DestroyScreenElement \{id = Glow_05}
+	destroyscreenelement \{id = 0x502b7e2f}
 endscript
 
-script YouRock_Lightning_05 
-	DestroyScreenElement \{id = Lightning05}
-	Wait \{1
+script 0x1b6538fa 
+	destroyscreenelement \{id = 0x7927125e}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Lightning05
+		id = 0x7927125e
 		alpha = 0.95
 		scale = (0.5, 0.5)
 		just = [
@@ -1816,23 +1816,23 @@ script YouRock_Lightning_05
 		]
 		pos = (1150.0, 360.0)
 		rot_angle = -240
-		material = sys_GH5_1_Big_Bolt01_sys_GH5_1_Big_Bolt01
+		material = 0x5d6f67fb
 		use_animated_uvs = true
 		num_uv_frames = (4.0, 1.0)
 		z_priority = 110}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	DestroyScreenElement \{id = Lightning05}
+	destroyscreenelement \{id = 0x7927125e}
 endscript
 
-script YouRock_Explosions_RadialSparks_05 
-	DestroyScreenElement \{id = RadialSparks_05}
-	Wait \{1
+script 0x25c84661 
+	destroyscreenelement \{id = 0xc13ce545}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = RadialSparks_05
-		texture = PH_ExplosionTex_RadialSparks_01
+		id = 0xc13ce545
+		texture = 0xf86604e5
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1848,29 +1848,29 @@ script YouRock_Explosions_RadialSparks_05
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_RadialSparks_05_Anim}
+		blend = add}
+	spawnscript \{0x91cead5e}
 endscript
 
-script YouRock_Explosions_RadialSparks_05_Anim 
-	RadialSparks_05 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x91cead5e 
+	0xc13ce545 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	RadialSparks_05 :SE_SetProps \{scale = (2.5, 2.5)
+	0xc13ce545 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.6
 		time = 0.1}
-	RadialSparks_05 :SE_WaitProps
-	RadialSparks_05 :SE_SetProps \{scale = (2.5, 2.5)
+	0xc13ce545 :se_waitprops
+	0xc13ce545 :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = RadialSparks_05}
+	destroyscreenelement \{id = 0xc13ce545}
 endscript
 
-script YouRock_Explosions_Smoke_05 
-	Destroy2DParticleSystem \{id = Smoke_05}
-	Create2DParticleSystem \{id = Smoke_05
+script 0x8f1e3dd6 
+	destroy2dparticlesystem \{id = 0xa7cefc7f}
+	create2dparticlesystem \{id = 0xa7cefc7f
 		pos = (800.0, 280.0)
 		z_priority = 98.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = alive_root_particle_container
 		start_color = [
 			250
@@ -1897,20 +1897,20 @@ script YouRock_Explosions_Smoke_05
 		velocity = 10
 		friction = (0.0, -0.5)
 		time = 0.3}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	Destroy2DParticleSystem \{id = Smoke_05
+	destroy2dparticlesystem \{id = 0xa7cefc7f
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_ASec_05 
-	DestroyScreenElement \{id = ASec_05}
-	Wait \{1
+script 0x86c9140a 
+	destroyscreenelement \{id = 0x54b02332}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = ASec_05
-		texture = PH_ExplosionTex_ASec_02
+		id = 0x54b02332
+		texture = 0xa51a5a40
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -1926,33 +1926,33 @@ script YouRock_Explosions_ASec_05
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_ASec_05_Anim}
+		blend = add}
+	spawnscript \{0x9ac0a936}
 endscript
 
-script YouRock_Explosions_ASec_05_Anim 
-	ASec_05 :SE_SetProps \{scale = (2.0, 2.0)
+script 0x9ac0a936 
+	0x54b02332 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0}
-	ASec_05 :SE_SetProps \{scale = (2.0, 2.0)
+	0x54b02332 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.05}
-	ASec_05 :SE_WaitProps
-	Wait \{0.1
+	0x54b02332 :se_waitprops
+	wait \{0.1
 		seconds}
-	ASec_05 :SE_SetProps \{scale = (2.0, 2.0)
+	0x54b02332 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.3}
-	DestroyScreenElement \{id = ASec_05}
+	destroyscreenelement \{id = 0x54b02332}
 endscript
 
-script YouRock_Explosions_Splat_01_05 
-	DestroyScreenElement \{id = Splat_01_05}
-	Wait \{1
+script 0xc3208df5 
+	destroyscreenelement \{id = 0x41bbdfe9}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_01_05
-		texture = PH_MultiConfetti_02
+		id = 0x41bbdfe9
+		texture = ph_multiconfetti_02
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -1968,42 +1968,42 @@ script YouRock_Explosions_Splat_01_05
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_01_05_Anim}
+		blend = add}
+	spawnscript \{0xbbd190fb}
 endscript
 
-script YouRock_Explosions_Splat_01_05_Anim 
-	Splat_01_05 :SE_SetProps \{scale = (0.5, 0.5)
+script 0xbbd190fb 
+	0x41bbdfe9 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Splat_01_05 :SE_SetProps \{scale = (4.3, 4.3)
+	0x41bbdfe9 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_05 :SE_WaitProps
-	Splat_01_05 :SE_SetProps \{scale = (4.3, 4.3)
+	0x41bbdfe9 :se_waitprops
+	0x41bbdfe9 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	Splat_01_05 :SE_WaitProps
-	Splat_01_05 :SE_SetProps \{scale = (0.5, 0.5)
+	0x41bbdfe9 :se_waitprops
+	0x41bbdfe9 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0
 		rot_angle = 50}
-	Splat_01_05 :SE_SetProps \{scale = (4.3, 4.3)
+	0x41bbdfe9 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.7
 		time = 0.05}
-	Splat_01_05 :SE_WaitProps
-	Splat_01_05 :SE_SetProps \{scale = (4.3, 4.3)
+	0x41bbdfe9 :se_waitprops
+	0x41bbdfe9 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	DestroyScreenElement \{id = Splat_01_05}
+	destroyscreenelement \{id = 0x41bbdfe9}
 endscript
 
-script YouRock_Explosions_Splat_02_05 
-	DestroyScreenElement \{id = Splat_02_05}
-	Wait \{1
+script 0xd195221b 
+	destroyscreenelement \{id = 0x530e7007}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_02_05
-		texture = PH_ExplosionTex_Splat_02
+		id = 0x530e7007
+		texture = 0xea99e289
 		alpha = 0.0
 		scale = (0.5, 0.5)
 		just = [
@@ -2019,31 +2019,31 @@ script YouRock_Explosions_Splat_02_05
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_02_05_Anim}
+		blend = add}
+	spawnscript \{0x825cac3e}
 endscript
 
-script YouRock_Explosions_Splat_02_05_Anim 
-	Splat_02_05 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x825cac3e 
+	0x530e7007 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Splat_02_05 :SE_SetProps \{scale = (1.3, 1.3)
+	0x530e7007 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.5
 		time = 0.1}
-	Splat_02_05 :SE_WaitProps
-	Splat_02_05 :SE_SetProps \{scale = (1.3, 1.3)
+	0x530e7007 :se_waitprops
+	0x530e7007 :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Splat_02_05}
+	destroyscreenelement \{id = 0x530e7007}
 endscript
 
-script YouRock_Explosions_Flare_05 
-	DestroyScreenElement \{id = Flare_05}
-	Wait \{1
+script 0x4ac89dae 
+	destroyscreenelement \{id = 0x62185c07}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_05
-		texture = PH_Flare03
+		id = 0x62185c07
+		texture = 0x5d3f0efd
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -2059,31 +2059,31 @@ script YouRock_Explosions_Flare_05
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_05_Anim}
+		blend = add}
+	spawnscript \{0xe9bb9ba4}
 endscript
 
-script YouRock_Explosions_Flare_05_Anim 
-	Flare_05 :SE_SetProps \{scale = (0.1, 0.1)
+script 0xe9bb9ba4 
+	0x62185c07 :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Flare_05 :SE_SetProps \{scale = (10.0, 10.0)
+	0x62185c07 :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.6
 		time = 0.05}
-	Flare_05 :SE_WaitProps
-	Flare_05 :SE_SetProps \{scale = (10.0, 10.0)
+	0x62185c07 :se_waitprops
+	0x62185c07 :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Flare_05}
+	destroyscreenelement \{id = 0x62185c07}
 endscript
 
-script YouRock_Explosions_stars_05 
-	Destroy2DParticleSystem \{id = stars_05}
-	Wait \{1
+script 0x5fd0780b 
+	destroy2dparticlesystem \{id = 0x7700b9a2}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = stars_05
+	create2dparticlesystem \{id = 0x7700b9a2
 		pos = (800.0, 280.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			215
@@ -2110,34 +2110,34 @@ script YouRock_Explosions_stars_05
 		velocity = 35
 		friction = (0.0, 80.0)
 		time = 0.4}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
-	Destroy2DParticleSystem \{id = stars_05
+	destroy2dparticlesystem \{id = 0x7700b9a2
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_06_Combo 
+script 0x76b55f5f 
 	begin
-	SpawnScript \{YouRock_Explosions_Glow_06}
-	Wait \{0.4
+	spawnscript \{0x1b5b18ad}
+	wait \{0.4
 		seconds}
-	SpawnScript \{YouRock_Explosions_Smoke_06}
-	SpawnScript \{YouRock_Explosions_Splat_01_06}
-	SpawnScript \{YouRock_Explosions_Splat_02_06}
-	SpawnScript \{YouRock_Explosions_stars_06}
-	SpawnScript \{YouRock_Explosions_RadialSparks_06}
-	SpawnScript \{YouRock_Explosions_Flare_06}
+	spawnscript \{0x16176c6c}
+	spawnscript \{0x5a29dc4f}
+	spawnscript \{0x489c73a1}
+	spawnscript \{0xc6d929b1}
+	spawnscript \{0xbcc117db}
+	spawnscript \{0xd3c1cc14}
 	repeat 1
 endscript
 
-script YouRock_Explosions_Glow_06 
-	DestroyScreenElement \{id = Glow_06}
-	Wait \{1
+script 0x1b5b18ad 
+	destroyscreenelement \{id = 0xc9222f95}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_06
-		texture = PH_RadialGlow_01
+		id = 0xc9222f95
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (2.0, 2.0)
 		just = [
@@ -2153,47 +2153,47 @@ script YouRock_Explosions_Glow_06
 			154
 			255
 		]
-		blend = Add}
-	Glow_06 :obj_spawnscript \{YouRock_Explosions_Glow_06_Anim}
+		blend = add}
+	0xc9222f95 :obj_spawnscript \{0x2869cdc1}
 endscript
 
-script YouRock_Explosions_Glow_06_Anim 
+script 0x2869cdc1 
 	begin
-	Glow_06 :SE_SetProps \{scale = (0.5, 0.5)
+	0xc9222f95 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_06 :SE_SetProps \{scale = (2.0, 2.0)
+	0xc9222f95 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.5
 		time = 0.1}
-	Glow_06 :SE_WaitProps
-	Glow_06 :SE_SetProps \{scale = (2.0, 2.0)
+	0xc9222f95 :se_waitprops
+	0xc9222f95 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0.0
 		time = 0.01}
-	Glow_06 :SE_WaitProps
+	0xc9222f95 :se_waitprops
 	repeat 2
-	Wait \{0.05
+	wait \{0.05
 		seconds}
 	begin
-	Glow_06 :SE_SetProps \{scale = (0.5, 0.5)
+	0xc9222f95 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_06 :SE_SetProps \{scale = (5.0, 5.0)
+	0xc9222f95 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.5
 		time = 0.05}
-	Glow_06 :SE_WaitProps
-	Glow_06 :SE_SetProps \{scale = (5.0, 5.0)
+	0xc9222f95 :se_waitprops
+	0xc9222f95 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.0
 		time = 0.5}
 	repeat 1
-	DestroyScreenElement \{id = Glow_06}
+	destroyscreenelement \{id = 0xc9222f95}
 endscript
 
-script YouRock_Explosions_RadialSparks_06 
-	DestroyScreenElement \{id = RadialSparks_06}
-	Wait \{1
+script 0xbcc117db 
+	destroyscreenelement \{id = 0x5835b4ff}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = RadialSparks_06
-		texture = PH_ExplosionTex_RadialSparks_01
+		id = 0x5835b4ff
+		texture = 0xf86604e5
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -2209,29 +2209,29 @@ script YouRock_Explosions_RadialSparks_06
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_RadialSparks_06_Anim}
+		blend = add}
+	spawnscript \{0x175adff0}
 endscript
 
-script YouRock_Explosions_RadialSparks_06_Anim 
-	RadialSparks_06 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x175adff0 
+	0x5835b4ff :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	RadialSparks_06 :SE_SetProps \{scale = (2.5, 2.5)
+	0x5835b4ff :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.6
 		time = 0.1}
-	RadialSparks_06 :SE_WaitProps
-	RadialSparks_06 :SE_SetProps \{scale = (2.5, 2.5)
+	0x5835b4ff :se_waitprops
+	0x5835b4ff :se_setprops \{scale = (2.5, 2.5)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = RadialSparks_06}
+	destroyscreenelement \{id = 0x5835b4ff}
 endscript
 
-script YouRock_Explosions_Smoke_06 
-	Destroy2DParticleSystem \{id = Smoke_06}
-	Create2DParticleSystem \{id = Smoke_06
+script 0x16176c6c 
+	destroy2dparticlesystem \{id = 0x3ec7adc5}
+	create2dparticlesystem \{id = 0x3ec7adc5
 		pos = (370.0, 270.0)
 		z_priority = 98.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = alive_root_particle_container
 		start_color = [
 			250
@@ -2258,20 +2258,20 @@ script YouRock_Explosions_Smoke_06
 		velocity = 10
 		friction = (0.0, -0.5)
 		time = 0.3}
-	Wait \{0.4
+	wait \{0.4
 		second}
-	Destroy2DParticleSystem \{id = Smoke_06
+	destroy2dparticlesystem \{id = 0x3ec7adc5
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_Splat_01_06 
-	DestroyScreenElement \{id = Splat_01_06}
-	Wait \{1
+script 0x5a29dc4f 
+	destroyscreenelement \{id = 0xd8b28e53}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_01_06
-		texture = PH_MultiConfetti_02
+		id = 0xd8b28e53
+		texture = ph_multiconfetti_02
 		alpha = 0.0
 		scale = (1.5, 1.5)
 		just = [
@@ -2287,42 +2287,42 @@ script YouRock_Explosions_Splat_01_06
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_01_06_Anim}
+		blend = add}
+	spawnscript \{0x3d45e255}
 endscript
 
-script YouRock_Explosions_Splat_01_06_Anim 
-	Splat_01_06 :SE_SetProps \{scale = (0.5, 0.5)
+script 0x3d45e255 
+	0xd8b28e53 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Splat_01_06 :SE_SetProps \{scale = (4.3, 4.3)
+	0xd8b28e53 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.9
 		time = 0.05}
-	Splat_01_06 :SE_WaitProps
-	Splat_01_06 :SE_SetProps \{scale = (4.3, 4.3)
+	0xd8b28e53 :se_waitprops
+	0xd8b28e53 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	Splat_01_06 :SE_WaitProps
-	Splat_01_06 :SE_SetProps \{scale = (0.5, 0.5)
+	0xd8b28e53 :se_waitprops
+	0xd8b28e53 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0
 		rot_angle = 50}
-	Splat_01_06 :SE_SetProps \{scale = (4.3, 4.3)
+	0xd8b28e53 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.7
 		time = 0.05}
-	Splat_01_06 :SE_WaitProps
-	Splat_01_06 :SE_SetProps \{scale = (4.3, 4.3)
+	0xd8b28e53 :se_waitprops
+	0xd8b28e53 :se_setprops \{scale = (4.3, 4.3)
 		alpha = 0.0
 		time = 0.001}
-	DestroyScreenElement \{id = Splat_01_06}
+	destroyscreenelement \{id = 0xd8b28e53}
 endscript
 
-script YouRock_Explosions_Splat_02_06 
-	DestroyScreenElement \{id = Splat_02_06}
-	Wait \{1
+script 0x489c73a1 
+	destroyscreenelement \{id = 0xca0721bd}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Splat_02_06
-		texture = PH_ExplosionTex_Splat_02
+		id = 0xca0721bd
+		texture = 0xea99e289
 		alpha = 0.0
 		scale = (0.5, 0.5)
 		just = [
@@ -2338,31 +2338,31 @@ script YouRock_Explosions_Splat_02_06
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Splat_02_06_Anim}
+		blend = add}
+	spawnscript \{0x04c8de90}
 endscript
 
-script YouRock_Explosions_Splat_02_06_Anim 
-	Splat_02_06 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x04c8de90 
+	0xca0721bd :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Splat_02_06 :SE_SetProps \{scale = (1.3, 1.3)
+	0xca0721bd :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.5
 		time = 0.1}
-	Splat_02_06 :SE_WaitProps
-	Splat_02_06 :SE_SetProps \{scale = (1.3, 1.3)
+	0xca0721bd :se_waitprops
+	0xca0721bd :se_setprops \{scale = (1.3, 1.3)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Splat_02_06}
+	destroyscreenelement \{id = 0xca0721bd}
 endscript
 
-script YouRock_Explosions_Flare_06 
-	DestroyScreenElement \{id = Flare_06}
-	Wait \{1
+script 0xd3c1cc14 
+	destroyscreenelement \{id = 0xfb110dbd}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_06
-		texture = PH_Flare03
+		id = 0xfb110dbd
+		texture = 0x5d3f0efd
 		alpha = 0.0
 		scale = (5.0, 5.0)
 		just = [
@@ -2378,31 +2378,31 @@ script YouRock_Explosions_Flare_06
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_06_Anim}
+		blend = add}
+	spawnscript \{0x6f2fe90a}
 endscript
 
-script YouRock_Explosions_Flare_06_Anim 
-	Flare_06 :SE_SetProps \{scale = (0.1, 0.1)
+script 0x6f2fe90a 
+	0xfb110dbd :se_setprops \{scale = (0.1, 0.1)
 		alpha = 0}
-	Flare_06 :SE_SetProps \{scale = (10.0, 10.0)
+	0xfb110dbd :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.6
 		time = 0.05}
-	Flare_06 :SE_WaitProps
-	Flare_06 :SE_SetProps \{scale = (10.0, 10.0)
+	0xfb110dbd :se_waitprops
+	0xfb110dbd :se_setprops \{scale = (10.0, 10.0)
 		alpha = 0.0
 		time = 0.01}
-	DestroyScreenElement \{id = Flare_06}
+	destroyscreenelement \{id = 0xfb110dbd}
 endscript
 
-script YouRock_Explosions_stars_06 
-	Destroy2DParticleSystem \{id = stars_06}
-	Wait \{1
+script 0xc6d929b1 
+	destroy2dparticlesystem \{id = 0xee09e818}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = stars_06
+	create2dparticlesystem \{id = 0xee09e818
 		pos = (370.0, 270.0)
 		z_priority = 100.0
-		material = Mat_YouRock_Sparks
+		material = 0x2c0ccbf0
 		parent = alive_root_particle_container
 		start_color = [
 			215
@@ -2429,28 +2429,28 @@ script YouRock_Explosions_stars_06
 		velocity = 35
 		friction = (0.0, 80.0)
 		time = 0.4}
-	Wait \{0.3
+	wait \{0.3
 		seconds}
-	Destroy2DParticleSystem \{id = stars_06
+	destroy2dparticlesystem \{id = 0xee09e818
 		kill_when_empty}
 endscript
 
-script YouRock_Explosions_02_BigCenter_Combo 
-	SpawnScript \{YouRock_Explosions_Glow_02_BigCenter}
-	Wait \{0.1
+script 0x8e651f5e 
+	spawnscript \{0xdcffc2b5}
+	wait \{0.1
 		seconds}
-	SpawnScript \{YouRock_Explosions_Flare_02_BigCenter}
-	SpawnScript \{YouRock_Explosions_EndStreaks_02_BigCenter}
+	spawnscript \{0xa6450ba6}
+	spawnscript \{0x96cbfdf1}
 endscript
 
-script YouRock_Explosions_Glow_02_BigCenter 
-	DestroyScreenElement \{id = Glow_02_BigCenter}
-	Wait \{1
+script 0xdcffc2b5 
+	destroyscreenelement \{id = 0x62c835b5}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Glow_02_BigCenter
-		texture = PH_RadialGlow_01
+		id = 0x62c835b5
+		texture = ph_radialglow_01
 		alpha = 0.0
 		scale = (6.0, 3.0)
 		just = [
@@ -2466,47 +2466,47 @@ script YouRock_Explosions_Glow_02_BigCenter
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Glow_02_BigCenter_Anim}
+		blend = add}
+	spawnscript \{0x6bdafc4a}
 endscript
 
-script YouRock_Explosions_Glow_02_BigCenter_Anim 
+script 0x6bdafc4a 
 	begin
-	Glow_02_BigCenter :SE_SetProps \{scale = (3.0, 1.0)
+	0x62c835b5 :se_setprops \{scale = (3.0, 1.0)
 		alpha = 0}
-	Glow_02_BigCenter :SE_SetProps \{scale = (10.0, 7.0)
+	0x62c835b5 :se_setprops \{scale = (10.0, 7.0)
 		alpha = 0.6
 		time = 0.05}
-	Glow_02_BigCenter :SE_WaitProps
-	Glow_02_BigCenter :SE_SetProps \{scale = (10.0, 7.0)
+	0x62c835b5 :se_waitprops
+	0x62c835b5 :se_setprops \{scale = (10.0, 7.0)
 		alpha = 0.0
 		time = 0.01}
-	Glow_02_BigCenter :SE_WaitProps
+	0x62c835b5 :se_waitprops
 	repeat 1
-	Wait \{0.05
+	wait \{0.05
 		seconds}
 	begin
-	Glow_02_BigCenter :SE_SetProps \{scale = (0.5, 0.5)
+	0x62c835b5 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 0}
-	Glow_02_BigCenter :SE_SetProps \{scale = (10.0, 7.0)
+	0x62c835b5 :se_setprops \{scale = (10.0, 7.0)
 		alpha = 0.6
 		time = 0.05}
-	Glow_02_BigCenter :SE_WaitProps
-	Glow_02_BigCenter :SE_SetProps \{scale = (10.0, 7.0)
+	0x62c835b5 :se_waitprops
+	0x62c835b5 :se_setprops \{scale = (10.0, 7.0)
 		alpha = 0.0
 		time = 0.5}
 	repeat 1
-	DestroyScreenElement \{id = Glow_02_BigCenter}
+	destroyscreenelement \{id = 0x62c835b5}
 endscript
 
-script YouRock_Explosions_Flare_02_BigCenter 
-	DestroyScreenElement \{id = Flare_02_BigCenter}
-	Wait \{1
+script 0xa6450ba6 
+	destroyscreenelement \{id = 0xa6fb3c51}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = Flare_02_BigCenter
-		texture = PH_Flare03
+		id = 0xa6fb3c51
+		texture = 0x5d3f0efd
 		alpha = 0.9
 		scale = (5.0, 5.0)
 		just = [
@@ -2522,31 +2522,31 @@ script YouRock_Explosions_Flare_02_BigCenter
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_Flare_02_BigCenter_Anim}
+		blend = add}
+	spawnscript \{0x5ac65a2e}
 endscript
 
-script YouRock_Explosions_Flare_02_BigCenter_Anim 
-	Flare_02_BigCenter :SE_SetProps \{scale = (7.0, 4.0)
+script 0x5ac65a2e 
+	0xa6fb3c51 :se_setprops \{scale = (7.0, 4.0)
 		alpha = 0}
-	Flare_02_BigCenter :SE_SetProps \{scale = (15.0, 10.0)
+	0xa6fb3c51 :se_setprops \{scale = (15.0, 10.0)
 		alpha = 0.6
 		time = 0.05}
-	Flare_02_BigCenter :SE_WaitProps
-	Flare_02_BigCenter :SE_SetProps \{scale = (15.0, 10.0)
+	0xa6fb3c51 :se_waitprops
+	0xa6fb3c51 :se_setprops \{scale = (15.0, 10.0)
 		alpha = 0.0
 		time = 0.1}
-	DestroyScreenElement \{id = Flare_02_BigCenter}
+	destroyscreenelement \{id = 0xa6fb3c51}
 endscript
 
-script YouRock_Explosions_EndStreaks_02_BigCenter 
-	DestroyScreenElement \{id = EndStreaks_02_BigCenter}
-	Wait \{1
+script 0x96cbfdf1 
+	destroyscreenelement \{id = 0xcee362be}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = EndStreaks_02_BigCenter
-		texture = YouRock_EndStreaks_01
+		id = 0xcee362be
+		texture = 0xb506f863
 		alpha = 0.0
 		scale = (2.5, 2.8)
 		just = [
@@ -2562,16 +2562,16 @@ script YouRock_Explosions_EndStreaks_02_BigCenter
 			251
 			255
 		]
-		blend = Add}
-	SpawnScript \{YouRock_Explosions_EndStreaks_02_BigCenter_Anim}
+		blend = add}
+	spawnscript \{0x471500f7}
 endscript
 
-script YouRock_Explosions_EndStreaks_02_BigCenter_Anim 
-	EndStreaks_02_BigCenter :SE_SetProps \{alpha = 0}
-	EndStreaks_02_BigCenter :SE_SetProps \{alpha = 0.2
+script 0x471500f7 
+	0xcee362be :se_setprops \{alpha = 0}
+	0xcee362be :se_setprops \{alpha = 0.2
 		time = 0.1}
-	EndStreaks_02_BigCenter :SE_WaitProps
-	EndStreaks_02_BigCenter :SE_SetProps \{alpha = 0.0
+	0xcee362be :se_waitprops
+	0xcee362be :se_setprops \{alpha = 0.0
 		time = 0.1}
-	DestroyScreenElement \{id = EndStreaks_02_BigCenter}
+	destroyscreenelement \{id = 0xcee362be}
 endscript

@@ -1,6 +1,6 @@
-showPakMap = 0
-showPakMapExpand = 0
-Common_GH_Zone_Params = {
+showpakmap = 0
+showpakmapexpand = 0
+common_gh_zone_params = {
 	ps2_budgets = {
 		extra_size = 210240
 		texture_size = 20728640
@@ -17,127 +17,127 @@ Common_GH_Zone_Params = {
 	zones = [
 	]
 }
-GHFullZones = {
+0x94a64133 = {
 	z_soundcheck = {
 		name = 'Z_Soundcheck'
 		path = 'Z_Soundcheck/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
 	z_studio = {
 		name = 'Z_Studio'
 		path = 'Z_Studio/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	z_frontend_cairo = {
+	0x604f529a = {
 		name = 'z_frontend_cairo'
 		path = 'z_frontend_cairo/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	z_frontend_carhenge = {
+	0xe7bb4d13 = {
 		name = 'z_frontend_carhenge'
 		path = 'z_frontend_carhenge/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	z_frontend_neworleans = {
+	0xb7b616e9 = {
 		name = 'z_frontend_neworleans'
 		path = 'z_frontend_neworleans/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	z_frontend_norway = {
+	0x259d6ed4 = {
 		name = 'z_frontend_norway'
 		path = 'z_frontend_norway/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	z_frontend_subway = {
+	0xe09ca72d = {
 		name = 'z_frontend_subway'
 		path = 'z_frontend_subway/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
 }
-GHZones = {
+ghzones = {
 	z_soundcheck2 = {
 		name = 'Z_Soundcheck2'
 		path = 'Z_Soundcheck2/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
 	z_studio2 = {
 		name = 'Z_Studio2'
 		path = 'Z_Studio2/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Cairo = {
+	z_cairo = {
 		name = 'Z_Cairo'
 		path = 'Z_Cairo/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_NewOrleans = {
+	z_neworleans = {
 		name = 'Z_NewOrleans'
 		path = 'Z_NewOrleans/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_MexicoCity = {
+	z_mexicocity = {
 		name = 'Z_MexicoCity'
 		path = 'Z_MexicoCity/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Nashville = {
+	z_nashville = {
 		name = 'Z_Nashville'
 		path = 'Z_Nashville/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
 	z_norway = {
 		name = 'z_norway'
 		path = 'z_norway/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Dublin = {
+	z_dublin = {
 		name = 'Z_Dublin'
 		path = 'Z_Dublin/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Vegas = {
+	z_vegas = {
 		name = 'Z_Vegas'
 		path = 'Z_Vegas/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Subway = {
+	z_subway = {
 		name = 'Z_Subway'
 		path = 'Z_Subway/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_SanFrancisco = {
+	z_sanfrancisco = {
 		name = 'Z_SanFrancisco'
 		path = 'Z_SanFrancisco/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_CarHenge = {
+	z_carhenge = {
 		name = 'Z_CarHenge'
 		path = 'Z_CarHenge/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_FreakShow = {
+	z_freakshow = {
 		name = 'Z_FreakShow'
 		path = 'Z_FreakShow/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Dragrace = {
+	z_dragrace = {
 		name = 'Z_Dragrace'
 		path = 'Z_Dragrace/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_LHC = {
+	z_lhc = {
 		name = 'Z_LHC'
 		path = 'Z_LHC/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Visualizer = {
+	z_visualizer = {
 		name = 'Z_Visualizer'
 		path = 'Z_Visualizer/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
-	Z_Cube = {
+	z_cube = {
 		name = 'Z_Cube'
 		path = 'Z_Cube/'
-		$Common_GH_Zone_Params
+		$common_gh_zone_params
 	}
 }

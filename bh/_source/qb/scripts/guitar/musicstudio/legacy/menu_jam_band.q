@@ -2,16 +2,16 @@ jam_reverb = 0
 
 script jam_init_reverb 
 
-	CreateEffectSendStack \{slot = 2
+	createeffectsendstack \{slot = 2
 		effects = [
 			{
-				$Jam_Mode_MedRoom_Reverb
+				$jam_mode_medroom_reverb
 			}
 		]}
-	SetSoundBussParams \{JamMode_RhythmGuitar = {
+	setsoundbussparams \{jammode_rhythmguitar = {
 			send_vol2 = -30
 		}}
-	SetSoundBussParams \{JamMode_LeadGuitar = {
+	setsoundbussparams \{jammode_leadguitar = {
 			send_vol2 = -30
 		}}
 
@@ -22,13 +22,13 @@ endscript
 
 script jam_deinit_reverb 
 
-	SetSoundBussParams \{JamMode_RhythmGuitar = {
+	setsoundbussparams \{jammode_rhythmguitar = {
 			send_vol2 = -100
 		}}
-	SetSoundBussParams \{JamMode_LeadGuitar = {
+	setsoundbussparams \{jammode_leadguitar = {
 			send_vol2 = -100
 		}}
-	DestroyEffectSendStack \{slot = 2}
+	destroyeffectsendstack \{slot = 2}
 
 	if ($jam_reverb = 1)
 		change \{jam_reverb = 0}

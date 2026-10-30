@@ -1,37 +1,37 @@
-L_SING_Morgan_BleedNS_M_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_morgan_bleedns_m_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					sing_morgan_bleedme_150_NS_M
+				slow = [
+					sing_morgan_bleedme_150_ns_m
 				]
-				Med = [
-					sing_morgan_bleedme_100_NS_M
+				med = [
+					sing_morgan_bleedme_100_ns_m
 				]
-				Fast = [
-					sing_morgan_bleedme_120_NS_M
-				]
-			}
-			Normal = {
-				Slow = [
-					sing_morgan_bleedme_150_NS_M
-				]
-				Med = [
-					sing_morgan_bleedme_100_NS_M
-				]
-				Fast = [
-					sing_morgan_bleedme_120_NS_M
+				fast = [
+					sing_morgan_bleedme_120_ns_m
 				]
 			}
-			Bad = {
-				Slow = [
-					sing_morgan_bleedme_150_NS_M
+			normal = {
+				slow = [
+					sing_morgan_bleedme_150_ns_m
 				]
-				Med = [
-					sing_morgan_bleedme_100_NS_M
+				med = [
+					sing_morgan_bleedme_100_ns_m
 				]
-				Fast = [
-					sing_morgan_bleedme_120_NS_M
+				fast = [
+					sing_morgan_bleedme_120_ns_m
+				]
+			}
+			bad = {
+				slow = [
+					sing_morgan_bleedme_150_ns_m
+				]
+				med = [
+					sing_morgan_bleedme_100_ns_m
+				]
+				fast = [
+					sing_morgan_bleedme_120_ns_m
 				]
 			}
 		}

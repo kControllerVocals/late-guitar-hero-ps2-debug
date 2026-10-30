@@ -1,78 +1,78 @@
 
-script Plugin_Quickview 
-	spawnscriptnow Plugin_Quickview_Spawned params = <...>
+script plugin_quickview 
+	spawnscriptnow plugin_quickview_spawned params = <...>
 endscript
 
-script Plugin_Quickview_Spawned 
+script plugin_quickview_spawned 
 
 	stoprendering
-	FinishRendering
-	Wait \{3
+	finishrendering
+	wait \{3
 		gameframes}
-	KillTextureSplats \{all}
+	killtexturesplats \{all}
 	if (<export_type> = scene)
 
 		<export_type> = zone
 	endif
 	switch <export_type>
-		case Sky
+		case sky
 		switch <project>
 			case gun2
-			TOD_Change_Sky Sky = <Sky>
+			tod_change_sky sky = <sky>
 			default
-			Change_Sky Sky = <Sky>
+			change_sky sky = <sky>
 		endswitch
 		case zone
 		switch <project>
-			case gh3c
+			case 0x1e5e2013
 
-			GetPakManCurrentName \{map = zones}
-			SetPakManCurrentBlock \{map = zones
+			getpakmancurrentname \{map = zones}
+			setpakmancurrentblock \{map = zones
 				pak = none}
-			RefreshPakManSizes \{map = zones}
-			SetPakManCurrentBlock map = zones pakname = <pakname>
+			refreshpakmansizes \{map = zones}
+			setpakmancurrentblock map = zones pakname = <pakname>
 
 			case gun2
-			GetPakManCurrentName \{map = zones}
+			getpakmancurrentname \{map = zones}
 			zone_name = <pakname>
-			FormatText TextName = zone qs("\L%z") z = <zone> DontAssertForChecksums
+			formattext textname = zone qs(0xa2f2c278) z = <zone> dontassertforchecksums
 			if NOT (<zone_name> = <zone>)
-				JumpToZone zone = <zone>
+				jumptozone zone = <zone>
 			else
-				BlockPendingPakManLoads \{map = zones}
-				RefreshCurrentZones
+				blockpendingpakmanloads \{map = zones}
+				refreshcurrentzones
 			endif
 			default
 			if NOT (<zone> = viewer)
-				FormatText checksumname = zone 'load_%z' z = <zone> DontAssertForChecksums
+				formattext checksumname = zone 'load_%z' z = <zone> dontassertforchecksums
 			endif
-			GetCurrentLevel
+			getcurrentlevel
 			if NOT (<level> = <zone>)
-				SetPakManCurrentBlock \{map = zones
+				setpakmancurrentblock \{map = zones
 					pak = none}
 				change_level level = <zone>
 			else
-				BlockPendingPakManLoads \{map = zones}
-				RefreshCurrentZones
+				blockpendingpakmanloads \{map = zones}
+				refreshcurrentzones
 			endif
 		endswitch
 		case viewer
 		switch <project>
-			case gh3c
+			case 0x1e5e2013
 
-			GetPakManCurrentName \{map = zones}
-			SetPakManCurrentBlock \{map = zones
+			getpakmancurrentname \{map = zones}
+			setpakmancurrentblock \{map = zones
 				pak = none}
-			RefreshPakManSizes \{map = zones}
-			SetPakManCurrentBlock map = zones pakname = <pakname>
+			refreshpakmansizes \{map = zones}
+			setpakmancurrentblock map = zones pakname = <pakname>
 
 			case gun2
-			GetMissionName
+			getmissionname
 			if NOT (<mission> = viewer)
 				load_new_mission mission_pak = <viewer> reload_zones
 			else
-				BlockPendingPakManLoads \{map = zones}
-				RefreshCurrentZones
+				blockpendingpakmanloads \{map = zones}
+				refreshcurrentzones
 			endif
 			case gh3
 
@@ -90,14 +90,14 @@ script Plugin_Quickview_Spawned
 				level = viewer}
 
 			default
-			GetCurrentLevel
+			getcurrentlevel
 			if NOT (<level> = viewer)
-				SetPakManCurrentBlock \{map = zones
+				setpakmancurrentblock \{map = zones
 					pak = none}
 				change_level \{level = viewer}
 			else
-				BlockPendingPakManLoads \{map = zones}
-				RefreshCurrentZones
+				blockpendingpakmanloads \{map = zones}
+				refreshcurrentzones
 			endif
 		endswitch
 		case mission
@@ -106,35 +106,35 @@ script Plugin_Quickview_Spawned
 
 			load_new_mission mission_pak = <mission> reload_zones
 			default
-			BlockPendingPakManLoads \{map = zones}
-			RefreshCurrentZones
+			blockpendingpakmanloads \{map = zones}
+			refreshcurrentzones
 		endswitch
-		case Model
+		case model
 		change \{view_mode = 0}
-		ToggleViewMode
-		ToggleViewMode
-		ToggleViewMode
+		toggleviewmode
+		toggleviewmode
+		toggleviewmode
 		exit_view_models_menu
 		toggle_model_viewer
-		view_model modelName = <Model>
+		view_model modelname = <model>
 		case skin
 		change \{view_mode = 0}
-		ToggleViewMode
-		ToggleViewMode
-		ToggleViewMode
+		toggleviewmode
+		toggleviewmode
+		toggleviewmode
 		exit_view_models_menu
 		toggle_model_viewer
-		view_model \{profile = Ped_BatMasterson
-			animLoadScript = animload_ped_male
-			extraAnim = animload_ped_male
-			defaultAnim = MV_Idle_Denton
-			SkeletonName = gun}
+		view_model \{profile = ped_batmasterson
+			animloadscript = animload_ped_male
+			extraanim = animload_ped_male
+			defaultanim = mv_idle_denton
+			skeletonname = gun}
 		default
 	endswitch
-	if NodeFlagExists \{NODEFLAG_VIEWERLIGHTS}
-		ChangeNodeFlag \{NODEFLAG_VIEWERLIGHTS
+	if nodeflagexists \{nodeflag_viewerlights}
+		changenodeflag \{nodeflag_viewerlights
 			0}
-		ChangeNodeFlag \{NODEFLAG_VIEWERLIGHTS
+		changenodeflag \{nodeflag_viewerlights
 			1}
 	endif
 	startrendering

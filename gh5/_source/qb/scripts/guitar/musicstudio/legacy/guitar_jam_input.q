@@ -1,21 +1,21 @@
 
-script jam_update_guitar_tilt \{chromatic = 0}
+script 0x56423850 \{chromatic = 0}
 
 
-	if NOT GuitarGetAnalogueInfo controller = <controller>
+	if NOT guitargetanalogueinfo controller = <controller>
 		return \{false}
 	endif
-	if GotParam \{rhythm}
+	if gotparam \{rhythm}
 		if (<chromatic> = 0)
 			return
 		endif
-		four_tilts = 0
+		0xa82719a9 = 0
 	else
-		four_tilts = <chromatic>
+		0xa82719a9 = <chromatic>
 	endif
-	<spc_v_dist> = <RightY>
+	<spc_v_dist> = <righty>
 	jam_calc_line_rot player = <player> spc_v_dist = <spc_v_dist>
-	if NOT (<four_tilts> = 1)
+	if NOT (<0xa82719a9> = 1)
 		if (<line_rot> <= 30)
 			new_tilt = 0
 		else
@@ -32,11 +32,11 @@ script jam_update_guitar_tilt \{chromatic = 0}
 			new_tilt = 3
 		endif
 	endif
-	if GotParam \{melody}
+	if gotparam \{melody}
 		change jam_tilt_melody = <new_tilt>
-	elseif GotParam \{rhythm}
+	elseif gotparam \{rhythm}
 		change jam_tilt_rhythm = <new_tilt>
-	elseif GotParam \{lead}
+	elseif gotparam \{lead}
 		change jam_tilt_lead = <new_tilt>
 	else
 

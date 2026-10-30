@@ -1,3 +1,3 @@
-zone_sizes_ps2 = {
+0x34e37b26 = {
 }
-zone_sizes_ps2_largest = 0
+0x2e3a69a0 = 0

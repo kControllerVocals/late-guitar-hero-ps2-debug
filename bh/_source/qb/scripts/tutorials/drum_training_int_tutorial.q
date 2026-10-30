@@ -81,30 +81,30 @@ training_drum_int_tutorial_script = [
 
 script drum_training_int_generic_hit_note \{notes_required = 8}
 
-	change DRUM_NOTES_HIT = ($DRUM_NOTES_HIT + 1)
-	if (($DRUM_NOTES_HIT = 1) || ($DRUM_NOTES_HIT = 4))
+	change drum_notes_hit = ($drum_notes_hit + 1)
+	if (($drum_notes_hit = 1) || ($drum_notes_hit = 4))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_01_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_02_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_03_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_04_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_05_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_06_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_07_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_08_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_01_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_02_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_03_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_04_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_05_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_06_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_07_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_08_DRM'}
 			)
 	endif
-	training_display_notes_hit notes_hit = $DRUM_NOTES_HIT notes_required = <notes_required>
+	training_display_notes_hit notes_hit = $drum_notes_hit notes_required = <notes_required>
 endscript
 
 script training_drum_int_tutorial_startup 
 
 	training_init_session
-	ReloadSfx \{mode = tutorials
+	0xc1c4e84c \{mode = tutorials
 		tutorial = 6}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		four_lane_highway = 0}
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = root_window}
 	create_training_pause_handler
 	training_create_narrator_icons
@@ -118,51 +118,51 @@ script training_drum_int_tutorial_show_title
 	if ($transitions_locked = 0)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	create_training_pause_handler
-	Wait \{5
+	wait \{5
 		seconds}
 	training_destroy_title
 endscript
 
 script drum_training_2_1_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L1")
-		text = qs("Adding the First Part of a Drum Beat")}
+	training_set_lesson_header_text \{number = qs(0x22ee76e7)
+		text = qs(0xb060d74f)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script drum_training_2_1_hit_note 
 
-	change DRUM_NOTES_HIT = ($DRUM_NOTES_HIT + 1)
-	if (($DRUM_NOTES_HIT = 1) || ($DRUM_NOTES_HIT = 4))
+	change drum_notes_hit = ($drum_notes_hit + 1)
+	if (($drum_notes_hit = 1) || ($drum_notes_hit = 4))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_01_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_02_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_03_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_04_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_05_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_06_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_07_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_08_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_01_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_02_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_03_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_04_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_05_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_06_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_07_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_08_DRM'}
 			)
 	endif
-	training_display_notes_hit \{notes_hit = $DRUM_NOTES_HIT
+	training_display_notes_hit \{notes_hit = $drum_notes_hit
 		notes_required = 16}
 endscript
 
 script drum_training_2_1_missed_note 
 
-	change DRUM_NOTES_MISSED = ($DRUM_NOTES_MISSED + 1)
-	if (($DRUM_NOTES_MISSED = 6) || ($DRUM_NOTES_MISSED = 12))
+	change drum_notes_missed = ($drum_notes_missed + 1)
+	if (($drum_notes_missed = 6) || ($drum_notes_missed = 12))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_FirstDrum_06_DRM'
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Dru_FirstDrum_07_DRM'
-				Wait}
+			@ training_play_sound \{sound = 'Tut_Dru_FirstDrum_06_DRM'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Dru_FirstDrum_07_DRM'
+				wait}
 			)
 	endif
 endscript
@@ -173,10 +173,10 @@ script drum_training_2_1_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($DRUM_NOTES_HIT >= 16)
+	if ($drum_notes_hit >= 16)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -184,20 +184,20 @@ endscript
 script drum_training_2_1_show_highway 
 
 	training_show_narrator \{narrator = 'drummer'}
-	LoadTutorialSFX \{mode = Tut_Dru_FirstDrum}
-	training_play_sound \{Sound = 'Tut_Dru_FirstDrum_01_DRM'
-		Wait}
+	0x4de05aff \{mode = 0x20c93262}
+	training_play_sound \{sound = 'Tut_Dru_FirstDrum_01_DRM'
+		wait}
 	training_hide_narrator
 	change \{tutorial_disable_hud = 1}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		four_lane_highway = 0}
-	training_start_gem_scroller \{song = Tut_Drum_Beat1
+	training_start_gem_scroller \{song = tut_drum_beat1
 		part = drum
 		disable_hud
 		no_score_update}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -214,30 +214,30 @@ script drum_training_2_1_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup
 endscript
 
 script drum_training_2_1_add_play_each_note_task 
 
-	Wait \{4.6
+	wait \{4.6
 		seconds}
 	training_pause_gem_scroller
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_FirstDrum_02_DRM'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Dru_FirstDrum_03_DRM'
-		Wait}
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("HIT the NOTES in ORDER as they cross the STRIKE LINE.")}
+	training_play_sound \{sound = 'Tut_Dru_FirstDrum_02_DRM'
+		wait}
+	training_play_sound \{sound = 'Tut_Dru_FirstDrum_03_DRM'
+		wait}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x74c7da4c)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Dru_FirstDrum_04_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_FirstDrum_04_DRM'
+		wait}
 	training_hide_narrator
-	change \{DRUM_NOTES_HIT = 0}
-	change \{DRUM_NOTES_MISSED = 0}
-	training_set_task_header_body \{text = qs("Hit 16 notes.")}
+	change \{drum_notes_hit = 0}
+	change \{drum_notes_missed = 0}
+	training_set_task_header_body \{text = qs(0xf7c28f6a)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 16}
@@ -248,8 +248,8 @@ script drum_training_2_1_add_play_each_note_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_FirstDrum_05_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_FirstDrum_05_DRM'
+		wait}
 	training_hide_narrator
 endscript
 
@@ -260,40 +260,40 @@ endscript
 
 script drum_training_2_2_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L2")
-		text = qs("Adding Another Drum")}
+	training_set_lesson_header_text \{number = qs(0x09c32524)
+		text = qs(0xd449216b)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script drum_training_2_2_hit_note 
 
-	change DRUM_NOTES_HIT = ($DRUM_NOTES_HIT + 1)
-	if (($DRUM_NOTES_HIT = 1) || ($DRUM_NOTES_HIT = 4))
+	change drum_notes_hit = ($drum_notes_hit + 1)
+	if (($drum_notes_hit = 1) || ($drum_notes_hit = 4))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_01_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_02_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_03_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_04_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_05_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_06_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_07_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_08_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_01_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_02_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_03_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_04_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_05_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_06_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_07_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_08_DRM'}
 			)
 	endif
-	training_display_notes_hit \{notes_hit = $DRUM_NOTES_HIT
+	training_display_notes_hit \{notes_hit = $drum_notes_hit
 		notes_required = 20}
 endscript
 
 script drum_training_2_2_missed_note 
 
-	change DRUM_NOTES_MISSED = ($DRUM_NOTES_MISSED + 1)
-	if (($DRUM_NOTES_MISSED = 8) || ($DRUM_NOTES_MISSED = 16))
+	change drum_notes_missed = ($drum_notes_missed + 1)
+	if (($drum_notes_missed = 8) || ($drum_notes_missed = 16))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_AddDrum_03_DRM'
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Dru_AddDrum_04_DRM'
-				Wait}
+			@ training_play_sound \{sound = 'Tut_Dru_AddDrum_03_DRM'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Dru_AddDrum_04_DRM'
+				wait}
 			)
 	endif
 endscript
@@ -304,27 +304,27 @@ script drum_training_2_2_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($DRUM_NOTES_HIT >= 20)
+	if ($drum_notes_hit >= 20)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
 script drum_training_2_2_show_highway 
 
-	LoadTutorialSFX \{mode = Tut_Dru_AddDrum}
+	0x4de05aff \{mode = 0x8a8d0dd3}
 	change \{tutorial_disable_hud = 1}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		four_lane_highway = 0}
-	training_start_gem_scroller \{song = Tut_Drum_Beat2
+	training_start_gem_scroller \{song = tut_drum_beat2
 		part = drum
 		disable_hud
 		no_score_update}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -341,29 +341,29 @@ script drum_training_2_2_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup
 endscript
 
 script drum_training_2_2_add_play_each_note_task 
 
-	Wait \{4.6
+	wait \{4.6
 		seconds}
 	training_pause_gem_scroller
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("HIT the NOTES in ORDER as they cross the STRIKE LINE.")}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x74c7da4c)}
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_AddDrum_01_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_AddDrum_01_DRM'
+		wait}
 	training_hide_narrator
-	training_set_task_header_body \{text = qs("Hit 20 notes.")}
+	training_set_task_header_body \{text = qs(0x4ed53bec)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 20}
-	change \{DRUM_NOTES_HIT = 0}
-	change \{DRUM_NOTES_MISSED = 0}
+	change \{drum_notes_hit = 0}
+	change \{drum_notes_missed = 0}
 	training_resume_gem_scroller
 	drum_training_2_2_wait_for_hit_notes
 	destroy_menu \{menu_id = menu_tutorial}
@@ -371,8 +371,8 @@ script drum_training_2_2_add_play_each_note_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_AddDrum_02_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_AddDrum_02_DRM'
+		wait}
 	training_hide_narrator
 endscript
 
@@ -383,40 +383,40 @@ endscript
 
 script drum_training_2_3_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L3")
-		text = qs("Adding in the Kick")}
+	training_set_lesson_header_text \{number = qs(0x10d81465)
+		text = qs(0xb911bea0)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script drum_training_2_3_hit_note 
 
-	change DRUM_NOTES_HIT = ($DRUM_NOTES_HIT + 1)
-	if (($DRUM_NOTES_HIT = 9) || ($DRUM_NOTES_HIT = 18))
+	change drum_notes_hit = ($drum_notes_hit + 1)
+	if (($drum_notes_hit = 9) || ($drum_notes_hit = 18))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_01_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_02_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_03_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_04_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_05_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_06_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_07_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_08_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_01_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_02_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_03_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_04_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_05_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_06_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_07_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_08_DRM'}
 			)
 	endif
-	training_display_notes_hit \{notes_hit = $DRUM_NOTES_HIT
+	training_display_notes_hit \{notes_hit = $drum_notes_hit
 		notes_required = 24}
 endscript
 
 script drum_training_2_3_missed_note 
 
-	change DRUM_NOTES_MISSED = ($DRUM_NOTES_MISSED + 1)
-	if (($DRUM_NOTES_MISSED = 10) || ($DRUM_NOTES_MISSED = 20))
+	change drum_notes_missed = ($drum_notes_missed + 1)
+	if (($drum_notes_missed = 10) || ($drum_notes_missed = 20))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_AddKick_05_DRM'
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Dru_AddKick_06_DRM'
-				Wait}
+			@ training_play_sound \{sound = 'Tut_Dru_AddKick_05_DRM'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Dru_AddKick_06_DRM'
+				wait}
 			)
 	endif
 endscript
@@ -427,10 +427,10 @@ script drum_training_2_3_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($DRUM_NOTES_HIT >= 24)
+	if ($drum_notes_hit >= 24)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -438,20 +438,20 @@ endscript
 script drum_training_2_3_show_highway 
 
 	training_show_narrator \{narrator = 'drummer'}
-	LoadTutorialSFX \{mode = Tut_Dru_AddKick}
-	training_play_sound \{Sound = 'Tut_Dru_AddKick_01_DRM'
-		Wait}
+	0x4de05aff \{mode = 0x376641f6}
+	training_play_sound \{sound = 'Tut_Dru_AddKick_01_DRM'
+		wait}
 	training_hide_narrator
 	change \{tutorial_disable_hud = 1}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		four_lane_highway = 0}
-	training_start_gem_scroller \{song = Tut_Drum_Beat3
+	training_start_gem_scroller \{song = tut_drum_beat3
 		part = drum
 		disable_hud
 		no_score_update}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -468,31 +468,31 @@ script drum_training_2_3_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup
 endscript
 
 script drum_training_2_3_add_play_each_note_task 
 
-	Wait \{4.6
+	wait \{4.6
 		seconds}
 	training_pause_gem_scroller
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("HIT the NOTES in ORDER as they cross the STRIKE LINE.")}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x74c7da4c)}
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_AddKick_02_DRM'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Dru_AddKick_03_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_AddKick_02_DRM'
+		wait}
+	training_play_sound \{sound = 'Tut_Dru_AddKick_03_DRM'
+		wait}
 	training_hide_narrator
-	training_set_task_header_body \{text = qs("Hit 24 notes.")}
+	training_set_task_header_body \{text = qs(0x9ae4776b)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 24}
-	change \{DRUM_NOTES_HIT = 0}
-	change \{DRUM_NOTES_MISSED = 0}
+	change \{drum_notes_hit = 0}
+	change \{drum_notes_missed = 0}
 	training_resume_gem_scroller
 	drum_training_2_3_wait_for_hit_notes
 	destroy_menu \{menu_id = menu_tutorial}
@@ -500,8 +500,8 @@ script drum_training_2_3_add_play_each_note_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_AddKick_04_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_AddKick_04_DRM'
+		wait}
 	training_hide_narrator
 endscript
 
@@ -512,38 +512,38 @@ endscript
 
 script drum_training_2_4_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L4")
-		text = qs("Star Combos")}
+	training_set_lesson_header_text \{number = qs(0x5f9982a2)
+		text = qs(0x1f97460d)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script drum_training_2_4_hit_note 
 
-	change DRUM_NOTES_HIT = ($DRUM_NOTES_HIT + 1)
-	if (($DRUM_NOTES_HIT = 9) || ($DRUM_NOTES_HIT = 18))
+	change drum_notes_hit = ($drum_notes_hit + 1)
+	if (($drum_notes_hit = 9) || ($drum_notes_hit = 18))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_01_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_02_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_03_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_04_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_05_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_06_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_07_DRM'}
-			@ training_play_sound \{Sound = 'Tut_Dru_Positive_08_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_01_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_02_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_03_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_04_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_05_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_06_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_07_DRM'}
+			@ training_play_sound \{sound = 'Tut_Dru_Positive_08_DRM'}
 			)
 	endif
 endscript
 
 script drum_training_2_4_missed_note 
 
-	change DRUM_NOTES_MISSED = ($DRUM_NOTES_MISSED + 1)
-	if (($DRUM_NOTES_MISSED = 5) || ($DRUM_NOTES_MISSED = 5))
+	change drum_notes_missed = ($drum_notes_missed + 1)
+	if (($drum_notes_missed = 5) || ($drum_notes_missed = 5))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Dru_StarCombo_08_DRM'
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Dru_StarCombo_09_DRM'
-				Wait}
+			@ training_play_sound \{sound = 'Tut_Dru_StarCombo_08_DRM'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Dru_StarCombo_09_DRM'
+				wait}
 			)
 	endif
 endscript
@@ -557,7 +557,7 @@ script drum_training_2_4_wait_for_hit_notes
 	if ($player1_status.star_power_amount = 50)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -565,11 +565,11 @@ endscript
 script drum_training_2_4_show_highway 
 
 	change \{tutorial_disable_hud = 0}
-	training_start_gem_scroller \{song = Tut_Drum_Combos
+	training_start_gem_scroller \{song = tut_drum_combos
 		part = drum}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -587,14 +587,14 @@ script drum_training_2_4_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup
 endscript
 
 script drum_training_2_4_show_items_on_highway 
 
-	Wait \{3.6
+	wait \{3.6
 		seconds}
 	training_pause_gem_scroller
 	if training_are_notes_flipped
@@ -609,33 +609,33 @@ script drum_training_2_4_show_items_on_highway
 			scale = 2.3}
 	endif
 	training_show_narrator \{narrator = 'drummer'}
-	LoadTutorialSFX \{mode = Tut_Dru_StarCombo}
-	training_play_sound \{Sound = 'Tut_Dru_StarCombo_01_DRM'
-		Wait}
+	0x4de05aff \{mode = 0x457c8934}
+	training_play_sound \{sound = 'Tut_Dru_StarCombo_01_DRM'
+		wait}
 	training_hide_narrator
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("HIT ALL of the NOTES in order as they cross the STRIKE LINE, to gain STAR POWER.")}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x4bbe07af)}
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_StarCombo_02_DRM'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Dru_StarCombo_03_DRM'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Dru_StarCombo_04_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_StarCombo_02_DRM'
+		wait}
+	training_play_sound \{sound = 'Tut_Dru_StarCombo_03_DRM'
+		wait}
+	training_play_sound \{sound = 'Tut_Dru_StarCombo_04_DRM'
+		wait}
 	training_hide_narrator
 endscript
 
 script drum_training_2_4_add_play_each_note_task 
 
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_StarCombo_05_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_StarCombo_05_DRM'
+		wait}
 	training_hide_narrator
-	training_set_task_header_body \{text = qs("Get Star Power.")}
+	training_set_task_header_body \{text = qs(0x557a11e2)}
 	training_show_task_header
-	change \{DRUM_NOTES_HIT = 0}
-	change \{DRUM_NOTES_MISSED = 0}
+	change \{drum_notes_hit = 0}
+	change \{drum_notes_missed = 0}
 	training_resume_gem_scroller
 	drum_training_2_4_wait_for_hit_notes
 	destroy_menu \{menu_id = menu_tutorial}
@@ -643,8 +643,8 @@ script drum_training_2_4_add_play_each_note_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_StarCombo_06_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_StarCombo_06_DRM'
+		wait}
 	training_hide_narrator
 endscript
 
@@ -655,8 +655,8 @@ endscript
 
 script drum_training_2_5_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L5")
-		text = qs("Activate Star Power")}
+	training_set_lesson_header_text \{number = qs(0x4682b3e3)
+		text = qs(0x8aca0b05)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
@@ -664,31 +664,31 @@ endscript
 script drum_training_2_5_hit_note 
 
 	if ($player1_status.star_power_used = 1)
-		change DRUM_NOTES_HIT = ($DRUM_NOTES_HIT + 1)
-		if (($DRUM_NOTES_HIT = 8) || ($DRUM_NOTES_HIT = 12))
+		change drum_notes_hit = ($drum_notes_hit + 1)
+		if (($drum_notes_hit = 8) || ($drum_notes_hit = 12))
 			Random (
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_01_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_02_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_03_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_04_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_05_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_06_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_07_DRM'}
-				@ training_play_sound \{Sound = 'Tut_Dru_Positive_08_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_01_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_02_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_03_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_04_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_05_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_06_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_07_DRM'}
+				@ training_play_sound \{sound = 'Tut_Dru_Positive_08_DRM'}
 				)
 		endif
-		training_display_notes_hit \{notes_hit = $DRUM_NOTES_HIT
+		training_display_notes_hit \{notes_hit = $drum_notes_hit
 			notes_required = 16}
 	endif
 endscript
 
 script drum_training_2_5_missed_note 
 
-	change DRUM_NOTES_MISSED = ($DRUM_NOTES_MISSED + 1)
-	if (($DRUM_NOTES_MISSED = 5) || ($DRUM_NOTES_MISSED = 5))
+	change drum_notes_missed = ($drum_notes_missed + 1)
+	if (($drum_notes_missed = 5) || ($drum_notes_missed = 5))
 		Random (
-			@ training_play_sound )\{Sound = 'Tut_Dru_ActStarPow_09_DRM'
-			Wait}
+			@ training_play_sound )\{sound = 'Tut_Dru_ActStarPow_09_DRM'
+			wait}
 
 	endif
 endscript
@@ -699,10 +699,10 @@ script drum_training_2_5_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($DRUM_NOTES_HIT >= 16)
+	if ($drum_notes_hit >= 16)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -710,14 +710,14 @@ endscript
 script drum_training_2_5_show_highway 
 
 	change \{tutorial_disable_hud = 0}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		four_lane_highway = 0}
-	training_start_gem_scroller \{song = Tut_Drum_Activ
+	training_start_gem_scroller \{song = tut_drum_activ
 		part = drum
 		no_score_update}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -735,7 +735,7 @@ script drum_training_2_5_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	change \{structurename = player1_status
 		star_power_amount = 100}
@@ -744,29 +744,29 @@ endscript
 
 script drum_training_2_5_add_play_each_note_task 
 
-	Wait \{3.6
+	wait \{3.6
 		seconds}
 	training_pause_gem_scroller
 	training_show_narrator \{narrator = 'drummer'}
-	LoadTutorialSFX \{mode = Tut_Dru_ActStarPow}
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_01_DRM'
-		Wait}
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("Activate Star Power by HITTING both CYMBALS at the SAME time.")}
+	0x4de05aff \{mode = 0x207d9aa0}
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_01_DRM'
+		wait}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x1733a043)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_02_DRM'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_03_DRM'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_04_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_02_DRM'
+		wait}
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_03_DRM'
+		wait}
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_04_DRM'
+		wait}
 	training_hide_narrator
-	training_set_task_header_body \{text = qs("Activate Star Power and hit 16 notes.")}
+	training_set_task_header_body \{text = qs(0x504d6d7f)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 16}
-	change \{DRUM_NOTES_HIT = 0}
-	change \{DRUM_NOTES_MISSED = 0}
+	change \{drum_notes_hit = 0}
+	change \{drum_notes_missed = 0}
 	training_resume_gem_scroller
 	drum_training_2_5_wait_for_hit_notes
 	destroy_menu \{menu_id = menu_tutorial}
@@ -774,31 +774,31 @@ script drum_training_2_5_add_play_each_note_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'drummer'}
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_05_DRM'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_05_DRM'
+		wait}
+	wait \{0.5
 		seconds}
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_06_DRM'
-		Wait}
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_06_DRM'
+		wait}
+	wait \{0.5
 		seconds}
-	training_play_sound \{Sound = 'Tut_Dru_ActStarPow_07_DRM'
-		Wait}
+	training_play_sound \{sound = 'Tut_Dru_ActStarPow_07_DRM'
+		wait}
 	training_hide_narrator
 endscript
 
 script drum_training_2_5_complete_message 
 
 	training_destroy_title
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 		create_training_pause_handler
 	endif
 	training_hide_lesson_header
 	training_destroy_gem_scroller
-	SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+	soundevent \{event = tutorial_mode_finish_chord}
 	spawnscriptnow \{create_exploding_text
 		id = training_spawned_script
 		params = {
@@ -811,37 +811,37 @@ script drum_training_2_5_complete_message
 		id = training_spawned_script
 		params = {
 			parent = 'complete_text'
-			text = qs("Complete!")
+			text = qs(0x232d1eaf)
 			text_physics = 0
 			placement = ps2_tut_bottom
 		}}
-	Wait \{7
+	wait \{7
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = create_exploding_text}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_all_exploding_text
 	change g_training_lessons_completed = ($g_training_lessons_completed + 1)
 endscript
 
 script drum_training_int_tutorial_end 
-	training_container :GetTags
+	training_container :gettags
 	if ($g_training_lessons_completed = 5)
-		SetGlobalTags \{practice
+		setglobaltags \{practice
 			params = {
 				drum_int_lesson = complete
 			}}
 	endif
 	training_kill_session
-	if ScreenElementExists \{id = training_container}
-		DestroyScreenElement \{id = training_container}
+	if screenelementexists \{id = training_container}
+		destroyscreenelement \{id = training_container}
 	endif
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
 	training_destroy_narrator_icons
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		event_handlers = [
 			{
 				pad_start

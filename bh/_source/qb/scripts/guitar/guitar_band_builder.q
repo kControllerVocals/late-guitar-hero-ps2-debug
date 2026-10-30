@@ -4,7 +4,7 @@ band_builder_current_gig_genre = none
 use_worst_band = 0
 band_builder_part_constants = {
 	guitar = {
-		default_name = Guitarist
+		default_name = guitarist
 		create_func = create_guitarist
 		start_anims = guitarist_start_anims
 	}
@@ -14,21 +14,21 @@ band_builder_part_constants = {
 		start_anims = guitarist_start_anims
 	}
 	rhythm = {
-		default_name = Guitarist
+		default_name = guitarist
 		create_func = create_guitarist
 		start_anims = guitarist_start_anims
 	}
-	Bass = {
+	bass = {
 		default_name = bassist
 		create_func = create_bassist
 		start_anims = bassist_start_anims
 	}
 	drum = {
-		default_name = Drummer
+		default_name = drummer
 		create_func = create_drummer
 		start_anims = drummer_start_anims
 	}
-	Vocals = {
+	vocals = {
 		default_name = vocalist
 		create_func = create_vocalist
 		start_anims = vocalist_start_anims
@@ -41,22 +41,22 @@ script band_builder_clear_setup
 endscript
 
 script band_builder_clear_random_appearances 
-	if GotParam \{cpu_only}
+	if gotparam \{cpu_only}
 		i = 0
-		GetArraySize \{$band_builder_random_appearances}
+		getarraysize \{$band_builder_random_appearances}
 		if (<array_size> > 0)
 			begin
-			RemoveParameter \{delete}
-			if NOT StructureContains Structure = ($band_builder_random_appearances [<i>]) player_status
+			removeparameter \{delete}
+			if NOT structurecontains structure = ($band_builder_random_appearances [<i>]) player_status
 				delete = 1
-			elseif NOT GotParam \{cpu_only}
+			elseif NOT gotparam \{cpu_only}
 				delete = 1
 			endif
-			if GotParam \{delete}
+			if gotparam \{delete}
 				remove_random_character_from_player_status random_id = (($band_builder_random_appearances [<i>]).character_id)
-				RemoveArrayElement array = ($band_builder_random_appearances) index = <i>
+				removearrayelement array = ($band_builder_random_appearances) index = <i>
 				change band_builder_random_appearances = <array>
-				RemoveParameter \{array}
+				removeparameter \{array}
 			else
 				i = (<i> + 1)
 			endif
@@ -69,13 +69,13 @@ script band_builder_clear_random_appearances
 endscript
 
 script remove_random_character_from_player_status 
-	GetMaxPlayers
+	getmaxplayers
 	player = 1
 	begin
-	GetPlayerInfo <player> character_id
+	getplayerinfo <player> character_id
 	if (<character_id> = <random_id>)
 		if band_builder_is_finalized_random character_id = <character_id>
-			SetPlayerInfo <player> character_id = judy
+			setplayerinfo <player> character_id = judy
 
 		endif
 	endif
@@ -84,7 +84,7 @@ script remove_random_character_from_player_status
 endscript
 
 script band_builder_check_valid_part 
-	if ((<part> = Bass) || (<part> = rhythm) || (<part> = guitar) || (<part> = drum) || (<part> = Vocals))
+	if ((<part> = bass) || (<part> = rhythm) || (<part> = guitar) || (<part> = drum) || (<part> = vocals))
 		return
 	endif
 
@@ -93,10 +93,10 @@ endscript
 script band_builder_has_part 
 	band_builder_check_valid_part part = <part>
 	i = 0
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		begin
-		if StructureContains Structure = (($band_builder_current_setup) [<i>]) part
+		if structurecontains structure = (($band_builder_current_setup) [<i>]) part
 			if ((($band_builder_current_setup) [<i>]).part = <part>)
 				return \{true}
 			endif
@@ -109,7 +109,7 @@ endscript
 script band_builder_get_num_each_gender 
 	females = 0
 	males = 0
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -124,9 +124,9 @@ script band_builder_get_num_each_gender
 				males = (<males> + 1)
 			endif
 		else
-			if (<character_id> = RandomFemale)
+			if (<character_id> = randomfemale)
 				females = (<females> + 1)
-			elseif (<character_id> = RandomMale)
+			elseif (<character_id> = randommale)
 				males = (<males> + 1)
 			endif
 		endif
@@ -138,7 +138,7 @@ endscript
 
 script band_builder_add_member 
 
-	if NOT GotParam \{real_part}
+	if NOT gotparam \{real_part}
 		real_part = <part>
 	endif
 	band_builder_check_valid_part part = <part>
@@ -150,14 +150,14 @@ script band_builder_add_member
 	create_func = ($band_builder_part_constants.<real_part>.create_func)
 
 	if band_builder_has_part part = <part>
-		ExtendCRC <name> '2' out = name
+		extendcrc <name> '2' out = name
 	endif
-	if GotParam \{song_struct}
-		if StructureContains Structure = <song_struct> Band
-			band_struct = (<song_struct>.Band)
-			if StructureContains Structure = <band_struct> name
+	if gotparam \{song_struct}
+		if structurecontains structure = <song_struct> band
+			band_struct = (<song_struct>.band)
+			if structurecontains structure = <band_struct> name
 				specified_character_id = ($<band_struct>.<name>)
-				if (<specified_character_id> != RandomCharacter)
+				if (<specified_character_id> != randomcharacter)
 					character_id = <specified_character_id>
 
 				endif
@@ -167,9 +167,9 @@ script band_builder_add_member
 		endif
 	endif
 	if ($game_mode = practice || $game_mode = tutorial)
-		character_id = EmptyGuy
+		character_id = emptyguy
 	endif
-	if GotParam \{player_status}
+	if gotparam \{player_status}
 		if ($<player_status>.is_local_client = 1)
 			get_savegame_from_player_status player_status = <player_status>
 		else
@@ -183,7 +183,7 @@ script band_builder_add_member
 
 			cas_get_random_preset_character savegame = <savegame> part = <part>
 
-			if GotParam \{player_status}
+			if gotparam \{player_status}
 				change structurename = <player_status> character_id = <character_id>
 			endif
 		endif
@@ -191,7 +191,7 @@ script band_builder_add_member
 	if (<part> = drum)
 		if NOT fix_disallowed_character_choice character_id = <character_id> savegame = <savegame> part = <part>
 
-			if GotParam \{player_status}
+			if gotparam \{player_status}
 				change structurename = <player_status> character_id = <character_id>
 			endif
 		endif
@@ -205,7 +205,7 @@ script band_builder_add_member
 		player_status = <player_status>
 		savegame = <savegame>
 	}
-	AddArrayElement array = ($band_builder_current_setup) element = <entry>
+	addarrayelement array = ($band_builder_current_setup) element = <entry>
 	change band_builder_current_setup = <array>
 endscript
 
@@ -224,7 +224,7 @@ script fix_disallowed_character_choice
 endscript
 
 script band_builder_is_full 
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> = 4)
 		return \{true}
 	endif
@@ -232,10 +232,10 @@ script band_builder_is_full
 endscript
 
 script get_band_member_player_status \{part = guitar}
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 	i = 1
 	begin
-	<player_status> = ($player_status_array [<i>])
+	<player_status> = ($0x2994109a [<i>])
 	if (($<player_status>.part) = <part>)
 		return band_member_player_status = <player_status>
 	endif
@@ -246,32 +246,32 @@ endscript
 script band_builder_add_players 
 	band_builder_get_band_global
 
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 
 
 	i = 0
 	begin
-	<player_status> = ($player_status_array [<i> + 1])
+	<player_status> = ($0x2994109a [<i> + 1])
 	character_id = ($<player_status>.character_id)
 	get_player_part <...>
 	if NOT (<part> = none)
-		if NOT ($<player_status>.part = drum || $<player_status>.part = Vocals)
+		if NOT ($<player_status>.part = drum || $<player_status>.part = vocals)
 			if ($game_mode = p2_pro_faceoff)
 				if (<i> = 0)
 					part = guitar
 				elseif (<i> = 1)
-					part = Bass
+					part = bass
 				endif
 			endif
 		endif
-		if (<Band> != default_band)
+		if (<band> != default_band)
 			if band_builder_has_part part = <part>
 				if (<part> = guitar)
-					character_id = ($<Band>.bassist)
-					part = Bass
-					real_part = Bass
-				elseif (<part> = Bass)
-					character_id = ($<Band>.Guitarist)
+					character_id = ($<band>.bassist)
+					part = bass
+					real_part = bass
+				elseif (<part> = bass)
+					character_id = ($<band>.guitarist)
 					part = guitar
 					real_part = guitar
 				endif
@@ -279,37 +279,37 @@ script band_builder_add_players
 		else
 			if band_builder_has_part \{part = guitar}
 				if (<part> = guitar)
-					part = Bass
+					part = bass
 				endif
 			endif
-			if band_builder_has_part \{part = Bass}
-				if (<part> = Bass)
+			if band_builder_has_part \{part = bass}
+				if (<part> = bass)
 					part = guitar
 				endif
 			endif
 		endif
 		if NOT ($use_worst_band = 0)
-			if ($use_worst_band = Male)
+			if ($use_worst_band = male)
 				globalworstname = worst_male_band
 			else
 				globalworstname = worst_female_band
 			endif
 			switch <part>
 				case rhythm
-				case Bass
+				case bass
 				character_id = ($<globalworstname>.bassist)
 				case drum
-				character_id = ($<globalworstname>.Drummer)
-				case Vocals
+				character_id = ($<globalworstname>.drummer)
+				case vocals
 				character_id = ($<globalworstname>.vocalist)
 				case guitar
-				character_id = ($<globalworstname>.Guitarist)
+				character_id = ($<globalworstname>.guitarist)
 			endswitch
 		endif
-		if (<part> = Vocals)
+		if (<part> = vocals)
 			if ($game_mode = p1_quickplay)
 			endif
-			if (<character_id> = RandomCharacter)
+			if (<character_id> = randomcharacter)
 				if band_builder_get_cpu_singer_id \{always_random = true}
 					character_id = <singer_id>
 				endif
@@ -333,11 +333,11 @@ endscript
 script get_player_part 
 	part = ($<player_status>.part)
 	real_part = <part>
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 	if (<num_players_shown> > 1)
-		if (<part> = Vocals)
+		if (<part> = vocals)
 			get_song_struct \{song = $current_song}
-			if StructureContains Structure = <song_struct> singer
+			if structurecontains structure = <song_struct> singer
 				singer = (<song_struct>.singer)
 				if (<singer> = none)
 					return \{part = none
@@ -350,7 +350,7 @@ script get_player_part
 			case p2_pro_faceoff
 			is_head_to_head = true
 		endswitch
-		if (<Band> = default_band)
+		if (<band> = default_band)
 			return part = <part> real_part = <real_part>
 		endif
 		if (<is_head_to_head> = true)
@@ -360,16 +360,16 @@ script get_player_part
 
 	switch <part>
 		case rhythm
-		case Bass
-		character_replacing_id = ($<Band>.bassist)
+		case bass
+		character_replacing_id = ($<band>.bassist)
 		case drum
-		character_replacing_id = ($<Band>.Drummer)
-		case Vocals
-		character_replacing_id = ($<Band>.vocalist)
+		character_replacing_id = ($<band>.drummer)
+		case vocals
+		character_replacing_id = ($<band>.vocalist)
 		case guitar
-		character_replacing_id = ($<Band>.Guitarist)
+		character_replacing_id = ($<band>.guitarist)
 	endswitch
-	if (<character_replacing_id> != RandomCharacter)
+	if (<character_replacing_id> != randomcharacter)
 		replace_with_celeb = true
 		return part = <part> real_part = <real_part> character_id = <character_replacing_id>
 	endif
@@ -379,7 +379,7 @@ endscript
 
 script band_builder_add_cpu_characters 
 	band_builder_get_band_global
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 	if ($game_mode = p2_pro_faceoff)
 		return
 	endif
@@ -388,27 +388,27 @@ script band_builder_add_cpu_characters
 			band_builder_add_member {
 				part = drum
 				real_part = drum
-				character_id = ($<Band>.Drummer)
+				character_id = ($<band>.drummer)
 			}
 
 		endif
 	endif
 	added_cpu_vocalist = false
 	if NOT band_builder_is_full
-		if NOT band_builder_has_part \{part = Vocals}
+		if NOT band_builder_has_part \{part = vocals}
 			if has_singing_guitarist <...>
 				real_part = vocals_and_guitar
 			elseif has_singing_bassist <...>
-				real_part = Bass
+				real_part = bass
 			else
-				real_part = Vocals
+				real_part = vocals
 			endif
 			if ($jam_mode_band = 1)
 				real_part = guitar
 			endif
 			if band_builder_get_cpu_singer_id
 				band_builder_add_member {
-					part = Vocals
+					part = vocals
 					real_part = <real_part>
 					character_id = <singer_id>
 				}
@@ -418,11 +418,11 @@ script band_builder_add_cpu_characters
 		endif
 	endif
 	if NOT band_builder_is_full
-		if NOT band_builder_has_part \{part = Bass}
+		if NOT band_builder_has_part \{part = bass}
 			random_bassist = false
 			if has_singing_bassist <...>
 				if (<num_players_shown> = 1)
-					if ($player1_status.part != Vocals)
+					if ($player1_status.part != vocals)
 						random_bassist = true
 					endif
 				elseif (<added_cpu_vocalist> = true)
@@ -430,13 +430,13 @@ script band_builder_add_cpu_characters
 				endif
 			endif
 			if (<random_bassist> = true)
-				bassist_id = RandomCharacter
+				bassist_id = randomcharacter
 			else
-				bassist_id = ($<Band>.bassist)
+				bassist_id = ($<band>.bassist)
 			endif
 			band_builder_add_member {
-				part = Bass
-				real_part = Bass
+				part = bass
+				real_part = bass
 				character_id = <bassist_id>
 			}
 
@@ -446,24 +446,24 @@ script band_builder_add_cpu_characters
 		if NOT band_builder_has_part \{part = guitar}
 			random_guitarist = false
 			if has_singing_guitarist <...>
-				if ($<Band>.Guitarist = Jimi)
+				if ($<band>.guitarist = jimi)
 					if ($current_transition = intro_jimi)
 						random_guitarist = true
 					else
 						return
 					endif
 				else
-					if GotParam \{singer_id}
-						if (<singer_id> = ($<Band>.Guitarist))
+					if gotparam \{singer_id}
+						if (<singer_id> = ($<band>.guitarist))
 							random_guitarist = true
 						endif
 					endif
 				endif
 			endif
 			if (<random_guitarist> = true)
-				guitarist_id = RandomCharacter
+				guitarist_id = randomcharacter
 			else
-				guitarist_id = ($<Band>.Guitarist)
+				guitarist_id = ($<band>.guitarist)
 			endif
 			band_builder_add_member {
 				part = guitar
@@ -476,51 +476,51 @@ script band_builder_add_cpu_characters
 endscript
 
 script has_singing_guitarist 
-	Guitarist = ($<Band>.Guitarist)
-	vocalist = ($<Band>.vocalist)
-	GameMode_GetType
+	guitarist = ($<band>.guitarist)
+	vocalist = ($<band>.vocalist)
+	gamemode_gettype
 	if NOT (<type> = career)
 		return \{false}
 	endif
-	if StructureContains Structure = $<Band> vocalist_has_guitar
+	if structurecontains structure = $<band> vocalist_has_guitar
 		return \{true}
 	endif
-	if (<Guitarist> != <vocalist>)
+	if (<guitarist> != <vocalist>)
 		return \{false}
 	endif
-	if (<Guitarist> = RandomCharacter || <Guitarist> = RandomMale || <Guitarist> = RandomFemale)
+	if (<guitarist> = randomcharacter || <guitarist> = randommale || <guitarist> = randomfemale)
 		return \{false}
 	endif
-	if (<vocalist> = RandomCharacter || <vocalist> = RandomMale || <vocalist> = RandomFemale)
+	if (<vocalist> = randomcharacter || <vocalist> = randommale || <vocalist> = randomfemale)
 		return \{false}
 	endif
 	return \{true}
 endscript
 
 script has_singing_bassist 
-	bassist = ($<Band>.bassist)
-	vocalist = ($<Band>.vocalist)
-	if (<vocalist> = Lemmy)
+	bassist = ($<band>.bassist)
+	vocalist = ($<band>.vocalist)
+	if (<vocalist> = lemmy)
 		return \{true}
 	endif
 	if (<bassist> != <vocalist>)
 		return \{false}
 	endif
-	if (<bassist> = RandomCharacter || <bassist> = RandomMale || <bassist> = RandomFemale)
+	if (<bassist> = randomcharacter || <bassist> = randommale || <bassist> = randomfemale)
 		return \{false}
 	endif
-	if (<vocalist> = RandomCharacter || <vocalist> = RandomMale || <vocalist> = RandomFemale)
+	if (<vocalist> = randomcharacter || <vocalist> = randommale || <vocalist> = randomfemale)
 		return \{false}
 	endif
 	return \{true}
 endscript
 
 script is_current_band_metallica 
-	if NOT GotParam \{Band}
+	if NOT gotparam \{band}
 		get_band_name song = ($current_song)
 	endif
-	switch <Band>
-		case Band_Metallica
+	switch <band>
+		case band_metallica
 		case band_metallica_alt
 		case band_metallica_zomb
 		return \{true}
@@ -530,72 +530,72 @@ endscript
 
 script band_builder_get_band_global 
 	if ($jam_mode_band = 1)
-		return \{Band = jam_mode_band_profiles}
+		return \{band = jam_mode_band_profiles}
 	endif
 	if NOT ($use_worst_band = 0)
-		if ($use_worst_band = Male)
-			return \{Band = worst_male_band}
+		if ($use_worst_band = male)
+			return \{band = worst_male_band}
 		else
-			return \{Band = worst_female_band}
+			return \{band = worst_female_band}
 		endif
 	endif
-	GameMode_GetType
+	gamemode_gettype
 	if NOT (<type> = career)
-		return \{Band = default_band}
+		return \{band = default_band}
 	else
 		get_band_name song = ($current_song)
-		return Band = <Band>
+		return band = <band>
 	endif
 endscript
 
 script get_band_name 
 	get_song_struct song = <song>
-	if StructureContains Structure = <song_struct> Band
+	if structurecontains structure = <song_struct> band
 		if ($game_mode = p2_pro_faceoff)
-			Band = default_band
-			return Band = <Band>
+			band = default_band
+			return band = <band>
 		else
-			Band = (<song_struct>.Band)
-			return Band = <Band>
+			band = (<song_struct>.band)
+			return band = <band>
 		endif
 	else
-		return \{Band = default_band}
+		return \{band = default_band}
 	endif
 endscript
 
 script band_builder_get_cpu_singer_id \{always_random = false}
 	get_song_struct song = ($current_song)
 	band_builder_get_band_global
-	singer = Male
-	if StructureContains Structure = <song_struct> singer
+	singer = male
+	if structurecontains structure = <song_struct> singer
 		singer = (<song_struct>.singer)
 	endif
 	if (<singer> = none)
 		return \{false}
 	endif
-	singer_id = ($<Band>.vocalist)
+	singer_id = ($<band>.vocalist)
 	if (<singer_id> = none)
 		return \{false}
 	endif
-	if ((<singer_id> = RandomCharacter) || (<always_random> = true))
-		if (<singer> = Male)
-			singer_id = RandomMale
-		elseif (<singer> = Female)
-			singer_id = RandomFemale
+	if ((<singer_id> = randomcharacter) || (<always_random> = true))
+		if (<singer> = male)
+			singer_id = randommale
+		elseif (<singer> = female)
+			singer_id = randomfemale
 		endif
 	endif
 	return true singer_id = <singer_id>
 endscript
 
 script band_builder_create_band \{async = 0}
-	GetStartTime
+	getstarttime
 	band_builder_clear_setup
 	band_builder_add_players
 	band_builder_fixup_random_human_player_names
 	band_builder_add_cpu_characters
 	band_builder_fill_in_random_characters
 
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -604,15 +604,15 @@ script band_builder_create_band \{async = 0}
 		repeat <array_size>
 	endif
 	band_load_anim_paks async = <async>
-	GetElapsedTime StartTime = <StartTime>
-	ElapsedTime = (<ElapsedTime> / 1000.0)
+	getelapsedtime starttime = <starttime>
+	elapsedtime = (<elapsedtime> / 1000.0)
 
 	if (<async> = 1)
-		if GotParam \{min_time}
-			timeleft = (<min_time> - <ElapsedTime>)
+		if gotparam \{min_time}
+			timeleft = (<min_time> - <elapsedtime>)
 			if (<timeleft> > 0.0)
 
-				Wait <timeleft> seconds
+				wait <timeleft> seconds
 			endif
 		endif
 	endif
@@ -626,12 +626,12 @@ script band_builder_create_character \{async = 0}
 	name = (($band_builder_current_setup [<index>]).name)
 	ps2_get_musician_context_data name = <name>
 	savegame = (($band_builder_current_setup [<index>]).savegame)
-	if StructureContains Structure = ($band_builder_current_setup [<index>]) player_status
+	if structurecontains structure = ($band_builder_current_setup [<index>]) player_status
 		player_status = (($band_builder_current_setup [<index>]).player_status)
 	else
-		RemoveParameter \{player_status}
+		removeparameter \{player_status}
 	endif
-	if GotParam \{player_status}
+	if gotparam \{player_status}
 		change structurename = <player_status> band_member = <name>
 	endif
 
@@ -648,12 +648,12 @@ endscript
 
 script band_get_human_players 
 	array = []
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
-		if StructureContains Structure = ($band_builder_current_setup [<i>]) player_status
-			AddArrayElement array = <array> element = (($band_builder_current_setup [<i>]).part)
+		if structurecontains structure = ($band_builder_current_setup [<i>]) player_status
+			addarrayelement array = <array> element = (($band_builder_current_setup [<i>]).part)
 		endif
 		i = (<i> + 1)
 		repeat <array_size>

@@ -1,4 +1,4 @@
-CAS_Drum_Shell_Sections = [
+cas_drum_shell_sections = [
 	{
 		text = qs(0x8b9b596c)
 		parts = [
@@ -15,7 +15,7 @@ CAS_Drum_Shell_Sections = [
 			gh5_shell_ld25
 			gh5_shell_ld02
 			gh5_shell_ld36
-			budshell
+			0xa6967070
 			drumshell_ds_10
 			drumshell_ds_36
 			gh5_shell_ld21
@@ -108,7 +108,7 @@ CAS_Drum_Shell_Sections = [
 		]
 	}
 	{
-		text = qs("\LTama")
+		text = qs(0x9eb39dc8)
 		parts = [
 			none
 			drumshell_ds_tama02
@@ -127,7 +127,7 @@ CAS_Drum_Shell_Sections = [
 		]
 	}
 	{
-		text = qs("\LPork Pie")
+		text = qs(0x086c055d)
 		parts = [
 			none
 			drumshell_ds_pork10

@@ -1,58 +1,58 @@
 fake_net = 0
-AssertOnMissingScripts = 0
-AssertOnMissingAssets = 1
+assertonmissingscripts = 0
+assertonmissingassets = 1
 
 script zone_init 
 
 	if (<zone_string_name> = 'z_viewer')
 
-		change \{AssertOnMissingScripts = 0}
+		change \{assertonmissingscripts = 0}
 	endif
-	MemPushContext \{TopDownHeap}
-	FormatText TextName = zone_editable_text checksumname = zone_editable_list '%a%b' a = <zone_string_name> b = '_editable_list'
-	if GlobalExists name = <zone_editable_list> type = array
-		AddEditableList <zone_editable_list>
+	mempushcontext \{topdownheap}
+	formattext textname = zone_editable_text checksumname = zone_editable_list '%a%b' a = <zone_string_name> b = '_editable_list'
+	if globalexists name = <zone_editable_list> type = array
+		addeditablelist <zone_editable_list>
 	endif
-	MemPopContext
-	MemPushContext \{BottomUpHeap}
-	ParseNodeArray {
+	mempopcontext
+	mempushcontext \{bottomupheap}
+	parsenodearray {
 		queue
 		zone_name = <zone_name>
 		array_name = <array_name>
 	}
-	if GotParam \{sfx_array_name}
-		ParseNodeArray {
+	if gotparam \{sfx_array_name}
+		parsenodearray {
 			queue
 			zone_name = <sfx_zone_name>
 			array_name = <sfx_array_name>
 		}
 	endif
-	if GotParam \{gfx_array_name}
-		ParseNodeArray {
+	if gotparam \{gfx_array_name}
+		parsenodearray {
 			queue
 			zone_name = <gfx_zone_name>
 			array_name = <gfx_array_name>
 		}
 	endif
-	if GotParam \{lfx_array_name}
-		ParseNodeArray {
+	if gotparam \{lfx_array_name}
+		parsenodearray {
 			queue
 			zone_name = <lfx_zone_name>
 			array_name = <lfx_array_name>
 		}
 	endif
-	if GotParam \{mfx_array_name}
-		ParseNodeArray {
+	if gotparam \{mfx_array_name}
+		parsenodearray {
 			queue
 			zone_name = <mfx_zone_name>
 			array_name = <mfx_array_name>
 		}
 	endif
-	MemPopContext
-	if NOT InFrontend
-		FormatText checksumname = zone_setup_script '%a_Setup' a = <zone_string_name>
+	mempopcontext
+	if NOT infrontend
+		formattext checksumname = zone_setup_script '%a_Setup' a = <zone_string_name>
 
-		if ScriptExists <zone_setup_script>
+		if scriptexists <zone_setup_script>
 
 			spawnscriptnow zone_init_wait_run_setup params = {zone_setup_script = <zone_setup_script>}
 		endif
@@ -61,13 +61,13 @@ endscript
 
 script zone_init_wait_run_setup 
 	begin
-	if NOT NodeArrayBusy
+	if NOT nodearraybusy
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
-	ClearMasterBloom
-	if ScriptExists <zone_setup_script>
+	clearmasterbloom
+	if scriptexists <zone_setup_script>
 
 		<zone_setup_script>
 	endif
@@ -75,32 +75,32 @@ endscript
 
 script zone_deinit 
 
-	ParseNodeArray abort array_name = <array_name>
-	if GotParam \{sfx_array_name}
-		ParseNodeArray abort array_name = <sfx_array_name>
+	parsenodearray abort array_name = <array_name>
+	if gotparam \{sfx_array_name}
+		parsenodearray abort array_name = <sfx_array_name>
 	endif
-	if GotParam \{gfx_array_name}
-		ParseNodeArray abort array_name = <gfx_array_name>
+	if gotparam \{gfx_array_name}
+		parsenodearray abort array_name = <gfx_array_name>
 	endif
-	if GotParam \{lfx_array_name}
-		ParseNodeArray abort array_name = <lfx_array_name>
+	if gotparam \{lfx_array_name}
+		parsenodearray abort array_name = <lfx_array_name>
 	endif
-	if GotParam \{mfx_array_name}
-		ParseNodeArray abort array_name = <mfx_array_name>
+	if gotparam \{mfx_array_name}
+		parsenodearray abort array_name = <mfx_array_name>
 	endif
-	FormatText TextName = zone_editable_text checksumname = zone_editable_list '%a%b' a = <zone_string_name> b = '_editable_list'
-	if GlobalExists name = <zone_editable_list> type = array
-		RemoveEditableList <zone_editable_list>
+	formattext textname = zone_editable_text checksumname = zone_editable_list '%a%b' a = <zone_string_name> b = '_editable_list'
+	if globalexists name = <zone_editable_list> type = array
+		removeeditablelist <zone_editable_list>
 	endif
 endscript
 
-script SetupCOIM 
-	PushMemProfile \{'COIM'}
-	InitCOIM {
+script setupcoim 
+	pushmemprofile \{'COIM'}
+	initcoim {
 		size = <size>
-		BlockAlign = $Generic_COIM_BlockAlign
-		COIM_Min_Scratch_Blocks
-		$Generic_COIM_Params
+		blockalign = $generic_coim_blockalign
+		coim_min_scratch_blocks
+		$generic_coim_params
 	}
-	PopMemProfile
+	popmemprofile
 endscript

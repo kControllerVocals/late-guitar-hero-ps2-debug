@@ -8,12 +8,12 @@ script ui_create_options
 	change \{top_rockers_enabled = 0}
 	change \{memcard_after_func = none}
 	update_ingame_controllers controller = ($primary_controller)
-	make_generic_stripe_menu \{title = qs("OPTIONS")
+	0x5e1a3a04 \{title = qs(0x976cf9e7)
 		option_arrows}
-	add_generic_stripe_menu_item \{text = qs("CHEATS")
+	0x9d0992fe \{text = qs(0x3e3a98e6)
 		choose_state = uistate_options_cheats}
 	if NOT current_band_has_band_name
-		add_generic_stripe_menu_item \{text = qs("BAND INFO")
+		0x9d0992fe \{text = qs(0x9baf87e5)
 			pad_choose_script = nullscript
 			pad_choose_sound = ui_bonus_videos_negative_sfx
 			focus_rgba = [
@@ -29,34 +29,34 @@ script ui_create_options
 				175
 			]}
 	else
-		add_generic_stripe_menu_item {
-			text = qs("BAND INFO")
+		0x9d0992fe {
+			text = qs(0x9baf87e5)
 			pad_choose_script = menu_choose_band_make_selection
 			pad_choose_params = {from_options = 1 device_num = ($primary_controller) event_params = {event = menu_back}}
 		}
 	endif
-	add_generic_stripe_menu_item \{text = qs("SAVE/LOAD")
+	0x9d0992fe \{text = qs(0x98846417)
 		pad_choose_script = ui_options_continue_to_data_submenu
 		pad_choose_params = {
 			is_popup
 		}}
-	add_generic_stripe_menu_item \{text = qs("CALIBRATE LAG")
-		choose_state = UIstate_options_calibrate_lag}
-	add_generic_stripe_menu_item \{text = qs("AUDIO MIXER")
+	0x9d0992fe \{text = qs(0x550b8c8e)
+		choose_state = uistate_options_calibrate_lag}
+	0x9d0992fe \{text = qs(0xa0345d1c)
 		choose_state = uistate_options_audio}
-	add_generic_stripe_menu_item \{text = qs("FUNCTIONAL OPTIONS")
+	0x9d0992fe \{text = qs(0x7305a834)
 		pad_choose_script = ui_options_continue_to_settings_submenu
 		pad_choose_params = {
 			is_popup
 		}}
-	add_generic_stripe_menu_item \{text = qs("VIDEOS")
+	0x9d0992fe \{text = qs(0x9560fb22)
 		choose_state = uistate_bonus_videos}
-	if GetScreenElementChildren \{id = current_menu}
-		GetArraySize <children>
+	if getscreenelementchildren \{id = current_menu}
+		getarraysize <children>
 		i = 0
 		begin
 		curr_id = (<children> [<i>])
-		<curr_id> :SE_SetProps {
+		<curr_id> :se_setprops {
 			tags = {index = <i>}
 		}
 		i = (<i> + 1)
@@ -77,7 +77,7 @@ script ui_options_anim_in
 	else
 		change \{ui_options_from_submenu = 0}
 	endif
-	current_menu_anchor :SE_SetProps \{highlight_alpha = 1}
+	current_menu_anchor :se_setprops \{highlight_alpha = 1}
 	current_menu :obj_spawnscript \{highlight_motion}
 endscript
 
@@ -86,47 +86,47 @@ script ui_options_anim_out
 endscript
 
 script ui_destroy_options 
-	if ScreenElementExists \{id = current_menu_anchor}
-		DestroyScreenElement \{id = current_menu_anchor}
+	if screenelementexists \{id = current_menu_anchor}
+		destroyscreenelement \{id = current_menu_anchor}
 	endif
 endscript
 
 script ui_options_get_controller_type controller = ($primary_controller)
 	type = guitar
-	text = qs("GUITAR")
-	if NOT IsGuitarController controller = <controller>
-		type = Drums
-		text = qs("DRUM")
-		if NOT IsDrumController controller = <controller>
-			type = Vocals
-			text = qs("VOCAL")
+	text = qs(0x9504b94a)
+	if NOT isguitarcontroller controller = <controller>
+		type = drums
+		text = qs(0xcf488ba5)
+		if NOT isdrumcontroller controller = <controller>
+			type = vocals
+			text = qs(0xae6af654)
 		endif
 	endif
 	return {type = <type> text = <text>}
 endscript
 
 script ui_options_set_settings 
-	if ScreenElementExists \{id = current_menu}
-		GetGlobalTags \{user_options}
-		current_menu :SetTags {user_options = <...>}
+	if screenelementexists \{id = current_menu}
+		getglobaltags \{user_options}
+		current_menu :settags {user_options = <...>}
 	endif
 endscript
 
 script ui_options_check_settings 
-	RemoveParameter \{event}
-	RemoveParameter \{controller}
+	removeparameter \{event}
+	removeparameter \{controller}
 	if NOT ($playing_song)
-		RemoveParameter \{device_num}
-		if ScreenElementExists \{id = current_menu}
-			GetGlobalTags \{user_options}
+		removeparameter \{device_num}
+		if screenelementexists \{id = current_menu}
+			getglobaltags \{user_options}
 			new_user_options = <...>
-			current_menu :GetSingleTag \{user_options}
-			if GotParam \{user_options}
-				if GotParam \{no_loading_screen}
-					RemoveParameter \{no_loading_screen
+			current_menu :getsingletag \{user_options}
+			if gotparam \{user_options}
+				if gotparam \{no_loading_screen}
+					removeparameter \{no_loading_screen
 						struct_name = new_user_options}
 				endif
-				if NOT CompareStructs struct1 = <new_user_options> struct2 = <user_options>
+				if NOT comparestructs struct1 = <new_user_options> struct2 = <user_options>
 					generic_menu_pad_back_sound
 					spawnscriptnow \{ui_memcard_autosave_replace}
 					return
@@ -138,14 +138,14 @@ script ui_options_check_settings
 endscript
 
 script ui_options_continue_to_settings_submenu 
-	if Is_ui_event_running
+	if is_ui_event_running
 		return \{false}
 	endif
 	ui_event_block event = menu_change data = {state = uistate_options_settings <...>}
 endscript
 
 script ui_options_continue_to_data_submenu 
-	if Is_ui_event_running
+	if is_ui_event_running
 		return \{false}
 	endif
 	ui_event_block event = menu_change data = {state = uistate_options_data <...>}

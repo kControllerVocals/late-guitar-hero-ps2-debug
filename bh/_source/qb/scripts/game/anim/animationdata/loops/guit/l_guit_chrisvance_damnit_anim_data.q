@@ -1,37 +1,37 @@
-L_GUIT_ChrisVance_Damnit_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_chrisvance_damnit_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_ChrisVance_Damnit_75
+				slow = [
+					guit_chrisvance_damnit_75
 				]
-				Med = [
-					Guit_ChrisVance_Damnit_100
+				med = [
+					guit_chrisvance_damnit_100
 				]
-				Fast = [
-					Guit_ChrisVance_Damnit_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_ChrisVance_Damnit_75
-				]
-				Med = [
-					Guit_ChrisVance_Damnit_100
-				]
-				Fast = [
-					Guit_ChrisVance_Damnit_120
+				fast = [
+					guit_chrisvance_damnit_120
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_ChrisVance_Damnit_75
+			normal = {
+				slow = [
+					guit_chrisvance_damnit_75
 				]
-				Med = [
-					Guit_ChrisVance_Damnit_100
+				med = [
+					guit_chrisvance_damnit_100
 				]
-				Fast = [
-					Guit_ChrisVance_Damnit_120
+				fast = [
+					guit_chrisvance_damnit_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_chrisvance_damnit_75
+				]
+				med = [
+					guit_chrisvance_damnit_100
+				]
+				fast = [
+					guit_chrisvance_damnit_120
 				]
 			}
 		}

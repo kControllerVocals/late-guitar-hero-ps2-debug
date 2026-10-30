@@ -26,39 +26,39 @@ script make_menu {
 		bg_dims = (1280.0, 720.0)
 		exclusive_device = ($primary_controller)
 		bg_scale = (0.95, 1.0)
-		Scroll_down_SFX = generic_menu_up_or_down_sound
-		Scroll_up_SFX = generic_menu_up_or_down_sound
+		scroll_down_sfx = generic_menu_up_or_down_sound
+		scroll_up_sfx = generic_menu_up_or_down_sound
 	}
-	SetScreenElementLock id = <parent> off
-	if NOT GotParam \{color_scheme}
+	setscreenelementlock id = <parent> off
+	if NOT gotparam \{color_scheme}
 		color_scheme = $cas_color_scheme
 	endif
-	if NOT GotParam \{title_rgba}
+	if NOT gotparam \{title_rgba}
 		title_rgba = (<color_scheme>.title_color)
 	endif
-	if NOT GotParam \{scroll_bar_offset}
+	if NOT gotparam \{scroll_bar_offset}
 		scroll_bar_offset = (0.0, 0.0)
 	endif
-	if NOT GotParam \{keep_current}
-		if ScreenElementExists \{id = current_menu_anchor}
-			DestroyScreenElement \{id = current_menu_anchor}
+	if NOT gotparam \{keep_current}
+		if screenelementexists \{id = current_menu_anchor}
+			destroyscreenelement \{id = current_menu_anchor}
 		endif
 	else
-		if GotParam \{fade_out_current}
-			LegacyDoScreenElementMorph \{id = current_menu_anchor
+		if gotparam \{fade_out_current}
+			legacydoscreenelementmorph \{id = current_menu_anchor
 				alpha = 0
 				time = 0}
 		endif
 	endif
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 		get_all_exclusive_devices
 	endif
 	if NOT (($menu_over_ride_exclusive_device) = -1)
 		exclusive_device = ($menu_over_ride_exclusive_device)
 	endif
-	if GotParam \{centered}
-		if NOT GotParam \{centered_offset}
+	if gotparam \{centered}
+		if NOT gotparam \{centered_offset}
 			centered_offset = (0.0, 0.0)
 		endif
 		pos = ((((1.0, 0.0) * (640 - (<dims> [0] / 2))) + (0.0, 250.0)) + <centered_offset>)
@@ -68,9 +68,9 @@ script make_menu {
 			title_pos = (640.0, 155.0)
 		endif
 	endif
-	MangleChecksums a = <menu_id> b = menu
-	CreateScreenElement {
-		type = ContainerElement
+	manglechecksums a = <menu_id> b = menu
+	createscreenelement {
+		type = containerelement
 		parent = <parent>
 		id = <menu_id>
 		rot_angle = <rot_angle>
@@ -79,24 +79,24 @@ script make_menu {
 		dims = (1280.0, 720.0)
 		alpha = 1
 		z_priority = <extra_z>
-		focusable_child = <mangled_ID>
+		focusable_child = <mangled_id>
 		exclusive_device = <exclusive_device>
 	}
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = <menu_id>
-		id = <mangled_ID>
+		id = <mangled_id>
 		just = [left top]
 		focusable_child = <vmenu_id>
 	}
 	<highlight_parent_id> = <menu_id>
-	if NOT GotParam \{keep_current}
-		AssignAlias id = <menu_id> alias = current_menu_anchor
+	if NOT gotparam \{keep_current}
+		assignalias id = <menu_id> alias = current_menu_anchor
 	endif
-	if GotParam \{title}
-		CreateScreenElement {
-			type = TextBlockElement
-			parent = <mangled_ID>
+	if gotparam \{title}
+		createscreenelement {
+			type = textblockelement
+			parent = <mangled_id>
 			local_id = title
 			font = ($test_menu_font_title)
 			text = <title>
@@ -111,10 +111,10 @@ script make_menu {
 			fit_width = `scale each line if larger`
 			internal_just = [center center]
 		}
-		if NOT ((GotParam noBG) || (GotParam noTitleBG))
-			CreateScreenElement {
-				type = SpriteElement
-				parent = <mangled_ID>
+		if NOT ((gotparam nobg) || (gotparam notitlebg))
+			createscreenelement {
+				type = spriteelement
+				parent = <mangled_id>
 				texture = menu_history_background_empty
 				scale = <title_bg_scale>
 				dims = (256.0, 128.0)
@@ -124,22 +124,22 @@ script make_menu {
 			}
 		endif
 	endif
-	<menu_id> :SetTags num_options = 0
-	if GotParam \{scrolling}
-		<menu_id> :SetTags scrolling_num_options = 0
+	<menu_id> :settags num_options = 0
+	if gotparam \{scrolling}
+		<menu_id> :settags scrolling_num_options = 0
 		scroll_bar_pos = (<pos> + <scroll_bar_offeset>)
 		scroll_bar_len = ((<dims> [1]) + 10)
-		CreateScreenElement {
-			type = ContainerElement
-			parent = <mangled_ID>
+		createscreenelement {
+			type = containerelement
+			parent = <mangled_id>
 			local_id = scroll_bar
 			pos = (<scroll_bar_pos> + <scroll_bar_offset>)
 			just = [right top]
 			dims = ((20.0, 0.0) + ((0.0, 1.0) * <scroll_bar_len>))
 		}
 		scroll_bar_id = <id>
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			parent = <scroll_bar_id>
 			pos = (0.0, -5.0)
 			just = [center top]
@@ -148,8 +148,8 @@ script make_menu {
 			z_priority = (14 + <extra_z>)
 			rgba = [200 200 200 255]
 		}
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			parent = <scroll_bar_id>
 			pos = (0.0, 0.0)
 			just = [center top]
@@ -159,8 +159,8 @@ script make_menu {
 			z_priority = (13 + <extra_z>)
 			alpha = 0.0
 		}
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			parent = <scroll_bar_id>
 			pos = ((0.0, 1.0) * <scroll_bar_len>)
 			just = [center bottom]
@@ -170,8 +170,8 @@ script make_menu {
 			rot_angle = 180
 			rgba = [200 200 200 255]
 		}
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			parent = <scroll_bar_id>
 			local_id = zipper
 			pos = (0.0, 0.0)
@@ -182,25 +182,25 @@ script make_menu {
 			z_priority = (17 + <extra_z>)
 			alpha = 0.0
 		}
-		<menu_id> :SetTags scroll_bar_id = <scroll_bar_id>
-		<menu_id> :SetTags scroll_bar_len = (<scroll_bar_len> - 20)
-		<menu_id> :SetTags scroll_bar_option = 0
-		CreateScreenElement {
-			type = VScrollingMenu
-			parent = <mangled_ID>
+		<menu_id> :settags scroll_bar_id = <scroll_bar_id>
+		<menu_id> :settags scroll_bar_len = (<scroll_bar_len> - 20)
+		<menu_id> :settags scroll_bar_option = 0
+		createscreenelement {
+			type = vscrollingmenu
+			parent = <mangled_id>
 			dims = <dims>
 			pos = <pos>
 			just = [left top]
 		}
 		<parent_id> = <id>
-		AssignAlias id = <parent_id> alias = current_scrolling_menu
+		assignalias id = <parent_id> alias = current_scrolling_menu
 		<vmenu_pos> = (0.0, 0.0)
 	else
-		<parent_id> = <mangled_ID>
+		<parent_id> = <mangled_id>
 		<vmenu_pos> = <pos>
 	endif
-	CreateScreenElement {
-		type = VMenu
+	createscreenelement {
+		type = vmenu
 		parent = <parent_id>
 		id = <vmenu_id>
 		pos = <vmenu_pos>
@@ -211,9 +211,9 @@ script make_menu {
 		regular_space_amount = <regular_space_amount>
 		spacing_between = <spacing_between>
 	}
-	if NOT GotParam \{noBG}
-		CreateScreenElement {
-			type = SpriteElement
+	if NOT gotparam \{nobg}
+		createscreenelement {
+			type = spriteelement
 			parent = <menu_id>
 			pos = <bg_pos>
 			texture = <menu_bg>
@@ -221,55 +221,55 @@ script make_menu {
 			dims = <bg_dims>
 			scale = <bg_scale>
 		}
-		AssignAlias id = <id> alias = current_menu_background
+		assignalias id = <id> alias = current_menu_background
 	endif
-	if GotParam \{no_event_handlers}
-		KillEventHandlers
+	if gotparam \{no_event_handlers}
+		killeventhandlers
 	else
 		internal_pad_up_params = {up = 1}
 		internal_pad_down_params = {down = 2}
-		if GotParam \{scrolling}
+		if gotparam \{scrolling}
 			internal_pad_up_params = {<internal_pad_up_params> scrolling}
 			internal_pad_down_params = {<internal_pad_down_params> scrolling}
 		endif
 		if (<pad_back_script> = nullscript)
 			<pad_back_sound> = nullscript
 		endif
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <vmenu_id>
 			event_handlers = [
 				{pad_back <pad_back_sound>}
 				{pad_back <pad_back_script> params = <pad_back_params>}
-				{pad_up <Scroll_up_SFX> params = <internal_pad_up_params>}
-				{pad_down <Scroll_down_SFX> params = <internal_pad_down_params>}
+				{pad_up <scroll_up_sfx> params = <internal_pad_up_params>}
+				{pad_down <scroll_down_sfx> params = <internal_pad_down_params>}
 			]
 		}
-		if GotParam \{pad_down_script}
-			SetScreenElementProps {
+		if gotparam \{pad_down_script}
+			setscreenelementprops {
 				id = <vmenu_id>
 				event_handlers = [
 					{pad_down <pad_down_script> params = <pad_down_params>}
 				]
 			}
 		endif
-		if GotParam \{pad_up_script}
-			SetScreenElementProps {
+		if gotparam \{pad_up_script}
+			setscreenelementprops {
 				id = <vmenu_id>
 				event_handlers = [
 					{pad_up <pad_up_script> params = <pad_up_params>}
 				]
 			}
 		endif
-		if GotParam \{pad_option2_script}
-			SetScreenElementProps {
+		if gotparam \{pad_option2_script}
+			setscreenelementprops {
 				id = <vmenu_id>
 				event_handlers = [
 					{pad_option2 <pad_option2_script> params = <pad_option2_params>}
 				]
 			}
 		endif
-		if GotParam \{pad_option_script}
-			SetScreenElementProps {
+		if gotparam \{pad_option_script}
+			setscreenelementprops {
 				id = <vmenu_id>
 				event_handlers = [
 					{pad_option <pad_option_script> params = <pad_option_params>}
@@ -277,44 +277,44 @@ script make_menu {
 			}
 		endif
 	endif
-	if NOT GotParam \{keep_current}
-		AssignAlias id = <vmenu_id> alias = current_menu
+	if NOT gotparam \{keep_current}
+		assignalias id = <vmenu_id> alias = current_menu
 	endif
 	width = (<dims>.(1.0, 0.0))
-	<vmenu_id> :SetTags color_scheme = <color_scheme>
-	<vmenu_id> :SetTags extra_z = <extra_z>
-	<vmenu_id> :SetTags scroll_bar_offset = <scroll_bar_offset>
-	<vmenu_id> :SetTags menu_pos = <pos>
-	if GotParam \{selection_width}
-		<vmenu_id> :SetTags selection_width = <selection_width>
+	<vmenu_id> :settags color_scheme = <color_scheme>
+	<vmenu_id> :settags extra_z = <extra_z>
+	<vmenu_id> :settags scroll_bar_offset = <scroll_bar_offset>
+	<vmenu_id> :settags menu_pos = <pos>
+	if gotparam \{selection_width}
+		<vmenu_id> :settags selection_width = <selection_width>
 	endif
-	if GotParam \{selection_height}
-		<vmenu_id> :SetTags selection_height = <selection_height>
+	if gotparam \{selection_height}
+		<vmenu_id> :settags selection_height = <selection_height>
 	endif
-	if GotParam \{additional_create_script}
-		<vmenu_id> :SetTags additional_create_script = <additional_create_script>
+	if gotparam \{additional_create_script}
+		<vmenu_id> :settags additional_create_script = <additional_create_script>
 	endif
-	if GotParam \{additional_focus_script}
-		<vmenu_id> :SetTags additional_focus_script = <additional_focus_script>
+	if gotparam \{additional_focus_script}
+		<vmenu_id> :settags additional_focus_script = <additional_focus_script>
 	endif
-	if GotParam \{additional_unfocus_script}
-		<vmenu_id> :SetTags additional_unfocus_script = <additional_unfocus_script>
+	if gotparam \{additional_unfocus_script}
+		<vmenu_id> :settags additional_unfocus_script = <additional_unfocus_script>
 	endif
-	if GotParam \{no_highlight_bar}
-		<vmenu_id> :SetTags no_highlight_bar = 1
+	if gotparam \{no_highlight_bar}
+		<vmenu_id> :settags no_highlight_bar = 1
 	else
-		if GotParam \{highlight_dims}
-			<vmenu_id> :SetTags highlight_dims = <highlight_dims>
+		if gotparam \{highlight_dims}
+			<vmenu_id> :settags highlight_dims = <highlight_dims>
 		endif
-		if GotParam \{highlight_bar}
-			menu_create_highlight_bar parent_id = <highlight_parent_id> z_priority = <extra_z>
+		if gotparam \{highlight_bar}
+			0x05039c3f parent_id = <highlight_parent_id> z_priority = <extra_z>
 		endif
 	endif
-	if GotParam \{additional_menu_create_script}
+	if gotparam \{additional_menu_create_script}
 		<additional_menu_create_script> <additional_menu_create_params>
 	endif
-	if GotParam \{centered}
-		<vmenu_id> :SetTags centered = 1
+	if gotparam \{centered}
+		<vmenu_id> :settags centered = 1
 	endif
 endscript
 
@@ -358,70 +358,70 @@ script add_menu_item \{focus_script = menu_item_focus
 		cas_offset = (0.0, 0.0)
 		alpha = 1
 		text_case = upper}
-	if GlobalExists \{name = massive_build}
+	if globalexists \{name = massive_build}
 		if NOT ($massive_build = 0)
-			if GotParam \{massive_secret_item}
+			if gotparam \{massive_secret_item}
 				return
 			endif
 		endif
 	endif
-	<parent> :GetSingleTag no_highlight_bar
-	if NOT GotParam \{dims}
-		if NOT GotParam \{selection_width}
-			<parent> :GetSingleTag selection_width
+	<parent> :getsingletag no_highlight_bar
+	if NOT gotparam \{dims}
+		if NOT gotparam \{selection_width}
+			<parent> :getsingletag selection_width
 		endif
-		if NOT GotParam \{selection_height}
-			<parent> :GetSingleTag selection_height
+		if NOT gotparam \{selection_height}
+			<parent> :getsingletag selection_height
 		endif
 		dims = (((0.0, 1.0) * <selection_height>) + ((1.0, 0.0) * <selection_width>))
-		if NOT GotParam \{highlight_dims}
+		if NOT gotparam \{highlight_dims}
 			highlight_dims = (<dims> - (0.0, 10.0))
 		endif
 	else
 	endif
-	<parent> :GetSingleTag centered
-	if GotParam \{centered}
+	<parent> :getsingletag centered
+	if gotparam \{centered}
 		child_anchor = [center center]
 		text_just = [center center]
 		text_offset = (0.0, 0.0)
 	endif
-	<parent> :GetSingleTag color_scheme
-	<parent> :GetSingleTag extra_z
-	if NOT GotParam \{color_scheme}
+	<parent> :getsingletag color_scheme
+	<parent> :getsingletag extra_z
+	if NOT gotparam \{color_scheme}
 		color_scheme = $cas_color_scheme
 	endif
-	if NOT GotParam \{rgba}
+	if NOT gotparam \{rgba}
 		<rgba> = ($default_color_scheme.text_color)
 	endif
-	if NOT GotParam \{extra_rgba}
+	if NOT gotparam \{extra_rgba}
 		extra_rgba = ($default_color_scheme.text_color)
 	endif
-	if GotParam \{id}
-		if ScreenElementExists id = <id>
-			RemoveParameter \{id}
+	if gotparam \{id}
+		if screenelementexists id = <id>
+			removeparameter \{id}
 		endif
 	endif
-	if GotParam \{heading}
-		AddParams \{not_focusable}
+	if gotparam \{heading}
+		addparams \{not_focusable}
 		<rgba> = [200 70 70 255]
 	endif
-	if GotParam \{not_focusable}
-		if GotParam \{heading}
+	if gotparam \{not_focusable}
+		if gotparam \{heading}
 		else
-			if IsArray <rgba>
+			if isarray <rgba>
 				clrval = (<rgba> [0] * 0.5)
-				CastToInteger \{clrval}
-				SetArrayElement ArrayName = rgba index = 0 newvalue = <clrval>
+				casttointeger \{clrval}
+				setarrayelement arrayname = rgba index = 0 newvalue = <clrval>
 				clrval = (<rgba> [1] * 0.5)
-				CastToInteger \{clrval}
-				SetArrayElement ArrayName = rgba index = 1 newvalue = <clrval>
+				casttointeger \{clrval}
+				setarrayelement arrayname = rgba index = 1 newvalue = <clrval>
 				clrval = (<rgba> [2] * 0.5)
-				CastToInteger \{clrval}
-				SetArrayElement ArrayName = rgba index = 2 newvalue = <clrval>
+				casttointeger \{clrval}
+				setarrayelement arrayname = rgba index = 2 newvalue = <clrval>
 			endif
 		endif
-		CreateScreenElement {
-			type = ContainerElement
+		createscreenelement {
+			type = containerelement
 			parent = <parent>
 			id = <id>
 			local_id = <local_id>
@@ -434,8 +434,8 @@ script add_menu_item \{focus_script = menu_item_focus
 			not_focusable
 		}
 	else
-		CreateScreenElement {
-			type = ContainerElement
+		createscreenelement {
+			type = containerelement
 			parent = <parent>
 			id = <id>
 			local_id = <local_id>
@@ -447,26 +447,26 @@ script add_menu_item \{focus_script = menu_item_focus
 			child_anchor = <child_anchor>
 			dims = <dims>
 		}
-		if GotParam \{tag_grid_x}
-			<id> :SetTags tag_grid_x = <tag_grid_x> tag_length = <length>
+		if gotparam \{tag_grid_x}
+			<id> :settags tag_grid_x = <tag_grid_x> tag_length = <length>
 		else
-			<id> :SetTags tag_length = <length>
+			<id> :settags tag_length = <length>
 		endif
 	endif
 	<container_id> = <id>
-	if GotParam \{choose_state}
+	if gotparam \{choose_state}
 		pad_choose_script = ui_event
 		pad_choose_params = {event = menu_change data = {state = <choose_state> <choose_state_data> container_id = <container_id>}}
 	else
 		pad_choose_params = {<pad_choose_params> container_id = <container_id>}
 	endif
-	if GotParam \{choose_back}
+	if gotparam \{choose_back}
 		pad_choose_script = ui_event
 		pad_choose_params = {event = menu_back}
 	endif
-	if NOT GotParam \{no_highlight_bar}
-		CreateScreenElement {
-			type = ContainerElement
+	if NOT gotparam \{no_highlight_bar}
+		createscreenelement {
+			type = containerelement
 			parent = <container_id>
 			local_id = highlight
 			just = [left center]
@@ -475,12 +475,12 @@ script add_menu_item \{focus_script = menu_item_focus
 			alpha = 0.0
 		}
 	endif
-	if GotParam \{children}
-		GetArraySize \{children}
+	if gotparam \{children}
+		getarraysize \{children}
 		<i> = 0
 		begin
-		if NOT StructureContains Structure = (<children> [<i>]) null
-			CreateScreenElement {
+		if NOT structurecontains structure = (<children> [<i>]) null
+			createscreenelement {
 				z_priority = (10 + <extra_z>)
 				(<children> [<i>])
 				parent = <container_id>
@@ -489,23 +489,23 @@ script add_menu_item \{focus_script = menu_item_focus
 		<i> = (<i> + 1)
 		repeat <array_size>
 	endif
-	if GotParam \{toggle}
+	if gotparam \{toggle}
 		if (<toggle> = on)
 			extra_text = qs(0x9feda83b)
 		else
 			extra_text = qs(0x87289b63)
 		endif
 		extra_block = {dims = (50.0, 0.0) internal_just = [center center] allow_expansion}
-		AddParams \{option_arrows}
-		if NOT GotParam \{no_toggle}
+		addparams \{option_arrows}
+		if NOT gotparam \{no_toggle}
 			<option_arrows_callback> = menu_toggle_item
 			<option_arrows_callback_params> = {toggle_script = <toggle_script> id = <container_id> toggle_params = <toggle_params>}
-			<container_id> :SetTags toggle = <toggle>
+			<container_id> :settags toggle = <toggle>
 		endif
 	endif
 	if ((<additional_focus_script> = nullscript) && (<additional_unfocus_script> = nullscript))
 		if (<pad_choose_script> = nullscript)
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <container_id>
 				event_handlers = [
 					{focus <focus_script> params = {parent = <parent> parent_anchor = <parent_anchor> id = <container_id> scale_highlight_text = <scale_highlight_text>}}
@@ -513,7 +513,7 @@ script add_menu_item \{focus_script = menu_item_focus
 				]
 			}
 		else
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <container_id>
 				event_handlers = [
 					{focus <focus_script> params = {parent = <parent> parent_anchor = <parent_anchor> id = <container_id> scale_highlight_text = <scale_highlight_text>}}
@@ -524,7 +524,7 @@ script add_menu_item \{focus_script = menu_item_focus
 			}
 		endif
 	else
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <container_id>
 			event_handlers = [
 				{focus <focus_script> params = {parent = <parent> parent_anchor = <parent_anchor> id = <container_id> scale_highlight_text = <scale_highlight_text>}}
@@ -536,51 +536,51 @@ script add_menu_item \{focus_script = menu_item_focus
 			]
 		}
 	endif
-	if GotParam \{pad_square_script}
-		SetScreenElementProps {
+	if gotparam \{pad_square_script}
+		setscreenelementprops {
 			id = <container_id>
 			event_handlers = [
 				{pad_square <pad_square_script> params = {id = <container_id> <pad_square_params>}}
 			]
 		}
 	endif
-	if GotParam \{pad_start_script}
-		SetScreenElementProps {
+	if gotparam \{pad_start_script}
+		setscreenelementprops {
 			id = <container_id>
 			event_handlers = [
 				{pad_start <pad_start_script> params = {id = <container_id> <pad_start_params>}}
 			]
 		}
 	endif
-	<container_id> :SetTags text_offset = <text_offset>
-	<container_id> :SetTags arrow_offset = <arrow_offset>
-	<container_id> :SetTags extras_offset = <extras_offset>
-	<container_id> :SetTags option_arrows_callback = <option_arrows_callback>
-	<container_id> :SetTags cas_offset = <cas_offset>
-	<container_id> :SetTags just = <just>
-	<container_id> :SetTags rgba = <rgba>
-	<container_id> :SetTags extra_rgba = <extra_rgba>
-	<parent_anchor> :GetSingleTag scrolling_num_options
-	if GotParam \{scrolling_num_options}
-		<container_id> :SetTags scrolling_option = <scrolling_num_options>
+	<container_id> :settags text_offset = <text_offset>
+	<container_id> :settags arrow_offset = <arrow_offset>
+	<container_id> :settags extras_offset = <extras_offset>
+	<container_id> :settags option_arrows_callback = <option_arrows_callback>
+	<container_id> :settags cas_offset = <cas_offset>
+	<container_id> :settags just = <just>
+	<container_id> :settags rgba = <rgba>
+	<container_id> :settags extra_rgba = <extra_rgba>
+	<parent_anchor> :getsingletag scrolling_num_options
+	if gotparam \{scrolling_num_options}
+		<container_id> :settags scrolling_option = <scrolling_num_options>
 		<scrolling_num_options> = (<scrolling_num_options> + 1)
-		<parent_anchor> :SetTags scrolling_num_options = <scrolling_num_options>
+		<parent_anchor> :settags scrolling_num_options = <scrolling_num_options>
 	endif
-	<parent_anchor> :GetSingleTag num_options
-	if GotParam \{num_options}
+	<parent_anchor> :getsingletag num_options
+	if gotparam \{num_options}
 		<num_options> = (<num_options> + 1)
-		<parent_anchor> :SetTags num_options = <num_options>
+		<parent_anchor> :settags num_options = <num_options>
 	endif
 	if (<text_case> = lower)
-		GetLowerCaseString <text>
+		getlowercasestring <text>
 		<text> = <lowercasestring>
 	elseif (<text_case> = upper)
-		GetUpperCaseString <text>
-		<text> = <UpperCaseString>
+		getuppercasestring <text>
+		<text> = <uppercasestring>
 	endif
 	text_scale = <scale>
-	CreateScreenElement {
-		type = TextBlockElement
+	createscreenelement {
+		type = textblockelement
 		parent = <container_id>
 		local_id = text
 		font = ($test_menu_font)
@@ -595,17 +595,17 @@ script add_menu_item \{focus_script = menu_item_focus
 		fit_width = `scale each line if larger`
 		internal_just = <text_internal_just>
 	}
-	if GotParam \{extra_text}
-		if NOT GotParam \{extra_just}
-			if GotParam \{option_arrows}
+	if gotparam \{extra_text}
+		if NOT gotparam \{extra_just}
+			if gotparam \{option_arrows}
 				<extra_just> = [center center]
 			else
 				<extra_just> = [left center]
 			endif
 		endif
-		if NOT GotParam \{extra_block}
-			CreateScreenElement {
-				type = TextBlockElement
+		if NOT gotparam \{extra_block}
+			createscreenelement {
+				type = textblockelement
 				parent = <container_id>
 				local_id = extra_text
 				font = ($test_menu_font)
@@ -620,8 +620,8 @@ script add_menu_item \{focus_script = menu_item_focus
 				fit_width = `scale each line if larger`
 			}
 		else
-			CreateScreenElement {
-				type = TextBlockElement
+			createscreenelement {
+				type = textblockelement
 				parent = <container_id>
 				local_id = extra_text
 				font = ($test_menu_font)
@@ -634,14 +634,14 @@ script add_menu_item \{focus_script = menu_item_focus
 				pos = (((1.0, 0.0) * <dims> [0]) + <extras_offset>)
 				z_priority = (10 + <extra_z>)
 			}
-			GetScreenElementChildren id = <id>
-			GetArraySize <children>
+			getscreenelementchildren id = <id>
+			getarraysize <children>
 			if NOT (<array_size> = 1)
-				<container_id> :SE_SetProps dims = (((1.0, 0.0) * <dims> [0]) + ((0.0, 1.0) * (<dims> [1] * <array_size>)))
+				<container_id> :se_setprops dims = (((1.0, 0.0) * <dims> [0]) + ((0.0, 1.0) * (<dims> [1] * <array_size>)))
 			endif
 		endif
-		if GotParam \{option_arrows}
-			SetScreenElementProps {
+		if gotparam \{option_arrows}
+			setscreenelementprops {
 				id = <container_id>
 				event_handlers = [
 					{pad_left <option_arrows_callback> params = {left <option_arrows_callback_params>}}
@@ -651,11 +651,11 @@ script add_menu_item \{focus_script = menu_item_focus
 		endif
 	endif
 	menu_item_resize id = <container_id>
-	if <parent> :GetSingleTag additional_create_script
+	if <parent> :getsingletag additional_create_script
 		<additional_create_script> <...>
 	endif
-	SetScreenElementLock id = <parent> on
-	SetScreenElementLock id = <parent> off
+	setscreenelementlock id = <parent> on
+	setscreenelementlock id = <parent> off
 	return item_container_id = <container_id>
 endscript
 
@@ -701,47 +701,47 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 		extra_z = 0
 		selection_width = 345
 		selection_height = 60}
-	if GlobalExists \{name = massive_build}
+	if globalexists \{name = massive_build}
 		if NOT ($massive_build = 0)
-			if GotParam \{massive_secret_item}
+			if gotparam \{massive_secret_item}
 				return
 			endif
 		endif
 	endif
-	<parent> :GetSingleTag no_highlight_bar
-	if NOT GotParam \{dims}
-		if NOT GotParam \{selection_width}
-			<parent> :GetSingleTag selection_width
+	<parent> :getsingletag no_highlight_bar
+	if NOT gotparam \{dims}
+		if NOT gotparam \{selection_width}
+			<parent> :getsingletag selection_width
 		endif
-		if NOT GotParam \{selection_height}
-			<parent> :GetSingleTag selection_height
+		if NOT gotparam \{selection_height}
+			<parent> :getsingletag selection_height
 		endif
 		dims = (((0.0, 1.0) * <selection_height>) + ((1.0, 0.0) * <selection_width>))
 		dims = (<dims> + <icon_padding>)
-		if NOT GotParam \{highlight_dims}
+		if NOT gotparam \{highlight_dims}
 			highlight_dims = (<dims> - (0.0, 10.0))
 		endif
 	else
 		dims = (<dims> + <icon_padding>)
 	endif
-	<parent> :GetSingleTag centered
-	if GotParam \{centered}
+	<parent> :getsingletag centered
+	if gotparam \{centered}
 		child_anchor = [center center]
 		text_just = [center center]
 		text_offset = (0.0, 0.0)
 	endif
-	<parent> :GetSingleTag extra_z
-	if GotParam \{id}
-		if ScreenElementExists id = <id>
-			RemoveParameter \{id}
+	<parent> :getsingletag extra_z
+	if gotparam \{id}
+		if screenelementexists id = <id>
+			removeparameter \{id}
 		endif
 	endif
-	if GotParam \{heading}
-		AddParams \{not_focusable}
+	if gotparam \{heading}
+		addparams \{not_focusable}
 	endif
-	if GotParam \{not_focusable}
-		CreateScreenElement {
-			type = ContainerElement
+	if gotparam \{not_focusable}
+		createscreenelement {
+			type = containerelement
 			parent = <parent>
 			id = <id>
 			local_id = <local_id>
@@ -753,8 +753,8 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 			not_focusable
 		}
 	else
-		CreateScreenElement {
-			type = ContainerElement
+		createscreenelement {
+			type = containerelement
 			parent = <parent>
 			id = <id>
 			local_id = <local_id>
@@ -765,29 +765,29 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 			child_anchor = <child_anchor>
 			dims = <dims>
 		}
-		if GotParam \{tag_grid_x}
-			<id> :SetTags tag_grid_x = <tag_grid_x> tag_length = <length>
+		if gotparam \{tag_grid_x}
+			<id> :settags tag_grid_x = <tag_grid_x> tag_length = <length>
 		else
-			<id> :SetTags tag_length = <length>
+			<id> :settags tag_length = <length>
 		endif
 	endif
 	<container_id> = <id>
-	if GotParam \{choose_state}
+	if gotparam \{choose_state}
 		pad_choose_script = ui_event
 		pad_choose_params = {event = menu_change data = {state = <choose_state> <choose_state_data> container_id = <container_id>}}
 	else
 		pad_choose_params = {<pad_choose_params> container_id = <container_id>}
 	endif
-	if GotParam \{choose_back}
+	if gotparam \{choose_back}
 		pad_choose_script = ui_event
 		pad_choose_params = {event = menu_back}
 	endif
-	if GotParam \{children}
-		GetArraySize \{children}
+	if gotparam \{children}
+		getarraysize \{children}
 		<i> = 0
 		begin
-		if NOT StructureContains Structure = (<children> [<i>]) null
-			CreateScreenElement {
+		if NOT structurecontains structure = (<children> [<i>]) null
+			createscreenelement {
 				z_priority = (10 + <extra_z>)
 				(<children> [<i>])
 				parent = <container_id>
@@ -798,7 +798,7 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 	endif
 	if ((<additional_focus_script> = nullscript) && (<additional_unfocus_script> = nullscript))
 		if (<pad_choose_script> = nullscript)
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <container_id>
 				event_handlers = [
 					{focus <focus_script> params = {parent = <parent> parent_anchor = <parent_anchor> id = <container_id> scale_highlight_text = <scale_highlight_text>}}
@@ -806,7 +806,7 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 				]
 			}
 		else
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = <container_id>
 				event_handlers = [
 					{focus <focus_script> params = {parent = <parent> parent_anchor = <parent_anchor> id = <container_id> scale_highlight_text = <scale_highlight_text>}}
@@ -817,7 +817,7 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 			}
 		endif
 	else
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <container_id>
 			event_handlers = [
 				{focus <focus_script> params = {parent = <parent> parent_anchor = <parent_anchor> id = <container_id> scale_highlight_text = <scale_highlight_text>}}
@@ -829,41 +829,41 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 			]
 		}
 	endif
-	if GotParam \{pad_square_script}
-		SetScreenElementProps {
+	if gotparam \{pad_square_script}
+		setscreenelementprops {
 			id = <container_id>
 			event_handlers = [
 				{pad_square <pad_square_script> params = {id = <container_id> <pad_square_params>}}
 			]
 		}
 	endif
-	if GotParam \{pad_start_script}
-		SetScreenElementProps {
+	if gotparam \{pad_start_script}
+		setscreenelementprops {
 			id = <container_id>
 			event_handlers = [
 				{pad_start <pad_start_script> params = {id = <container_id> <pad_start_params>}}
 			]
 		}
 	endif
-	<container_id> :SetTags text_offset = <text_offset>
-	<container_id> :SetTags just = <just>
-	<parent_anchor> :GetSingleTag scrolling_num_options
-	if GotParam \{scrolling_num_options}
-		<container_id> :SetTags scrolling_option = <scrolling_num_options>
+	<container_id> :settags text_offset = <text_offset>
+	<container_id> :settags just = <just>
+	<parent_anchor> :getsingletag scrolling_num_options
+	if gotparam \{scrolling_num_options}
+		<container_id> :settags scrolling_option = <scrolling_num_options>
 		<scrolling_num_options> = (<scrolling_num_options> + 1)
-		<parent_anchor> :SetTags scrolling_num_options = <scrolling_num_options>
+		<parent_anchor> :settags scrolling_num_options = <scrolling_num_options>
 	endif
-	<parent_anchor> :GetSingleTag num_options
-	if GotParam \{num_options}
+	<parent_anchor> :getsingletag num_options
+	if gotparam \{num_options}
 		<num_options> = (<num_options> + 1)
-		<parent_anchor> :SetTags num_options = <num_options>
+		<parent_anchor> :settags num_options = <num_options>
 	endif
 	text_scale = <scale>
-	if NOT GotParam \{icon}
+	if NOT gotparam \{icon}
 		icon = menu_history_unknown
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		local_id = icon_texture
 		texture = <icon>
@@ -875,14 +875,14 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 		dims = <icon_dims>
 	}
 	if (<text_case> = lower)
-		GetLowerCaseString <text>
+		getlowercasestring <text>
 		<text> = <lowercasestring>
 	elseif (<text_case> = upper)
-		GetUpperCaseString <text>
-		<text> = <UpperCaseString>
+		getuppercasestring <text>
+		<text> = <uppercasestring>
 	endif
-	CreateScreenElement {
-		type = TextBlockElement
+	createscreenelement {
+		type = textblockelement
 		parent = <container_id>
 		local_id = text
 		font = ($test_menu_font)
@@ -895,32 +895,32 @@ script add_icon_menu_item \{focus_script = menu_icon_focus
 		fit_height = `scale down if larger`
 		fit_width = `scale each line if larger`
 	}
-	<parent> :GetSingleTag color_scheme
-	unfocus_text_with_scheme id = <id> color_scheme = <color_scheme>
+	<parent> :getsingletag color_scheme
+	0x97c20c4e id = <id> color_scheme = <color_scheme>
 	menu_item_resize id = <container_id>
-	if <parent> :GetSingleTag additional_create_script
+	if <parent> :getsingletag additional_create_script
 		<additional_create_script> <...>
 	endif
-	SetScreenElementLock id = <parent> on
-	SetScreenElementLock id = <parent> off
+	setscreenelementlock id = <parent> on
+	setscreenelementlock id = <parent> off
 	return item_container_id = <container_id>
 endscript
 
 script menu_item_resize_extras 
-	<id> :GetSingleTag extras_offset
-	<id> :GetSingleTag arrow_offset
-	if ScreenElementExists id = {<id> child = extra_text}
-		GetScreenElementDims id = <id>
-		if ScreenElementExists id = {<id> child = arrow_left}
-			SetScreenElementProps {
+	<id> :getsingletag extras_offset
+	<id> :getsingletag arrow_offset
+	if screenelementexists id = {<id> child = extra_text}
+		getscreenelementdims id = <id>
+		if screenelementexists id = {<id> child = arrow_left}
+			setscreenelementprops {
 				id = {<id> child = arrow_left}
 				pos = (((1.0, 0.0) * <width>) + <extras_offset>)
 			}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = {<id> child = extra_text}
 				pos = (((1.0, 0.0) * <width>) + <arrow_offset> + <extras_offset>)
 			}
-			SetScreenElementProps {
+			setscreenelementprops {
 				id = {<id> child = arrow_right}
 				pos = (((1.0, 0.0) * <width>) + <arrow_offset> + <arrow_offset> + <extras_offset>)
 			}
@@ -935,152 +935,152 @@ endscript
 script menu_item_focus \{parent_anchor = current_menu_anchor
 		parent = current_menu}
 	on_color = [200 70 70 255]
-	<id> :GetSingleTag scrolling_option
-	<parent> :GetSingleTag color_scheme
+	<id> :getsingletag scrolling_option
+	<parent> :getsingletag color_scheme
 	on_color = (<color_scheme>.text_focus_color)
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = {<id> child = text}
 		rgba = [255 255 255 255]
 	}
-	if ScreenElementExists id = {<id> child = extra_text}
-		SetScreenElementProps {
+	if screenelementexists id = {<id> child = extra_text}
+		setscreenelementprops {
 			id = {<id> child = extra_text}
 			rgba = <on_color>
 		}
 	endif
-	if GotParam \{scale_highlight_text}
+	if gotparam \{scale_highlight_text}
 		if (<scale_highlight_text>)
-			LegacyDoScreenElementMorph id = {<id> child = text} time = 0.05 scale = 1.25 relative_scale
+			legacydoscreenelementmorph id = {<id> child = text} time = 0.05 scale = 1.25 relative_scale
 		endif
 	endif
-	if ScreenElementExists id = <parent>
-		if <parent> :GetSingleTag additional_focus_script
+	if screenelementexists id = <parent>
+		if <parent> :getsingletag additional_focus_script
 			<additional_focus_script> <...>
 		endif
 	endif
-	if GotParam \{scrolling_option}
-		<parent_anchor> :GetSingleTag scrolling_num_options
+	if gotparam \{scrolling_option}
+		<parent_anchor> :getsingletag scrolling_num_options
 		menu_update_scrollbar parent = <parent> parent_anchor = <parent_anchor> option = <scrolling_option> num_options = <scrolling_num_options>
 	endif
-	if ScreenElementExists id = {<id> child = highlight}
-		LegacyDoScreenElementMorph id = {<id> child = highlight} alpha = 1.0 time = 0.1
+	if screenelementexists id = {<id> child = highlight}
+		legacydoscreenelementmorph id = {<id> child = highlight} alpha = 1.0 time = 0.1
 	endif
 endscript
 
 script menu_update_scrollbar \{parent_anchor = current_menu_anchor}
-	if <parent_anchor> :GetSingleTag scroll_bar_id
-		<parent_anchor> :GetSingleTag scroll_bar_len
-		<parent_anchor> :GetSingleTag scroll_bar_option
+	if <parent_anchor> :getsingletag scroll_bar_id
+		<parent_anchor> :getsingletag scroll_bar_len
+		<parent_anchor> :getsingletag scroll_bar_option
 		if (<num_options> > 1)
 			pos_fraction = ((<option> * 1.0) / (<num_options> - 1.0))
 			pos_length = (<scroll_bar_len> * <pos_fraction>)
 			pos = (<pos_length> * (0.0, 1.0))
 		endif
-		if ScreenElementExists id = {<scroll_bar_id> child = zipper}
-			<parent_anchor> :SetTags scroll_bar_option = <option>
-			LegacyDoScreenElementMorph id = {<scroll_bar_id> child = zipper} pos = (<pos>)
+		if screenelementexists id = {<scroll_bar_id> child = zipper}
+			<parent_anchor> :settags scroll_bar_option = <option>
+			legacydoscreenelementmorph id = {<scroll_bar_id> child = zipper} pos = (<pos>)
 		endif
 	endif
 endscript
 
 script menu_item_unfocus \{parent = current_menu}
-	<id> :GetSingleTag rgba
-	<id> :GetSingleTag extra_rgba
-	SetScreenElementProps {
+	<id> :getsingletag rgba
+	<id> :getsingletag extra_rgba
+	setscreenelementprops {
 		id = {<id> child = text}
 		rgba = <rgba>
 	}
-	if ScreenElementExists id = {<id> child = extra_text}
-		SetScreenElementProps {
+	if screenelementexists id = {<id> child = extra_text}
+		setscreenelementprops {
 			id = {<id> child = extra_text}
 			rgba = <extra_rgba>
 		}
 	endif
-	if GotParam \{scale_highlight_text}
+	if gotparam \{scale_highlight_text}
 		if (<scale_highlight_text>)
-			LegacyDoScreenElementMorph id = {<id> child = text} time = 0.05 scale = 1.0 relative_scale
+			legacydoscreenelementmorph id = {<id> child = text} time = 0.05 scale = 1.0 relative_scale
 		endif
 	endif
-	if ScreenElementExists id = {<id> child = highlight}
-		LegacyDoScreenElementMorph id = {<id> child = highlight} alpha = 0.0 time = 0.5
+	if screenelementexists id = {<id> child = highlight}
+		legacydoscreenelementmorph id = {<id> child = highlight} alpha = 0.0 time = 0.5
 	endif
-	if ScreenElementExists id = <parent>
-		if <parent> :GetSingleTag additional_unfocus_script
+	if screenelementexists id = <parent>
+		if <parent> :getsingletag additional_unfocus_script
 			<additional_unfocus_script> <...>
 		endif
 	endif
 endscript
 
 script menu_toggle_flag 
-	if GetGlobalFlag flag = <flag>
-		UnSetGlobalFlag flag = <flag>
+	if getglobalflag flag = <flag>
+		unsetglobalflag flag = <flag>
 	else
-		SetGlobalFlag flag = <flag>
+		setglobalflag flag = <flag>
 	endif
 endscript
 
 script menu_toggle_item 
-	<id> :GetSingleTag toggle
+	<id> :getsingletag toggle
 	if (<toggle> = on)
 		<toggle> = off
-		if ScreenElementExists id = {<id> child = extra_text}
-			SetScreenElementProps id = {<id> child = extra_text} text = qs(0x87289b63)
+		if screenelementexists id = {<id> child = extra_text}
+			setscreenelementprops id = {<id> child = extra_text} text = qs(0x87289b63)
 		endif
 	else
 		<toggle> = on
-		if ScreenElementExists id = {<id> child = extra_text}
-			SetScreenElementProps id = {<id> child = extra_text} text = qs(0x9feda83b)
+		if screenelementexists id = {<id> child = extra_text}
+			setscreenelementprops id = {<id> child = extra_text} text = qs(0x9feda83b)
 		endif
 	endif
-	<id> :SetTags toggle = <toggle>
-	if GotParam \{toggle_script}
+	<id> :settags toggle = <toggle>
+	if gotparam \{toggle_script}
 		<toggle_script> <toggle_params>
 	endif
 endscript
 
 script animate_in 
-	SetButtonEventMappings \{block_menu_input}
-	SetScreenElementProps \{id = root_window
+	setbuttoneventmappings \{block_menu_input}
+	setscreenelementprops \{id = root_window
 		tags = {
 			menu_state = entering
 		}}
-	LaunchEvent type = focus target = <menu_id>
-	LegacyDoMorph \{time = 0.05
+	launchevent type = focus target = <menu_id>
+	legacydomorph \{time = 0.05
 		rot_angle = 3
 		pos = (40.0, 0.0)
 		alpha = 1}
-	LegacyDoMorph \{time = 0.01
+	legacydomorph \{time = 0.01
 		rot_angle = 0
 		pos = (10.0, 0.0)}
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		tags = {
 			menu_state = on
 		}}
-	if NOT GotParam \{dont_unblock}
-		SetButtonEventMappings \{unblock_menu_input}
+	if NOT gotparam \{dont_unblock}
+		setbuttoneventmappings \{unblock_menu_input}
 	endif
 endscript
 
 script menu_onscreen \{menu_id = current_menu_anchor}
-	LegacyDoMorph \{scale = 2
+	legacydomorph \{scale = 2
 		time = 0}
-	if GotParam \{pos}
-		LegacyDoMorph pos = <pos>
+	if gotparam \{pos}
+		legacydomorph pos = <pos>
 	endif
-	SE_SetProps \{just = [
+	se_setprops \{just = [
 			center
 			center
 		]}
-	GetTags
-	Obj_GetID
-	<id> = <ObjID>
-	if GotParam \{focus_child}
-		LaunchEvent type = focus target = <menu_id> data = {child_id = <focus_child>}
+	gettags
+	obj_getid
+	<id> = <objid>
+	if gotparam \{focus_child}
+		launchevent type = focus target = <menu_id> data = {child_id = <focus_child>}
 	else
-		LaunchEvent type = focus target = <id>
+		launchevent type = focus target = <id>
 	endif
-	if NOT GotParam \{preserve_menu_state}
-		SetScreenElementProps \{id = root_window
+	if NOT gotparam \{preserve_menu_state}
+		setscreenelementprops \{id = root_window
 			tags = {
 				menu_state = on
 			}}
@@ -1088,84 +1088,84 @@ script menu_onscreen \{menu_id = current_menu_anchor}
 endscript
 
 script animate_out \{menu_id = current_menu_anchor}
-	SetButtonEventMappings \{block_menu_input}
-	SetScreenElementProps \{id = root_window
+	setbuttoneventmappings \{block_menu_input}
+	setscreenelementprops \{id = root_window
 		tags = {
 			menu_state = leaving
 		}}
-	GetTags
-	Obj_GetID
-	<id> = <ObjID>
-	SE_SetProps \{just = [
+	gettags
+	obj_getid
+	<id> = <objid>
+	se_setprops \{just = [
 			center
 			center
 		]}
-	LegacyDoMorph \{time = 0
+	legacydomorph \{time = 0
 		scale = 1.0}
-	LegacyDoMorph \{time = 0.3
+	legacydomorph \{time = 0.3
 		alpha = 0}
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		tags = {
 			menu_state = off
 		}}
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	DestroyScreenElement id = <menu_id>
-	SetButtonEventMappings \{unblock_menu_input}
+	destroyscreenelement id = <menu_id>
+	setbuttoneventmappings \{unblock_menu_input}
 endscript
 
 script menu_offscreen 
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		tags = {
 			menu_state = off
 		}}
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	Obj_GetID
-	<id> = <ObjID>
-	LaunchEvent type = unfocus target = <id>
-	DestroyScreenElement id = <id> recurse
+	obj_getid
+	<id> = <objid>
+	launchevent type = unfocus target = <id>
+	destroyscreenelement id = <id> recurse
 endscript
 
 script hide_root_window 
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		hide}
 endscript
 
 script menu_icon_focus \{parent = current_menu}
-	<id> :GetSingleTag scrolling_option
-	<parent> :GetSingleTag color_scheme
-	SetScreenElementProps {
+	<id> :getsingletag scrolling_option
+	<parent> :getsingletag color_scheme
+	setscreenelementprops {
 		id = {<id> child = text}
 		alpha = 1
 	}
-	focus_text_with_scheme id = {<id> child = text} color_scheme = <color_scheme>
-	if ScreenElementExists id = {<id> child = extra_text}
-		focus_text_with_scheme id = {<id> child = extra_text} color_scheme = <color_scheme>
+	0x3934d3f0 id = {<id> child = text} color_scheme = <color_scheme>
+	if screenelementexists id = {<id> child = extra_text}
+		0x3934d3f0 id = {<id> child = extra_text} color_scheme = <color_scheme>
 	endif
-	if GotParam \{scale_highlight_text}
+	if gotparam \{scale_highlight_text}
 		if (<scale_highlight_text>)
-			LegacyDoScreenElementMorph id = {<id> child = text} time = 0.05 scale = 1.25 relative_scale
+			legacydoscreenelementmorph id = {<id> child = text} time = 0.05 scale = 1.25 relative_scale
 		endif
 	endif
-	if ScreenElementExists id = <parent>
-		if <parent> :GetSingleTag additional_focus_script
+	if screenelementexists id = <parent>
+		if <parent> :getsingletag additional_focus_script
 			<additional_focus_script> <...>
 		endif
 	endif
-	if GotParam \{scrolling_option}
-		<parent_anchor> :GetSingleTag scrolling_num_options
+	if gotparam \{scrolling_option}
+		<parent_anchor> :getsingletag scrolling_num_options
 		menu_update_scrollbar parent = <parent> parent_anchor = <parent_anchor> option = <scrolling_option> num_options = <scrolling_num_options>
 	endif
-	<parent> :GetSingleTag no_highlight_bar
-	if NOT GotParam \{no_highlight_bar}
-		if ScreenElementExists id = {<parent_anchor> child = Highlight_bars}
-			GetScreenElementPosition id = {<id> child = text} summed
-			GetScreenElementDims id = {<id> child = text}
-			extend = 10.0
-			scale = (((1.0, 0.0) * (((<width> + (<extend> * 2)) / 256.0))) + (0.0, 1.0))
-			SetScreenElementProps {
-				id = {<parent_anchor> child = Highlight_bars}
+	<parent> :getsingletag no_highlight_bar
+	if NOT gotparam \{no_highlight_bar}
+		if screenelementexists id = {<parent_anchor> child = highlight_bars}
+			getscreenelementposition id = {<id> child = text} summed
+			getscreenelementdims id = {<id> child = text}
+			0xc446b6d3 = 10.0
+			scale = (((1.0, 0.0) * (((<width> + (<0xc446b6d3> * 2)) / 256.0))) + (0.0, 1.0))
+			setscreenelementprops {
+				id = {<parent_anchor> child = highlight_bars}
 				pos = {absolute <screenelementpos>}
 				scale = <scale>
 			}
@@ -1174,31 +1174,31 @@ script menu_icon_focus \{parent = current_menu}
 endscript
 
 script menu_icon_unfocus \{parent = current_menu}
-	<parent> :GetSingleTag color_scheme
-	unfocus_text_with_scheme id = {<id> child = text} color_scheme = <color_scheme>
-	if ScreenElementExists id = {<id> child = extra_text}
-		unfocus_text_with_scheme id = {<id> child = extra_text} color_scheme = <color_scheme>
+	<parent> :getsingletag color_scheme
+	0x97c20c4e id = {<id> child = text} color_scheme = <color_scheme>
+	if screenelementexists id = {<id> child = extra_text}
+		0x97c20c4e id = {<id> child = extra_text} color_scheme = <color_scheme>
 	endif
-	if GotParam \{scale_highlight_text}
+	if gotparam \{scale_highlight_text}
 		if (<scale_highlight_text>)
-			LegacyDoScreenElementMorph id = {<id> child = text} time = 0.05 scale = 1.0 relative_scale
+			legacydoscreenelementmorph id = {<id> child = text} time = 0.05 scale = 1.0 relative_scale
 		endif
 	endif
-	if ScreenElementExists \{id = current_menu}
-		if <parent> :GetSingleTag additional_unfocus_script
+	if screenelementexists \{id = current_menu}
+		if <parent> :getsingletag additional_unfocus_script
 			<additional_unfocus_script> <...>
 		endif
 	endif
 endscript
 
-script menu_create_highlight_bar \{dims = (256.0, 64.0)
+script 0x05039c3f \{dims = (256.0, 64.0)
 		pos = (0.0, 0.0)
-		highlight_container_id = highlight_container_id
+		0x638b9bc5 = 0x638b9bc5
 		highlight_id = highlight_id}
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = <parent_id>
-		local_id = <highlight_container_id>
+		local_id = <0x638b9bc5>
 		dims = <dims>
 		pos = (0.0, 0.0)
 		just = [0.0 0.0]
@@ -1206,9 +1206,9 @@ script menu_create_highlight_bar \{dims = (256.0, 64.0)
 		z_priority = <z_priority>
 		alpha = <alpha>
 	}
-	highlight_container_id = <id>
-	CreateScreenElement {
-		type = SpriteElement
+	0x638b9bc5 = <id>
+	createscreenelement {
+		type = spriteelement
 		texture = light_bar
 		parent = <id>
 		local_id = <highlight_id>
@@ -1219,15 +1219,15 @@ script menu_create_highlight_bar \{dims = (256.0, 64.0)
 		pos = <pos>
 	}
 	highlight_id = <id>
-	return highlight_container_id = <highlight_container_id> highlight_id = <highlight_id>
+	return 0x638b9bc5 = <0x638b9bc5> highlight_id = <highlight_id>
 endscript
 
-script menu_select_item \{menu = current_menu}
-	if GotParam \{index}
-		LaunchEvent type = focus target = <menu> data = {child_index = <index>}
-	elseif GotParam \{id}
-		LaunchEvent type = focus target = <menu> data = {child_id = <id>}
+script 0x2027cc41 \{menu = current_menu}
+	if gotparam \{index}
+		launchevent type = focus target = <menu> data = {child_index = <index>}
+	elseif gotparam \{id}
+		launchevent type = focus target = <menu> data = {child_id = <id>}
 	else
-		debug_ScriptAssert \{'no index or id specified to select'}
+		0x93d8d5cf \{'no index or id specified to select'}
 	endif
 endscript

@@ -1,7 +1,7 @@
 
 script scan_globaltag_downloads 
 
-	LockGlobalTags \{off}
+	lockglobaltags \{off}
 	get_num_globaltag_sets
 	if (<num_globaltag_sets> > 0)
 		savegame = 0
@@ -14,5 +14,5 @@ script scan_globaltag_downloads
 		<savegame> = (<savegame> + 1)
 		repeat (<num_globaltag_sets>)
 	endif
-	LockGlobalTags
+	lockglobaltags
 endscript

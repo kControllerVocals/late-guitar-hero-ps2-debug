@@ -1,37 +1,37 @@
-L_SING_Debbie_Dammit_M_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_debbie_dammit_m_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Debbie_Dammit_075_01_M
+				slow = [
+					sing_debbie_dammit_075_01_m
 				]
-				Med = [
-					Sing_Debbie_Dammit_100_01_M
+				med = [
+					sing_debbie_dammit_100_01_m
 				]
-				Fast = [
-					Sing_Debbie_Dammit_120_01_M
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Debbie_Dammit_075_01_M
-				]
-				Med = [
-					Sing_Debbie_Dammit_100_01_M
-				]
-				Fast = [
-					Sing_Debbie_Dammit_120_01_M
+				fast = [
+					sing_debbie_dammit_120_01_m
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Debbie_Dammit_075_01_M
+			normal = {
+				slow = [
+					sing_debbie_dammit_075_01_m
 				]
-				Med = [
-					Sing_Debbie_Dammit_100_01_M
+				med = [
+					sing_debbie_dammit_100_01_m
 				]
-				Fast = [
-					Sing_Debbie_Dammit_120_01_M
+				fast = [
+					sing_debbie_dammit_120_01_m
+				]
+			}
+			bad = {
+				slow = [
+					sing_debbie_dammit_075_01_m
+				]
+				med = [
+					sing_debbie_dammit_100_01_m
+				]
+				fast = [
+					sing_debbie_dammit_120_01_m
 				]
 			}
 		}

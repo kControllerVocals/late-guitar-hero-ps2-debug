@@ -1,22 +1,22 @@
 
-script ui_init_setlist_quit_warning 
-	pause_songpreview
+script 0x57eeea03 
+	0x1621ea7b
 endscript
 
-script ui_deinit_setlist_quit_warning 
-	unpause_songpreview
+script 0x6ed6dac4 
+	0xbd6424fc
 endscript
 
 script ui_create_setlist_quit_warning 
-	SetlistInterface :obj_spawnscript \{setlist_controller_response
+	setlistinterface :obj_spawnscript \{0x8ed8c79c
 		params = {
-			in_setlist_quit_warning
+			0xb5b8c63e
 		}}
-	GameMode_GetType
+	gamemode_gettype
 	if (<type> = pro_faceoff)
 		body_text = qs(0x22e09b86)
 	else
-		body_text = qs("Are you sure you want to exit the set list? Any songs you have selected will be reset.")
+		body_text = qs(0x43eb4df5)
 	endif
 	create_dialog_box {
 		body_text = <body_text>
@@ -24,18 +24,18 @@ script ui_create_setlist_quit_warning
 		options = [
 			{
 				func = setlist_quit_warning_select_no
-				text = qs("CANCEL")
+				text = qs(0xf7723015)
 			}
 			{
 				func = setlist_quit_warning_select_yes
-				text = qs("EXIT")
+				text = qs(0x23b6e962)
 			}
 		]
 	}
 endscript
 
 script ui_destroy_setlist_quit_warning 
-	KillSpawnedScript \{name = setlist_controller_response}
+	killspawnedscript \{name = 0x8ed8c79c}
 	destroy_dialog_box
 endscript
 
@@ -44,7 +44,7 @@ script setlist_quit_warning_select_no
 endscript
 
 script setlist_quit_warning_select_yes 
-	GameMode_GetType
+	gamemode_gettype
 	if (<type> = pro_faceoff)
 		ui_setlist_go_back \{num_states = 4}
 	else

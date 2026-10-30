@@ -1,1835 +1,1835 @@
 car_male_animations = {
-	Stance_A = {
-		Idle = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				slow = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Med = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				med = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Fast = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
-				]
-				Med = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
-				]
-				Fast = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				fast = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+			normal = {
+				slow = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Med = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				med = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Fast = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				fast = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
+				]
+			}
+			bad = {
+				slow = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
+				]
+				med = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
+				]
+				fast = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
 			}
 		}
 	}
-	Stance_Old = {
-		Idle = {
+	stance_old = {
+		idle = {
 			good = {
-				Slow = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				slow = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Med = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				med = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Fast = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
-				]
-				Med = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
-				]
-				Fast = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				fast = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+			normal = {
+				slow = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Med = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				med = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
-				Fast = [
-					CAR_male_idles_01
-					CAR_male_idles_02
-					CAR_male_idles_04
-					CAR_male_idles_05
-					CAR_male_idles_07
-					CAR_male_idles_08
+				fast = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
+				]
+			}
+			bad = {
+				slow = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
+				]
+				med = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
+				]
+				fast = [
+					car_male_idles_01
+					car_male_idles_02
+					car_male_idles_04
+					car_male_idles_05
+					car_male_idles_07
+					car_male_idles_08
 				]
 			}
 		}
-		Rock = {
+		rock = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_BlackMetal_02
+				slow = [
+					car_male_readytorock_blackmetal_02
 				]
-				Med = [
-					CAR_Male_readytorock_BlackMetal_02
+				med = [
+					car_male_readytorock_blackmetal_02
 				]
-				Fast = [
-					CAR_Male_readytorock_BlackMetal_02
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_BlackMetal_02
-				]
-				Med = [
-					CAR_Male_readytorock_BlackMetal_02
-				]
-				Fast = [
-					CAR_Male_readytorock_BlackMetal_02
+				fast = [
+					car_male_readytorock_blackmetal_02
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_BlackMetal_02
+			normal = {
+				slow = [
+					car_male_readytorock_blackmetal_02
 				]
-				Med = [
-					CAR_Male_readytorock_BlackMetal_02
+				med = [
+					car_male_readytorock_blackmetal_02
 				]
-				Fast = [
-					CAR_Male_readytorock_BlackMetal_02
+				fast = [
+					car_male_readytorock_blackmetal_02
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_blackmetal_02
+				]
+				med = [
+					car_male_readytorock_blackmetal_02
+				]
+				fast = [
+					car_male_readytorock_blackmetal_02
 				]
 			}
 		}
-		Punk = {
+		punk = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_Punk_01
+				slow = [
+					car_male_readytorock_punk_01
 				]
-				Med = [
-					CAR_Male_readytorock_Punk_01
+				med = [
+					car_male_readytorock_punk_01
 				]
-				Fast = [
-					CAR_Male_readytorock_Punk_01
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_Punk_01
-				]
-				Med = [
-					CAR_Male_readytorock_Punk_01
-				]
-				Fast = [
-					CAR_Male_readytorock_Punk_01
+				fast = [
+					car_male_readytorock_punk_01
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_Punk_01
+			normal = {
+				slow = [
+					car_male_readytorock_punk_01
 				]
-				Med = [
-					CAR_Male_readytorock_Punk_01
+				med = [
+					car_male_readytorock_punk_01
 				]
-				Fast = [
-					CAR_Male_readytorock_Punk_01
+				fast = [
+					car_male_readytorock_punk_01
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_punk_01
+				]
+				med = [
+					car_male_readytorock_punk_01
+				]
+				fast = [
+					car_male_readytorock_punk_01
 				]
 			}
 		}
-		HeavyMetal = {
+		heavymetal = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_Metal_01
+				slow = [
+					car_male_readytorock_metal_01
 				]
-				Med = [
-					CAR_Male_readytorock_Metal_01
+				med = [
+					car_male_readytorock_metal_01
 				]
-				Fast = [
-					CAR_Male_readytorock_Metal_01
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_Metal_01
-				]
-				Med = [
-					CAR_Male_readytorock_Metal_01
-				]
-				Fast = [
-					CAR_Male_readytorock_Metal_01
+				fast = [
+					car_male_readytorock_metal_01
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_Metal_01
+			normal = {
+				slow = [
+					car_male_readytorock_metal_01
 				]
-				Med = [
-					CAR_Male_readytorock_Metal_01
+				med = [
+					car_male_readytorock_metal_01
 				]
-				Fast = [
-					CAR_Male_readytorock_Metal_01
+				fast = [
+					car_male_readytorock_metal_01
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_metal_01
+				]
+				med = [
+					car_male_readytorock_metal_01
+				]
+				fast = [
+					car_male_readytorock_metal_01
 				]
 			}
 		}
-		Glam = {
+		glam = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_Glam_01
+				slow = [
+					car_male_readytorock_glam_01
 				]
-				Med = [
-					CAR_Male_readytorock_Glam_01
+				med = [
+					car_male_readytorock_glam_01
 				]
-				Fast = [
-					CAR_Male_readytorock_Glam_01
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_Glam_01
-				]
-				Med = [
-					CAR_Male_readytorock_Glam_01
-				]
-				Fast = [
-					CAR_Male_readytorock_Glam_01
+				fast = [
+					car_male_readytorock_glam_01
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_Glam_01
+			normal = {
+				slow = [
+					car_male_readytorock_glam_01
 				]
-				Med = [
-					CAR_Male_readytorock_Glam_01
+				med = [
+					car_male_readytorock_glam_01
 				]
-				Fast = [
-					CAR_Male_readytorock_Glam_01
+				fast = [
+					car_male_readytorock_glam_01
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_glam_01
+				]
+				med = [
+					car_male_readytorock_glam_01
+				]
+				fast = [
+					car_male_readytorock_glam_01
 				]
 			}
 		}
-		BlackMetal = {
+		blackmetal = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_BlackMetal_01
+				slow = [
+					car_male_readytorock_blackmetal_01
 				]
-				Med = [
-					CAR_Male_readytorock_BlackMetal_01
+				med = [
+					car_male_readytorock_blackmetal_01
 				]
-				Fast = [
-					CAR_Male_readytorock_BlackMetal_01
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_BlackMetal_01
-				]
-				Med = [
-					CAR_Male_readytorock_BlackMetal_01
-				]
-				Fast = [
-					CAR_Male_readytorock_BlackMetal_01
+				fast = [
+					car_male_readytorock_blackmetal_01
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_BlackMetal_01
+			normal = {
+				slow = [
+					car_male_readytorock_blackmetal_01
 				]
-				Med = [
-					CAR_Male_readytorock_BlackMetal_01
+				med = [
+					car_male_readytorock_blackmetal_01
 				]
-				Fast = [
-					CAR_Male_readytorock_BlackMetal_01
+				fast = [
+					car_male_readytorock_blackmetal_01
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_blackmetal_01
+				]
+				med = [
+					car_male_readytorock_blackmetal_01
+				]
+				fast = [
+					car_male_readytorock_blackmetal_01
 				]
 			}
 		}
-		Classic = {
+		classic = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
+				slow = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
 				]
-				Med = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
+				med = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
 				]
-				Fast = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
-				]
-				Med = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
-				]
-				Fast = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
+				fast = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
+			normal = {
+				slow = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
 				]
-				Med = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
+				med = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
 				]
-				Fast = [
-					CAR_Male_readytorock_Classic_01
-					CAR_Male_readytorock_Classic_02
+				fast = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
+				]
+				med = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
+				]
+				fast = [
+					car_male_readytorock_classic_01
+					car_male_readytorock_classic_02
 				]
 			}
 		}
-		Goth = {
+		goth = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
+				slow = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
 				]
-				Med = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
+				med = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
 				]
-				Fast = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
-				]
-				Med = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
-				]
-				Fast = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
+				fast = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
+			normal = {
+				slow = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
 				]
-				Med = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
+				med = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
 				]
-				Fast = [
-					CAR_Male_readytorock_Goth_01
-					CAR_Male_readytorock_Goth_02
+				fast = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
+				]
+				med = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
+				]
+				fast = [
+					car_male_readytorock_goth_01
+					car_male_readytorock_goth_02
 				]
 			}
 		}
-		Pop = {
+		pop = {
 			good = {
-				Slow = [
-					CAR_Male_readytorock_Glam_02
+				slow = [
+					car_male_readytorock_glam_02
 				]
-				Med = [
-					CAR_Male_readytorock_Glam_02
+				med = [
+					car_male_readytorock_glam_02
 				]
-				Fast = [
-					CAR_Male_readytorock_Glam_02
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_Male_readytorock_Glam_02
-				]
-				Med = [
-					CAR_Male_readytorock_Glam_02
-				]
-				Fast = [
-					CAR_Male_readytorock_Glam_02
+				fast = [
+					car_male_readytorock_glam_02
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_Male_readytorock_Glam_02
+			normal = {
+				slow = [
+					car_male_readytorock_glam_02
 				]
-				Med = [
-					CAR_Male_readytorock_Glam_02
+				med = [
+					car_male_readytorock_glam_02
 				]
-				Fast = [
-					CAR_Male_readytorock_Glam_02
+				fast = [
+					car_male_readytorock_glam_02
+				]
+			}
+			bad = {
+				slow = [
+					car_male_readytorock_glam_02
+				]
+				med = [
+					car_male_readytorock_glam_02
+				]
+				fast = [
+					car_male_readytorock_glam_02
 				]
 			}
 		}
 	}
-	Stance_Select_P1 = {
-		Idle = {
+	stance_select_p1 = {
+		idle = {
 			good = {
-				Slow = [
-					gh_rocker_male_Select_P1
+				slow = [
+					gh_rocker_male_select_p1
 				]
-				Med = [
-					gh_rocker_male_Select_P1
+				med = [
+					gh_rocker_male_select_p1
 				]
-				Fast = [
-					gh_rocker_male_Select_P1
-				]
-			}
-			Normal = {
-				Slow = [
-					gh_rocker_male_Select_P1
-				]
-				Med = [
-					gh_rocker_male_Select_P1
-				]
-				Fast = [
-					gh_rocker_male_Select_P1
+				fast = [
+					gh_rocker_male_select_p1
 				]
 			}
-			Bad = {
-				Slow = [
-					gh_rocker_male_Select_P1
+			normal = {
+				slow = [
+					gh_rocker_male_select_p1
 				]
-				Med = [
-					gh_rocker_male_Select_P1
+				med = [
+					gh_rocker_male_select_p1
 				]
-				Fast = [
-					gh_rocker_male_Select_P1
+				fast = [
+					gh_rocker_male_select_p1
+				]
+			}
+			bad = {
+				slow = [
+					gh_rocker_male_select_p1
+				]
+				med = [
+					gh_rocker_male_select_p1
+				]
+				fast = [
+					gh_rocker_male_select_p1
 				]
 			}
 		}
 	}
-	Stance_Select_P2 = {
-		Idle = {
+	stance_select_p2 = {
+		idle = {
 			good = {
-				Slow = [
-					gh_rocker_male_Select_P2
+				slow = [
+					gh_rocker_male_select_p2
 				]
-				Med = [
-					gh_rocker_male_Select_P2
+				med = [
+					gh_rocker_male_select_p2
 				]
-				Fast = [
-					gh_rocker_male_Select_P2
-				]
-			}
-			Normal = {
-				Slow = [
-					gh_rocker_male_Select_P2
-				]
-				Med = [
-					gh_rocker_male_Select_P2
-				]
-				Fast = [
-					gh_rocker_male_Select_P2
+				fast = [
+					gh_rocker_male_select_p2
 				]
 			}
-			Bad = {
-				Slow = [
-					gh_rocker_male_Select_P2
+			normal = {
+				slow = [
+					gh_rocker_male_select_p2
 				]
-				Med = [
-					gh_rocker_male_Select_P2
+				med = [
+					gh_rocker_male_select_p2
 				]
-				Fast = [
-					gh_rocker_male_Select_P2
+				fast = [
+					gh_rocker_male_select_p2
+				]
+			}
+			bad = {
+				slow = [
+					gh_rocker_male_select_p2
+				]
+				med = [
+					gh_rocker_male_select_p2
+				]
+				fast = [
+					gh_rocker_male_select_p2
 				]
 			}
 		}
 	}
-	Stance_Select_P3 = {
-		Idle = {
+	stance_select_p3 = {
+		idle = {
 			good = {
-				Slow = [
-					gh_rocker_male_Select_P3
+				slow = [
+					gh_rocker_male_select_p3
 				]
-				Med = [
-					gh_rocker_male_Select_P3
+				med = [
+					gh_rocker_male_select_p3
 				]
-				Fast = [
-					gh_rocker_male_Select_P3
-				]
-			}
-			Normal = {
-				Slow = [
-					gh_rocker_male_Select_P3
-				]
-				Med = [
-					gh_rocker_male_Select_P3
-				]
-				Fast = [
-					gh_rocker_male_Select_P3
+				fast = [
+					gh_rocker_male_select_p3
 				]
 			}
-			Bad = {
-				Slow = [
-					gh_rocker_male_Select_P3
+			normal = {
+				slow = [
+					gh_rocker_male_select_p3
 				]
-				Med = [
-					gh_rocker_male_Select_P3
+				med = [
+					gh_rocker_male_select_p3
 				]
-				Fast = [
-					gh_rocker_male_Select_P3
+				fast = [
+					gh_rocker_male_select_p3
+				]
+			}
+			bad = {
+				slow = [
+					gh_rocker_male_select_p3
+				]
+				med = [
+					gh_rocker_male_select_p3
+				]
+				fast = [
+					gh_rocker_male_select_p3
 				]
 			}
 		}
 	}
-	Stance_Select_P4 = {
-		Idle = {
+	stance_select_p4 = {
+		idle = {
 			good = {
-				Slow = [
-					gh_rocker_male_Select_P4
+				slow = [
+					gh_rocker_male_select_p4
 				]
-				Med = [
-					gh_rocker_male_Select_P4
+				med = [
+					gh_rocker_male_select_p4
 				]
-				Fast = [
-					gh_rocker_male_Select_P4
-				]
-			}
-			Normal = {
-				Slow = [
-					gh_rocker_male_Select_P4
-				]
-				Med = [
-					gh_rocker_male_Select_P4
-				]
-				Fast = [
-					gh_rocker_male_Select_P4
+				fast = [
+					gh_rocker_male_select_p4
 				]
 			}
-			Bad = {
-				Slow = [
-					gh_rocker_male_Select_P4
+			normal = {
+				slow = [
+					gh_rocker_male_select_p4
 				]
-				Med = [
-					gh_rocker_male_Select_P4
+				med = [
+					gh_rocker_male_select_p4
 				]
-				Fast = [
-					gh_rocker_male_Select_P4
+				fast = [
+					gh_rocker_male_select_p4
+				]
+			}
+			bad = {
+				slow = [
+					gh_rocker_male_select_p4
+				]
+				med = [
+					gh_rocker_male_select_p4
+				]
+				fast = [
+					gh_rocker_male_select_p4
 				]
 			}
 		}
 	}
-	Stance_Select_Head = {
-		Idle = {
+	stance_select_head = {
+		idle = {
 			good = {
-				Slow = [
-					GH_FE_Male_Idle_Body_01
+				slow = [
+					gh_fe_male_idle_body_01
 				]
-				Med = [
-					GH_FE_Male_Idle_Body_01
+				med = [
+					gh_fe_male_idle_body_01
 				]
-				Fast = [
-					GH_FE_Male_Idle_Body_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Idle_Body_01
-				]
-				Med = [
-					GH_FE_Male_Idle_Body_01
-				]
-				Fast = [
-					GH_FE_Male_Idle_Body_01
+				fast = [
+					gh_fe_male_idle_body_01
 				]
 			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Idle_Body_01
+			normal = {
+				slow = [
+					gh_fe_male_idle_body_01
 				]
-				Med = [
-					GH_FE_Male_Idle_Body_01
+				med = [
+					gh_fe_male_idle_body_01
 				]
-				Fast = [
-					GH_FE_Male_Idle_Body_01
+				fast = [
+					gh_fe_male_idle_body_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_idle_body_01
+				]
+				med = [
+					gh_fe_male_idle_body_01
+				]
+				fast = [
+					gh_fe_male_idle_body_01
 				]
 			}
 		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Idle_100_01
+		transitions = {
+			stance_frontend = gh_fe_male_idle_100_01
 		}
 	}
-	Stance_Select_Profile = {
-		Idle = {
+	stance_select_profile = {
+		idle = {
 			good = {
-				Slow = [
-					GH_FE_Male_Idle_Body_01
+				slow = [
+					gh_fe_male_idle_body_01
 				]
-				Med = [
-					GH_FE_Male_Idle_Body_01
+				med = [
+					gh_fe_male_idle_body_01
 				]
-				Fast = [
-					GH_FE_Male_Idle_Body_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Idle_Body_01
-				]
-				Med = [
-					GH_FE_Male_Idle_Body_01
-				]
-				Fast = [
-					GH_FE_Male_Idle_Body_01
+				fast = [
+					gh_fe_male_idle_body_01
 				]
 			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Idle_Body_01
+			normal = {
+				slow = [
+					gh_fe_male_idle_body_01
 				]
-				Med = [
-					GH_FE_Male_Idle_Body_01
+				med = [
+					gh_fe_male_idle_body_01
 				]
-				Fast = [
-					GH_FE_Male_Idle_Body_01
-				]
-			}
-		}
-	}
-	Stance_Select_Tat_Chest = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
+				fast = [
+					gh_fe_male_idle_body_01
 				]
 			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
+			bad = {
+				slow = [
+					gh_fe_male_idle_body_01
 				]
-				Med = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
+				med = [
+					gh_fe_male_idle_body_01
 				]
-				Fast = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Shirt_Out_01
-		}
-	}
-	Stance_Select_Tat_Arm_R = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-				Med = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-				Med = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-				Med = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_R_Tat_Idle_01
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_R_Tat_Out_01
-		}
-	}
-	Stance_Select_Tat_Arm_L = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-				Med = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-				Med = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-				Med = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_L_Tat_Idle_01
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_L_Tat_Out_01
-		}
-	}
-	Stance_Select_Hair = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hair_01
-					GH_FE_Female_Idle_Hair_02
-					GH_FE_Female_Idle_Hair_03
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Idle_100_01
-		}
-	}
-	Stance_Select_Glasses = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-				Med = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-				Med = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-				Med = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-					GH_FE_Female_Idle_Glasses_01
+				fast = [
+					gh_fe_male_idle_body_01
 				]
 			}
 		}
 	}
-	Stance_Select_Hat = {
-		Idle = {
+	stance_select_tat_chest = {
+		idle = {
 			good = {
-				Slow = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
+				slow = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
 				]
-				Med = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
+				med = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
 				]
-				Fast = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
+				fast = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
 				]
 			}
-			Bad = {
-				Slow = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
+			normal = {
+				slow = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
 				]
-				Med = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
+				med = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
 				]
-				Fast = [
-					GH_FE_Female_Idle_Hat_01
-					GH_FE_Female_Idle_Body_01
-					GH_FE_Female_Idle_Body_02
+				fast = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				med = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				fast = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_shirt_out_01
+		}
+	}
+	stance_select_tat_arm_r = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_r_tat_idle_01
+				]
+				med = [
+					gh_fe_male_r_tat_idle_01
+				]
+				fast = [
+					gh_fe_male_r_tat_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_r_tat_idle_01
+				]
+				med = [
+					gh_fe_male_r_tat_idle_01
+				]
+				fast = [
+					gh_fe_male_r_tat_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_r_tat_idle_01
+				]
+				med = [
+					gh_fe_male_r_tat_idle_01
+				]
+				fast = [
+					gh_fe_male_r_tat_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_r_tat_out_01
+		}
+	}
+	stance_select_tat_arm_l = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_l_tat_idle_01
+				]
+				med = [
+					gh_fe_male_l_tat_idle_01
+				]
+				fast = [
+					gh_fe_male_l_tat_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_l_tat_idle_01
+				]
+				med = [
+					gh_fe_male_l_tat_idle_01
+				]
+				fast = [
+					gh_fe_male_l_tat_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_l_tat_idle_01
+				]
+				med = [
+					gh_fe_male_l_tat_idle_01
+				]
+				fast = [
+					gh_fe_male_l_tat_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_l_tat_out_01
+		}
+	}
+	stance_select_hair = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+				med = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+				fast = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+				med = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+				fast = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+				med = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+				fast = [
+					gh_fe_female_idle_hair_01
+					gh_fe_female_idle_hair_02
+					gh_fe_female_idle_hair_03
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_02
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_idle_100_01
+		}
+	}
+	stance_select_glasses = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+				med = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+				fast = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+				med = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+				fast = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+				med = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
+				]
+				fast = [
+					gh_fe_female_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_female_idle_body_02
+					gh_fe_female_idle_glasses_01
 				]
 			}
 		}
 	}
-	Stance_Select_Arm_R = {
-		Idle = {
+	stance_select_hat = {
+		idle = {
 			good = {
-				Slow = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
+				slow = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
-				Med = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
+				med = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
-				Fast = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
-				]
-				Med = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
+				fast = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
 			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
+			normal = {
+				slow = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
-				Med = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
+				med = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
-				Fast = [
-					GH_FE_Male_R_ArmACC_Idle_01
-					GH_FE_Male_R_ArmACC_Idle_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_R_ArmACC_Out_01
-		}
-	}
-	Stance_Select_Arm_L = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-				Med = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
+				fast = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
 			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-				Med = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-				Med = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_L_ArmACC_Idle_01
-					GH_FE_Male_L_ArmACC_Idle_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_L_ArmACC_Out_01
-		}
-	}
-	Stance_Select_Piercings = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-				Med = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-				Fast = [
-					GH_FE_Male_Idle_Hat_01
-					GH_FE_Male_Idle_Body_01
-					GH_FE_Male_Idle_Body_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Idle_100_01
-		}
-	}
-	Stance_Select_Torso = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_01
-					GH_FE_Male_Shirt_Idle_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Shirt_Out_01
-		}
-	}
-	Stance_Select_Pants = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Pants_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Pants_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Pants_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Pants_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Pants_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Pants_Idle_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Pants_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Pants_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Pants_Idle_01
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Pants_Out_01
-		}
-	}
-	Stance_Select_Fingernails = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Fingers_Idle_01
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Fingers_Out_01
-		}
-	}
-	Stance_Select_Shoes = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-				Med = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-				Fast = [
-					GH_FE_Male_Shoes_Idle_02
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Shoes_Out_01
-		}
-	}
-	Stance_Select_Guitar = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-				Med = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_Guitar_Idle_01
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Guitar_Out_01
-		}
-	}
-	Stance_Select_Mic = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_Mic_Idle_075_01
-					GH_FE_Male_Mic_Idle_075_02
-					GH_FE_Male_Mic_Idle_075_03
-				]
-				Med = [
-					GH_FE_Male_Mic_Idle_100_01
-					GH_FE_Male_Mic_Idle_100_02
-					GH_FE_Male_Mic_Idle_100_03
-				]
-				Fast = [
-					GH_FE_Male_Mic_Idle_120_01
-					GH_FE_Male_Mic_Idle_120_02
-					GH_FE_Male_Mic_Idle_120_03
-					GH_FE_Male_Mic_Idle_120_04
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Mic_Idle_075_01
-					GH_FE_Male_Mic_Idle_075_02
-					GH_FE_Male_Mic_Idle_075_03
-				]
-				Med = [
-					GH_FE_Male_Mic_Idle_100_01
-					GH_FE_Male_Mic_Idle_100_02
-					GH_FE_Male_Mic_Idle_100_03
-				]
-				Fast = [
-					GH_FE_Male_Mic_Idle_120_01
-					GH_FE_Male_Mic_Idle_120_02
-					GH_FE_Male_Mic_Idle_120_03
-					GH_FE_Male_Mic_Idle_120_04
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Mic_Idle_075_01
-					GH_FE_Male_Mic_Idle_075_02
-					GH_FE_Male_Mic_Idle_075_03
-				]
-				Med = [
-					GH_FE_Male_Mic_Idle_100_01
-					GH_FE_Male_Mic_Idle_100_02
-					GH_FE_Male_Mic_Idle_100_03
-				]
-				Fast = [
-					GH_FE_Male_Mic_Idle_120_01
-					GH_FE_Male_Mic_Idle_120_02
-					GH_FE_Male_Mic_Idle_120_03
-					GH_FE_Male_Mic_Idle_120_04
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_Mic_Out_01
-		}
-	}
-	Stance_Select_Microphone = {
-		Idle = {
-			good = {
-				Slow = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-				Med = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-				Med = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-				Med = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_MicHold_Idle_01
-				]
-			}
-		}
-		Transitions = {
-			stance_frontend = GH_FE_Male_MicHold_Out_01
-		}
-	}
-	Stance_Select_Drum = {
-		Idle = {
-			good = {
-				Slow = [
-					DrumDroid_Waiting_InOut_Full
-				]
-				Med = [
-					DrumDroid_Waiting_InOut_Full
-				]
-				Fast = [
-					DrumDroid_Waiting_InOut_Full
-				]
-			}
-			Normal = {
-				Slow = [
-					DrumDroid_Waiting_InOut_Full
-				]
-				Med = [
-					DrumDroid_Waiting_InOut_Full
-				]
-				Fast = [
-					DrumDroid_Waiting_InOut_Full
-				]
-			}
-			Bad = {
-				Slow = [
-					DrumDroid_Waiting_InOut_Full
-				]
-				Med = [
-					DrumDroid_Waiting_InOut_Full
-				]
-				Fast = [
-					DrumDroid_Waiting_InOut_Full
+			bad = {
+				slow = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
+				]
+				med = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
+				]
+				fast = [
+					gh_fe_female_idle_hat_01
+					gh_fe_female_idle_body_01
+					gh_fe_female_idle_body_02
 				]
 			}
 		}
 	}
-	Stance_Select_DrumSticks = {
-		Idle = {
+	stance_select_arm_r = {
+		idle = {
 			good = {
-				Slow = [
-					GH_FE_Male_DrumStix_Idle_01
+				slow = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
 				]
-				Med = [
-					GH_FE_Male_DrumStix_Idle_01
+				med = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
 				]
-				Fast = [
-					GH_FE_Male_DrumStix_Idle_01
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_DrumStix_Idle_01
-				]
-				Med = [
-					GH_FE_Male_DrumStix_Idle_01
-				]
-				Fast = [
-					GH_FE_Male_DrumStix_Idle_01
+				fast = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
 				]
 			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_DrumStix_Idle_01
+			normal = {
+				slow = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
 				]
-				Med = [
-					GH_FE_Male_DrumStix_Idle_01
+				med = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
 				]
-				Fast = [
-					GH_FE_Male_DrumStix_Idle_01
+				fast = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
+				]
+				med = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
+				]
+				fast = [
+					gh_fe_male_r_armacc_idle_01
+					gh_fe_male_r_armacc_idle_02
 				]
 			}
 		}
-		Transitions = {
-			Stance_Select_Drum = GH_FE_Male_DrumStix_Out_01
+		transitions = {
+			stance_frontend = gh_fe_male_r_armacc_out_01
+		}
+	}
+	stance_select_arm_l = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+				med = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+				fast = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+				med = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+				fast = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+				med = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+				fast = [
+					gh_fe_male_l_armacc_idle_01
+					gh_fe_male_l_armacc_idle_02
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_l_armacc_out_01
+		}
+	}
+	stance_select_piercings = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+				med = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+				fast = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+				med = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+				fast = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+				med = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+				fast = [
+					gh_fe_male_idle_hat_01
+					gh_fe_male_idle_body_01
+					gh_fe_male_idle_body_02
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_idle_100_01
+		}
+	}
+	stance_select_torso = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				med = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				fast = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				med = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				fast = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				med = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+				fast = [
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_01
+					gh_fe_male_shirt_idle_02
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_shirt_out_01
+		}
+	}
+	stance_select_pants = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_pants_idle_01
+				]
+				med = [
+					gh_fe_male_pants_idle_01
+				]
+				fast = [
+					gh_fe_male_pants_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_pants_idle_01
+				]
+				med = [
+					gh_fe_male_pants_idle_01
+				]
+				fast = [
+					gh_fe_male_pants_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_pants_idle_01
+				]
+				med = [
+					gh_fe_male_pants_idle_01
+				]
+				fast = [
+					gh_fe_male_pants_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_pants_out_01
+		}
+	}
+	stance_select_fingernails = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_fingers_idle_01
+				]
+				med = [
+					gh_fe_male_fingers_idle_01
+				]
+				fast = [
+					gh_fe_male_fingers_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_fingers_idle_01
+				]
+				med = [
+					gh_fe_male_fingers_idle_01
+				]
+				fast = [
+					gh_fe_male_fingers_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_fingers_idle_01
+				]
+				med = [
+					gh_fe_male_fingers_idle_01
+				]
+				fast = [
+					gh_fe_male_fingers_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_fingers_out_01
+		}
+	}
+	stance_select_shoes = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_shoes_idle_02
+				]
+				med = [
+					gh_fe_male_shoes_idle_02
+				]
+				fast = [
+					gh_fe_male_shoes_idle_02
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_shoes_idle_02
+				]
+				med = [
+					gh_fe_male_shoes_idle_02
+				]
+				fast = [
+					gh_fe_male_shoes_idle_02
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_shoes_idle_02
+				]
+				med = [
+					gh_fe_male_shoes_idle_02
+				]
+				fast = [
+					gh_fe_male_shoes_idle_02
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_shoes_out_01
+		}
+	}
+	stance_select_guitar = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_guitar_idle_01
+				]
+				med = [
+					gh_fe_male_guitar_idle_01
+				]
+				fast = [
+					gh_fe_male_guitar_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_guitar_idle_01
+				]
+				med = [
+					gh_fe_male_guitar_idle_01
+				]
+				fast = [
+					gh_fe_male_guitar_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_guitar_idle_01
+				]
+				med = [
+					gh_fe_male_guitar_idle_01
+				]
+				fast = [
+					gh_fe_male_guitar_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_guitar_out_01
+		}
+	}
+	stance_select_mic = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_mic_idle_075_01
+					gh_fe_male_mic_idle_075_02
+					gh_fe_male_mic_idle_075_03
+				]
+				med = [
+					gh_fe_male_mic_idle_100_01
+					gh_fe_male_mic_idle_100_02
+					gh_fe_male_mic_idle_100_03
+				]
+				fast = [
+					gh_fe_male_mic_idle_120_01
+					gh_fe_male_mic_idle_120_02
+					gh_fe_male_mic_idle_120_03
+					gh_fe_male_mic_idle_120_04
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_mic_idle_075_01
+					gh_fe_male_mic_idle_075_02
+					gh_fe_male_mic_idle_075_03
+				]
+				med = [
+					gh_fe_male_mic_idle_100_01
+					gh_fe_male_mic_idle_100_02
+					gh_fe_male_mic_idle_100_03
+				]
+				fast = [
+					gh_fe_male_mic_idle_120_01
+					gh_fe_male_mic_idle_120_02
+					gh_fe_male_mic_idle_120_03
+					gh_fe_male_mic_idle_120_04
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_mic_idle_075_01
+					gh_fe_male_mic_idle_075_02
+					gh_fe_male_mic_idle_075_03
+				]
+				med = [
+					gh_fe_male_mic_idle_100_01
+					gh_fe_male_mic_idle_100_02
+					gh_fe_male_mic_idle_100_03
+				]
+				fast = [
+					gh_fe_male_mic_idle_120_01
+					gh_fe_male_mic_idle_120_02
+					gh_fe_male_mic_idle_120_03
+					gh_fe_male_mic_idle_120_04
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_mic_out_01
+		}
+	}
+	stance_select_microphone = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_michold_idle_01
+				]
+				med = [
+					gh_fe_male_michold_idle_01
+				]
+				fast = [
+					gh_fe_male_michold_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_michold_idle_01
+				]
+				med = [
+					gh_fe_male_michold_idle_01
+				]
+				fast = [
+					gh_fe_male_michold_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_michold_idle_01
+				]
+				med = [
+					gh_fe_male_michold_idle_01
+				]
+				fast = [
+					gh_fe_male_michold_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_frontend = gh_fe_male_michold_out_01
+		}
+	}
+	stance_select_drum = {
+		idle = {
+			good = {
+				slow = [
+					drumdroid_waiting_inout_full
+				]
+				med = [
+					drumdroid_waiting_inout_full
+				]
+				fast = [
+					drumdroid_waiting_inout_full
+				]
+			}
+			normal = {
+				slow = [
+					drumdroid_waiting_inout_full
+				]
+				med = [
+					drumdroid_waiting_inout_full
+				]
+				fast = [
+					drumdroid_waiting_inout_full
+				]
+			}
+			bad = {
+				slow = [
+					drumdroid_waiting_inout_full
+				]
+				med = [
+					drumdroid_waiting_inout_full
+				]
+				fast = [
+					drumdroid_waiting_inout_full
+				]
+			}
+		}
+	}
+	stance_select_drumsticks = {
+		idle = {
+			good = {
+				slow = [
+					gh_fe_male_drumstix_idle_01
+				]
+				med = [
+					gh_fe_male_drumstix_idle_01
+				]
+				fast = [
+					gh_fe_male_drumstix_idle_01
+				]
+			}
+			normal = {
+				slow = [
+					gh_fe_male_drumstix_idle_01
+				]
+				med = [
+					gh_fe_male_drumstix_idle_01
+				]
+				fast = [
+					gh_fe_male_drumstix_idle_01
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_drumstix_idle_01
+				]
+				med = [
+					gh_fe_male_drumstix_idle_01
+				]
+				fast = [
+					gh_fe_male_drumstix_idle_01
+				]
+			}
+		}
+		transitions = {
+			stance_select_drum = gh_fe_male_drumstix_out_01
 		}
 	}
 	stance_frontend = {
-		Idle = {
+		idle = {
 			good = {
-				Slow = [
-					GH_FE_Male_Idle_075_01
-					GH_FE_Male_Idle_075_02
-					GH_FE_Male_Idle_075_03
+				slow = [
+					gh_fe_male_idle_075_01
+					gh_fe_male_idle_075_02
+					gh_fe_male_idle_075_03
 				]
-				Med = [
-					GH_FE_Male_Idle_100_01
-					GH_FE_Male_Idle_100_02
-					GH_FE_Male_Idle_100_03
-					GH_FE_Male_Idle_100_04
-					GH_FE_Male_Idle_100_05
+				med = [
+					gh_fe_male_idle_100_01
+					gh_fe_male_idle_100_02
+					gh_fe_male_idle_100_03
+					gh_fe_male_idle_100_04
+					gh_fe_male_idle_100_05
 				]
-				Fast = [
-					GH_FE_Male_Idle_120_01
-					GH_FE_Male_Idle_120_02
-					GH_FE_Male_Idle_120_03
-					GH_FE_Male_Idle_120_04
-					GH_FE_Male_Idle_120_05
-				]
-			}
-			Normal = {
-				Slow = [
-					GH_FE_Male_Idle_075_01
-					GH_FE_Male_Idle_075_02
-					GH_FE_Male_Idle_075_03
-				]
-				Med = [
-					GH_FE_Male_Idle_100_01
-					GH_FE_Male_Idle_100_02
-					GH_FE_Male_Idle_100_03
-					GH_FE_Male_Idle_100_04
-					GH_FE_Male_Idle_100_05
-				]
-				Fast = [
-					GH_FE_Male_Idle_120_01
-					GH_FE_Male_Idle_120_02
-					GH_FE_Male_Idle_120_03
-					GH_FE_Male_Idle_120_04
-					GH_FE_Male_Idle_120_05
+				fast = [
+					gh_fe_male_idle_120_01
+					gh_fe_male_idle_120_02
+					gh_fe_male_idle_120_03
+					gh_fe_male_idle_120_04
+					gh_fe_male_idle_120_05
 				]
 			}
-			Bad = {
-				Slow = [
-					GH_FE_Male_Idle_075_01
-					GH_FE_Male_Idle_075_02
-					GH_FE_Male_Idle_075_03
+			normal = {
+				slow = [
+					gh_fe_male_idle_075_01
+					gh_fe_male_idle_075_02
+					gh_fe_male_idle_075_03
 				]
-				Med = [
-					GH_FE_Male_Idle_100_01
-					GH_FE_Male_Idle_100_02
-					GH_FE_Male_Idle_100_03
-					GH_FE_Male_Idle_100_04
-					GH_FE_Male_Idle_100_05
+				med = [
+					gh_fe_male_idle_100_01
+					gh_fe_male_idle_100_02
+					gh_fe_male_idle_100_03
+					gh_fe_male_idle_100_04
+					gh_fe_male_idle_100_05
 				]
-				Fast = [
-					GH_FE_Male_Idle_120_01
-					GH_FE_Male_Idle_120_02
-					GH_FE_Male_Idle_120_03
-					GH_FE_Male_Idle_120_04
-					GH_FE_Male_Idle_120_05
+				fast = [
+					gh_fe_male_idle_120_01
+					gh_fe_male_idle_120_02
+					gh_fe_male_idle_120_03
+					gh_fe_male_idle_120_04
+					gh_fe_male_idle_120_05
+				]
+			}
+			bad = {
+				slow = [
+					gh_fe_male_idle_075_01
+					gh_fe_male_idle_075_02
+					gh_fe_male_idle_075_03
+				]
+				med = [
+					gh_fe_male_idle_100_01
+					gh_fe_male_idle_100_02
+					gh_fe_male_idle_100_03
+					gh_fe_male_idle_100_04
+					gh_fe_male_idle_100_05
+				]
+				fast = [
+					gh_fe_male_idle_120_01
+					gh_fe_male_idle_120_02
+					gh_fe_male_idle_120_03
+					gh_fe_male_idle_120_04
+					gh_fe_male_idle_120_05
 				]
 			}
 		}
-		Transitions = {
-			Stance_Select_Tat_Chest = GH_FE_Female_Shirt_Init_01
-			Stance_Select_Tat_Arm_R = GH_FE_Male_R_Tat_Init_01
-			Stance_Select_Tat_Arm_L = GH_FE_Male_L_Tat_Init_01
-			Stance_Select_Arm_R = GH_FE_Male_R_ArmACC_Init_01
-			Stance_Select_Arm_L = GH_FE_Male_L_ArmACC_Init_01
-			Stance_Select_Shoes = GH_FE_Male_Shoes_Init_01
-			Stance_Select_Pants = GH_FE_Male_Pants_Init_01
-			Stance_Select_Torso = GH_FE_Female_Shirt_Init_01
-			Stance_Select_Fingernails = GH_FE_Male_Fingers_Init_01
-			Stance_Select_Guitar = GH_FE_Female_Guitar_Init_01
-			Stance_Select_Mic = GH_FE_Male_Mic_Init_01
-			Stance_Select_Microphone = GH_FE_Male_MicHold_Init_01
-			Stance_Select_DrumSticks = GH_FE_Male_DrumStix_Init_01
+		transitions = {
+			stance_select_tat_chest = gh_fe_female_shirt_init_01
+			stance_select_tat_arm_r = gh_fe_male_r_tat_init_01
+			stance_select_tat_arm_l = gh_fe_male_l_tat_init_01
+			stance_select_arm_r = gh_fe_male_r_armacc_init_01
+			stance_select_arm_l = gh_fe_male_l_armacc_init_01
+			stance_select_shoes = gh_fe_male_shoes_init_01
+			stance_select_pants = gh_fe_male_pants_init_01
+			stance_select_torso = gh_fe_female_shirt_init_01
+			stance_select_fingernails = gh_fe_male_fingers_init_01
+			stance_select_guitar = gh_fe_female_guitar_init_01
+			stance_select_mic = gh_fe_male_mic_init_01
+			stance_select_microphone = gh_fe_male_michold_init_01
+			stance_select_drumsticks = gh_fe_male_drumstix_init_01
 		}
 	}
-	stance_frontEnd_instrument = {
-		Idle = {
+	stance_frontend_instrument = {
+		idle = {
 			good = {
-				Slow = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
+				slow = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
 				]
-				Med = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
+				med = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
 				]
-				Fast = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
-				]
-			}
-			Normal = {
-				Slow = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
-				]
-				Med = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
-				]
-				Fast = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
+				fast = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
 				]
 			}
-			Bad = {
-				Slow = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
+			normal = {
+				slow = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
 				]
-				Med = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
+				med = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
 				]
-				Fast = [
-					CAR_male_Select_guitar_idle
-					CAR_male_Select_guitar_turn_flip
+				fast = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
+				]
+			}
+			bad = {
+				slow = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
+				]
+				med = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
+				]
+				fast = [
+					car_male_select_guitar_idle
+					car_male_select_guitar_turn_flip
 				]
 			}
 		}
 	}
 }
-guitarist_finger_anims_CAR_Male = {
-	green = GH3_Hnd_Guit_Chord_male_Roll3_1
-	red = GH3_Hnd_Guit_Chord_male_Roll3_2
-	Yellow = GH3_Hnd_Guit_Chord_male_Roll3_3
-	Blue = GH3_Hnd_Guit_Chord_male_Roll3_4
-	Orange = GH3_Hnd_Guit_Chord_male_Roll3_4
-	green_red = GH3_Hnd_Guit_Chord_male_Bar2
-	green_yellow = GH3_Hnd_Guit_Chord_male_Bar3
-	green_blue = GH3_Hnd_Guit_Chord_male_Bar4
-	green_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	red_yellow = GH3_Hnd_Guit_Chord_male_Bar2
-	red_blue = GH3_Hnd_Guit_Chord_male_Bar3
-	red_orange = GH3_Hnd_Guit_Chord_male_Bar4
-	yellow_blue = GH3_Hnd_Guit_Chord_male_Bar2
-	yellow_orange = GH3_Hnd_Guit_Chord_male_Bar3
-	blue_orange = GH3_Hnd_Guit_Chord_male_Bar2
-	green_red_yellow = GH3_Hnd_Guit_Chord_male_Bar1
-	green_red_blue = GH3_Hnd_Guit_Chord_male_Bar5
-	green_red_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	green_yellow_blue = GH3_Hnd_Guit_Chord_male_Bar5
-	green_yellow_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	green_blue_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	red_yellow_blue = GH3_Hnd_Guit_Chord_male_Bar1
-	red_yellow_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	red_blue_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	yellow_blue_orange = GH3_Hnd_Guit_Chord_male_Bar1
-	green_red_yellow_blue = GH3_Hnd_Guit_Chord_male_Bar5
-	green_red_yellow_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	green_red_blue_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	green_yellow_blue_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	green_red_yellow_blue_orange = GH3_Hnd_Guit_Chord_male_Bar5
-	none = Gh3_hnd_guit_chord_male_Empty
-	track_none = Gh3_hnd_guit_chord_male_Empty
+guitarist_finger_anims_car_male = {
+	green = gh3_hnd_guit_chord_male_roll3_1
+	red = gh3_hnd_guit_chord_male_roll3_2
+	yellow = gh3_hnd_guit_chord_male_roll3_3
+	blue = gh3_hnd_guit_chord_male_roll3_4
+	orange = gh3_hnd_guit_chord_male_roll3_4
+	green_red = gh3_hnd_guit_chord_male_bar2
+	green_yellow = gh3_hnd_guit_chord_male_bar3
+	green_blue = gh3_hnd_guit_chord_male_bar4
+	green_orange = gh3_hnd_guit_chord_male_bar5
+	red_yellow = gh3_hnd_guit_chord_male_bar2
+	red_blue = gh3_hnd_guit_chord_male_bar3
+	red_orange = gh3_hnd_guit_chord_male_bar4
+	yellow_blue = gh3_hnd_guit_chord_male_bar2
+	yellow_orange = gh3_hnd_guit_chord_male_bar3
+	blue_orange = gh3_hnd_guit_chord_male_bar2
+	green_red_yellow = gh3_hnd_guit_chord_male_bar1
+	green_red_blue = gh3_hnd_guit_chord_male_bar5
+	green_red_orange = gh3_hnd_guit_chord_male_bar5
+	green_yellow_blue = gh3_hnd_guit_chord_male_bar5
+	green_yellow_orange = gh3_hnd_guit_chord_male_bar5
+	green_blue_orange = gh3_hnd_guit_chord_male_bar5
+	red_yellow_blue = gh3_hnd_guit_chord_male_bar1
+	red_yellow_orange = gh3_hnd_guit_chord_male_bar5
+	red_blue_orange = gh3_hnd_guit_chord_male_bar5
+	yellow_blue_orange = gh3_hnd_guit_chord_male_bar1
+	green_red_yellow_blue = gh3_hnd_guit_chord_male_bar5
+	green_red_yellow_orange = gh3_hnd_guit_chord_male_bar5
+	green_red_blue_orange = gh3_hnd_guit_chord_male_bar5
+	green_yellow_blue_orange = gh3_hnd_guit_chord_male_bar5
+	green_red_yellow_blue_orange = gh3_hnd_guit_chord_male_bar5
+	none = gh3_hnd_guit_chord_male_empty
+	track_none = gh3_hnd_guit_chord_male_empty
 }
-CAR_Male_Normal_Strums = ASSERT_ON_USE
-CAR_Male_Bass_Strums = ASSERT_ON_USE
-CAR_Male_Pick_Strums = ASSERT_ON_USE
-CAR_Male_Up_Strums = ASSERT_ON_USE
-CAR_Male_Tap_Strums = ASSERT_ON_USE
-CAR_Male_Tap12_Strums = ASSERT_ON_USE
-CAR_Male_Jimi_Strums = ASSERT_ON_USE
+car_male_normal_strums = 0x24d8810d
+car_male_bass_strums = 0x24d8810d
+car_male_pick_strums = 0x24d8810d
+car_male_up_strums = 0x24d8810d
+car_male_tap_strums = 0x24d8810d
+car_male_tap12_strums = 0x24d8810d
+car_male_jimi_strums = 0x24d8810d
 fret_anims_rocker = {
-	track_127 = GH_Rocker_Male_Fret_01_D
-	track_126 = GH_Rocker_Male_Fret_01_D
-	track_125 = GH_Rocker_Male_Fret_02_D
-	track_124 = GH_Rocker_Male_Fret_03_D
-	track_123 = GH_Rocker_Male_Fret_04_D
-	track_122 = GH_Rocker_Male_Fret_05_D
-	track_121 = GH_Rocker_Male_Fret_06_D
-	track_120 = GH_Rocker_Male_Fret_07_D
-	track_119 = GH_Rocker_Male_Fret_08_D
-	track_118 = GH_Rocker_Male_Fret_09_D
-	track_117 = GH_Rocker_Male_Fret_10_D
-	track_116 = GH_Rocker_Male_Fret_11_D
-	track_115 = GH_Rocker_Male_Fret_12_D
-	track_114 = GH_Rocker_Male_Fret_13_D
-	track_113 = GH_Rocker_Male_Fret_14_D
-	track_112 = GH_Rocker_Male_Fret_14_D
-	track_111 = GH_Rocker_Male_Fret_14_D
-	track_110 = GH_Rocker_Male_Fret_14_D
-	track_109 = GH_Rocker_Male_Fret_14_D
-	track_103 = GH_Rocker_Male_Fret_Bass_01_D
-	track_102 = GH_Rocker_Male_Fret_Bass_01_D
-	track_101 = GH_Rocker_Male_Fret_Bass_02_D
-	track_100 = GH_Rocker_Male_Fret_Bass_03_D
-	track_99 = GH_Rocker_Male_Fret_Bass_04_D
-	track_98 = GH_Rocker_Male_Fret_Bass_05_D
-	track_97 = GH_Rocker_Male_Fret_Bass_06_D
-	track_96 = GH_Rocker_Male_Fret_Bass_07_D
-	track_95 = GH_Rocker_Male_Fret_Bass_08_D
-	track_94 = GH_Rocker_Male_Fret_Bass_09_D
-	track_93 = GH_Rocker_Male_Fret_Bass_10_D
-	track_92 = GH_Rocker_Male_Fret_Bass_11_D
-	track_91 = GH_Rocker_Male_Fret_Bass_12_D
-	track_90 = GH_Rocker_Male_Fret_Bass_13_D
-	track_89 = GH_Rocker_Male_Fret_Bass_14_D
-	track_88 = GH_Rocker_Male_Fret_Bass_14_D
-	track_87 = GH_Rocker_Male_Fret_Bass_14_D
-	track_86 = GH_Rocker_Male_Fret_Bass_14_D
-	track_85 = GH_Rocker_Male_Fret_Bass_14_D
+	track_127 = gh_rocker_male_fret_01_d
+	track_126 = gh_rocker_male_fret_01_d
+	track_125 = gh_rocker_male_fret_02_d
+	track_124 = gh_rocker_male_fret_03_d
+	track_123 = gh_rocker_male_fret_04_d
+	track_122 = gh_rocker_male_fret_05_d
+	track_121 = gh_rocker_male_fret_06_d
+	track_120 = gh_rocker_male_fret_07_d
+	track_119 = gh_rocker_male_fret_08_d
+	track_118 = gh_rocker_male_fret_09_d
+	track_117 = gh_rocker_male_fret_10_d
+	track_116 = gh_rocker_male_fret_11_d
+	track_115 = gh_rocker_male_fret_12_d
+	track_114 = gh_rocker_male_fret_13_d
+	track_113 = gh_rocker_male_fret_14_d
+	track_112 = gh_rocker_male_fret_14_d
+	track_111 = gh_rocker_male_fret_14_d
+	track_110 = gh_rocker_male_fret_14_d
+	track_109 = gh_rocker_male_fret_14_d
+	track_103 = gh_rocker_male_fret_bass_01_d
+	track_102 = gh_rocker_male_fret_bass_01_d
+	track_101 = gh_rocker_male_fret_bass_02_d
+	track_100 = gh_rocker_male_fret_bass_03_d
+	track_99 = gh_rocker_male_fret_bass_04_d
+	track_98 = gh_rocker_male_fret_bass_05_d
+	track_97 = gh_rocker_male_fret_bass_06_d
+	track_96 = gh_rocker_male_fret_bass_07_d
+	track_95 = gh_rocker_male_fret_bass_08_d
+	track_94 = gh_rocker_male_fret_bass_09_d
+	track_93 = gh_rocker_male_fret_bass_10_d
+	track_92 = gh_rocker_male_fret_bass_11_d
+	track_91 = gh_rocker_male_fret_bass_12_d
+	track_90 = gh_rocker_male_fret_bass_13_d
+	track_89 = gh_rocker_male_fret_bass_14_d
+	track_88 = gh_rocker_male_fret_bass_14_d
+	track_87 = gh_rocker_male_fret_bass_14_d
+	track_86 = gh_rocker_male_fret_bass_14_d
+	track_85 = gh_rocker_male_fret_bass_14_d
 }
 fret_anims_rocker_lefty = {
-	track_127 = Guit_Fret_01_Left
-	track_126 = Guit_Fret_01_Left
-	track_125 = Guit_Fret_02_Left
-	track_124 = Guit_Fret_03_Left
-	track_123 = Guit_Fret_04_Left
-	track_122 = Guit_Fret_05_Left
-	track_121 = Guit_Fret_06_Left
-	track_120 = Guit_Fret_07_Left
-	track_119 = Guit_Fret_08_Left
-	track_118 = Guit_Fret_09_Left
-	track_117 = Guit_Fret_10_Left
-	track_116 = Guit_Fret_11_Left
-	track_115 = Guit_Fret_12_Left
-	track_114 = Guit_Fret_13_Left
-	track_113 = Guit_Fret_14_Left
-	track_112 = Guit_Fret_14_Left
-	track_111 = Guit_Fret_14_Left
-	track_110 = Guit_Fret_14_Left
-	track_109 = Guit_Fret_14_Left
-	track_103 = Guit_Fret_01_Left
-	track_102 = Guit_Fret_01_Left
-	track_101 = Guit_Fret_02_Left
-	track_100 = Guit_Fret_03_Left
-	track_99 = Guit_Fret_04_Left
-	track_98 = Guit_Fret_05_Left
-	track_97 = Guit_Fret_06_Left
-	track_96 = Guit_Fret_07_Left
-	track_95 = Guit_Fret_08_Left
-	track_94 = Guit_Fret_09_Left
-	track_93 = Guit_Fret_10_Left
-	track_92 = Guit_Fret_11_Left
-	track_91 = Guit_Fret_12_Left
-	track_90 = Guit_Fret_13_Left
-	track_89 = Guit_Fret_14_Left
-	track_88 = Guit_Fret_14_Left
-	track_87 = Guit_Fret_14_Left
-	track_86 = Guit_Fret_14_Left
-	track_85 = Guit_Fret_14_Left
+	track_127 = guit_fret_01_left
+	track_126 = guit_fret_01_left
+	track_125 = guit_fret_02_left
+	track_124 = guit_fret_03_left
+	track_123 = guit_fret_04_left
+	track_122 = guit_fret_05_left
+	track_121 = guit_fret_06_left
+	track_120 = guit_fret_07_left
+	track_119 = guit_fret_08_left
+	track_118 = guit_fret_09_left
+	track_117 = guit_fret_10_left
+	track_116 = guit_fret_11_left
+	track_115 = guit_fret_12_left
+	track_114 = guit_fret_13_left
+	track_113 = guit_fret_14_left
+	track_112 = guit_fret_14_left
+	track_111 = guit_fret_14_left
+	track_110 = guit_fret_14_left
+	track_109 = guit_fret_14_left
+	track_103 = guit_fret_01_left
+	track_102 = guit_fret_01_left
+	track_101 = guit_fret_02_left
+	track_100 = guit_fret_03_left
+	track_99 = guit_fret_04_left
+	track_98 = guit_fret_05_left
+	track_97 = guit_fret_06_left
+	track_96 = guit_fret_07_left
+	track_95 = guit_fret_08_left
+	track_94 = guit_fret_09_left
+	track_93 = guit_fret_10_left
+	track_92 = guit_fret_11_left
+	track_91 = guit_fret_12_left
+	track_90 = guit_fret_13_left
+	track_89 = guit_fret_14_left
+	track_88 = guit_fret_14_left
+	track_87 = guit_fret_14_left
+	track_86 = guit_fret_14_left
+	track_85 = guit_fret_14_left
 }
 facial_anims_male_rocker = {
-	Idle = [
-		GH_Rocker_Male_genericFace_1
-		GH_Rocker_Male_genericFace_2
-		GH_Rocker_Male_genericFace_3
+	idle = [
+		gh_rocker_male_genericface_1
+		gh_rocker_male_genericface_2
+		gh_rocker_male_genericface_3
 	]
 }
 facial_anims_male_rocker_rocking = {
-	Idle = [
+	idle = [
 		gh_rocker_male_hardrockface_2
 		gh_rocker_male_hardrockface_4
 		gh_rocker_male_hardrockface_5
@@ -1837,37 +1837,37 @@ facial_anims_male_rocker_rocking = {
 	]
 }
 facial_anims_male_rocker_hrock2 = {
-	Idle = [
+	idle = [
 		gh_rocker_male_hardrockface_2
 	]
 }
 facial_anims_male_rocker_hrock4 = {
-	Idle = [
+	idle = [
 		gh_rocker_male_hardrockface_4
 	]
 }
 facial_anims_male_rocker_hrock5 = {
-	Idle = [
+	idle = [
 		gh_rocker_male_hardrockface_5
 	]
 }
 facial_anims_male_rocker_hrock6 = {
-	Idle = [
+	idle = [
 		gh_rocker_male_hardrockface_6
 	]
 }
 facial_anims_male_rocker_happy = {
-	Idle = [
+	idle = [
 		gh_rocker_male_happy_1
 	]
 }
 facial_anims_male_rocker_teeth = {
-	Idle = [
+	idle = [
 		gh_rocker_male_teeth
 	]
 }
 facial_anims_male_rocker_eyesclosed = {
-	Idle = [
-		GH_Rocker_Male_eyesclosed_1
+	idle = [
+		gh_rocker_male_eyesclosed_1
 	]
 }

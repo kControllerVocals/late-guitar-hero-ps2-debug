@@ -4,33 +4,33 @@ additional_songlist = [
 	{
 		list = debug_songlist
 		props = debug_songlist_props
-		frontend_desc = qs("\LDebug")
+		frontend_desc = qs(0x2ae82c63)
 		crc = debug
 	}
 	{
 		list = tutorial_songlist
 		props = tutorial_songlist_props
-		frontend_desc = qs("\LTutorial")
+		frontend_desc = qs(0xae0e9bcf)
 		crc = tutorial
 	}
 	{
 		list = test_songlist
 		props = test_songlist_props
-		frontend_desc = qs("\LTest")
+		frontend_desc = qs(0x82511966)
 		crc = test
 	}
 ]
 menu_songs = [
-	BleedAmerican
-	BlueDay
-	BlueOrchid
-	Comedown
-	HungryLikeTheWolf
-	Lithium
-	OneBigHoliday
-	WolfLikeMe
+	bleedamerican
+	blueday
+	blueorchid
+	comedown
+	hungrylikethewolf
+	lithium
+	onebigholiday
+	wolflikeme
 ]
-final_credits_song = TwentyFirstCentury
+final_credits_song = twentyfirstcentury
 additional_songlist_props = {
 	$debug_songlist_props
 	$tutorial_songlist_props
@@ -39,119 +39,119 @@ gh_songlist_props = {
 	$gh5_songlist_props
 	$additional_songlist_props
 }
-artist_text_by = qs("BY")
-artist_text_from = qs("FROM")
-artist_text_as_made_famous_by = qs("AS MADE FAMOUS BY")
-cover_artist_text = qs("Cover Version")
-cover_artist_text_by = qs("")
+artist_text_by = qs(0x84df5648)
+artist_text_from = qs(0xb2c93b23)
+artist_text_as_made_famous_by = qs(0x85b4481b)
+cover_artist_text = qs(0x13c0666a)
+cover_artist_text_by = qs(0x00000000)
 gh5_songlist = [
-	APunk
-	AllAlongTheWatchTower
-	AllThePrettyFaces
-	AmericanGirl
-	BackRound
-	BleedAmerican
-	BlueDay
-	BlueOrchid
-	Brianstorm
-	BringTheNoise
-	BulletsButterfly
-	CigarettesWeddingBands
-	Comedown
-	DancingWithMyself
-	Deadbolt
-	Demon
-	Disconnected
-	DoneWithEverything
-	DoYouFeelLikeWeDo
-	DuHast
-	ExGirlfriend
-	Fame
-	FeelGoodInc
-	GammaRay
-	Gratitude
-	HungryLikeTheWolf
-	HurtsSoGood
-	InMyPlace
-	InTheMeantime
-	Incinerate
-	Jailbreak
-	Judith
-	Kryptonite
-	LA
-	Lithium
-	LonelyIsTheNight
-	LooksThatKill
-	LustForLife
-	MaidenMotherCrone
-	MakeItWitChu
-	Medicate
-	MirrorPeople
-	NearlyLostYou
-	NeverMissABeat
-	NoOneToDependOn
-	OneBigHoliday
-	OnlyHappyWhenItRains
-	PlayThatFunkyMusic
-	PlugInBaby
-	RingOfFire
-	RockShow
-	RunninDownADream
-	SaturdayNightsAlright
-	Scatterbrain
-	LoveToken
-	Seven
-	SexOnFire
-	ShoutItOutLoud
-	SixDaysAWeek
-	SmellsLikeTeenSpirit
-	Sneakout
-	SoLonely
-	Song2
-	SowingSeason
-	SpiritOfRadio
-	SteadyAsSheGoes
-	StreamlineWoman
-	SultansOfSwing
-	Superstition
-	SweatingBullets
-	SympathyForTheDevil
-	TheySay
-	TwentiethCenturyBoy
-	TwentyFirstCentury
-	TwoMinutesToMidnight
-	UnderPressure
-	WannaBeInLA
-	WereAnAmericanBand
-	WhatIGot
-	WhyBother
-	WolfLikeMe
-	WomanFromTokyo
-	YouAndMe
-	YouGiveLove
-	YounkFunk
+	apunk
+	allalongthewatchtower
+	alltheprettyfaces
+	americangirl
+	backround
+	bleedamerican
+	blueday
+	blueorchid
+	brianstorm
+	bringthenoise
+	bulletsbutterfly
+	cigarettesweddingbands
+	comedown
+	dancingwithmyself
+	deadbolt
+	demon
+	disconnected
+	donewitheverything
+	doyoufeellikewedo
+	duhast
+	exgirlfriend
+	fame
+	feelgoodinc
+	gammaray
+	gratitude
+	hungrylikethewolf
+	hurtssogood
+	inmyplace
+	inthemeantime
+	incinerate
+	jailbreak
+	judith
+	kryptonite
+	la
+	lithium
+	lonelyisthenight
+	looksthatkill
+	lustforlife
+	maidenmothercrone
+	makeitwitchu
+	medicate
+	mirrorpeople
+	nearlylostyou
+	nevermissabeat
+	noonetodependon
+	onebigholiday
+	onlyhappywhenitrains
+	playthatfunkymusic
+	pluginbaby
+	ringoffire
+	rockshow
+	runnindownadream
+	saturdaynightsalright
+	scatterbrain
+	lovetoken
+	seven
+	sexonfire
+	shoutitoutloud
+	sixdaysaweek
+	smellsliketeenspirit
+	sneakout
+	solonely
+	song2
+	sowingseason
+	spiritofradio
+	steadyasshegoes
+	streamlinewoman
+	sultansofswing
+	superstition
+	sweatingbullets
+	sympathyforthedevil
+	theysay
+	twentiethcenturyboy
+	twentyfirstcentury
+	twominutestomidnight
+	underpressure
+	wannabeinla
+	wereanamericanband
+	whatigot
+	whybother
+	wolflikeme
+	womanfromtokyo
+	youandme
+	yougivelove
+	younkfunk
 ]
 debug_songlist = [
-	DebugBrokenChord
-	DebugChalTest1
-	DebugChalTest3
-	DebugChalTest5
-	DebugNoBass
-	DebugNoDrums
-	DebugNoGuitar
-	DebugNoVocals
-	DebugNoteTypeTest
-	DebugVolBand
-	DebugVolBass
-	DebugVolCrowd
-	DebugVolDrumCymbal
-	DebugVolDrumKick
-	DebugVolDrumSnare
-	DebugVolDrumTom
-	DebugVolGuitar
-	DebugVolVocals
-	DebugVoxLag
-	DrumStreamTest
+	debugbrokenchord
+	debugchaltest1
+	debugchaltest3
+	debugchaltest5
+	debugnobass
+	debugnodrums
+	debugnoguitar
+	debugnovocals
+	debugnotetypetest
+	debugvolband
+	debugvolbass
+	debugvolcrowd
+	debugvoldrumcymbal
+	debugvoldrumkick
+	debugvoldrumsnare
+	debugvoldrumtom
+	debugvolguitar
+	debugvolvocals
+	debugvoxlag
+	drumstreamtest
 	synctest
 	synctestplaytoaudio
 	synctestaudioandvisual
@@ -162,78 +162,78 @@ debug_songlist = [
 	testtones
 ]
 tutorial_songlist = [
-	Tut_Bass_OpenNote
-	Tut_Demo
-	Tut_Drum_Activ
-	Tut_Drum_Beat1
-	Tut_Drum_Beat2
-	Tut_Drum_Beat3
-	Tut_Drum_Break
-	Tut_Drum_Combos
-	Tut_Drum_Free
-	Tut_Drum_Kick
-	Tut_Drum_OneHand
-	Tut_Drum_TwoHands
-	Tut_Gtr_Chords
-	Tut_Gtr_Combos
-	Tut_Gtr_DiffNotes
-	Tut_Gtr_ExtSus
-	Tut_Gtr_HamOn
-	Tut_Gtr_LongNotes
-	Tut_Gtr_PlayNotes
-	Tut_Gtr_PullOff
-	Tut_Gtr_Slide
-	Tut_Gtr_Tilt
-	Tut_Gtr_Wham
-	Tut_Vox_Activ
-	Tut_Vox_Combos
-	Tut_Vox_Freeform
-	Tut_Vox_HitNotes
-	Tut_Vox_Hype
-	Tut_Vox_Spoken
-	Tut_VS_BattPow
-	Tut_VS_MultAttck
-	Tut_VS_Recov
-	Tut_VS_Tilt
+	tut_bass_opennote
+	tut_demo
+	tut_drum_activ
+	tut_drum_beat1
+	tut_drum_beat2
+	tut_drum_beat3
+	tut_drum_break
+	tut_drum_combos
+	tut_drum_free
+	tut_drum_kick
+	tut_drum_onehand
+	tut_drum_twohands
+	tut_gtr_chords
+	tut_gtr_combos
+	tut_gtr_diffnotes
+	tut_gtr_extsus
+	tut_gtr_hamon
+	tut_gtr_longnotes
+	tut_gtr_playnotes
+	tut_gtr_pulloff
+	tut_gtr_slide
+	tut_gtr_tilt
+	tut_gtr_wham
+	tut_vox_activ
+	tut_vox_combos
+	tut_vox_freeform
+	tut_vox_hitnotes
+	tut_vox_hype
+	tut_vox_spoken
+	tut_vs_battpow
+	tut_vs_multattck
+	tut_vs_recov
+	tut_vs_tilt
 ]
-venue_set_a = [
-	load_Z_Subway
-	load_Z_LHC
-	load_Z_FreakShow
-	load_Z_NewOrleans
-	load_Z_Dublin
-	load_Z_DragRace
-	load_Z_CarHenge
-	load_Z_Vegas
-	load_Z_Nashville
-	load_Z_MexicoCity
-	load_Z_Cairo
-	load_Z_SanFrancisco
+0x078248c2 = [
+	load_z_subway
+	load_z_lhc
+	load_z_freakshow
+	load_z_neworleans
+	load_z_dublin
+	load_z_dragrace
+	load_z_carhenge
+	load_z_vegas
+	load_z_nashville
+	load_z_mexicocity
+	load_z_cairo
+	load_z_sanfrancisco
 	load_z_norway
 	load_z_cube
 ]
-venue_set_b = [
-	load_Z_Subway
-	load_Z_LHC
-	load_Z_FreakShow
-	load_Z_NewOrleans
-	load_Z_Dublin
-	load_Z_DragRace
-	load_Z_CarHenge
-	load_Z_Vegas
-	load_Z_Nashville
-	load_Z_MexicoCity
-	load_Z_Cairo
-	load_Z_SanFrancisco
+0x9e8b1978 = [
+	load_z_subway
+	load_z_lhc
+	load_z_freakshow
+	load_z_neworleans
+	load_z_dublin
+	load_z_dragrace
+	load_z_carhenge
+	load_z_vegas
+	load_z_nashville
+	load_z_mexicocity
+	load_z_cairo
+	load_z_sanfrancisco
 	load_z_norway
 	load_z_cube
 ]
 gh5_songlist_props = {
-	APunk = {
-		checksum = APunk
+	apunk = {
+		checksum = apunk
 		name = 'APunk'
-		title = qs("\LA-Punk")
-		artist = qs("\LVampire Weekend")
+		title = qs(0x552fe7cd)
+		artist = qs(0x7f342f46)
 		year = 2008
 		duration = 138
 		album_img = 'dlc1'
@@ -241,13 +241,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 8
 		leaderboard = 1
-		singer = Male
-		genre = `Surf Rock`
+		singer = male
+		genre = `surf rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -2.0
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LVampire Weekend")
+		album_title = qs(0x7f342f46)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 5
@@ -262,13 +262,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockHigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	AllAlongTheWatchTower = {
-		checksum = AllAlongTheWatchTower
+	allalongthewatchtower = {
+		checksum = allalongthewatchtower
 		name = 'AllAlongTheWatchTower'
-		title = qs("\LAll Along The Watchtower")
-		artist = qs("\LBob Dylan")
+		title = qs(0x264df38c)
+		artist = qs(0x69af5a49)
 		year = 1967
 		duration = 151
 		album_img = 'placeholder_album'
@@ -276,15 +276,15 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Blues Rock`
+		singer = male
+		genre = `blues rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.3
 		trivia_no_phrases
 		mono_drums = 1
 		vocals_scroll_speed = 1.2800001
-		album_title = qs("\LJohn Wesley Harding")
+		album_title = qs(0xb04e97d4)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 2
@@ -299,13 +299,13 @@ gh5_songlist_props = {
 		tom2 = 'classicrockhigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	AllThePrettyFaces = {
-		checksum = AllThePrettyFaces
+	alltheprettyfaces = {
+		checksum = alltheprettyfaces
 		name = 'AllThePrettyFaces'
-		title = qs("\LAll The Pretty Faces")
-		artist = qs("\LThe Killers")
+		title = qs(0xbcf29318)
+		artist = qs(0x2fc08707)
 		year = 2006
 		duration = 295
 		album_img = 'placeholder_album'
@@ -313,14 +313,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 7
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -3.8
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LSam's Town")
+		album_title = qs(0x42536f94)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -335,13 +335,13 @@ gh5_songlist_props = {
 		tom2 = 'heavyrockHigh'
 		hihat = 'heavyrock'
 		cymbal = 'heavyrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	AmericanGirl = {
-		checksum = AmericanGirl
+	americangirl = {
+		checksum = americangirl
 		name = 'AmericanGirl'
-		title = qs("\LAmerican Girl")
-		artist = qs("\LTom Petty & The Heartbreakers")
+		title = qs(0x61e349ba)
+		artist = qs(0x9acc5fb9)
 		year = 1976
 		duration = 236
 		album_img = 'placeholder_album'
@@ -349,16 +349,16 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 12
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		trivia_no_phrases
 		overall_song_volume = 0.5
 		vocals_scroll_speed = 1.2
-		album_title = qs("\LTom Petty & The Heartbreakers")
+		album_title = qs(0x9acc5fb9)
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		double_kick = 0
@@ -375,13 +375,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockHigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	BackRound = {
-		checksum = BackRound
+	backround = {
+		checksum = backround
 		name = 'BackRound'
-		title = qs("\LBack Round")
-		artist = qs("\LWolfmother")
+		title = qs(0x98712c90)
+		artist = qs(0x15c1e33a)
 		year = 2009
 		duration = 239
 		album_img = 'placeholder_album'
@@ -389,8 +389,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 11
 		leaderboard = 1
-		singer = Male
-		genre = `Hard Rock`
+		singer = male
+		genre = `hard rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.5
@@ -400,7 +400,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
 		trivia_no_phrases
-		album_title = qs("\LCosmic Egg")
+		album_title = qs(0x72c7dfb5)
 		double_kick = 0
 		guitar_difficulty_rating = 5
 		bass_difficulty_rating = 5
@@ -415,13 +415,13 @@ gh5_songlist_props = {
 		tom2 = 'heavyrocklow'
 		hihat = 'heavyrock'
 		cymbal = 'heavyrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	BleedAmerican = {
-		checksum = BleedAmerican
+	bleedamerican = {
+		checksum = bleedamerican
 		name = 'BleedAmerican'
-		title = qs("\LBleed American")
-		artist = qs("\LJimmy Eat World")
+		title = qs(0x5247380b)
+		artist = qs(0xa0c30267)
 		year = 2001
 		duration = 190
 		album_img = 'placeholder_album'
@@ -429,8 +429,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 6
 		leaderboard = 1
-		singer = Male
-		genre = `Pop Rock`
+		singer = male
+		genre = `pop rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
@@ -440,7 +440,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LBleed American")
+		album_title = qs(0x5247380b)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
@@ -455,13 +455,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockHigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	BlueDay = {
-		checksum = BlueDay
+	blueday = {
+		checksum = blueday
 		name = 'BlueDay'
-		title = qs("\LBlue Day")
-		artist = qs("\LDarker My Love")
+		title = qs(0xc45fd778)
+		artist = qs(0xb8d7eba5)
 		year = 2008
 		duration = 251
 		album_img = 'placeholder_album'
@@ -469,8 +469,8 @@ gh5_songlist_props = {
 		venue = 2
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Indie Rock`
+		singer = male
+		genre = `indie rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
@@ -480,7 +480,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 1
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\L2")
+		album_title = qs(0x09c32524)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 4
@@ -495,13 +495,13 @@ gh5_songlist_props = {
 		tom2 = 'modernrocklow'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	BlueOrchid = {
-		checksum = BlueOrchid
+	blueorchid = {
+		checksum = blueorchid
 		name = 'BlueOrchid'
-		title = qs("\LBlue Orchid")
-		artist = qs("\LThe White Stripes")
+		title = qs(0x2a042596)
+		artist = qs(0xf6ea648e)
 		year = 2005
 		duration = 162
 		album_img = 'placeholder_album'
@@ -509,8 +509,8 @@ gh5_songlist_props = {
 		venue = 2
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Blues Rock`
+		singer = male
+		genre = `blues rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.7
@@ -522,7 +522,7 @@ gh5_songlist_props = {
 		trivia_no_phrases
 		fake_bass_mode = 1
 		vocals_scroll_speed = 1.2700001
-		album_title = qs("\LGet Behind Me Satan")
+		album_title = qs(0x9cb44dc4)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 1
@@ -537,13 +537,13 @@ gh5_songlist_props = {
 		tom2 = 'modernrocklow'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Brianstorm = {
-		checksum = Brianstorm
+	brianstorm = {
+		checksum = brianstorm
 		name = 'Brianstorm'
-		title = qs("\LBrianstorm")
-		artist = qs("\LArctic Monkeys")
+		title = qs(0x4b8c9eb3)
+		artist = qs(0x0bd159e2)
 		year = 2007
 		duration = 178
 		album_img = 'placeholder_album'
@@ -551,14 +551,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 12
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'HeavyRock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.3
 		trivia_no_phrases
-		album_title = qs("\LFavourite Worst Nightmare")
+		album_title = qs(0x88a3dc80)
 		double_kick = 0
 		guitar_difficulty_rating = 6
 		bass_difficulty_rating = 5
@@ -573,27 +573,27 @@ gh5_songlist_props = {
 		tom2 = 'modernrockHigh'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	BringTheNoise = {
-		checksum = BringTheNoise
+	bringthenoise = {
+		checksum = bringthenoise
 		name = 'BringTheNoise'
-		title = qs("\LBring The Noise 20XX")
-		artist = qs("\LPublic Enemy Featuring Zakk Wylde")
+		title = qs(0xd052408e)
+		artist = qs(0x7125f2fd)
 		year = 2009
 		duration = 218
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 8
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = hip_hop
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -1.0
 		vocals_scroll_speed = 1.5
 		trivia_no_phrases
-		album_title = qs("\LUnreleased")
+		album_title = qs(0x47cc6adf)
 		album_img = 'placeholder_album'
 		double_kick = 0
 		guitar_difficulty_rating = 4
@@ -609,13 +609,13 @@ gh5_songlist_props = {
 		tom2 = 'FusionHigh'
 		hihat = 'ClassicRock'
 		cymbal = 'ClassicRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	BulletsButterfly = {
-		checksum = BulletsButterfly
+	bulletsbutterfly = {
+		checksum = bulletsbutterfly
 		name = 'BulletsButterfly'
-		title = qs("\LBullet With Butterfly Wings")
-		artist = qs("\LSmashing Pumpkins")
+		title = qs(0x192a556c)
+		artist = qs(0x9fb8944f)
 		year = 1995
 		duration = 262
 		album_img = 'placeholder_album'
@@ -623,7 +623,7 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 9
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'HeavyRock'
@@ -641,7 +641,7 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		album_title = qs("\LMellon Collie And The Infinite Sadness")
+		album_title = qs(0x5e65f5ae)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
@@ -650,13 +650,13 @@ gh5_songlist_props = {
 		band_difficulty_rating = 5
 		disable_for_medley_mode = false
 		flags = 0
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	CigarettesWeddingBands = {
-		checksum = CigarettesWeddingBands
+	cigarettesweddingbands = {
+		checksum = cigarettesweddingbands
 		name = 'CigarettesWeddingBands'
-		title = qs("\LCigarettes, Wedding Bands")
-		artist = qs("\LBand Of Horses")
+		title = qs(0x66200b04)
+		artist = qs(0x273ff39e)
 		year = 2007
 		duration = 283
 		album_img = 'placeholder_album'
@@ -664,8 +664,8 @@ gh5_songlist_props = {
 		venue = 3
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Southern Rock`
+		singer = male
+		genre = `southern rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.0
@@ -676,7 +676,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_high_bpm = 150
 		trivia_no_phrases
 		vocals_scroll_speed = 1.2700001
-		album_title = qs("\LCease To Begin")
+		album_title = qs(0x8208e1ae)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 2
@@ -691,13 +691,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockHigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Comedown = {
-		checksum = Comedown
+	comedown = {
+		checksum = comedown
 		name = 'Comedown'
-		title = qs("\LComedown")
-		artist = qs("\LBush")
+		title = qs(0xac0f4d07)
+		artist = qs(0xdd247e0c)
 		year = 1994
 		duration = 328
 		album_img = 'placeholder_album'
@@ -705,14 +705,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Male
-		genre = Grunge
+		singer = male
+		genre = grunge
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.5
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LSixteen Stone")
+		album_title = qs(0xa325db26)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -727,13 +727,13 @@ gh5_songlist_props = {
 		tom2 = 'modernrockhigh'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	DancingWithMyself = {
-		checksum = DancingWithMyself
+	dancingwithmyself = {
+		checksum = dancingwithmyself
 		name = 'DancingWithMyself'
-		title = qs("\LDancing With Myself")
-		artist = qs("\LBilly Idol")
+		title = qs(0x804ad851)
+		artist = qs(0xb09f2ddc)
 		year = 1982
 		duration = 229
 		album_img = 'placeholder_album'
@@ -741,13 +741,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Male
-		genre = `New Wave`
+		singer = male
+		genre = `new wave`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LBilly Idol")
+		album_title = qs(0xb09f2ddc)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
@@ -762,13 +762,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Deadbolt = {
-		checksum = Deadbolt
+	deadbolt = {
+		checksum = deadbolt
 		name = 'Deadbolt'
-		title = qs("\LDeadbolt")
-		artist = qs("\LThrice")
+		title = qs(0x98536a94)
+		artist = qs(0x1aa9e35d)
 		year = 2002
 		duration = 142
 		album_img = 'Thrice_TheIllusionOfSafety'
@@ -776,13 +776,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 12
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.5
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LThe Illusion Of Safety")
+		album_title = qs(0xb8d53784)
 		double_kick = 1
 		guitar_difficulty_rating = 7
 		bass_difficulty_rating = 6
@@ -797,13 +797,13 @@ gh5_songlist_props = {
 		tom2 = 'metallow'
 		hihat = 'Metal'
 		cymbal = 'Metal'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Demon = {
-		checksum = Demon
+	demon = {
+		checksum = demon
 		name = 'Demon'
-		title = qs("\LDemon(s)")
-		artist = qs("\LDarkest Hour")
+		title = qs(0x272497a9)
+		artist = qs(0x43b6a9a6)
 		year = 2007
 		duration = 233
 		album_img = 'DarkestHour_DeliverUs'
@@ -811,14 +811,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
-		genre = `Death Metal`
+		singer = male
+		genre = `death metal`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LDeliver Us")
+		album_title = qs(0xb843e5f1)
 		double_kick = 1
 		guitar_difficulty_rating = 7
 		bass_difficulty_rating = 6
@@ -833,13 +833,13 @@ gh5_songlist_props = {
 		tom2 = 'metallow'
 		hihat = 'metal'
 		cymbal = 'metal'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Disconnected = {
-		checksum = Disconnected
+	disconnected = {
+		checksum = disconnected
 		name = 'Disconnected'
-		title = qs("\LDisconnected")
-		artist = qs("\LFace To Face")
+		title = qs(0xb2084b9e)
+		artist = qs(0xd874a8d2)
 		year = 1995
 		duration = 202
 		album_img = 'placeholder_album'
@@ -847,14 +847,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 9
 		leaderboard = 1
-		singer = Male
-		genre = `Pop Punk`
+		singer = male
+		genre = `pop punk`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
 		vocals_scroll_speed = 1.3399999
 		trivia_no_phrases
-		album_title = qs("\LBig Choice")
+		album_title = qs(0xeae88572)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 6
@@ -869,27 +869,27 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	DoneWithEverything = {
-		checksum = DoneWithEverything
+	donewitheverything = {
+		checksum = donewitheverything
 		name = 'DoneWithEverything'
-		title = qs("\LDone With Everything, Die For Nothing")
-		artist = qs("\LChildren Of Bodom")
+		title = qs(0x0789b335)
+		artist = qs(0x066e90ed)
 		year = 2008
 		duration = 212
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
-		genre = `Death Metal`
+		singer = male
+		genre = `death metal`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LBlooddrunk")
+		album_title = qs(0xe3faf96d)
 		album_img = placeholder_album
 		double_kick = 1
 		guitar_difficulty_rating = 8
@@ -905,13 +905,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	DoYouFeelLikeWeDo = {
-		checksum = DoYouFeelLikeWeDo
+	doyoufeellikewedo = {
+		checksum = doyoufeellikewedo
 		name = 'DoYouFeelLikeWeDo'
-		title = qs("\LDo You Feel Like We Do? (Live)")
-		artist = qs("\LPeter Frampton")
+		title = qs(0xf2d1a3bf)
+		artist = qs(0xe7684ac5)
 		year = 1976
 		duration = 820
 		album_img = 'placeholder_album'
@@ -919,14 +919,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.8
 		vocals_scroll_speed = 1.3
 		trivia_no_phrases
-		album_title = qs("\LFrampton Comes Alive!")
+		album_title = qs(0x2a1e193f)
 		double_kick = 0
 		guitar_difficulty_rating = 9
 		bass_difficulty_rating = 8
@@ -941,26 +941,26 @@ gh5_songlist_props = {
 		tom2 = 'classicrocklow'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	DuHast = {
-		checksum = DuHast
+	duhast = {
+		checksum = duhast
 		name = 'DuHast'
-		title = qs("\LDu Hast")
-		artist = qs("\LRammstein")
+		title = qs(0x39c77b0b)
+		artist = qs(0x6c4707a5)
 		year = 1997
 		duration = 253
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 8
 		leaderboard = 1
-		singer = Male
-		genre = Industrial
+		singer = male
+		genre = industrial
 		countoff = 'sticks_huge'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.5
 		trivia_no_phrases
-		album_title = qs("\LSehnsucht")
+		album_title = qs(0xb67b3f63)
 		double_kick = 0
 		vocals_scroll_speed = 1.2
 		album_img = 'placeholder_album'
@@ -977,13 +977,13 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRockhigh'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	ExGirlfriend = {
-		checksum = ExGirlfriend
+	exgirlfriend = {
+		checksum = exgirlfriend
 		name = 'ExGirlfriend'
-		title = qs("\LEx-Girlfriend")
-		artist = qs("\LNo Doubt")
+		title = qs(0x73f25838)
+		artist = qs(0x83dbb173)
 		year = 2000
 		duration = 218
 		album_img = 'placeholder_album'
@@ -991,13 +991,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 3
 		leaderboard = 1
-		singer = Female
-		genre = `Pop Rock`
+		singer = female
+		genre = `pop rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -3.5
 		vocals_scroll_speed = 1.4
-		album_title = qs("\LReturn Of Saturn")
+		album_title = qs(0xc0cc0217)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -1012,13 +1012,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Fame = {
-		checksum = Fame
+	fame = {
+		checksum = fame
 		name = 'Fame'
-		title = qs("\LFame")
-		artist = qs("\LDavid Bowie")
+		title = qs(0xc4416e9a)
+		artist = qs(0x7514eafa)
 		year = 1975
 		duration = 258
 		album_img = 'DarkestHour_DeliverUs'
@@ -1026,14 +1026,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 3
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -2.5
 		vocals_scroll_speed = 1.4499999
 		trivia_no_phrases
-		album_title = qs("\LYoung Americans")
+		album_title = qs(0xd8387ab5)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 1
@@ -1048,13 +1048,13 @@ gh5_songlist_props = {
 		tom2 = 'modernrocklow'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	FeelGoodInc = {
-		checksum = FeelGoodInc
+	feelgoodinc = {
+		checksum = feelgoodinc
 		name = 'FeelGoodInc'
-		title = qs("\LFeel Good Inc.")
-		artist = qs("\LGorillaz")
+		title = qs(0xda302988)
+		artist = qs(0x1223258e)
 		year = 2005
 		duration = 222
 		album_img = 'placeholder_album'
@@ -1062,13 +1062,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = hip_hop
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -1.8
 		vocals_scroll_speed = 1.4
-		album_title = qs("\LDemon Days")
+		album_title = qs(0xf12cfb85)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 2
@@ -1083,13 +1083,13 @@ gh5_songlist_props = {
 		tom2 = 'fusionhigh'
 		hihat = 'fusion'
 		cymbal = 'fusion'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	GammaRay = {
-		checksum = GammaRay
+	gammaray = {
+		checksum = gammaray
 		name = 'GammaRay'
-		title = qs("\LGamma Ray")
-		artist = qs("\LBeck")
+		title = qs(0x8d610ddf)
+		artist = qs(0xa5c678cb)
 		year = 2008
 		duration = 179
 		album_img = 'placeholder_album'
@@ -1097,14 +1097,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -2.2
 		trivia_no_phrases
 		vocals_scroll_speed = 1.23
-		album_title = qs("\LModern Guilt")
+		album_title = qs(0xd3ee4642)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 2
@@ -1119,20 +1119,20 @@ gh5_songlist_props = {
 		tom2 = 'modernrockhigh'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Gratitude = {
-		checksum = Gratitude
+	gratitude = {
+		checksum = gratitude
 		name = 'Gratitude'
-		title = qs("\LGratitude")
-		artist = qs("\LBeastie Boys")
+		title = qs(0xf071e4da)
+		artist = qs(0x70cd0657)
 		year = 1992
 		duration = 168
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 2
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = hip_hop
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -1143,7 +1143,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 1
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\LCheck Your Head")
+		album_title = qs(0x41d62bec)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -1158,27 +1158,27 @@ gh5_songlist_props = {
 		tom2 = 'StandardRocklow'
 		hihat = 'StandardRock'
 		cymbal = 'StandardRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	HungryLikeTheWolf = {
-		checksum = HungryLikeTheWolf
+	hungrylikethewolf = {
+		checksum = hungrylikethewolf
 		name = 'HungryLikeTheWolf'
-		title = qs("\LHungry Like The Wolf")
-		artist = qs("\LDuran Duran")
+		title = qs(0xb36e376c)
+		artist = qs(0xe75b0567)
 		year = 1982
 		duration = 222
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 6
 		leaderboard = 1
-		singer = Male
-		genre = `New Wave`
+		singer = male
+		genre = `new wave`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -2.5
 		trivia_no_phrases
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LRio")
+		album_title = qs(0x246240f0)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -1193,13 +1193,13 @@ gh5_songlist_props = {
 		tom2 = 'fusionhigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	HurtsSoGood = {
-		checksum = HurtsSoGood
+	hurtssogood = {
+		checksum = hurtssogood
 		name = 'HurtsSoGood'
-		title = qs("\LHurts So Good")
-		artist = qs("\LJohn Mellencamp")
+		title = qs(0x60c29978)
+		artist = qs(0x1d512cd5)
 		year = 1982
 		duration = 222
 		album_img = 'placeholder_album'
@@ -1207,14 +1207,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 2
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.25
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LAmerican Fool")
+		album_title = qs(0xd963257b)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 2
@@ -1229,27 +1229,27 @@ gh5_songlist_props = {
 		tom2 = 'StandardRocklow'
 		hihat = 'StandardRock'
 		cymbal = 'StandardRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	InMyPlace = {
-		checksum = InMyPlace
+	inmyplace = {
+		checksum = inmyplace
 		name = 'InMyPlace'
-		title = qs("\LIn My Place")
-		artist = qs("\LColdplay")
+		title = qs(0x64b3f7ff)
+		artist = qs(0xd6fcabfc)
 		year = 2002
 		duration = 229
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Pop Rock`
+		singer = male
+		genre = `pop rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.4
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LA Rush Of Blood To The Head")
+		album_title = qs(0x4046bc82)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 1
@@ -1264,20 +1264,20 @@ gh5_songlist_props = {
 		tom2 = 'classicrocklow'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	InTheMeantime = {
-		checksum = InTheMeantime
+	inthemeantime = {
+		checksum = inthemeantime
 		name = 'InTheMeantime'
-		title = qs("\LIn The Meantime")
-		artist = qs("\LSpacehog")
+		title = qs(0x50ff2fd8)
+		artist = qs(0xe7da32da)
 		year = 2007
 		duration = 285
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -1287,7 +1287,7 @@ gh5_songlist_props = {
 		vocals_pitch_score_shift = {
 			cents = -15
 		}
-		album_title = qs("\LUnreleased")
+		album_title = qs(0x47cc6adf)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 4
@@ -1302,20 +1302,20 @@ gh5_songlist_props = {
 		tom2 = 'modernrockhigh'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Incinerate = {
-		checksum = Incinerate
+	incinerate = {
+		checksum = incinerate
 		name = 'Incinerate'
-		title = qs("\LIncinerate")
-		artist = qs("\LSonic Youth")
+		title = qs(0xb729c84f)
+		artist = qs(0x79a6a753)
 		year = 2006
 		duration = 299
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 10
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -1326,7 +1326,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
 		trivia_no_phrases
-		album_title = qs("\LRather Ripped")
+		album_title = qs(0xdeab0335)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 4
@@ -1341,21 +1341,21 @@ gh5_songlist_props = {
 		tom2 = 'modernrockhigh'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Jailbreak = {
-		checksum = Jailbreak
+	jailbreak = {
+		checksum = jailbreak
 		name = 'Jailbreak'
-		title = qs("\LJailbreak")
-		artist = qs("\LThin Lizzy")
+		title = qs(0x617c093e)
+		artist = qs(0x5ace7011)
 		year = 1976
 		duration = 245
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 6
 		leaderboard = 1
-		singer = Male
-		genre = `Hard Rock`
+		singer = male
+		genre = `hard rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.5
@@ -1365,7 +1365,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 120
 		trivia_no_phrases
-		album_title = qs("\LJailbreak")
+		album_title = qs(0x617c093e)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -1380,13 +1380,13 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Judith = {
-		checksum = Judith
+	judith = {
+		checksum = judith
 		name = 'Judith'
-		title = qs("\LJudith")
-		artist = qs("\LA Perfect Circle")
+		title = qs(0xef64fe20)
+		artist = qs(0x8386c12c)
 		year = 2000
 		duration = 249
 		album_img = 'placeholder_album'
@@ -1394,14 +1394,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 12
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.5
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LMer De Noms")
+		album_title = qs(0x942ac08a)
 		double_kick = 0
 		guitar_difficulty_rating = 6
 		bass_difficulty_rating = 5
@@ -1416,27 +1416,27 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Kryptonite = {
-		checksum = Kryptonite
+	kryptonite = {
+		checksum = kryptonite
 		name = 'Kryptonite'
-		title = qs("\LKryptonite")
-		artist = qs("\L3 Doors Down")
+		title = qs(0xa387ef12)
+		artist = qs(0x7bed2195)
 		year = 2000
 		duration = 240
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Male
-		genre = `Southern Rock`
+		singer = male
+		genre = `southern rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LThe Better Life")
+		album_title = qs(0xc1bbd4ac)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 1
@@ -1451,26 +1451,26 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	LA = {
-		checksum = LA
+	la = {
+		checksum = la
 		name = 'LA'
-		title = qs("\LL.A.")
-		artist = qs("\LElliott Smith")
+		title = qs(0x52e64ca3)
+		artist = qs(0xaca35e82)
 		year = 2000
 		duration = 199
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
-		genre = `Indie Rock`
+		singer = male
+		genre = `indie rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LFigure 8")
+		album_title = qs(0x4279642d)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 2
@@ -1485,26 +1485,26 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Lithium = {
-		checksum = Lithium
+	lithium = {
+		checksum = lithium
 		name = 'Lithium'
-		title = qs("\LLithium (Live)")
-		artist = qs("\LNirvana")
+		title = qs(0xa035983b)
+		artist = qs(0x5a827f81)
 		year = 1992
 		duration = 262
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 99
 		leaderboard = 1
-		singer = Male
-		genre = Grunge
+		singer = male
+		genre = grunge
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.5
 		vocals_scroll_speed = 1.23
-		album_title = qs("\LLive At The Reading")
+		album_title = qs(0xfcb21864)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -1513,20 +1513,20 @@ gh5_songlist_props = {
 		band_difficulty_rating = 3
 		disable_for_medley_mode = false
 		flags = 0
-		Band = Band_KurtCobain
+		band = band_kurtcobain
 		snare = 'lithium'
 		kick = 'lithium'
 		tom1 = 'ModernRockhigh'
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	LonelyIsTheNight = {
-		checksum = LonelyIsTheNight
+	lonelyisthenight = {
+		checksum = lonelyisthenight
 		name = 'LonelyIsTheNight'
-		title = qs("\LLonely Is The Night")
-		artist = qs("\LBilly Squier")
+		title = qs(0x685b8d94)
+		artist = qs(0xea4019ef)
 		year = 1981
 		duration = 311
 		album_img = 'DarkestHour_DeliverUs'
@@ -1534,17 +1534,17 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 7
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'bigroomrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LDon't Say No")
+		album_title = qs(0x7c5badc4)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 4
@@ -1560,13 +1560,13 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	LooksThatKill = {
-		checksum = LooksThatKill
+	looksthatkill = {
+		checksum = looksthatkill
 		name = 'LooksThatKill'
-		title = qs("\LLooks That Kill")
-		artist = qs("\LMötley Crüe")
+		title = qs(0x17deedee)
+		artist = qs(0x53c4f1af)
 		year = 1983
 		duration = 262
 		album_img = 'placeholder_album'
@@ -1574,17 +1574,17 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 6
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = metal
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.5
 		trivia_no_phrases
 		vocals_scroll_speed = 1.31
-		album_title = qs("\LShout At The Devil")
+		album_title = qs(0xe5e36523)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 6
@@ -1600,13 +1600,13 @@ gh5_songlist_props = {
 		tom2 = 'heavyrockhigh'
 		hihat = 'heavyrock'
 		cymbal = 'heavyrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	LoveToken = {
-		checksum = LoveToken
+	lovetoken = {
+		checksum = lovetoken
 		name = 'LoveToken'
-		title = qs("\LSend A Little Love Token")
-		artist = qs("\LThe Duke Spirit")
+		title = qs(0xb26a215f)
+		artist = qs(0xefb85719)
 		year = 2008
 		duration = 166
 		album_img = 'TheDukeSpirit_Neptune'
@@ -1614,7 +1614,7 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Female
+		singer = female
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -1624,7 +1624,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 200
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\LNeptune")
+		album_title = qs(0xe57360c9)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -1639,13 +1639,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	LustForLife = {
-		checksum = LustForLife
+	lustforlife = {
+		checksum = lustforlife
 		name = 'LustForLife'
-		title = qs("\LLust For Life (Live)")
-		artist = qs("\LIggy Pop")
+		title = qs(0x79ab32ca)
+		artist = qs(0xa55759da)
 		year = 1993
 		duration = 329
 		album_img = 'placeholder_album'
@@ -1653,13 +1653,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
-		genre = Punk
+		singer = male
+		genre = punk
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.8
 		vocals_scroll_speed = 1.25
-		album_title = qs("\LLive at Feile Festival")
+		album_title = qs(0xf14fde0e)
 		double_kick = 0
 		guitar_difficulty_rating = 5
 		bass_difficulty_rating = 5
@@ -1674,13 +1674,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	MaidenMotherCrone = {
-		checksum = MaidenMotherCrone
+	maidenmothercrone = {
+		checksum = maidenmothercrone
 		name = 'MaidenMotherCrone'
-		title = qs("\LMaiden, Mother & Crone")
-		artist = qs("\LThe Sword")
+		title = qs(0xe3b9992c)
+		artist = qs(0x3f6b0297)
 		year = 2008
 		duration = 243
 		album_img = 'placeholder_album'
@@ -1688,8 +1688,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 10
 		leaderboard = 1
-		singer = Male
-		genre = `Hard Rock`
+		singer = male
+		genre = `hard rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		overall_song_volume = 0.0
@@ -1698,7 +1698,7 @@ gh5_songlist_props = {
 			cents = 20
 		}
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LGods Of The Earth")
+		album_title = qs(0x07eaa524)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 4
@@ -1713,13 +1713,13 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	MakeItWitChu = {
-		checksum = MakeItWitChu
+	makeitwitchu = {
+		checksum = makeitwitchu
 		name = 'MakeItWitChu'
-		title = qs("\LMake It Wit Chu")
-		artist = qs("\LQueens Of The Stone Age")
+		title = qs(0xa8d3790a)
+		artist = qs(0x3fc902a5)
 		year = 2007
 		duration = 279
 		album_img = 'placeholder_album'
@@ -1727,17 +1727,17 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
-		genre = `Blues Rock`
+		singer = male
+		genre = `blues rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		overall_song_volume = -2.0
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LEra Vulgaris")
+		album_title = qs(0x56ec4243)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 4
@@ -1753,13 +1753,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Medicate = {
-		checksum = Medicate
+	medicate = {
+		checksum = medicate
 		name = 'Medicate'
-		title = qs("\LMedicate")
-		artist = qs("\LAFI")
+		title = qs(0x18a1a564)
+		artist = qs(0x9aaf0c89)
 		year = 2009
 		duration = 271
 		album_img = 'placeholder_album'
@@ -1767,14 +1767,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 11
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.8
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LCrash Love")
+		album_title = qs(0x76a90f47)
 		double_kick = 1
 		guitar_difficulty_rating = 5
 		bass_difficulty_rating = 4
@@ -1789,13 +1789,13 @@ gh5_songlist_props = {
 		tom2 = 'FusionHigh'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	MirrorPeople = {
-		checksum = MirrorPeople
+	mirrorpeople = {
+		checksum = mirrorpeople
 		name = 'MirrorPeople'
-		title = qs("\LMirror People")
-		artist = qs("\LLove And Rockets")
+		title = qs(0xcb368520)
+		artist = qs(0xd92a847f)
 		year = 2008
 		duration = 243
 		album_img = 'LoveAndRockets_EarthSunMoon'
@@ -1803,7 +1803,7 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -1813,7 +1813,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 200
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\LUnreleased")
+		album_title = qs(0x47cc6adf)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 2
@@ -1828,27 +1828,27 @@ gh5_songlist_props = {
 		tom2 = 'BigRoomRock'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	NearlyLostYou = {
-		checksum = NearlyLostYou
+	nearlylostyou = {
+		checksum = nearlylostyou
 		name = 'NearlyLostYou'
-		title = qs("\LNearly Lost You")
-		artist = qs("\LScreaming Trees")
+		title = qs(0x71fc087c)
+		artist = qs(0x0302f369)
 		year = 1992
 		duration = 250
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 7
 		leaderboard = 1
-		singer = Male
-		genre = Grunge
+		singer = male
+		genre = grunge
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.3
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LSweet Oblivion")
+		album_title = qs(0x756951de)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
@@ -1863,29 +1863,29 @@ gh5_songlist_props = {
 		tom2 = 'modernrockhigh'
 		hihat = 'modernrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	NeverMissABeat = {
-		checksum = NeverMissABeat
+	nevermissabeat = {
+		checksum = nevermissabeat
 		name = 'NeverMissABeat'
-		title = qs("\LNever Miss A Beat")
-		artist = qs("\LKaiser Chiefs")
+		title = qs(0x3d0437a3)
+		artist = qs(0x10e22047)
 		year = 2008
 		duration = 189
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Male
-		genre = `Indie Rock`
+		singer = male
+		genre = `indie rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.4499999
-		album_title = qs("\LOff With Their Heads")
+		album_title = qs(0xfea207ac)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 3
@@ -1901,27 +1901,27 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	NoOneToDependOn = {
-		checksum = NoOneToDependOn
+	noonetodependon = {
+		checksum = noonetodependon
 		name = 'NoOneToDependOn'
-		title = qs("\LNo One To Depend On (Live)")
-		artist = qs("\LSantana")
+		title = qs(0xaaf106d1)
+		artist = qs(0xf2712353)
 		year = 1993
 		duration = 282
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 99
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.8
 		vocals_scroll_speed = 1.25
 		trivia_no_phrases
-		album_title = qs("\LSacred Fire: Live In South America")
+		album_title = qs(0xcf9d08e0)
 		album_img = placeholder_album
 		double_kick = 1
 		guitar_difficulty_rating = 6
@@ -1929,7 +1929,7 @@ gh5_songlist_props = {
 		vocals_difficulty_rating = 2
 		drums_difficulty_rating = 7
 		band_difficulty_rating = 6
-		Band = Band_Santana
+		band = band_santana
 		disable_for_medley_mode = false
 		flags = 0
 		snare = 'NoOneToDependOn'
@@ -1938,13 +1938,13 @@ gh5_songlist_props = {
 		tom2 = 'fusionlow'
 		hihat = 'fusion'
 		cymbal = 'fusion'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	OneBigHoliday = {
-		checksum = OneBigHoliday
+	onebigholiday = {
+		checksum = onebigholiday
 		name = 'OneBigHoliday'
-		title = qs("\LOne Big Holiday")
-		artist = qs("\LMy Morning Jacket")
+		title = qs(0xd940fc3c)
+		artist = qs(0x69e3c241)
 		year = 2003
 		duration = 326
 		album_img = 'MyMorningJacket_ItStillMoves'
@@ -1952,13 +1952,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 9
 		leaderboard = 1
-		singer = Male
-		genre = `Indie Rock`
+		singer = male
+		genre = `indie rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LIt Still Moves")
+		album_title = qs(0xca5b4184)
 		double_kick = 0
 		guitar_difficulty_rating = 6
 		bass_difficulty_rating = 3
@@ -1973,13 +1973,13 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	OnlyHappyWhenItRains = {
-		checksum = OnlyHappyWhenItRains
+	onlyhappywhenitrains = {
+		checksum = onlyhappywhenitrains
 		name = 'OnlyHappyWhenItRains'
-		title = qs("\LOnly Happy When It Rains")
-		artist = qs("\LGarbage")
+		title = qs(0x987f198d)
+		artist = qs(0x134d4360)
 		year = 1995
 		duration = 213
 		album_img = 'placeholder_album'
@@ -1987,13 +1987,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 99
 		leaderboard = 1
-		singer = Female
-		genre = `Pop Rock`
+		singer = female
+		genre = `pop rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.8
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LGarbage")
+		album_title = qs(0x134d4360)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 2
@@ -2002,20 +2002,20 @@ gh5_songlist_props = {
 		band_difficulty_rating = 3
 		disable_for_medley_mode = false
 		flags = 0
-		Band = Band_ShirleyManson
+		band = band_shirleymanson
 		snare = 'onlyhappywhenitrains'
 		kick = 'onlyhappywhenitrains'
 		tom1 = 'HeavyRocklow'
 		tom2 = 'HeavyRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	PlayThatFunkyMusic = {
-		checksum = PlayThatFunkyMusic
+	playthatfunkymusic = {
+		checksum = playthatfunkymusic
 		name = 'PlayThatFunkyMusic'
-		title = qs("\LPlay That Funky Music")
-		artist = qs("\LWild Cherry")
+		title = qs(0xe08c8ce6)
+		artist = qs(0xb2e85534)
 		year = 1976
 		duration = 307
 		album_img = 'placeholder_album'
@@ -2023,14 +2023,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 3
 		leaderboard = 1
-		singer = Male
-		genre = Funk
+		singer = male
+		genre = funk
 		countoff = 'sticks_huge'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.5
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LWild Cherry")
+		album_title = qs(0xb2e85534)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
@@ -2045,20 +2045,20 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	PlugInBaby = {
-		checksum = PlugInBaby
+	pluginbaby = {
+		checksum = pluginbaby
 		name = 'PlugInBaby'
-		title = qs("\LPlug In Baby")
-		artist = qs("\LMuse")
+		title = qs(0x14b53d96)
+		artist = qs(0xb1aa12ed)
 		year = 2001
 		duration = 223
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 99
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -2069,7 +2069,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 120
 		trivia_no_phrases
-		album_title = qs("\LOrigin Of Symmetry")
+		album_title = qs(0xad5c1697)
 		album_img = placeholder_album
 		double_kick = 0
 		guitar_difficulty_rating = 4
@@ -2079,20 +2079,20 @@ gh5_songlist_props = {
 		band_difficulty_rating = 4
 		disable_for_medley_mode = false
 		flags = 0
-		Band = Band_MattBellamy
+		band = band_mattbellamy
 		snare = 'pluginbaby'
 		kick = 'pluginbaby'
 		tom1 = 'ModernRockhigh'
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	RingOfFire = {
-		checksum = RingOfFire
+	ringoffire = {
+		checksum = ringoffire
 		name = 'RingOfFire'
-		title = qs("\LRing Of Fire")
-		artist = qs("\LJohnny Cash")
+		title = qs(0x740a8d19)
+		artist = qs(0x3a825a9b)
 		year = 1987
 		duration = 167
 		album_img = 'placeholder_album'
@@ -2100,13 +2100,13 @@ gh5_songlist_props = {
 		venue = 99
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Country
+		singer = male
+		genre = country
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LClassic Cash: Hall Of Fame Series")
+		album_title = qs(0xc5ede802)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 1
@@ -2115,20 +2115,20 @@ gh5_songlist_props = {
 		band_difficulty_rating = 2
 		disable_for_medley_mode = false
 		flags = 0
-		Band = Band_JohnnyCash
+		band = band_johnnycash
 		snare = 'RingOfFire'
 		kick = 'RingOfFire'
 		tom1 = 'StandardRock'
 		tom2 = 'StandardRocklow'
 		hihat = 'StandardRock'
 		cymbal = 'StandardRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	RockShow = {
-		checksum = RockShow
+	rockshow = {
+		checksum = rockshow
 		name = 'RockShow'
-		title = qs("\LThe Rock Show")
-		artist = qs("\LBlink-182")
+		title = qs(0x99defbd3)
+		artist = qs(0xa92c5d80)
 		year = 2001
 		duration = 174
 		album_img = 'placeholder_album'
@@ -2136,13 +2136,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 6
 		leaderboard = 1
-		singer = Male
-		genre = `Pop Punk`
+		singer = male
+		genre = `pop punk`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.23
-		album_title = qs("\LTake Off Your Pants And Jacket")
+		album_title = qs(0x85ebfdec)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -2157,13 +2157,13 @@ gh5_songlist_props = {
 		tom2 = 'heavyrockhigh'
 		hihat = 'heavyrock'
 		cymbal = 'heavyrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	RunninDownADream = {
-		checksum = RunninDownADream
+	runnindownadream = {
+		checksum = runnindownadream
 		name = 'RunninDownADream'
-		title = qs("\LRunnin' Down A Dream")
-		artist = qs("\LTom Petty")
+		title = qs(0xa90f56ac)
+		artist = qs(0x9774a819)
 		year = 1989
 		duration = 275
 		album_img = 'placeholder_album'
@@ -2171,13 +2171,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 10
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LFull Moon Fever")
+		album_title = qs(0x33c760fa)
 		double_kick = 0
 		guitar_difficulty_rating = 6
 		bass_difficulty_rating = 3
@@ -2192,13 +2192,13 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SaturdayNightsAlright = {
-		checksum = SaturdayNightsAlright
+	saturdaynightsalright = {
+		checksum = saturdaynightsalright
 		name = 'SaturdayNightsAlright'
-		title = qs("\LSaturday Night's Alright (For Fighting)")
-		artist = qs("\LElton John")
+		title = qs(0xdc6ea66f)
+		artist = qs(0x6f5dc7ca)
 		year = 1973
 		duration = 302
 		album_img = 'placeholder_album'
@@ -2206,8 +2206,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 10
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.75
@@ -2216,7 +2216,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 170
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\LGoodbye Yellow Brick Road")
+		album_title = qs(0x65354dd8)
 		double_kick = 0
 		guitar_difficulty_rating = 6
 		bass_difficulty_rating = 5
@@ -2231,21 +2231,21 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'modernrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Scatterbrain = {
-		checksum = Scatterbrain
+	scatterbrain = {
+		checksum = scatterbrain
 		name = 'Scatterbrain'
-		title = qs("\LScatterbrain (Live)")
-		artist = qs("\LJeff Beck")
+		title = qs(0xe98b984f)
+		artist = qs(0xbc655545)
 		year = 2008
 		duration = 275
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
-		genre = `Prog Rock`
+		singer = male
+		genre = `prog rock`
 		countoff = 'hihat02'
 		drum_kit = 'classicrock'
 		overall_song_volume = -1.0
@@ -2255,7 +2255,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
 		trivia_no_phrases
-		album_title = qs("\LPerforming This Week... Live at Ronnie Scott's")
+		album_title = qs(0x9aa7fb57)
 		album_img = placeholder_album
 		double_kick = 1
 		guitar_difficulty_rating = 9
@@ -2272,13 +2272,13 @@ gh5_songlist_props = {
 		tom2 = 'FusionHigh'
 		hihat = 'ClassicRock'
 		cymbal = 'ClassicRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Seven = {
-		checksum = Seven
+	seven = {
+		checksum = seven
 		name = 'Seven'
-		title = qs("\LSeven")
-		artist = qs("\LSunny Day Real Estate")
+		title = qs(0xf6061aa9)
+		artist = qs(0x39b42d2c)
 		year = 1994
 		duration = 288
 		album_img = 'placeholder_album'
@@ -2286,7 +2286,7 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 8
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
@@ -2296,7 +2296,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 180
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 120
-		album_title = qs("\LDiary")
+		album_title = qs(0xb2454ce4)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 5
@@ -2311,13 +2311,13 @@ gh5_songlist_props = {
 		tom2 = 'heavyrocklow'
 		hihat = 'heavyrock'
 		cymbal = 'heavyrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SexOnFire = {
-		checksum = SexOnFire
+	sexonfire = {
+		checksum = sexonfire
 		name = 'SexOnFire'
-		title = qs("\LSex On Fire")
-		artist = qs("\LKings Of Leon")
+		title = qs(0xcb1ea691)
+		artist = qs(0x827ff098)
 		year = 2008
 		duration = 207
 		album_img = 'DreamTheater_ImagesAndWords'
@@ -2325,8 +2325,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 3
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_huge'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
@@ -2336,7 +2336,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
 		trivia_no_phrases
-		album_title = qs("\LOnly By The Night")
+		album_title = qs(0xf404707b)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 2
@@ -2351,13 +2351,13 @@ gh5_songlist_props = {
 		tom2 = 'standardrock'
 		hihat = 'standardrock'
 		cymbal = 'standardrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	ShoutItOutLoud = {
-		checksum = ShoutItOutLoud
+	shoutitoutloud = {
+		checksum = shoutitoutloud
 		name = 'ShoutItOutLoud'
-		title = qs("\LShout It Out Loud")
-		artist = qs("\LKiss")
+		title = qs(0x4e4b0c31)
+		artist = qs(0x1f496c5d)
 		year = 2007
 		duration = 178
 		album_img = 'KISS_JigokuRetsuden'
@@ -2365,13 +2365,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 4
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.5
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LUnreleased")
+		album_title = qs(0x47cc6adf)
 		double_kick = 0
 		guitar_difficulty_rating = 3
 		bass_difficulty_rating = 3
@@ -2386,13 +2386,13 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	SixDaysAWeek = {
-		checksum = SixDaysAWeek
+	sixdaysaweek = {
+		checksum = sixdaysaweek
 		name = 'SixDaysAWeek'
-		title = qs("\LSix Days A Week")
-		artist = qs("\LThe Bronx")
+		title = qs(0x0918524d)
+		artist = qs(0x435f535f)
 		year = 2008
 		duration = 197
 		album_img = 'DreamTheater_ImagesAndWords'
@@ -2400,8 +2400,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 12
 		leaderboard = 1
-		singer = Male
-		genre = Punk
+		singer = male
+		genre = punk
 		countoff = 'sticks_huge'
 		drum_kit = 'heavyrock'
 		overall_song_volume = -0.5
@@ -2411,7 +2411,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
 		trivia_no_phrases
-		album_title = qs("\LThe Bronx III")
+		album_title = qs(0x6a3650f2)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 5
@@ -2426,13 +2426,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SmellsLikeTeenSpirit = {
-		checksum = SmellsLikeTeenSpirit
+	smellsliketeenspirit = {
+		checksum = smellsliketeenspirit
 		name = 'SmellsLikeTeenSpirit'
-		title = qs("\LSmells Like Teen Spirit")
-		artist = qs("\LNirvana")
+		title = qs(0x9c0ad8a3)
+		artist = qs(0x5a827f81)
 		year = 1991
 		duration = 306
 		album_img = 'placeholder_album'
@@ -2440,15 +2440,15 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 99
 		leaderboard = 1
-		singer = Male
-		genre = Grunge
+		singer = male
+		genre = grunge
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 2.5
 		vocals_scroll_speed = 1.25
-		album_title = qs("\LNevermind")
+		album_title = qs(0x39664e39)
 		double_kick = 0
-		Band = Band_KurtCobain
+		band = band_kurtcobain
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
 		vocals_difficulty_rating = 4
@@ -2462,13 +2462,13 @@ gh5_songlist_props = {
 		tom2 = 'heavyrockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Sneakout = {
-		checksum = Sneakout
+	sneakout = {
+		checksum = sneakout
 		name = 'SneakOut'
-		title = qs("\LSneak Out")
-		artist = qs("\LRose Hill Drive")
+		title = qs(0xd26c8d45)
+		artist = qs(0xf9d77fc2)
 		year = 2008
 		duration = 198
 		album_img = 'placeholder_album'
@@ -2476,13 +2476,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 11
 		leaderboard = 1
-		singer = Male
-		genre = `Blues Rock`
+		singer = male
+		genre = `blues rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.5
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LMoon Is The New Earth")
+		album_title = qs(0xf488cc33)
 		double_kick = 0
 		guitar_difficulty_rating = 5
 		bass_difficulty_rating = 6
@@ -2497,13 +2497,13 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SoLonely = {
-		checksum = SoLonely
+	solonely = {
+		checksum = solonely
 		name = 'SoLonely'
-		title = qs("\LSo Lonely")
-		artist = qs("\LThe Police")
+		title = qs(0x34f46ff3)
+		artist = qs(0xf12a0396)
 		year = 1978
 		duration = 307
 		album_img = 'placeholder_album'
@@ -2511,8 +2511,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 10
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.0
@@ -2520,7 +2520,7 @@ gh5_songlist_props = {
 		vocals_pitch_score_shift = {
 			cents = 12
 		}
-		album_title = qs("\LOutlandos D'Amour")
+		album_title = qs(0x4b7c5a44)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 3
@@ -2535,13 +2535,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	Song2 = {
-		checksum = Song2
+	song2 = {
+		checksum = song2
 		name = 'Song2'
-		title = qs("\LSong 2")
-		artist = qs("\LBlur")
+		title = qs(0xe1a868ff)
+		artist = qs(0x6cbb8858)
 		year = 1997
 		duration = 122
 		album_img = 'placeholder_album'
@@ -2549,12 +2549,12 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
-		album_title = qs("\LBlur")
+		album_title = qs(0x6cbb8858)
 		double_kick = 0
 		vocals_scroll_speed = 1.3
 		guitar_difficulty_rating = 2
@@ -2570,27 +2570,27 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	SowingSeason = {
-		checksum = SowingSeason
+	sowingseason = {
+		checksum = sowingseason
 		name = 'SowingSeason'
-		title = qs("\LSowing Season (Yeah)")
-		artist = qs("\LBrand New")
+		title = qs(0x4e18ea4f)
+		artist = qs(0x78c316f4)
 		year = 2006
 		duration = 273
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 2
 		leaderboard = 1
-		singer = Male
-		genre = `Indie Rock`
+		singer = male
+		genre = `indie rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.0
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LThe Devil And God Are Raging Inside Me")
+		album_title = qs(0x8aa3f4fd)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 1
@@ -2605,13 +2605,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	SpiritOfRadio = {
-		checksum = SpiritOfRadio
+	spiritofradio = {
+		checksum = spiritofradio
 		name = 'SpiritOfRadio'
-		title = qs("\LThe Spirit Of Radio (Live)")
-		artist = qs("\LRush")
+		title = qs(0xcec81194)
+		artist = qs(0xa19f4f27)
 		year = 1980
 		duration = 303
 		album_img = 'placeholder_album'
@@ -2619,8 +2619,8 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
-		genre = `Prog Rock`
+		singer = male
+		genre = `prog rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.5
@@ -2630,7 +2630,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 1
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\LLive From Manchester")
+		album_title = qs(0xbc96927a)
 		double_kick = 1
 		guitar_difficulty_rating = 9
 		bass_difficulty_rating = 6
@@ -2645,30 +2645,30 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRockhigh'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SteadyAsSheGoes = {
-		checksum = SteadyAsSheGoes
+	steadyasshegoes = {
+		checksum = steadyasshegoes
 		name = 'SteadyAsSheGoes'
-		title = qs("\LSteady, As She Goes")
-		artist = qs("\LThe Raconteurs")
+		title = qs(0xd76b0dfb)
+		artist = qs(0xfeac2b68)
 		year = 2006
 		duration = 222
 		artist_text = $artist_text_by
 		venue = 2
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Blues Rock`
+		singer = male
+		genre = `blues rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 3.5
 		vocals_scroll_speed = 1.25
 		trivia_no_phrases
-		album_title = qs("\LBroken Boy Soldiers")
+		album_title = qs(0xed3917af)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		album_img = 'placeholder_album'
@@ -2685,27 +2685,27 @@ gh5_songlist_props = {
 		tom2 = 'HeavyRockhigh'
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	StreamlineWoman = {
-		checksum = StreamlineWoman
+	streamlinewoman = {
+		checksum = streamlinewoman
 		name = 'StreamlineWoman'
-		title = qs("\LStreamline Woman")
-		artist = qs("\LGov't Mule")
+		title = qs(0x75459dce)
+		artist = qs(0x9864c365)
 		year = 2006
 		duration = 250
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 11
 		leaderboard = 1
-		singer = Male
-		genre = `Southern Rock`
+		singer = male
+		genre = `southern rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		vocals_scroll_speed = 1.23
-		album_title = qs("\LHigh & Mighty")
+		album_title = qs(0xc4b9e6ea)
 		double_kick = 0
 		guitar_difficulty_rating = 5
 		bass_difficulty_rating = 5
@@ -2720,21 +2720,21 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SultansOfSwing = {
-		checksum = SultansOfSwing
+	sultansofswing = {
+		checksum = sultansofswing
 		name = 'SultansOfSwing'
-		title = qs("\LSultans Of Swing")
-		artist = qs("\LDire Straits")
+		title = qs(0x813a064c)
+		artist = qs(0x56bd542a)
 		year = 1978
 		duration = 361
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		vocals_scroll_speed = 1.2700001
@@ -2744,7 +2744,7 @@ gh5_songlist_props = {
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 120
 		trivia_no_phrases
-		album_title = qs("\LDire Straits")
+		album_title = qs(0x56bd542a)
 		album_img = placeholder_album
 		double_kick = 0
 		guitar_difficulty_rating = 6
@@ -2760,27 +2760,27 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'ClassicRock'
 		cymbal = 'ClassicRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	Superstition = {
-		checksum = Superstition
+	superstition = {
+		checksum = superstition
 		name = 'Superstition'
-		title = qs("\LSuperstition")
-		artist = qs("\LStevie Wonder")
+		title = qs(0x8fe9f9a0)
+		artist = qs(0x966b81d1)
 		year = 1972
 		duration = 298
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
-		genre = Funk
+		singer = male
+		genre = funk
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.3
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LTalking Book")
+		album_title = qs(0xfd6b9401)
 		double_kick = 0
 		album_img = 'placeholder_album'
 		guitar_difficulty_rating = 5
@@ -2796,27 +2796,27 @@ gh5_songlist_props = {
 		tom2 = 'StandardRockhigh'
 		hihat = 'classicrock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	SweatingBullets = {
-		checksum = SweatingBullets
+	sweatingbullets = {
+		checksum = sweatingbullets
 		name = 'SweatingBullets'
-		title = qs("\LSweating Bullets")
-		artist = qs("\LMegadeth")
+		title = qs(0x74c5b76e)
+		artist = qs(0x58120222)
 		year = 1992
 		duration = 327
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 13
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = metal
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.0
 		vocals_scroll_speed = 1.3299999
 		trivia_no_phrases
-		album_title = qs("\LCountdown To Extinction")
+		album_title = qs(0xebbe3e9c)
 		double_kick = 1
 		album_img = 'placeholder_album'
 		guitar_difficulty_rating = 7
@@ -2832,27 +2832,27 @@ gh5_songlist_props = {
 		tom2 = 'Metallow'
 		hihat = 'Metal'
 		cymbal = 'Metal'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	SympathyForTheDevil = {
-		checksum = SympathyForTheDevil
+	sympathyforthedevil = {
+		checksum = sympathyforthedevil
 		name = 'SympathyForTheDevil'
-		title = qs("\LSympathy For The Devil")
-		artist = qs("\LThe Rolling Stones")
+		title = qs(0xcbf1e6cd)
+		artist = qs(0x4c097d05)
 		year = 1968
 		duration = 391
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Blues Rock`
+		singer = male
+		genre = `blues rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.5
 		vocals_scroll_speed = 1.3
 		trivia_no_phrases
-		album_title = qs("\LBeggars Banquet")
+		album_title = qs(0x0599abb5)
 		album_img = 'placeholder_album'
 		double_kick = 0
 		guitar_difficulty_rating = 5
@@ -2868,26 +2868,26 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'ClassicRock'
 		cymbal = 'ClassicRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	TheySay = {
-		checksum = TheySay
+	theysay = {
+		checksum = theysay
 		name = 'TheySay'
-		title = qs("\LThey Say")
-		artist = qs("\LScars On Broadway")
+		title = qs(0x471cb1a0)
+		artist = qs(0x49e82531)
 		year = 2008
 		duration = 173
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 1
 		leaderboard = 1
-		singer = Male
-		genre = `Hard Rock`
+		singer = male
+		genre = `hard rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.5
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LScars On Broadway")
+		album_title = qs(0x49e82531)
 		double_kick = 0
 		guitar_difficulty_rating = 1
 		bass_difficulty_rating = 2
@@ -2902,13 +2902,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	TwentiethCenturyBoy = {
-		checksum = TwentiethCenturyBoy
+	twentiethcenturyboy = {
+		checksum = twentiethcenturyboy
 		name = 'TwentiethCenturyBoy'
-		title = qs("\L20th Century Boy")
-		artist = qs("\LT. Rex")
+		title = qs(0x54b9daa8)
+		artist = qs(0x2ab4a4af)
 		year = 1973
 		duration = 234
 		album_img = 'placeholder_album'
@@ -2916,14 +2916,14 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 8
 		leaderboard = 1
-		singer = Male
-		genre = `Glam Rock`
+		singer = male
+		genre = `glam rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -1.0
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LTanx")
+		album_title = qs(0x17069b3e)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 4
@@ -2938,21 +2938,21 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	TwentyFirstCentury = {
-		checksum = TwentyFirstCentury
+	twentyfirstcentury = {
+		checksum = twentyfirstcentury
 		name = 'TwentyFirstCentury'
-		title = qs("\L21st Century Schizoid Man")
-		artist = qs("\LKing Crimson")
+		title = qs(0x09763d55)
+		artist = qs(0x58dbc90d)
 		year = 1969
 		duration = 420
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 19
 		leaderboard = 1
-		singer = Male
-		genre = `Prog Rock`
+		singer = male
+		genre = `prog rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
@@ -2962,7 +2962,7 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 210
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 1
-		album_title = qs("\LIn The Court Of The Crimson King")
+		album_title = qs(0xe9afbf20)
 		double_kick = 1
 		album_img = placeholder_album
 		guitar_difficulty_rating = 8
@@ -2978,13 +2978,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	TwoMinutesToMidnight = {
-		checksum = TwoMinutesToMidnight
+	twominutestomidnight = {
+		checksum = twominutestomidnight
 		name = 'TwoMinutesToMidnight'
-		title = qs("\L2 Minutes To Midnight")
-		artist = qs("\LIron Maiden")
+		title = qs(0x574b311f)
+		artist = qs(0x4365d34b)
 		year = 1984
 		duration = 366
 		album_img = 'placeholder_album'
@@ -2992,13 +2992,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 12
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = metal
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.8
 		vocals_scroll_speed = 1.3299999
-		album_title = qs("\LPowerslave")
+		album_title = qs(0xb878610b)
 		double_kick = 0
 		guitar_difficulty_rating = 6
 		bass_difficulty_rating = 7
@@ -3013,13 +3013,13 @@ gh5_songlist_props = {
 		tom2 = 'Metallow'
 		hihat = 'Metal'
 		cymbal = 'ClassicRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	UnderPressure = {
-		checksum = UnderPressure
+	underpressure = {
+		checksum = underpressure
 		name = 'UnderPressure'
-		title = qs("\LUnder Pressure")
-		artist = qs("\LQueen & David Bowie")
+		title = qs(0xb39ca344)
+		artist = qs(0xb31830c7)
 		year = 1982
 		duration = 234
 		album_img = 'placeholder_album'
@@ -3027,16 +3027,16 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 3
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 2.5
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LHot Space")
+		album_title = qs(0xca046b38)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 3
@@ -3052,13 +3052,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	WannaBeInLA = {
-		checksum = WannaBeInLA
+	wannabeinla = {
+		checksum = wannabeinla
 		name = 'WannaBeInLA'
-		title = qs("\LWannabe In LA")
-		artist = qs("\LEagles Of Death Metal")
+		title = qs(0x562a7c6a)
+		artist = qs(0xe28db056)
 		year = 2008
 		duration = 140
 		album_img = 'placeholder_album'
@@ -3066,17 +3066,17 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 7
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.5
 		vocals_scroll_speed = 1.15
 		trivia_no_phrases
-		album_title = qs("\LHeart On")
+		album_title = qs(0x53b132ed)
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 4
@@ -3092,31 +3092,31 @@ gh5_songlist_props = {
 		tom2 = 'StandardRock'
 		hihat = 'StandardRock'
 		cymbal = 'StandardRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	WereAnAmericanBand = {
-		checksum = WereAnAmericanBand
+	wereanamericanband = {
+		checksum = wereanamericanband
 		name = 'WereAnAmericanBand'
-		title = qs("\LWe're An American Band")
-		artist = qs("\LGrand Funk Railroad")
+		title = qs(0x96b61e95)
+		artist = qs(0x1685a75e)
 		year = 1973
 		duration = 211
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 9
 		leaderboard = 1
-		singer = Male
-		genre = `Classic Rock`
+		singer = male
+		genre = `classic rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LWe're An American Band")
+		album_title = qs(0x96b61e95)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 5
@@ -3131,13 +3131,13 @@ gh5_songlist_props = {
 		tom2 = 'ClassicRockHigh'
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	WhatIGot = {
-		checksum = WhatIGot
+	whatigot = {
+		checksum = whatigot
 		name = 'WhatIGot'
-		title = qs("\LWhat I Got")
-		artist = qs("\LSublime")
+		title = qs(0x88879b72)
+		artist = qs(0xd287d747)
 		year = 1996
 		duration = 168
 		album_img = 'Weezer_Pinkerton'
@@ -3145,13 +3145,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 8
 		leaderboard = 1
-		singer = Male
-		genre = `Surf Rock`
+		singer = male
+		genre = `surf rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		overall_song_volume = -0.5
 		vocals_scroll_speed = 1.56
-		album_title = qs("\LSublime")
+		album_title = qs(0xd287d747)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 2
@@ -3166,13 +3166,13 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	WhyBother = {
-		checksum = WhyBother
+	whybother = {
+		checksum = whybother
 		name = 'WhyBother'
-		title = qs("\LWhy Bother?")
-		artist = qs("\LWeezer")
+		title = qs(0x89769a1a)
+		artist = qs(0x4b1d2950)
 		year = 1996
 		duration = 126
 		album_img = 'Weezer_Pinkerton'
@@ -3180,13 +3180,13 @@ gh5_songlist_props = {
 		original_artist = 1
 		venue = 6
 		leaderboard = 1
-		singer = Male
-		genre = `Pop Punk`
+		singer = male
+		genre = `pop punk`
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		overall_song_volume = 0.0
 		vocals_scroll_speed = 1.3
-		album_title = qs("\LPinkerton")
+		album_title = qs(0x88e20598)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 3
@@ -3201,26 +3201,26 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	WolfLikeMe = {
-		checksum = WolfLikeMe
+	wolflikeme = {
+		checksum = wolflikeme
 		name = 'WolfLikeMe'
-		title = qs("\LWolf Like Me")
-		artist = qs("\LTV On The Radio")
+		title = qs(0x540d7c97)
+		artist = qs(0xe7d51709)
 		year = 2006
 		duration = 259
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 10
 		leaderboard = 1
-		singer = Male
+		singer = male
 		genre = alternative
 		countoff = 'hihat01'
 		drum_kit = 'modernrock'
 		overall_song_volume = 0.8
 		vocals_scroll_speed = 1.15
-		album_title = qs("\LReturn To Cookie Mountain")
+		album_title = qs(0x92a4b19c)
 		double_kick = 0
 		guitar_difficulty_rating = 5
 		bass_difficulty_rating = 3
@@ -3235,31 +3235,31 @@ gh5_songlist_props = {
 		tom2 = 'ModernRocklow'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
-	WomanFromTokyo = {
-		checksum = WomanFromTokyo
+	womanfromtokyo = {
+		checksum = womanfromtokyo
 		name = 'WomanFromTokyo'
-		title = qs("\LWoman From Tokyo ('99 Remix)")
-		artist = qs("\LDeep Purple")
+		title = qs(0x88efc29f)
+		artist = qs(0xff9534b6)
 		year = 1999
 		duration = 391
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 3
 		leaderboard = 1
-		singer = Male
-		genre = `Hard Rock`
+		singer = male
+		genre = `hard rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = -0.5
 		vocals_scroll_speed = 1.23
 		trivia_no_phrases
-		album_title = qs("\LWho Do We Think We Are")
+		album_title = qs(0x2ab450c9)
 		album_img = placeholder_album
 		double_kick = 0
 		parts_with_mic = [
-			Guitarist
+			guitarist
 			bassist
 		]
 		guitar_difficulty_rating = 4
@@ -3275,26 +3275,26 @@ gh5_songlist_props = {
 		tom2 = 'heavyrockhigh'
 		hihat = 'heavyrock'
 		cymbal = 'heavyrock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	YouAndMe = {
-		checksum = YouAndMe
+	youandme = {
+		checksum = youandme
 		name = 'YouAndMe'
-		title = qs("\LYou And Me")
-		artist = qs("\LAttack! Attack!")
+		title = qs(0x83526370)
+		artist = qs(0x424b2e83)
 		year = 2008
 		duration = 221
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
-		genre = `Pop Rock`
+		singer = male
+		genre = `pop rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		overall_song_volume = -1.3
 		vocals_scroll_speed = 1.6
-		album_title = qs("\LAttack! Attack!")
+		album_title = qs(0x424b2e83)
 		double_kick = 0
 		guitar_difficulty_rating = 2
 		bass_difficulty_rating = 3
@@ -3313,25 +3313,25 @@ gh5_songlist_props = {
 		thin_fretbar_8note_params_high_bpm = 180
 		thin_fretbar_16note_params_low_bpm = 1
 		thin_fretbar_16note_params_high_bpm = 120
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	YouGiveLove = {
-		checksum = YouGiveLove
+	yougivelove = {
+		checksum = yougivelove
 		name = 'YouGiveLove'
-		title = qs("\LYou Give Love A Bad Name")
-		artist = qs("\LBon Jovi")
+		title = qs(0x7f4c4a37)
+		artist = qs(0x166b4344)
 		year = 1986
 		duration = 246
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 5
 		leaderboard = 1
-		singer = Male
-		genre = `Hard Rock`
+		singer = male
+		genre = `hard rock`
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		overall_song_volume = -2.3
-		album_title = qs("\LSlippery When Wet")
+		album_title = qs(0x648c99a2)
 		double_kick = 0
 		vocals_scroll_speed = 1.4
 		guitar_difficulty_rating = 3
@@ -3347,28 +3347,28 @@ gh5_songlist_props = {
 		tom2 = 'BigRoomRockhigh'
 		hihat = 'BigRoomRock'
 		cymbal = 'BigRoomRock'
-		venue_set = venue_set_a
+		0x59cb4f1c = 0x078248c2
 	}
-	YounkFunk = {
-		checksum = YounkFunk
+	younkfunk = {
+		checksum = younkfunk
 		name = 'YounkFunk'
-		title = qs("\LYounk Funk")
-		artist = qs("\LThe Derek Trucks Band")
+		title = qs(0xb01114ba)
+		artist = qs(0x00222e06)
 		year = 1998
 		duration = 292
 		artist_text = $artist_text_by
 		original_artist = 1
 		venue = 11
 		leaderboard = 1
-		singer = Male
-		genre = Funk
+		singer = male
+		genre = funk
 		countoff = 'sticks_normal'
 		drum_kit = 'modernrock'
 		double_kick = 0
 		overall_song_volume = -0.3
 		vocals_scroll_speed = 1.12
 		trivia_no_phrases
-		album_title = qs("\LOut Of Madness")
+		album_title = qs(0x09017740)
 		album_img = 'placeholder_album'
 		guitar_difficulty_rating = 7
 		bass_difficulty_rating = 5
@@ -3384,27 +3384,27 @@ gh5_songlist_props = {
 		tom2 = 'ModernRockhigh'
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
-		venue_set = venue_set_b
+		0x59cb4f1c = 0x9e8b1978
 	}
 }
 debug_songlist_props = {
-	DebugBrokenChord = {
-		checksum = DebugBrokenChord
+	debugbrokenchord = {
+		checksum = debugbrokenchord
 		name = 'DebugBrokenChord'
-		title = qs("\LDebug Broken Chord")
-		artist = qs("\LNeversoft")
+		title = qs(0xd99e5e2c)
+		artist = qs(0x0978b483)
 		year = 2009
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3419,23 +3419,23 @@ debug_songlist_props = {
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
 	}
-	DebugChalTest1 = {
-		checksum = DebugChalTest1
+	debugchaltest1 = {
+		checksum = debugchaltest1
 		name = 'DebugChalTest1'
-		title = qs("\LDebugChalTest1")
-		artist = qs("\LDavid Bowie")
+		title = qs(0xee02c4ca)
+		artist = qs(0x7514eafa)
 		year = 1975
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3450,22 +3450,22 @@ debug_songlist_props = {
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
 	}
-	DebugNoBass = {
-		checksum = DebugNoBass
+	debugnobass = {
+		checksum = debugnobass
 		name = 'DebugNoBass'
-		title = qs("\LDebug No Bass")
-		artist = qs("\LBilly Idol")
+		title = qs(0x3561e8ac)
+		artist = qs(0xb09f2ddc)
 		year = 1982
 		album_img = 'placeholder_album'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Punk
+		singer = male
+		genre = punk
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
-		album_title = qs("Billy Idol")
+		album_title = qs(0xd19bcddf)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 0
@@ -3481,22 +3481,22 @@ debug_songlist_props = {
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
 	}
-	DebugNoDrums = {
-		checksum = DebugNoDrums
+	debugnodrums = {
+		checksum = debugnodrums
 		name = 'DebugNoDrums'
-		title = qs("\LDebug No Drums")
-		artist = qs("\LBilly Idol")
+		title = qs(0x31c403c5)
+		artist = qs(0xb09f2ddc)
 		year = 1982
 		album_img = 'placeholder_album'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Punk
+		singer = male
+		genre = punk
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
-		album_title = qs("Billy Idol")
+		album_title = qs(0xd19bcddf)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 4
@@ -3512,22 +3512,22 @@ debug_songlist_props = {
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
 	}
-	DebugNoGuitar = {
-		checksum = DebugNoGuitar
+	debugnoguitar = {
+		checksum = debugnoguitar
 		name = 'DebugNoGuitar'
-		title = qs("\LDebug No Guitar")
-		artist = qs("\LBilly Idol")
+		title = qs(0x521279ab)
+		artist = qs(0xb09f2ddc)
 		year = 1982
 		album_img = 'placeholder_album'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Punk
+		singer = male
+		genre = punk
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
-		album_title = qs("Billy Idol")
+		album_title = qs(0xd19bcddf)
 		double_kick = 0
 		guitar_difficulty_rating = 0
 		bass_difficulty_rating = 4
@@ -3543,22 +3543,22 @@ debug_songlist_props = {
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
 	}
-	DebugNoVocals = {
-		checksum = DebugNoVocals
+	debugnovocals = {
+		checksum = debugnovocals
 		name = 'DebugNoVocals'
-		title = qs("\LDebug No Vocals")
-		artist = qs("\LBilly Idol")
+		title = qs(0xdc89af65)
+		artist = qs(0xb09f2ddc)
 		year = 1982
 		album_img = 'placeholder_album'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Punk
+		singer = male
+		genre = punk
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 1.2
-		album_title = qs("Billy Idol")
+		album_title = qs(0xd19bcddf)
 		double_kick = 0
 		guitar_difficulty_rating = 4
 		bass_difficulty_rating = 4
@@ -3574,23 +3574,23 @@ debug_songlist_props = {
 		hihat = 'ModernRock'
 		cymbal = 'ModernRock'
 	}
-	DebugNoteTypeTest = {
-		checksum = DebugChalTest1
+	debugnotetypetest = {
+		checksum = debugchaltest1
 		name = 'DebugNoteTypeTest'
-		title = qs("\LDebugNoteTypeTest")
-		artist = qs("\LDavid Bowie")
+		title = qs(0xc875ca68)
+		artist = qs(0x7514eafa)
 		year = 1975
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3605,23 +3605,23 @@ debug_songlist_props = {
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
 	}
-	DebugChalTest3 = {
-		checksum = DebugChalTest3
+	debugchaltest3 = {
+		checksum = debugchaltest3
 		name = 'DebugChalTest3'
-		title = qs("\LDebugChalTest3")
-		artist = qs("\LDavid Bowie")
+		title = qs(0xdc34a648)
+		artist = qs(0x7514eafa)
 		year = 1975
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3636,23 +3636,23 @@ debug_songlist_props = {
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
 	}
-	DebugChalTest5 = {
-		checksum = DebugChalTest5
+	debugchaltest5 = {
+		checksum = debugchaltest5
 		name = 'DebugChalTest5'
-		title = qs("\LDebugChalTest5")
-		artist = qs("\LDavid Bowie")
+		title = qs(0x8a6e01ce)
+		artist = qs(0x7514eafa)
 		year = 1975
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3667,24 +3667,24 @@ debug_songlist_props = {
 		hihat = 'classicrock'
 		cymbal = 'classicrock'
 	}
-	DebugVolBand = {
-		checksum = DebugVolBand
+	debugvolband = {
+		checksum = debugvolband
 		name = 'DebugVolBand'
-		title = qs("\LDebugVolBand")
-		artist = qs("\LDebugVolBand")
+		title = qs(0xcf7e5ae9)
+		artist = qs(0xcf7e5ae9)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3699,24 +3699,24 @@ debug_songlist_props = {
 		hihat = 'HeavyRock'
 		cymbal = 'HeavyRock'
 	}
-	DebugVolBass = {
-		checksum = DebugVolBass
+	debugvolbass = {
+		checksum = debugvolbass
 		name = 'DebugVolBass'
-		title = qs("\LDebugVolBass")
-		artist = qs("\LDebugVolBass")
+		title = qs(0x688e513d)
+		artist = qs(0x688e513d)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3725,24 +3725,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolCrowd = {
-		checksum = DebugVolCrowd
+	debugvolcrowd = {
+		checksum = debugvolcrowd
 		name = 'DebugVolCrowd'
-		title = qs("\LDebugVolCrowd")
-		artist = qs("\LDebugVolCrowd")
+		title = qs(0x9195e7b0)
+		artist = qs(0x9195e7b0)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3751,24 +3751,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolDrumCymbal = {
-		checksum = DebugVolDrumCymbal
+	debugvoldrumcymbal = {
+		checksum = debugvoldrumcymbal
 		name = 'DebugVolDrumCymbal'
-		title = qs("\LDebugVolDrumCymbal")
-		artist = qs("\LDebugVolDrumCymbal")
+		title = qs(0x9bde5703)
+		artist = qs(0x9bde5703)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3777,24 +3777,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolDrumKick = {
-		checksum = DebugVolDrumKick
+	debugvoldrumkick = {
+		checksum = debugvoldrumkick
 		name = 'DebugVolDrumKick'
-		title = qs("\LDebugVolDrumKick")
-		artist = qs("\LDebugVolDrumKick")
+		title = qs(0x7d1ce3cb)
+		artist = qs(0x7d1ce3cb)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3803,24 +3803,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolDrumSnare = {
-		checksum = DebugVolDrumSnare
+	debugvoldrumsnare = {
+		checksum = debugvoldrumsnare
 		name = 'DebugVolDrumSnare'
-		title = qs("\LDebugVolDrumSnare")
-		artist = qs("\LDebugVolDrumSnare")
+		title = qs(0x57e22ea2)
+		artist = qs(0x57e22ea2)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3829,24 +3829,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolDrumTom = {
-		checksum = DebugVolDrumTom
+	debugvoldrumtom = {
+		checksum = debugvoldrumtom
 		name = 'DebugVolDrumTom'
-		title = qs("\LDebugVolDrumTom")
-		artist = qs("\LDebugVolDrumTom")
+		title = qs(0x35b73622)
+		artist = qs(0x35b73622)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3855,24 +3855,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolGuitar = {
-		checksum = DebugVolGuitar
+	debugvolguitar = {
+		checksum = debugvolguitar
 		name = 'DebugVolGuitar'
-		title = qs("\LDebugVolGuitar")
-		artist = qs("\LDebugVolGuitar")
+		title = qs(0x515df89f)
+		artist = qs(0x515df89f)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3881,24 +3881,24 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVolVocals = {
-		checksum = DebugVolVocals
+	debugvolvocals = {
+		checksum = debugvolvocals
 		name = 'DebugVolVocals'
-		title = qs("\LDebugVolVocals")
-		artist = qs("\LDebugVolVocals")
+		title = qs(0xdfc62e51)
+		artist = qs(0xdfc62e51)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3907,25 +3907,25 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DebugVoxLag = {
-		checksum = DebugVoxLag
+	debugvoxlag = {
+		checksum = debugvoxlag
 		name = 'DebugVoxLag'
-		title = qs("\LDebugVoxLag")
-		artist = qs("\LDebugVoxLag")
+		title = qs(0xbd036b75)
+		artist = qs(0xbd036b75)
 		year = 1981
 		album_img = 'DarkestHour_DeliverUs'
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 1
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'classicrock'
-		exit_script = TestToneExitScript
+		exit_script = testtoneexitscript
 		overall_song_volume = 0.0
 		trivia_no_phrases
 		allowed_in_quickplay = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3937,8 +3937,8 @@ debug_songlist_props = {
 	synctest = {
 		checksum = synctest
 		name = 'synctest'
-		title = qs("\LDEBUG - VISUAL LAG TEST")
-		artist = qs("\LNS")
+		title = qs(0xf2094301)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
@@ -3947,8 +3947,8 @@ debug_songlist_props = {
 		drum_kit = 'heavyrock'
 		saved_in_globaltags = 0
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3959,19 +3959,19 @@ debug_songlist_props = {
 	synctestplaytoaudio = {
 		checksum = synctestplaytoaudio
 		name = 'synctestplaytoaudio'
-		title = qs("\LDEBUG - AUDIO LAG TEST")
-		artist = qs("\LNS")
+		title = qs(0x2d376c86)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
 		leaderboard = 0
-		exit_script = Audio_Sync_Test_Enable_Highway
+		exit_script = audio_sync_test_enable_highway
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		saved_in_globaltags = 0
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -3982,8 +3982,8 @@ debug_songlist_props = {
 	synctestaudioandvisual = {
 		checksum = synctestaudioandvisual
 		name = 'synctestaudioandvisual'
-		title = qs("\LDEBUG - COMBINED AUDIO/VISUAL TEST")
-		artist = qs("\LNS")
+		title = qs(0x021f9fda)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
@@ -3992,8 +3992,8 @@ debug_songlist_props = {
 		drum_kit = 'heavyrock'
 		saved_in_globaltags = 0
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4004,8 +4004,8 @@ debug_songlist_props = {
 	synctestmuting = {
 		checksum = synctestmuting
 		name = 'synctestmuting'
-		title = qs("\LDEBUG - SYNC TEST MUTING")
-		artist = qs("\LNS")
+		title = qs(0xa9342d6b)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
@@ -4014,8 +4014,8 @@ debug_songlist_props = {
 		drum_kit = 'heavyrock'
 		saved_in_globaltags = 0
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4026,8 +4026,8 @@ debug_songlist_props = {
 	tenseconddebug = {
 		checksum = tenseconddebug
 		name = 'tenseconddebug'
-		title = qs("\LDEBUG - TEN SECOND DEBUG")
-		artist = qs("\LNS")
+		title = qs(0x4283fd73)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
@@ -4035,8 +4035,8 @@ debug_songlist_props = {
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4047,8 +4047,8 @@ debug_songlist_props = {
 	elevenseconddebug = {
 		checksum = elevenseconddebug
 		name = 'elevenseconddebug'
-		title = qs("\LDEBUG - ELEVEN")
-		artist = qs("\LNS")
+		title = qs(0x77784ccb)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
@@ -4056,8 +4056,8 @@ debug_songlist_props = {
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4068,8 +4068,8 @@ debug_songlist_props = {
 	twelveseconddebug = {
 		checksum = twelveseconddebug
 		name = 'twelveseconddebug'
-		title = qs("\LDEBUG - TWELVE SECOND DEBUG")
-		artist = qs("\LNS")
+		title = qs(0x086a524a)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
@@ -4077,8 +4077,8 @@ debug_songlist_props = {
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4089,19 +4089,19 @@ debug_songlist_props = {
 	testtones = {
 		checksum = testtones
 		name = 'testtones'
-		title = qs("\Ltest tones")
-		artist = qs("\LNS")
+		title = qs(0xc211a931)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_as_made_famous_by
 		original_artist = 0
 		leaderboard = 0
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
-		exit_script = TestToneExitScript
+		exit_script = testtoneexitscript
 		saved_in_globaltags = 0
 		allowed_in_random = 0
-		genre = Pop
-		album_title = qs("Name of Album Here!")
+		genre = pop
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4109,22 +4109,22 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	DrumStreamTest = {
-		checksum = DrumStreamTest
+	drumstreamtest = {
+		checksum = drumstreamtest
 		name = 'DrumStreamTest'
-		title = qs("\LDEBUG - DRUM STREAM TEST")
-		artist = qs("\LNS")
+		title = qs(0xfc7f3df9)
+		artist = qs(0x0a932d91)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'hihat01'
 		drum_kit = 'heavyrock'
 		saved_in_globaltags = -2
 		allowed_in_random = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4132,21 +4132,21 @@ debug_songlist_props = {
 		disable_for_medley_mode = false
 		flags = 0
 	}
-	PlaceHolderSong = {
+	placeholdersong = {
 		checksum = tenseconddebug
 		name = 'tenseconddebug'
-		title = qs("\LTHE PLACE-HOLDER SONG")
-		artist = qs("\LTHE PLACE-HOLDERS")
+		title = qs(0x53c97f91)
+		artist = qs(0xe88aeb6f)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		never_show_in_setlist
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
 		vocals_difficulty_rating = 10
@@ -4156,22 +4156,22 @@ debug_songlist_props = {
 	}
 }
 tutorial_songlist_props = {
-	Tut_Bass_OpenNote = {
-		checksum = Tut_Bass_OpenNote
+	tut_bass_opennote = {
+		checksum = tut_bass_opennote
 		name = 'Tut_Bass_OpenNote'
-		title = qs("\LTut_Bass_OpenNote")
-		artist = qs("\LTutorial")
+		title = qs(0x5efee908)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4181,22 +4181,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Demo = {
-		checksum = Tut_Demo
+	tut_demo = {
+		checksum = tut_demo
 		name = 'Tut_Demo'
-		title = qs("\LTut_Demo")
-		artist = qs("\LTutorial")
+		title = qs(0x93666f0d)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4206,22 +4206,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Activ = {
-		checksum = Tut_Drum_Activ
+	tut_drum_activ = {
+		checksum = tut_drum_activ
 		name = 'Tut_Drum_Activ'
-		title = qs("\LTut_Drum_Activ")
-		artist = qs("\LTutorial")
+		title = qs(0x07be7d49)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4231,22 +4231,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Beat1 = {
-		checksum = Tut_Drum_Beat1
+	tut_drum_beat1 = {
+		checksum = tut_drum_beat1
 		name = 'Tut_Drum_Beat1'
-		title = qs("\LTut_Drum_Beat1")
-		artist = qs("\LTutorial")
+		title = qs(0x64b60a65)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4256,22 +4256,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Beat2 = {
-		checksum = Tut_Drum_Beat2
+	tut_drum_beat2 = {
+		checksum = tut_drum_beat2
 		name = 'Tut_Drum_Beat2'
-		title = qs("\LTut_Drum_Beat2")
-		artist = qs("\LTutorial")
+		title = qs(0x4f9b59a6)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4281,22 +4281,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Beat3 = {
-		checksum = Tut_Drum_Beat3
+	tut_drum_beat3 = {
+		checksum = tut_drum_beat3
 		name = 'Tut_Drum_Beat3'
-		title = qs("\LTut_Drum_Beat3")
-		artist = qs("\LTutorial")
+		title = qs(0x568068e7)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4306,22 +4306,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Break = {
-		checksum = Tut_Drum_Break
+	tut_drum_break = {
+		checksum = tut_drum_break
 		name = 'Tut_Drum_Break'
-		title = qs("\LTut_Drum_Break")
-		artist = qs("\LTutorial")
+		title = qs(0xaeca6232)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4331,22 +4331,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Combos = {
-		checksum = Tut_Drum_Combos
+	tut_drum_combos = {
+		checksum = tut_drum_combos
 		name = 'Tut_Drum_Combos'
-		title = qs("\LTut_Drum_Combos")
-		artist = qs("\LTutorial")
+		title = qs(0xd9386881)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4356,22 +4356,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Kick = {
-		checksum = Tut_Drum_Kick
+	tut_drum_kick = {
+		checksum = tut_drum_kick
 		name = 'Tut_Drum_Kick'
-		title = qs("\LTut_Drum_Kick")
-		artist = qs("\LTutorial")
+		title = qs(0xa007cd1b)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4381,22 +4381,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_Free = {
-		checksum = Tut_Drum_Free
+	tut_drum_free = {
+		checksum = tut_drum_free
 		name = 'Tut_Drum_Free'
-		title = qs("\LTut_Drum_Free")
-		artist = qs("\LTutorial")
+		title = qs(0xe9fb58c0)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4406,22 +4406,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_OneHand = {
-		checksum = Tut_Drum_OneHand
+	tut_drum_onehand = {
+		checksum = tut_drum_onehand
 		name = 'Tut_Drum_OneHand'
-		title = qs("\LTut_Drum_OneHand")
-		artist = qs("\LTutorial")
+		title = qs(0x32283ae1)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4431,22 +4431,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Drum_TwoHands = {
-		checksum = Tut_Drum_TwoHands
+	tut_drum_twohands = {
+		checksum = tut_drum_twohands
 		name = 'Tut_Drum_TwoHands'
-		title = qs("\LTut_Drum_TwoHands")
-		artist = qs("\LTutorial")
+		title = qs(0x1b543d6c)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4456,22 +4456,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_Chords = {
-		checksum = Tut_Gtr_Chords
+	tut_gtr_chords = {
+		checksum = tut_gtr_chords
 		name = 'Tut_Gtr_Chords'
-		title = qs("\LTut_Gtr_Chords")
-		artist = qs("\LTutorial")
+		title = qs(0xa59ba6c7)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4481,22 +4481,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_Combos = {
-		checksum = Tut_Gtr_Combos
+	tut_gtr_combos = {
+		checksum = tut_gtr_combos
 		name = 'Tut_Gtr_Combos'
-		title = qs("\LTut_Gtr_Combos")
-		artist = qs("\LTutorial")
+		title = qs(0xd1b53f59)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4506,22 +4506,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_DiffNotes = {
-		checksum = Tut_Gtr_DiffNotes
+	tut_gtr_diffnotes = {
+		checksum = tut_gtr_diffnotes
 		name = 'Tut_Gtr_DiffNotes'
-		title = qs("\LTut_Gtr_DiffNotes")
-		artist = qs("\LTutorial")
+		title = qs(0x4344da8c)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4531,22 +4531,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_ExtSus = {
-		checksum = Tut_Gtr_ExtSus
+	tut_gtr_extsus = {
+		checksum = tut_gtr_extsus
 		name = 'Tut_Gtr_ExtSus'
-		title = qs("\LTut_Gtr_ExtSus")
-		artist = qs("\LTutorial")
+		title = qs(0x688c49db)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4556,22 +4556,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_HamOn = {
-		checksum = Tut_Gtr_HamOn
+	tut_gtr_hamon = {
+		checksum = tut_gtr_hamon
 		name = 'Tut_Gtr_HamOn'
-		title = qs("\LTut_Gtr_HamOn")
-		artist = qs("\LTutorial")
+		title = qs(0x2509391c)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4581,22 +4581,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_LongNotes = {
-		checksum = Tut_Gtr_LongNotes
+	tut_gtr_longnotes = {
+		checksum = tut_gtr_longnotes
 		name = 'Tut_Gtr_LongNotes'
-		title = qs("\LTut_Gtr_LongNotes")
-		artist = qs("\LTutorial")
+		title = qs(0xaf784f3d)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4606,22 +4606,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_PlayNotes = {
-		checksum = Tut_Gtr_PlayNotes
+	tut_gtr_playnotes = {
+		checksum = tut_gtr_playnotes
 		name = 'Tut_Gtr_PlayNotes'
-		title = qs("\LTut_Gtr_PlayNotes")
-		artist = qs("\LTutorial")
+		title = qs(0x075754c9)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4631,22 +4631,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_PullOff = {
-		checksum = Tut_Gtr_PullOff
+	tut_gtr_pulloff = {
+		checksum = tut_gtr_pulloff
 		name = 'Tut_Gtr_PullOff'
-		title = qs("\LTut_Gtr_PullOff")
-		artist = qs("\LTutorial")
+		title = qs(0x88671109)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4656,22 +4656,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_Slide = {
-		checksum = Tut_Gtr_Slide
+	tut_gtr_slide = {
+		checksum = tut_gtr_slide
 		name = 'Tut_Gtr_Slide'
-		title = qs("\LTut_Gtr_Slide")
-		artist = qs("\LTutorial")
+		title = qs(0x6e14e530)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4681,22 +4681,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_Tilt = {
-		checksum = Tut_Gtr_Tilt
+	tut_gtr_tilt = {
+		checksum = tut_gtr_tilt
 		name = 'Tut_Gtr_Tilt'
-		title = qs("\LTut_Gtr_Tilt")
-		artist = qs("\LTutorial")
+		title = qs(0xaece56e0)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4706,22 +4706,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Gtr_Wham = {
-		checksum = Tut_Gtr_Wham
+	tut_gtr_wham = {
+		checksum = tut_gtr_wham
 		name = 'Tut_Gtr_Wham'
-		title = qs("\LTut_Gtr_Wham")
-		artist = qs("\LTutorial")
+		title = qs(0x8277f363)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4731,22 +4731,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Vox_Activ = {
-		checksum = Tut_Vox_Activ
+	tut_vox_activ = {
+		checksum = tut_vox_activ
 		name = 'Tut_Vox_Activ'
-		title = qs("\LTut_Vox_Activ")
-		artist = qs("\LTutorial")
+		title = qs(0x17980b02)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4756,22 +4756,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Vox_Combos = {
-		checksum = Tut_Vox_Combos
+	tut_vox_combos = {
+		checksum = tut_vox_combos
 		name = 'Tut_Vox_Combos'
-		title = qs("\LTut_Vox_Combos")
-		artist = qs("\LTutorial")
+		title = qs(0x73d33a60)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4781,22 +4781,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Vox_Freeform = {
-		checksum = Tut_Vox_Freeform
+	tut_vox_freeform = {
+		checksum = tut_vox_freeform
 		name = 'Tut_Vox_Freeform'
-		title = qs("\LTut_Vox_Freeform")
-		artist = qs("\LTutorial")
+		title = qs(0x443c798f)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4806,22 +4806,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Vox_HitNotes = {
-		checksum = Tut_Vox_HitNotes
+	tut_vox_hitnotes = {
+		checksum = tut_vox_hitnotes
 		name = 'Tut_Vox_HitNotes'
-		title = qs("\LTut_Vox_HitNotes")
-		artist = qs("\LTutorial")
+		title = qs(0x02e5689b)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4831,22 +4831,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Vox_Hype = {
-		checksum = Tut_Vox_Hype
+	tut_vox_hype = {
+		checksum = tut_vox_hype
 		name = 'Tut_Vox_Hype'
-		title = qs("\LTut_Vox_Hype")
-		artist = qs("\LTutorial")
+		title = qs(0x44e8fbc7)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4856,22 +4856,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_Vox_Spoken = {
-		checksum = Tut_Vox_Spoken
+	tut_vox_spoken = {
+		checksum = tut_vox_spoken
 		name = 'Tut_Vox_Spoken'
-		title = qs("\LTut_Vox_Spoken")
-		artist = qs("\LTutorial")
+		title = qs(0x5c95d734)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4881,22 +4881,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_VS_BattPow = {
-		checksum = Tut_VS_BattPow
+	tut_vs_battpow = {
+		checksum = tut_vs_battpow
 		name = 'Tut_VS_BattPow'
-		title = qs("\LTut_VS_BattPow")
-		artist = qs("\LTutorial")
+		title = qs(0x422f1ea7)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4906,22 +4906,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_VS_MultAttck = {
-		checksum = Tut_VS_MultAttck
+	tut_vs_multattck = {
+		checksum = tut_vs_multattck
 		name = 'Tut_VS_MultAttck'
-		title = qs("\LTut_VS_MultAttck")
-		artist = qs("\LTutorial")
+		title = qs(0x1dfb1cb8)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4931,22 +4931,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_VS_Recov = {
-		checksum = Tut_VS_Recov
+	tut_vs_recov = {
+		checksum = tut_vs_recov
 		name = 'Tut_VS_Recov'
-		title = qs("\LTut_VS_Recov")
-		artist = qs("\LTutorial")
+		title = qs(0xf537c7b8)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4956,22 +4956,22 @@ tutorial_songlist_props = {
 		flags = 0
 		double_kick = 0
 	}
-	Tut_VS_Tilt = {
-		checksum = Tut_VS_Tilt
+	tut_vs_tilt = {
+		checksum = tut_vs_tilt
 		name = 'Tut_VS_Tilt'
-		title = qs("\LTut_VS_Tilt")
-		artist = qs("\LTutorial")
+		title = qs(0x9bd581e4)
+		artist = qs(0xae0e9bcf)
 		year = 2007
 		artist_text = $artist_text_by
 		original_artist = 1
 		leaderboard = 0
-		singer = Male
-		genre = Rock
+		singer = male
+		genre = rock
 		countoff = 'sticks_normal'
 		drum_kit = 'heavyrock'
 		allowed_in_quickplay = 0
 		saved_in_globaltags = 0
-		album_title = qs("Name of Album Here!")
+		album_title = qs(0xbb603bec)
 		double_kick = 0
 		guitar_difficulty_rating = 10
 		bass_difficulty_rating = 10
@@ -4983,162 +4983,162 @@ tutorial_songlist_props = {
 	}
 }
 song_genre_list = {
-	Rock = {
-		genre_string = qs("Rock")
+	rock = {
+		genre_string = qs(0xdbe68323)
 	}
-	Grunge = {
-		genre_string = qs("Grunge")
-		car_genre = Rock
+	grunge = {
+		genre_string = qs(0x5a5893cc)
+		0xa30449d0 = rock
 	}
-	`Hard Rock` = {
-		genre_string = qs("Hard Rock")
-		car_genre = `Heavy Metal`
+	`hard rock` = {
+		genre_string = qs(0x8c227232)
+		0xa30449d0 = `heavy metal`
 	}
-	`Classic Rock` = {
-		genre_string = qs("Classic Rock")
+	`classic rock` = {
+		genre_string = qs(0x69cd8928)
 	}
-	`Southern Rock` = {
-		genre_string = qs("Southern Rock")
-		car_genre = Rock
+	`southern rock` = {
+		genre_string = qs(0xa1d57dda)
+		0xa30449d0 = rock
 	}
-	`Prog Rock` = {
-		genre_string = qs("Prog Rock")
-		car_genre = `Classic Rock`
+	`prog rock` = {
+		genre_string = qs(0xdce9948d)
+		0xa30449d0 = `classic rock`
 	}
 	alternative = {
-		genre_string = qs("Alternative")
-		car_genre = Pop
+		genre_string = qs(0x5222d1db)
+		0xa30449d0 = pop
 	}
-	`Modern Rock` = {
-		genre_string = qs("Modern Rock")
-		car_genre = Pop
+	`modern rock` = {
+		genre_string = qs(0x57b61b78)
+		0xa30449d0 = pop
 	}
-	Rockabilly = {
-		genre_string = qs("Rockabilly")
-		car_genre = `Classic Rock`
+	rockabilly = {
+		genre_string = qs(0x7478f2db)
+		0xa30449d0 = `classic rock`
 	}
-	`New Wave` = {
-		genre_string = qs("New Wave")
-		car_genre = Pop
+	`new wave` = {
+		genre_string = qs(0xc0dc7896)
+		0xa30449d0 = pop
 	}
-	Country = {
-		genre_string = qs("Country")
-		car_genre = Rock
+	country = {
+		genre_string = qs(0x3323be41)
+		0xa30449d0 = rock
 	}
 	electronic = {
-		genre_string = qs("Electronic")
-		car_genre = any
+		genre_string = qs(0x40f5ecbc)
+		0xa30449d0 = any
 	}
-	Dance = {
-		genre_string = qs("Dance")
-		car_genre = `Glam Rock`
+	dance = {
+		genre_string = qs(0x94823953)
+		0xa30449d0 = `glam rock`
 	}
-	Pop = {
-		genre_string = qs("Pop")
+	pop = {
+		genre_string = qs(0x0ec9c808)
 	}
-	`Pop Rock` = {
-		genre_string = qs("Pop Rock")
-		car_genre = any
+	`pop rock` = {
+		genre_string = qs(0x2b786680)
+		0xa30449d0 = any
 	}
-	`Indie Rock` = {
-		genre_string = qs("Indie Rock")
-		car_genre = any
+	`indie rock` = {
+		genre_string = qs(0xb2e4f95d)
+		0xa30449d0 = any
 	}
-	`Blues Rock` = {
-		genre_string = qs("Blues Rock")
-		car_genre = Rock
+	`blues rock` = {
+		genre_string = qs(0x04dd7f98)
+		0xa30449d0 = rock
 	}
-	Reggae = {
-		genre_string = qs("Reggae")
-		car_genre = any
+	reggae = {
+		genre_string = qs(0x376babf3)
+		0xa30449d0 = any
 	}
-	`R&B` = {
-		genre_string = qs("R & B")
-		car_genre = `Classic Rock`
+	`r&b` = {
+		genre_string = qs(0xeb6ac738)
+		0xa30449d0 = `classic rock`
 	}
-	Blues = {
-		genre_string = qs("Blues")
-		car_genre = Rock
+	blues = {
+		genre_string = qs(0x527b4496)
+		0xa30449d0 = rock
 	}
-	Jazz = {
-		genre_string = qs("Jazz")
-		car_genre = Pop
+	jazz = {
+		genre_string = qs(0x307af3c8)
+		0xa30449d0 = pop
 	}
-	`Surf Rock` = {
-		genre_string = qs("Surf Rock")
-		car_genre = any
+	`surf rock` = {
+		genre_string = qs(0x817bb1c2)
+		0xa30449d0 = any
 	}
 	metal = {
-		genre_string = qs("Metal")
-		car_genre = `Heavy Metal`
+		genre_string = qs(0x355b4e5c)
+		0xa30449d0 = `heavy metal`
 	}
-	`Glam Rock` = {
-		genre_string = qs("Glam Rock")
+	`glam rock` = {
+		genre_string = qs(0xf46db725)
 	}
-	`Death Metal` = {
-		genre_string = qs("Death Metal")
-		car_genre = Goth
+	`death metal` = {
+		genre_string = qs(0x48e2ccc7)
+		0xa30449d0 = goth
 	}
-	`Speed Metal` = {
-		genre_string = qs("Speed Metal")
-		car_genre = `Black Metal`
+	`speed metal` = {
+		genre_string = qs(0x26922ad8)
+		0xa30449d0 = `black metal`
 	}
-	`Black Metal` = {
-		genre_string = qs("Black Metal")
+	`black metal` = {
+		genre_string = qs(0xa5109883)
 	}
-	`Nu Metal` = {
-		genre_string = qs("Nu Metal")
-		car_genre = `Heavy Metal`
+	`nu metal` = {
+		genre_string = qs(0x426b6bfe)
+		0xa30449d0 = `heavy metal`
 	}
 	experimental = {
-		genre_string = qs("Experimental")
-		car_genre = any
+		genre_string = qs(0xe829168a)
+		0xa30449d0 = any
 	}
-	Industrial = {
-		genre_string = qs("Industrial")
-		car_genre = Goth
+	industrial = {
+		genre_string = qs(0x671ee535)
+		0xa30449d0 = goth
 	}
-	`Big Band` = {
-		genre_string = qs("Big Band")
-		car_genre = `Classic Rock`
+	`big band` = {
+		genre_string = qs(0xf9fea6f1)
+		0xa30449d0 = `classic rock`
 	}
-	International = {
-		genre_string = qs("International")
-		car_genre = `Glam Rock`
+	international = {
+		genre_string = qs(0x903a98da)
+		0xa30449d0 = `glam rock`
 	}
-	Funk = {
-		genre_string = qs("Funk")
-		car_genre = `Glam Rock`
+	funk = {
+		genre_string = qs(0x733045d2)
+		0xa30449d0 = `glam rock`
 	}
-	Disco = {
-		genre_string = qs("Disco")
-		car_genre = `Classic Rock`
+	disco = {
+		genre_string = qs(0x02c0db29)
+		0xa30449d0 = `classic rock`
 	}
 	hip_hop = {
-		genre_string = qs("Hip Hop")
-		car_genre = Pop
+		genre_string = qs(0x4911c80a)
+		0xa30449d0 = pop
 	}
-	Punk = {
-		genre_string = qs("Punk")
+	punk = {
+		genre_string = qs(0xc9e47d7e)
 	}
-	Hardcore = {
-		genre_string = qs("Hardcore")
-		car_genre = Punk
+	hardcore = {
+		genre_string = qs(0x31fce503)
+		0xa30449d0 = punk
 	}
-	`Pop Punk` = {
-		genre_string = qs("Pop Punk")
-		car_genre = Pop
+	`pop punk` = {
+		genre_string = qs(0x397a98dd)
+		0xa30449d0 = pop
 	}
-	`Ska Punk` = {
-		genre_string = qs("Ska Punk")
-		car_genre = Punk
+	`ska punk` = {
+		genre_string = qs(0x9ea302a7)
+		0xa30449d0 = punk
 	}
-	Other = {
-		genre_string = qs("Other")
-		car_genre = any
+	other = {
+		genre_string = qs(0xae88c5bc)
+		0xa30449d0 = any
 	}
 	any = {
 		genre_string = qs(0xaf3dc51a)
-		car_genre = any
+		0xa30449d0 = any
 	}
 }

@@ -1,37 +1,37 @@
-L_SING_Adam_Walk_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_adam_walk_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Adam_Walk_075
+				slow = [
+					sing_adam_walk_075
 				]
-				Med = [
-					Sing_Adam_Walk_100
+				med = [
+					sing_adam_walk_100
 				]
-				Fast = [
-					Sing_Adam_Walk_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Adam_Walk_075
-				]
-				Med = [
-					Sing_Adam_Walk_100
-				]
-				Fast = [
-					Sing_Adam_Walk_120
+				fast = [
+					sing_adam_walk_120
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Adam_Walk_075
+			normal = {
+				slow = [
+					sing_adam_walk_075
 				]
-				Med = [
-					Sing_Adam_Walk_100
+				med = [
+					sing_adam_walk_100
 				]
-				Fast = [
-					Sing_Adam_Walk_120
+				fast = [
+					sing_adam_walk_120
+				]
+			}
+			bad = {
+				slow = [
+					sing_adam_walk_075
+				]
+				med = [
+					sing_adam_walk_100
+				]
+				fast = [
+					sing_adam_walk_120
 				]
 			}
 		}

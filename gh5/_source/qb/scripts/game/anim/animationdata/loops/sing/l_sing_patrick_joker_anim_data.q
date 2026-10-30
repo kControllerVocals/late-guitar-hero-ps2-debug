@@ -1,37 +1,37 @@
-L_SING_Patrick_Joker_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_patrick_joker_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					sing_Patrick_Joker_075
+				slow = [
+					sing_patrick_joker_075
 				]
-				Med = [
-					sing_Patrick_Joker_100
+				med = [
+					sing_patrick_joker_100
 				]
-				Fast = [
-					sing_Patrick_Joker_120
-				]
-			}
-			Normal = {
-				Slow = [
-					sing_Patrick_Joker_075
-				]
-				Med = [
-					sing_Patrick_Joker_100
-				]
-				Fast = [
-					sing_Patrick_Joker_120
+				fast = [
+					sing_patrick_joker_120
 				]
 			}
-			Bad = {
-				Slow = [
-					sing_Patrick_Joker_075
+			normal = {
+				slow = [
+					sing_patrick_joker_075
 				]
-				Med = [
-					sing_Patrick_Joker_100
+				med = [
+					sing_patrick_joker_100
 				]
-				Fast = [
-					sing_Patrick_Joker_120
+				fast = [
+					sing_patrick_joker_120
+				]
+			}
+			bad = {
+				slow = [
+					sing_patrick_joker_075
+				]
+				med = [
+					sing_patrick_joker_100
+				]
+				fast = [
+					sing_patrick_joker_120
 				]
 			}
 		}

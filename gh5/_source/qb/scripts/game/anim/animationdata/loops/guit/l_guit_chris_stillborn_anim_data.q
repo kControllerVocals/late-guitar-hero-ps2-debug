@@ -1,37 +1,37 @@
-L_GUIT_Chris_Stillborn_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_chris_stillborn_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					GUIT_Chris_Stillborn_075_M
+				slow = [
+					guit_chris_stillborn_075_m
 				]
-				Med = [
-					GUIT_Chris_Stillborn_100_M
+				med = [
+					guit_chris_stillborn_100_m
 				]
-				Fast = [
-					GUIT_Chris_Stillborn_120_M
-				]
-			}
-			Normal = {
-				Slow = [
-					GUIT_Chris_Stillborn_075_M
-				]
-				Med = [
-					GUIT_Chris_Stillborn_100_M
-				]
-				Fast = [
-					GUIT_Chris_Stillborn_120_M
+				fast = [
+					guit_chris_stillborn_120_m
 				]
 			}
-			Bad = {
-				Slow = [
-					GUIT_Chris_Stillborn_075_M
+			normal = {
+				slow = [
+					guit_chris_stillborn_075_m
 				]
-				Med = [
-					GUIT_Chris_Stillborn_100_M
+				med = [
+					guit_chris_stillborn_100_m
 				]
-				Fast = [
-					GUIT_Chris_Stillborn_120_M
+				fast = [
+					guit_chris_stillborn_120_m
+				]
+			}
+			bad = {
+				slow = [
+					guit_chris_stillborn_075_m
+				]
+				med = [
+					guit_chris_stillborn_100_m
+				]
+				fast = [
+					guit_chris_stillborn_120_m
 				]
 			}
 		}

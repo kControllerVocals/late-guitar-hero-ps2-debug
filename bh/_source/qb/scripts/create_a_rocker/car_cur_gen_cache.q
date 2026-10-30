@@ -1,314 +1,314 @@
-car_part_cache = [
+0x1f144dea = [
 ]
-number_of_random_parts_to_cache_per_genre = 4
-randomizer_part_cache = {
+0xd9ed6f85 = 4
+0xa32e828a = {
 }
-part_def_clusters = {
-	ui_customize_character = [
-		CAS_Torso_Art
-		CAS_Left_Arm_Art
-		CAS_Right_Arm_Art
-		CAS_Eye_Makeup
-		CAS_Lip_Makeup
-		CAS_Eyes
-		CAS_Female_Hair
-		CAS_Female_Hat_Hair
-		CAS_Male_Facial_Hair
-		CAS_Male_Hair
-		CAS_Male_Hat_Hair
+0x44007ccb = {
+	0x288ddb10 = [
+		cas_torso_art
+		cas_left_arm_art
+		cas_right_arm_art
+		cas_eye_makeup
+		cas_lip_makeup
+		cas_eyes
+		cas_female_hair
+		cas_female_hat_hair
+		cas_male_facial_hair
+		cas_male_hair
+		cas_male_hat_hair
 	]
-	ui_customize_character_outfit = [
-		CAS_Female_Torso
-		CAS_Female_Legs
-		CAS_Female_Shoes
-		CAS_Female_Acc_Left
-		CAS_Female_Acc_Right
-		CAS_Female_Acc_Face
-		CAS_Female_Acc_Ears
-		CAS_Female_Hair
-		CAS_Female_Hat_Hair
-		CAS_Female_Hat
-		CAS_Male_Torso
-		CAS_Male_Legs
-		CAS_Male_Shoes
-		CAS_Male_Acc_Left
-		CAS_Male_Acc_Right
-		CAS_Male_Acc_Face
-		CAS_Male_Acc_Ears
-		CAS_Male_Hair
-		CAS_Male_Hat_Hair
-		CAS_Male_Hat
+	0x658a2d2c = [
+		cas_female_torso
+		cas_female_legs
+		cas_female_shoes
+		cas_female_acc_left
+		cas_female_acc_right
+		cas_female_acc_face
+		cas_female_acc_ears
+		cas_female_hair
+		cas_female_hat_hair
+		cas_female_hat
+		cas_male_torso
+		cas_male_legs
+		cas_male_shoes
+		cas_male_acc_left
+		cas_male_acc_right
+		cas_male_acc_face
+		cas_male_acc_ears
+		cas_male_hair
+		cas_male_hat_hair
+		cas_male_hat
 	]
 }
 
-script clear_part_cache 
-	change \{car_part_cache = [
+script 0xcd94e1bc 
+	change \{0x1f144dea = [
 		]}
 endscript
 
-script get_cached_part 
-	find_part_in_cache <...>
+script 0xc4dfc41c 
+	0x508a0517 <...>
 	if NOT (<index> = -1)
-		return cached_part_struct = ($car_part_cache [<index>])
+		return 0x9c8a3b7a = ($0x1f144dea [<index>])
 	endif
 endscript
 
-script add_part_to_cache 
-	find_part_in_cache <...>
+script 0x44a395ce 
+	0x508a0517 <...>
 	if (<index> = -1)
-		RemoveParameter \{index}
-		if GotParam \{no_ref}
-			RemoveParameter \{no_ref}
-			temp_part = {<...> ref_count = 0}
+		removeparameter \{index}
+		if gotparam \{0x1fe128af}
+			removeparameter \{0x1fe128af}
+			0x1ff90073 = {<...> ref_count = 0}
 		else
-			temp_part = {<...> ref_count = 1}
+			0x1ff90073 = {<...> ref_count = 1}
 		endif
-		AddArrayElement array = ($car_part_cache) element = <temp_part>
-		change car_part_cache = <array>
+		addarrayelement array = ($0x1f144dea) element = <0x1ff90073>
+		change 0x1f144dea = <array>
 	else
-		temp_part = ($car_part_cache [<index>])
-		if GotParam \{no_ref}
-			temp_ref = (<temp_part>.ref_count)
+		0x1ff90073 = ($0x1f144dea [<index>])
+		if gotparam \{0x1fe128af}
+			0x5eb1d8b0 = (<0x1ff90073>.ref_count)
 		else
-			temp_ref = (<temp_part>.ref_count + 1)
+			0x5eb1d8b0 = (<0x1ff90073>.ref_count + 1)
 		endif
-		temp_part = {<temp_part> ref_count = <temp_ref>}
-		SetArrayElement ArrayName = car_part_cache index = <index> newvalue = <temp_part> GlobalArray ResolveGlobals = 0
+		0x1ff90073 = {<0x1ff90073> ref_count = <0x5eb1d8b0>}
+		setarrayelement arrayname = 0x1f144dea index = <index> newvalue = <0x1ff90073> globalarray resolveglobals = 0
 	endif
 endscript
 
-script remove_part_from_cache 
-	find_part_in_cache <...>
+script 0x51979d5e 
+	0x508a0517 <...>
 	if (<index> = -1)
 		switch (<part_type>)
-			case CAS_Body
+			case cas_body
 			case cas_physique
-			case CAS_Full_Instrument
+			case cas_full_instrument
 			return
 			default
-			debug_Printf \{qs(0x5dce1217)}
+			0x8dbdaee4 \{qs(0x5dce1217)}
 		endswitch
 	else
-		temp_part = ($car_part_cache [<index>])
-		temp_ref = ((<temp_part>.ref_count) - 1)
-		if (<temp_ref> < 0)
-			temp_ref = 0
+		0x1ff90073 = ($0x1f144dea [<index>])
+		0x5eb1d8b0 = ((<0x1ff90073>.ref_count) - 1)
+		if (<0x5eb1d8b0> < 0)
+			0x5eb1d8b0 = 0
 		endif
-		temp_part = {<temp_part> ref_count = <temp_ref>}
-		SetArrayElement ArrayName = car_part_cache index = <index> newvalue = <temp_part> GlobalArray ResolveGlobals = 0
+		0x1ff90073 = {<0x1ff90073> ref_count = <0x5eb1d8b0>}
+		setarrayelement arrayname = 0x1f144dea index = <index> newvalue = <0x1ff90073> globalarray resolveglobals = 0
 	endif
-	if GotParam \{flush}
-		flush_part_cache
+	if gotparam \{0x4b1eab50}
+		0xe30b16ca
 	endif
 endscript
 
-script add_part_in_appearance_to_cache 
-	ResolveBodySpecificPartInAppearance appearance = <appearance> part = <part_type>
+script 0xbaf89f2d 
+	resolvebodyspecificpartinappearance appearance = <appearance> part = <part_type>
 	part_type = <part>
-	if NOT GotParam \{desc_id}
-		if StructureContains Structure = <appearance> <part_type>
+	if NOT gotparam \{desc_id}
+		if structurecontains structure = <appearance> <part_type>
 			desc_id = (<appearance>.<part_type>.desc_id)
 		else
-			debug_ScriptAssert \{qs(0x9018370d)}
+			0x93d8d5cf \{qs(0x9018370d)}
 			return
 		endif
 	endif
-	if GetActualCASOptionStruct part = <part_type> desc_id = <desc_id>
-		RemoveParameter \{appearance}
-		RemoveParameter \{part}
-		add_part_to_cache <...>
-		if NOT GotParam \{no_add_nodes}
-			if GotParam \{add_to_nodes}
-				desc_id_copy = <desc_id>
-				add_to_nodes_copy = <add_to_nodes>
-				GetArraySize <add_to_nodes>
+	if getactualcasoptionstruct part = <part_type> desc_id = <desc_id>
+		removeparameter \{appearance}
+		removeparameter \{part}
+		0x44a395ce <...>
+		if NOT gotparam \{0x88fd222e}
+			if gotparam \{add_to_nodes}
+				0x219d4ef3 = <desc_id>
+				0xc7e33433 = <add_to_nodes>
+				getarraysize <add_to_nodes>
 				i = 0
 				begin
-				node_child_struct = (<add_to_nodes_copy> [<i>])
-				if GotParam \{no_ref}
-					add_part_in_appearance_to_cache part_type = (<node_child_struct>.part_type) desc_id = (<node_child_struct>.desc_id) no_ref no_add_nodes
+				node_child_struct = (<0xc7e33433> [<i>])
+				if gotparam \{0x1fe128af}
+					0xbaf89f2d part_type = (<node_child_struct>.part_type) desc_id = (<node_child_struct>.desc_id) 0x1fe128af 0x88fd222e
 				else
-					add_part_in_appearance_to_cache part_type = (<node_child_struct>.part_type) desc_id = (<node_child_struct>.desc_id) no_add_nodes
+					0xbaf89f2d part_type = (<node_child_struct>.part_type) desc_id = (<node_child_struct>.desc_id) 0x88fd222e
 				endif
 				i = (<i> + 1)
 				repeat <array_size>
 			endif
 		endif
-		if GotParam \{hat_hair}
+		if gotparam \{hat_hair}
 			switch (<part_type>)
-				case CAS_Male_Hair
-				case CAS_Male_Hat
-				part = CAS_Male_Hat_Hair
-				case CAS_Female_Hair
-				case CAS_Female_Hat
-				part = CAS_Female_Hat_Hair
+				case cas_male_hair
+				case cas_male_hat
+				part = cas_male_hat_hair
+				case cas_female_hair
+				case cas_female_hat
+				part = cas_female_hat_hair
 				default
-				debug_ScriptAssert \{qs(0xea6f7c2d)}
+				0x93d8d5cf \{qs(0xea6f7c2d)}
 			endswitch
 			if NOT (<hat_hair> = original_hair)
-				unload_pak_after_caching = 0
+				0xcc05dce0 = 0
 				if NOT load_part_desc_pak part_type = <part>
-					unload_pak_after_caching = 1
+					0xcc05dce0 = 1
 				endif
-				if GotParam \{no_ref}
-					add_part_in_appearance_to_cache part_type = <part> desc_id = <hat_hair> no_ref
+				if gotparam \{0x1fe128af}
+					0xbaf89f2d part_type = <part> desc_id = <hat_hair> 0x1fe128af
 				else
-					add_part_in_appearance_to_cache part_type = <part> desc_id = <hat_hair>
+					0xbaf89f2d part_type = <part> desc_id = <hat_hair>
 				endif
-				if (<unload_pak_after_caching> = 1)
+				if (<0xcc05dce0> = 1)
 					unload_part_desc_pak part_type = <part>
 				endif
 			endif
 		endif
 	else
-		debug_ScriptAssert qs(0x0e84b604) a = <desc_id> b = <part_type>
+		0x93d8d5cf qs(0x0e84b604) a = <desc_id> b = <part_type>
 	endif
 endscript
 
-script remove_part_in_appearance_from_cache 
-	ResolveBodySpecificPartInAppearance appearance = <appearance> part = <part_type>
-	if StructureContains Structure = <appearance> <part>
+script 0x4f3fed72 
+	resolvebodyspecificpartinappearance appearance = <appearance> part = <part_type>
+	if structurecontains structure = <appearance> <part>
 		desc_id = (<appearance>.<part>.desc_id)
-		remove_part_from_cache part_type = <part> desc_id = <desc_id>
+		0x51979d5e part_type = <part> desc_id = <desc_id>
 	endif
 endscript
 
-script cache_parts_in_appearance 
-	if cache_parts_in_appearance_setup <...>
+script 0xfb4ec1d6 
+	if 0xccaf9669 <...>
 		begin
-		if NOT cache_parts_in_appearance_loop appearance = <appearance>
+		if NOT 0x7f5001ce appearance = <appearance>
 			break
 		endif
-		Wait \{1
+		wait \{1
 			gameframe}
 		repeat
 	endif
-	cache_parts_in_appearance_shutdown
+	0xe71b17e8
 endscript
 
-script load_cached_part_pak \{async = 0}
-	if NOT GotParam \{cached_part_struct}
-		get_cached_part part = <part> desc_id = <desc_id>
+script 0x4b6e50ba \{async = 0}
+	if NOT gotparam \{0x9c8a3b7a}
+		0xc4dfc41c part = <part> desc_id = <desc_id>
 	endif
-	if StructureContains Structure = <cached_part_struct> add_to_nodes
-		PushAssetContext context = <asset_context>
-		GetArraySize (<cached_part_struct>.add_to_nodes)
+	if structurecontains structure = <0x9c8a3b7a> add_to_nodes
+		pushassetcontext context = <asset_context>
+		getarraysize (<0x9c8a3b7a>.add_to_nodes)
 		i = 0
 		begin
-		node_child_struct = (<cached_part_struct>.add_to_nodes [<i>])
-		if GetActualCASOptionStruct part = (<node_child_struct>.part_type) desc_id = (<node_child_struct>.desc_id)
+		node_child_struct = (<0x9c8a3b7a>.add_to_nodes [<i>])
+		if getactualcasoptionstruct part = (<node_child_struct>.part_type) desc_id = (<node_child_struct>.desc_id)
 			if (<async> = 1)
-				IncrementPartPakLoading
-				LoadPak <pak> heap = <heap> load_callback = LoadPartPak_Done callback_data = none
+				incrementpartpakloading
+				loadpak <pak> heap = <heap> load_callback = loadpartpak_done callback_data = none
 			else
-				LoadPak <pak> heap = <heap>
+				loadpak <pak> heap = <heap>
 			endif
 		endif
 		i = (<i> + 1)
 		repeat <array_size>
-		PopAssetContext
+		popassetcontext
 		return \{true}
-	elseif StructureContains Structure = <cached_part_struct> pak
-		pak = (<cached_part_struct>.pak)
-		PushAssetContext context = <asset_context>
+	elseif structurecontains structure = <0x9c8a3b7a> pak
+		pak = (<0x9c8a3b7a>.pak)
+		pushassetcontext context = <asset_context>
 		if (<async> = 1)
-			IncrementPartPakLoading
-			LoadPak <pak> heap = <heap> load_callback = LoadPartPak_Done callback_data = none
+			incrementpartpakloading
+			loadpak <pak> heap = <heap> load_callback = loadpartpak_done callback_data = none
 		else
-			LoadPak <pak> heap = <heap>
+			loadpak <pak> heap = <heap>
 		endif
-		PopAssetContext
+		popassetcontext
 		return \{true}
 	endif
 	return \{false}
 endscript
 
-script unload_cached_part_pak 
-	if NOT GotParam \{cached_part_struct}
-		get_cached_part part = <part> desc_id = <desc_id>
+script 0xfcdb12cb 
+	if NOT gotparam \{0x9c8a3b7a}
+		0xc4dfc41c part = <part> desc_id = <desc_id>
 	endif
-	if StructureContains Structure = <cached_part_struct> node_paks
-		GetArraySize (<cached_part_struct>.node_paks)
+	if structurecontains structure = <0x9c8a3b7a> 0x74303e14
+		getarraysize (<0x9c8a3b7a>.0x74303e14)
 		i = 0
 		begin
-		node_child_name = (<cached_part_struct>.node_paks [<i>])
+		0xc04dade1 = (<0x9c8a3b7a>.0x74303e14 [<i>])
 		if (<async> = 1)
-			IncrementPartPakUnloading
-			SpawnScriptLater UnloadAppearancePak_Async params = {asset_context = <asset_context> pak = <node_child_name>}
+			incrementpartpakunloading
+			spawnscriptlater unloadappearancepak_async params = {asset_context = <asset_context> pak = <0xc04dade1>}
 		else
-			PushAssetContext context = <asset_context>
-			UnloadPak <node_child_name>
-			if NOT GotParam \{no_wait}
-				WaitUnloadPak <node_child_name> Block
+			pushassetcontext context = <asset_context>
+			unloadpak <0xc04dade1>
+			if NOT gotparam \{no_wait}
+				waitunloadpak <0xc04dade1> block
 			endif
-			PopAssetContext
+			popassetcontext
 		endif
 		i = (<i> + 1)
 		repeat <array_size>
 		return \{true}
-	elseif StructureContains Structure = <cached_part_struct> pak
-		pak = (<cached_part_struct>.pak)
+	elseif structurecontains structure = <0x9c8a3b7a> pak
+		pak = (<0x9c8a3b7a>.pak)
 		if (<async> = 1)
-			IncrementPartPakUnloading
-			SpawnScriptLater UnloadAppearancePak_Async params = {asset_context = <asset_context> pak = <pak>}
+			incrementpartpakunloading
+			spawnscriptlater unloadappearancepak_async params = {asset_context = <asset_context> pak = <pak>}
 		else
-			PushAssetContext context = <asset_context>
-			UnloadPak <pak>
-			if NOT GotParam \{no_wait}
-				WaitUnloadPak <pak> Block
+			pushassetcontext context = <asset_context>
+			unloadpak <pak>
+			if NOT gotparam \{no_wait}
+				waitunloadpak <pak> block
 			endif
-			PopAssetContext
+			popassetcontext
 		endif
 		return \{true}
 	endif
 endscript
 
-script dump_part_cache 
-	debug_Printf \{qs(0xc080aee1)}
-	dump_list = []
-	GetArraySize ($car_part_cache)
+script 0x39cf47f4 
+	0x8dbdaee4 \{qs(0xc080aee1)}
+	0xc245fbf7 = []
+	getarraysize ($0x1f144dea)
 	if (<array_size> < 1)
-		debug_Printf \{qs(0x3de76e3b)}
+		0x8dbdaee4 \{qs(0x3de76e3b)}
 		return
 	endif
 	i = 0
 	begin
-	temp_part = ($car_part_cache [<i>])
-	add_to_list = 1
-	if GotParam \{part_type}
-		if NOT (<temp_part>.part_type = <part_type>)
-			add_to_list = 0
+	0x1ff90073 = ($0x1f144dea [<i>])
+	0x6eeda48a = 1
+	if gotparam \{part_type}
+		if NOT (<0x1ff90073>.part_type = <part_type>)
+			0x6eeda48a = 0
 		endif
 	endif
-	if GotParam \{desc_id}
-		if NOT (<temp_part>.desc_id = <desc_id>)
-			add_to_list = 0
+	if gotparam \{desc_id}
+		if NOT (<0x1ff90073>.desc_id = <desc_id>)
+			0x6eeda48a = 0
 		endif
 	endif
-	if (<add_to_list> = 1)
-		AddArrayElement array = <dump_list> element = <temp_part>
-		dump_list = <array>
+	if (<0x6eeda48a> = 1)
+		addarrayelement array = <0xc245fbf7> element = <0x1ff90073>
+		0xc245fbf7 = <array>
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	debug_PrintStruct <dump_list>
+	0xe6b61ea6 <0xc245fbf7>
 endscript
 
 script load_part_desc_pak \{heap = heap_song}
-	if NOT StructureContains Structure = ($car_part_desc_paks) <part_type>
-		debug_Printf qs(0x7f310966) a = <part_type>
+	if NOT structurecontains structure = ($car_part_desc_paks) <part_type>
+		0x8dbdaee4 qs(0x7f310966) a = <part_type>
 		return \{true}
 	endif
 	temp_struct = ($car_part_desc_paks.<part_type>)
-	if NOT StructureContains Structure = <temp_struct> is_loaded
-		temp_struct = {<temp_struct> is_loaded = 0}
+	if NOT structurecontains structure = <temp_struct> 0xe4313507
+		temp_struct = {<temp_struct> 0xe4313507 = 0}
 	endif
-	if NOT (<temp_struct>.is_loaded = 1)
-		PushAssetContext context = <heap>
-		LoadPak (<temp_struct>.pak) heap = <heap>
-		PopAssetContext
-		temp_struct = {<temp_struct> is_loaded = 1 heap = <heap>}
-		UpdateStructElement struct = $car_part_desc_paks element = <part_type> value = <temp_struct>
+	if NOT (<temp_struct>.0xe4313507 = 1)
+		pushassetcontext context = <heap>
+		loadpak (<temp_struct>.pak) heap = <heap>
+		popassetcontext
+		temp_struct = {<temp_struct> 0xe4313507 = 1 heap = <heap>}
+		updatestructelement struct = $car_part_desc_paks element = <part_type> value = <temp_struct>
 		change car_part_desc_paks = <newstruct>
 		return \{false}
 	endif
@@ -316,53 +316,53 @@ script load_part_desc_pak \{heap = heap_song}
 endscript
 
 script unload_part_desc_pak 
-	if NOT StructureContains Structure = ($car_part_desc_paks) <part_type>
+	if NOT structurecontains structure = ($car_part_desc_paks) <part_type>
 		switch (<part_type>)
-			case CAS_Body
+			case cas_body
 			case cas_physique
-			case CAS_Full_Instrument
+			case cas_full_instrument
 			return
 			default
-			debug_ScriptAssert \{qs(0xae803f64)}
+			0x93d8d5cf \{qs(0xae803f64)}
 		endswitch
 	endif
 	temp_struct = ($car_part_desc_paks.<part_type>)
-	if NOT StructureContains Structure = <temp_struct> is_loaded
+	if NOT structurecontains structure = <temp_struct> 0xe4313507
 		return
 	endif
-	if (<temp_struct>.is_loaded = 1)
-		PushAssetContext context = (<temp_struct>.heap)
-		UnloadPak (<temp_struct>.pak)
-		PopAssetContext
-		temp_struct = {<temp_struct> is_loaded = 0}
-		UpdateStructElement struct = $car_part_desc_paks element = <part_type> value = <temp_struct>
+	if (<temp_struct>.0xe4313507 = 1)
+		pushassetcontext context = (<temp_struct>.heap)
+		unloadpak (<temp_struct>.pak)
+		popassetcontext
+		temp_struct = {<temp_struct> 0xe4313507 = 0}
+		updatestructelement struct = $car_part_desc_paks element = <part_type> value = <temp_struct>
 		change car_part_desc_paks = <newstruct>
 	endif
 endscript
 
-script load_all_part_desc_paks 
-	heap_list = [heap_song BottomUpHeap]
-	if GotParam \{alternate_heap}
-		if (<alternate_heap> = 1)
-			heap_list = [heap_song BottomUpHeap]
+script 0xd4905dfc 
+	0x9f6a53bc = [heap_song bottomupheap]
+	if gotparam \{0xb17c6bb3}
+		if (<0xb17c6bb3> = 1)
+			0x9f6a53bc = [heap_song bottomupheap]
 		endif
 	endif
-	GetArraySize (<heap_list>)
-	max_heap_index = (<array_size> - 1)
-	current_heap_index = 0
-	GetArraySize ($master_editable_list)
+	getarraysize (<0x9f6a53bc>)
+	0x90627e26 = (<array_size> - 1)
+	0x5caa84a4 = 0
+	getarraysize ($master_editable_list)
 	i = 0
 	begin
-	master_edit_struct = ($master_editable_list [<i>])
-	part_type = (<master_edit_struct>.part)
-	heap = (<heap_list> [<current_heap_index>])
-	if StructureContains Structure = ($car_part_desc_paks) <part_type>
-		if IsRoomForFileInHeapContext file = ($car_part_desc_paks.<part_type>.pak) context = <heap>
+	0x61e827a0 = ($master_editable_list [<i>])
+	part_type = (<0x61e827a0>.part)
+	heap = (<0x9f6a53bc> [<0x5caa84a4>])
+	if structurecontains structure = ($car_part_desc_paks) <part_type>
+		if 0xe86416fc file = ($car_part_desc_paks.<part_type>.pak) context = <heap>
 			load_part_desc_pak part_type = <part_type> heap = <heap>
 		else
-			current_heap_index = (<current_heap_index> + 1)
-			if (<current_heap_index> > <max_heap_index>)
-				debug_ScriptAssert \{qs(0xec94660e)}
+			0x5caa84a4 = (<0x5caa84a4> + 1)
+			if (<0x5caa84a4> > <0x90627e26>)
+				0x93d8d5cf \{qs(0xec94660e)}
 			endif
 			i = (<i> - 1)
 		endif
@@ -371,85 +371,85 @@ script load_all_part_desc_paks
 	repeat <array_size>
 endscript
 
-script unload_all_part_desc_paks 
-	if NOT GlobalExists \{name = car_part_desc_paks}
+script 0xf8e735a8 
+	if NOT globalexists \{name = car_part_desc_paks}
 		return
 	endif
-	GetArraySize ($master_editable_list)
+	getarraysize ($master_editable_list)
 	i = 0
 	begin
-	master_edit_struct = ($master_editable_list [<i>])
-	part_type = (<master_edit_struct>.part)
-	if StructureContains Structure = ($car_part_desc_paks) <part_type>
+	0x61e827a0 = ($master_editable_list [<i>])
+	part_type = (<0x61e827a0>.part)
+	if structurecontains structure = ($car_part_desc_paks) <part_type>
 		unload_part_desc_pak part_type = <part_type>
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
 endscript
 
-script dump_loaded_part_desc_paks 
-	debug_Printf \{qs(0x84d2d657)}
-	should_assert = 0
-	GetArraySize ($master_editable_list)
+script 0x6af9e5dc 
+	0x8dbdaee4 \{qs(0x84d2d657)}
+	0x31e13444 = 0
+	getarraysize ($master_editable_list)
 	i = 0
 	begin
-	master_edit_struct = ($master_editable_list [<i>])
-	part_type = (<master_edit_struct>.part)
-	if StructureContains Structure = ($car_part_desc_paks) <part_type>
+	0x61e827a0 = ($master_editable_list [<i>])
+	part_type = (<0x61e827a0>.part)
+	if structurecontains structure = ($car_part_desc_paks) <part_type>
 		temp_struct = ($car_part_desc_paks.<part_type>)
-		is_loaded = 0
-		if StructureContains Structure = <temp_struct> is_loaded
-			is_loaded = (<temp_struct>.is_loaded)
+		0xe4313507 = 0
+		if structurecontains structure = <temp_struct> 0xe4313507
+			0xe4313507 = (<temp_struct>.0xe4313507)
 		endif
-		on_heap = none
-		if StructureContains Structure = <temp_struct> heap
-			if IsPakLoaded (<temp_struct>.pak) heap = (<temp_struct>.heap)
-				on_heap = (<temp_struct>.heap)
+		0x0bbdd740 = none
+		if structurecontains structure = <temp_struct> heap
+			if ispakloaded (<temp_struct>.pak) heap = (<temp_struct>.heap)
+				0x0bbdd740 = (<temp_struct>.heap)
 			endif
 		endif
-		if (<is_loaded> = 0)
-			if NOT (<on_heap> = none)
-				debug_Printf qs(0x4c341dde) a = <part_type> b = <on_heap>
-				should_assert = 1
+		if (<0xe4313507> = 0)
+			if NOT (<0x0bbdd740> = none)
+				0x8dbdaee4 qs(0x4c341dde) a = <part_type> b = <0x0bbdd740>
+				0x31e13444 = 1
 			endif
 		else
-			if NOT (<on_heap> = none)
-				debug_Printf qs(0xf4efa7ad) a = <part_type> b = <on_heap>
+			if NOT (<0x0bbdd740> = none)
+				0x8dbdaee4 qs(0xf4efa7ad) a = <part_type> b = <0x0bbdd740>
 			else
-				debug_Printf qs(0x560c3271) a = <part_type>
-				should_assert = 1
+				0x8dbdaee4 qs(0x560c3271) a = <part_type>
+				0x31e13444 = 1
 			endif
 		endif
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	if GotParam \{assert}
-		if (<should_assert> = 1)
-			debug_ScriptAssert \{qs(0xbb5e6c67)}
+	if gotparam \{assert}
+		if (<0x31e13444> = 1)
+			0x93d8d5cf \{qs(0xbb5e6c67)}
 		endif
 	endif
 endscript
 
-script load_part_desc_pak_list 
-	parts_loaded = []
-	GetArraySize <part_list>
+script 0xbe6e9296 
+	0x63cedf49 = []
+	getarraysize <part_list>
 	if (<array_size> < 1)
-		return \{parts_loaded = [
+		return \{0x63cedf49 = [
 			]}
 	endif
 	i = 0
 	begin
 	if NOT load_part_desc_pak part_type = (<part_list> [<i>])
-		AddArrayElement array = <parts_loaded> element = (<part_list> [<i>])
-		parts_loaded = <array>
+		addarrayelement array = <0x63cedf49> element = (<part_list> [<i>])
+		0x63cedf49 = <array>
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	return parts_loaded = <parts_loaded>
+	return 0x63cedf49 = <0x63cedf49>
 endscript
 
-script unload_part_desc_pak_list 
-	GetArraySize <part_list>
+script 0x9219fac2 
+	getarraysize <part_list>
 	if (<array_size> < 1)
 		return
 	endif
@@ -460,129 +460,129 @@ script unload_part_desc_pak_list
 	repeat <array_size>
 endscript
 
-script init_random_cache_queue 
-	if StructureContains Structure = ($randomizer_part_cache) <genre>
-		if NOT StructureContains Structure = ($randomizer_part_cache.<genre>) <part_type>
-			dummy_struct = ($randomizer_part_cache.<genre>)
-			AddParam structure_name = dummy_struct name = <part_type> value = []
-			UpdateStructElement struct = $randomizer_part_cache element = <genre> value = <dummy_struct>
-			change randomizer_part_cache = <newstruct>
+script 0xe55f0d87 
+	if structurecontains structure = ($0xa32e828a) <genre>
+		if NOT structurecontains structure = ($0xa32e828a.<genre>) <part_type>
+			dummy_struct = ($0xa32e828a.<genre>)
+			addparam structure_name = dummy_struct name = <part_type> value = []
+			updatestructelement struct = $0xa32e828a element = <genre> value = <dummy_struct>
+			change 0xa32e828a = <newstruct>
 		endif
 	else
 		dummy_struct = {}
-		AddParam \{structure_name = dummy_struct
-			name = low_number_parts
+		addparam \{structure_name = dummy_struct
+			name = 0x93157503
 			value = [
 			]}
-		AddParam structure_name = dummy_struct name = <part_type> value = []
-		UpdateStructElement struct = randomizer_part_cache element = <genre> value = <dummy_struct>
-		change randomizer_part_cache = <newstruct>
+		addparam structure_name = dummy_struct name = <part_type> value = []
+		updatestructelement struct = 0xa32e828a element = <genre> value = <dummy_struct>
+		change 0xa32e828a = <newstruct>
 	endif
 endscript
 
-script queue_random_cache_part 
-	queue_random_cache_part_setup <...>
+script 0xf9aae7bd 
+	0xba84b155 <...>
 	begin
-	if NOT queue_random_cache_part_loop
+	if NOT 0x8836ad8e
 		break
 	endif
-	if GotParam \{async}
-		Wait \{1
+	if gotparam \{async}
+		wait \{1
 			gameframe}
 	endif
 	repeat
-	queue_random_cache_part_shutdown
+	0xbc13404f
 endscript
 
-script fill_random_part_queues 
-	male_dummy_appearance = {CAS_Body = {desc_id = GH4_CAR_Male}}
-	female_dummy_appearance = {CAS_Body = {desc_id = GH4_CAR_Female}}
-	GetArraySize ($cas_randomized_parts)
+script 0x971fa914 
+	0x8a4e63f1 = {cas_body = {desc_id = gh4_car_male}}
+	0x5a57a328 = {cas_body = {desc_id = gh4_car_female}}
+	getarraysize ($cas_randomized_parts)
 	i = 0
 	begin
 	part_type = ($cas_randomized_parts [<i>].part)
-	if ResolveBodySpecificPartInAppearance appearance = <male_dummy_appearance> part = <part_type>
-		queue_random_cache_part part_type = <part>
-		if ResolveBodySpecificPartInAppearance appearance = <female_dummy_appearance> part = <part_type>
-			queue_random_cache_part part_type = <part>
+	if resolvebodyspecificpartinappearance appearance = <0x8a4e63f1> part = <part_type>
+		0xf9aae7bd part_type = <part>
+		if resolvebodyspecificpartinappearance appearance = <0x5a57a328> part = <part_type>
+			0xf9aae7bd part_type = <part>
 		endif
 	else
-		queue_random_cache_part part_type = <part_type>
+		0xf9aae7bd part_type = <part_type>
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
 endscript
 
-script empty_genre_from_random_part_queue 
-	GetArraySize ($Genre_List)
+script 0x5a2ee4d5 
+	getarraysize ($genre_list)
 	genre_count = <array_size>
-	genre_loop = 0
+	0xe54d3be1 = 0
 	begin
-	genre = (($Genre_List [<genre_loop>]).desc_id)
+	genre = (($genre_list [<0xe54d3be1>]).desc_id)
 	if NOT (<genre> = any)
-		queue_array = ($randomizer_part_cache.<genre>.<part_type>)
-		GetArraySize (<queue_array>)
+		0x0a881629 = ($0xa32e828a.<genre>.<part_type>)
+		getarraysize (<0x0a881629>)
 		part_count = <array_size>
 		part_loop = 0
 		begin
-		remove_part_from_cache part_type = <part_type> desc_id = (<queue_array> [<part_loop>])
+		0x51979d5e part_type = <part_type> desc_id = (<0x0a881629> [<part_loop>])
 		part_loop = (<part_loop> + 1)
 		repeat <part_count>
 	endif
-	genre_loop = (<genre_loop> + 1)
+	0xe54d3be1 = (<0xe54d3be1> + 1)
 	repeat <genre_count>
 endscript
 
-script empty_random_part_queues 
-	male_dummy_appearance = {CAS_Body = {desc_id = GH4_CAR_Male}}
-	female_dummy_appearance = {CAS_Body = {desc_id = GH4_CAR_Female}}
-	GetArraySize ($cas_randomized_parts)
-	part_type_count = <array_size>
-	part_type_loop = 0
+script 0xa2cdaafd 
+	0x8a4e63f1 = {cas_body = {desc_id = gh4_car_male}}
+	0x5a57a328 = {cas_body = {desc_id = gh4_car_female}}
+	getarraysize ($cas_randomized_parts)
+	0x415fb9ae = <array_size>
+	0x49821931 = 0
 	begin
-	part_type = ($cas_randomized_parts [<part_type_loop>].part)
-	if ResolveBodySpecificPartInAppearance appearance = <male_dummy_appearance> part = <part_type>
-		empty_genre_from_random_part_queue {<...> part_type = <part>}
-		if ResolveBodySpecificPartInAppearance appearance = <female_dummy_appearance> part = <part_type>
-			empty_genre_from_random_part_queue {<...> part_type = <part>}
+	part_type = ($cas_randomized_parts [<0x49821931>].part)
+	if resolvebodyspecificpartinappearance appearance = <0x8a4e63f1> part = <part_type>
+		0x5a2ee4d5 {<...> part_type = <part>}
+		if resolvebodyspecificpartinappearance appearance = <0x5a57a328> part = <part_type>
+			0x5a2ee4d5 {<...> part_type = <part>}
 		endif
 	else
-		empty_genre_from_random_part_queue <...>
+		0x5a2ee4d5 <...>
 	endif
-	part_type_loop = (<part_type_loop> + 1)
-	repeat <part_type_count>
-	change \{randomizer_part_cache = {
+	0x49821931 = (<0x49821931> + 1)
+	repeat <0x415fb9ae>
+	change \{0xa32e828a = {
 		}}
 endscript
 
-script get_random_part_from_queue 
-	if NOT StructureContains Structure = ($randomizer_part_cache) <genre>
-		<genre> = (($song_genre_list.<genre>).car_genre)
+script 0x35d95d03 
+	if NOT structurecontains structure = ($0xa32e828a) <genre>
+		<genre> = (($song_genre_list.<genre>).0xa30449d0)
 	endif
 	begin
 	if NOT (<genre> = any)
 		break
 	endif
-	GetArraySize ($Genre_List)
-	GetRandomValue name = rand_val a = 0 b = (<array_size> - 1) name = idx Integer
-	genre = (($Genre_List [<idx>]).desc_id)
+	getarraysize ($genre_list)
+	getrandomvalue name = rand_val a = 0 b = (<array_size> - 1) name = idx integer
+	genre = (($genre_list [<idx>]).desc_id)
 	repeat
-	queue_array = ($randomizer_part_cache.<genre>.<part_type>)
-	GetArraySize (<queue_array>)
+	0x0a881629 = ($0xa32e828a.<genre>.<part_type>)
+	getarraysize (<0x0a881629>)
 	if (<array_size> < 1)
-		queue_random_cache_part part_type = <part_type> async
-		queue_array = ($randomizer_part_cache.<genre>.<part_type>)
-		GetArraySize (<queue_array>)
+		0xf9aae7bd part_type = <part_type> async
+		0x0a881629 = ($0xa32e828a.<genre>.<part_type>)
+		getarraysize (<0x0a881629>)
 	endif
-	GetRandomValue name = rand_val a = 0 b = (<array_size> - 1) name = idx Integer
-	target_part_desc_id = (($randomizer_part_cache.<genre>.<part_type>) [<idx>])
-	if NOT IsInArray array = ($randomizer_part_cache.<genre>.low_number_parts) element = <part_type>
-		remove_part_from_cache part_type = <part_type> desc_id = <target_part_desc_id>
-		RemoveArrayElement array = <queue_array> index = <idx>
-		queue_array = <array>
-		UpdateStructElement struct = ($randomizer_part_cache.<genre>) element = <part_type> value = <queue_array>
-		UpdateStructElement struct = $randomizer_part_cache element = <genre> value = <newstruct>
-		change randomizer_part_cache = <newstruct>
+	getrandomvalue name = rand_val a = 0 b = (<array_size> - 1) name = idx integer
+	0x2bbc2c14 = (($0xa32e828a.<genre>.<part_type>) [<idx>])
+	if NOT 0x8017346b array = ($0xa32e828a.<genre>.0x93157503) element = <part_type>
+		0x51979d5e part_type = <part_type> desc_id = <0x2bbc2c14>
+		removearrayelement array = <0x0a881629> index = <idx>
+		0x0a881629 = <array>
+		updatestructelement struct = ($0xa32e828a.<genre>) element = <part_type> value = <0x0a881629>
+		updatestructelement struct = $0xa32e828a element = <genre> value = <newstruct>
+		change 0xa32e828a = <newstruct>
 	endif
-	return part_desc_id = <target_part_desc_id>
+	return part_desc_id = <0x2bbc2c14>
 endscript

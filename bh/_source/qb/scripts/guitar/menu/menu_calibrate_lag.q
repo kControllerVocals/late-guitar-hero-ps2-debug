@@ -4,8 +4,8 @@ calibrate_lag_failed_num = 0
 calibrate_lag_fail_threshold_num = 3
 calibrate_lag_menu_line_pos = (345.0, 360.0)
 calibrate_lag_menu_circle_dims = (156.0, 156.0)
-calibrate_lag_menu_circle_dim_w = 156
-calibrate_lag_menu_circle_dim_h = 156
+0x7bdd23fe = 156
+0xf6d52e0b = 156
 calibrate_lag_menu_circle_velocity = 300
 calibrate_lag_menu_circle_inital_pos = (345.0, -146.0)
 calibrate_lag_menu_circle_separation = 320
@@ -59,13 +59,13 @@ script setup_calibration_lag_none
 endscript
 
 script create_calibrate_lag_dialog_menu 
-	Menu_Music_Off
+	menu_music_off
 	if (<dialog> = 1)
 		setup_calibration_lag_dialog_1
-		<title> = qs("Audio Test")
+		<title> = qs(0xeccb9b18)
 	elseif (<dialog> = 2)
 		setup_calibration_lag_dialog_2
-		<title> = qs("Video Test")
+		<title> = qs(0xf5e62291)
 	endif
 	menu_calibrate_lag_create_background \{z = 80}
 	memcard_cleanup_messages
@@ -76,8 +76,8 @@ script create_calibrate_lag_dialog_menu
 		options = [
 			{
 				func = {ui_event}
-				func_params = {event = menu_back data = {state = UIstate_options_calibrate_lag}}
-				text = qs("CONTINUE")
+				func_params = {event = menu_back data = {state = uistate_options_calibrate_lag}}
+				text = qs(0x182f0173)
 			}
 		]
 	}
@@ -92,30 +92,30 @@ endscript
 script create_calibrate_lag_menu \{from_in_game = 1}
 	change calibrate_lag_most_recent_in_game_setting = <from_in_game>
 	change \{check_for_unplugged_controllers = 0}
-	circle_w = $calibrate_lag_menu_circle_dim_w
-	circle_h = $calibrate_lag_menu_circle_dim_h
-	line_x = 345
-	line_y = 360
-	initial_x = 345
-	initial_y = -146
-	ping_w = 32
-	ping_h = 32
-	GetDisplaySettings
+	0x8e41cbdb = $0x7bdd23fe
+	0x0349c62e = $0xf6d52e0b
+	0x5331b52f = 345
+	0x243685b9 = 360
+	0x9742274d = 345
+	0xe04517db = -146
+	0xb41ebe30 = 32
+	0x3916b3c5 = 32
+	getdisplaysettings
 	if (<widescreen> = false)
-		bloat = 0.24444444
-		circle_bloat = (<circle_w> * <bloat>)
-		circle_w = (<circle_w> + <circle_bloat>)
-		line_x = (<line_x> - (0.5 * <circle_bloat>))
-		initial_x = (<initial_x> - (0.5 * <circle_bloat>))
-		ping_w = (<ping_w> * (1.0 + <bloat>))
+		0xc3da07aa = 0.24444444
+		0x3e38a4cd = (<0x8e41cbdb> * <0xc3da07aa>)
+		0x8e41cbdb = (<0x8e41cbdb> + <0x3e38a4cd>)
+		0x5331b52f = (<0x5331b52f> - (0.5 * <0x3e38a4cd>))
+		0x9742274d = (<0x9742274d> - (0.5 * <0x3e38a4cd>))
+		0xb41ebe30 = (<0xb41ebe30> * (1.0 + <0xc3da07aa>))
 	endif
-	change calibrate_lag_menu_circle_dims = ((<circle_w> * (1.0, 0.0)) + (<circle_h> * (0.0, 1.0)))
-	change calibrate_lag_menu_line_pos = ((<line_x> * (1.0, 0.0)) + (<line_y> * (0.0, 1.0)))
-	change calibrate_lag_menu_circle_inital_pos = ((<initial_x> * (1.0, 0.0)) + (<initial_y> * (0.0, 1.0)))
-	ping_dims = ((<ping_w> * (1.0, 0.0)) + (<ping_h> * (0.0, 1.0)))
+	change calibrate_lag_menu_circle_dims = ((<0x8e41cbdb> * (1.0, 0.0)) + (<0x0349c62e> * (0.0, 1.0)))
+	change calibrate_lag_menu_line_pos = ((<0x5331b52f> * (1.0, 0.0)) + (<0x243685b9> * (0.0, 1.0)))
+	change calibrate_lag_menu_circle_inital_pos = ((<0x9742274d> * (1.0, 0.0)) + (<0xe04517db> * (0.0, 1.0)))
+	0xb8d766c3 = ((<0xb41ebe30> * (1.0, 0.0)) + (<0x3916b3c5> * (0.0, 1.0)))
 	disable_pause
-	Menu_Music_Off
-	if ViewportExists \{id = bg_viewport}
+	menu_music_off
+	if viewportexists \{id = bg_viewport}
 		disable_bg_viewport
 	endif
 	change \{calibrate_lag_end_checks = 0}
@@ -141,8 +141,8 @@ script create_calibrate_lag_menu \{from_in_game = 1}
 	menu_calibrate_lag_create_background <...>
 	menu_calibrate_lag_setup_vmenu <...>
 	menu_calibrate_lag_update_text
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = cl_container
 		id = calibrate_lag_target
 		texture = options_calibrate_lag_target
@@ -152,52 +152,52 @@ script create_calibrate_lag_menu \{from_in_game = 1}
 		z_priority = (<z> + 50)
 		alpha = 0.75
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = cl_container
-		id = cl_ping_ID
+		id = cl_ping_id
 		texture = options_calibrate_lag_ping
 		pos = ($calibrate_lag_menu_line_pos + ($calibrate_lag_menu_circle_dims * 0.5) + (-19.0, -4.0))
 		just = [center center]
-		dims = <ping_dims>
+		dims = <0xb8d766c3>
 		scale = 5
 		z_priority = (<z> + 80)
 		alpha = 0
 	}
 	clean_up_user_control_helpers
-	add_user_control_helper \{text = qs("SELECT")
+	add_user_control_helper \{text = qs(0xc18d5e76)
 		button = green
 		z = 10000
 		all_buttons}
-	add_user_control_helper \{text = qs("BACK")
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red
 		z = 10000}
-	add_user_control_helper \{text = qs("UP/DOWN")
+	add_user_control_helper \{text = qs(0x643800a7)
 		button = strumbar
 		z = 10000}
 
 	if (($calibrate_lag_section = video) || ($calibrate_lag_section = audio))
-		if ScreenElementExists \{id = cl_vmenu}
+		if screenelementexists \{id = cl_vmenu}
 			change \{allow_console_pause_for_cal_lag = 1}
-			GetScreenElementChildren \{id = cl_vmenu}
+			getscreenelementchildren \{id = cl_vmenu}
 			<id> = (<children> [0])
-			RunScriptOnScreenElement id = <id> menu_calibrate_lag_create_circles params = {z = <z> device_num = $calibrate_lag_most_recent_controller}
+			runscriptonscreenelement id = <id> menu_calibrate_lag_create_circles params = {z = <z> device_num = $calibrate_lag_most_recent_controller}
 		endif
 	endif
 endscript
 
 script menu_calibrate_lag_create_background \{z = 700}
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = root_window
 		id = cl_container
 		pos = (0.0, 0.0)
 		exclusive_device = ($calibrate_lag_most_recent_controller)
 	}
-	CreateScreenElement {
+	createscreenelement {
 		parent = cl_container
 		id = current_menu_anchor
-		type = DescInterface
+		type = descinterface
 		desc = 'calibrate_lag'
 		z_priority = <z>
 	}
@@ -205,7 +205,7 @@ script menu_calibrate_lag_create_background \{z = 700}
 endscript
 
 script menu_calibrate_lag_setup_vmenu 
-	if GotParam \{go_back_script}
+	if gotparam \{go_back_script}
 		calib_eh = [
 			{pad_back menu_calibrate_go_back params = {go_back_script = <go_back_script>}}
 		]
@@ -214,70 +214,70 @@ script menu_calibrate_lag_setup_vmenu
 			{pad_back menu_calibrate_go_back}
 		]
 	endif
-	if NOT current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_vmenu}
+	if NOT current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_vmenu}
 
 	endif
-	AssignAlias id = <resolved_id> alias = cl_vmenu
-	cl_vmenu :SE_SetProps event_handlers = <calib_eh> exclusive_device = ($calibrate_lag_most_recent_controller)
-	if NOT GetScreenElementChildren \{id = cl_vmenu}
+	assignalias id = <resolved_id> alias = cl_vmenu
+	cl_vmenu :se_setprops event_handlers = <calib_eh> exclusive_device = ($calibrate_lag_most_recent_controller)
+	if NOT getscreenelementchildren \{id = cl_vmenu}
 
 	endif
-	GetArraySize <children>
+	getarraysize <children>
 	if (<array_size> != 4)
 
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_audio_text}
-		AssignAlias id = <resolved_id> alias = cl_option_audio_text
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_audio_text}
+		assignalias id = <resolved_id> alias = cl_option_audio_text
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_audio_ms}
-		AssignAlias id = <resolved_id> alias = cl_option_audio_ms
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_audio_ms}
+		assignalias id = <resolved_id> alias = cl_option_audio_ms
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_video_text}
-		AssignAlias id = <resolved_id> alias = cl_option_video_text
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_video_text}
+		assignalias id = <resolved_id> alias = cl_option_video_text
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_video_ms}
-		AssignAlias id = <resolved_id> alias = cl_option_video_ms
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_video_ms}
+		assignalias id = <resolved_id> alias = cl_option_video_ms
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_audio_arrow_top}
-		AssignAlias id = <resolved_id> alias = cl_option_audio_arrow_top
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_audio_arrow_top}
+		assignalias id = <resolved_id> alias = cl_option_audio_arrow_top
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_audio_arrow_bottom}
-		AssignAlias id = <resolved_id> alias = cl_option_audio_arrow_bottom
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_audio_arrow_bottom}
+		assignalias id = <resolved_id> alias = cl_option_audio_arrow_bottom
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_video_arrow_top}
-		AssignAlias id = <resolved_id> alias = cl_option_video_arrow_top
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_video_arrow_top}
+		assignalias id = <resolved_id> alias = cl_option_video_arrow_top
 	endif
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_calibrate_lag_option_video_arrow_bottom}
-		AssignAlias id = <resolved_id> alias = cl_option_video_arrow_bottom
+	if current_menu_anchor :desc_resolvealias \{name = alias_calibrate_lag_option_video_arrow_bottom}
+		assignalias id = <resolved_id> alias = cl_option_video_arrow_bottom
 	endif
 	event_handlers = [
 		{focus menu_calibrate_focus params = {index = 0}}
 		{unfocus menu_calibrate_unfocus params = {index = 0}}
 		{pad_choose menu_calibrate_lag_create_circles params = {z = <z> device_num = $calibrate_lag_most_recent_controller}}
 	]
-	(<children> [0]) :SE_SetProps event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
+	(<children> [0]) :se_setprops event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
 	event_handlers = [
 		{focus menu_calibrate_focus params = {index = 1}}
 		{unfocus menu_calibrate_unfocus params = {index = 1}}
 		{pad_choose menu_calibrate_lag_reset_lag params = {z = <z>}}
 	]
-	(<children> [1]) :SE_SetProps event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
+	(<children> [1]) :se_setprops event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
 	event_handlers = [
 		{focus menu_calibrate_focus params = {index = 2}}
 		{unfocus menu_calibrate_unfocus params = {index = 2}}
 		{pad_choose menu_calibrate_lag_manual_choose params = {audio}}
 	]
-	(<children> [2]) :SE_SetProps event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
+	(<children> [2]) :se_setprops event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
 	event_handlers = [
 		{focus menu_calibrate_focus params = {index = 3}}
 		{unfocus menu_calibrate_unfocus params = {index = 3}}
 		{pad_choose menu_calibrate_lag_manual_choose}
 	]
-	(<children> [3]) :SE_SetProps event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
-	SetScreenElementLock \{id = cl_vmenu
+	(<children> [3]) :se_setprops event_handlers = <event_handlers> exclusive_device = ($calibrate_lag_most_recent_controller)
+	setscreenelementlock \{id = cl_vmenu
 		on}
 	if ($calibrate_lag_section = none)
-		LaunchEvent \{type = focus
+		launchevent \{type = focus
 			target = cl_vmenu}
 	endif
 endscript
@@ -287,38 +287,38 @@ script destroy_calibrate_lag_menu
 		change \{check_for_unplugged_controllers = 1}
 	endif
 	if ($failed_song = 0)
-		if ViewportExists \{id = bg_viewport}
+		if viewportexists \{id = bg_viewport}
 			enable_bg_viewport
 		endif
 	endif
 	clean_up_user_control_helpers
-	KillSpawnedScript \{name = do_calibration_update}
+	killspawnedscript \{name = do_calibration_update}
 	destroy_menu \{menu_id = cl_container}
-	if ScreenElementExists \{id = cl_manual_adjust_handler}
-		DestroyScreenElement \{id = cl_manual_adjust_handler}
+	if screenelementexists \{id = cl_manual_adjust_handler}
+		destroyscreenelement \{id = cl_manual_adjust_handler}
 	endif
 	set_focus_color \{rgba = $default_menu_focus_color}
 	set_unfocus_color \{rgba = $default_menu_unfocus_color}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = root_window}
 endscript
 
 script menu_calibrate_go_back 
-	set_loading_screen \{full}
-	SetSpawnInstanceLimits \{max = 1
+	0xe9384b7a \{full}
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	Wait \{3
+	wait \{3
 		gameframes}
 	if ($transitions_locked = 1 || $menu_flow_locked > 0)
 		return
 	endif
-	if ScreenElementExists \{id = cl_vmenu}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = cl_vmenu}
+		launchevent \{type = unfocus
 			target = cl_vmenu}
 	endif
 	if ($calibrate_lag_dirty = 1)
 		change \{calibrate_lag_dirty = 0}
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				has_calibrated = 1
 			}}
@@ -331,14 +331,14 @@ script menu_calibrate_go_back
 			generic_menu_pad_back_sound
 			ui_memcard_autosave \{state = uistate_gameplay
 				data = {
-					force_memcard_after_func
+					0x05e47ace
 				}}
 		else
 			generic_menu_pad_back_sound
 			ui_memcard_autosave_replace
 		endif
 	else
-		if GotParam \{go_back_script}
+		if gotparam \{go_back_script}
 			<go_back_script>
 		else
 			if ($playing_song = 1)
@@ -366,34 +366,34 @@ script menu_calibrate_focus
 	else
 		retail_menu_focus \{id = cl_option_video_text}
 	endif
-	Obj_GetID
-	GetTags
-	if current_menu_anchor :Desc_ResolveAlias \{name = alias_highlight}
-		Wait \{2
+	obj_getid
+	gettags
+	if current_menu_anchor :desc_resolvealias \{name = alias_highlight}
+		wait \{2
 			gameframe}
-		<ObjID> :SE_GetParentId
-		<ObjID> :SE_GetProps
+		<objid> :se_getparentid
+		<objid> :se_getprops
 		hscale = ((1.0, 0.0).<scale>)
-		<parent_id> :SE_GetParentId
-		<parent_id> :SE_GetProps
-		<resolved_id> :SE_SetProps rot_angle = <rot_angle>
-		GetScreenElementChildren id = <ObjID>
-		GetScreenElementDims id = (<children> [0])
+		<parent_id> :se_getparentid
+		<parent_id> :se_getprops
+		<resolved_id> :se_setprops rot_angle = <rot_angle>
+		getscreenelementchildren id = <objid>
+		getscreenelementdims id = (<children> [0])
 		<width> = (<width> * <hscale>)
-		<extend> = 15
-		scale = (((1.0, 0.0) * ((<width> + (<extend> * 2)) / 256.0)) + (0.0, 1.3))
-		GetScreenElementPosition id = (<children> [0]) summed
-		<screenelementpos> = (<screenelementpos> - ((1.0, 0.0) * <extend>))
-		<resolved_id> :SE_SetProps pos = {absolute <screenelementpos>} scale = <scale>
-		<resolved_id> :SE_WaitProps
-		GetScreenElementPosition id = (<children> [0]) summed
-		<screenelementpos> = (<screenelementpos> - ((1.0, 0.0) * <extend>))
-		<resolved_id> :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
-		<resolved_id> :SE_WaitProps
-		GetScreenElementPosition id = (<children> [0]) summed
-		<screenelementpos> = (<screenelementpos> - ((1.0, 0.0) * <extend>))
-		<resolved_id> :SE_SetProps pos = {absolute <screenelementpos>} scale = <scale> time = 0.05
-		<resolved_id> :SE_WaitProps
+		<0xc446b6d3> = 15
+		scale = (((1.0, 0.0) * ((<width> + (<0xc446b6d3> * 2)) / 256.0)) + (0.0, 1.3))
+		getscreenelementposition id = (<children> [0]) summed
+		<screenelementpos> = (<screenelementpos> - ((1.0, 0.0) * <0xc446b6d3>))
+		<resolved_id> :se_setprops pos = {absolute <screenelementpos>} scale = <scale>
+		<resolved_id> :se_waitprops
+		getscreenelementposition id = (<children> [0]) summed
+		<screenelementpos> = (<screenelementpos> - ((1.0, 0.0) * <0xc446b6d3>))
+		<resolved_id> :se_setprops pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
+		<resolved_id> :se_waitprops
+		getscreenelementposition id = (<children> [0]) summed
+		<screenelementpos> = (<screenelementpos> - ((1.0, 0.0) * <0xc446b6d3>))
+		<resolved_id> :se_setprops pos = {absolute <screenelementpos>} scale = <scale> time = 0.05
+		<resolved_id> :se_waitprops
 	endif
 endscript
 
@@ -410,37 +410,37 @@ script menu_calibrate_unfocus
 endscript
 
 script menu_calibrate_lag_update_text 
-	GetGlobalTags \{user_options}
-	CastToInteger \{lag_calibration}
+	getglobaltags \{user_options}
+	casttointeger \{lag_calibration}
 	if (<lag_calibration> = 0.0)
 		<lag_calibration> = 1000
 	endif
 	audio_lag = ((<lag_calibration> / 1000) - 1)
-	CastToInteger \{audio_lag}
-	FormatText TextName = lag_value_text qs("\L%d ms") d = <audio_lag>
-	cl_option_audio_ms :SE_SetProps text = <lag_value_text>
-	Mod a = <lag_calibration> b = 1000
-	FormatText TextName = lag_value_text qs("\L%d ms") d = <Mod>
-	cl_option_video_ms :SE_SetProps text = <lag_value_text>
+	casttointeger \{audio_lag}
+	formattext textname = lag_value_text qs(0x21f440f1) d = <audio_lag>
+	cl_option_audio_ms :se_setprops text = <lag_value_text>
+	mod a = <lag_calibration> b = 1000
+	formattext textname = lag_value_text qs(0x21f440f1) d = <mod>
+	cl_option_video_ms :se_setprops text = <lag_value_text>
 endscript
-old_sfx_volume = 7
+0x30211964 = 7
 
 script menu_calibrate_lag_create_circles 
-	GetTags
-	Obj_GetID
-	<id> = <ObjID>
-	StartPinkNoiseLoopForCalirateLagScreen
+	gettags
+	obj_getid
+	<id> = <objid>
+	startpinknoiseloopforcaliratelagscreen
 	if ($transitions_locked = 1 || $menu_flow_locked > 0)
 		return
 	endif
 	user_control_helper_get_buttonchar button = green controller = <device_num>
 	if ($calibrate_lag_section = none)
-		if IsGuitarController controller = <device_num>
-			body_text = qs("First, we will do an audio only calibration. Just strum to the beat of the note. Try to make your strum bar click at exactly the same time as the audible note.")
-		elseif IsDrumController controller = <device_num>
-			body_text = qs("First, we will do an audio only calibration. Hit the tom drum to the beat of the note. Try to hit the tom at exactly the same time as the audible note.")
+		if isguitarcontroller controller = <device_num>
+			body_text = qs(0x0378b9cc)
+		elseif isdrumcontroller controller = <device_num>
+			body_text = qs(0xa1a662c1)
 		else
-			body_text = (qs("First, we will do an audio only calibration. Press ") + <buttonchar> + qs(" to the beat of the note. Try to hit the button at the exact same time as the audible note."))
+			body_text = (qs(0x22040040) + <buttonchar> + qs(0x1f0e8440))
 		endif
 		generic_event_choose data = {
 			state = uistate_options_calibrate_lag_warning
@@ -450,17 +450,17 @@ script menu_calibrate_lag_create_circles
 		}
 		return
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = cl_container
 		id = clm_dummy_event_handler
-		text = qs("\L")
+		text = qs(0x03ac90f0)
 		font = text_a4
 		z_priority = <z>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = clm_dummy_event_handler}
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = cl_vmenu}
 	clean_up_user_control_helpers
 	set_user_control_color \{text_rgba = [
@@ -476,61 +476,61 @@ script menu_calibrate_lag_create_circles
 			200
 		]}
 	if ($calibrate_lag_section = video)
-		if IsGuitarController controller = <device_num>
-			current_menu_anchor :SE_SetProps \{calibrate_lag_bottom_text_text = qs("Strum your guitar when the targets are perfectly aligned.")}
-			add_user_control_helper \{text = qs("STRUM")
+		if isguitarcontroller controller = <device_num>
+			current_menu_anchor :se_setprops \{calibrate_lag_bottom_text_text = qs(0xd51e2c84)}
+			add_user_control_helper \{text = qs(0x677830da)
 				button = strumbar
 				z = 10000}
-		elseif IsDrumController controller = <device_num>
-			current_menu_anchor :SE_SetProps \{calibrate_lag_bottom_text_text = qs("Hit the tom when the targets are perfectly aligned.")}
-			add_user_control_helper \{text = qs("BEAT")
-				button = DRUM_GREEN
+		elseif isdrumcontroller controller = <device_num>
+			current_menu_anchor :se_setprops \{calibrate_lag_bottom_text_text = qs(0x3276c5eb)}
+			add_user_control_helper \{text = qs(0x538fd9d1)
+				button = drum_green
 				z = 10000}
 		else
-			current_menu_anchor :SE_SetProps calibrate_lag_bottom_text_text = (qs("Press ") + <buttonchar> + qs(" when the targets are perfectly aligned."))
-			add_user_control_helper \{text = qs("PRESS")
+			current_menu_anchor :se_setprops calibrate_lag_bottom_text_text = (qs(0xb35ecc59) + <buttonchar> + qs(0xfdc6eb4b))
+			add_user_control_helper \{text = qs(0xa5d9d07e)
 				button = green
 				z = 10000}
 		endif
 	elseif ($calibrate_lag_section = audio)
-		if IsGuitarController controller = <device_num>
-			current_menu_anchor :SE_SetProps \{calibrate_lag_bottom_text_text = qs("Strum your guitar to the beat of the audible note.")}
-			add_user_control_helper \{text = qs("STRUM")
+		if isguitarcontroller controller = <device_num>
+			current_menu_anchor :se_setprops \{calibrate_lag_bottom_text_text = qs(0x3c9a2f8b)}
+			add_user_control_helper \{text = qs(0x677830da)
 				button = strumbar
 				z = 10000}
-		elseif IsDrumController controller = <device_num>
-			current_menu_anchor :SE_SetProps \{calibrate_lag_bottom_text_text = qs("Hit the tom to the beat of the audible note.")}
-			add_user_control_helper \{text = qs("BEAT")
-				button = DRUM_GREEN
+		elseif isdrumcontroller controller = <device_num>
+			current_menu_anchor :se_setprops \{calibrate_lag_bottom_text_text = qs(0xb66975c3)}
+			add_user_control_helper \{text = qs(0x538fd9d1)
+				button = drum_green
 				z = 10000}
 		else
-			current_menu_anchor :SE_SetProps calibrate_lag_bottom_text_text = (qs("Press ") + <buttonchar> + qs(" to the beat of the audible note."))
-			add_user_control_helper \{text = qs("PRESS")
+			current_menu_anchor :se_setprops calibrate_lag_bottom_text_text = (qs(0xb35ecc59) + <buttonchar> + qs(0x2a059102))
+			add_user_control_helper \{text = qs(0xa5d9d07e)
 				button = green
 				z = 10000}
 		endif
 	endif
-	current_menu_anchor :SE_SetProps \{calibrate_lag_vmenu_cont_alpha = 0.0}
-	current_menu_anchor :SE_SetProps \{calibrate_lag_bottom_text_alpha = 1.0
+	current_menu_anchor :se_setprops \{calibrate_lag_vmenu_cont_alpha = 0.0}
+	current_menu_anchor :se_setprops \{calibrate_lag_bottom_text_alpha = 1.0
 		time = 0.25}
-	current_menu_anchor :SE_WaitProps
+	current_menu_anchor :se_waitprops
 	kill_debug_elements
 	init_play_log
 	if ($calibrate_lag_section = audio)
 		player = 1
-		GetPlayerInfo <player> checksum
+		getplayerinfo <player> checksum
 		get_savegame_from_player_status player_status = <checksum>
-		GetGlobalTags user_options savegame = <savegame>
-		change old_sfx_volume = (<volumes>.guitar.sfx.vol)
-		UpdateVolumesTag \{part = guitar
+		getglobaltags user_options savegame = <savegame>
+		change 0x30211964 = (<volumes>.guitar.sfx.vol)
+		updatevolumestag \{part = guitar
 			name = sfx
 			params = {
 				vol = 7
 			}}
 		ui_options_audio_update_all_volumes
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = cl_container
 		id = cl_countdown_circle
 		texture = 2p_song_summary_circle
@@ -540,13 +540,13 @@ script menu_calibrate_lag_create_circles
 		dims = (72.0, 72.0)
 		z_priority = 1999
 	}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		id = cl_countdown_text
 		parent = cl_container
 		pos = ($calibrate_lag_menu_line_pos + (77.0, 77.0))
 		scale = (1.0, 1.0)
-		text = qs("\L")
+		text = qs(0x03ac90f0)
 		font = fontgrid_text_a8
 		rgba = [0 0 0 255]
 		z_priority = 2000
@@ -556,29 +556,29 @@ script menu_calibrate_lag_create_circles
 	<seconds_between_circles> = (<sep> / <vel>)
 	<i> = 0
 	begin
-	cl_container :Obj_SpawnScriptNow \{cl_do_ping
+	cl_container :obj_spawnscriptnow \{cl_do_ping
 		params = {
 			time = 0.6
 		}}
-	Wait \{0.6
+	wait \{0.6
 		seconds}
-	FormatText TextName = tex qs("\L%t") t = (3 - <i>)
-	SetScreenElementProps id = cl_countdown_text text = <tex>
-	BeatSound
-	Wait (<seconds_between_circles> - 0.6) seconds
+	formattext textname = tex qs(0x3c71eff6) t = (3 - <i>)
+	setscreenelementprops id = cl_countdown_text text = <tex>
+	beatsound
+	wait (<seconds_between_circles> - 0.6) seconds
 	<i> = (<i> + 1)
 	repeat 3
 	change \{calibrate_lag_circle_index = 0}
-	GetFPS
+	getfps
 	circle_index = 0
 	begin
-	FormatText checksumname = circle_id 'circle%d' d = <circle_index>
+	formattext checksumname = circle_id 'circle%d' d = <circle_index>
 	<circle_pos> = (($calibrate_lag_menu_circle_inital_pos) - ((0.0, 1.0) * <circle_index> * ($calibrate_lag_menu_circle_separation)))
 	<one_frame> = ((1.0 / <fps>) * $calibrate_lag_menu_circle_velocity)
-	CastToInteger \{one_frame}
+	casttointeger \{one_frame}
 	<y_off> = ($calibrate_lag_menu_line_pos.(0.0, 1.0) - <circle_pos>.(0.0, 1.0))
 	<steps> = (<y_off> / <one_frame>)
-	CastToInteger \{steps}
+	casttointeger \{steps}
 	if ($calibrate_lag_section = audio)
 		<steps> = (<steps> + 3)
 	endif
@@ -588,8 +588,8 @@ script menu_calibrate_lag_create_circles
 	if ($calibrate_lag_section = audio)
 		<circle_alpha> = 0
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = cl_container
 		texture = options_calibrate_lag_note
 		id = <circle_id>
@@ -600,39 +600,39 @@ script menu_calibrate_lag_create_circles
 		z_priority = (<z> + 51)
 		alpha = <circle_alpha>
 	}
-	<circle_id> :SetTags existence = 0.0 hit = 0 check = 1
-	<circle_id> :SetTags initial_position = <circle_pos>
-	<circle_id> :SetTags time_requirement = (0.6 + ((1 + <circle_index>) * <seconds_between_circles>))
+	<circle_id> :settags existence = 0.0 hit = 0 check = 1
+	<circle_id> :settags initial_position = <circle_pos>
+	<circle_id> :settags time_requirement = (0.6 + ((1 + <circle_index>) * <seconds_between_circles>))
 	<circle_index> = (<circle_index> + 1)
 	repeat ($calibrate_lag_menu_num_circles)
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = root_window}
 	change \{cl_ready_for_input = 0}
-	cl_container :Obj_SpawnScriptNow \{cl_do_ping
+	cl_container :obj_spawnscriptnow \{cl_do_ping
 		params = {
 			time = 0.6
 		}}
-	cl_container :Obj_SpawnScriptNow do_calibration_update params = {device_num = <device_num>}
-	Wait \{0.6
+	cl_container :obj_spawnscriptnow do_calibration_update params = {device_num = <device_num>}
+	wait \{0.6
 		seconds}
-	cl_countdown_text :SE_SetProps \{text = qs("GO!")
+	cl_countdown_text :se_setprops \{text = qs(0x13883900)
 		scale = 0.7}
-	BeatSound
-	cl_ping_ID :SE_SetProps \{alpha = 0}
-	Wait \{0.4
+	beatsound
+	cl_ping_id :se_setprops \{alpha = 0}
+	wait \{0.4
 		seconds}
-	cl_countdown_circle :SE_SetProps \{alpha = 0}
+	cl_countdown_circle :se_setprops \{alpha = 0}
 	change \{cl_ready_for_input = 1}
-	calibrate_lag_target :SE_SetProps \{alpha = 1}
-	Wait \{1
+	calibrate_lag_target :se_setprops \{alpha = 1}
+	wait \{1
 		gameframe}
-	cl_countdown_text :SE_SetProps \{alpha = 0}
+	cl_countdown_text :se_setprops \{alpha = 0}
 endscript
 
 script menu_calibrate_lag_destroy_circles 
 	circle_index = 0
 	begin
-	FormatText checksumname = circle_id 'circle%d' d = <circle_index>
+	formattext checksumname = circle_id 'circle%d' d = <circle_index>
 	destroy_menu menu_id = <circle_id>
 	<circle_index> = (<circle_index> + 1)
 	repeat ($calibrate_lag_menu_num_circles)
@@ -642,22 +642,22 @@ endscript
 script do_calibration_update 
 	<circle_index> = 0
 	begin
-	FormatText checksumname = circle_id 'circle%d' d = <circle_index>
-	<circle_id> :SetTags sounded = 0 pinged = 0
+	formattext checksumname = circle_id 'circle%d' d = <circle_index>
+	<circle_id> :settags sounded = 0 pinged = 0
 	<circle_index> = (<circle_index> + 1)
 	repeat ($calibrate_lag_menu_num_circles)
-	GetFPS
+	getfps
 	begin
 	circle_index = 0
 	num_circles_gone = 0
-	GetDeltaTime
+	getdeltatime
 	begin
-	FormatText checksumname = circle_id 'circle%d' d = <circle_index>
-	<circle_id> :GetTags
+	formattext checksumname = circle_id 'circle%d' d = <circle_index>
+	<circle_id> :gettags
 	<existence> = (<existence> + <delta_time>)
 	update_difference = (<delta_time>)
 	position_change = (<update_difference> * ($calibrate_lag_menu_circle_velocity))
-	GetScreenElementPosition id = <circle_id>
+	getscreenelementposition id = <circle_id>
 	<screenelementpos> = (<screenelementpos> + (0.0, 1.0) * <position_change>)
 	<target_pos> = ($calibrate_lag_menu_line_pos)
 	diff = ((<screenelementpos>.(0.0, 1.0)) - (<target_pos>.(0.0, 1.0)))
@@ -668,9 +668,9 @@ script do_calibration_update
 	if ((($calibrate_lag_menu_circle_velocity) * <cl_tweak>) >= <diff>)
 		if (<sounded> = 0)
 			if ($calibrate_lag_section = audio)
-				BeatSound
+				beatsound
 			endif
-			<circle_id> :SetTags sounded = 1
+			<circle_id> :settags sounded = 1
 		endif
 	endif
 	if (<diff> < <position_change>)
@@ -682,88 +682,88 @@ script do_calibration_update
 	if ((<screenelementpos>.(0.0, 1.0)) > ($calibrate_lag_menu_line_pos.(0.0, 1.0) + ($calibrate_lag_menu_circle_dims.(0.0, 1.0))))
 		if (<hit> = 0 && <check> = 1)
 			change calibrate_lag_circle_index = (($calibrate_lag_circle_index) + 1)
-			<circle_id> :SetTags check = 0
+			<circle_id> :settags check = 0
 		endif
 		<num_circles_gone> = (<num_circles_gone> + 1)
-		<circle_id> :Obj_SpawnScriptNow cl_fade_circle params = {id = <circle_id>}
+		<circle_id> :obj_spawnscriptnow cl_fade_circle params = {id = <circle_id>}
 	endif
-	<circle_id> :SE_SetProps pos = (<screenelementpos>)
-	<circle_id> :SetTags existence = <existence>
+	<circle_id> :se_setprops pos = (<screenelementpos>)
+	<circle_id> :settags existence = <existence>
 	<circle_index> = (<circle_index> + 1)
 	repeat ($calibrate_lag_menu_num_circles)
 	if (<num_circles_gone> = $calibrate_lag_menu_num_circles)
-		cl_container :Obj_SpawnScriptLater kill_off_and_finish_calibration params = {device_num = <device_num>}
+		cl_container :obj_spawnscriptlater kill_off_and_finish_calibration params = {device_num = <device_num>}
 	endif
 	if (($calibrate_lag_end_checks = 0) && $cl_ready_for_input)
 		<check_lines_are_even> = 0
-		if IsGuitarController controller = <device_num>
-			if ControllerMake up <device_num>
+		if isguitarcontroller controller = <device_num>
+			if controllermake up <device_num>
 				<check_lines_are_even> = 1
 			endif
-			if ControllerMake down <device_num>
+			if controllermake down <device_num>
 				<check_lines_are_even> = 1
 			endif
-		elseif IsDrumController controller = <device_num>
-			if ControllerMake x <device_num>
+		elseif isdrumcontroller controller = <device_num>
+			if controllermake x <device_num>
 				<check_lines_are_even> = 1
 			endif
-			if ControllerMake circle <device_num>
+			if controllermake circle <device_num>
 				<check_lines_are_even> = 1
 			endif
-			if ControllerMake square <device_num>
+			if controllermake square <device_num>
 				<check_lines_are_even> = 1
 			endif
-			if ControllerMake triangle <device_num>
+			if controllermake triangle <device_num>
 				<check_lines_are_even> = 1
 			endif
-			if ControllerMake R1 <device_num>
+			if controllermake r1 <device_num>
 				<check_lines_are_even> = 1
 			endif
-			if ControllerMake L1 <device_num>
+			if controllermake l1 <device_num>
 				<check_lines_are_even> = 1
 			endif
 		else
-			if ControllerMake x <device_num>
+			if controllermake x <device_num>
 				<check_lines_are_even> = 1
 			endif
 		endif
 		if (<check_lines_are_even>)
-			cl_container :Obj_SpawnScriptNow \{menu_calibrate_lag_say_lines_are_even}
+			cl_container :obj_spawnscriptnow \{menu_calibrate_lag_say_lines_are_even}
 		endif
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript
 
 script cl_fade_circle 
 	if ($calibrate_lag_section = video)
-		<id> :SE_SetProps rgba = [0 0 0 255] alpha = 0.5 time = 0.009
+		<id> :se_setprops rgba = [0 0 0 255] alpha = 0.5 time = 0.009
 	endif
 endscript
 
 script cl_do_ping \{time = 0.066}
-	cl_ping_ID :SE_SetProps \{scale = 10
+	cl_ping_id :se_setprops \{scale = 10
 		alpha = 0}
-	cl_ping_ID :SE_SetProps scale = 1 alpha = 1 motion = ease_in time = <time>
-	cl_ping_ID :SE_WaitProps
-	cl_ping_ID :SE_SetProps \{alpha = 0
+	cl_ping_id :se_setprops scale = 1 alpha = 1 motion = ease_in time = <time>
+	cl_ping_id :se_waitprops
+	cl_ping_id :se_setprops \{alpha = 0
 		motion = ease_in
 		time = 0.1}
-	cl_ping_ID :SE_WaitProps
+	cl_ping_id :se_waitprops
 endscript
 
 script menu_calibrate_lag_say_lines_are_even 
 	if ($calibrate_lag_end_checks = 1)
 		return
 	endif
-	FormatText checksumname = circle_id 'circle%d' d = ($calibrate_lag_circle_index)
-	if NOT ScreenElementExists id = <circle_id>
+	formattext checksumname = circle_id 'circle%d' d = ($calibrate_lag_circle_index)
+	if NOT screenelementexists id = <circle_id>
 		return
 	endif
-	if NOT ScreenElementExists \{id = calibrate_lag_target}
+	if NOT screenelementexists \{id = calibrate_lag_target}
 		return
 	endif
-	<circle_id> :GetTags
+	<circle_id> :gettags
 	input_difference = (<time_requirement> - <existence>)
 	new_input_diff = (<input_difference> * 1000)
 	<new_input_diff> = (0 - <new_input_diff>)
@@ -773,30 +773,30 @@ script menu_calibrate_lag_say_lines_are_even
 	if (<new_input_diff> > $calibrate_lag_late_window)
 		return
 	endif
-	if IsPs3
+	if isps3
 		<new_input_diff> = (<new_input_diff> - 16)
 	endif
-	if isXenon
+	if isxenon
 		if ($calibrate_lag_section = video)
 			<new_input_diff> = (<new_input_diff> - 12)
 		endif
 	endif
-	SetArrayElement ArrayName = calibrate_lag_results GlobalArray index = ($calibrate_lag_circle_index) newvalue = <new_input_diff>
+	setarrayelement arrayname = calibrate_lag_results globalarray index = ($calibrate_lag_circle_index) newvalue = <new_input_diff>
 	get_closest_circle_above_line
-	<circle_id> :SetTags hit = 1
+	<circle_id> :settags hit = 1
 	change calibrate_lag_circle_index = (($calibrate_lag_circle_index) + 1)
-	<closest_id> :SE_SetProps hide
-	current_menu_anchor :SE_SetProps \{calibrate_lag_shock_alpha = 1.0}
-	current_menu_anchor :SE_SetProps \{calibrate_lag_shock_alpha = 0.0
+	<closest_id> :se_setprops hide
+	current_menu_anchor :se_setprops \{calibrate_lag_shock_alpha = 1.0}
+	current_menu_anchor :se_setprops \{calibrate_lag_shock_alpha = 0.0
 		time = 0.25}
-	calibrate_lag_target :SE_SetProps \{scale = 1.5
+	calibrate_lag_target :se_setprops \{scale = 1.5
 		relative_scale
 		time = 0.05}
-	calibrate_lag_target :SE_WaitProps
-	calibrate_lag_target :SE_SetProps \{scale = 1.0
+	calibrate_lag_target :se_waitprops
+	calibrate_lag_target :se_setprops \{scale = 1.0
 		relative_scale
 		time = 0.05}
-	calibrate_lag_target :SE_WaitProps
+	calibrate_lag_target :se_waitprops
 	if (($calibrate_lag_circle_index) = ($calibrate_lag_menu_num_circles))
 		change \{calibrate_lag_end_checks = 1}
 		kill_off_and_finish_calibration
@@ -804,21 +804,21 @@ script menu_calibrate_lag_say_lines_are_even
 endscript
 
 script kill_off_and_finish_calibration device_num = ($calibrate_lag_most_recent_controller)
-	UpdateVolumesTag part = guitar name = sfx params = {vol = ($old_sfx_volume)}
+	updatevolumestag part = guitar name = sfx params = {vol = ($0x30211964)}
 	ui_options_audio_update_all_volumes
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = clm_dummy_event_handler}
-	KillSpawnedScript \{name = do_calibration_update}
+	killspawnedscript \{name = do_calibration_update}
 	menu_calibrate_lag_finish_up_calibration
 	menu_calibrate_lag_destroy_circles
 	user_control_helper_get_buttonchar button = green controller = <controller>
 	if ($calibrate_lag_section = dialog_2)
-		if IsGuitarController controller = <device_num>
-			body_text = qs("Next, we will do a video only calibration test. Try to strum when the targets are perfectly aligned.")
-		elseif IsDrumController controller = <device_num>
-			body_text = qs("Next, we will do a video only calibration test. Hit the tom drum when the targets are perfectly aligned.")
+		if isguitarcontroller controller = <device_num>
+			body_text = qs(0x367b99b2)
+		elseif isdrumcontroller controller = <device_num>
+			body_text = qs(0x28012478)
 		else
-			body_text = (qs("Next, we will do a video only calibration test. Press ") + <buttonchar> + qs(" when the targets are perfectly aligned."))
+			body_text = (qs(0x05829d9f) + <buttonchar> + qs(0xfdc6eb4b))
 		endif
 		generic_event_choose data = {
 			state = uistate_options_calibrate_lag_warning
@@ -838,10 +838,10 @@ script get_closest_circle_above_line
 	endif
 	i = 0
 	begin
-	FormatText checksumname = circle_id 'circle%d' d = <i>
-	GetScreenElementPosition id = <circle_id>
+	formattext checksumname = circle_id 'circle%d' d = <i>
+	getscreenelementposition id = <circle_id>
 	if ((<screenelementpos>.(0.0, 1.0)) < ($calibrate_lag_menu_line_pos.(0.0, 1.0) + ($calibrate_lag_menu_circle_dims.(0.0, 1.25))))
-		<circle_id> :GetTags
+		<circle_id> :gettags
 		if NOT (<hit>)
 			return closest_id = <circle_id> hit = 1
 		endif
@@ -862,11 +862,11 @@ script menu_calibrate_lag_finish_up_calibration
 	num_hit = 0
 	total_val = 0.0
 	begin
-	FormatText checksumname = circle_id 'circle%d' d = <index>
-	if NOT ScreenElementExists id = <circle_id>
+	formattext checksumname = circle_id 'circle%d' d = <index>
+	if NOT screenelementexists id = <circle_id>
 		return
 	endif
-	<circle_id> :GetTags
+	<circle_id> :gettags
 	if (<hit>)
 		<num_hit> = (<num_hit> + 1)
 		val = ($calibrate_lag_results [<index>])
@@ -889,15 +889,15 @@ script menu_calibrate_lag_finish_up_calibration
 		elseif (<avg> > $calibrate_lag_cap)
 			<avg> = $calibrate_lag_cap
 		endif
-		CastToInteger \{avg}
-		GetGlobalTags \{user_options}
+		casttointeger \{avg}
+		getglobaltags \{user_options}
 		if ($calibrate_lag_section = audio)
 			old_lag = <lag_calibration>
-			SetGlobalTags user_options params = {lag_calibration = ((<avg> * 1000) + 1000)}
+			setglobaltags user_options params = {lag_calibration = ((<avg> * 1000) + 1000)}
 		elseif ($calibrate_lag_section = video)
-			StopPinkNoiseLoopForCalirateLagScreen
+			stoppinknoiseloopforcaliratelagscreen
 			old_lag = <lag_calibration>
-			SetGlobalTags user_options params = {lag_calibration = (<old_lag> + <avg>)}
+			setglobaltags user_options params = {lag_calibration = (<old_lag> + <avg>)}
 		endif
 	endif
 	if ($calibrate_lag_section = audio)
@@ -905,14 +905,14 @@ script menu_calibrate_lag_finish_up_calibration
 	elseif ($calibrate_lag_section = video)
 		change \{calibrate_lag_section = none}
 	endif
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = root_window}
-	Wait \{30
+	wait \{30
 		gameframes}
-	StopPinkNoiseLoopForCalirateLagScreen
-	if GotParam \{avg}
-		if GotParam \{old_lag}
-			CastToInteger \{avg}
+	stoppinknoiseloopforcaliratelagscreen
+	if gotparam \{avg}
+		if gotparam \{old_lag}
+			casttointeger \{avg}
 			if NOT (<old_lag> = <avg>)
 				change \{calibrate_lag_dirty = 1}
 			endif
@@ -921,13 +921,13 @@ script menu_calibrate_lag_finish_up_calibration
 endscript
 
 script menu_calibrate_lag_reset_lag 
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<lag_calibration> = 1000)
-		SoundEvent \{event = UI_SFX_Negative_Select}
+		soundevent \{event = ui_sfx_negative_select}
 		return
 	endif
-	SoundEvent \{event = QuickPlay_Remove_All_Songs}
-	SetGlobalTags \{user_options
+	soundevent \{event = quickplay_remove_all_songs}
+	setglobaltags \{user_options
 		params = {
 			lag_calibration = 1000
 		}}
@@ -936,22 +936,22 @@ script menu_calibrate_lag_reset_lag
 endscript
 
 script menu_calibrate_lag_manual_choose 
-	SetScreenElementProps \{id = cl_vmenu
+	setscreenelementprops \{id = cl_vmenu
 		block_events}
 	cl_arrow_color = [0 0 0 255]
-	if GotParam \{audio}
+	if gotparam \{audio}
 		retail_menu_unfocus \{id = cl_option_audio_text}
 		retail_menu_focus \{id = cl_option_audio_ms}
-		cl_option_audio_arrow_top :SE_SetProps rgba = <cl_arrow_color>
-		cl_option_audio_arrow_bottom :SE_SetProps rgba = <cl_arrow_color>
+		cl_option_audio_arrow_top :se_setprops rgba = <cl_arrow_color>
+		cl_option_audio_arrow_bottom :se_setprops rgba = <cl_arrow_color>
 	else
 		retail_menu_unfocus \{id = cl_option_video_text}
 		retail_menu_focus \{id = cl_option_video_ms}
-		cl_option_video_arrow_top :SE_SetProps rgba = <cl_arrow_color>
-		cl_option_video_arrow_bottom :SE_SetProps rgba = <cl_arrow_color>
+		cl_option_video_arrow_top :se_setprops rgba = <cl_arrow_color>
+		cl_option_video_arrow_bottom :se_setprops rgba = <cl_arrow_color>
 	endif
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = cl_container
 		id = cl_manual_adjust_handler
 		event_handlers = [
@@ -961,25 +961,25 @@ script menu_calibrate_lag_manual_choose
 			{pad_back menu_calibrate_lag_manual_back params = {<...>}}
 		]
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = cl_manual_adjust_handler}
 	generic_menu_pad_choose_sound
 endscript
 
 script menu_calibrate_lag_manual_back 
-	SetScreenElementProps \{id = cl_vmenu
+	setscreenelementprops \{id = cl_vmenu
 		unblock_events}
-	DestroyScreenElement \{id = cl_manual_adjust_handler}
-	if GotParam \{audio}
+	destroyscreenelement \{id = cl_manual_adjust_handler}
+	if gotparam \{audio}
 		retail_menu_unfocus \{id = cl_option_audio_ms}
 		retail_menu_focus \{id = cl_option_audio_text}
-		cl_option_audio_arrow_top :SE_SetProps \{rgba = [
+		cl_option_audio_arrow_top :se_setprops \{rgba = [
 				255
 				255
 				255
 				255
 			]}
-		cl_option_audio_arrow_bottom :SE_SetProps \{rgba = [
+		cl_option_audio_arrow_bottom :se_setprops \{rgba = [
 				255
 				255
 				255
@@ -988,13 +988,13 @@ script menu_calibrate_lag_manual_back
 	else
 		retail_menu_unfocus \{id = cl_option_video_ms}
 		retail_menu_focus \{id = cl_option_video_text}
-		cl_option_video_arrow_top :SE_SetProps \{rgba = [
+		cl_option_video_arrow_top :se_setprops \{rgba = [
 				255
 				255
 				255
 				255
 			]}
-		cl_option_video_arrow_bottom :SE_SetProps \{rgba = [
+		cl_option_video_arrow_bottom :se_setprops \{rgba = [
 				255
 				255
 				255
@@ -1006,7 +1006,7 @@ endscript
 
 script menu_calibrate_lag_manual_up 
 	<do_morph> = 0
-	if GotParam \{audio}
+	if gotparam \{audio}
 		<arrow_id> = cl_option_audio_arrow_top
 		if menu_calibrate_lag_adjust \{value = 1
 				for_audio = 1}
@@ -1019,15 +1019,15 @@ script menu_calibrate_lag_manual_up
 		endif
 	endif
 	if (<do_morph> = 1)
-		<arrow_id> :SE_SetProps alpha = 0
-		<arrow_id> :SE_SetProps alpha = 1 time = 0.15
-		SoundEvent \{event = Enter_Band_Name_Scroll_Up}
+		<arrow_id> :se_setprops alpha = 0
+		<arrow_id> :se_setprops alpha = 1 time = 0.15
+		soundevent \{event = enter_band_name_scroll_up}
 	endif
 endscript
 
 script menu_calibrate_lag_manual_down 
 	<do_morph> = 0
-	if GotParam \{audio}
+	if gotparam \{audio}
 		<arrow_id> = cl_option_audio_arrow_bottom
 		if menu_calibrate_lag_adjust \{value = -1
 				for_audio = 1}
@@ -1040,25 +1040,25 @@ script menu_calibrate_lag_manual_down
 		endif
 	endif
 	if (<do_morph> = 1)
-		<arrow_id> :SE_SetProps alpha = 0
-		<arrow_id> :SE_SetProps alpha = 1 time = 0.15
-		SoundEvent \{event = Enter_Band_Name_Scroll_Down}
+		<arrow_id> :se_setprops alpha = 0
+		<arrow_id> :se_setprops alpha = 1 time = 0.15
+		soundevent \{event = enter_band_name_scroll_down}
 	endif
 endscript
 
 script menu_calibrate_lag_adjust \{value = 1
 		for_audio = 0}
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<lag_calibration> = 0)
 		<audio_calibration> = 0.0
 	else
 		<audio_calibration> = ((<lag_calibration> / 1000) - 1)
 	endif
-	CastToInteger \{audio_calibration}
+	casttointeger \{audio_calibration}
 	<video_calibration> = <lag_calibration>
-	CastToInteger \{video_calibration}
-	Mod a = <video_calibration> b = 1000
-	<video_calibration> = <Mod>
+	casttointeger \{video_calibration}
+	mod a = <video_calibration> b = 1000
+	<video_calibration> = <mod>
 	if (<for_audio> = 1)
 		<audio_calibration> = (<audio_calibration> + <value>)
 		if (<audio_calibration> > $calibrate_lag_cap)
@@ -1077,11 +1077,11 @@ script menu_calibrate_lag_adjust \{value = 1
 	<new_lag_calibration> = ((<audio_calibration> * 1000) + 1000)
 	<new_lag_calibration> = (<new_lag_calibration> + <video_calibration>)
 	change \{calibrate_lag_dirty = 1}
-	SetGlobalTags user_options params = {lag_calibration = <new_lag_calibration>}
+	setglobaltags user_options params = {lag_calibration = <new_lag_calibration>}
 	menu_calibrate_lag_update_text
 	return \{true}
 endscript
 
-script BeatSound 
-	SoundEvent \{event = GH_SFX_Calibration_BeatSoundEvent}
+script beatsound 
+	soundevent \{event = gh_sfx_calibration_beatsoundevent}
 endscript

@@ -1,290 +1,290 @@
 
-script RegisterUIStates 
+script registeruistates 
 
-	MemPushContext \{FrontEndHeap}
-	RegisterState \{name = UIstate_Null
+	mempushcontext \{frontendheap}
+	registerstate \{name = uistate_null
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'null'
 			}
 		}}
-	RegisterUIStates_Boot
-	RegisterUIStates_Options
-	RegisterUIStates_Frontend
-	RegisterUIStates_Debug
-	RegisterUIStates_Profile
-	RegisterUIStates_Career
-	RegisterUIStates_Outro
-	RegisterUIStates_Character
-	RegisterUIStates_Pause
-	RegisterUIStates_Practice
-	RegisterUIStates_Jam
-	RegisterUIStates_Select_Rocker
-	RegisterUIStates_Outfit
-	RegisterUIStates_CAP
-	RegisterUIStates_CAG
-	RegisterUIStates_Online
-	RegisterUIStates_CADrm
-	RegisterState \{name = uistate_sing_a_long
+	registeruistates_boot
+	registeruistates_options
+	registeruistates_frontend
+	registeruistates_debug
+	registeruistates_profile
+	registeruistates_career
+	registeruistates_outro
+	registeruistates_character
+	registeruistates_pause
+	registeruistates_practice
+	registeruistates_jam
+	registeruistates_select_rocker
+	registeruistates_outfit
+	registeruistates_cap
+	registeruistates_cag
+	registeruistates_online
+	registeruistates_cadrm
+	registerstate \{name = uistate_sing_a_long
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'sing_a_long'
 			}
 		}}
-	MemPopContext
+	mempopcontext
 endscript
 
-script RegisterUIStates_Boot 
-	RegisterState \{name = UIstate_boot_legal
+script registeruistates_boot 
+	registerstate \{name = uistate_boot_legal
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_legal'
 			}
 		}}
-	RegisterState \{name = UIstate_boot_movie_atvi
+	registerstate \{name = uistate_boot_movie_atvi
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_movie_ATVI'
 			}
 		}}
-	RegisterState \{name = UIstate_boot_movie_red_octane
+	registerstate \{name = uistate_boot_movie_red_octane
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_movie_red_octane'
 			}
 		}}
-	RegisterState \{name = UIstate_boot_movie_neversoft
+	registerstate \{name = uistate_boot_movie_neversoft
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_movie_neversoft'
 			}
 		}}
-	RegisterState \{name = UIstate_boot_movie_budcat
+	registerstate \{name = 0x54fc36ed
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_movie_budcat'
 			}
 		}}
-	RegisterState \{name = UIstate_boot_movie_intro
+	registerstate \{name = uistate_boot_movie_intro
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_movie_intro'
 			}
 		}}
-	RegisterState \{name = UIstate_boot_iis
+	registerstate \{name = uistate_boot_iis
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_iis'
 				do_not_hide
 			}
 		}}
-	RegisterState \{name = UIstate_boot_attract
+	registerstate \{name = uistate_boot_attract
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_attract'
-				load_create = full
-				load_destroy = full
+				0x1a6af6b1 = full
+				0x38d47d6e = full
 			}
 		}}
-	RegisterState \{name = uistate_boot_guitar
+	registerstate \{name = uistate_boot_guitar
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_guitar'
 			}
 		}}
-	RegisterState \{name = uistate_boot_download_scan
+	registerstate \{name = uistate_boot_download_scan
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'boot_download_scan'
 			}
 		}}
 endscript
 
-script RegisterUIStates_Profile 
-	RegisterState \{name = uistate_signin
+script registeruistates_profile 
+	registerstate \{name = uistate_signin
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'signin'
 			}
 		}}
-	RegisterState \{name = uistate_signin_warning
+	registerstate \{name = uistate_signin_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'signin_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_signin_complete
+	registerstate \{name = uistate_signin_complete
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'signin_complete'
 			}
 		}}
-	RegisterState \{name = uistate_memcard
+	registerstate \{name = uistate_memcard
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'memcard'
 				type = boot
 			}
 		}}
-	RegisterState \{name = uistate_signin_changed
+	registerstate \{name = uistate_signin_changed
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'signin_changed'
 			}
 		}}
-	RegisterState \{name = uistate_connection_loss
+	registerstate \{name = uistate_connection_loss
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'connection_loss'
 			}
 		}}
 endscript
 
-script RegisterUIStates_Frontend 
-	RegisterState \{name = UIstate_mainmenu
+script registeruistates_frontend 
+	registerstate \{name = uistate_mainmenu
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'mainmenu'
 			}
 		}}
-	RegisterState \{name = uistate_mainmenu_intro
+	registerstate \{name = uistate_mainmenu_intro
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'mainmenu_intro'
 			}
 		}}
-	RegisterState \{name = UIstate_motd
+	registerstate \{name = uistate_motd
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'motd'
 				pakname = 'motd'
 			}
 		}}
-	RegisterState \{name = uistate_select_difficulty
+	registerstate \{name = uistate_select_difficulty
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_difficulty'
 				anim_in_script = ui_select_difficulty_anim_in
 				anim_out_script = ui_select_difficulty_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_band_difficulty
+	registerstate \{name = uistate_band_difficulty
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'band_difficulty'
 				pakname = 'band_mode'
 			}
 		}}
-	RegisterState \{name = uistate_setlist
+	registerstate \{name = uistate_setlist
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'setlist'
 				pakname = 'setlist'
 				focus_id = none
-				load_create = full
+				0x1a6af6b1 = full
 			}
 		}}
-	RegisterState \{name = UIstate_setlist_prompt
+	registerstate \{name = uistate_setlist_prompt
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'setlist_prompt'
 			}
 		}}
-	RegisterState \{name = uistate_select_instrument_warning
+	registerstate \{name = uistate_select_instrument_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_instrument_warning'
 			}
 		}}
-	RegisterState \{name = uistate_setlist_quit_warning
+	registerstate \{name = uistate_setlist_quit_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'setlist_quit_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_generic_dialogue
+	registerstate \{name = uistate_generic_dialogue
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'generic_dialogue'
 				focus_id = dialog_box_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_generic_alert_popup
+	registerstate \{name = uistate_generic_alert_popup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'generic_alert_popup'
 				focus_id = dialog_box_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_helper_dialogue
+	registerstate \{name = uistate_helper_dialogue
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'helper_dialogue'
 				focus_id = helper_root
 			}
 		}}
-	RegisterState \{name = UIstate_dialog_box
+	registerstate \{name = uistate_dialog_box
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'dialog_box'
 			}
 		}}
-	RegisterState \{name = UIstate_double_bass_popup
+	registerstate \{name = uistate_double_bass_popup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'double_bass_popup'
 			}
 		}}
-	RegisterState \{name = UIstate_new_song_info_popup
+	registerstate \{name = uistate_new_song_info_popup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'new_song_info_popup'
 			}
 		}}
-	RegisterState \{name = UIstate_soundboard
+	registerstate \{name = uistate_soundboard
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'soundboard'
 				pakname = 'soundboard'
 			}
 		}}
-	RegisterState \{name = UIstate_song_extras
+	registerstate \{name = uistate_song_extras
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'song_extras'
 				pakname = 'setlist'
@@ -292,10 +292,10 @@ script RegisterUIStates_Frontend
 		}}
 endscript
 
-script RegisterUIStates_Options 
-	RegisterState \{name = uistate_options
+script registeruistates_options 
+	registerstate \{name = uistate_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options'
 				pakname = 'options'
@@ -303,54 +303,54 @@ script RegisterUIStates_Options
 				anim_out_script = ui_options_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_options_audio
+	registerstate \{name = uistate_options_audio
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_audio'
 				pakname = 'options_audio'
 			}
 		}}
-	RegisterState \{name = UIstate_options_calibrate_lag
+	registerstate \{name = uistate_options_calibrate_lag
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_calibrate_lag'
 				pakname = 'options_calibrate_lag'
 			}
 		}}
-	RegisterState \{name = uistate_options_calibrate_lag_warning
+	registerstate \{name = uistate_options_calibrate_lag_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_calibrate_lag_warning'
 				pakname = 'options_calibrate_lag_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_failed_three_times_warning
+	registerstate \{name = uistate_failed_three_times_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'failed_three_times_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_options_controller
+	registerstate \{name = uistate_options_controller
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_controller'
 			}
 		}}
-	RegisterState \{name = uistate_options_controller_whammy
+	registerstate \{name = uistate_options_controller_whammy
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_controller_whammy'
 			}
 		}}
-	RegisterState \{name = uistate_bonus_videos
+	registerstate \{name = uistate_bonus_videos
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'bonus_videos'
 				pakname = 'bonus_videos'
@@ -358,170 +358,170 @@ script RegisterUIStates_Options
 				anim_out_script = ui_bonus_videos_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_gallery
+	registerstate \{name = uistate_gallery
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'gallery'
 				anim_in_script = ui_gallery_anim_in
 				anim_out_script = ui_gallery_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_bonus_videos_credits
+	registerstate \{name = uistate_bonus_videos_credits
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'bonus_videos_credits'
 				pakname = 'bonus_videos_credits'
 			}
 		}}
-	RegisterState \{name = uistate_options_cheats
+	registerstate \{name = uistate_options_cheats
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_cheats'
 				pakname = 'options_cheats'
 				anim_out_script = ui_options_cheats_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_options_cheats_new
+	registerstate \{name = uistate_options_cheats_new
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_cheats_new'
 				pakname = 'options_cheats_new'
 				anim_out_script = ui_options_cheats_new_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_options_cheats_warning
+	registerstate \{name = uistate_options_cheats_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_cheats_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_top_rockers_mode
+	registerstate \{name = uistate_top_rockers_mode
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'top_rockers_mode'
 			}
 		}}
-	RegisterState \{name = uistate_options_data
+	registerstate \{name = uistate_options_data
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_data'
 				focus_id = current_submenu
 			}
 		}}
-	RegisterState \{name = uistate_options_data_delete
+	registerstate \{name = uistate_options_data_delete
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_data_delete'
 			}
 		}}
-	RegisterState \{name = UIstate_options_manage_band
+	registerstate \{name = uistate_options_manage_band
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_manage_band'
 			}
 		}}
-	RegisterState \{name = UIstate_options_manage_band_logo
+	registerstate \{name = uistate_options_manage_band_logo
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_manage_band_logo'
 				no_animate_in
 			}
 		}}
-	RegisterState \{name = uistate_options_delete_band
+	registerstate \{name = uistate_options_delete_band
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_delete_band'
 			}
 		}}
-	RegisterState \{name = UIstate_options_controller_star_power
+	registerstate \{name = uistate_options_controller_star_power
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_controller_star_power'
 			}
 		}}
-	RegisterState \{name = uistate_options_settings
+	registerstate \{name = uistate_options_settings
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_settings'
 				focus_id = current_submenu
 			}
 		}}
-	RegisterState \{name = UIstate_options_settings_lefty_warning
+	registerstate \{name = uistate_options_settings_lefty_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_settings_lefty_warning'
 				focus_id = dialog_box_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_options_calibrate
+	registerstate \{name = uistate_options_calibrate
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_calibrate'
 			}
 		}}
-	RegisterState \{name = UIstate_options_manage_band_font
+	registerstate \{name = uistate_options_manage_band_font
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_manage_band_font'
 				focus_id = current_list_menu
 			}
 		}}
-	RegisterState \{name = UIstate_band_logo_choose
+	registerstate \{name = uistate_band_logo_choose
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'band_logo_choose'
 			}
 		}}
-	RegisterState \{name = uistate_band_name_logo
+	registerstate \{name = uistate_band_name_logo
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'band_name_logo'
 				focus_id = band_name_menu
 			}
 		}}
-	RegisterState \{name = UIstate_downloads
+	registerstate \{name = uistate_downloads
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'downloads'
 			}
 		}}
-	RegisterState \{name = uistate_options_vocals_view_warning
+	registerstate \{name = uistate_options_vocals_view_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'options_vocals_view_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_guitarhero_com
+	registerstate \{name = uistate_guitarhero_com
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'guitarhero_com'
 				pakname = 'guitarhero_com'
 			}
 		}}
-	RegisterState \{name = UIstate_progressive_scan_warning
+	registerstate \{name = 0x1e965d1c
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'progressive_scan_warning'
 				focus_id = dialog_box_vmenu
@@ -529,106 +529,106 @@ script RegisterUIStates_Options
 		}}
 endscript
 
-script RegisterUIStates_Debug 
-	RegisterState \{name = uistate_debug
+script registeruistates_debug 
+	registerstate \{name = uistate_debug
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'debug'
 			}
 		}}
-	RegisterState \{name = UIstate_debug_color_calibration
+	registerstate \{name = uistate_debug_color_calibration
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'debug_color_calibration'
 			}
 		}}
-	RegisterState \{name = UIstate_viewport_test
+	registerstate \{name = uistate_viewport_test
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'viewport_test'
 			}
 		}}
-	RegisterState \{name = uistate_atom_unlock
+	registerstate \{name = uistate_atom_unlock
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'atom_unlock'
 			}
 		}}
-	RegisterState \{name = UIstate_test
+	registerstate \{name = uistate_test
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'test'
 				pakname = 'testpak'
 			}
 		}}
-	RegisterState \{name = UIstate_autotest_next_test
+	registerstate \{name = uistate_autotest_next_test
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'autotest_next_test'
 			}
 		}}
 endscript
 
-script RegisterUIStates_Career 
-	RegisterState \{name = uistate_play_song
+script registeruistates_career 
+	registerstate \{name = uistate_play_song
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_song'
-				load_create = full
-				load_destroy = full
+				0x1a6af6b1 = full
+				0x38d47d6e = full
 			}
 		}}
-	RegisterState \{name = uistate_gameplay
+	registerstate \{name = uistate_gameplay
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'gameplay'
-				load_create = sustain
-				load_destroy = freeze
+				0x1a6af6b1 = sustain
+				0x38d47d6e = freeze
 			}
 		}}
-	RegisterState \{name = uistate_game_mode
+	registerstate \{name = uistate_game_mode
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'game_mode'
 				anim_in_script = game_mode_anim_in
 				anim_out_script = game_mode_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_select_instrument
+	registerstate \{name = uistate_select_instrument
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_instrument'
 				anim_in_script = select_instrument_anim_in
 				anim_out_script = select_instrument_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_band_name_enter
+	registerstate \{name = uistate_band_name_enter
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'band_name_enter'
 			}
 		}}
-	RegisterState \{name = UIstate_band_choose
+	registerstate \{name = uistate_band_choose
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'band_choose'
 			}
 		}}
-	RegisterState \{name = uistate_select_controller
+	registerstate \{name = uistate_select_controller
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_controller'
 				pakname = 'select_controller'
@@ -636,77 +636,77 @@ script RegisterUIStates_Career
 			anim_in_script = ui_select_controller_anim_in
 			anim_out_script = ui_select_controller_anim_out
 		}}
-	RegisterState \{name = UIstate_select_mp_mode
+	registerstate \{name = uistate_select_mp_mode
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_mp_mode'
 			}
 		}}
-	RegisterState \{name = uistate_fail_song
+	registerstate \{name = uistate_fail_song
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'fail_song'
 				pakname = 'fail_song'
 			}
 		}}
-	RegisterState \{name = UIstate_band_mode
+	registerstate \{name = uistate_band_mode
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'band_mode'
 				focus_id = band_mode_menu
 				pakname = 'band_mode'
 			}
 		}}
-	RegisterState \{name = uistate_choose_part
+	registerstate \{name = uistate_choose_part
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'choose_part'
 			}
 		}}
-	RegisterState \{name = uistate_controller_disconnect
+	registerstate \{name = uistate_controller_disconnect
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'controller_disconnect'
 			}
 		}}
-	RegisterState \{name = UIstate_encore_confirmation
+	registerstate \{name = uistate_encore_confirmation
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'encore_confirmation'
 			}
 		}}
-	RegisterState \{name = uistate_beat_game
+	registerstate \{name = uistate_beat_game
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'beat_game'
 			}
 		}}
-	RegisterState \{name = uistate_gig_posters
+	registerstate \{name = uistate_gig_posters
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'gig_posters'
 				focus_id = setlist_menu
 			}
 		}}
-	RegisterState \{name = uistate_group_play
+	registerstate \{name = uistate_group_play
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'group_play'
 				focu_id = group_play
 			}
 		}}
-	RegisterState \{name = uistate_song_breakdown
+	registerstate \{name = uistate_song_breakdown
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'song_breakdown'
 				pakname = 'song_breakdown'
@@ -716,54 +716,54 @@ script RegisterUIStates_Career
 		}}
 endscript
 
-script RegisterUIStates_Character 
-	RegisterState \{name = uistate_character_hub
+script registeruistates_character 
+	registerstate \{name = uistate_character_hub
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'character_hub'
 				pakname = 'band_mode'
 			}
 		}}
-	RegisterState \{name = UIstate_singleplayer_character_hub
+	registerstate \{name = uistate_singleplayer_character_hub
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'singleplayer_character_hub'
 			}
 		}}
-	RegisterState \{name = uistate_character_select
+	registerstate \{name = uistate_character_select
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'character_select'
 				pakname = 'characterselect'
 			}
 		}}
-	RegisterState \{name = UIstate_select_outfit
+	registerstate \{name = uistate_select_outfit
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_outfit'
 			}
 		}}
-	RegisterState \{name = UIstate_select_outfit_style
+	registerstate \{name = uistate_select_outfit_style
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_outfit_style'
 			}
 		}}
-	RegisterState \{name = UIstate_select_guitar
+	registerstate \{name = uistate_select_guitar
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_guitar'
 			}
 		}}
-	RegisterState \{name = uistate_select_venue
+	registerstate \{name = uistate_select_venue
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'career_venue_select'
 				pakname = 'select_venue'
@@ -771,145 +771,145 @@ script RegisterUIStates_Character
 		}}
 endscript
 
-script RegisterUIStates_Pause 
-	RegisterState \{name = UIstate_pausemenu
+script registeruistates_pause 
+	registerstate \{name = uistate_pausemenu
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu'
-				load_create = sustain
-				load_destroy = sustain
+				0x1a6af6b1 = sustain
+				0x38d47d6e = sustain
 			}
 		}}
-	RegisterState \{name = uistate_pause_options
+	registerstate \{name = uistate_pause_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pause_options'
-				load_create = freeze
-				load_destroy = freeze
+				0x1a6af6b1 = freeze
+				0x38d47d6e = freeze
 			}
 		}}
-	RegisterState \{name = uistate_pausemenu_restart_warning
+	registerstate \{name = uistate_pausemenu_restart_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_restart_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_pausemenu_change_difficulty
+	registerstate \{name = uistate_pausemenu_change_difficulty
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_change_difficulty'
 			}
 		}}
-	RegisterState \{name = UIstate_pausemenu_change_difficulty_warning
+	registerstate \{name = uistate_pausemenu_change_difficulty_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_change_difficulty_warning'
 			}
 		}}
-	RegisterState \{name = UIstate_pausemenu_change_difficulty_confirm
+	registerstate \{name = uistate_pausemenu_change_difficulty_confirm
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_change_difficulty_confirm'
 			}
 		}}
-	RegisterState \{name = uistate_pausemenu_lefty_flip_warning
+	registerstate \{name = uistate_pausemenu_lefty_flip_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_lefty_flip_warning'
 			}
 		}}
-	RegisterState \{name = uistate_pausemenu_quit_warning
+	registerstate \{name = uistate_pausemenu_quit_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_quit_warning'
 			}
 		}}
-	RegisterState \{name = uistate_pausemenu_song_ended
+	registerstate \{name = uistate_pausemenu_song_ended
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'pausemenu_song_ended'
 				pakname = 'fail_song'
 			}
 		}}
-	RegisterState \{name = uistate_song_unpause
+	registerstate \{name = uistate_song_unpause
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'song_unpause'
 				pakname = 'gameplay'
-				load_create = sustain
-				load_destroy = sustain
+				0x1a6af6b1 = sustain
+				0x38d47d6e = sustain
 			}
 		}}
 endscript
 
-script RegisterUIStates_Outro 
-	RegisterState \{name = UIstate_win_song
+script registeruistates_outro 
+	registerstate \{name = uistate_win_song
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'win_song'
 				pakname = 'win_song'
 			}
 		}}
-	RegisterState \{name = UIstate_song_statistic
+	registerstate \{name = uistate_song_statistic
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'song_statistic'
 				pakname = 'song_statistic'
 			}
 		}}
-	RegisterState \{name = UIstate_song_summary
+	registerstate \{name = uistate_song_summary
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'song_summary'
 				pakname = 'song_summary'
 			}
 		}}
-	RegisterState \{name = uistate_detailed_stats
+	registerstate \{name = uistate_detailed_stats
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'detailed_stats'
 			}
 		}}
-	RegisterState \{name = uistate_top_rockers
+	registerstate \{name = uistate_top_rockers
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'top_rockers'
 				pakname = 'top_rockers'
 			}
 		}}
-	RegisterState \{name = uistate_unlock
+	registerstate \{name = uistate_unlock
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'unlock'
 			}
 		}}
-	RegisterState \{name = uistate_rewards
+	registerstate \{name = uistate_rewards
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'rewards'
 				pakname = 'rewards'
 			}
 		}}
-	RegisterState \{name = uistate_song_summary_details
+	registerstate \{name = uistate_song_summary_details
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'song_summary_details'
 				pakname = 'song_summary_details'
@@ -917,162 +917,162 @@ script RegisterUIStates_Outro
 				anim_out_script = ui_song_summary_details_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_top_5_rockers
+	registerstate \{name = uistate_top_5_rockers
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'top_5_rockers'
 			}
 		}}
 endscript
 
-script RegisterUIStates_Practice 
-	RegisterState \{name = uistate_select_practice_mode
+script registeruistates_practice 
+	registerstate \{name = uistate_select_practice_mode
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_practice_mode'
 			}
 		}}
-	RegisterState \{name = uistate_select_tutorial
+	registerstate \{name = uistate_select_tutorial
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_tutorial'
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial
+	registerstate \{name = uistate_play_tutorial
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial'
 				pakname = 'guitar_tutorials'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_advanced_techniques
+	registerstate \{name = 0xffbe0317
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_advanced_techniques'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_band
+	registerstate \{name = 0xf0cc6786
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_band'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_basic
+	registerstate \{name = 0x71c094fe
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_basic'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_drum_basic
+	registerstate \{name = 0xed3d20c7
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_drum_basic'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_drum_int
+	registerstate \{name = 0xd37e5db6
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_drum_int'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_new_features
+	registerstate \{name = 0xedb5b9f0
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_new_features'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_star_power
+	registerstate \{name = 0x09c164d9
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_star_power'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_versus
+	registerstate \{name = 0x4b2a2d50
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_versus'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_play_tutorial_vocals
+	registerstate \{name = uistate_play_tutorial_vocals
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'play_tutorial_vocals'
 				anim_out_script = ui_play_tutorial_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_practice_select_part
+	registerstate \{name = uistate_practice_select_part
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'practice_select_part'
 			}
 		}}
-	RegisterState \{name = uistate_select_song_section
+	registerstate \{name = uistate_select_song_section
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'select_song_section'
 				pakname = 'select_song_section'
 			}
 		}}
-	RegisterState \{name = uistate_practice_select_speed
+	registerstate \{name = uistate_practice_select_speed
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'practice_select_speed'
 				anim_in_script = ui_select_difficulty_anim_in
 				anim_out_script = ui_select_difficulty_anim_out
 			}
 		}}
-	RegisterState \{name = uistate_practice_warning
+	registerstate \{name = uistate_practice_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'practice_warning'
 			}
 		}}
-	RegisterState \{name = uistate_practice_select_difficulty
+	registerstate \{name = uistate_practice_select_difficulty
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'practice_select_difficulty'
 				anim_in_script = ui_select_difficulty_anim_in
 				anim_out_script = ui_select_difficulty_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_tutorial_prompt
+	registerstate \{name = uistate_tutorial_prompt
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'tutorial_prompt'
 				focus_id = dialog_box_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_tutorial_prompt_easy
+	registerstate \{name = uistate_tutorial_prompt_easy
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'tutorial_prompt_easy'
 				focus_id = dialog_box_vmenu
@@ -1080,10 +1080,10 @@ script RegisterUIStates_Practice
 		}}
 endscript
 
-script RegisterUIStates_Jam 
-	RegisterState \{name = uistate_jam
+script registeruistates_jam 
+	registerstate \{name = uistate_jam
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam'
 				pakname = 'jam'
@@ -1091,527 +1091,527 @@ script RegisterUIStates_Jam
 				anim_out_script = nullscript
 			}
 		}}
-	RegisterState \{name = UIstate_jam_select_song
+	registerstate \{name = uistate_jam_select_song
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_select_song'
 				pakname = 'jam'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_song_wizard
+	registerstate \{name = uistate_jam_song_wizard
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_song_wizard'
 				pakname = 'jam_wizard'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_band
+	registerstate \{name = uistate_jam_band
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_band'
 				pakname = 'jam_band'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_band_tut
+	registerstate \{name = 0x564a9cd3
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_band_tut'
 				pakname = 'jam_band'
 			}
 		}}
-	RegisterState \{name = UIstate_recording
+	registerstate \{name = uistate_recording
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'recording'
 				pakname = 'jam_advanced'
 			}
 		}}
-	RegisterState \{name = UIstate_recording_disconnect
+	registerstate \{name = uistate_recording_disconnect
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'recording_disconnect'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_song
+	registerstate \{name = uistate_jam_publish_song
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_song'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_genre
+	registerstate \{name = uistate_jam_publish_genre
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_genre'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_track_select
+	registerstate \{name = uistate_jam_publish_track_select
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_track_select'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_slot
+	registerstate \{name = uistate_jam_publish_slot
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_slot'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_download_slot
+	registerstate \{name = uistate_jam_download_slot
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_download_slot'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_title_entry
+	registerstate \{name = uistate_jam_publish_title_entry
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_title_entry'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_update_fileid
+	registerstate \{name = uistate_jam_publish_update_fileid
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_update_fileid'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_publish_signin
+	registerstate \{name = uistate_jam_publish_signin
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_publish_signin'
 				pakname = 'jam'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_ghtunes
+	registerstate \{name = uistate_jam_ghtunes
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_ghtunes'
 				pakname = 'jam_ghtunes'
 			}
 		}}
-	RegisterState \{name = UIstate_gh_tunes_share
+	registerstate \{name = uistate_gh_tunes_share
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'gh_tunes_share'
 				pakname = 'gh_tunes_share'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_ratesong
+	registerstate \{name = uistate_jam_ratesong
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_ratesong'
 				pakname = 'jam'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_songwriter_event
+	registerstate \{name = uistate_jam_songwriter_event
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_songwriter_event'
 				pakname = 'jam_songwriter'
 			}
 		}}
-	RegisterState \{name = UIstate_jam_quickplay_event
+	registerstate \{name = uistate_jam_quickplay_event
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_quickplay_event'
 			}
 		}}
-	RegisterState \{name = uistate_jam_tutorials
+	registerstate \{name = uistate_jam_tutorials
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'jam_tutorials'
 			}
 		}}
 endscript
 
-script RegisterUIStates_Select_Rocker 
-	RegisterState \{name = uistate_character_selection
+script registeruistates_select_rocker 
+	registerstate \{name = uistate_character_selection
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'character_selection'
 			}
 		}}
-	RegisterState \{name = UIstate_character_purchase
+	registerstate \{name = uistate_character_purchase
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'character_purchase'
 				focus_id = character_purchase_menu
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character
+	registerstate \{name = uistate_customize_character
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character'
-				hist_tex = icon_EditCharacter
+				hist_tex = icon_editcharacter
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_head
+	registerstate \{name = uistate_customize_character_head
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_head'
 				hist_tex = icon_head
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_body
+	registerstate \{name = uistate_customize_character_body
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_body'
 				hist_tex = icon_body
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_proportions
+	registerstate \{name = uistate_customize_character_proportions
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_proportions'
 				hist_tex = icon_size
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_body_art
+	registerstate \{name = uistate_customize_character_body_art
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_body_art'
 				hist_tex = icon_graphics
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_sub_sections
+	registerstate \{name = uistate_customize_character_sub_sections
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_sub_sections'
 				hist_tex = icon_graphics
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_stage_presence
+	registerstate \{name = uistate_customize_character_stage_presence
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_stage_presence'
 				hist_tex = icon_presence
 			}
 		}}
-	RegisterState \{name = UIstate_character_face_deformation
+	registerstate \{name = uistate_character_face_deformation
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'character_face_deformation'
 				hist_tex = icon_face
 			}
 		}}
-	RegisterState \{name = UIstate_character_face_deformation_options
+	registerstate \{name = uistate_character_face_deformation_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'character_face_deformation_options'
 			}
 		}}
-	RegisterState \{name = UIstate_cas_color_edit
+	registerstate \{name = uistate_cas_color_edit
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_color_edit'
 			}
 		}}
-	RegisterState \{name = UIstate_save_changes_dialogue
+	registerstate \{name = uistate_save_changes_dialogue
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'save_changes_dialogue'
 				focus_id = dialog_box_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_genre
+	registerstate \{name = uistate_customize_character_genre
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_genre'
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_gender
+	registerstate \{name = uistate_customize_character_gender
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_gender'
 			}
 		}}
-	RegisterState \{name = UIstate_create_character_gender
+	registerstate \{name = uistate_create_character_gender
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'create_character_gender'
 			}
 		}}
-	RegisterState \{name = UIstate_create_character_genre
+	registerstate \{name = uistate_create_character_genre
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'create_character_genre'
 			}
 		}}
-	RegisterState \{name = UIstate_cas_discard_changes
+	registerstate \{name = uistate_cas_discard_changes
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_discard_changes'
 				focus_id = dialog_box_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_mic
+	registerstate \{name = uistate_customize_character_mic
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_mic'
 				hist_tex = icon_mic_2
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_mic_main
+	registerstate \{name = uistate_customize_character_mic_main
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_mic_main'
 				hist_tex = icon_customize
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cas_select_part
+	registerstate \{name = uistate_cas_select_part
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_select_part'
 			}
 		}}
-	RegisterState \{name = UIstate_cas_select_part_options
+	registerstate \{name = uistate_cas_select_part_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_select_part_options'
 			}
 		}}
-	RegisterState \{name = UIstate_popout_select_part
+	registerstate \{name = uistate_popout_select_part
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'popout_select_part'
 				focus_id = current_list_menu
 			}
 		}}
-	RegisterState \{name = UIstate_cas_select_part_color_options
+	registerstate \{name = uistate_cas_select_part_color_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_select_part_color_options'
 			}
 		}}
-	RegisterState \{name = UIstate_cas_select_part_swatches
+	registerstate \{name = uistate_cas_select_part_swatches
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_select_part_swatches'
 			}
 		}}
-	RegisterState \{name = UIstate_cas_text_entry
+	registerstate \{name = uistate_cas_text_entry
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_text_entry'
 				hist_tex = icon_name
 			}
 		}}
-	RegisterState \{name = uistate_end_credits
+	registerstate \{name = uistate_end_credits
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'end_credits'
 			}
 		}}
 endscript
 
-script RegisterUIStates_CAP 
-	RegisterState \{name = UIstate_cagr
+script registeruistates_cap 
+	registerstate \{name = uistate_cagr
 		taks = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cagr'
 			}
 		}}
-	RegisterState \{name = UIstate_cap_main
+	registerstate \{name = uistate_cap_main
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cagr'
 				anim_out_script = ui_cap_main_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_cap_layers_list
+	registerstate \{name = uistate_cap_layers_list
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_layers_list'
 				hist_tex = icon_current
 			}
 		}}
-	RegisterState \{name = UIstate_cap_shape_list
+	registerstate \{name = uistate_cap_shape_list
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_shape_list'
 				hist_tex = category
 			}
 		}}
-	RegisterState \{name = UIstate_cap_shape_list_subset
+	registerstate \{name = uistate_cap_shape_list_subset
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_shape_list_subset'
 				focus_id = current_list_menu
 			}
 		}}
-	RegisterState \{name = UIstate_cap_color_wheel
+	registerstate \{name = uistate_cap_color_wheel
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_color_wheel'
 				hist_tex = menu_history_color_edit
 			}
 		}}
-	RegisterState \{name = UIstate_cap_shape_edit
+	registerstate \{name = uistate_cap_shape_edit
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_shape_edit'
 				anim_in_script = nullscript
 				hist_tex = menu_history_color_edit
 			}
 		}}
-	RegisterState \{name = UIstate_cap_artist_layer
+	registerstate \{name = uistate_cap_artist_layer
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_artist_layer'
 			}
 		}}
-	RegisterState \{name = UIstate_cap_layers_options
+	registerstate \{name = uistate_cap_layers_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_layers_options'
 				focus_id = layers_options_vmenu
 			}
 		}}
-	RegisterState \{name = UIstate_cap_artist_layer_options
+	registerstate \{name = uistate_cap_artist_layer_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_artist_layer_options'
 				hist_tex = menu_history_color_edit
 			}
 		}}
-	RegisterState \{name = UIstate_cap_artist_layer_popout
+	registerstate \{name = uistate_cap_artist_layer_popout
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cap_artist_layer_popout'
 				focus_id = current_list_menu
 			}
 		}}
-	RegisterState \{name = UIstate_cas_save_slots
+	registerstate \{name = uistate_cas_save_slots
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cas_save_slots'
 			}
 		}}
 endscript
 
-script RegisterUIStates_Outfit 
-	RegisterState \{name = UIstate_customize_character_outfit
+script registeruistates_outfit 
+	registerstate \{name = uistate_customize_character_outfit
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_outfit'
 				hist_tex = icon_outfit
 			}
 		}}
-	RegisterState \{name = UIstate_customize_character_outfit_accessories
+	registerstate \{name = uistate_customize_character_outfit_accessories
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_outfit_accessories'
-				hist_tex = Accessories
+				hist_tex = accessories
 			}
 		}}
 endscript
 
-script RegisterUIStates_CAG 
-	RegisterState \{name = UIstate_customize_character_instrument
+script registeruistates_cag 
+	registerstate \{name = uistate_customize_character_instrument
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'customize_character_instrument'
 				hist_tex = icon_instrument
 			}
 		}}
-	RegisterState \{name = UIstate_cag_main
+	registerstate \{name = uistate_cag_main
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_custom
+	registerstate \{name = uistate_cag_custom
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_custom'
 				hist_tex = icon_customize
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_custom_body
+	registerstate \{name = uistate_cag_custom_body
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_custom_body'
 				hist_tex = icon_cag_body
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_custom_body_types
+	registerstate \{name = uistate_cag_custom_body_types
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_custom_body_types'
 				focus_id = current_list_menu
@@ -1619,50 +1619,50 @@ script RegisterUIStates_CAG
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_select_part_inclusion
+	registerstate \{name = uistate_cag_select_part_inclusion
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_select_part_inclusion'
 				focus_id = current_list_menu
 			}
 		}}
-	RegisterState \{name = UIstate_cag_select_part_inclusion_options
+	registerstate \{name = uistate_cag_select_part_inclusion_options
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_select_part_inclusion_options'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_metallica_presets
+	registerstate \{name = uistate_cag_metallica_presets
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_metallica_presets'
 				focus_id = current_list_menu
 			}
 		}}
-	RegisterState \{name = UIstate_cag_custom_hardware
+	registerstate \{name = uistate_cag_custom_hardware
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_custom_hardware'
 				hist_tex = icon_cag_hardware
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_custom_head
+	registerstate \{name = uistate_cag_custom_head
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_custom_head'
 				hist_tex = icon_cag_head
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cag_custom_strings
+	registerstate \{name = uistate_cag_custom_strings
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cag_custom_strings'
 				focus_id = current_list_menu
@@ -1672,107 +1672,107 @@ script RegisterUIStates_CAG
 		}}
 endscript
 
-script RegisterUIStates_Online 
-	RegisterState \{name = uistate_online
+script registeruistates_online 
+	registerstate \{name = uistate_online
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'online'
 				pakname = 'online_lobby'
 			}
 		}}
-	RegisterState \{name = UIstate_net_setlist
+	registerstate \{name = uistate_net_setlist
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_setlist'
 			}
 		}}
-	RegisterState \{name = UIstate_net_custom_search
+	registerstate \{name = uistate_net_custom_search
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_custom_search'
 			}
 		}}
-	RegisterState \{name = UIstate_net_serverlist
+	registerstate \{name = uistate_net_serverlist
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_serverlist'
 			}
 		}}
-	RegisterState \{name = UIstate_net_joining
+	registerstate \{name = uistate_net_joining
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_joining'
 			}
 		}}
-	RegisterState \{name = UIstate_net_debug_lobby
+	registerstate \{name = uistate_net_debug_lobby
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_debug_lobby'
 			}
 		}}
-	RegisterState \{name = UIstate_net_debug_lobby_join
+	registerstate \{name = uistate_net_debug_lobby_join
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_debug_lobby_join'
 			}
 		}}
-	RegisterState \{name = UIstate_net_signin_popup
+	registerstate \{name = uistate_net_signin_popup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_signin_popup'
 				focus_id = net_signin_popup
 			}
 		}}
-	RegisterState \{name = UIstate_net_career_join_popup
+	registerstate \{name = uistate_net_career_join_popup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_career_join_popup'
 				focus_id = career_join_popup
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard
+	registerstate \{name = uistate_leaderboard
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard'
 				pakname = 'leaderboard'
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_groups
+	registerstate \{name = uistate_leaderboard_groups
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_groups'
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_list
+	registerstate \{name = uistate_leaderboard_list
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_list'
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_load
+	registerstate \{name = uistate_leaderboard_load
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_load'
 				pakname = 'leaderboard'
 				focus_id = leaderboard_load
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_filter
+	registerstate \{name = uistate_leaderboard_filter
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_filter'
 				pakname = 'leaderboard'
@@ -1781,9 +1781,9 @@ script RegisterUIStates_Online
 				anim_out_script = ui_leaderboard_popup_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_me
+	registerstate \{name = uistate_leaderboard_me
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_me'
 				pakname = 'leaderboard'
@@ -1792,69 +1792,69 @@ script RegisterUIStates_Online
 				anim_out_script = ui_leaderboard_popup_anim_out
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_instrument
+	registerstate \{name = uistate_leaderboard_instrument
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_instrument'
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_timeout
+	registerstate \{name = uistate_leaderboard_timeout
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_timeout'
 			}
 		}}
-	RegisterState \{name = UIstate_leaderboard_empty
+	registerstate \{name = uistate_leaderboard_empty
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'leaderboard_empty'
 			}
 		}}
-	RegisterState \{name = UIstate_net_zero_search_results_popup
+	registerstate \{name = uistate_net_zero_search_results_popup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_zero_search_results_popup'
 				focus_id = net_zero_popup
 			}
 		}}
-	RegisterState \{name = UIstate_friends_list
+	registerstate \{name = uistate_friends_list
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'friends_list'
 				focus_id = friends_list_popup
 			}
 		}}
-	RegisterState \{name = UIstate_net_preferences
+	registerstate \{name = uistate_net_preferences
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_preferences'
 				focus_id = net_preferences_popup
 			}
 		}}
-	RegisterState \{name = uistate_online_post_game_lobby
+	registerstate \{name = uistate_online_post_game_lobby
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'online_post_game_lobby'
 				pakname = 'online_lobby'
 			}
 		}}
-	RegisterState \{name = uistate_net_setup
+	registerstate \{name = uistate_net_setup
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'net_setup'
 			}
 		}}
-	RegisterState \{name = uistate_online_quit_warning
+	registerstate \{name = uistate_online_quit_warning
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'online_quit_warning'
 				focus_id = online_quit_menu
@@ -1862,19 +1862,19 @@ script RegisterUIStates_Online
 		}}
 endscript
 
-script RegisterUIStates_CADrm 
-	RegisterState \{name = UIstate_cadrm_main
+script registeruistates_cadrm 
+	registerstate \{name = uistate_cadrm_main
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cadrm_main'
 				hist_tex = icon_cadrm_drum
 				pakname = 'cag_main'
 			}
 		}}
-	RegisterState \{name = UIstate_cadrm_hub
+	registerstate \{name = uistate_cadrm_hub
 		task = {
-			name = Task_Menu
+			name = task_menu
 			params = {
 				base_name = 'cadrm_hub'
 				hist_tex = icon_customize

@@ -1,37 +1,37 @@
-L_GUIT_Love_Belong_anims_set = {
-	Stance_A = {
-		Idle = {
+0xa242bbaf = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_love_belong_075
+				slow = [
+					0xfbcc0c0e
 				]
-				Med = [
-					guit_love_belong_100
+				med = [
+					0xc5250471
 				]
-				Fast = [
-					guit_love_belong_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_love_belong_075
-				]
-				Med = [
-					guit_love_belong_100
-				]
-				Fast = [
-					guit_love_belong_120
+				fast = [
+					0xf71366f3
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_love_belong_075
+			normal = {
+				slow = [
+					0xfbcc0c0e
 				]
-				Med = [
-					guit_love_belong_100
+				med = [
+					0xc5250471
 				]
-				Fast = [
-					guit_love_belong_120
+				fast = [
+					0xf71366f3
+				]
+			}
+			bad = {
+				slow = [
+					0xfbcc0c0e
+				]
+				med = [
+					0xc5250471
+				]
+				fast = [
+					0xf71366f3
 				]
 			}
 		}

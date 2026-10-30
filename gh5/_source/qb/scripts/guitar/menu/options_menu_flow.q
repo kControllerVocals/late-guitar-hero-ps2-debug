@@ -7,7 +7,7 @@ script setup_top_rockers_single
 	change \{top_rockers_which_mode = p1_quickplay}
 	change \{game_mode = p1_quickplay}
 	change \{current_num_players = 1}
-	if GotParam \{device_num}
+	if gotparam \{device_num}
 		change primary_controller = <device_num>
 	endif
 	set_primary_controller device_num = <device_num> state = uistate_select_instrument data = {from_top_rocker = 1 override_base_name = 'options'}

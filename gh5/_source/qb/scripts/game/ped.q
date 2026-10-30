@@ -1,40 +1,40 @@
-ped_use_GELAI = 0
-Ped_StaticAnimTree = {
-	type = PartialSwitch
-	id = PedBlendRoot
+ped_use_gelai = 0
+ped_staticanimtree = {
+	type = partialswitch
+	id = pedblendroot
 	[
 		{
-			type = DegenerateBlend
-			id = PedFAMAnimParentNode
+			type = degenerateblend
+			id = pedfamanimparentnode
 		}
 		{
-			type = DegenerateBlend
-			id = PedMainAnimParentNode
+			type = degenerateblend
+			id = pedmainanimparentnode
 		}
 	]
 }
-Ped_StaticAnimTreeWithFace = {
-	type = Ik
+ped_staticanimtreewithface = {
+	type = ik
 	[
 		{
 			type = applydifference
-			id = PedWithFace
+			id = pedwithface
 			[
 				{
-					type = DegenerateBlend
-					id = Face
+					type = degenerateblend
+					id = face
 				}
 				{
-					type = PartialSwitch
-					id = PedBlendRoot
+					type = partialswitch
+					id = pedblendroot
 					[
 						{
-							type = DegenerateBlend
-							id = PedFAMAnimParentNode
+							type = degenerateblend
+							id = pedfamanimparentnode
 						}
 						{
-							type = DegenerateBlend
-							id = PedMainAnimParentNode
+							type = degenerateblend
+							id = pedmainanimparentnode
 						}
 					]
 				}
@@ -42,331 +42,331 @@ Ped_StaticAnimTreeWithFace = {
 		}
 	]
 }
-Ped_AnimBranch_Standard = {
+ped_animbranch_standard = {
 	type = param_timer_type
-	id = BodyTimer
-	Speed = param_speed
+	id = bodytimer
+	speed = param_speed
 	start = param_start
-	Anim = param_anim
+	anim = param_anim
 	anim_events = on
 	[
 		{
-			id = BodySource
-			type = Source
-			Anim = param_anim
+			id = bodysource
+			type = source
+			anim = param_anim
 		}
 	]
 }
-Ped_AnimBranch_LookAt = {
-	id = LookAtController
-	type = DifferenceLookAt
+ped_animbranch_lookat = {
+	id = lookatcontroller
+	type = differencelookat
 	params = param_lookat_params
 	target = param_lookat_target
 	[
 		{
-			$Ped_AnimBranch_Standard
+			$ped_animbranch_standard
 		}
 	]
 }
-Ped_AnimBranch_FAMStandard = {
+ped_animbranch_famstandard = {
 	type = param_timer_type
-	id = FamTimer
-	Speed = param_speed
+	id = famtimer
+	speed = param_speed
 	start = param_start
-	Anim = param_anim
+	anim = param_anim
 	anim_events = on
 	[
 		{
-			id = PedFAMAnimNode
-			type = Source
-			Anim = param_anim
+			id = pedfamanimnode
+			type = source
+			anim = param_anim
 		}
 	]
 }
-Ped_AnimBranch_FAMEmpty = {
-	type = Blank
+ped_animbranch_famempty = {
+	type = blank
 }
-Ped_AnimBranch_Flipped = {
+ped_animbranch_flipped = {
 	type = flip
-	id = BodyFlip
+	id = bodyflip
 	[
 		{
-			$Ped_AnimBranch_Standard
+			$ped_animbranch_standard
 		}
 	]
 }
-Ped_AnimBranch_Overlay = {
+ped_animbranch_overlay = {
 	type = param_timer_type
-	id = BodyTimer
-	Speed = param_speed
+	id = bodytimer
+	speed = param_speed
 	start = param_start
-	Anim = param_anim
+	anim = param_anim
 	anim_events = on
 	[
 		{
-			id = BodyOverlay
-			type = Overlay
-			Anim = param_overlay
+			id = bodyoverlay
+			type = overlay
+			anim = param_overlay
 			[
 				{
-					id = BodySource
-					type = Source
-					Anim = param_anim
+					id = bodysource
+					type = source
+					anim = param_anim
 				}
 			]
 		}
 	]
 }
-GameObj_AnimTree = {
-	type = DegenerateBlend
-	id = Body
+gameobj_animtree = {
+	type = degenerateblend
+	id = body
 }
-GameObj_RagdollAnimTree = {
+gameobj_ragdollanimtree = {
 	type = ragdoll
 	[
 		{
-			type = DegenerateBlend
-			id = Body
+			type = degenerateblend
+			id = body
 		}
 	]
 }
-GameObj_StandardAnimBranch = {
-	type = TimerType
-	id = BodyTimer
-	Anim = Anim
-	anim_events = AnimEvents
-	Speed = Speed
+gameobj_standardanimbranch = {
+	type = timertype
+	id = bodytimer
+	anim = anim
+	anim_events = animevents
+	speed = speed
 	start = start
 	[
 		{
-			type = Source
-			Anim = Anim
+			type = source
+			anim = anim
 		}
 	]
 }
 
-script Ped_InitStaticAnimTree \{Tree = $Ped_StaticAnimTree}
-	Anim_UnInitTree
-	Anim_InitTree Tree = <Tree> NodeIdDeclaration = [
-		PedMainAnimParentNode
-		PedFAMAnimParentNode
-		PedBlendRoot
-		FamTimer
-		PedFAMAnimNode
-		BodyTimer
-		BodySource
-		BodyOverlay
-		LookAtController
-		PedWithFace
-		Face
+script ped_initstaticanimtree \{tree = $ped_staticanimtree}
+	anim_uninittree
+	anim_inittree tree = <tree> nodeiddeclaration = [
+		pedmainanimparentnode
+		pedfamanimparentnode
+		pedblendroot
+		famtimer
+		pedfamanimnode
+		bodytimer
+		bodysource
+		bodyoverlay
+		lookatcontroller
+		pedwithface
+		face
 		faceidle_timer
 		face_timer
 		face_source
 	]
 endscript
 
-script Ped_AddDegenerateBlendBranch 
-	Ped_Anim_Command \{command = DegenerateBlend_AddBranch
+script ped_adddegenerateblendbranch 
+	ped_anim_command \{command = degenerateblend_addbranch
 		params = {
-			Tree = $Ped_AnimBranch_Standard
+			tree = $ped_animbranch_standard
 			params = {
-				param_timer_type = Play
-				param_anim = Ped_M_Idle1
+				param_timer_type = play
+				param_anim = ped_m_idle1
 			}
 		}}
-	Anim_UpdatePose
-	Anim_Command \{command = DegenerateBlend_SetNextBlendDuration
+	anim_updatepose
+	anim_command \{command = degenerateblend_setnextblendduration
 		params = {
 			0.0
 		}}
 endscript
 
-script Ped_PlayAnim \{Anim = 0
-		target = PedMainAnimParentNode
-		Tree = $Ped_AnimBranch_Standard
-		Source = BodySource
-		Flipped = 0}
-	if GotParam \{norestart}
-		if Ped_Anim_Command target = <Source> command = Source_AnimEquals params = {<Anim>}
+script ped_playanim \{anim = 0
+		target = pedmainanimparentnode
+		tree = $ped_animbranch_standard
+		source = bodysource
+		flipped = 0}
+	if gotparam \{norestart}
+		if ped_anim_command target = <source> command = source_animequals params = {<anim>}
 			return
 		endif
 	endif
-	timer_type = Play
-	if GotParam \{Cycle}
-		timer_type = Cycle
+	timer_type = play
+	if gotparam \{cycle}
+		timer_type = cycle
 	endif
-	if GotParam \{Wobble}
-		timer_type = Wobble
+	if gotparam \{wobble}
+		timer_type = wobble
 	endif
-	if (<Flipped> = 1)
-		<Tree> = Ped_AnimBranch_Flipped
+	if (<flipped> = 1)
+		<tree> = ped_animbranch_flipped
 	endif
-	if GotParam \{PartialAnimOverlay}
-		Ped_Anim_Command target = Ped_AnimBranch_Overlay command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <BlendPeriod>
-			Tree = <Tree> params = {
+	if gotparam \{partialanimoverlay}
+		ped_anim_command target = ped_animbranch_overlay command = degenerateblend_addbranch params = {
+			blendduration = <blendperiod>
+			tree = <tree> params = {
 				param_timer_type = <timer_type>
-				param_anim = <Anim>
-				param_overlay = <PartialAnimOverlay>
-				param_speed = <Speed>
+				param_anim = <anim>
+				param_overlay = <partialanimoverlay>
+				param_speed = <speed>
 				param_start = <start>
 			}
 		}
 	else
-		Ped_Anim_Command target = <target> command = DegenerateBlend_AddBranch params = {
-			BlendDuration = <BlendPeriod>
-			Tree = <Tree> params = {
+		ped_anim_command target = <target> command = degenerateblend_addbranch params = {
+			blendduration = <blendperiod>
+			tree = <tree> params = {
 				param_timer_type = <timer_type>
-				param_anim = <Anim>
-				param_speed = <Speed>
+				param_anim = <anim>
+				param_speed = <speed>
 				param_start = <start>
 				param_lookat_params = <lookat_params>
 				param_lookat_target = <lookat_target>
 			}
 		}
 	endif
-	if (DEBUG_PEDINFO = 1)
-		SetTags LastAnim = <Anim>
+	if (debug_pedinfo = 1)
+		settags lastanim = <anim>
 	endif
 endscript
 
-script Ped_Anim_Command 
-	Anim_Command <...>
-	Obj_GetID
-	GetSingleTag \{board_id}
-	if GotParam \{board_id}
-		if IsCreated <board_id>
-			<board_id> :Anim_Command <...>
+script ped_anim_command 
+	anim_command <...>
+	obj_getid
+	getsingletag \{board_id}
+	if gotparam \{board_id}
+		if iscreated <board_id>
+			<board_id> :anim_command <...>
 		endif
 	endif
 endscript
 
-script Ped_WaitAnimFinished \{Timer = BodyTimer}
-	Ped_Anim_Command target = <Timer> command = Timer_Wait
+script ped_waitanimfinished \{timer = bodytimer}
+	ped_anim_command target = <timer> command = timer_wait
 endscript
 
-script Ped_WaitAnim 
-	Ped_Anim_Command target = BodyTimer command = Timer_Wait params = {<...>}
+script ped_waitanim 
+	ped_anim_command target = bodytimer command = timer_wait params = {<...>}
 endscript
 
-script Ped_AnimComplete \{Timer = BodyTimer}
-	if Anim_Command target = <Timer> command = Timer_IsAnimComplete
+script ped_animcomplete \{timer = bodytimer}
+	if anim_command target = <timer> command = timer_isanimcomplete
 		return \{scriptresult = 1}
 	else
 		return \{scriptresult = 0}
 	endif
 endscript
 
-script Ped_GetAnimDuration \{Timer = BodyTimer}
-	Anim_Command target = <Timer> command = Timer_GetAnimDuration
+script ped_getanimduration \{timer = bodytimer}
+	anim_command target = <timer> command = timer_getanimduration
 	return <duration>
 endscript
 
-script Ped_SetAnimCycleMode 
-	timer_type = Cycle
-	if GotParam \{off}
-		timer_type = Play
+script ped_setanimcyclemode 
+	timer_type = cycle
+	if gotparam \{off}
+		timer_type = play
 	endif
-	Anim_Command \{target = BodySource
-		command = Source_GetAnimName}
-	Anim = <AnimName>
-	Anim_Command \{target = BodyTimer
-		command = Timer_GetFrameFactor}
+	anim_command \{target = bodysource
+		command = source_getanimname}
+	anim = <animname>
+	anim_command \{target = bodytimer
+		command = timer_getframefactor}
 	start = <framefactor>
-	Anim_Command target = PedMainAnimParentNode command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <BlendPeriod>
-		Tree = $Ped_AnimBranch_Standard params = {
+	anim_command target = pedmainanimparentnode command = degenerateblend_addbranch params = {
+		blendduration = <blendperiod>
+		tree = $ped_animbranch_standard params = {
 			param_timer_type = <timer_type>
-			param_anim = <Anim>
-			param_speed = <Speed>
+			param_anim = <anim>
+			param_speed = <speed>
 			param_start = <start>
 		}
 	}
 endscript
 
-script Ped_Flip 
+script ped_flip 
 endscript
 
 script gameobj_init_animtree 
-	if GotParam \{profile}
-		AddParams <profile>
+	if gotparam \{profile}
+		addparams <profile>
 	endif
-	if GotParam \{AnimTargets}
-		Anim_InitTree {
-			Tree = <Tree>
-			DefaultCommandTarget = <DefaultCommandTarget>
-			NodeIdDeclaration = <AnimTargets>
-			params = <AnimTreeParams>
-			AnimEventTableName = <AnimEventTableName>
+	if gotparam \{animtargets}
+		anim_inittree {
+			tree = <tree>
+			defaultcommandtarget = <defaultcommandtarget>
+			nodeiddeclaration = <animtargets>
+			params = <animtreeparams>
+			animeventtablename = <animeventtablename>
 		}
-		Anim_Enable \{off}
+		anim_enable \{off}
 	endif
 endscript
 
-script GameObj_PlayAnim \{target = Body
-		Tree = $GameObj_StandardAnimBranch
-		TimerType = Play
-		Speed = 1.0
+script gameobj_playanim \{target = body
+		tree = $gameobj_standardanimbranch
+		timertype = play
+		speed = 1.0
 		start = 0.0
-		AnimEvents = off
-		BlendDuration = -1.0}
-	if NOT GotParam \{Anim}
-		Anim_GetDefaultAnimName
-		Anim = <DefaultAnimName>
+		animevents = off
+		blendduration = -1.0}
+	if NOT gotparam \{anim}
+		anim_getdefaultanimname
+		anim = <defaultanimname>
 	endif
-	Anim_Enable
-	Anim_Command target = <target> command = DegenerateBlend_AddBranch params = {
-		Tree = <Tree>
-		BlendDuration = <BlendDuration>
+	anim_enable
+	anim_command target = <target> command = degenerateblend_addbranch params = {
+		tree = <tree>
+		blendduration = <blendduration>
 		params = {
-			Anim = <Anim>
-			Speed = <Speed>
-			TimerType = <TimerType>
+			anim = <anim>
+			speed = <speed>
+			timertype = <timertype>
 			start = <start>
-			AnimEvents = <AnimEvents>
+			animevents = <animevents>
 		}
 	}
 endscript
 
-script GameObj_WaitAnimFinished \{Timer = BodyTimer}
-	Anim_Command target = <Timer> command = Timer_WaitAnimComplete
+script gameobj_waitanimfinished \{timer = bodytimer}
+	anim_command target = <timer> command = timer_waitanimcomplete
 endscript
 
-script GameObj_WaitAnim 
-	Anim_Command target = BodyTimer command = Timer_Wait params = {<...>}
+script gameobj_waitanim 
+	anim_command target = bodytimer command = timer_wait params = {<...>}
 endscript
 
-script GameObj_AnimComplete \{Timer = BodyTimer}
-	if Anim_Command target = <Timer> command = Timer_IsAnimComplete
+script gameobj_animcomplete \{timer = bodytimer}
+	if anim_command target = <timer> command = timer_isanimcomplete
 		return \{scriptresult = 1}
 	else
 		return \{scriptresult = 0}
 	endif
 endscript
 
-script CreateObjLabel 
-	Obj_GetID
-	SpawnScriptLater MaintainObjLabel params = {ObjID = <ObjID>}
+script createobjlabel 
+	obj_getid
+	spawnscriptlater maintainobjlabel params = {objid = <objid>}
 endscript
 
-script MaintainObjLabel 
-	<id> = (<ObjID> + 5)
+script maintainobjlabel 
+	<id> = (<objid> + 5)
 	begin
-	if CompositeObjectExists name = <ObjID>
-		<ObjID> :Obj_GetPosition
-		FormatText TextName = text qs("\L%a") a = <ObjID> nowarning
-		if ObjectExists id = <id>
-			SetScreenElementProps id = <id> text = <text> pos3D = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
+	if compositeobjectexists name = <objid>
+		<objid> :obj_getposition
+		formattext textname = text qs(0x0bc409e2) a = <objid> nowarning
+		if objectexists id = <id>
+			setscreenelementprops id = <id> text = <text> pos3d = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
 		else
-			create_object_label id = <id> text = <text> pos3D = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
+			create_object_label id = <id> text = <text> pos3d = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
 		endif
 	else
-		if ScreenElementExists id = <id>
-			DestroyScreenElement id = <id>
+		if screenelementexists id = <id>
+			destroyscreenelement id = <id>
 		endif
 		break
 	endif
-	Wait \{1
+	wait \{1
 		frame}
 	repeat
 endscript
@@ -377,21 +377,21 @@ endscript
 script ped_enable_bones 
 endscript
 
-script Ped_InitBehaviorFromProfile 
-	if GotParam \{BehaviorInitScript}
-		<BehaviorInitScript>
+script ped_initbehaviorfromprofile 
+	if gotparam \{behaviorinitscript}
+		<behaviorinitscript>
 	endif
 endscript
 
 script create_ped_label 
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	CreateScreenElement {
+	createscreenelement {
 		id = <id>
-		type = TextBlockElement
+		type = textblockelement
 		parent = root_window
 		font = fontgrid_text_a3
-		text = qs("\L")
+		text = qs(0x03ac90f0)
 		scale = 1.0
 		pos = (0.0, 0.0)
 		rgba = [0 128 0 128]
@@ -402,17 +402,17 @@ script create_ped_label
 endscript
 
 script destroy_ped_label 
-	if ObjectExists id = <id>
-		DestroyScreenElement id = <id>
+	if objectexists id = <id>
+		destroyscreenelement id = <id>
 	endif
 endscript
 
 script destroy_global_peds_in_zone 
 	if NOT ($disable_global_pedestrians = 1)
-		if NOT InNetGame
-			if IsCOIMInited
+		if NOT innetgame
+			if iscoiminited
 
-				CleanupGlobalPedNodeArray name = 'zones/z_peds/z_peds.qb' zone = <zone>
+				cleanupglobalpednodearray name = 'zones/z_peds/z_peds.qb' zone = <zone>
 			endif
 		endif
 	endif
@@ -420,10 +420,10 @@ endscript
 
 script spawn_global_peds_in_zone 
 	if NOT ($disable_global_pedestrians = 1)
-		if NOT InNetGame
-			if IsCOIMInited
+		if NOT innetgame
+			if iscoiminited
 
-				ParseGlobalPedNodeArray name = 'zones/z_peds/z_peds.qb' zone = <zone>
+				parseglobalpednodearray name = 'zones/z_peds/z_peds.qb' zone = <zone>
 			endif
 		endif
 	endif

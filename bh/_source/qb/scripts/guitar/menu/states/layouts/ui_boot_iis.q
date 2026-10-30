@@ -3,21 +3,21 @@ attract_wait_time = 30
 invalid_controller_lock = 0
 
 script ui_init_boot_iis 
-	ReAcquireControllers
+	reacquirecontrollers
 	change \{primary_controller_assigned = 0}
 	change \{respond_to_signin_changed = 0}
-	SoundEvent \{event = Menu_Guitar_Lick_SFX}
-	UnPauseGame
+	soundevent \{event = menu_guitar_lick_sfx}
+	unpausegame
 endscript
 
 script ui_create_boot_iis 
 	clean_up_user_control_helpers
 	dumpcompactpoolprofile \{0}
 	change \{rich_presence_context = presence_signed_in_2_3_and_4}
-	if ScreenElementExists \{id = current_menu_anchor}
-		DestroyScreenElement \{id = current_menu_anchor}
+	if screenelementexists \{id = current_menu_anchor}
+		destroyscreenelement \{id = current_menu_anchor}
 	endif
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = current_menu
 		pos = (0.0, 0.0)
@@ -28,9 +28,9 @@ script ui_create_boot_iis
 		z_priority = 0
 		event_handlers = [
 		]}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = current_menu
-		id = bG
+		id = bg
 		texture = boot_copyright_bg_1
 		pos = (0.0, 0.0)
 		dims = (1280.0, 720.0)
@@ -39,10 +39,10 @@ script ui_create_boot_iis
 			top
 		]
 		z_priority = 0}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = current_menu
 		id = speakers
-		texture = pressanybutton_speakers
+		texture = 0x1fb6513b
 		pos = (1280.0, 720.0)
 		dims = (812.0, 512.0)
 		just = [
@@ -52,9 +52,9 @@ script ui_create_boot_iis
 		z_priority = 1.0
 		rot_angle = 0.0
 		alpha = 1.0}
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
-		id = top_gradient
+		id = 0x910fcd46
 		pos = (0.0, 95.0)
 		just = [
 			left
@@ -63,11 +63,11 @@ script ui_create_boot_iis
 		z_priority = 0
 		event_handlers = [
 		]}
-	CreateScreenElement \{type = SpriteElement
-		parent = top_gradient
+	createscreenelement \{type = spriteelement
+		parent = 0x910fcd46
 		blend = blend
-		id = top_gradient_a
-		texture = pressanybutton_gradient
+		id = 0x4460d7d4
+		texture = 0xf1b3b2d0
 		pos = (0.0, 0.0)
 		dims = (1280.0, 20.0)
 		just = [
@@ -77,11 +77,11 @@ script ui_create_boot_iis
 		z_priority = 0.6
 		rot_angle = 0.0
 		alpha = 0.7}
-	CreateScreenElement \{type = SpriteElement
-		parent = top_gradient
+	createscreenelement \{type = spriteelement
+		parent = 0x910fcd46
 		blend = blend
-		id = top_gradient_b
-		texture = pressanybutton_gradient
+		id = 0xdd69866e
+		texture = 0xf1b3b2d0
 		pos = (-1280.0, 0.0)
 		dims = (1280.0, 20.0)
 		just = [
@@ -91,9 +91,9 @@ script ui_create_boot_iis
 		z_priority = 0.6
 		rot_angle = 0.0
 		alpha = 0.7}
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
-		id = bottom_gradient
+		id = 0xa5e5db29
 		pos = (0.0, 630.0)
 		just = [
 			left
@@ -102,11 +102,11 @@ script ui_create_boot_iis
 		z_priority = 0
 		event_handlers = [
 		]}
-	CreateScreenElement \{type = SpriteElement
-		parent = bottom_gradient
+	createscreenelement \{type = spriteelement
+		parent = 0xa5e5db29
 		blend = blend
-		id = bottom_gradient_a
-		texture = pressanybutton_gradient
+		id = 0x52d12107
+		texture = 0xf1b3b2d0
 		pos = (0.0, 0.0)
 		dims = (1280.0, 20.0)
 		just = [
@@ -116,11 +116,11 @@ script ui_create_boot_iis
 		z_priority = 0.6
 		rot_angle = 0.0
 		alpha = 0.7}
-	CreateScreenElement \{type = SpriteElement
-		parent = bottom_gradient
+	createscreenelement \{type = spriteelement
+		parent = 0xa5e5db29
 		blend = blend
-		id = bottom_gradient_b
-		texture = pressanybutton_gradient
+		id = 0xcbd870bd
+		texture = 0xf1b3b2d0
 		pos = (-1280.0, 0.0)
 		dims = (1280.0, 20.0)
 		just = [
@@ -130,14 +130,14 @@ script ui_create_boot_iis
 		z_priority = 0.6
 		rot_angle = 0.0
 		alpha = 0.7}
-	gradient_width = 1280
-	gradient_move_time = 5
-	top_gradient :obj_spawnscript move_gradient params = {width = <gradient_width> move_time = <gradient_move_time>}
-	bottom_gradient :obj_spawnscript move_gradient params = {width = <gradient_width> move_time = <gradient_move_time>}
-	CreateScreenElement \{type = TextBlockElement
+	0x1fa60a33 = 1280
+	0x00c77a7d = 5
+	0x910fcd46 :obj_spawnscript 0xc5c70e9b params = {width = <0x1fa60a33> move_time = <0x00c77a7d>}
+	0xa5e5db29 :obj_spawnscript 0xc5c70e9b params = {width = <0x1fa60a33> move_time = <0x00c77a7d>}
+	createscreenelement \{type = textblockelement
 		parent = current_menu
 		font = fontgrid_text_a1
-		text = qs("PRESS ANY BUTTON TO ROCK...")
+		text = qs(0x71da7fc7)
 		dims = (450.0, 240.0)
 		pos = (580.0, 105.0)
 		just = [
@@ -162,23 +162,23 @@ script ui_create_boot_iis
 		time = 0.0
 		no_wait}
 	if ($attract_disabled = 0)
-		RunScriptOnScreenElement \{ui_boot_iis_attract_wait
+		runscriptonscreenelement \{ui_boot_iis_attract_wait
 			id = current_menu}
 	endif
-	RunScriptOnScreenElement \{ui_boot_iis_input
+	runscriptonscreenelement \{ui_boot_iis_input
 		id = current_menu}
 	destroy_loading_screen
 endscript
 
 script ui_destroy_boot_iis 
-	if ScreenElementExists \{id = current_menu}
-		current_menu :Die
+	if screenelementexists \{id = current_menu}
+		current_menu :die
 	endif
-	if ScreenElementExists \{id = top_gradient}
-		top_gradient :Die
+	if screenelementexists \{id = 0x910fcd46}
+		0x910fcd46 :die
 	endif
-	if ScreenElementExists \{id = bottom_gradient}
-		bottom_gradient :Die
+	if screenelementexists \{id = 0xa5e5db29}
+		0xa5e5db29 :die
 	endif
 	kill_notify_box \{container_id = notify_invalid_device}
 endscript
@@ -188,19 +188,19 @@ script ui_boot_iis_attract_wait
 	begin
 
 	if (<wait_time> = 1)
-		Wait \{0.5
+		wait \{0.5
 			seconds
 			ignoreslomo}
-		Obj_KillSpawnedScript \{name = ui_boot_iis_input}
-		SetProps \{event_handlers = [
+		obj_killspawnedscript \{name = ui_boot_iis_input}
+		setprops \{event_handlers = [
 			]
 			replace_handlers}
-		Wait \{0.5
+		wait \{0.5
 			seconds
 			ignoreslomo}
 		break
 	endif
-	Wait \{1
+	wait \{1
 		second
 		ignoreslomo}
 	wait_time = (<wait_time> - 1)
@@ -210,22 +210,22 @@ script ui_boot_iis_attract_wait
 		if ($invalid_controller_lock = 0)
 			break
 		endif
-		Wait \{1
+		wait \{1
 			gameframe}
 		repeat
 	endif
-	KillSpawnedScript \{name = ui_boot_iis_input}
+	killspawnedscript \{name = ui_boot_iis_input}
 	ui_event \{event = menu_change
 		data = {
-			state = UIstate_boot_attract
+			state = uistate_boot_attract
 		}}
 endscript
 
-script move_gradient 
+script 0xc5c70e9b 
 	begin
-	SE_SetProps pos = {((1.0, 0.0) * <width>) relative} time = (<move_time> * 0.5)
-	SE_WaitProps
-	SE_SetProps pos = {((-1.0, 0.0) * <width>) relative}
+	se_setprops pos = {((1.0, 0.0) * <width>) relative} time = (<move_time> * 0.5)
+	se_waitprops
+	se_setprops pos = {((-1.0, 0.0) * <width>) relative}
 	repeat
 endscript
 
@@ -235,23 +235,23 @@ script ui_boot_iis_input \{button1 = {
 		}}
 	get_handlers_for_all_buttons \{event_script = ui_boot_iis_continue}
 	begin
-	RemoveParameter \{makes}
-	RemoveParameter \{device_num}
-	SetProps event_handlers = <event_handlers> replace_handlers
-	Wait \{1
+	removeparameter \{makes}
+	removeparameter \{device_num}
+	setprops event_handlers = <event_handlers> replace_handlers
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
 script ui_boot_iis_continue 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 	if ($invalid_controller_lock = 0)
-		StopSoundEvent \{Menu_Guitar_Lick_SFX}
+		stopsoundevent \{menu_guitar_lick_sfx}
 		generic_menu_pad_choose_sound
 		get_handlers_for_all_buttons
-		current_menu :SetProps event_handlers = <event_handlers> replace_handlers
-		KillSpawnedScript \{name = ui_boot_iis_input}
+		current_menu :setprops event_handlers = <event_handlers> replace_handlers
+		killspawnedscript \{name = ui_boot_iis_input}
 		change primary_controller = <device_num>
 		ui_event event = menu_replace data = {state = uistate_signin device_num = <device_num> boot = 1}
 	endif

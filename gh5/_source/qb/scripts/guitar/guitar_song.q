@@ -1,50 +1,50 @@
 stream_config = gh1
-guitar_unique_bend_id = null
+0x84acfb5b = null
 song_is_waiting_to_start = 0
 
-script preload_song \{StartTime = 0
+script preload_song \{starttime = 0
 		fadeintime = 0.0
 		seek = 1}
-	adjustedtime = <StartTime>
+	adjustedtime = <starttime>
 
 	get_song_prefix song = <song_name>
 	get_song_struct song = <song_name>
-	if StructureContains Structure = <song_struct> dlc_stream_name
+	if structurecontains structure = <song_struct> dlc_stream_name
 		song_prefix = (<song_struct>.dlc_stream_name)
 	endif
 	if NOT ($current_song = jamsession)
-		if NOT GotParam \{songrate}
-			songrate = $current_speedfactor
+		if NOT gotparam \{0x22b8afbb}
+			0x22b8afbb = $current_speedfactor
 		endif
-		if NOT SongLoad filename = <song_prefix> content_index = <content_index> position = <StartTime> songrate = <songrate>
-			if NOT CD
+		if NOT songload filename = <song_prefix> content_index = <content_index> position = <starttime> 0x22b8afbb = <0x22b8afbb>
+			if NOT cd
 
 			endif
 			destroy_loading_screen
-			DownloadContentLost
+			downloadcontentlost
 			return \{false}
 		endif
 	endif
 	change \{song_is_waiting_to_start = 1}
 	if (<seek> = 1)
 
-		SetSeekPosition_Song position = <StartTime>
+		setseekposition_song position = <starttime>
 	else
 
 	endif
 	if NOT ($current_song = jamsession)
 		if NOT ($game_mode = practice)
-			CreateEffectSendStack slot = ($starpower_sendeffect_slot) effects = [{$Starpower_Echo} {$Starpower_Reverb} {$HighPass_StarPower}]
+			createeffectsendstack slot = ($starpower_sendeffect_slot) effects = [{$starpower_echo} {$starpower_reverb} {$highpass_starpower}]
 		endif
 	endif
-	if StructureContains Structure = <song_struct> overall_song_volume
-		SongSetMasterVolume vol = (<song_struct>.overall_song_volume)
+	if structurecontains structure = <song_struct> overall_song_volume
+		songsetmastervolume vol = (<song_struct>.overall_song_volume)
 	endif
-	SongSetCrowdPan pan1x = ($Crowd_Singalong_Pan1x) pan1y = ($Crowd_Singalong_Pan1y) pan2x = ($Crowd_Singalong_Pan2x) pan2y = ($Crowd_Singalong_Pan2y)
+	songsetcrowdpan pan1x = ($crowd_singalong_pan1x) pan1y = ($crowd_singalong_pan1y) pan2x = ($crowd_singalong_pan2x) pan2y = ($crowd_singalong_pan2y)
 	return adjustedtime = <adjustedtime>
 endscript
 
-script SetupSongDSPNetworks 
+script setupsongdspnetworks 
 	get_song_prefix song = <song_name>
 	get_song_struct song = <song_name>
 	mode = $game_mode
@@ -52,7 +52,7 @@ script SetupSongDSPNetworks
 		mode = attract_mode
 	endif
 	num_players = $current_num_players
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 	if (<num_players_shown> < <num_players>)
 		<num_players> = <num_players_shown>
 	endif
@@ -60,67 +60,67 @@ script SetupSongDSPNetworks
 	player2_part = ($player2_status.part)
 	player3_part = ($player3_status.part)
 	player4_part = ($player4_status.part)
-	GetPlayerInfo \{1
+	getplayerinfo \{1
 		highway_position}
 	p1_highway_position = <highway_position>
-	GetPlayerInfo \{2
+	getplayerinfo \{2
 		highway_position}
 	p2_highway_position = <highway_position>
-	GetPlayerInfo \{3
+	getplayerinfo \{3
 		highway_position}
 	p3_highway_position = <highway_position>
-	GetPlayerInfo \{4
+	getplayerinfo \{4
 		highway_position}
 	p4_highway_position = <highway_position>
 	mono_drums = 0
-	if StructureContains Structure = <song_struct> mono_drums
+	if structurecontains structure = <song_struct> mono_drums
 		mono_drums = (<song_struct>.mono_drums)
 	endif
-	Speed = ($current_speedfactor)
-	SongSetupPlayerParts <...>
-	SongSetPlayerEQSettings
-	GetPakManCurrentName \{map = zones}
+	speed = ($current_speedfactor)
+	songsetupplayerparts <...>
+	songsetplayereqsettings
+	getpakmancurrentname \{map = zones}
 
-	FormatText checksumname = ReverbParams 'Reverb_Crowd_Buss_%t' t = <pakname> DoNotResolve
-	if GlobalExists name = <ReverbParams> type = Structure
+	formattext checksumname = reverbparams 'Reverb_Crowd_Buss_%t' t = <pakname> donotresolve
+	if globalexists name = <reverbparams> type = structure
 
-		SongSetCrowdReverbParams ($<ReverbParams>)
+		songsetcrowdreverbparams ($<reverbparams>)
 	else
 
 	endif
 endscript
 
-script SongSetPlayerEQSettings 
+script songsetplayereqsettings 
 	primary_profile = 1
 	player = 1
 	begin
-	GetPlayerInfo <player> controller
+	getplayerinfo <player> controller
 	if ((<controller>) = ($primary_controller))
 		primary_profile = <player>
 	endif
 	player = (<player> + 1)
 	repeat $current_num_players
 
-	GetPlayerInfo <primary_profile> part
+	getplayerinfo <primary_profile> part
 	active_profile_part = <part>
 
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
 endscript
 
 script waitforseek_song 
-	Wait \{15
+	wait \{15
 		gameframe}
 	return
 endscript
 
 script setslomo_song 
-	SongSetPitch pitch_percent = (<slomo> * 100.0)
+	songsetpitch pitch_percent = (<slomo> * 100.0)
 endscript
 
-script begin_jam_song \{Pause = 0}
-	GetSongTimeMs
-	CastToInteger \{time}
+script begin_jam_song \{pause = 0}
+	getsongtimems
+	casttointeger \{time}
 
 	spawnscriptnow guitar_jam_playback_recording params = {jam_instrument = 0 start_time = <time> in_game = 1}
 	spawnscriptnow guitar_jam_playback_recording params = {jam_instrument = 1 start_time = <time> in_game = 1}
@@ -139,74 +139,74 @@ script begin_jam_song \{Pause = 0}
 	change \{song_is_waiting_to_start = 0}
 endscript
 
-script begin_song \{Pause = 0}
-	SpawnScriptLater \{fadePlayingIntro}
+script begin_song \{pause = 0}
+	spawnscriptlater \{0xc5a6b981}
 	if NOT ($current_song_qpak = jamsession)
-		if (<Pause> = 0)
-			SongUnPause
+		if (<pause> = 0)
+			songunpause
 		else
-			SongPause
+			songpause
 		endif
 	endif
-	BroadcastEvent \{type = song_started}
+	broadcastevent \{type = song_started}
 	change \{song_is_waiting_to_start = 0}
 endscript
 
-script SetSeekPosition_Song \{position = 0}
-	SongSeek time = <position>
+script setseekposition_song \{position = 0}
+	songseek time = <position>
 endscript
-Waiting_For_Pitching = 0
+waiting_for_pitching = 0
 
-script Failed_Song_Pitch_Down 
-	SongSetPitch \{pitch = -8
+script failed_song_pitch_down 
+	songsetpitch \{pitch = -8
 		time = 3}
-	SongSetMasterVolume \{vol = -20
+	songsetmastervolume \{vol = -20
 		time = 3}
-	change \{Waiting_For_Pitching = 1}
-	Wait \{3
+	change \{waiting_for_pitching = 1}
+	wait \{3
 		seconds}
 	spawnscriptnow \{end_song}
 endscript
 
 script end_song \{song_failed_pitch_streams = 0}
 	if NOT (<song_failed_pitch_streams> = 1)
-		KillSpawnedScript \{name = Failed_Song_Pitch_Down}
-		if ($Waiting_For_Pitching = 1)
-			change \{Waiting_For_Pitching = 0}
+		killspawnedscript \{name = failed_song_pitch_down}
+		if ($waiting_for_pitching = 1)
+			change \{waiting_for_pitching = 0}
 		endif
-		DestroyEffectSendStack slot = ($starpower_sendeffect_slot)
-		SongStop
+		destroyeffectsendstack slot = ($starpower_sendeffect_slot)
+		songstop
 	else
 
-		spawnscriptnow \{Failed_Song_Pitch_Down}
+		spawnscriptnow \{failed_song_pitch_down}
 	endif
 	change \{song_is_waiting_to_start = 0}
 endscript
 
 script set_whammy_pitchshift 
-	SongSetPlayerWhammy player = ($<player_status>.player) whammy_value = (1 - (<control> * 0.057))
+	songsetplayerwhammy player = ($<player_status>.player) whammy_value = (1 - (<control> * 0.057))
 endscript
 
-script PauseGh3Sounds 
-	SongPause
-	MuteEffectSend slot = ($starpower_sendeffect_slot)
-	VocalDSPSetParams \{mute_all}
-	PauseSoundsByBuss \{Master}
+script pausegh3sounds 
+	songpause
+	muteeffectsend slot = ($starpower_sendeffect_slot)
+	vocaldspsetparams \{mute_all}
+	pausesoundsbybuss \{master}
 	if ($drum_solo_songtime_paused = 1)
 		return
 	endif
 endscript
 
-script UnpauseGh3Sounds 
+script unpausegh3sounds 
 	if ($drum_solo_songtime_paused = 1)
 		return
 	endif
-	UnMuteEffectSend slot = ($starpower_sendeffect_slot)
-	VocalDSPSetParams \{unmute_all}
+	unmuteeffectsend slot = ($starpower_sendeffect_slot)
+	vocaldspsetparams \{unmute_all}
 	if ($song_is_waiting_to_start = 0)
-		if ($ps2_training_gem_scroller_paused = 0)
-			SongUnPause
+		if ($0xd441408d = 0)
+			songunpause
 		endif
 	endif
-	UnpauseSoundsByBuss \{Master}
+	unpausesoundsbybuss \{master}
 endscript

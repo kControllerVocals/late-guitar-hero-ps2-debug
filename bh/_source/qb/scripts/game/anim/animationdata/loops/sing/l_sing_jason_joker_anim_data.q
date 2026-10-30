@@ -1,36 +1,36 @@
-L_SING_Jason_Joker_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_jason_joker_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
+				slow = [
 					sing_jason_joker_075
 				]
-				Med = [
+				med = [
 					sing_jason_joker_100
 				]
-				Fast = [
+				fast = [
 					sing_jason_joker_120
 				]
 			}
-			Normal = {
-				Slow = [
+			normal = {
+				slow = [
 					sing_jason_joker_075
 				]
-				Med = [
+				med = [
 					sing_jason_joker_100
 				]
-				Fast = [
+				fast = [
 					sing_jason_joker_120
 				]
 			}
-			Bad = {
-				Slow = [
+			bad = {
+				slow = [
 					sing_jason_joker_075
 				]
-				Med = [
+				med = [
 					sing_jason_joker_100
 				]
-				Fast = [
+				fast = [
 					sing_jason_joker_120
 				]
 			}

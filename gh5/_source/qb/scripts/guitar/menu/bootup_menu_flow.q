@@ -16,7 +16,7 @@ script wait_for_safe_shutdown
 	if ($is_shutdown_safe = 1)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -28,7 +28,7 @@ script handle_signin_changed
 	change \{respond_to_signin_changed_func = none}
 	change \{shutdown_game_for_signin_change_flag = 1}
 	wait_for_safe_shutdown
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = root_window}
 
 	disable_pause
@@ -40,7 +40,7 @@ script handle_signin_changed
 	ui_event_wait_for_safe
 	ui_event_block \{event = menu_back
 		data = {
-			state = UIstate_Null
+			state = uistate_null
 		}}
 	shutdown_game_for_signin_change \{signin_change = 1}
 	ui_event_block \{event = menu_change
@@ -49,23 +49,23 @@ script handle_signin_changed
 			clear_previous_stack
 		}}
 	destroy_loading_screen \{force = 1}
-	KillAllMovies
+	killallmovies
 	startrendering
-	SetButtonEventMappings \{unblock_menu_input}
+	setbuttoneventmappings \{unblock_menu_input}
 
 endscript
 
 script signing_change_confirm_reboot 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
 
-	if ScreenElementExists \{id = dialog_box_vmenu}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = dialog_box_vmenu}
+		launchevent \{type = unfocus
 			target = dialog_box_vmenu}
 	endif
 	ui_event \{event = menu_change
 		data = {
-			state = UIstate_boot_iis
+			state = uistate_boot_iis
 			clear_previous_stack
 		}}
 
@@ -75,21 +75,21 @@ shutdown_game_for_signin_change_flag = 0
 script shutdown_game_for_signin_change \{unloadcontent = 1
 		signin_change = 0}
 
-	KillSpawnedScript \{name = SpawnedOneShotBeginRepeatLoop}
-	KillSpawnedScript \{name = OneShotsBetweenSongs}
-	KillSpawnedScript \{name = SurgeBetweenSongs}
-	spawnscriptnow \{Kill_Transition_Preload_Streams}
+	killspawnedscript \{name = spawnedoneshotbeginrepeatloop}
+	killspawnedscript \{name = oneshotsbetweensongs}
+	killspawnedscript \{name = surgebetweensongs}
+	spawnscriptnow \{kill_transition_preload_streams}
 	change \{shutdown_game_for_signin_change_flag = 1}
-	StopAllSounds
-	KillMenuMusic
-	KillSpawnedScript \{name = net_init}
-	KillSpawnedScript \{name = do_calibration_update}
-	KillSpawnedScript \{name = cl_do_ping}
-	KillSpawnedScript \{name = kill_off_and_finish_calibration}
-	KillSpawnedScript \{name = menu_calibrate_lag_create_circles}
-	KillSpawnedScript \{name = gameplay_end_game}
-	KillSpawnedScript \{name = net_party_lost_party_connection_kill_popup}
-	NetSessionFunc \{obj = match
+	stopallsounds
+	killmenumusic
+	killspawnedscript \{name = net_init}
+	killspawnedscript \{name = do_calibration_update}
+	killspawnedscript \{name = cl_do_ping}
+	killspawnedscript \{name = kill_off_and_finish_calibration}
+	killspawnedscript \{name = menu_calibrate_lag_create_circles}
+	killspawnedscript \{name = gameplay_end_game}
+	killspawnedscript \{name = net_party_lost_party_connection_kill_popup}
+	netsessionfunc \{obj = match
 		func = cancel_join_server}
 	set_demonware_failed
 	destroy_player_drop_events
@@ -99,44 +99,44 @@ script shutdown_game_for_signin_change \{unloadcontent = 1
 	memcard_sequence_cleanup_generic
 	destroy_leaving_lobby_dialog
 	kill_intro_celeb_ui
-	KillSpawnedScript \{name = create_exploding_text}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_all_exploding_text
 	cheat_turnoffalllocked
 	destroy_credits_menu
 	quit_network_game_early \{signin_change}
-	KillSpawnedScript \{name = gameplay_end_game}
-	KillSpawnedScript \{name = play_song_game_over_spawned}
+	killspawnedscript \{name = gameplay_end_game}
+	killspawnedscript \{name = play_song_game_over_spawned}
 	setup_sessionfuncs
-	if NetSessionFunc \{obj = session
+	if netsessionfunc \{obj = session
 			func = has_active_session}
-		NetSessionFunc \{obj = session
+		netsessionfunc \{obj = session
 			func = stop_singleplayer_session}
 	endif
 	tutorial_shutdown
-	DeRegisterAtoms
+	deregisteratoms
 	kill_gem_scroller \{no_render = 1
 		restarting}
 	destroy_movie_viewport
 	clean_up_user_control_helpers
-	Menu_Music_Off
+	menu_music_off
 	unload_songqpak
-	SetPakManCurrentBlock \{map = zones
+	setpakmancurrentblock \{map = zones
 		pak = none
 		block_scripts = 1}
 	destroy_band \{unload_paks}
-	destroy_downloads_EnumContent
+	destroy_downloads_enumcontent
 	if (<unloadcontent> = 1)
-		Downloads_UnloadContent
-		RemoveContentFiles \{playerid = -1}
+		downloads_unloadcontent
+		removecontentfiles \{playerid = -1}
 		reset_globaltags_all
 	endif
-	if ScreenElementExists \{id = ready_container_p2}
-		DestroyScreenElement \{id = ready_container_p2}
+	if screenelementexists \{id = ready_container_p2}
+		destroyscreenelement \{id = ready_container_p2}
 	endif
 	set_default_misc_globals
 	cleanup_songwon_event
 	clear_wait_for_net_match_available_items
-	UnPauseGame
+	unpausegame
 	change \{shutdown_game_for_signin_change_flag = 0}
 
 endscript
@@ -145,9 +145,9 @@ script cleanup_songwon_event
 	destroy_menu \{menu_id = yourock_text}
 	destroy_menu \{menu_id = yourock_text_2}
 	destroy_menu \{menu_id = yourock_text_legend}
-	KillSpawnedScript \{name = jiggle_text_array_elements}
-	KillSpawnedScript \{name = You_Rock_Waiting_Crowd_SFX}
-	KillSpawnedScript \{name = GuitarEvent_SongWon_Spawned}
+	killspawnedscript \{name = jiggle_text_array_elements}
+	killspawnedscript \{name = you_rock_waiting_crowd_sfx}
+	killspawnedscript \{name = guitarevent_songwon_spawned}
 endscript
 
 script set_default_misc_globals 
@@ -165,5 +165,5 @@ script set_default_misc_globals
 	change \{respond_to_signin_changed_all_players = 0}
 	change \{respond_to_signin_changed_func = none}
 	clear_exclusive_devices
-	Achievements_ResetGlobals
+	achievements_resetglobals
 endscript

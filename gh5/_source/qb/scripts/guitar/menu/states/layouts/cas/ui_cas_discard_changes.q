@@ -1,16 +1,16 @@
 
 script ui_create_cas_discard_changes 
-	create_dialog_box \{heading_text = qs("Discard Changes?")
-		body_text = qs("Would you like to discard these changes?")
+	create_dialog_box \{heading_text = qs(0x2352550a)
+		body_text = qs(0x51b96069)
 		no_background
 		options = [
 			{
 				func = discard_changes_continue
-				text = qs("Yes")
+				text = qs(0x6d562a67)
 			}
 			{
 				func = generic_event_back
-				text = qs("No")
+				text = qs(0x47157885)
 			}
 		]
 		back_button_script = generic_event_back}
@@ -22,16 +22,16 @@ script ui_destroy_cas_discard_changes
 endscript
 
 script discard_changes_continue 
-	RestoreTopTemporaryCASAppearance
+	restoretoptemporarycasappearance
 	generic_event_back \{data = {
 			num_states = 2
 		}}
 endscript
 
 script discard_changes_prompt 
-	if NOT CompareTopTemporaryCASAppearance
+	if NOT comparetoptemporarycasappearance
 		generic_event_choose \{data = {
-				state = UIstate_cas_discard_changes
+				state = uistate_cas_discard_changes
 				is_popup
 			}}
 	else

@@ -1,37 +1,37 @@
-L_GUIT_Judita_joker_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_judita_joker_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Judita_joker_075
+				slow = [
+					guit_judita_joker_075
 				]
-				Med = [
-					guit_Judita_joker_100
+				med = [
+					guit_judita_joker_100
 				]
-				Fast = [
-					guit_Judita_joker_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Judita_joker_075
-				]
-				Med = [
-					guit_Judita_joker_100
-				]
-				Fast = [
-					guit_Judita_joker_120
+				fast = [
+					guit_judita_joker_120
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Judita_joker_075
+			normal = {
+				slow = [
+					guit_judita_joker_075
 				]
-				Med = [
-					guit_Judita_joker_100
+				med = [
+					guit_judita_joker_100
 				]
-				Fast = [
-					guit_Judita_joker_120
+				fast = [
+					guit_judita_joker_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_judita_joker_075
+				]
+				med = [
+					guit_judita_joker_100
+				]
+				fast = [
+					guit_judita_joker_120
 				]
 			}
 		}

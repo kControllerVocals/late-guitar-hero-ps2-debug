@@ -1,17 +1,17 @@
 
-script IGC_Camera_MoveToPlayer \{time = 0
+script igc_camera_movetoplayer \{time = 0
 		motion = smooth}
 	cameraid = skatercam0
-	<cameraid> :GetHFov
-	CCam_DoMorph {
-		LockTo = <cameraid>
+	<cameraid> :gethfov
+	ccam_domorph {
+		lockto = <cameraid>
 		pos = (0.0, 0.0, 0.0)
-		Quat = (0.0, 0.0, 0.0)
-		FOV = <hfov>
+		quat = (0.0, 0.0, 0.0)
+		fov = <hfov>
 		time = <time>
 		motion = <motion>
 	}
-	if NOT GotParam \{no_block}
-		CCam_WaitMorph
+	if NOT gotparam \{no_block}
+		ccam_waitmorph
 	endif
 endscript

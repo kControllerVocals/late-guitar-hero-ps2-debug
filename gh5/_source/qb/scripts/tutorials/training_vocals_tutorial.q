@@ -1,6 +1,6 @@
-G_TRAINING_VERIFYING_TRACK_STYLE_DONE = 0
-VOCAL_NOTES_HIT = 0
-VOCAL_NOTES_MISSED = 0
+g_training_verifying_track_style_done = 0
+vocal_notes_hit = 0
+vocal_notes_missed = 0
 training_vocals_tutorial_script = [
 	{
 		call = training_vocals_tutorial_startup
@@ -116,9 +116,9 @@ training_vocals_tutorial_script = [
 
 script training_vocals_tutorial_startup 
 	training_init_session
-	ReloadSfx \{mode = tutorials
+	0xc1c4e84c \{mode = tutorials
 		tutorial = 8}
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = root_window}
 	create_training_pause_handler
 	training_create_narrator_icons
@@ -127,24 +127,24 @@ endscript
 script training_vocals_tutorial_show_title 
 	change \{g_training_lessons_completed = 0}
 
-	training_show_title \{title = qs("Vocals Tutorial")}
+	training_show_title \{title = qs(0xc8c38f21)}
 	begin
 	if ($transitions_locked = 0)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	create_training_pause_handler
-	Wait \{3
+	wait \{3
 		seconds}
 	training_destroy_title
 endscript
 
 script training_8_1_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L1")
-		text = qs("Introduction to Vocals")}
+	training_set_lesson_header_text \{number = qs(0x22ee76e7)
+		text = qs(0xdaa47a7a)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
@@ -152,14 +152,14 @@ endscript
 script training_8_1_show_microphone_image 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	LoadTutorialSFX \{mode = Tut_Vox_Intro}
-	training_play_sound \{Sound = 'Tut_Vox_Intro_01_VOX'
-		Wait}
-	Wait \{1.0
+	0x4de05aff \{mode = 0x44c1bb24}
+	training_play_sound \{sound = 'Tut_Vox_Intro_01_VOX'
+		wait}
+	wait \{1.0
 		seconds
 		ignoreslomo}
-	CreateScreenElement \{parent = training_container
-		type = SpriteElement
+	createscreenelement \{parent = training_container
+		type = spriteelement
 		id = microphone_sprite
 		just = [
 			center
@@ -170,10 +170,10 @@ script training_8_1_show_microphone_image
 		scale = (1.0, 1.0)
 		z_priority = 4}
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Intro_02_VOX'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Vox_Intro_03_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Intro_02_VOX'
+		wait}
+	training_play_sound \{sound = 'Tut_Vox_Intro_03_VOX'
+		wait}
 	training_hide_narrator
 	training_hide_lesson_header
 	safe_destroy \{id = microphone_sprite}
@@ -186,8 +186,8 @@ endscript
 
 script training_8_2_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L2")
-		text = qs("The Vocals Highway")}
+	training_set_lesson_header_text \{number = qs(0x09c32524)
+		text = qs(0x472ec377)}
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'vocalist'}
 	create_training_pause_handler
@@ -199,19 +199,19 @@ script training_8_2_show_static_highway
 		view = static
 		controller = 1}
 	training_show_narrator \{narrator = 'vocalist'}
-	LoadTutorialSFX \{mode = Tut_Vox_Highway}
-	training_play_sound \{Sound = 'Tut_Vox_Highway_01_VOX'
-		Wait}
+	0x4de05aff \{mode = 0x49c7cf70}
+	training_play_sound \{sound = 'Tut_Vox_Highway_01_VOX'
+		wait}
 	vocals_distribute_mics
 	change \{tutorial_disable_hud = 1}
-	training_start_gem_scroller \{song = Tut_Demo
-		part = Vocals
+	training_start_gem_scroller \{song = tut_demo
+		part = vocals
 		disable_hud
 		no_score_update
-		StartTime = 4000}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+		starttime = 4000}
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -226,7 +226,7 @@ script training_8_2_show_static_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	change \{vocal_tut_no_star_power = 1}
 	training_wait_for_gem_scroller_startup \{disable_mic}
@@ -241,14 +241,14 @@ script training_8_2_show_scrolling_highway
 		controller = 1}
 	vocals_distribute_mics
 	change \{tutorial_disable_hud = 1}
-	training_start_gem_scroller \{song = Tut_Demo
-		part = Vocals
+	training_start_gem_scroller \{song = tut_demo
+		part = vocals
 		disable_hud
 		no_score_update
-		StartTime = 6000}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+		starttime = 6000}
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -263,7 +263,7 @@ script training_8_2_show_scrolling_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup \{disable_mic
 		disable_star_power}
@@ -271,32 +271,32 @@ endscript
 
 script training_8_2_point_out_comet_and_tunnel 
 
-	Wait \{3.0
+	wait \{3.0
 		seconds
 		ignoreslomo}
-	<platscale> = 2.3
-	training_add_arrow id = training_arrow life = 2.0 pos = (425.0, 500.0) scale = <platscale>
-	Wait \{4.0
+	<0xf907476f> = 2.3
+	training_add_arrow id = training_arrow life = 2.0 pos = (425.0, 500.0) scale = <0xf907476f>
+	wait \{4.0
 		seconds
 		ignoreslomo}
-	training_add_arrow id = training_arrow life = 2.0 pos = (590.0, 500.0) scale = <platscale>
+	training_add_arrow id = training_arrow life = 2.0 pos = (590.0, 500.0) scale = <0xf907476f>
 endscript
 
 script training_8_2_show_items_on_highway 
 
-	Wait \{3.0
+	wait \{3.0
 		seconds}
 	training_pause_gem_scroller
-	Wait \{1.0
+	wait \{1.0
 		seconds
 		ignoreslomo}
-	<platscale> = 2.3
-	training_add_arrow id = training_arrow life = 2.0 pos = (545.0, 430.0) scale = <platscale>
+	<0xf907476f> = 2.3
+	training_add_arrow id = training_arrow life = 2.0 pos = (545.0, 430.0) scale = <0xf907476f>
 	spawnscriptnow \{training_8_2_point_out_comet_and_tunnel
 		id = training_spawned_script}
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Highway_02_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Highway_02_VOX'
+		wait}
 	training_hide_narrator
 	training_hide_lesson_header
 	training_destroy_all_arrows
@@ -305,15 +305,15 @@ endscript
 script training_8_2_show_static_vs_scrolling 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Highway_03_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Highway_03_VOX'
+		wait}
 	training_8_2_show_scrolling_highway \{id = training_spawned_script}
-	Wait \{2.0
+	wait \{2.0
 		seconds}
 	training_pause_gem_scroller
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Highway_05_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Highway_05_VOX'
+		wait}
 	training_hide_narrator
 	training_destroy_gem_scroller
 	training_hide_lesson_header
@@ -321,22 +321,22 @@ endscript
 
 script training_8_2_prompt_for_layout 
 
-	change \{G_TRAINING_VERIFYING_TRACK_STYLE_DONE = 0}
+	change \{g_training_verifying_track_style_done = 0}
 	training_8_2_prompt_function
 	begin
-	if ($G_TRAINING_VERIFYING_TRACK_STYLE_DONE)
+	if ($g_training_verifying_track_style_done)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	create_training_pause_handler
 	training_show_lesson_header
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Highway_06_VOX'
-		Wait}
-	training_play_sound \{Sound = 'Tut_Vox_Highway_07_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Highway_06_VOX'
+		wait}
+	training_play_sound \{sound = 'Tut_Vox_Highway_07_VOX'
+		wait}
 	training_hide_narrator
 	training_resume_gem_scroller
 	destroy_menu \{menu_id = menu_tutorial}
@@ -346,37 +346,37 @@ endscript
 
 script training_8_2_prompt_function 
 
-	if ScreenElementExists \{id = dialog_box_container}
+	if screenelementexists \{id = dialog_box_container}
 		destroy_dialog_box
 	endif
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
-	create_dialog_box \{heading_text = qs("Select Vocal Highway")
-		body_text = qs("Which Vocal Highway type would you like to use?")
+	create_dialog_box \{heading_text = qs(0x9a78cfba)
+		body_text = qs(0x5c28a878)
 		options = [
 			{
 				func = training_8_2_choose_static_or_scrolling
 				func_params = {
 					chose = static
 				}
-				text = qs("Static")
+				text = qs(0xb461fb91)
 			}
 			{
 				func = training_8_2_choose_static_or_scrolling
 				func_params = {
 					chose = scrolling
 				}
-				text = qs("Scrolling")
+				text = qs(0x35230e84)
 			}
 		]}
 endscript
 
 script training_8_2_choose_static_or_scrolling 
 
-	if GotParam \{chose}
+	if gotparam \{chose}
 		if (<chose> = static)
 
 			vocals_set_highway_view \{player = 1
@@ -390,7 +390,7 @@ script training_8_2_choose_static_or_scrolling
 		endif
 	endif
 	destroy_dialog_box
-	change \{G_TRAINING_VERIFYING_TRACK_STYLE_DONE = 1}
+	change \{g_training_verifying_track_style_done = 1}
 endscript
 
 script training_8_2_complete_message 
@@ -400,46 +400,46 @@ endscript
 
 script training_8_3_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L3")
-		text = qs("Singing in Key")}
+	training_set_lesson_header_text \{number = qs(0x10d81465)
+		text = qs(0x5bc3554a)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script training_8_3_hit_note 
 
-	change VOCAL_NOTES_HIT = ($VOCAL_NOTES_HIT + 1)
-	training_display_notes_hit \{notes_hit = $VOCAL_NOTES_HIT
+	change vocal_notes_hit = ($vocal_notes_hit + 1)
+	training_display_notes_hit \{notes_hit = $vocal_notes_hit
 		notes_required = 3}
-	if ($VOCAL_NOTES_HIT = 1)
+	if ($vocal_notes_hit = 1)
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_HitNotes_09_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_HitNotes_09_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_HitNotes_10_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_HitNotes_10_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_HitNotes_11_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_HitNotes_11_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
 
 script training_8_3_missed_note 
 
-	change VOCAL_NOTES_MISSED = ($VOCAL_NOTES_MISSED + 1)
-	if (($VOCAL_NOTES_MISSED = 1) || ($VOCAL_NOTES_MISSED = 2))
+	change vocal_notes_missed = ($vocal_notes_missed + 1)
+	if (($vocal_notes_missed = 1) || ($vocal_notes_missed = 2))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_HitNotes_06_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_HitNotes_06_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_HitNotes_07_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_HitNotes_07_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_HitNotes_08_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_HitNotes_08_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
@@ -450,10 +450,10 @@ script training_8_3_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($VOCAL_NOTES_HIT >= 3)
+	if ($vocal_notes_hit >= 3)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -461,17 +461,17 @@ endscript
 script training_8_3_show_highway 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	LoadTutorialSFX \{mode = Tut_Vox_HitNotes}
-	training_play_sound \{Sound = 'Tut_Vox_HitNotes_01_VOX'
-		Wait}
+	0x4de05aff \{mode = tut_vox_hitnotes}
+	training_play_sound \{sound = 'Tut_Vox_HitNotes_01_VOX'
+		wait}
 	change \{tutorial_disable_hud = 1}
-	training_start_gem_scroller \{song = Tut_Vox_HitNotes
-		part = Vocals
+	training_start_gem_scroller \{song = tut_vox_hitnotes
+		part = vocals
 		disable_hud
 		no_score_update}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -488,7 +488,7 @@ script training_8_3_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup \{disable_mic
 		disable_star_power}
@@ -497,62 +497,62 @@ endscript
 script training_8_3_point_out_tunnel 
 
 	vocals_get_highway_view \{player = 1}
-	Wait \{3.0
+	wait \{3.0
 		seconds
 		ignoreslomo}
-	<platscale> = 2.3
+	<0xf907476f> = 2.3
 	if (<highway_view> = static)
-		training_add_arrow id = training_arrow life = 2.0 pos = (410.0, 490.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 2.0 pos = (410.0, 490.0) scale = <0xf907476f>
 	else
-		training_add_arrow id = training_arrow life = 2.0 pos = (410.0, 490.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 2.0 pos = (410.0, 490.0) scale = <0xf907476f>
 	endif
-	Wait \{1.0
+	wait \{1.0
 		seconds
 		ignoreslomo}
 	if (<highway_view> = static)
-		training_add_arrow id = training_arrow life = 2.0 pos = (750.0, 475.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 2.0 pos = (750.0, 475.0) scale = <0xf907476f>
 	else
-		training_add_arrow id = training_arrow life = 2.0 pos = (800.0, 500.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 2.0 pos = (800.0, 500.0) scale = <0xf907476f>
 	endif
 endscript
 
 script training_8_3_point_out_lyrics 
 
-	Wait \{10.0
+	wait \{10.0
 		seconds
 		ignoreslomo}
-	<platscale> = 2.3
-	training_add_arrow id = training_arrow life = 7.0 pos = (410.0, 585.0) scale = <platscale> rot = -90
+	<0xf907476f> = 2.3
+	training_add_arrow id = training_arrow life = 7.0 pos = (410.0, 585.0) scale = <0xf907476f> rot = -90
 endscript
 
 script training_8_3_show_items_on_highway 
 
 	vocals_get_highway_view \{player = 1}
 	if (<highway_view> = static)
-		Wait \{3.5
+		wait \{3.5
 			seconds}
 	else
-		Wait \{3.0
+		wait \{3.0
 			seconds}
 	endif
 	training_pause_gem_scroller
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("The Comet SHOWS if you are within range.")}
-	training_add_lesson_body_text \{number = qs("\L2")
-		text = qs("If you have problems, try singing LOUDER and into the top part of the microphone, or an ENTIRE octave above or below your CURRENT one.")}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x792ecdef)}
+	training_add_lesson_body_text \{number = qs(0x09c32524)
+		text = qs(0x2325bdf5)}
 	training_show_lesson_header
 	spawnscriptnow \{training_8_3_point_out_tunnel
 		id = training_spawned_script}
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_HitNotes_02_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_HitNotes_02_VOX'
+		wait}
 	training_hide_narrator
 	training_destroy_all_arrows
 	spawnscriptnow \{training_8_3_point_out_lyrics
 		id = training_spawned_script}
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_HitNotes_03_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_HitNotes_03_VOX'
+		wait}
 	training_hide_narrator
 	training_destroy_all_arrows
 endscript
@@ -560,15 +560,15 @@ endscript
 script training_8_3_start_singing_task 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_HitNotes_04_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_HitNotes_04_VOX'
+		wait}
 	training_hide_narrator
-	training_set_task_header_body \{text = qs("Sing phrase 3 times.")}
+	training_set_task_header_body \{text = qs(0x900a8ba1)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 3}
-	change \{VOCAL_NOTES_HIT = 0}
-	change \{VOCAL_NOTES_MISSED = 0}
+	change \{vocal_notes_hit = 0}
+	change \{vocal_notes_missed = 0}
 	training_destroy_all_arrows
 	training_resume_gem_scroller \{enable_mic}
 	training_8_3_wait_for_hit_notes
@@ -577,8 +577,8 @@ script training_8_3_start_singing_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_HitNotes_05_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_HitNotes_05_VOX'
+		wait}
 	training_hide_narrator
 endscript
 
@@ -589,8 +589,8 @@ endscript
 
 script training_8_4_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L4")
-		text = qs("Rock Meter")}
+	training_set_lesson_header_text \{number = qs(0x5f9982a2)
+		text = qs(0x473e52e1)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
@@ -598,15 +598,15 @@ endscript
 script training_8_4_show_highway 
 
 	training_hide_placeholder
-	LoadTutorialSFX \{mode = Tut_Vox_Meter}
+	0x4de05aff \{mode = 0x00c572aa}
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Meter_01_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Meter_01_VOX'
+		wait}
 	change \{tutorial_disable_hud = 0}
-	training_start_gem_scroller \{song = Tut_Demo
-		part = Vocals}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	training_start_gem_scroller \{song = tut_demo
+		part = vocals}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -620,7 +620,7 @@ script training_8_4_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_set_score \{score = 3141975}
 	training_wait_for_gem_scroller_startup \{disable_mic
@@ -629,68 +629,68 @@ endscript
 
 script training_8_4_make_rock_meter_changes 
 
-	<platscale> = 2.3
-	training_add_arrow id = training_arrow2 life = 2 pos = (275.0, 425.0) scale = <platscale> rot = 90
-	KillSpawnedScript \{name = training_set_health}
+	<0xf907476f> = 2.3
+	training_add_arrow id = training_arrow2 life = 2 pos = (275.0, 425.0) scale = <0xf907476f> rot = 90
+	killspawnedscript \{name = training_set_health}
 	spawnscriptnow \{training_set_health
 		params = {
 			health = 1.6
 		}
 		id = training_spawned_script}
 	training_add_lesson_body_text \{number = 1
-		text = qs("Green = Good Performance")}
-	Wait \{3.0
+		text = qs(0x3b4b0d81)}
+	wait \{3.0
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = training_set_health}
+	killspawnedscript \{name = training_set_health}
 	spawnscriptnow \{training_set_health
 		params = {
 			health = 1.0
 		}
 		id = training_spawned_script}
 	training_add_lesson_body_text \{number = 2
-		text = qs("Yellow = OK Performance")}
-	Wait \{3.0
+		text = qs(0x8ab3f5ed)}
+	wait \{3.0
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = training_set_health}
+	killspawnedscript \{name = training_set_health}
 	spawnscriptnow \{training_set_health
 		params = {
 			health = 0.4
 		}
 		id = training_spawned_script}
 	training_add_lesson_body_text \{number = 3
-		text = qs("Red = Bad Performance")}
-	Wait \{4
+		text = qs(0xec12d4ac)}
+	wait \{4
 		seconds
 		ignoreslomo}
-	training_start_HUD_flashing_red
+	training_start_hud_flashing_red
 	training_add_lesson_body_text \{number = 4
-		text = qs("Blinking Red = Danger!")}
+		text = qs(0x19160b97)}
 endscript
 
 script training_8_4_make_additional_rock_meter_changes 
 
-	training_stop_HUD_flashing_red
-	KillSpawnedScript \{name = training_set_health}
+	training_stop_hud_flashing_red
+	killspawnedscript \{name = training_set_health}
 	spawnscriptnow \{training_set_health
 		params = {
 			health = 1.0
 		}
 		id = training_spawned_script}
-	Wait \{8.0
+	wait \{8.0
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = training_set_health}
+	killspawnedscript \{name = training_set_health}
 	spawnscriptnow \{training_set_health
 		params = {
 			health = 1.6
 		}
 		id = training_spawned_script}
-	Wait \{7.0
+	wait \{7.0
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = training_set_health}
+	killspawnedscript \{name = training_set_health}
 	spawnscriptnow \{training_set_health
 		params = {
 			health = 0.4
@@ -700,21 +700,21 @@ endscript
 
 script training_8_4_show_rock_meter_and_demo 
 
-	Wait \{3.0
+	wait \{3.0
 		second}
 	training_pause_gem_scroller
 	spawnscriptnow \{training_8_4_make_rock_meter_changes
 		id = training_spawned_script}
-	training_play_sound \{Sound = 'Tut_Vox_Meter_02_VOX'
-		Wait}
-	training_stop_HUD_flashing_red
-	Wait \{0.5
+	training_play_sound \{sound = 'Tut_Vox_Meter_02_VOX'
+		wait}
+	training_stop_hud_flashing_red
+	wait \{0.5
 		seconds
 		ignoreslomo}
 	spawnscriptnow \{training_8_4_make_additional_rock_meter_changes
 		id = training_spawned_script}
-	training_play_sound \{Sound = 'Tut_Vox_Meter_03_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Meter_03_VOX'
+		wait}
 	training_destroy_all_arrows
 	destroy_menu \{menu_id = menu_tutorial}
 	create_training_pause_handler
@@ -726,57 +726,57 @@ endscript
 script training_8_4_complete_message 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Meter_04_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Meter_04_VOX'
+		wait}
 	training_hide_narrator
 	training_generic_lesson_complete
 endscript
 
 script training_8_5_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L5")
-		text = qs("Spoken Lyrics")}
+	training_set_lesson_header_text \{number = qs(0x4682b3e3)
+		text = qs(0xec3c6d7a)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script training_8_5_hit_note 
 
-	change VOCAL_NOTES_HIT = ($VOCAL_NOTES_HIT + 1)
-	training_display_notes_hit \{notes_hit = $VOCAL_NOTES_HIT
+	change vocal_notes_hit = ($vocal_notes_hit + 1)
+	training_display_notes_hit \{notes_hit = $vocal_notes_hit
 		notes_required = 4}
-	if (($VOCAL_NOTES_HIT = 1) || ($VOCAL_NOTES_HIT = 2))
+	if (($vocal_notes_hit = 1) || ($vocal_notes_hit = 2))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_08_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_Words_08_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_09_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Words_09_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_10_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Words_10_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_11_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Words_11_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
 
 script training_8_5_missed_note 
 
-	change VOCAL_NOTES_MISSED = ($VOCAL_NOTES_MISSED + 1)
-	if (($VOCAL_NOTES_MISSED = 1) || ($VOCAL_NOTES_MISSED = 3))
+	change vocal_notes_missed = ($vocal_notes_missed + 1)
+	if (($vocal_notes_missed = 1) || ($vocal_notes_missed = 3))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_05_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_Words_05_VOX'
 				volume = 3
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_06_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Words_06_VOX'
 				volume = 3
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Words_07_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Words_07_VOX'
 				volume = 3
-				Wait}
+				wait}
 			)
 	endif
 endscript
@@ -787,10 +787,10 @@ script training_8_5_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($VOCAL_NOTES_HIT >= 4)
+	if ($vocal_notes_hit >= 4)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -798,22 +798,22 @@ endscript
 script training_8_5_show_highway 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	LoadTutorialSFX \{mode = Tut_Vox_Words}
-	training_play_sound \{Sound = 'Tut_Vox_Words_01_VOX'
-		Wait}
+	0x4de05aff \{mode = 0x2fb96088}
+	training_play_sound \{sound = 'Tut_Vox_Words_01_VOX'
+		wait}
 	training_hide_narrator
 	change \{tutorial_disable_hud = 1}
-	training_start_gem_scroller \{song = Tut_Vox_Spoken
-		part = Vocals
+	training_start_gem_scroller \{song = tut_vox_spoken
+		part = vocals
 		disable_hud
 		no_score_update
-		StartTime = 6000}
-	SetSoundBussParams \{Band_Balance = {
+		starttime = 6000}
+	setsoundbussparams \{band_balance = {
 			vol = -100
 		}}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -830,7 +830,7 @@ script training_8_5_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup \{disable_mic
 		disable_star_power}
@@ -838,36 +838,36 @@ endscript
 
 script training_8_5_show_items_on_highway 
 
-	Wait \{6
+	wait \{6
 		seconds}
 	training_pause_gem_scroller
-	SetSoundBussParams {Band_Balance = {vol = ($Default_BussSet.Band_Balance.vol)}}
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("Some lyrics need to be SPOKEN, not sung.")}
-	training_add_lesson_body_text \{number = qs("\L2")
-		text = qs("SPOKEN WORDS don't need to be in pitch, but in TIME with the beat.")}
+	setsoundbussparams {band_balance = {vol = ($default_bussset.band_balance.vol)}}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x6a8c0984)}
+	training_add_lesson_body_text \{number = qs(0x09c32524)
+		text = qs(0xa416fdf2)}
 	training_show_lesson_header
-	<platscale> = 2.3
-	training_add_arrow id = training_arrow life = 7.0 pos = (800.0, 485.0) scale = <platscale>
+	<0xf907476f> = 2.3
+	training_add_arrow id = training_arrow life = 7.0 pos = (800.0, 485.0) scale = <0xf907476f>
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Words_02_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Words_02_VOX'
+		wait}
 	training_hide_narrator
-	training_add_arrow id = training_arrow life = 7.0 pos = (410.0, 585.0) scale = <platscale> rot = -90
+	training_add_arrow id = training_arrow life = 7.0 pos = (410.0, 585.0) scale = <0xf907476f> rot = -90
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Words_03_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Words_03_VOX'
+		wait}
 	training_hide_narrator
 endscript
 
 script training_8_5_start_spoken_task 
 
-	training_set_task_header_body \{text = qs("Speak 4 phrases.")}
+	training_set_task_header_body \{text = qs(0x9359ae59)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 4}
-	change \{VOCAL_NOTES_HIT = 0}
-	change \{VOCAL_NOTES_MISSED = 0}
+	change \{vocal_notes_hit = 0}
+	change \{vocal_notes_missed = 0}
 	training_destroy_all_arrows
 	training_resume_gem_scroller \{enable_mic}
 	training_8_5_wait_for_hit_notes
@@ -876,8 +876,8 @@ script training_8_5_start_spoken_task
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Words_04_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Words_04_VOX'
+		wait}
 	training_hide_narrator
 	training_resume_gem_scroller
 endscript
@@ -889,43 +889,43 @@ endscript
 
 script training_8_6_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L6")
-		text = qs("Freeform Vocals")}
+	training_set_lesson_header_text \{number = qs(0x6dafe020)
+		text = qs(0xd2cf3018)}
 	training_show_lesson_header
 	create_training_pause_handler
 endscript
 
 script training_8_6_hit_note 
 
-	change VOCAL_NOTES_HIT = ($VOCAL_NOTES_HIT + 1)
-	training_display_notes_hit \{notes_hit = $VOCAL_NOTES_HIT
+	change vocal_notes_hit = ($vocal_notes_hit + 1)
+	training_display_notes_hit \{notes_hit = $vocal_notes_hit
 		notes_required = 4}
-	if (($VOCAL_NOTES_HIT = 3) || ($VOCAL_NOTES_HIT = 6))
+	if (($vocal_notes_hit = 3) || ($vocal_notes_hit = 6))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_Freeform_09_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_Freeform_09_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Freeform_10_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Freeform_10_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
 
 script training_8_6_missed_note 
 
-	change VOCAL_NOTES_MISSED = ($VOCAL_NOTES_MISSED + 1)
-	if (($VOCAL_NOTES_MISSED = 3) || ($VOCAL_NOTES_MISSED = 6))
+	change vocal_notes_missed = ($vocal_notes_missed + 1)
+	if (($vocal_notes_missed = 3) || ($vocal_notes_missed = 6))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_Freeform_06_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_Freeform_06_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Freeform_07_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Freeform_07_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_Freeform_08_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_Freeform_08_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
@@ -936,10 +936,10 @@ script training_8_6_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($VOCAL_NOTES_HIT >= 4)
+	if ($vocal_notes_hit >= 4)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -947,25 +947,25 @@ endscript
 script training_8_6_show_highway 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	LoadTutorialSFX \{mode = Tut_Vox_Freeform}
-	training_play_sound \{Sound = 'Tut_Vox_Freeform_01_VOX'
-		Wait}
+	0x4de05aff \{mode = tut_vox_freeform}
+	training_play_sound \{sound = 'Tut_Vox_Freeform_01_VOX'
+		wait}
 	training_hide_narrator
 	change \{tutorial_disable_hud = 1}
-	training_start_gem_scroller \{song = Tut_Vox_Freeform
-		part = Vocals
+	training_start_gem_scroller \{song = tut_vox_freeform
+		part = vocals
 		disable_hud
 		no_score_update
-		StartTime = 6000}
-	KillSpawnedScript \{name = update_score_fast}
-	SetSoundBussParams \{Band_Balance = {
+		starttime = 6000}
+	killspawnedscript \{name = update_score_fast}
+	setsoundbussparams \{band_balance = {
 			vol = -100
 		}}
-	SetSoundBussParams \{LeadVox_Balance = {
+	setsoundbussparams \{leadvox_balance = {
 			vol = -100
 		}}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -982,7 +982,7 @@ script training_8_6_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup \{disable_mic
 		disable_star_power}
@@ -996,22 +996,22 @@ script training_8_6_show_items_on_highway
 	else
 		<wait_time> = 5.5
 	endif
-	Wait <wait_time> seconds
+	wait <wait_time> seconds
 	training_pause_gem_scroller
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("Freeform sections BOTH sound and score best when sung in BEAT and TUNE with the rest of the song.")}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x27819751)}
 	training_show_lesson_header
-	SetSoundBussParams {Band_Balance = {vol = ($Default_BussSet.Band_Balance.vol)}}
-	SetSoundBussParams {LeadVox_Balance = {vol = ($Default_BussSet.LeadVox_Balance.vol)}}
-	<platscale> = 2.3
+	setsoundbussparams {band_balance = {vol = ($default_bussset.band_balance.vol)}}
+	setsoundbussparams {leadvox_balance = {vol = ($default_bussset.leadvox_balance.vol)}}
+	<0xf907476f> = 2.3
 	if (<highway_view> = static)
-		training_add_arrow id = training_arrow life = 9.0 pos = (640.0, 430.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 9.0 pos = (640.0, 430.0) scale = <0xf907476f>
 	else
-		training_add_arrow id = training_arrow life = 9.0 pos = (800.0, 430.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 9.0 pos = (800.0, 430.0) scale = <0xf907476f>
 	endif
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Freeform_02_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Freeform_02_VOX'
+		wait}
 	training_hide_narrator
 	training_destroy_all_arrows
 endscript
@@ -1019,15 +1019,15 @@ endscript
 script training_8_6_start_freeform_task 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Freeform_04_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Freeform_04_VOX'
+		wait}
 	training_hide_narrator
-	training_set_task_header_body \{text = qs("Sing the 4 freeform sections.")}
+	training_set_task_header_body \{text = qs(0x1649c5db)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 4}
-	change \{VOCAL_NOTES_HIT = 0}
-	change \{VOCAL_NOTES_MISSED = 0}
+	change \{vocal_notes_hit = 0}
+	change \{vocal_notes_missed = 0}
 	training_destroy_all_arrows
 	training_resume_gem_scroller \{enable_mic}
 	training_8_6_wait_for_hit_notes
@@ -1040,17 +1040,17 @@ endscript
 
 script training_8_6_show_hype_section 
 
-	Wait \{1.0
+	wait \{1.0
 		seconds}
 	change \{tutorial_disable_hud = 1}
-	training_start_gem_scroller \{song = Tut_Vox_Hype
-		part = Vocals
+	training_start_gem_scroller \{song = tut_vox_hype
+		part = vocals
 		disable_hud
 		no_score_update
-		StartTime = 2000}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+		starttime = 2000}
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -1064,28 +1064,28 @@ script training_8_6_show_hype_section
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup \{disable_mic
 		disable_star_power}
 	vocals_get_highway_view \{player = 1}
 	if (<highway_view> = static)
-		Wait \{4.4
+		wait \{4.4
 			seconds}
 	else
-		Wait \{4.2
+		wait \{4.2
 			seconds}
 	endif
 	training_pause_gem_scroller
-	<platscale> = 2.3
+	<0xf907476f> = 2.3
 	if (<highway_view> = static)
-		training_add_arrow id = training_arrow life = 9.0 pos = (640.0, 430.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 9.0 pos = (640.0, 430.0) scale = <0xf907476f>
 	else
-		training_add_arrow id = training_arrow life = 9.0 pos = (700.0, 430.0) scale = <platscale>
+		training_add_arrow id = training_arrow life = 9.0 pos = (700.0, 430.0) scale = <0xf907476f>
 	endif
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_Freeform_05_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_Freeform_05_VOX'
+		wait}
 	training_hide_narrator
 	destroy_menu \{menu_id = menu_tutorial}
 	create_training_pause_handler
@@ -1101,8 +1101,8 @@ endscript
 
 script training_8_7_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L6")
-		text = qs("Vocals Star Power")}
+	training_set_lesson_header_text \{number = qs(0x6dafe020)
+		text = qs(0xed63746a)}
 	training_show_lesson_header
 	create_training_pause_handler
 	training_hide_placeholder
@@ -1110,33 +1110,33 @@ endscript
 
 script training_8_7_hit_note 
 
-	change VOCAL_NOTES_HIT = ($VOCAL_NOTES_HIT + 1)
-	if (($VOCAL_NOTES_HIT = 3) || ($VOCAL_NOTES_HIT = 6))
+	change vocal_notes_hit = ($vocal_notes_hit + 1)
+	if (($vocal_notes_hit = 3) || ($vocal_notes_hit = 6))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_09_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_09_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_10_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_10_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
 
 script training_8_7_missed_note 
 
-	change VOCAL_NOTES_MISSED = ($VOCAL_NOTES_MISSED + 1)
-	if (($VOCAL_NOTES_MISSED = 3) || ($VOCAL_NOTES_MISSED = 6))
+	change vocal_notes_missed = ($vocal_notes_missed + 1)
+	if (($vocal_notes_missed = 3) || ($vocal_notes_missed = 6))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_06_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_06_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_07_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_07_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_08_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_08_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
@@ -1150,7 +1150,7 @@ script training_8_7_wait_for_hit_notes
 	if ($player1_status.star_power_amount >= 50)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -1158,13 +1158,13 @@ endscript
 script training_8_7_show_highway 
 
 	training_show_narrator \{narrator = 'vocalist'}
-	LoadTutorialSFX \{mode = Tut_Vox_StarPower}
+	0x4de05aff \{mode = 0xd2b20a5a}
 	change \{tutorial_disable_hud = 0}
-	training_start_gem_scroller \{song = Tut_Vox_Combos
-		part = Vocals
-		StartTime = 2000}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	training_start_gem_scroller \{song = tut_vox_combos
+		part = vocals
+		starttime = 2000}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -1181,7 +1181,7 @@ script training_8_7_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	training_wait_for_gem_scroller_startup \{disable_mic}
 endscript
@@ -1190,27 +1190,27 @@ script training_8_7_start_star_power_task
 
 	vocals_get_highway_view \{player = 1}
 	if (<highway_view> = static)
-		Wait \{3.5
+		wait \{3.5
 			seconds}
 	else
-		Wait \{3.0
+		wait \{3.0
 			seconds}
 	endif
 	training_pause_gem_scroller
-	Wait \{0.5
+	wait \{0.5
 		seconds
 		ignoreslomo}
-	training_add_lesson_body_text \{number = qs("\L1")
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
 		text = qs(0xbbcf43e1)}
-	training_add_lesson_body_text \{number = qs("\L2")
-		text = qs("Star Power fills up amp bulbs.")}
+	training_add_lesson_body_text \{number = qs(0x09c32524)
+		text = qs(0x5852268a)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Vox_StarPower_02_VOX'
-		Wait}
-	training_set_task_header_body \{text = qs("Build up Star Power")}
+	training_play_sound \{sound = 'Tut_Vox_StarPower_02_VOX'
+		wait}
+	training_set_task_header_body \{text = qs(0x171f6063)}
 	training_show_task_header
-	change \{VOCAL_NOTES_HIT = 0}
-	change \{VOCAL_NOTES_MISSED = 0}
+	change \{vocal_notes_hit = 0}
+	change \{vocal_notes_missed = 0}
 	training_destroy_all_arrows
 	training_resume_gem_scroller \{enable_mic
 		enable_star_power}
@@ -1229,8 +1229,8 @@ endscript
 
 script training_8_8_show_lesson_header 
 
-	training_set_lesson_header_text \{number = qs("\L7")
-		text = qs("Activating Star Power")}
+	training_set_lesson_header_text \{number = qs(0x74b4d161)
+		text = qs(0xd81b6f2a)}
 	training_show_lesson_header
 	create_training_pause_handler
 	training_hide_placeholder
@@ -1239,17 +1239,17 @@ endscript
 script training_8_8_hit_note 
 
 	if ($player1_status.star_power_used = 1)
-		change VOCAL_NOTES_HIT = ($VOCAL_NOTES_HIT + 1)
-		training_display_notes_hit \{notes_hit = $VOCAL_NOTES_HIT
+		change vocal_notes_hit = ($vocal_notes_hit + 1)
+		training_display_notes_hit \{notes_hit = $vocal_notes_hit
 			notes_required = 4}
-		if (($VOCAL_NOTES_HIT = 1) || ($VOCAL_NOTES_HIT = 2))
+		if (($vocal_notes_hit = 1) || ($vocal_notes_hit = 2))
 			Random (
-				@ training_play_sound \{Sound = 'Tut_Vox_StarPower_09_VOX'
+				@ training_play_sound \{sound = 'Tut_Vox_StarPower_09_VOX'
 					volume = 2.5
-					Wait}
-				@ training_play_sound \{Sound = 'Tut_Vox_StarPower_10_VOX'
+					wait}
+				@ training_play_sound \{sound = 'Tut_Vox_StarPower_10_VOX'
 					volume = 2.5
-					Wait}
+					wait}
 				)
 		endif
 	endif
@@ -1257,18 +1257,18 @@ endscript
 
 script training_8_8_missed_note 
 
-	change VOCAL_NOTES_MISSED = ($VOCAL_NOTES_MISSED + 1)
-	if (($VOCAL_NOTES_MISSED = 1) || ($VOCAL_NOTES_MISSED = 3))
+	change vocal_notes_missed = ($vocal_notes_missed + 1)
+	if (($vocal_notes_missed = 1) || ($vocal_notes_missed = 3))
 		Random (
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_06_VOX'
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_06_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_07_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_07_VOX'
 				volume = 2.5
-				Wait}
-			@ training_play_sound \{Sound = 'Tut_Vox_StarPower_08_VOX'
+				wait}
+			@ training_play_sound \{sound = 'Tut_Vox_StarPower_08_VOX'
 				volume = 2.5
-				Wait}
+				wait}
 			)
 	endif
 endscript
@@ -1279,10 +1279,10 @@ script training_8_8_wait_for_hit_notes
 	if ($training_song_over = 1)
 		return
 	endif
-	if ($VOCAL_NOTES_HIT >= 4)
+	if ($vocal_notes_hit >= 4)
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -1291,12 +1291,12 @@ script training_8_8_show_highway
 
 	training_show_narrator \{narrator = 'vocalist'}
 	change \{tutorial_disable_hud = 0}
-	training_start_gem_scroller \{song = Tut_Vox_Activ
-		part = Vocals
-		StartTime = 2000}
-	KillSpawnedScript \{name = update_score_fast}
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	training_start_gem_scroller \{song = tut_vox_activ
+		part = vocals
+		starttime = 2000}
+	killspawnedscript \{name = update_score_fast}
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
@@ -1313,7 +1313,7 @@ script training_8_8_show_highway
 		use_backdrop = 0
 		event_handlers = <event_handlers>
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = menu_tutorial}
 	change \{structurename = player1_status
 		star_power_amount = 100}
@@ -1324,42 +1324,42 @@ script training_8_8_start_activate_star_power_task
 
 	vocals_get_highway_view \{player = 1}
 	if (<highway_view> = static)
-		Wait \{3.5
+		wait \{3.5
 			seconds}
 	else
-		Wait \{3.0
+		wait \{3.0
 			seconds}
 	endif
 	training_pause_gem_scroller
-	training_add_lesson_body_text \{number = qs("\L1")
-		text = qs("Unleash Star Power by CLAPPING the top of the mic, or PRESSING a button.")}
+	training_add_lesson_body_text \{number = qs(0x22ee76e7)
+		text = qs(0x6c733344)}
 	training_show_lesson_header
-	training_play_sound \{Sound = 'Tut_Vox_StarPower_03_VOX'
-		Wait}
-	training_set_task_header_body \{text = qs("Activate Star Power and hit 4 phrases.")}
+	training_play_sound \{sound = 'Tut_Vox_StarPower_03_VOX'
+		wait}
+	training_set_task_header_body \{text = qs(0xae613a06)}
 	training_show_task_header
 	training_display_notes_hit \{notes_hit = 0
 		notes_required = 4}
-	change \{VOCAL_NOTES_HIT = 0}
-	change \{VOCAL_NOTES_MISSED = 0}
+	change \{vocal_notes_hit = 0}
+	change \{vocal_notes_missed = 0}
 	training_destroy_all_arrows
 	training_resume_gem_scroller \{enable_mic
 		enable_star_power}
 	training_8_8_wait_for_hit_notes
 	training_pause_gem_scroller
-	<platscale> = 2.3
-	training_add_arrow id = training_arrow2 life = 2 pos = (275.0, 325.0) scale = <platscale> rot = 90
+	<0xf907476f> = 2.3
+	training_add_arrow id = training_arrow2 life = 2 pos = (275.0, 325.0) scale = <0xf907476f> rot = 90
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_StarPower_04_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_StarPower_04_VOX'
+		wait}
 	training_hide_narrator
 	destroy_menu \{menu_id = menu_tutorial}
 	create_training_pause_handler
 	training_destroy_gem_scroller
 	training_hide_lesson_header
 	training_show_narrator \{narrator = 'vocalist'}
-	training_play_sound \{Sound = 'Tut_Vox_StarPower_05_VOX'
-		Wait}
+	training_play_sound \{sound = 'Tut_Vox_StarPower_05_VOX'
+		wait}
 	training_hide_narrator
 	training_resume_gem_scroller
 endscript
@@ -1367,20 +1367,20 @@ endscript
 script training_8_8_complete_message 
 
 	training_destroy_title
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 		create_training_pause_handler
 	endif
-	SoundEvent \{event = Tutorial_Mode_Finish_Chord}
+	soundevent \{event = tutorial_mode_finish_chord}
 	training_hide_lesson_header
 	training_destroy_gem_scroller
 	spawnscriptnow \{create_exploding_text
 		id = training_spawned_script
 		params = {
 			parent = 'lesson_complete'
-			text = qs("Vocals Lesson")
+			text = qs(0xfe9dcb72)
 			text_physics = 0
 			placement = ps2_tut_top
 		}}
@@ -1388,35 +1388,35 @@ script training_8_8_complete_message
 		id = training_spawned_script
 		params = {
 			parent = 'complete_text'
-			text = qs("Complete!")
+			text = qs(0x232d1eaf)
 			text_physics = 0
 			placement = ps2_tut_bottom
 		}}
-	Wait \{7
+	wait \{7
 		seconds
 		ignoreslomo}
-	KillSpawnedScript \{name = create_exploding_text}
+	killspawnedscript \{name = create_exploding_text}
 	destroy_all_exploding_text
 	change g_training_lessons_completed = ($g_training_lessons_completed + 1)
 endscript
 
 script training_vocals_tutorial_end 
 
-	training_container :GetTags
+	training_container :gettags
 	if ($g_training_lessons_completed = 7)
-		SetGlobalTags \{practice
+		setglobaltags \{practice
 			params = {
 				vocals_lesson = complete
 			}}
 	endif
 	training_kill_session
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = unfocus
 			target = menu_tutorial}
 		destroy_menu \{menu_id = menu_tutorial}
 	endif
 	training_destroy_narrator_icons
-	SetScreenElementProps \{id = root_window
+	setscreenelementprops \{id = root_window
 		event_handlers = [
 			{
 				pad_start

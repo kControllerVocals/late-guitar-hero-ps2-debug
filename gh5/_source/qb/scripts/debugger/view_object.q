@@ -8,23 +8,23 @@ object_viewer_yoffset = 34
 object_viewer_globalscale = 1.2
 object_viewer_num_lines = 12
 default_viewer_modules = [
-	DefaultViewer
-	ObjectViewer
-	MassiveViewer
+	defaultviewer
+	objectviewer
+	massiveviewer
 ]
 
-script EnableNewObjViewer 
+script enablenewobjviewer 
 	if ($highdefviewer = 1)
 		change \{object_viewer_globalscale = $hi_def_object_viewer_globalscale}
 	endif
 	if ($highdefviewer = 0)
 		change \{object_viewer_globalscale = $low_def_object_viewer_globalscale}
 	endif
-	if NOT ScreenElementExists \{id = view_dot}
-		SetScreenElementLock \{id = root_window
+	if NOT screenelementexists \{id = view_dot}
+		setscreenelementlock \{id = root_window
 			off}
-		CreateScreenElement \{id = view_dot
-			type = SpriteElement
+		createscreenelement \{id = view_dot
+			type = spriteelement
 			texture = white
 			rgba = [
 				255
@@ -36,12 +36,12 @@ script EnableNewObjViewer
 			pos = (640.0, 360.0)
 			parent = root_window}
 	endif
-	if ScreenElementExists \{id = obj_viewer_anchor}
-		DestroyScreenElement \{id = obj_viewer_anchor}
+	if screenelementexists \{id = obj_viewer_anchor}
+		destroyscreenelement \{id = obj_viewer_anchor}
 	endif
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = obj_viewer_anchor
 		pos = (100.0, 360.0)
@@ -56,12 +56,12 @@ script EnableNewObjViewer
 	scale = ($object_viewer_yoffset * $object_viewer_globalscale)
 	posoffset = ((0.0, 1.0) * <scale>)
 	pos0 = ((0.0, 200.0) - (<posoffset> * ($object_viewer_num_lines + 1)))
-	CreateScreenElement \{type = TextBlockElement
+	createscreenelement \{type = textblockelement
 		parent = obj_viewer_anchor
 		id = viewer_text_display_block
 		pos = (120.0, -300.0)
 		dims = (700.0, 700.0)
-		text = qs("\L")
+		text = qs(0x03ac90f0)
 		font = debug
 		line_spacing = 1
 		rgba = [
@@ -77,18 +77,18 @@ script EnableNewObjViewer
 		scale = $object_viewer_globalscale}
 endscript
 
-script EnableObjViewer 
+script enableobjviewer 
 	if ($highdefviewer = 1)
 		change \{object_viewer_globalscale = $hi_def_object_viewer_globalscale}
 	endif
 	if ($highdefviewer = 0)
 		change \{object_viewer_globalscale = $low_def_object_viewer_globalscale}
 	endif
-	if NOT ScreenElementExists \{id = view_dot}
-		SetScreenElementLock \{id = root_window
+	if NOT screenelementexists \{id = view_dot}
+		setscreenelementlock \{id = root_window
 			off}
-		CreateScreenElement \{id = view_dot
-			type = SpriteElement
+		createscreenelement \{id = view_dot
+			type = spriteelement
 			texture = white
 			rgba = [
 				255
@@ -100,12 +100,12 @@ script EnableObjViewer
 			pos = (640.0, 360.0)
 			parent = root_window}
 	endif
-	if ScreenElementExists \{id = obj_viewer_anchor}
-		DestroyScreenElement \{id = obj_viewer_anchor}
+	if screenelementexists \{id = obj_viewer_anchor}
+		destroyscreenelement \{id = obj_viewer_anchor}
 	endif
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = obj_viewer_anchor
 		pos = (100.0, 360.0)
@@ -120,144 +120,144 @@ script EnableObjViewer
 	scale = ($object_viewer_yoffset * $object_viewer_globalscale)
 	posoffset = ((0.0, 1.0) * <scale>)
 	pos0 = ((0.0, 200.0) - (<posoffset> * ($object_viewer_num_lines + 1)))
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text1
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [60 60 100 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text2
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text11
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text12
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text3
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text4
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text5
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text6
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text7
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text8
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text9
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
 		scale = $object_viewer_globalscale
 	}
 	pos0 = (<pos0> + <posoffset>)
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = obj_viewer_anchor
 		id = view_obj_text10
 		pos = <pos0>
-		text = qs("\LNone")
+		text = qs(0x3f1bbbb1)
 		font = debug
 		rgba = [58 108 58 255]
 		just = [left center]
@@ -266,106 +266,106 @@ script EnableObjViewer
 endscript
 default_obj_viewer_display = 1
 
-script UpdateObjViewer 
+script updateobjviewer 
 	if ($default_obj_viewer_display = 1)
-		SetScreenElementProps id = view_obj_text2 text = <ObjName>
-		SetScreenElementProps id = view_obj_text1 text = <ObjType>
-		SetScreenElementProps id = view_obj_text11 text = <PolyStat8>
-		SetScreenElementProps id = view_obj_text12 text = <PolyStat9>
-		SetScreenElementProps id = view_obj_text3 text = <PolyStat0>
-		SetScreenElementProps id = view_obj_text4 text = <PolyStat1>
-		SetScreenElementProps id = view_obj_text5 text = <PolyStat2>
-		SetScreenElementProps id = view_obj_text6 text = <PolyStat3>
-		SetScreenElementProps id = view_obj_text7 text = <PolyStat4>
-		SetScreenElementProps id = view_obj_text8 text = <PolyStat5>
-		SetScreenElementProps id = view_obj_text9 text = <PolyStat6>
-		SetScreenElementProps id = view_obj_text10 text = <PolyStat7>
+		setscreenelementprops id = view_obj_text2 text = <objname>
+		setscreenelementprops id = view_obj_text1 text = <objtype>
+		setscreenelementprops id = view_obj_text11 text = <polystat8>
+		setscreenelementprops id = view_obj_text12 text = <polystat9>
+		setscreenelementprops id = view_obj_text3 text = <polystat0>
+		setscreenelementprops id = view_obj_text4 text = <polystat1>
+		setscreenelementprops id = view_obj_text5 text = <polystat2>
+		setscreenelementprops id = view_obj_text6 text = <polystat3>
+		setscreenelementprops id = view_obj_text7 text = <polystat4>
+		setscreenelementprops id = view_obj_text8 text = <polystat5>
+		setscreenelementprops id = view_obj_text9 text = <polystat6>
+		setscreenelementprops id = view_obj_text10 text = <polystat7>
 		hide_ai_debug
 	else
-		SetScreenElementProps \{id = view_obj_text2
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text1
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text11
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text12
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text3
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text4
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text5
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text6
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text7
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text8
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text9
-			text = qs("\L")}
-		SetScreenElementProps \{id = view_obj_text10
-			text = qs("\L")}
+		setscreenelementprops \{id = view_obj_text2
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text1
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text11
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text12
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text3
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text4
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text5
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text6
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text7
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text8
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text9
+			text = qs(0x03ac90f0)}
+		setscreenelementprops \{id = view_obj_text10
+			text = qs(0x03ac90f0)}
 	endif
-	if GotParam \{ObjID}
-		if CompositeObjectExists name = <ObjID>
-			if <ObjID> :ContainsComponent name = Agent
-				<ObjID> :Agent_UpdateViewed
+	if gotparam \{objid}
+		if compositeobjectexists name = <objid>
+			if <objid> :containscomponent name = agent
+				<objid> :agent_updateviewed
 			endif
 		endif
 	endif
 endscript
 
-script DisableNewObjViewer 
-	if ScreenElementExists \{id = view_dot}
-		DestroyScreenElement \{id = view_dot}
+script disablenewobjviewer 
+	if screenelementexists \{id = view_dot}
+		destroyscreenelement \{id = view_dot}
 	endif
-	if ScreenElementExists \{id = viewer_text_display_block}
-		DestroyScreenElement \{id = viewer_text_display_block}
+	if screenelementexists \{id = viewer_text_display_block}
+		destroyscreenelement \{id = viewer_text_display_block}
 	endif
 endscript
 
 script disableobjviewer 
-	if ScreenElementExists \{id = view_dot}
-		DestroyScreenElement \{id = view_dot}
+	if screenelementexists \{id = view_dot}
+		destroyscreenelement \{id = view_dot}
 	endif
-	if ScreenElementExists \{id = view_obj_text1}
-		DestroyScreenElement \{id = view_obj_text1}
+	if screenelementexists \{id = view_obj_text1}
+		destroyscreenelement \{id = view_obj_text1}
 	endif
-	if ScreenElementExists \{id = view_obj_text2}
-		DestroyScreenElement \{id = view_obj_text2}
+	if screenelementexists \{id = view_obj_text2}
+		destroyscreenelement \{id = view_obj_text2}
 	endif
-	if ScreenElementExists \{id = view_obj_text3}
-		DestroyScreenElement \{id = view_obj_text3}
+	if screenelementexists \{id = view_obj_text3}
+		destroyscreenelement \{id = view_obj_text3}
 	endif
-	if ScreenElementExists \{id = view_obj_text4}
-		DestroyScreenElement \{id = view_obj_text4}
+	if screenelementexists \{id = view_obj_text4}
+		destroyscreenelement \{id = view_obj_text4}
 	endif
-	if ScreenElementExists \{id = view_obj_text5}
-		DestroyScreenElement \{id = view_obj_text5}
+	if screenelementexists \{id = view_obj_text5}
+		destroyscreenelement \{id = view_obj_text5}
 	endif
-	if ScreenElementExists \{id = view_obj_text6}
-		DestroyScreenElement \{id = view_obj_text6}
+	if screenelementexists \{id = view_obj_text6}
+		destroyscreenelement \{id = view_obj_text6}
 	endif
-	if ScreenElementExists \{id = view_obj_text7}
-		DestroyScreenElement \{id = view_obj_text7}
+	if screenelementexists \{id = view_obj_text7}
+		destroyscreenelement \{id = view_obj_text7}
 	endif
-	if ScreenElementExists \{id = view_obj_text8}
-		DestroyScreenElement \{id = view_obj_text8}
+	if screenelementexists \{id = view_obj_text8}
+		destroyscreenelement \{id = view_obj_text8}
 	endif
-	if ScreenElementExists \{id = view_obj_text9}
-		DestroyScreenElement \{id = view_obj_text9}
+	if screenelementexists \{id = view_obj_text9}
+		destroyscreenelement \{id = view_obj_text9}
 	endif
-	if ScreenElementExists \{id = view_obj_text10}
-		DestroyScreenElement \{id = view_obj_text10}
+	if screenelementexists \{id = view_obj_text10}
+		destroyscreenelement \{id = view_obj_text10}
 	endif
-	if ScreenElementExists \{id = view_obj_text11}
-		DestroyScreenElement \{id = view_obj_text11}
+	if screenelementexists \{id = view_obj_text11}
+		destroyscreenelement \{id = view_obj_text11}
 	endif
-	if ScreenElementExists \{id = view_obj_text12}
-		DestroyScreenElement \{id = view_obj_text12}
+	if screenelementexists \{id = view_obj_text12}
+		destroyscreenelement \{id = view_obj_text12}
 	endif
-	if ScreenElementExists \{id = view_obj_ai}
-		DestroyScreenElement \{id = view_obj_ai}
+	if screenelementexists \{id = view_obj_ai}
+		destroyscreenelement \{id = view_obj_ai}
 	endif
 endscript

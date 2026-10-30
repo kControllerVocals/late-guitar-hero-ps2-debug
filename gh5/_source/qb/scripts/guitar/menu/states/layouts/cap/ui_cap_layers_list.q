@@ -2,50 +2,50 @@ max_cap_layers = 40
 
 script ui_create_cap_layers_list 
 	change \{save_data_dirty = 1}
-	if GotParam \{new_layer_selected}
+	if gotparam \{new_layer_selected}
 		ui_event_remove_params \{param = new_layer_selected}
 		spawnscriptnow continue_to_shape_list params = {part = <part> div_id = <div_id>}
 	else
-		if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+		if NOT checksumequals a = <part> b = cas_band_logo
 			show_history = {show_history}
 		endif
 		make_generic_menu {
 			vmenu_id = create_cap_layers_list_vmenu
-			title = qs("Layers")
+			title = qs(0xa164fadf)
 			<show_history>
 		}
 		if NOT is_cap_layers_full part = <part> div_id = <div_id>
 			add_generic_menu_text_item {
-				text = qs("< New Layer >")
-				choose_state = UIstate_cap_shape_list
+				text = qs(0x23052bb7)
+				choose_state = uistate_cap_shape_list
 				choose_state_data = {part = <part> div_id = <div_id> camera_list = <camera_list> zoom_camera = <zoom_camera> override_base_name = <override_base_name>}
 			}
 		endif
 		add_current_layers_to_menu part = <part> div_id = <div_id> copy_params = <copy_params> focus_item = <focus_item> paste_item = <paste_item> camera_list = <camera_list> zoom_camera = <zoom_camera> override_base_name = <override_base_name>
-		if GotParam \{paste_item}
-			GetScreenElementChildren \{id = current_menu}
+		if gotparam \{paste_item}
+			getscreenelementchildren \{id = current_menu}
 			paste_id = (<children> [<paste_item> + 1])
 			<paste_id> :obj_spawnscript pulse_pasted_item
 		endif
-		if GotParam \{copy_params}
-			add_user_control_helper \{text = qs("PASTE")
+		if gotparam \{copy_params}
+			add_user_control_helper \{text = qs(0x032d8a5e)
 				button = green
 				z = 100000}
-			add_user_control_helper \{text = qs("DONE")
+			add_user_control_helper \{text = qs(0x3fc1c076)
 				button = red
 				z = 100000}
-			if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+			if NOT checksumequals a = <part> b = cas_band_logo
 				menu_finish \{car_rotate_zoom}
 			endif
-		elseif GotParam \{re_order_params}
-			add_user_control_helper \{text = qs("DONE")
+		elseif gotparam \{re_order_params}
+			add_user_control_helper \{text = qs(0x3fc1c076)
 				button = green
 				z = 100000}
-			if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+			if NOT checksumequals a = <part> b = cas_band_logo
 				menu_finish \{car_rotate_zoom}
 			endif
 		else
-			if ChecksumEquals a = <part> b = CAS_Band_Logo
+			if checksumequals a = <part> b = cas_band_logo
 				menu_finish \{car_helper_text
 					no_rotate_zoom_text}
 			else
@@ -57,61 +57,61 @@ script ui_create_cap_layers_list
 endscript
 
 script focus_re_order_element 
-	if ScreenElementExists \{id = create_cap_layers_list_vmenu}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = create_cap_layers_list_vmenu}
+		launchevent \{type = unfocus
 			target = create_cap_layers_list_vmenu}
 	else
 		return
 	endif
-	if ScreenElementExists \{id = re_order_element}
-		LaunchEvent \{type = focus
+	if screenelementexists \{id = re_order_element}
+		launchevent \{type = focus
 			target = re_order_element}
 	else
 		return
 	endif
-	generic_menu :SE_SetProps \{highlight_bars_alpha = 0}
+	generic_menu :se_setprops \{highlight_bars_alpha = 0}
 endscript
 
 script ui_destroy_cap_layers_list 
-	if ScreenElementExists \{id = num_layers}
-		DestroyScreenElement \{id = num_layers}
+	if screenelementexists \{id = num_layers}
+		destroyscreenelement \{id = num_layers}
 	endif
 	destroy_generic_menu
 endscript
 
 script ui_return_cap_layers_list 
-	if NOT ((GotParam re_order_params) || (GotParam copy_params))
-		if ScreenElementExists \{id = layers_list_focus}
-			DestroyScreenElement \{id = layers_list_focus}
+	if NOT ((gotparam re_order_params) || (gotparam copy_params))
+		if screenelementexists \{id = layers_list_focus}
+			destroyscreenelement \{id = layers_list_focus}
 		endif
-	elseif GotParam \{re_order_params}
+	elseif gotparam \{re_order_params}
 
 		cap_re_order_layer_handler_change <re_order_params> camera_list = <camera_list> zoom_camera = <zoom_camera>
-		SpawnScriptLater \{focus_re_order_element}
-	elseif GotParam \{copy_params}
+		spawnscriptlater \{focus_re_order_element}
+	elseif gotparam \{copy_params}
 
 		cap_change_copy_handler <copy_params> div_id = <div_id> camera_list = <camera_list> zoom_camera = <zoom_camera>
-		SpawnScriptLater \{focus_copy_element}
+		spawnscriptlater \{focus_copy_element}
 	endif
-	if GotParam \{copy_params}
-		add_user_control_helper \{text = qs("PASTE")
+	if gotparam \{copy_params}
+		add_user_control_helper \{text = qs(0x032d8a5e)
 			button = green
 			z = 100000}
-		add_user_control_helper \{text = qs("DONE")
+		add_user_control_helper \{text = qs(0x3fc1c076)
 			button = red
 			z = 100000}
-		if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+		if NOT checksumequals a = <part> b = cas_band_logo
 			menu_finish \{car_rotate_zoom}
 		endif
-	elseif GotParam \{re_order_params}
-		add_user_control_helper \{text = qs("DONE")
+	elseif gotparam \{re_order_params}
+		add_user_control_helper \{text = qs(0x3fc1c076)
 			button = green
 			z = 100000}
-		if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+		if NOT checksumequals a = <part> b = cas_band_logo
 			menu_finish \{car_rotate_zoom}
 		endif
 	else
-		if ChecksumEquals a = <part> b = CAS_Band_Logo
+		if checksumequals a = <part> b = cas_band_logo
 			menu_finish \{car_helper_text
 				no_rotate_zoom_text}
 		else
@@ -122,38 +122,38 @@ endscript
 
 script add_current_layers_to_menu 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
 	num_layers = 0
-	if GotParam \{cap}
-		GetArraySize (cap)
+	if gotparam \{cap}
+		getarraysize (cap)
 		cap_array_size = <array_size>
 		if (<cap_array_size> > 0)
 			i = 0
 			begin
-			if StructureContains Structure = (<cap> [<i>]) layers
+			if structurecontains structure = (<cap> [<i>]) layers
 				if is_target_in_div target = (<cap> [<i>]) part = <part> div_id = <div_id>
-					GetArraySize (<cap> [<i>].layers)
+					getarraysize (<cap> [<i>].layers)
 					j = 0
 					begin
 					get_div_info part = <part> div_id = <div_id>
-					if NOT GotParam \{target}
+					if NOT gotparam \{target}
 
 					endif
-					if StructureContains Structure = ((<cap> [<i>]).layers [<j>]) texture
-						if NOT MatchLayers sections = <sections> texture = ((<cap> [<i>]).layers [<j>].texture) target = <target> material = <material>
+					if structurecontains structure = ((<cap> [<i>]).layers [<j>]) texture
+						if NOT matchlayers sections = <sections> texture = ((<cap> [<i>]).layers [<j>].texture) target = <target> material = <material>
 
 						endif
-					elseif StructureContains Structure = ((<cap> [<i>]).layers [<j>]) font
-						if NOT MatchLayers font = ((<cap> [<i>]).layers [<j>].font) text = ((<cap> [<i>]).layers [<j>].text) sections = <sections> target = <target> material = <material>
+					elseif structurecontains structure = ((<cap> [<i>]).layers [<j>]) font
+						if NOT matchlayers font = ((<cap> [<i>]).layers [<j>].font) text = ((<cap> [<i>]).layers [<j>].text) sections = <sections> target = <target> material = <material>
 
 						endif
 					endif
-					if GotParam \{mask}
+					if gotparam \{mask}
 						add_generic_menu_text_item {
 							text = (<mask>.frontend_desc)
 							pad_choose_script = layers_list_select_layer
@@ -161,17 +161,17 @@ script add_current_layers_to_menu
 							additional_focus_script = <additional_focus_script>
 							additional_focus_params = <additional_focus_params>
 						}
-						if GotParam \{focus_item}
+						if gotparam \{focus_item}
 							if (<focus_item> = <j>)
-								if ScreenElementExists \{id = generic_menu}
-									if generic_menu :Desc_ResolveAlias \{name = alias_generic_menu_smenu
+								if screenelementexists \{id = generic_menu}
+									if generic_menu :desc_resolvealias \{name = alias_generic_menu_smenu
 											param = generic_smenu}
 
-										if GotParam \{paste_item}
-											<generic_smenu> :ScrollingMenu_SetOverrideVisibleIndex (<paste_item> + 1)
+										if gotparam \{paste_item}
+											<generic_smenu> :scrollingmenu_setoverridevisibleindex (<paste_item> + 1)
 											ui_event_remove_params \{param = paste_item}
 										else
-											<generic_smenu> :ScrollingMenu_SetOverrideVisibleIndex (<focus_item>)
+											<generic_smenu> :scrollingmenu_setoverridevisibleindex (<focus_item>)
 										endif
 									endif
 								endif
@@ -189,12 +189,12 @@ script add_current_layers_to_menu
 			repeat <cap_array_size>
 		endif
 	endif
-	if ScreenElementExists \{id = num_layers}
-		DestroyScreenElement \{id = num_layers}
+	if screenelementexists \{id = num_layers}
+		destroyscreenelement \{id = num_layers}
 	endif
-	FormatText TextName = text qs("(%i/%j)") i = <num_layers> j = ($max_cap_layers)
-	CreateScreenElement {
-		type = TextBlockElement
+	formattext textname = text qs(0x1af30f77) i = <num_layers> j = ($max_cap_layers)
+	createscreenelement {
+		type = textblockelement
 		parent = root_window
 		id = num_layers
 		font = (fontgrid_title_a1)
@@ -207,10 +207,10 @@ script add_current_layers_to_menu
 		fit_width = `scale each line if larger`
 		internal_just = [center , center]
 	}
-	if GotParam \{focus_item}
+	if gotparam \{focus_item}
 		ui_event_remove_params \{param = focus_item}
 	endif
-	if GotParam \{paste_item}
+	if gotparam \{paste_item}
 		ui_event_remove_params \{param = paste_item}
 	endif
 endscript
@@ -218,9 +218,9 @@ endscript
 script cap_re_order_layer_handler_change 
 
 
-	if NOT ScreenElementExists \{id = re_order_element}
-		CreateScreenElement {
-			type = ContainerElement
+	if NOT screenelementexists \{id = re_order_element}
+		createscreenelement {
+			type = containerelement
 			id = re_order_element
 			parent = root_window
 			event_handlers = [
@@ -234,75 +234,75 @@ script cap_re_order_layer_handler_change
 			z_priority = <z_priority>
 		}
 	endif
-	if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+	if NOT checksumequals a = <part> b = cas_band_logo
 		setup_cas_menu_handlers vmenu_id = re_order_element camera_list = <camera_list> zoom_camera = <zoom_camera>
 	endif
-	generic_menu :SE_SetProps \{block_events}
+	generic_menu :se_setprops \{block_events}
 endscript
 
 script cap_re_order_layer_handler_change_return 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = re_order_element}
-	if NOT ScreenElementExists \{id = create_cap_layers_list_vmenu}
+	if NOT screenelementexists \{id = create_cap_layers_list_vmenu}
 		return
 	endif
-	if ScreenElementExists \{id = re_order_element}
-		DestroyScreenElement \{id = re_order_element}
+	if screenelementexists \{id = re_order_element}
+		destroyscreenelement \{id = re_order_element}
 	endif
-	if ScreenElementExists \{id = layers_list_focus}
-		DestroyScreenElement \{id = layers_list_focus}
+	if screenelementexists \{id = layers_list_focus}
+		destroyscreenelement \{id = layers_list_focus}
 	endif
 	ui_event_remove_params \{param = re_order_params}
 	ui_event_remove_params \{param = focus_item}
 	clean_up_user_control_helpers
-	if ChecksumEquals a = <part> b = CAS_Band_Logo
+	if checksumequals a = <part> b = cas_band_logo
 		menu_finish \{car_helper_text
 			no_rotate_zoom_text}
 	else
 		menu_finish \{car_helper_text}
 	endif
-	if ScreenElementExists \{id = generic_menu}
-		if generic_menu :Desc_ResolveAlias \{name = alias_generic_menu_smenu
+	if screenelementexists \{id = generic_menu}
+		if generic_menu :desc_resolvealias \{name = alias_generic_menu_smenu
 				param = generic_smenu}
-			<generic_smenu> :ScrollingMenu_ClearOverrideVisibleIndex
+			<generic_smenu> :scrollingmenu_clearoverridevisibleindex
 		endif
 	endif
-	if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+	if NOT checksumequals a = <part> b = cas_band_logo
 		setup_cas_menu_handlers vmenu_id = create_cap_layers_list_vmenu camera_list = <camera_list> zoom_camera = <zoom_camera>
 	endif
 	ui_event \{event = menu_refresh}
-	generic_menu :SE_SetProps \{unblock_events}
-	LaunchEvent \{type = focus
+	generic_menu :se_setprops \{unblock_events}
+	launchevent \{type = focus
 		target = create_cap_layers_list_vmenu}
-	generic_menu :SE_SetProps \{highlight_bars_alpha = 1}
+	generic_menu :se_setprops \{highlight_bars_alpha = 1}
 endscript
 
 script move_layer 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
 	if (<layer_target_index> < 0)
 
 		return
 	endif
-	GetArraySize (<cap> [<cap_index>].layers)
+	getarraysize (<cap> [<cap_index>].layers)
 	if (<layer_target_index> > (<array_size> -1))
 
 		return
 	endif
-	MoveArrayElement array = (<cap> [<cap_index>].layers) target = <layer_target_index> current = <layer_current_index>
-	SetArrayElement ArrayName = cap index = <cap_index> newvalue = {
+	movearrayelement array = (<cap> [<cap_index>].layers) target = <layer_target_index> current = <layer_current_index>
+	setarrayelement arrayname = cap index = <cap_index> newvalue = {
 		(<cap> [<cap_index>])
 		layers = <array>
 	}
-	SetCASAppearanceCAP part = <part> cap = <cap>
-	UpdateCASModelCAP part = <part>
+	setcasappearancecap part = <part> cap = <cap>
+	updatecasmodelcap part = <part>
 	ui_event_add_params focus_item = <layer_target_index>
 	ui_event \{event = menu_refresh}
-	SpawnScriptLater set_generic_menu_scrollbar_index params = {VMenu = create_cap_layers_list_vmenu index = <layer_target_index>}
+	spawnscriptlater set_generic_menu_scrollbar_index params = {vmenu = create_cap_layers_list_vmenu index = <layer_target_index>}
 	layer_current_index = <layer_target_index>
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = re_order_element
 		event_handlers =
 		[
@@ -313,29 +313,29 @@ script move_layer
 		]
 		replace_handlers
 	}
-	SpawnScriptLater \{focus_re_order_element}
+	spawnscriptlater \{focus_re_order_element}
 endscript
 
-script is_CAP_in_div 
+script is_cap_in_div 
 
-	if NOT GetCASAppearancePart part = <part>
-
-	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GotParam \{divisions}
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
+
+	endif
+	if NOT gotparam \{divisions}
 		return \{true}
-	elseif NOT GotParam \{div_id}
+	elseif NOT gotparam \{div_id}
 		return \{true}
 	else
-		GetArraySize \{divisions}
+		getarraysize \{divisions}
 		if (<array_size> > 0)
 			i = 0
 			begin
 			if ((<divisions> [<i>].desc_id) = <div_id>)
 				if ((<cap>.material) = (<divisions> [<i>].material))
-					if StructureContains Structure = <cap> (<divisions> [<i>].target)
+					if structurecontains structure = <cap> (<divisions> [<i>].target)
 						return \{true}
 					endif
 				endif
@@ -350,21 +350,21 @@ endscript
 script get_num_layers 
 	num_layers = 0
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
-	if GotParam \{cap}
-		GetArraySize (cap)
+	if gotparam \{cap}
+		getarraysize (cap)
 		cap_array_size = <array_size>
 		if (<cap_array_size> > 0)
 			i = 0
 			begin
-			if StructureContains Structure = (<cap> [<i>]) layers
+			if structurecontains structure = (<cap> [<i>]) layers
 				if is_target_in_div target = (<cap> [<i>]) part = <part> div_id = <div_id>
-					GetArraySize (<cap> [<i>].layers)
+					getarraysize (<cap> [<i>].layers)
 					j = 0
 					begin
 					num_layers = (<num_layers> + 1)
@@ -391,19 +391,19 @@ endscript
 
 script extract_current_layers 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
-	if GotParam \{cap}
-		GetArraySize (cap)
+	if gotparam \{cap}
+		getarraysize (cap)
 		cap_array_size = <array_size>
 		if (<cap_array_size> > 0)
 			i = 0
 			begin
-			if StructureContains Structure = (<cap> [<i>]) layers
+			if structurecontains structure = (<cap> [<i>]) layers
 				if is_target_in_div target = (<cap> [<i>]) part = <part> div_id = <div_id>
 					return layers = ((<cap> [<i>]).layers)
 				endif
@@ -417,16 +417,16 @@ endscript
 script cap_copy_layer 
 
 	if NOT is_cap_layers_full part = <part> div_id = <div_id>
-		if NOT GetCASAppearancePart part = <part>
+		if NOT getcasappearancepart part = <part>
 
 		endif
-		InsertArrayElement array = ((<cap> [<cap_index>]).layers) element = <layer> index = <layer_index>
-		SetArrayElement ArrayName = cap index = <cap_index> newvalue = {
+		insertarrayelement array = ((<cap> [<cap_index>]).layers) element = <layer> index = <layer_index>
+		setarrayelement arrayname = cap index = <cap_index> newvalue = {
 			(<cap> [<cap_index>])
 			layers = <array>
 		}
-		SetCASAppearanceCAP part = <part> cap = <cap>
-		UpdateCASModelCAP part = <part>
+		setcasappearancecap part = <part> cap = <cap>
+		updatecasmodelcap part = <part>
 	endif
 endscript
 
@@ -436,22 +436,22 @@ script continue_to_shape_list
 	if is_menu_camera_finished
 		destroy_generic_menu
 
-		ui_event_wait event = menu_change data = {state = UIstate_cap_shape_list <...>}
+		ui_event_wait event = menu_change data = {state = uistate_cap_shape_list <...>}
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
 script layers_list_set_focus 
 
-	if ScreenElementExists \{id = layers_list_focus}
-		DestroyScreenElement \{id = layers_list_focus}
+	if screenelementexists \{id = layers_list_focus}
+		destroyscreenelement \{id = layers_list_focus}
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		parent = <container_id>
-		type = DescInterface
+		type = descinterface
 		desc = 'layers_list_focus'
 		id = layers_list_focus
 		layers_list_focus_text_text = (<mask>.frontend_desc)
@@ -466,32 +466,32 @@ script layers_list_set_focus
 endscript
 
 script layers_list_select_layer 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
 	layers_list_set_focus <...>
-	generic_event_choose data = {is_popup state = UIstate_cap_layers_options <...>}
+	generic_event_choose data = {is_popup state = uistate_cap_layers_options <...>}
 endscript
 
 script cap_change_copy_handler 
 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
-	if NOT GotParam \{cap}
+	if NOT gotparam \{cap}
 
 	endif
-	GetArraySize (<cap> [<cap_index>].layers)
-	if NOT ScreenElementExists \{id = copy_element}
-		CreateScreenElement {
-			type = ContainerElement
+	getarraysize (<cap> [<cap_index>].layers)
+	if NOT screenelementexists \{id = copy_element}
+		createscreenelement {
+			type = containerelement
 			id = copy_element
 			parent = root_window
 			event_handlers = [
@@ -507,21 +507,21 @@ script cap_change_copy_handler
 			z_priority = <z_priority>
 		}
 		parent_id = <id>
-		if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+		if NOT checksumequals a = <part> b = cas_band_logo
 			setup_cas_menu_handlers vmenu_id = copy_element camera_list = <camera_list> zoom_camera = <zoom_camera>
 		endif
-		copy_element :SetTags {
+		copy_element :settags {
 			curent_index = <layer_index>
 			target_index = <layer_index>
 			layer = <layer>
 			max_layer = <array_size>
 		}
-		if ScreenElementExists \{id = copy_indicator}
-			DestroyScreenElement \{id = copy_indicator}
+		if screenelementexists \{id = copy_indicator}
+			destroyscreenelement \{id = copy_indicator}
 		endif
-		GetScreenElementChildren \{id = create_cap_layers_list_vmenu}
-		CreateScreenElement {
-			type = DescInterface
+		getscreenelementchildren \{id = create_cap_layers_list_vmenu}
+		createscreenelement {
+			type = descinterface
 			desc = 'layers_list_copy'
 			parent = (<children> [<layer_index>])
 			id = copy_indicator
@@ -546,55 +546,55 @@ script cap_change_copy_handler
 endscript
 
 script cap_copy_layer_handler_change_return 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = copy_element}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = create_cap_layers_list_vmenu}
-	if ScreenElementExists \{id = copy_element}
-		DestroyScreenElement \{id = copy_element}
+	if screenelementexists \{id = copy_element}
+		destroyscreenelement \{id = copy_element}
 	endif
-	if ScreenElementExists \{id = layers_list_focus}
-		DestroyScreenElement \{id = layers_list_focus}
+	if screenelementexists \{id = layers_list_focus}
+		destroyscreenelement \{id = layers_list_focus}
 	endif
-	if ScreenElementExists \{id = copy_indicator}
-		DestroyScreenElement \{id = copy_indicator}
+	if screenelementexists \{id = copy_indicator}
+		destroyscreenelement \{id = copy_indicator}
 	endif
 	ui_event_remove_params \{param = copy_params}
 	ui_event_remove_params \{param = focus_item}
 	ui_event_remove_params \{param = paste_item}
 	clean_up_user_control_helpers
-	if ChecksumEquals a = <part> b = CAS_Band_Logo
+	if checksumequals a = <part> b = cas_band_logo
 		menu_finish \{car_helper_text
 			no_rotate_zoom_text}
 	else
 		menu_finish \{car_helper_text}
 	endif
-	if NOT ChecksumEquals a = <part> b = CAS_Band_Logo
+	if NOT checksumequals a = <part> b = cas_band_logo
 		setup_cas_menu_handlers vmenu_id = create_cap_layers_list_vmenu camera_list = <camera_list> zoom_camera = <zoom_camera>
 	endif
-	if ScreenElementExists \{id = generic_menu}
-		if generic_menu :Desc_ResolveAlias \{name = alias_generic_menu_smenu
+	if screenelementexists \{id = generic_menu}
+		if generic_menu :desc_resolvealias \{name = alias_generic_menu_smenu
 				param = generic_smenu}
-			<generic_smenu> :ScrollingMenu_ClearOverrideVisibleIndex
+			<generic_smenu> :scrollingmenu_clearoverridevisibleindex
 		endif
 	endif
-	generic_menu :SE_SetProps \{highlight_bars_alpha = 1}
+	generic_menu :se_setprops \{highlight_bars_alpha = 1}
 endscript
 
 script cap_decrement_target 
-	copy_element :GetTags
+	copy_element :gettags
 	if (<target_index> = 0)
 
 		return
 	endif
-	copy_element :SetTags target_index = (<target_index> -1)
+	copy_element :settags target_index = (<target_index> -1)
 
-	if ScreenElementExists \{id = copy_indicator}
-		DestroyScreenElement \{id = copy_indicator}
+	if screenelementexists \{id = copy_indicator}
+		destroyscreenelement \{id = copy_indicator}
 	endif
-	GetScreenElementChildren \{id = create_cap_layers_list_vmenu}
-	CreateScreenElement {
-		type = DescInterface
+	getscreenelementchildren \{id = create_cap_layers_list_vmenu}
+	createscreenelement {
+		type = descinterface
 		desc = 'layers_list_copy'
 		parent = (<children> [(<target_index> -1)])
 		id = copy_indicator
@@ -615,30 +615,30 @@ script cap_decrement_target
 			alias_name = alias_bolts_right
 			no_flip
 		}}
-	set_generic_menu_scrollbar_index VMenu = create_cap_layers_list_vmenu index = (<target_index> -1)
-	if ScreenElementExists \{id = generic_menu}
-		if generic_menu :Desc_ResolveAlias \{name = alias_generic_menu_smenu
+	set_generic_menu_scrollbar_index vmenu = create_cap_layers_list_vmenu index = (<target_index> -1)
+	if screenelementexists \{id = generic_menu}
+		if generic_menu :desc_resolvealias \{name = alias_generic_menu_smenu
 				param = generic_smenu}
 
-			<generic_smenu> :ScrollingMenu_SetOverrideVisibleIndex (<target_index> -1)
+			<generic_smenu> :scrollingmenu_setoverridevisibleindex (<target_index> -1)
 		endif
 	endif
 endscript
 
 script cap_increment_target 
-	copy_element :GetTags
+	copy_element :gettags
 	if (<target_index> > (<max_layer> -1))
 
 		return
 	endif
-	copy_element :SetTags target_index = (<target_index> + 1)
+	copy_element :settags target_index = (<target_index> + 1)
 
-	if ScreenElementExists \{id = copy_indicator}
-		DestroyScreenElement \{id = copy_indicator}
+	if screenelementexists \{id = copy_indicator}
+		destroyscreenelement \{id = copy_indicator}
 	endif
-	GetScreenElementChildren \{id = create_cap_layers_list_vmenu}
-	CreateScreenElement {
-		type = DescInterface
+	getscreenelementchildren \{id = create_cap_layers_list_vmenu}
+	createscreenelement {
+		type = descinterface
 		desc = 'layers_list_copy'
 		parent = (<children> [(<target_index> + 1)])
 		id = copy_indicator
@@ -659,36 +659,36 @@ script cap_increment_target
 			alias_name = alias_bolts_right
 			no_flip
 		}}
-	set_generic_menu_scrollbar_index VMenu = create_cap_layers_list_vmenu index = (<target_index> + 1)
-	if ScreenElementExists \{id = generic_menu}
-		if generic_menu :Desc_ResolveAlias \{name = alias_generic_menu_smenu
+	set_generic_menu_scrollbar_index vmenu = create_cap_layers_list_vmenu index = (<target_index> + 1)
+	if screenelementexists \{id = generic_menu}
+		if generic_menu :desc_resolvealias \{name = alias_generic_menu_smenu
 				param = generic_smenu}
-			<generic_smenu> :ScrollingMenu_SetOverrideVisibleIndex (<target_index> + 1)
+			<generic_smenu> :scrollingmenu_setoverridevisibleindex (<target_index> + 1)
 		endif
 	endif
 endscript
 
 script focus_copy_element 
-	if ScreenElementExists \{id = create_cap_layers_list_vmenu}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = create_cap_layers_list_vmenu}
+		launchevent \{type = unfocus
 			target = create_cap_layers_list_vmenu}
 	else
 		return
 	endif
-	if ScreenElementExists \{id = copy_element}
-		LaunchEvent \{type = focus
+	if screenelementexists \{id = copy_element}
+		launchevent \{type = focus
 			target = copy_element}
-		copy_element :GetTags
+		copy_element :gettags
 	else
 		return
 	endif
-	if ScreenElementExists \{id = copy_indicator}
-		DestroyScreenElement \{id = copy_indicator}
+	if screenelementexists \{id = copy_indicator}
+		destroyscreenelement \{id = copy_indicator}
 	endif
-	if ScreenElementExists \{id = create_cap_layers_list_vmenu}
-		GetScreenElementChildren \{id = create_cap_layers_list_vmenu}
-		CreateScreenElement {
-			type = DescInterface
+	if screenelementexists \{id = create_cap_layers_list_vmenu}
+		getscreenelementchildren \{id = create_cap_layers_list_vmenu}
+		createscreenelement {
+			type = descinterface
 			desc = 'layers_list_copy'
 			parent = (<children> [<target_index>])
 			id = copy_indicator
@@ -710,12 +710,12 @@ script focus_copy_element
 				no_flip
 			}}
 	endif
-	generic_menu :SE_SetProps \{highlight_bars_alpha = 0}
+	generic_menu :se_setprops \{highlight_bars_alpha = 0}
 endscript
 
 script cap_paste_layer 
 
-	copy_element :GetTags
+	copy_element :gettags
 	if (<target_index> < (<curent_index> + 1))
 		curent_index = (<curent_index> + 1)
 	endif
@@ -723,22 +723,22 @@ script cap_paste_layer
 	ui_event_add_params paste_item = <target_index>
 	layer_index = <target_index>
 	cap_copy_layer <...>
-	copy_element :SetTags max_layer = (<max_layer> + 1) curent_index = <curent_index>
+	copy_element :settags max_layer = (<max_layer> + 1) curent_index = <curent_index>
 	if NOT is_cap_layers_full part = <part> div_id = <div_id>
 		ui_event \{event = menu_refresh}
-		SpawnScriptLater \{focus_copy_element}
+		spawnscriptlater \{focus_copy_element}
 		cap_paste_layer_animate
 	else
 
-		LaunchEvent \{type = unfocus
+		launchevent \{type = unfocus
 			target = copy_element}
 		cap_copy_layer_handler_change_return camera_list = <camera_list> zoom_camera = <zoom_camera> part = <part>
 		generic_event_choose \{data = {
-				state = UIstate_generic_alert_popup
+				state = uistate_generic_alert_popup
 				is_popup
 				pad_choose_script = cap_layers_full_alert_return
-				title = qs("Layers Full")
-				text = qs("You have now added the max number of layers allowed.  If you want to add more, at least one layer must be deleted.")
+				title = qs(0x5b47d383)
+				text = qs(0x300fda36)
 			}}
 	endif
 endscript
@@ -753,19 +753,19 @@ script cap_paste_layer_animate
 endscript
 
 script cap_paste_layer_animate_worker 
-	Wait \{0.1
+	wait \{0.1
 		seconds}
-	if ScreenElementExists \{id = copy_indicator}
-		copy_indicator :SE_SetProps \{layer_copy_indicator_left_flash_alpha = 1.0
+	if screenelementexists \{id = copy_indicator}
+		copy_indicator :se_setprops \{layer_copy_indicator_left_flash_alpha = 1.0
 			layer_copy_indicator_right_flash_alpha = 1.0
 			time = 0.1}
 	else
 		return
 	endif
-	Wait \{0.15
+	wait \{0.15
 		seconds}
-	if ScreenElementExists \{id = copy_indicator}
-		copy_indicator :SE_SetProps \{layer_copy_indicator_left_flash_alpha = 0.0
+	if screenelementexists \{id = copy_indicator}
+		copy_indicator :se_setprops \{layer_copy_indicator_left_flash_alpha = 0.0
 			layer_copy_indicator_right_flash_alpha = 0.0
 			time = 0.1}
 	else
@@ -775,15 +775,15 @@ endscript
 
 script pulse_pasted_item 
 	ui_event_wait_for_safe
-	SE_SetProps \{generic_menu_smenu_textitem_text_rgba = [
+	se_setprops \{generic_menu_smenu_textitem_text_rgba = [
 			200
 			70
 			70
 			255
 		]
 		time = 0.2}
-	SE_WaitProps
-	SE_SetProps \{generic_menu_smenu_textitem_text_rgba = [
+	se_waitprops
+	se_setprops \{generic_menu_smenu_textitem_text_rgba = [
 			0
 			0
 			0

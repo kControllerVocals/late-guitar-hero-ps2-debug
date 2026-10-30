@@ -1,37 +1,37 @@
-L_GUIT_Adam_Lowkey_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_adam_lowkey_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Adam_Lowkey_075_F
+				slow = [
+					guit_adam_lowkey_075_f
 				]
-				Med = [
-					Guit_Adam_Lowkey_100_F
+				med = [
+					guit_adam_lowkey_100_f
 				]
-				Fast = [
-					Guit_Adam_Lowkey_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Adam_Lowkey_075_F
-				]
-				Med = [
-					Guit_Adam_Lowkey_100_F
-				]
-				Fast = [
-					Guit_Adam_Lowkey_120_F
+				fast = [
+					guit_adam_lowkey_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Adam_Lowkey_075_F
+			normal = {
+				slow = [
+					guit_adam_lowkey_075_f
 				]
-				Med = [
-					Guit_Adam_Lowkey_100_F
+				med = [
+					guit_adam_lowkey_100_f
 				]
-				Fast = [
-					Guit_Adam_Lowkey_120_F
+				fast = [
+					guit_adam_lowkey_120_f
+				]
+			}
+			bad = {
+				slow = [
+					guit_adam_lowkey_075_f
+				]
+				med = [
+					guit_adam_lowkey_100_f
+				]
+				fast = [
+					guit_adam_lowkey_120_f
 				]
 			}
 		}

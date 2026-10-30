@@ -1,199 +1,199 @@
 
-script create_songpreview 
-	SetScriptCannotPause
-	SetSpawnInstanceLimits \{max = 1
+script 0x1e464d15 
+	setscriptcannotpause
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	KillSpawnedScript \{name = destroy_songpreview}
-	debug_Printf \{'create_songpreview'}
-	wait_for \{condition = {
-			songpreview_is_safe
+	killspawnedscript \{name = 0xb20ce9b6}
+	0x8dbdaee4 \{'create_songpreview'}
+	0xb17a28cd \{condition = {
+			0xdffcb66f
 		}}
-	debug_Printf \{'create_songpreview wait complete'}
-	if NOT ScriptIsRunning \{songpreview_monitor}
-		debug_Printf \{'create_songpreview creating'}
-		spawnscriptnow \{songpreview_monitor}
+	0x8dbdaee4 \{'create_songpreview wait complete'}
+	if NOT scriptisrunning \{0xb4be2944}
+		0x8dbdaee4 \{'create_songpreview creating'}
+		spawnscriptnow \{0xb4be2944}
 	endif
 endscript
 
-script destroy_songpreview 
-	SetScriptCannotPause
-	SetSpawnInstanceLimits \{max = 1
+script 0xb20ce9b6 
+	setscriptcannotpause
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	KillSpawnedScript \{name = create_songpreview}
-	wait_for \{condition = {
-			songpreview_is_safe
+	killspawnedscript \{name = 0x1e464d15}
+	0xb17a28cd \{condition = {
+			0xdffcb66f
 		}}
-	if ScriptIsRunning \{songpreview_monitor}
-		KillSpawnedScript \{name = songpreview_monitor}
+	if scriptisrunning \{0xb4be2944}
+		killspawnedscript \{name = 0xb4be2944}
 	endif
 endscript
 
-script pause_songpreview 
-	change \{songpreview_paused = 1}
+script 0x1621ea7b 
+	change \{0xe74dd00a = 1}
 endscript
 
-script unpause_songpreview 
-	change \{songpreview_paused = 0}
+script 0xbd6424fc 
+	change \{0xe74dd00a = 0}
 endscript
 
-script set_songpreview 
+script 0x2e9b1633 
 
-	change target_songpreview = <song>
+	change 0x3e0869cc = <song>
 endscript
 
-script get_songpreview 
-	return \{song = $target_songpreview}
+script 0xe085ec1f 
+	return \{song = $0x3e0869cc}
 endscript
 
-script reset_songpreview 
-	set_songpreview \{song = none}
+script 0xc337ea4c 
+	0x2e9b1633 \{song = none}
 endscript
 
-script songpreview_is_safe 
-	if NOT (($songpreview_locked) && (num_waiting_for_songpreview_lock = 0))
+script 0xdffcb66f 
+	if NOT (($0x4b2e5600) && (0x9d355f18 = 0))
 		return \{true}
 	else
 		return \{false}
 	endif
 endscript
-songpreview_paused = 0
-target_songpreview = none
-current_songpreview = none
-num_waiting_for_songpreview_lock = 0
-songpreview_locked = 0
+0xe74dd00a = 0
+0x3e0869cc = none
+0x07e68d1f = none
+0x9d355f18 = 0
+0x4b2e5600 = 0
 
-script increment_songpreview_lock_wait 
-	change num_waiting_for_songpreview_lock = ($num_waiting_for_songpreview_lock + 1)
+script 0xf08cb507 
+	change 0x9d355f18 = ($0x9d355f18 + 1)
 endscript
 
-script decrement_songpreview_lock_wait 
-	if ($num_waiting_for_songpreview_lock = 0)
-		debug_ScriptAssert \{'Attempted to decriment songpreview lock wait count when it was already zero.'}
+script 0xce1c8303 
+	if ($0x9d355f18 = 0)
+		0x93d8d5cf \{'Attempted to decriment songpreview lock wait count when it was already zero.'}
 	endif
-	change num_waiting_for_songpreview_lock = ($num_waiting_for_songpreview_lock - 1)
+	change 0x9d355f18 = ($0x9d355f18 - 1)
 endscript
 
-script songpreview_acquire_lock 
-	OnExitRun \{decrement_songpreview_lock_wait}
-	increment_songpreview_lock_wait
-	if GotParam \{assert_available}
-		if ($songpreview_locked = 1)
-			debug_ScriptAssert \{'Expected songpreview lock to be free, but another script has already acquired it.'}
+script 0x4f8de502 
+	onexitrun \{0xce1c8303}
+	0xf08cb507
+	if gotparam \{0x9b8db44e}
+		if ($0x4b2e5600 = 1)
+			0x93d8d5cf \{'Expected songpreview lock to be free, but another script has already acquired it.'}
 		endif
-		change \{songpreview_locked = 1}
+		change \{0x4b2e5600 = 1}
 		return
 	endif
 	begin
-	if NOT ($songpreview_locked = 1)
-		change \{songpreview_locked = 1}
+	if NOT ($0x4b2e5600 = 1)
+		change \{0x4b2e5600 = 1}
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript
 
-script songpreview_release_lock 
-	if NOT ($songpreview_locked)
-		debug_ScriptAssert \{'Attempted to release songpreview lock, but it wasn\'t acquired.'}
+script 0xd7bc4865 
+	if NOT ($0x4b2e5600)
+		0x93d8d5cf \{'Attempted to release songpreview lock, but it wasn\'t acquired.'}
 	endif
-	change \{songpreview_locked = 0}
+	change \{0x4b2e5600 = 0}
 endscript
 
-script songpreview_monitor 
-	SetScriptCannotPause
-	SetSpawnInstanceLimits \{max = 1
+script 0xb4be2944 
+	setscriptcannotpause
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request
-		CheckWholeCallstack}
-	OnExitRun \{deinit_songpreview_monitor}
-	init_songpreview_monitor
+		checkwholecallstack}
+	onexitrun \{0xeba59f8f}
+	0xd326a501
 	begin
-	songpreview_update_song
-	songpreview_play_song
-	WaitOneGameFrame
+	0x9b98d108
+	0x60b102a7
+	waitonegameframe
 	repeat
 endscript
 
-script init_songpreview_monitor 
-	debug_Printf \{'init_songpreview_monitor'}
-	SetScriptCannotPause
-	OnExitRun \{songpreview_release_lock}
-	songpreview_acquire_lock \{assert_available}
-	SongStopPreview
+script 0xd326a501 
+	0x8dbdaee4 \{'init_songpreview_monitor'}
+	setscriptcannotpause
+	onexitrun \{0xd7bc4865}
+	0x4f8de502 \{0x9b8db44e}
+	songstoppreview
 endscript
 
-script deinit_songpreview_monitor 
-	debug_Printf \{'deinit_songpreview_monitor'}
-	SetScriptCannotPause
-	OnExitRun \{songpreview_release_lock}
-	songpreview_acquire_lock \{assert_available}
-	if NOT ($current_songpreview = none)
-		SongStopPreview
-		change \{current_songpreview = none}
+script 0xeba59f8f 
+	0x8dbdaee4 \{'deinit_songpreview_monitor'}
+	setscriptcannotpause
+	onexitrun \{0xd7bc4865}
+	0x4f8de502 \{0x9b8db44e}
+	if NOT ($0x07e68d1f = none)
+		songstoppreview
+		change \{0x07e68d1f = none}
 	endif
 endscript
 
-script songpreview_update_song 
-	OnExitRun \{songpreview_release_lock}
-	songpreview_acquire_lock \{assert_available}
-	target = ($target_songpreview)
-	if (<target> = $current_songpreview)
+script 0x9b98d108 
+	onexitrun \{0xd7bc4865}
+	0x4f8de502 \{0x9b8db44e}
+	target = ($0x3e0869cc)
+	if (<target> = $0x07e68d1f)
 		return
 	endif
-	if ($current_songpreview != none)
-		SongStopPreview
-		change \{current_songpreview = none}
+	if ($0x07e68d1f != none)
+		songstoppreview
+		change \{0x07e68d1f = none}
 	endif
 	begin
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	if ((<target>) = ($target_songpreview))
+	if ((<target>) = ($0x3e0869cc))
 		break
 	else
-		<target> = ($target_songpreview)
+		<target> = ($0x3e0869cc)
 	endif
 	repeat
-	change current_songpreview = <target>
+	change 0x07e68d1f = <target>
 endscript
 
-script songpreview_get_song_data 
+script 0x79245ae9 
 
 	if (<song> = none)
-		debug_ScriptAssert \{'Attempted to get filename for \'none\'.'}
+		0x93d8d5cf \{'Attempted to get filename for \'none\'.'}
 	endif
 	get_song_prefix song = <song>
 	get_song_struct song = <song>
-	if StructureContains Structure = <song_struct> dlc_stream_name
+	if structurecontains structure = <song_struct> dlc_stream_name
 		song_prefix = (<song_struct>.dlc_stream_name)
 	endif
 	return song_prefix = <song_prefix> song_struct = <song_struct>
 endscript
 
-script songpreview_play_song 
-	OnExitRun \{songpreview_release_lock}
-	songpreview_acquire_lock \{assert_available}
-	if ($current_songpreview = none)
+script 0x60b102a7 
+	onexitrun \{0xd7bc4865}
+	0x4f8de502 \{0x9b8db44e}
+	if ($0x07e68d1f = none)
 		return
 	endif
-	if SongIsPreviewPlaying
-		if ($songpreview_paused = 1)
-			SongStopPreview
+	if songispreviewplaying
+		if ($0xe74dd00a = 1)
+			songstoppreview
 		endif
 		return
 	endif
-	if ($songpreview_paused = 1)
+	if ($0xe74dd00a = 1)
 		return
 	endif
-	song = ($current_songpreview)
-	debug_Printf 'Starting to play preview for %s.' s = <song>
-	songpreview_get_song_data song = <song>
-	debug_RequireParams \{[
+	song = ($0x07e68d1f)
+	0x8dbdaee4 'Starting to play preview for %s.' s = <song>
+	0x79245ae9 song = <song>
+	0xb2c6e895 \{[
 			song_prefix
 			song_struct
 		]
 		all}
 	if is_song_downloaded song_checksum = <song>
-		if NOT SongPlayPreview filename = <song_prefix> content_index = <content_index>
-			DownloadContentLost
+		if NOT songplaypreview filename = <song_prefix> content_index = <content_index>
+			downloadcontentlost
 			return
 		endif
 	endif

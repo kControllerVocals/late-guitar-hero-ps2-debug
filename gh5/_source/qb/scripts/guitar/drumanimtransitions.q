@@ -1,645 +1,645 @@
 drumanimtransitions = {
-	Stance_HS = {
+	stance_hs = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_HS_2_C1_HS_120
-				Drum_Lars_HS_2_C1_HS_120
+			stance_hs = [
+				drum_andy_hs_2_c1_hs_120
+				drum_lars_hs_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_HS_2_C1_SS_120
-				Drum_Lars_HS_2_C1_SS_120
+			stance_ss = [
+				drum_andy_hs_2_c1_ss_120
+				drum_lars_hs_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_HS_2_C1_RS_120
-				Drum_Lars_HS_2_C1_RS_120
+			stance_rs = [
+				drum_andy_hs_2_c1_rs_120
+				drum_lars_hs_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_HS_2_C1_C2S_120
-				Drum_Lars_HS_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_hs_2_c1_c2s_120
+				drum_lars_hs_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_HS_2_C1_T3S_120
-				Drum_Lars_HS_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_hs_2_c1_t3s_120
+				drum_lars_hs_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_HS_2_C1_T1S_120
-				Drum_Lars_HS_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_hs_2_c1_t1s_120
+				drum_lars_hs_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_HS_2_C1_HS_120
-				Drum_Lars_HS_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_hs_2_c1_hs_120
+				drum_lars_hs_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_HS_2_C2_HS_120
-				Drum_Lars_HS_2_C2_HS_120
+			stance_hs = [
+				drum_andy_hs_2_c2_hs_120
+				drum_lars_hs_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_HS_2_C2_SS_120
-				Drum_Lars_HS_2_C2_SS_120
+			stance_ss = [
+				drum_andy_hs_2_c2_ss_120
+				drum_lars_hs_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_HS_2_C2_RS_120
-				Drum_Lars_HS_2_C2_RS_120
+			stance_rs = [
+				drum_andy_hs_2_c2_rs_120
+				drum_lars_hs_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_HS_2_C2_C2S_120
-				Drum_Lars_HS_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_hs_2_c2_c2s_120
+				drum_lars_hs_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_HS_2_C2_T3S_120
-				Drum_Lars_HS_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_hs_2_c2_t3s_120
+				drum_lars_hs_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_HS_2_C2_T1S_120
-				Drum_Lars_HS_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_hs_2_c2_t1s_120
+				drum_lars_hs_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_HS_2_C2_HS_120
-				Drum_Lars_HS_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_hs_2_c2_hs_120
+				drum_lars_hs_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_HS_2_C1C2_HS_120
-				Drum_Lars_HS_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_hs_2_c1c2_hs_120
+				drum_lars_hs_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_HS_2_C1C2_SS_120
-				Drum_Lars_HS_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_hs_2_c1c2_ss_120
+				drum_lars_hs_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_HS_2_C1C2_RS_120
-				Drum_Lars_HS_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_hs_2_c1c2_rs_120
+				drum_lars_hs_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_HS_2_C1C2_C2S_120
-				Drum_Lars_HS_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_hs_2_c1c2_c2s_120
+				drum_lars_hs_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_HS_2_C1C2_T3S_120
-				Drum_Lars_HS_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_hs_2_c1c2_t3s_120
+				drum_lars_hs_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_HS_2_C1C2_T1S_120
-				Drum_Lars_HS_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_hs_2_c1c2_t1s_120
+				drum_lars_hs_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_HS_2_C1C2_HS_120
-				Drum_Lars_HS_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_hs_2_c1c2_hs_120
+				drum_lars_hs_2_c1c2_hs_120
 			]
 		}
 	}
-	Stance_SS = {
+	stance_ss = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_SS_2_C1_HS_120
-				Drum_Lars_SS_2_C1_HS_120
+			stance_hs = [
+				drum_andy_ss_2_c1_hs_120
+				drum_lars_ss_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_SS_2_C1_SS_120
-				Drum_Lars_SS_2_C1_SS_120
+			stance_ss = [
+				drum_andy_ss_2_c1_ss_120
+				drum_lars_ss_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_SS_2_C1_RS_120
-				Drum_Lars_SS_2_C1_RS_120
+			stance_rs = [
+				drum_andy_ss_2_c1_rs_120
+				drum_lars_ss_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_SS_2_C1_C2S_120
-				Drum_Lars_SS_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_ss_2_c1_c2s_120
+				drum_lars_ss_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_SS_2_C1_T3S_120
-				Drum_Lars_SS_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_ss_2_c1_t3s_120
+				drum_lars_ss_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_SS_2_C1_T1S_120
-				Drum_Lars_SS_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_ss_2_c1_t1s_120
+				drum_lars_ss_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_SS_2_C1_HS_120
-				Drum_Lars_SS_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_ss_2_c1_hs_120
+				drum_lars_ss_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_SS_2_C2_HS_120
-				Drum_Lars_SS_2_C2_HS_120
+			stance_hs = [
+				drum_andy_ss_2_c2_hs_120
+				drum_lars_ss_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_SS_2_C2_SS_120
-				Drum_Lars_SS_2_C2_SS_120
+			stance_ss = [
+				drum_andy_ss_2_c2_ss_120
+				drum_lars_ss_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_SS_2_C2_RS_120
-				Drum_Lars_SS_2_C2_RS_120
+			stance_rs = [
+				drum_andy_ss_2_c2_rs_120
+				drum_lars_ss_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_SS_2_C2_C2S_120
-				Drum_Lars_SS_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_ss_2_c2_c2s_120
+				drum_lars_ss_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_SS_2_C2_T3S_120
-				Drum_Lars_SS_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_ss_2_c2_t3s_120
+				drum_lars_ss_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_SS_2_C2_T1S_120
-				Drum_Lars_SS_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_ss_2_c2_t1s_120
+				drum_lars_ss_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_SS_2_C2_HS_120
-				Drum_Lars_SS_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_ss_2_c2_hs_120
+				drum_lars_ss_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_SS_2_C1C2_HS_120
-				Drum_Lars_SS_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_ss_2_c1c2_hs_120
+				drum_lars_ss_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_SS_2_C1C2_SS_120
-				Drum_Lars_SS_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_ss_2_c1c2_ss_120
+				drum_lars_ss_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_SS_2_C1C2_RS_120
-				Drum_Lars_SS_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_ss_2_c1c2_rs_120
+				drum_lars_ss_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_SS_2_C1C2_C2S_120
-				Drum_Lars_SS_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_ss_2_c1c2_c2s_120
+				drum_lars_ss_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_SS_2_C1C2_T3S_120
-				Drum_Lars_SS_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_ss_2_c1c2_t3s_120
+				drum_lars_ss_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_SS_2_C1C2_T1S_120
-				Drum_Lars_SS_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_ss_2_c1c2_t1s_120
+				drum_lars_ss_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_SS_2_C1C2_HS_120
-				Drum_Lars_SS_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_ss_2_c1c2_hs_120
+				drum_lars_ss_2_c1c2_hs_120
 			]
 		}
 	}
-	Stance_RS = {
+	stance_rs = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_RS_2_C1_HS_120
-				Drum_Lars_RS_2_C1_HS_120
+			stance_hs = [
+				drum_andy_rs_2_c1_hs_120
+				drum_lars_rs_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_RS_2_C1_SS_120
-				Drum_Lars_RS_2_C1_SS_120
+			stance_ss = [
+				drum_andy_rs_2_c1_ss_120
+				drum_lars_rs_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_RS_2_C1_RS_120
-				Drum_Lars_RS_2_C1_RS_120
+			stance_rs = [
+				drum_andy_rs_2_c1_rs_120
+				drum_lars_rs_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_RS_2_C1_C2S_120
-				Drum_Lars_RS_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_rs_2_c1_c2s_120
+				drum_lars_rs_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_RS_2_C1_T3S_120
-				Drum_Lars_RS_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_rs_2_c1_t3s_120
+				drum_lars_rs_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_RS_2_C1_T1S_120
-				Drum_Lars_RS_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_rs_2_c1_t1s_120
+				drum_lars_rs_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_RS_2_C1_HS_120
-				Drum_Lars_RS_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_rs_2_c1_hs_120
+				drum_lars_rs_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_RS_2_C2_HS_120
-				Drum_Lars_RS_2_C2_HS_120
+			stance_hs = [
+				drum_andy_rs_2_c2_hs_120
+				drum_lars_rs_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_RS_2_C2_SS_120
-				Drum_Lars_RS_2_C2_SS_120
+			stance_ss = [
+				drum_andy_rs_2_c2_ss_120
+				drum_lars_rs_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_RS_2_C2_RS_120
-				Drum_Lars_RS_2_C2_RS_120
+			stance_rs = [
+				drum_andy_rs_2_c2_rs_120
+				drum_lars_rs_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_RS_2_C2_C2S_120
-				Drum_Lars_RS_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_rs_2_c2_c2s_120
+				drum_lars_rs_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_RS_2_C2_T3S_120
-				Drum_Lars_RS_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_rs_2_c2_t3s_120
+				drum_lars_rs_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_RS_2_C2_T1S_120
-				Drum_Lars_RS_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_rs_2_c2_t1s_120
+				drum_lars_rs_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_RS_2_C2_HS_120
-				Drum_Lars_RS_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_rs_2_c2_hs_120
+				drum_lars_rs_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_RS_2_C1C2_HS_120
-				Drum_Lars_RS_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_rs_2_c1c2_hs_120
+				drum_lars_rs_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_RS_2_C1C2_SS_120
-				Drum_Lars_RS_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_rs_2_c1c2_ss_120
+				drum_lars_rs_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_RS_2_C1C2_RS_120
-				Drum_Lars_RS_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_rs_2_c1c2_rs_120
+				drum_lars_rs_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_RS_2_C1C2_C2S_120
-				Drum_Lars_RS_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_rs_2_c1c2_c2s_120
+				drum_lars_rs_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_RS_2_C1C2_T3S_120
-				Drum_Lars_RS_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_rs_2_c1c2_t3s_120
+				drum_lars_rs_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_RS_2_C1C2_T1S_120
-				Drum_Lars_RS_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_rs_2_c1c2_t1s_120
+				drum_lars_rs_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_RS_2_C1C2_HS_120
-				Drum_Lars_RS_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_rs_2_c1c2_hs_120
+				drum_lars_rs_2_c1c2_hs_120
 			]
 		}
 	}
-	Stance_C2S = {
+	stance_c2s = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_C2S_2_C1_HS_120
-				Drum_Lars_C2S_2_C1_HS_120
+			stance_hs = [
+				drum_andy_c2s_2_c1_hs_120
+				drum_lars_c2s_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_C2S_2_C1_SS_120
-				Drum_Lars_C2S_2_C1_SS_120
+			stance_ss = [
+				drum_andy_c2s_2_c1_ss_120
+				drum_lars_c2s_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_C2S_2_C1_RS_120
-				Drum_Lars_C2S_2_C1_RS_120
+			stance_rs = [
+				drum_andy_c2s_2_c1_rs_120
+				drum_lars_c2s_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_C2S_2_C1_C2S_120
-				Drum_Lars_C2S_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_c2s_2_c1_c2s_120
+				drum_lars_c2s_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_C2S_2_C1_T3S_120
-				Drum_Lars_C2S_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_c2s_2_c1_t3s_120
+				drum_lars_c2s_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_C2S_2_C1_T1S_120
-				Drum_Lars_C2S_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_c2s_2_c1_t1s_120
+				drum_lars_c2s_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_C2S_2_C1_HS_120
-				Drum_Lars_C2S_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_c2s_2_c1_hs_120
+				drum_lars_c2s_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_C2S_2_C2_HS_120
-				Drum_Lars_C2S_2_C2_HS_120
+			stance_hs = [
+				drum_andy_c2s_2_c2_hs_120
+				drum_lars_c2s_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_C2S_2_C2_SS_120
-				Drum_Lars_C2S_2_C2_SS_120
+			stance_ss = [
+				drum_andy_c2s_2_c2_ss_120
+				drum_lars_c2s_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_C2S_2_C2_RS_120
-				Drum_Lars_C2S_2_C2_RS_120
+			stance_rs = [
+				drum_andy_c2s_2_c2_rs_120
+				drum_lars_c2s_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_C2S_2_C2_C2S_120
-				Drum_Lars_C2S_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_c2s_2_c2_c2s_120
+				drum_lars_c2s_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_C2S_2_C2_T3S_120
-				Drum_Lars_C2S_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_c2s_2_c2_t3s_120
+				drum_lars_c2s_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_C2S_2_C2_T1S_120
-				Drum_Lars_C2S_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_c2s_2_c2_t1s_120
+				drum_lars_c2s_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_C2S_2_C2_HS_120
-				Drum_Lars_C2S_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_c2s_2_c2_hs_120
+				drum_lars_c2s_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_C2S_2_C1C2_HS_120
-				Drum_Lars_C2S_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_c2s_2_c1c2_hs_120
+				drum_lars_c2s_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_C2S_2_C1C2_SS_120
-				Drum_Lars_C2S_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_c2s_2_c1c2_ss_120
+				drum_lars_c2s_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_C2S_2_C1C2_RS_120
-				Drum_Lars_C2S_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_c2s_2_c1c2_rs_120
+				drum_lars_c2s_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_C2S_2_C1C2_C2S_120
-				Drum_Lars_C2S_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_c2s_2_c1c2_c2s_120
+				drum_lars_c2s_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_C2S_2_C1C2_T3S_120
-				Drum_Lars_C2S_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_c2s_2_c1c2_t3s_120
+				drum_lars_c2s_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_C2S_2_C1C2_T1S_120
-				Drum_Lars_C2S_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_c2s_2_c1c2_t1s_120
+				drum_lars_c2s_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_C2S_2_C1C2_HS_120
-				Drum_Lars_C2S_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_c2s_2_c1c2_hs_120
+				drum_lars_c2s_2_c1c2_hs_120
 			]
 		}
 	}
-	Stance_T3S = {
+	stance_t3s = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_T3S_2_C1_HS_120
-				Drum_Lars_T3S_2_C1_HS_120
+			stance_hs = [
+				drum_andy_t3s_2_c1_hs_120
+				drum_lars_t3s_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_T3S_2_C1_SS_120
-				Drum_Lars_T3S_2_C1_SS_120
+			stance_ss = [
+				drum_andy_t3s_2_c1_ss_120
+				drum_lars_t3s_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_T3S_2_C1_RS_120
-				Drum_Lars_T3S_2_C1_RS_120
+			stance_rs = [
+				drum_andy_t3s_2_c1_rs_120
+				drum_lars_t3s_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_T3S_2_C1_C2S_120
-				Drum_Lars_T3S_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_t3s_2_c1_c2s_120
+				drum_lars_t3s_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_T3S_2_C1_T3S_120
-				Drum_Lars_T3S_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_t3s_2_c1_t3s_120
+				drum_lars_t3s_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_T3S_2_C1_T1S_120
-				Drum_Lars_T3S_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_t3s_2_c1_t1s_120
+				drum_lars_t3s_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_T3S_2_C1_HS_120
-				Drum_Lars_T3S_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_t3s_2_c1_hs_120
+				drum_lars_t3s_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_T3S_2_C2_HS_120
-				Drum_Lars_T3S_2_C2_HS_120
+			stance_hs = [
+				drum_andy_t3s_2_c2_hs_120
+				drum_lars_t3s_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_T3S_2_C2_SS_120
-				Drum_Lars_T3S_2_C2_SS_120
+			stance_ss = [
+				drum_andy_t3s_2_c2_ss_120
+				drum_lars_t3s_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_T3S_2_C2_RS_120
-				Drum_Lars_T3S_2_C2_RS_120
+			stance_rs = [
+				drum_andy_t3s_2_c2_rs_120
+				drum_lars_t3s_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_T3S_2_C2_C2S_120
-				Drum_Lars_T3S_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_t3s_2_c2_c2s_120
+				drum_lars_t3s_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_T3S_2_C2_T3S_120
-				Drum_Lars_T3S_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_t3s_2_c2_t3s_120
+				drum_lars_t3s_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_T3S_2_C2_T1S_120
-				Drum_Lars_T3S_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_t3s_2_c2_t1s_120
+				drum_lars_t3s_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_T3S_2_C2_HS_120
-				Drum_Lars_T3S_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_t3s_2_c2_hs_120
+				drum_lars_t3s_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_T3S_2_C1C2_HS_120
-				Drum_Lars_T3S_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_t3s_2_c1c2_hs_120
+				drum_lars_t3s_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_T3S_2_C1C2_SS_120
-				Drum_Lars_T3S_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_t3s_2_c1c2_ss_120
+				drum_lars_t3s_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_T3S_2_C1C2_RS_120
-				Drum_Lars_T3S_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_t3s_2_c1c2_rs_120
+				drum_lars_t3s_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_T3S_2_C1C2_C2S_120
-				Drum_Lars_T3S_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_t3s_2_c1c2_c2s_120
+				drum_lars_t3s_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_T3S_2_C1C2_T3S_120
-				Drum_Lars_T3S_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_t3s_2_c1c2_t3s_120
+				drum_lars_t3s_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_T3S_2_C1C2_T1S_120
-				Drum_Lars_T3S_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_t3s_2_c1c2_t1s_120
+				drum_lars_t3s_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_T3S_2_C1C2_HS_120
-				Drum_Lars_T3S_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_t3s_2_c1c2_hs_120
+				drum_lars_t3s_2_c1c2_hs_120
 			]
 		}
 	}
-	Stance_T1S = {
+	stance_t1s = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_T1S_2_C1_HS_120
-				Drum_Lars_T1S_2_C1_HS_120
+			stance_hs = [
+				drum_andy_t1s_2_c1_hs_120
+				drum_lars_t1s_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_T1S_2_C1_SS_120
-				Drum_Lars_T1S_2_C1_SS_120
+			stance_ss = [
+				drum_andy_t1s_2_c1_ss_120
+				drum_lars_t1s_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_T1S_2_C1_RS_120
-				Drum_Lars_T1S_2_C1_RS_120
+			stance_rs = [
+				drum_andy_t1s_2_c1_rs_120
+				drum_lars_t1s_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_T1S_2_C1_C2S_120
-				Drum_Lars_T1S_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_t1s_2_c1_c2s_120
+				drum_lars_t1s_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_T1S_2_C1_T3S_120
-				Drum_Lars_T1S_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_t1s_2_c1_t3s_120
+				drum_lars_t1s_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_T1S_2_C1_T1S_120
-				Drum_Lars_T1S_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_t1s_2_c1_t1s_120
+				drum_lars_t1s_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_T1S_2_C1_HS_120
-				Drum_Lars_T1S_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_t1s_2_c1_hs_120
+				drum_lars_t1s_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_T1S_2_C2_HS_120
-				Drum_Lars_T1S_2_C2_HS_120
+			stance_hs = [
+				drum_andy_t1s_2_c2_hs_120
+				drum_lars_t1s_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_T1S_2_C2_SS_120
-				Drum_Lars_T1S_2_C2_SS_120
+			stance_ss = [
+				drum_andy_t1s_2_c2_ss_120
+				drum_lars_t1s_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_T1S_2_C2_RS_120
-				Drum_Lars_T1S_2_C2_RS_120
+			stance_rs = [
+				drum_andy_t1s_2_c2_rs_120
+				drum_lars_t1s_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_T1S_2_C2_C2S_120
-				Drum_Lars_T1S_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_t1s_2_c2_c2s_120
+				drum_lars_t1s_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_T1S_2_C2_T3S_120
-				Drum_Lars_T1S_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_t1s_2_c2_t3s_120
+				drum_lars_t1s_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_T1S_2_C2_T1S_120
-				Drum_Lars_T1S_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_t1s_2_c2_t1s_120
+				drum_lars_t1s_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_T1S_2_C2_HS_120
-				Drum_Lars_T1S_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_t1s_2_c2_hs_120
+				drum_lars_t1s_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_T1S_2_C1C2_HS_120
-				Drum_Lars_T1S_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_t1s_2_c1c2_hs_120
+				drum_lars_t1s_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_T1S_2_C1C2_SS_120
-				Drum_Lars_T1S_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_t1s_2_c1c2_ss_120
+				drum_lars_t1s_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_T1S_2_C1C2_RS_120
-				Drum_Lars_T1S_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_t1s_2_c1c2_rs_120
+				drum_lars_t1s_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_T1S_2_C1C2_C2S_120
-				Drum_Lars_T1S_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_t1s_2_c1c2_c2s_120
+				drum_lars_t1s_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_T1S_2_C1C2_T3S_120
-				Drum_Lars_T1S_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_t1s_2_c1c2_t3s_120
+				drum_lars_t1s_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_T1S_2_C1C2_T1S_120
-				Drum_Lars_T1S_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_t1s_2_c1c2_t1s_120
+				drum_lars_t1s_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_T1S_2_C1C2_HS_120
-				Drum_Lars_T1S_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_t1s_2_c1c2_hs_120
+				drum_lars_t1s_2_c1c2_hs_120
 			]
 		}
 	}
-	Stance_NoTempo = {
+	stance_notempo = {
 		trans_1 = {
-			Stance_HS = [
-				Drum_Andy_SS_2_C1_HS_120
-				Drum_Lars_SS_2_C1_HS_120
+			stance_hs = [
+				drum_andy_ss_2_c1_hs_120
+				drum_lars_ss_2_c1_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_SS_2_C1_SS_120
-				Drum_Lars_SS_2_C1_SS_120
+			stance_ss = [
+				drum_andy_ss_2_c1_ss_120
+				drum_lars_ss_2_c1_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_SS_2_C1_RS_120
-				Drum_Lars_SS_2_C1_RS_120
+			stance_rs = [
+				drum_andy_ss_2_c1_rs_120
+				drum_lars_ss_2_c1_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_SS_2_C1_C2S_120
-				Drum_Lars_SS_2_C1_C2S_120
+			stance_c2s = [
+				drum_andy_ss_2_c1_c2s_120
+				drum_lars_ss_2_c1_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_SS_2_C1_T3S_120
-				Drum_Lars_SS_2_C1_T3S_120
+			stance_t3s = [
+				drum_andy_ss_2_c1_t3s_120
+				drum_lars_ss_2_c1_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_SS_2_C1_T1S_120
-				Drum_Lars_SS_2_C1_T1S_120
+			stance_t1s = [
+				drum_andy_ss_2_c1_t1s_120
+				drum_lars_ss_2_c1_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_SS_2_C1_HS_120
-				Drum_Lars_SS_2_C1_HS_120
+			stance_notempo = [
+				drum_andy_ss_2_c1_hs_120
+				drum_lars_ss_2_c1_hs_120
 			]
 		}
 		trans_2 = {
-			Stance_HS = [
-				Drum_Andy_SS_2_C2_HS_120
-				Drum_Lars_SS_2_C2_HS_120
+			stance_hs = [
+				drum_andy_ss_2_c2_hs_120
+				drum_lars_ss_2_c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_SS_2_C2_SS_120
-				Drum_Lars_SS_2_C2_SS_120
+			stance_ss = [
+				drum_andy_ss_2_c2_ss_120
+				drum_lars_ss_2_c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_SS_2_C2_RS_120
-				Drum_Lars_SS_2_C2_RS_120
+			stance_rs = [
+				drum_andy_ss_2_c2_rs_120
+				drum_lars_ss_2_c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_SS_2_C2_C2S_120
-				Drum_Lars_SS_2_C2_C2S_120
+			stance_c2s = [
+				drum_andy_ss_2_c2_c2s_120
+				drum_lars_ss_2_c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_SS_2_C2_T3S_120
-				Drum_Lars_SS_2_C2_T3S_120
+			stance_t3s = [
+				drum_andy_ss_2_c2_t3s_120
+				drum_lars_ss_2_c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_SS_2_C2_T1S_120
-				Drum_Lars_SS_2_C2_T1S_120
+			stance_t1s = [
+				drum_andy_ss_2_c2_t1s_120
+				drum_lars_ss_2_c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_SS_2_C2_HS_120
-				Drum_Lars_SS_2_C2_HS_120
+			stance_notempo = [
+				drum_andy_ss_2_c2_hs_120
+				drum_lars_ss_2_c2_hs_120
 			]
 		}
 		trans_3 = {
-			Stance_HS = [
-				Drum_Andy_SS_2_C1C2_HS_120
-				Drum_Lars_SS_2_C1C2_HS_120
+			stance_hs = [
+				drum_andy_ss_2_c1c2_hs_120
+				drum_lars_ss_2_c1c2_hs_120
 			]
-			Stance_SS = [
-				Drum_Andy_SS_2_C1C2_SS_120
-				Drum_Lars_SS_2_C1C2_SS_120
+			stance_ss = [
+				drum_andy_ss_2_c1c2_ss_120
+				drum_lars_ss_2_c1c2_ss_120
 			]
-			Stance_RS = [
-				Drum_Andy_SS_2_C1C2_RS_120
-				Drum_Lars_SS_2_C1C2_RS_120
+			stance_rs = [
+				drum_andy_ss_2_c1c2_rs_120
+				drum_lars_ss_2_c1c2_rs_120
 			]
-			Stance_C2S = [
-				Drum_Andy_SS_2_C1C2_C2S_120
-				Drum_Lars_SS_2_C1C2_C2S_120
+			stance_c2s = [
+				drum_andy_ss_2_c1c2_c2s_120
+				drum_lars_ss_2_c1c2_c2s_120
 			]
-			Stance_T3S = [
-				Drum_Andy_SS_2_C1C2_T3S_120
-				Drum_Lars_SS_2_C1C2_T3S_120
+			stance_t3s = [
+				drum_andy_ss_2_c1c2_t3s_120
+				drum_lars_ss_2_c1c2_t3s_120
 			]
-			Stance_T1S = [
-				Drum_Andy_SS_2_C1C2_T1S_120
-				Drum_Lars_SS_2_C1C2_T1S_120
+			stance_t1s = [
+				drum_andy_ss_2_c1c2_t1s_120
+				drum_lars_ss_2_c1c2_t1s_120
 			]
-			Stance_NoTempo = [
-				Drum_Andy_SS_2_C1C2_HS_120
-				Drum_Lars_SS_2_C1C2_HS_120
+			stance_notempo = [
+				drum_andy_ss_2_c1c2_hs_120
+				drum_lars_ss_2_c1c2_hs_120
 			]
 		}
 	}

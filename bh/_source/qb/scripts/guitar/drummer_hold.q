@@ -1,103 +1,103 @@
 
-script Hold_Body_Loops 
-	Wait \{$Drummer_Offset
+script hold_body_loops 
+	wait \{$drummer_offset
 		seconds}
-	if (<Body_type> = Idle)
-		KillSpawnedScript \{name = Drummer_Transit_Loops}
+	if (<body_type> = idle)
+		killspawnedscript \{name = drummer_transit_loops}
 		index = 0
-		Drummer :Obj_SpawnScriptNow Drummer_Transit_Idles params = {state = <state> tapin = <tapin> currentset = <currentset> Last_Hit = <Last_Hit>}
-		if CompositeObjectExists \{drummer2}
-			Wait \{1
+		drummer :obj_spawnscriptnow drummer_transit_idles params = {state = <state> tapin = <tapin> currentset = <currentset> last_hit = <last_hit>}
+		if compositeobjectexists \{drummer2}
+			wait \{1
 				frame}
-			drummer2 :Obj_SpawnScriptNow Drummer_Transit_Idles params = {state = <state> tapin = <tapin> currentset = <currentset> Last_Hit = <Last_Hit>}
+			drummer2 :obj_spawnscriptnow drummer_transit_idles params = {state = <state> tapin = <tapin> currentset = <currentset> last_hit = <last_hit>}
 		endif
 	else
-		KillSpawnedScript \{name = Drummer_Transit_Idles}
-		Drummer :Obj_SpawnScriptNow Drummer_Transit_Loops params = {state = <state> BlendDuration = <BlendDuration>}
-		if CompositeObjectExists \{drummer2}
-			Wait \{1
+		killspawnedscript \{name = drummer_transit_idles}
+		drummer :obj_spawnscriptnow drummer_transit_loops params = {state = <state> blendduration = <blendduration>}
+		if compositeobjectexists \{drummer2}
+			wait \{1
 				frame}
-			drummer2 :Obj_SpawnScriptNow Drummer_Transit_Loops params = {state = <state> BlendDuration = <BlendDuration>}
+			drummer2 :obj_spawnscriptnow drummer_transit_loops params = {state = <state> blendduration = <blendduration>}
 		endif
 	endif
-	drummer_Ids = [musician1]
+	drummer_ids = [musician1]
 	state = in
 	tapin = false
-	Last_Hit = false
+	last_hit = false
 	currentset = 0
-	BlendDuration = 0.0
+	blendduration = 0.0
 endscript
 
-script Idle_Check 
-	Time_From_Idle = (((1 - $Drum_Idlepoint_Arm_SHit) * $Drum_Slowest_Arm_Hit) / 1000.0)
-	time_to_Hit_1 = (<time_to_Hit_1> / 1000.0)
+script idle_check 
+	time_from_idle = (((1 - $drum_idlepoint_arm_shit) * $drum_slowest_arm_hit) / 1000.0)
+	time_to_hit_1 = (<time_to_hit_1> / 1000.0)
 	waittime = 0.0
-	if ($Drummer_Idle = true)
-		change \{Drummer_Idle = false}
-		if (<time_to_Hit_1> > <Time_From_Idle>)
-			waittime = (<time_to_Hit_1> - <Time_From_Idle>)
-			Wait <waittime> seconds
-			spawnscriptnow Hold_Body_Loops params = {
-				Body_type = Loop
-				num_Drummers = <num_Drummers>
-				drummer_Ids = <drummer_Ids>
+	if ($drummer_idle = true)
+		change \{drummer_idle = false}
+		if (<time_to_hit_1> > <time_from_idle>)
+			waittime = (<time_to_hit_1> - <time_from_idle>)
+			wait <waittime> seconds
+			spawnscriptnow hold_body_loops params = {
+				body_type = loop
+				num_drummers = <num_drummers>
+				drummer_ids = <drummer_ids>
 				state = in
-				BlendDuration = <Time_From_Idle>
+				blendduration = <time_from_idle>
 			}
 		else
-			spawnscriptnow Hold_Body_Loops params = {
-				Body_type = Loop
-				num_Drummers = <num_Drummers>
-				drummer_Ids = <drummer_Ids>
+			spawnscriptnow hold_body_loops params = {
+				body_type = loop
+				num_drummers = <num_drummers>
+				drummer_ids = <drummer_ids>
 				state = in
-				BlendDuration = <time_to_Hit_1>
+				blendduration = <time_to_hit_1>
 			}
 		endif
 	else
-		if (<Should_Idle> = true)
-			spawnscriptnow Hold_Body_Loops params = {
-				Body_type = Idle
-				Last_Hit = <Last_Hit>
+		if (<should_idle> = true)
+			spawnscriptnow hold_body_loops params = {
+				body_type = idle
+				last_hit = <last_hit>
 				currentset = <currentset>
-				num_Drummers = <num_Drummers>
-				drummer_Ids = <drummer_Ids>
+				num_drummers = <num_drummers>
+				drummer_ids = <drummer_ids>
 				state = in
 				tapin = <tapin>
 			}
-			waittime = (<time_to_Hit_1> - <Time_From_Idle>)
-			Wait <waittime> seconds
-			spawnscriptnow Hold_Body_Loops params = {
-				Body_type = Loop
-				num_Drummers = <num_Drummers>
-				drummer_Ids = <drummer_Ids>
+			waittime = (<time_to_hit_1> - <time_from_idle>)
+			wait <waittime> seconds
+			spawnscriptnow hold_body_loops params = {
+				body_type = loop
+				num_drummers = <num_drummers>
+				drummer_ids = <drummer_ids>
 				state = in
-				BlendDuration = <Time_From_Idle>
+				blendduration = <time_from_idle>
 			}
 		endif
 	endif
 	return lost_time = (<waittime> * 1000.0)
-	num_Drummers = 0
-	drummer_Ids = [musician2]
-	Last_Hit = false
+	num_drummers = 0
+	drummer_ids = [musician2]
+	last_hit = false
 	currentset = 0
 	tapin = false
 endscript
 
-script Hold_Transit_requests \{time_to_trans_Long = 0.0
+script hold_transit_requests \{time_to_trans_long = 0.0
 		time_to_trans_short = 0.0}
-	currentset = $Current_DB_Base
-	Idle_Check {
-		Last_Hit = <Last_Hit>
-		time_to_Hit_1 = <time_to_Hit_1>
-		num_Drummers = <num_Drummers>
-		drummer_Ids = <drummer_Ids>
-		Should_Idle = <Should_Idle>
+	currentset = $current_db_base
+	idle_check {
+		last_hit = <last_hit>
+		time_to_hit_1 = <time_to_hit_1>
+		num_drummers = <num_drummers>
+		drummer_ids = <drummer_ids>
+		should_idle = <should_idle>
 		tapin = <tapin>
 		currentset = <currentset>
 	}
-	Hold_Transit_requests_CFunc
+	0xad8b48df
 endscript
-smooth_body_transit_curve_long = [
+0xad14cdc7 = [
 	1.0
 	0.9927499
 	0.97199994
@@ -120,7 +120,7 @@ smooth_body_transit_curve_long = [
 	0.00725001
 	0.0
 ]
-smooth_body_transit_curve_short = [
+0x1bd54232 = [
 	1.0
 	0.9927499
 	0.97199994
@@ -144,11 +144,11 @@ smooth_body_transit_curve_short = [
 	0.0
 ]
 
-script hold_Body_Trans 
-	Wait <waittime> seconds
-	hold_Body_Trans_CFunc
+script hold_body_trans 
+	wait <waittime> seconds
+	0xa1e646e3
 endscript
-smooth_transit_arms_curve = [
+0x6b846a4a = [
 	1.0
 	0.9927499
 	0.97199994
@@ -172,8 +172,8 @@ smooth_transit_arms_curve = [
 	0.0
 ]
 
-script Hold_Transit_Arms 
-	Wait \{$Drummer_Offset
+script hold_transit_arms 
+	wait \{$drummer_offset
 		seconds}
-	Hold_Transit_Arms_CFunc
+	0x9334aad7
 endscript

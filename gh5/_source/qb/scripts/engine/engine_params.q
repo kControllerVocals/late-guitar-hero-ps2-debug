@@ -1,10 +1,10 @@
 control_pelvis_offset_assert = 0
 control_pelvis_max_offset = 2.5
 control_pelvis_render_offset = 0
-Default_Particle_LOD_Dist_Pair = (600.0, 1000.0)
-Default_Fast_Particle_LOD_Dist_Pair = (600.0, 1000.0)
+default_particle_lod_dist_pair = (600.0, 1000.0)
+default_fast_particle_lod_dist_pair = (600.0, 1000.0)
 
-script ToggleControlPelvisRender 
+script togglecontrolpelvisrender 
 	if ($control_pelvis_render_offset = 0)
 		change \{control_pelvis_render_offset = 1}
 	else
@@ -12,10 +12,10 @@ script ToggleControlPelvisRender
 	endif
 endscript
 camera_fov = 72.0
-QSPakMarginForOtherLanguages = 100
+qspakmarginforotherlanguages = 100
 engine_startup_params = [
 	{
-		platform = Ps2
+		platform = ps2
 		target_ntsc_framerate = 60
 		pool_text_instances = 475
 		num_sound_instances = 512
@@ -46,29 +46,29 @@ engine_startup_params = [
 ]
 game_pools_xplatform = [
 	{
-		name = `Mdl::PlayerServerMessage`
+		name = `mdl::playerservermessage`
 		size = 64
 	}
 	{
-		name = `Nx::CAnimLookup`
+		name = `nx::canimlookup`
 		size = 96
 	}
 	{
-		name = `Obj::CScriptListEntry`
+		name = `obj::cscriptlistentry`
 		size = 1000
 	}
 	{
-		name = `Obj::CEventReceiverList`
+		name = `obj::ceventreceiverlist`
 		size = 175
 	}
 	{
-		name = `Ass::CAssetTable::SContextInfo`
+		name = `ass::cassettable::scontextinfo`
 		size = 6
 	}
 ]
 memory_startup_params = [
 	{
-		platform = Ps2
+		platform = ps2
 		small_pool_sizes = [
 			752
 			950
@@ -106,8 +106,8 @@ memory_startup_params = [
 		game_pools = $game_pools_xplatform
 	}
 ]
-plat_quad_width = 768
-plat_quad_height = 768
+0xe0d000fd = 768
+0x4ffe733f = 768
 viewport_params = {
 	perm_viewports = [
 		{
@@ -232,7 +232,7 @@ viewport_params = {
 			]
 			render_to_texture_with_alpha
 			width = 768
-			Height = 320
+			height = 320
 			copy_to_main
 			resolution = 1.0
 			discard_previous_frame
@@ -315,7 +315,7 @@ viewport_params = {
 				1.0
 			]
 			width = 768
-			Height = 768
+			height = 768
 			depth_only
 			uidims = (768.0, 768.0)
 		}
@@ -327,7 +327,7 @@ viewport_params = {
 				1.0
 			]
 			width = 512
-			Height = 512
+			height = 512
 			depth_only
 			uidims = (512.0, 512.0)
 		}
@@ -339,7 +339,7 @@ viewport_params = {
 				1.0
 			]
 			width = 128
-			Height = 256
+			height = 256
 			render_to_texture_with_alpha
 			mipmap
 			resolution = 1.0
@@ -358,11 +358,11 @@ viewport_params = {
 				768.0
 				1024.0
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			mipmap
-			DisableVisibility
+			disablevisibility
 			resolution = 1.0
 			uidims = (768.0, 768.0)
 		}
@@ -380,10 +380,10 @@ viewport_params = {
 				1024.0
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			mipmap
-			DisableVisibility
+			disablevisibility
 			resolution = 1.0
 			uidims = (1024.0, 1024.0)
 		}
@@ -394,8 +394,8 @@ viewport_params = {
 				0.25
 				0.5
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (768.0, 768.0)
@@ -407,8 +407,8 @@ viewport_params = {
 				0.25
 				1.0
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (768.0, 768.0)
@@ -420,8 +420,8 @@ viewport_params = {
 				0.5
 				0.5
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (768.0, 768.0)
@@ -433,8 +433,8 @@ viewport_params = {
 				0.5
 				1.0
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (768.0, 768.0)
@@ -446,8 +446,8 @@ viewport_params = {
 				0.75
 				0.5
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (768.0, 768.0)
@@ -459,8 +459,8 @@ viewport_params = {
 				0.75
 				1.0
 			]
-			width = $plat_quad_width
-			Height = $plat_quad_height
+			width = $0xe0d000fd
+			height = $0x4ffe733f
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (768.0, 768.0)
@@ -473,7 +473,7 @@ viewport_params = {
 				1.0
 			]
 			width = 256
-			Height = 512
+			height = 512
 			render_to_texture_with_alpha
 			mipmap
 			resolution = 1.0
@@ -487,7 +487,7 @@ viewport_params = {
 				0.5
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (1024.0, 1024.0)
@@ -500,7 +500,7 @@ viewport_params = {
 				1.0
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (1024.0, 1024.0)
@@ -513,7 +513,7 @@ viewport_params = {
 				0.5
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (1024.0, 1024.0)
@@ -526,7 +526,7 @@ viewport_params = {
 				1.0
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (1024.0, 1024.0)
@@ -539,7 +539,7 @@ viewport_params = {
 				0.5
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (1024.0, 720.0)
@@ -552,7 +552,7 @@ viewport_params = {
 				1.0
 			]
 			width = 1024
-			Height = 1024
+			height = 1024
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (1024.0, 1024.0)
@@ -565,7 +565,7 @@ viewport_params = {
 				1.0
 			]
 			width = 256
-			Height = 128
+			height = 128
 			render_to_texture_with_alpha
 			mipmap
 			resolution = 1.0
@@ -579,7 +579,7 @@ viewport_params = {
 				1.0
 			]
 			width = 128
-			Height = 128
+			height = 128
 			mipmap
 			render_to_texture_with_alpha
 			resolution = 1.0
@@ -593,7 +593,7 @@ viewport_params = {
 				1.0
 			]
 			width = 512
-			Height = 512
+			height = 512
 			render_to_texture
 			ignore_alpha_channel
 			resolution = 1.0
@@ -607,7 +607,7 @@ viewport_params = {
 				1.0
 			]
 			width = 512
-			Height = 128
+			height = 128
 			render_to_texture_with_alpha
 			resolution = 1.0
 			uidims = (512.0, 128.0)

@@ -1,8 +1,8 @@
 
-script ui_create_pausemenu_change_difficulty \{vocalist_without_controller = -1}
+script ui_create_pausemenu_change_difficulty \{0x3e8a7a4d = -1}
 	player_device = ($last_start_pressed_device)
-	ui_pausemenu_create_bg \{title_text = qs("DIFFICULTY")}
-	if pausemenu_bg :Desc_ResolveAlias \{name = alias_menu}
+	ui_pausemenu_create_bg \{title_text = qs(0x9f281c76)}
+	if pausemenu_bg :desc_resolvealias \{name = alias_menu}
 		<parent> = <resolved_id>
 	endif
 	make_menu {
@@ -11,21 +11,21 @@ script ui_create_pausemenu_change_difficulty \{vocalist_without_controller = -1}
 		exclusive_device = <player_device>
 		extra_z = 600
 		centered
-		noBG
+		nobg
 		color_scheme = ($default_color_scheme)
 		highlight_bar
 	}
-	pausemenu_change_difficulty_get_current_index vocalist_without_controller = <vocalist_without_controller>
+	pausemenu_change_difficulty_get_current_index 0x3e8a7a4d = <0x3e8a7a4d>
 	pausemenu_change_difficulty_get_current_player
-	GetPlayerInfo <player> part
+	getplayerinfo <player> part
 	if (<part> = drum)
-		GetPlayerInfo <player> double_kick_drum
+		getplayerinfo <player> double_kick_drum
 	else
 		double_kick_drum = 0
 	endif
 	diff_index = 0
-	GetArraySize \{$difficulty_list}
-	difficulty_icon_array = [
+	getarraysize \{$difficulty_list}
+	0xbe1d0e19 = [
 		icon_difficulty_beginner
 		icon_difficulty_easy
 		icon_difficulty_medium
@@ -35,13 +35,13 @@ script ui_create_pausemenu_change_difficulty \{vocalist_without_controller = -1}
 	begin
 	<text> = ($difficulty_list_props.($difficulty_list [<diff_index>]).text)
 	if (<difficulty_index> = <diff_index> && <double_kick_drum> = 0)
-		<text> = (<text> + qs(" *"))
+		<text> = (<text> + qs(0x11e243f5))
 	endif
 	add_icon_menu_item {
 		text = <text>
 		rgba = ($default_color_scheme.text_color)
 		text_offset = (110.0, 7.0)
-		icon = (<difficulty_icon_array> [<diff_index>])
+		icon = (<0xbe1d0e19> [<diff_index>])
 		icon_offset = (-185.0, -7.0)
 		icon_dims = (128.0, 128.0)
 		pad_choose_script = pausemenu_change_difficulty_choose
@@ -51,7 +51,7 @@ script ui_create_pausemenu_change_difficulty \{vocalist_without_controller = -1}
 	repeat <array_size>
 	if (<part> = drum)
 		includes_double_kick = 0
-		GameMode_GetType
+		gamemode_gettype
 		if (<type> = career)
 			<includes_double_kick> = 1
 		elseif (<type> = pro_faceoff)
@@ -65,15 +65,15 @@ script ui_create_pausemenu_change_difficulty \{vocalist_without_controller = -1}
 		endif
 		if (<includes_double_kick> = 1)
 			if (<difficulty_index> = (<diff_index> -1) && <double_kick_drum> = 1)
-				<text> = qs("EXPERT+ *")
+				<text> = qs(0x3cad40c9)
 			else
-				<text> = qs("EXPERT+")
+				<text> = qs(0x7a19b5f7)
 			endif
 			add_icon_menu_item {
 				text = <text>
 				rgba = ($default_color_scheme.text_color)
 				text_offset = (110.0, 7.0)
-				icon = setlist_B_db_icon
+				icon = setlist_b_db_icon
 				icon_offset = (-185.0, -7.0)
 				icon_dims = (128.0, 128.0)
 				pad_choose_script = pausemenu_change_difficulty_choose
@@ -90,20 +90,20 @@ script ui_destroy_pausemenu_change_difficulty
 endscript
 
 script pausemenu_change_difficulty_choose \{double_kick = 0}
-	RemoveParameter \{base_name}
-	if GotParam \{no_warning}
-		generic_event_choose state = UIstate_pausemenu_change_difficulty_confirm data = {<...> difficulty = <difficulty>}
+	removeparameter \{base_name}
+	if gotparam \{no_warning}
+		generic_event_choose state = uistate_pausemenu_change_difficulty_confirm data = {<...> difficulty = <difficulty>}
 	else
-		generic_event_choose state = UIstate_pausemenu_change_difficulty_warning data = {<...> difficulty = <difficulty>}
+		generic_event_choose state = uistate_pausemenu_change_difficulty_warning data = {<...> difficulty = <difficulty>}
 	endif
 endscript
 
-script pausemenu_change_difficulty_get_current_index \{vocalist_without_controller = -1}
+script pausemenu_change_difficulty_get_current_index \{0x3e8a7a4d = -1}
 	pausemenu_change_difficulty_get_current_player
-	if NOT (<vocalist_without_controller> = -1)
-		<player> = (<vocalist_without_controller> + 1)
+	if NOT (<0x3e8a7a4d> = -1)
+		<player> = (<0x3e8a7a4d> + 1)
 	endif
-	GetPlayerInfo <player> difficulty
+	getplayerinfo <player> difficulty
 	switch <difficulty>
 		case beginner
 		<difficulty_index> = 0
@@ -125,7 +125,7 @@ script pausemenu_change_difficulty_get_current_player
 		<player_device> = ($last_start_pressed_device)
 		<i> = 1
 		begin
-		GetPlayerInfo <i> controller
+		getplayerinfo <i> controller
 		if (<controller> = <player_device>)
 			<player> = <i>
 			break

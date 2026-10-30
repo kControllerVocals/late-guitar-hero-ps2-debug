@@ -1,4 +1,4 @@
-Bone_LOD_Distances = [
+bone_lod_distances = [
 	10000.0
 	10000.0
 	10000.0
@@ -11,169 +11,169 @@ Bone_LOD_Distances = [
 	10000.0
 	10000.0
 ]
-DoNotAssertOnMissingAnims = 1
+donotassertonmissinganims = 1
 skater_accessory_bones = [
-	Bone_ACC_PantLeg_L
-	Bone_ACC_PantLeg_R
-	Bone_ACC_TSleeve_L
-	Bone_ACC_TSleeve_R
-	Bone_ACC_Hood
-	Bone_ACC_Headphones
-	Bone_ACC_Can
-	Bone_ACC_ShirtFront_L
-	Bone_ACC_ShirtFront_R
-	Bone_ACC_ShirtBack_L
-	Bone_ACC_ShirtBack_R
-	Bone_ACC_Hair_L
-	Bone_ACC_Hair_R
-	Bone_ACC_Hair_B
-	Bone_ACC_Hair_T
-	Bone_ACC_ShortLeg_L
-	Bone_ACC_ShortLeg_R
-	Bone_Collar_L
-	Bone_Collar_R
-	Bone_Head
+	bone_acc_pantleg_l
+	bone_acc_pantleg_r
+	bone_acc_tsleeve_l
+	bone_acc_tsleeve_r
+	bone_acc_hood
+	bone_acc_headphones
+	bone_acc_can
+	bone_acc_shirtfront_l
+	bone_acc_shirtfront_r
+	bone_acc_shirtback_l
+	bone_acc_shirtback_r
+	bone_acc_hair_l
+	bone_acc_hair_r
+	bone_acc_hair_b
+	bone_acc_hair_t
+	bone_acc_shortleg_l
+	bone_acc_shortleg_r
+	bone_collar_l
+	bone_collar_r
+	bone_head
 ]
-BoneSkipLODInfo = {
-	GH3_Singer_Male = [
+boneskiplodinfo = {
+	gh3_singer_male = [
 		{
-			LODDistance = 0.0
-			SkipBones = [
+			loddistance = 0.0
+			skipbones = [
 			]
 		}
 		{
-			LODDistance = 5.0
-			SkipBones = [
+			loddistance = 5.0
+			skipbones = [
 			]
 		}
 		{
-			LODDistance = 15.0
-			SkipBones = [
-				Bone_Toe_L
-				Bone_Toe_R
-				Bone_Hand_Index_Base_L
-				Bone_Hand_Index_Mid_L
-				Bone_Hand_Index_Base_R
-				Bone_Hand_Index_Mid_R
-				Bone_Hand_Middle_Base_L
-				Bone_Hand_Middle_Mid_L
-				Bone_Hand_Middle_Base_R
-				Bone_Hand_Middle_Mid_R
-				Bone_Hand_Ring_Base_L
-				Bone_Hand_Ring_Mid_L
-				Bone_Hand_Ring_Base_R
-				Bone_Hand_Ring_Mid_R
-				Bone_Hand_Pinkey_Base_L
-				Bone_Hand_Pinkey_Mid_L
-				Bone_Hand_Pinkey_Base_R
-				Bone_Hand_Pinkey_Mid_R
-				Bone_Hand_Thumb_Base_L
-				Bone_Hand_Thumb_Top_L
-				Bone_Hand_Thumb_Base_R
-				Bone_Hand_Thumb_Top_R
-				Bone_Tongue
-				Bone_Lip_Upper_Corner_L
-				Bone_Lip_Upper_Corner_R
-				Bone_Lip_Lower_Corner_L
-				Bone_Lip_Lower_Corner_R
-				Bone_Brow_L
-				Bone_Brow_R
-				Bone_Brow_Mid
+			loddistance = 15.0
+			skipbones = [
+				bone_toe_l
+				bone_toe_r
+				bone_hand_index_base_l
+				bone_hand_index_mid_l
+				bone_hand_index_base_r
+				bone_hand_index_mid_r
+				bone_hand_middle_base_l
+				bone_hand_middle_mid_l
+				bone_hand_middle_base_r
+				bone_hand_middle_mid_r
+				bone_hand_ring_base_l
+				bone_hand_ring_mid_l
+				bone_hand_ring_base_r
+				bone_hand_ring_mid_r
+				bone_hand_pinkey_base_l
+				bone_hand_pinkey_mid_l
+				bone_hand_pinkey_base_r
+				bone_hand_pinkey_mid_r
+				bone_hand_thumb_base_l
+				bone_hand_thumb_top_l
+				bone_hand_thumb_base_r
+				bone_hand_thumb_top_r
+				bone_tongue
+				bone_lip_upper_corner_l
+				bone_lip_upper_corner_r
+				bone_lip_lower_corner_l
+				bone_lip_lower_corner_r
+				bone_brow_l
+				bone_brow_r
+				bone_brow_mid
 			]
 		}
 		{
-			LODDistance = 25.0
-			SkipBones = [
-				Bone_Eyelid_Upper_L
-				Bone_Eyelid_Upper_R
-				Bone_Mouth_L
-				Bone_Mouth_R
-				Bone_Lip_Lower_Mid
-				Bone_Lip_Upper_Mid
-				Bone_Lip_Lower_L
-				Bone_Lip_Lower_R
-				Bone_Lip_Upper_L
-				Bone_Lip_Upper_R
-				Bone_ACC_01
-				Bone_ACC_02
-				Bone_ACC_12
+			loddistance = 25.0
+			skipbones = [
+				bone_eyelid_upper_l
+				bone_eyelid_upper_r
+				bone_mouth_l
+				bone_mouth_r
+				bone_lip_lower_mid
+				bone_lip_upper_mid
+				bone_lip_lower_l
+				bone_lip_lower_r
+				bone_lip_upper_l
+				bone_lip_upper_r
+				bone_acc_01
+				bone_acc_02
+				bone_acc_12
 			]
 		}
 		{
-			LODDistance = 10000.0
-			SkipBones = [
+			loddistance = 10000.0
+			skipbones = [
 			]
 		}
 	]
-	GH3_Singer_Female = [
+	gh3_singer_female = [
 		{
-			LODDistance = 0.0
-			SkipBones = [
+			loddistance = 0.0
+			skipbones = [
 			]
 		}
 		{
-			LODDistance = 5.0
-			SkipBones = [
+			loddistance = 5.0
+			skipbones = [
 			]
 		}
 		{
-			LODDistance = 15.0
-			SkipBones = [
-				Bone_Toe_L
-				Bone_Toe_R
-				Bone_Palm_L
-				Bone_Palm_R
-				Bone_Hand_Index_Base_L
-				Bone_Hand_Index_Mid_L
-				Bone_Hand_Index_Base_R
-				Bone_Hand_Index_Mid_R
-				Bone_Hand_Middle_Base_L
-				Bone_Hand_Middle_Mid_L
-				Bone_Hand_Middle_Base_R
-				Bone_Hand_Middle_Mid_R
-				Bone_Hand_Ring_Base_L
-				Bone_Hand_Ring_Mid_L
-				Bone_Hand_Ring_Base_R
-				Bone_Hand_Ring_Mid_R
-				Bone_Hand_Pinkey_Base_L
-				Bone_Hand_Pinkey_Mid_L
-				Bone_Hand_Pinkey_Base_R
-				Bone_Hand_Pinkey_Mid_R
-				Bone_Hand_Thumb_Base_L
-				Bone_Hand_Thumb_Top_L
-				Bone_Hand_Thumb_Base_R
-				Bone_Hand_Thumb_Top_R
-				Bone_Tongue
-				Bone_Lip_Upper_Corner_L
-				Bone_Lip_Upper_Corner_R
-				Bone_Lip_Lower_Corner_L
-				Bone_Lip_Lower_Corner_R
-				Bone_Brow_L
-				Bone_Brow_R
-				Bone_Brow_Mid
+			loddistance = 15.0
+			skipbones = [
+				bone_toe_l
+				bone_toe_r
+				bone_palm_l
+				bone_palm_r
+				bone_hand_index_base_l
+				bone_hand_index_mid_l
+				bone_hand_index_base_r
+				bone_hand_index_mid_r
+				bone_hand_middle_base_l
+				bone_hand_middle_mid_l
+				bone_hand_middle_base_r
+				bone_hand_middle_mid_r
+				bone_hand_ring_base_l
+				bone_hand_ring_mid_l
+				bone_hand_ring_base_r
+				bone_hand_ring_mid_r
+				bone_hand_pinkey_base_l
+				bone_hand_pinkey_mid_l
+				bone_hand_pinkey_base_r
+				bone_hand_pinkey_mid_r
+				bone_hand_thumb_base_l
+				bone_hand_thumb_top_l
+				bone_hand_thumb_base_r
+				bone_hand_thumb_top_r
+				bone_tongue
+				bone_lip_upper_corner_l
+				bone_lip_upper_corner_r
+				bone_lip_lower_corner_l
+				bone_lip_lower_corner_r
+				bone_brow_l
+				bone_brow_r
+				bone_brow_mid
 			]
 		}
 		{
-			LODDistance = 25.0
-			SkipBones = [
-				Bone_Eyelid_Upper_L
-				Bone_Eyelid_Upper_R
-				Bone_Mouth_L
-				Bone_Mouth_R
-				Bone_Lip_Lower_Mid
-				Bone_Lip_Upper_Mid
-				Bone_Lip_Lower_L
-				Bone_Lip_Lower_R
-				Bone_Lip_Upper_L
-				Bone_Lip_Upper_R
-				Bone_ACC_04
-				Bone_ACC_10
-				Bone_ACC_12
+			loddistance = 25.0
+			skipbones = [
+				bone_eyelid_upper_l
+				bone_eyelid_upper_r
+				bone_mouth_l
+				bone_mouth_r
+				bone_lip_lower_mid
+				bone_lip_upper_mid
+				bone_lip_lower_l
+				bone_lip_lower_r
+				bone_lip_upper_l
+				bone_lip_upper_r
+				bone_acc_04
+				bone_acc_10
+				bone_acc_12
 			]
 		}
 		{
-			LODDistance = 10000.0
-			SkipBones = [
+			loddistance = 10000.0
+			skipbones = [
 			]
 		}
 	]

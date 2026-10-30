@@ -11,29 +11,29 @@ script ui_create_cag_custom_body_types
 	get_part_current_desc_id part = <part>
 	current_part = 0
 	num_parts_added = 0
-	GetArraySize ($<part>)
+	getarraysize ($<part>)
 	i = 0
 	begin
 	if cas_item_is_visible part = <part> part_index = <i>
 		if is_part_unlocked part = <part> desc_id = ((($<part>) [<i>]).desc_id) savegame = ($cas_current_savegame)
 			<add_item> = 1
-			if GotParam \{is_esp}
+			if gotparam \{is_esp}
 				if (<is_esp> = 1)
-					if NOT StructureContains Structure = (($<part>) [<i>]) is_esp
+					if NOT structurecontains structure = (($<part>) [<i>]) is_esp
 						<add_item> = 0
 					elseif (((($<part>) [<i>]).is_esp) = 0)
 						<add_item> = 0
 					endif
 				else
-					if StructureContains Structure = (($<part>) [<i>]) is_esp
+					if structurecontains structure = (($<part>) [<i>]) is_esp
 						if (((($<part>) [<i>]).is_esp) = 1)
 							<add_item> = 0
 						endif
 					endif
 				endif
 			endif
-			if StructureContains Structure = (($<part>) [<i>]) Is_Metallica
-				if (((($<part>) [<i>]).Is_Metallica) = 1)
+			if structurecontains structure = (($<part>) [<i>]) is_metallica
+				if (((($<part>) [<i>]).is_metallica) = 1)
 					<add_item> = 0
 				endif
 			endif
@@ -43,7 +43,7 @@ script ui_create_cag_custom_body_types
 				endif
 				if NOT is_part_purchased part = <part> desc_id = ((($<part>) [<i>]).desc_id) savegame = ($cas_current_savegame)
 					price = ((($<part>) [<i>]).price)
-					FormatText TextName = pad_choose_dialogue qs("Would you like to purchase this %s?") s = ((($<part>) [<i>]).frontend_desc)
+					formattext textname = pad_choose_dialogue qs(0x50618374) s = ((($<part>) [<i>]).frontend_desc)
 				endif
 				add_list_item {
 					text = (($<part> [<i>]).frontend_desc)
@@ -56,14 +56,14 @@ script ui_create_cag_custom_body_types
 					price = <price>
 					pad_choose_dialogue = <pad_choose_dialogue>
 				}
-				if GotParam \{price}
-					RemoveParameter \{price}
+				if gotparam \{price}
+					removeparameter \{price}
 				endif
-				if GotParam \{pad_choose_dialogue}
-					RemoveParameter \{pad_choose_dialogue}
+				if gotparam \{pad_choose_dialogue}
+					removeparameter \{pad_choose_dialogue}
 				endif
-				if GotParam \{pad_back_dialogue}
-					RemoveParameter \{pad_back_dialogue}
+				if gotparam \{pad_back_dialogue}
+					removeparameter \{pad_back_dialogue}
 				endif
 				num_parts_added = (<num_parts_added> + 1)
 			endif
@@ -73,7 +73,7 @@ script ui_create_cag_custom_body_types
 	repeat <array_size>
 	clean_up_user_control_helpers
 	menu_finish \{car_helper_text_cancel}
-	LaunchEvent type = focus target = create_cag_custom_body_types_vmenu data = {child_index = <current_part>}
+	launchevent type = focus target = create_cag_custom_body_types_vmenu data = {child_index = <current_part>}
 endscript
 
 script ui_destroy_cag_custom_body_types 
@@ -81,165 +81,165 @@ script ui_destroy_cag_custom_body_types
 endscript
 
 script ui_init_cag_custom_body_types 
-	PushTemporaryCASAppearance
+	pushtemporarycasappearance
 	ui_load_cas_rawpak part = <part>
 endscript
 
 script ui_deinit_cag_custom_body_types 
-	FlushAllCompositeTextures
-	PopTemporaryCASAppearance
+	flushallcompositetextures
+	poptemporarycasappearance
 	cleanup_cas_menu_handlers
 endscript
 
 script add_cag_part 
 
-	KillAllCompositeTextures
-	DumpCompositeScratchTextures
+	killallcompositetextures
+	dumpcompositescratchtextures
 	get_part_current_desc_id part = <part>
 	if NOT (((($<part>) [<index>]).desc_id) = <current_desc_id>)
 		cas_part_will_conflict part_name = <part> part_desc_id = ($<part> [<index>].desc_id)
-		if GotParam \{change_parts}
-			GetArraySize \{change_parts}
+		if gotparam \{change_parts}
+			getarraysize \{change_parts}
 			if (<array_size> > 0)
 				i = 0
 				begin
 				cas_add_item_to_appearance part = (<change_parts> [<i>].part) desc_id = (<change_parts> [<i>].desc_id) no_rebuild
-				set_default_part_parameters part = (<change_parts> [<i>].part) desc_id = (<change_parts> [<i>].desc_id)
+				0x5bb246ed part = (<change_parts> [<i>].part) desc_id = (<change_parts> [<i>].desc_id)
 				i = (<i> + 1)
 				repeat <array_size>
 			endif
 		endif
 		cas_add_item_to_appearance part = <part> desc_id = ($<part> [<index>].desc_id) incremental no_rebuild
-		if GetActualCASOptionStruct part = <part> desc_id = ($<part> [<index>].desc_id)
-			if GotParam \{RandomizeFinish}
-				if NOT GetValidInclusionPartList InclusionList = <inclusion> part = <RandomizeFinish>
+		if getactualcasoptionstruct part = <part> desc_id = ($<part> [<index>].desc_id)
+			if gotparam \{randomizefinish}
+				if NOT 0x1e74398a 0x868a8862 = <inclusion> part = <randomizefinish>
 
 				endif
-				GetArraySize (<valid_array>)
-				GetRandomValue name = rand_val a = 0 b = (<array_size> - 1) Integer
+				getarraysize (<valid_array>)
+				getrandomvalue name = rand_val a = 0 b = (<array_size> - 1) integer
 				new_desc_id = (<valid_array> [<rand_val>])
-				EditCASAppearance target = SetPart targetParams = {part = <RandomizeFinish> desc_id = <new_desc_id>}
+				editcasappearance target = setpart targetparams = {part = <randomizefinish> desc_id = <new_desc_id>}
 			endif
-			if NOT GotParam \{Finishable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Guitar_Finish
+			if NOT gotparam \{finishable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_guitar_finish
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Bass_Finish
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_bass_finish
 							desc_id = none
 						}}
 				endif
-			elseif GetValidInclusionPartList InclusionList = <inclusion> part = <Finishable>
-				EditCASAppearance target = SetPart targetParams = {part = <Finishable> desc_id = (<valid_array> [0])}
+			elseif 0x1e74398a 0x868a8862 = <inclusion> part = <finishable>
+				editcasappearance target = setpart targetparams = {part = <finishable> desc_id = (<valid_array> [0])}
 			endif
-			if NOT GotParam \{Detailable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Guitar_Body_Detail
+			if NOT gotparam \{detailable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_guitar_body_detail
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Bass_Body_Detail
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_bass_body_detail
 							desc_id = none
 						}}
 				endif
-			elseif GetValidInclusionPartList InclusionList = <inclusion> part = <Detailable>
-				EditCASAppearance target = SetPart targetParams = {part = <Detailable> desc_id = (<valid_array> [0])}
+			elseif 0x1e74398a 0x868a8862 = <inclusion> part = <detailable>
+				editcasappearance target = setpart targetparams = {part = <detailable> desc_id = (<valid_array> [0])}
 			endif
-			if NOT GotParam \{Logoable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
+			if NOT gotparam \{logoable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
 							part = cas_guitar_logo
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
-							part = CAS_Bass_Logo
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
+							part = cas_bass_logo
 							desc_id = none
 						}}
 				endif
-			elseif GetValidInclusionPartList InclusionList = <inclusion> part = <Logoable>
-				EditCASAppearance target = SetPart targetParams = {part = <Logoable> desc_id = (<valid_array> [0])}
+			elseif 0x1e74398a 0x868a8862 = <inclusion> part = <logoable>
+				editcasappearance target = setpart targetparams = {part = <logoable> desc_id = (<valid_array> [0])}
 			endif
-			if NOT GotParam \{Fadeable}
-				if (<part> = CAS_Guitar_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
+			if NOT gotparam \{fadeable}
+				if (<part> = cas_guitar_body)
+					editcasappearance \{target = setpart
+						targetparams = {
 							part = cas_guitar_body_fade
 							desc_id = none
 						}}
-				elseif (<part> = CAS_Bass_Body)
-					EditCASAppearance \{target = SetPart
-						targetParams = {
+				elseif (<part> = cas_bass_body)
+					editcasappearance \{target = setpart
+						targetparams = {
 							part = cas_bass_body_fade
 							desc_id = none
 						}}
 				endif
-			elseif GetValidInclusionPartList InclusionList = <inclusion> part = <Fadeable>
-				EditCASAppearance target = SetPart targetParams = {part = <Fadeable> desc_id = (<valid_array> [0])}
+			elseif 0x1e74398a 0x868a8862 = <inclusion> part = <fadeable>
+				editcasappearance target = setpart targetparams = {part = <fadeable> desc_id = (<valid_array> [0])}
 			endif
 		endif
-		spawnscriptnow \{trigger_CAS_rebuild_loop}
+		spawnscriptnow \{trigger_cas_rebuild_loop}
 	endif
-	GetActualCASOptionStruct part = <part> desc_id = ($<part> [<index>].desc_id)
-	if NOT GotParam \{sponsor_id}
-		sponsor_id = no_sponsor
+	getactualcasoptionstruct part = <part> desc_id = ($<part> [<index>].desc_id)
+	if NOT gotparam \{sponsor_id}
+		sponsor_id = 0xc0671aff
 	endif
-	draw_sponsor_logo sponsor_id = <sponsor_id>
+	0x4b5f92af sponsor_id = <sponsor_id>
 endscript
 
-script set_default_part_parameters 
+script 0x5bb246ed 
 
-	GetActualCASOptionStruct part = <part> desc_id = <desc_id>
-	if GotParam \{Finishable}
-		if GetValidInclusionPartList InclusionList = <inclusion> part = <Finishable>
-			EditCASAppearance target = SetPart targetParams = {part = <Finishable> desc_id = (<valid_array> [0])}
+	getactualcasoptionstruct part = <part> desc_id = <desc_id>
+	if gotparam \{finishable}
+		if 0x1e74398a 0x868a8862 = <inclusion> part = <finishable>
+			editcasappearance target = setpart targetparams = {part = <finishable> desc_id = (<valid_array> [0])}
 		endif
 	endif
-	if GotParam \{Detailable}
-		if GetValidInclusionPartList InclusionList = <inclusion> part = <Detailable>
-			EditCASAppearance target = SetPart targetParams = {part = <Detailable> desc_id = (<valid_array> [0])}
+	if gotparam \{detailable}
+		if 0x1e74398a 0x868a8862 = <inclusion> part = <detailable>
+			editcasappearance target = setpart targetparams = {part = <detailable> desc_id = (<valid_array> [0])}
 		endif
 	endif
-	if GotParam \{Logoable}
-		if GetValidInclusionPartList InclusionList = <inclusion> part = <Logoable>
-			EditCASAppearance target = SetPart targetParams = {part = <Logoable> desc_id = (<valid_array> [0])}
+	if gotparam \{logoable}
+		if 0x1e74398a 0x868a8862 = <inclusion> part = <logoable>
+			editcasappearance target = setpart targetparams = {part = <logoable> desc_id = (<valid_array> [0])}
 		endif
 	endif
-	if GotParam \{Fadeable}
-		if GetValidInclusionPartList InclusionList = <inclusion> part = <Fadeable>
-			EditCASAppearance target = SetPart targetParams = {part = <Fadeable> desc_id = (<valid_array> [0])}
+	if gotparam \{fadeable}
+		if 0x1e74398a 0x868a8862 = <inclusion> part = <fadeable>
+			editcasappearance target = setpart targetparams = {part = <fadeable> desc_id = (<valid_array> [0])}
 		endif
 	endif
 endscript
 
 script add_cag_part_spin_guitar 
-	GetCurrentCASObject
+	getcurrentcasobject
 	if is_female_char
-		Band_PlaysimpleAnim name = <cas_object> Anim = car_female_select_guitar_turn_flip BlendDuration = 1.0
+		band_playsimpleanim name = <cas_object> anim = car_female_select_guitar_turn_flip blendduration = 1.0
 	else
-		Band_PlaysimpleAnim name = <cas_object> Anim = CAR_male_Select_guitar_turn_flip BlendDuration = 1.0
+		band_playsimpleanim name = <cas_object> anim = car_male_select_guitar_turn_flip blendduration = 1.0
 	endif
 endscript
 
-script GetValidInclusionPartList 
+script 0x1e74398a 
 
-	GetArraySize (<InclusionList>)
+	getarraysize (<0x868a8862>)
 	loop_size = (<array_size>)
 	i = 0
 	valid_array = none
 	begin
-	filter = (<InclusionList> [<i>])
+	filter = (<0x868a8862> [<i>])
 	if (<filter>.part = <part>)
 		return true valid_array = (<filter>.valid)
 	endif

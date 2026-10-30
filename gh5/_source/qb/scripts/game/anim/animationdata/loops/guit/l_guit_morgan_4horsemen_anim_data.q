@@ -1,37 +1,37 @@
-L_GUIT_Morgan_4Horsemen_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_morgan_4horsemen_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Morgan_4Horsemen_075
+				slow = [
+					guit_morgan_4horsemen_075
 				]
-				Med = [
-					Guit_Morgan_4Horsemen_100
+				med = [
+					guit_morgan_4horsemen_100
 				]
-				Fast = [
-					Guit_Morgan_4Horsemen_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Morgan_4Horsemen_075
-				]
-				Med = [
-					Guit_Morgan_4Horsemen_100
-				]
-				Fast = [
-					Guit_Morgan_4Horsemen_120
+				fast = [
+					guit_morgan_4horsemen_120
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Morgan_4Horsemen_075
+			normal = {
+				slow = [
+					guit_morgan_4horsemen_075
 				]
-				Med = [
-					Guit_Morgan_4Horsemen_100
+				med = [
+					guit_morgan_4horsemen_100
 				]
-				Fast = [
-					Guit_Morgan_4Horsemen_120
+				fast = [
+					guit_morgan_4horsemen_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_morgan_4horsemen_075
+				]
+				med = [
+					guit_morgan_4horsemen_100
+				]
+				fast = [
+					guit_morgan_4horsemen_120
 				]
 			}
 		}

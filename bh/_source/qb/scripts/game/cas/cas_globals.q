@@ -1,7 +1,7 @@
 cas_current_appearance = {
 }
 cas_current_profile = none
-cas_current_fullname = qs("\L")
+cas_current_fullname = qs(0x03ac90f0)
 cas_current_savegame = -1
 cas_current_instrument = guitar
 cas_queue_current_job = {

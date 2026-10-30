@@ -140,7 +140,7 @@ vocal_paint_fill_color_default_sp_ngc = [
 	0
 	255
 ]
-vocal_star_colors = {
+0x41e293e1 = {
 	paint_hit = [
 		64
 		64
@@ -160,7 +160,7 @@ vocal_star_colors = {
 		255
 	]
 }
-vocal_star_power = [
+0x2b35c891 = [
 	0
 	0
 	0
@@ -179,19 +179,19 @@ vocal_fireball_color = [
 	0
 	255
 ]
-vocal_fireball_star_color = [
+0xf54ef1db = [
 	0
 	0
 	255
 	255
 ]
-vocal_fireball_2_color = [
+0x26f104c4 = [
 	128
 	0
 	255
 	255
 ]
-vocal_fireball_2_star_color = [
+0x6b5e5f08 = [
 	64
 	64
 	255
@@ -228,19 +228,19 @@ vocal_space_width = 10
 vocal_highway_text_offset = 24
 vocal_highway_text_height = 34
 vocal_lyric_font = fontgrid_text_a3
-vocal_lyric_font_karaoke = fontgrid_text_a1
+0x48e37ee9 = fontgrid_text_a1
 vocal_lyric_font_scale = (0.65000004, 0.75)
-vocal_lyric_font_scale_karaoke = (0.8, 0.8)
+0xf2d31ccc = (0.8, 0.8)
 vocal_lyric_font_offset = (0.0, -56.0)
 vocal_note_alpha_width = 0
 vocal_slide_length_tweak_px = 6.0
 vocal_pitch_indicator_hide_time = 16
 vocal_enable_static_view = 1
 vocal_highway_no_background = 0
-VocalHighwayWaveProps = [
+vocalhighwaywaveprops = [
 	{
-		ControlPointCount = 0
-		ControlPoints = [
+		controlpointcount = 0
+		controlpoints = [
 			0.0
 			0.0
 			0.0
@@ -434,14 +434,14 @@ VocalHighwayWaveProps = [
 			0.0
 			0.0
 		]
-		CurrX = 0.0
-		WaveFadeStart = 200.0
-		WaveFadeEnd = 500.0
-		WaveFadeAlpha = 0.0
+		currx = 0.0
+		wavefadestart = 200.0
+		wavefadeend = 500.0
+		wavefadealpha = 0.0
 	}
 	{
-		ControlPointCount = 0
-		ControlPoints = [
+		controlpointcount = 0
+		controlpoints = [
 			0.0
 			0.0
 			0.0
@@ -635,10 +635,10 @@ VocalHighwayWaveProps = [
 			0.0
 			0.0
 		]
-		CurrX = 0.0
-		WaveFadeStart = 200.0
-		WaveFadeEnd = 500.0
-		WaveFadeAlpha = 0.0
+		currx = 0.0
+		wavefadestart = 200.0
+		wavefadeend = 500.0
+		wavefadealpha = 0.0
 	}
 ]
 vocals_static_fade_end = 675.0
@@ -651,34 +651,34 @@ vocal_enable_material_paint = 1
 script vocals_create_highway \{parent = root_window}
 
 
-	VocalsHighway_GetId player = <player>
-	DestroyScreenElement id = <vocals_highway_id>
-	GameMode_GetType
+	vocalshighway_getid player = <player>
+	destroyscreenelement id = <vocals_highway_id>
+	gamemode_gettype
 	if ((<type> = faceoff) || (<type> = pro_faceoff))
-		Vocals_GetVocalistNum player = <player>
+		vocals_getvocalistnum player = <player>
 		if (<vocalist_num> = 1)
-			SetPlayerInfo <player> hud_parent = alias_v1
-			SetPlayerInfo <player> highway_position = vocal1
+			setplayerinfo <player> hud_parent = alias_v1
+			setplayerinfo <player> highway_position = vocal1
 			<pos> = (0.0, 0.0)
 		else
-			SetPlayerInfo <player> hud_parent = alias_v2
-			SetPlayerInfo <player> highway_position = vocal2
+			setplayerinfo <player> hud_parent = alias_v2
+			setplayerinfo <player> highway_position = vocal2
 			<pos> = (0.0, 450.0)
 		endif
 	else
-		SetPlayerInfo <player> hud_parent = alias_v1
-		SetPlayerInfo <player> highway_position = vocal1
-		GameMode_GetNumPlayers
+		setplayerinfo <player> hud_parent = alias_v1
+		setplayerinfo <player> highway_position = vocal1
+		gamemode_getnumplayers
 		if (<num_players> = 1)
 			<pos> = (0.0, 430.0)
 		else
 			<pos> = (0.0, 0.0)
 		endif
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		parent = <parent>
 		id = <vocals_highway_id>
-		type = DescInterface
+		type = descinterface
 		desc = 'vocals_highway'
 		pos = <pos>
 		z_priority = 0
@@ -687,22 +687,22 @@ script vocals_create_highway \{parent = root_window}
 		alpha = 0
 		hide
 	}
-	SpawnScriptLater vocals_create_highway_bg params = {player = <player>}
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_note_scale param = lyrics_container
-	CreateScreenElement {
+	spawnscriptlater vocals_create_highway_bg params = {player = <player>}
+	<vocals_highway_id> :desc_resolvealias name = alias_note_scale param = lyrics_container
+	createscreenelement {
 		local_id = vocals_current_phrase_lyrics
 		parent = <lyrics_container>
-		type = ContainerElement
+		type = containerelement
 		pos = (0.0, 0.0)
 		just = [left center]
 		internal_just = [left center]
 		z_priority = 10
 		allow_expansion
 	}
-	CreateScreenElement {
+	createscreenelement {
 		local_id = vocals_next_phrase_lyrics
 		parent = <lyrics_container>
-		type = ContainerElement
+		type = containerelement
 		pos = (0.0, 0.0)
 		just = [left center]
 		internal_just = [left center]
@@ -710,42 +710,42 @@ script vocals_create_highway \{parent = root_window}
 		allow_expansion
 	}
 	if ($vocal_debug_hud = 1)
-		CreateScreenElement {
+		createscreenelement {
 			local_id = vocalist_hud_debug_pitch
-			type = TextBlockElement
+			type = textblockelement
 			parent = <vocals_highway_id>
 			font = fontgrid_text_a8
 			pos = (200.0, 0.0)
 			dims = (300.0, 0.0)
-			text = qs("\L")
+			text = qs(0x03ac90f0)
 			internal_scale = 0.4
 			just = [left top]
 			z_priority = 15
 			allow_expansion
 		}
 	endif
-	posi = (-36.0, 14.0)
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_pitch_indicator param = pitch_indicator
-	if ScreenElementExists id = <vocals_flamer_id>
-		DestroyScreenElement id = <vocals_flamer_id>
+	0xc673ffab = (-36.0, 14.0)
+	<vocals_highway_id> :desc_resolvealias name = alias_pitch_indicator param = pitch_indicator
+	if screenelementexists id = <vocals_flamer_id>
+		destroyscreenelement id = <vocals_flamer_id>
 	endif
-	if ($Cheat_VocalFireball = 2)
+	if ($cheat_vocalfireball = 2)
 		rgb = $vocal_cheat_fireball_start_color
 	else
-		rgb = $vocal_fireball_2_color
+		rgb = $0x26f104c4
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		id = <vocals_flamer_id>
 		parent = <pitch_indicator>
-		material = fireball_texture_white
-		blend = Add
+		material = 0x9593e725
+		blend = add
 		use_animated_uvs = true
 		top_down_v
 		frame_length = 0.1
 		num_uv_frames = (1.0, 8.0)
 		rgba = <rgb>
-		pos = <posi>
+		pos = <0xc673ffab>
 		scale = 0.5
 		z_priority = 18.0
 	}
@@ -753,41 +753,41 @@ endscript
 
 script vocals_destroy_highway 
 	vocals_mute_all_mics \{mute = true}
-	VocalsHighway_GetId player = <player>
-	DestroyScreenElement id = <vocals_highway_id>
+	vocalshighway_getid player = <player>
+	destroyscreenelement id = <vocals_highway_id>
 	vocals_star_power_changed player = <player> enable = 0
 endscript
 
 script vocals_highway_slide_in 
 
-	VocalsHighway_GetId player = <player>
-	if ScreenElementExists id = <vocals_highway_id>
-		ResolveScreenElementId id = {<vocals_highway_id> child = 0} param = root
-		if ScreenElementExists id = <root>
-			<root> :SE_SetProps alpha = 0 motion = ease_out time = 0
-			<root> :SE_SetProps alpha = 1 motion = ease_out time = 0.5
+	vocalshighway_getid player = <player>
+	if screenelementexists id = <vocals_highway_id>
+		resolvescreenelementid id = {<vocals_highway_id> child = 0} param = root
+		if screenelementexists id = <root>
+			<root> :se_setprops alpha = 0 motion = ease_out time = 0
+			<root> :se_setprops alpha = 1 motion = ease_out time = 0.5
 		endif
-		<vocals_highway_id> :SE_SetProps alpha = 1 time = 0 unhide
+		<vocals_highway_id> :se_setprops alpha = 1 time = 0 unhide
 	endif
 	vocals_mute_all_mics \{mute = false}
 endscript
 
 script vocals_scrolling_create_lyric 
 
-	VocalsHighway_GetId player = <player>
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_note_scale param = note_container
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_lyrics param = lyrics_container
-	GetScreenElementPosition id = <lyrics_container>
+	vocalshighway_getid player = <player>
+	<vocals_highway_id> :desc_resolvealias name = alias_note_scale param = note_container
+	<vocals_highway_id> :desc_resolvealias name = alias_lyrics param = lyrics_container
+	getscreenelementposition id = <lyrics_container>
 	<desired_y_pos> = (<screenelementpos> [1])
 	<text_y_offset> = (<desired_y_pos> - <pos> [1])
 	<text_pos> = (<pos> + <text_y_offset> * (0.0, 1.0) + $vocal_lyric_font_offset)
 	<rgba> = $vocal_scrolling_lyric_rgba
-	<vocal_scale> = $vocal_lyric_font_scale
-	<lyric_font> = $vocal_lyric_font
-	CreateScreenElement {
+	<0x4006da30> = $vocal_lyric_font_scale
+	<0xbe066b02> = $vocal_lyric_font
+	createscreenelement {
 		parent = <note_container>
-		type = TextBlockElement
-		font = <lyric_font>
+		type = textblockelement
+		font = <0xbe066b02>
 		text = <lyric>
 		rgba = <rgba>
 		dims = (0.0, 0.0)
@@ -795,26 +795,26 @@ script vocals_scrolling_create_lyric
 		fit_height = `expand dims`
 		pos = <text_pos>
 		just = [left top]
-		scale = <vocal_scale>
+		scale = <0x4006da30>
 		z_priority = 4
 	}
-	GetScreenElementDims id = <id>
+	getscreenelementdims id = <id>
 	return id = <id> y_pos = (<text_pos> [1]) width = <width>
 endscript
 
 script vocals_create_highway_bg 
 
-	VocalsHighway_GetId player = <player>
+	vocalshighway_getid player = <player>
 	vocals_get_highway_view player = <player>
-	if <vocals_highway_id> :Desc_ResolveAlias name = alias_pitch_indicator param = pitch_indicator
-		GetPlayerInfo <player> text
+	if <vocals_highway_id> :desc_resolvealias name = alias_pitch_indicator param = pitch_indicator
+		getplayerinfo <player> text
 		<player_text> = <text>
-		FormatText checksumname = nowbar_glow_name 'nowbar_glow%p' p = <player_text> AddToStringLookup = true
-		CreateScreenElement {
-			type = SpriteElement
+		formattext checksumname = nowbar_glow_name 'nowbar_glow%p' p = <player_text> addtostringlookup = true
+		createscreenelement {
+			type = spriteelement
 			id = <nowbar_glow_name>
 			parent = <pitch_indicator>
-			material = Mat_VH_PerfGlow01
+			material = mat_vh_perfglow01
 			rgba = [255 255 255 0]
 			pos = (0.0, 0.0)
 			scale = ($vocals_health_ring_scale)
@@ -823,37 +823,37 @@ script vocals_create_highway_bg
 			z_priority = 6
 		}
 	endif
-	<vocals_highway_id> :SE_SetProps blend = blend
-	if ($Cheat_VocalFireball = 2)
-		<vocals_highway_id> :SE_SetProps fireball_bg_rgba = $vocal_cheat_fireball_start_color
-		vocals_flamer_id :SE_SetProps \{rgba = $vocal_cheat_fireball_start_color}
+	<vocals_highway_id> :se_setprops blend = blend
+	if ($cheat_vocalfireball = 2)
+		<vocals_highway_id> :se_setprops fireball_bg_rgba = $vocal_cheat_fireball_start_color
+		vocals_flamer_id :se_setprops \{rgba = $vocal_cheat_fireball_start_color}
 	else
-		<vocals_highway_id> :SE_SetProps fireball_bg_rgba = $vocal_fireball_color
-		vocals_flamer_id :SE_SetProps \{rgba = $vocal_fireball_2_color}
+		<vocals_highway_id> :se_setprops fireball_bg_rgba = $vocal_fireball_color
+		vocals_flamer_id :se_setprops \{rgba = $0x26f104c4}
 	endif
 	if (<highway_view> = scrolling)
-		<vocals_highway_id> :SE_SetProps static_next_phrase_bg_alpha = 0
-		<vocals_highway_id> :Desc_ResolveAlias name = alias_static_phrase_start param = phrase_start
-		<phrase_start> :SE_SetProps alpha = 0
-		<vocals_highway_id> :Desc_ResolveAlias name = alias_static_phrase_end param = phrase_end
-		<phrase_end> :SE_SetProps alpha = 0
+		<vocals_highway_id> :se_setprops static_next_phrase_bg_alpha = 0
+		<vocals_highway_id> :desc_resolvealias name = alias_static_phrase_start param = phrase_start
+		<phrase_start> :se_setprops alpha = 0
+		<vocals_highway_id> :desc_resolvealias name = alias_static_phrase_end param = phrase_end
+		<phrase_end> :se_setprops alpha = 0
 	else
-		<vocals_highway_id> :SE_SetProps static_next_phrase_bg_alpha = 1
+		<vocals_highway_id> :se_setprops static_next_phrase_bg_alpha = 1
 	endif
 	if ($vocal_highway_no_background = 1)
-		if <vocals_highway_id> :Desc_ResolveAlias name = alias_bg_container param = bg_container
-			<bg_container> :SE_SetProps hide
+		if <vocals_highway_id> :desc_resolvealias name = alias_bg_container param = bg_container
+			<bg_container> :se_setprops hide
 		endif
 	endif
 endscript
 
 script vocals_create_freeform_section \{type = melodic}
 
-	VocalsHighway_GetId player = <player>
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_note_scale param = note_scale
-	CreateScreenElement {
+	vocalshighway_getid player = <player>
+	<vocals_highway_id> :desc_resolvealias name = alias_note_scale param = note_scale
+	createscreenelement {
 		parent = <note_scale>
-		type = WindowElement
+		type = windowelement
 		pos = <pos>
 		dims = <dims>
 		just = [left top]
@@ -862,13 +862,13 @@ script vocals_create_freeform_section \{type = melodic}
 	}
 	<container_id> = <id>
 	if (<type> = melodic)
-		<material> = VH_FF_FX01
+		<material> = vh_ff_fx01
 		<texture_to_hwy_ratio> = (100.0 / 64.0)
 		<mat_dims> = ((512.0, 64.0) * <texture_to_hwy_ratio>)
 		<step> = ((512.0, 0.0) * <texture_to_hwy_ratio>)
 		<color> = [255 255 255 255]
 	else
-		<material> = VH_Crowd_Noise
+		<material> = vh_crowd_noise
 		<texture_to_hwy_ratio> = (100.0 / 128)
 		<mat_dims> = ((256.0, 128.0) * <texture_to_hwy_ratio>)
 		<step> = ((256.0, 0.0) * <texture_to_hwy_ratio>)
@@ -879,15 +879,15 @@ script vocals_create_freeform_section \{type = melodic}
 	endif
 	<curr_pos> = (0.0, 0.0)
 	begin
-	CreateScreenElement {
+	createscreenelement {
 		parent = <container_id>
-		type = SpriteElement
+		type = spriteelement
 		pos = <curr_pos>
 		dims = <mat_dims>
 		clonematerial = <material>
 		just = [left top]
 		rgba = <color>
-		blend = Add
+		blend = add
 		z_priority = -10
 	}
 	<curr_pos> = (<curr_pos> + <step>)
@@ -899,43 +899,43 @@ script vocals_create_freeform_section \{type = melodic}
 endscript
 
 script vocals_create_paint 
-	VocalsHighway_GetId player = <player>
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_note_scale param = note_scale
-	if ($vocal_star_power [<player>])
-		<rgba> = ($vocal_star_colors.<hit>)
+	vocalshighway_getid player = <player>
+	<vocals_highway_id> :desc_resolvealias name = alias_note_scale param = note_scale
+	if ($0x2b35c891 [<player>])
+		<rgba> = ($0x41e293e1.<hit>)
 	else
 		<rgba> = ($vocal_paint_colors.<hit>)
 	endif
-	CreateScreenElement {
+	createscreenelement {
 		parent = <note_scale>
-		type = ContainerElement
+		type = containerelement
 		just = [left center]
 		pos = <pos>
 		z_priority = 6
 	}
 	<container_id> = <id>
-	CreateScreenElement {
+	createscreenelement {
 		parent = <container_id>
 		local_id = note_left
-		type = SpriteElement
+		type = spriteelement
 		just = [left center]
 		texture = lyric_blip_right
 		flip_v
 		rgba = <rgba>
 	}
-	CreateScreenElement {
+	createscreenelement {
 		parent = <container_id>
 		local_id = note_middle
-		type = SpriteElement
+		type = spriteelement
 		just = [left center]
 		texture = lyric_blip_middle
 		rgba = <rgba>
 	}
 	<middle_id> = <id>
-	CreateScreenElement {
+	createscreenelement {
 		parent = <container_id>
 		local_id = note_right
-		type = SpriteElement
+		type = spriteelement
 		just = [left center]
 		texture = lyric_blip_right
 		rgba = <rgba>
@@ -945,14 +945,14 @@ endscript
 
 script vocals_create_phrase_marker 
 
-	VocalsHighway_GetId player = <player>
-	<vocals_highway_id> :Desc_ResolveAlias name = alias_note_scale param = note_scale
-	GetScreenElementDims id = <note_scale>
-	CreateScreenElement {
+	vocalshighway_getid player = <player>
+	<vocals_highway_id> :desc_resolvealias name = alias_note_scale param = note_scale
+	getscreenelementdims id = <note_scale>
+	createscreenelement {
 		parent = <note_scale>
-		type = SpriteElement
+		type = spriteelement
 		just = [center top]
-		dims = ((7.0, 30.0) + (0.0, 1.0) * <Height>)
+		dims = ((7.0, 30.0) + (0.0, 1.0) * <height>)
 		pos = (0.0, 0.0)
 		texture = white
 		rgba = [110 110 110 160]
@@ -970,13 +970,13 @@ script vocals_phrase_lyrics_shift_up
 	else
 		<start_alpha> = 1
 	endif
-	SE_SetProps pos = <pos> alpha = <start_alpha> time = 0
-	SE_SetProps pos = {<pos_offs> relative} alpha = 1 motion = ease_out time = <time>
+	se_setprops pos = <pos> alpha = <start_alpha> time = 0
+	se_setprops pos = {<pos_offs> relative} alpha = 1 motion = ease_out time = <time>
 endscript
 
 script vocals_get_highway_view 
 
-	GetPlayerInfo <player> vocals_highway_view
+	getplayerinfo <player> vocals_highway_view
 	if (($current_song) = jamsession)
 		vocals_highway_view = scrolling
 	endif
@@ -985,35 +985,35 @@ endscript
 
 script vocals_set_highway_view 
 
-	SetPlayerInfo <player> vocals_highway_view = <view>
+	setplayerinfo <player> vocals_highway_view = <view>
 	get_savegame_from_controller controller = <controller>
-	SetGlobalTags savegame = <savegame> user_options params = {vocals_highway_view_save = <view>}
+	setglobaltags savegame = <savegame> user_options params = {vocals_highway_view_save = <view>}
 endscript
 
 script vocals_get_highway_view_text 
 
 	if (<view> = static)
-		return \{vocals_view_text = qs("STATIC")}
+		return \{vocals_view_text = qs(0x305014bd)}
 	else
-		return \{vocals_view_text = qs("SCROLLING")}
+		return \{vocals_view_text = qs(0x737839f5)}
 	endif
 endscript
 
 script vocals_freeform_melodic_message 
-	FormatText TextName = text qs("\L%b\_x\_%m") b = <base_score> m = <multiplier>
+	formattext textname = text qs(0x2e7f32bb) b = <base_score> m = <multiplier>
 	vocals_message player = <player> text = <text> rgba = [220 220 0 255]
 endscript
 
 script vocals_message 
-	VocalsHighway_GetId player = <player>
-	if NOT ScreenElementExists id = <vocals_highway_id>
+	vocalshighway_getid player = <player>
+	if NOT screenelementexists id = <vocals_highway_id>
 		return
 	endif
-	if NOT ScreenElementExists id = {<vocals_highway_id> child = vocalist_phrase_status}
-		CreateScreenElement {
+	if NOT screenelementexists id = {<vocals_highway_id> child = vocalist_phrase_status}
+		createscreenelement {
 			local_id = vocalist_phrase_status
 			parent = <vocals_highway_id>
-			type = TextBlockElement
+			type = textblockelement
 			pos = (343.0, 31.0)
 			dims = (350.0, 160.0)
 			just = [left top]
@@ -1027,35 +1027,35 @@ script vocals_message
 			shadow
 			shadow_offs = (1.0, 1.0)
 		}
-		<vocals_highway_id> :SetTags phrase_status_child = <id>
+		<vocals_highway_id> :settags 0x159bc33b = <id>
 	else
-		<vocals_highway_id> :GetTags phrase_status_child
-		id = <phrase_status_child>
-		<id> :SE_SetProps text = <text> rgba = <rgba> alpha = 1.0
+		<vocals_highway_id> :gettags 0x159bc33b
+		id = <0x159bc33b>
+		<id> :se_setprops text = <text> rgba = <rgba> alpha = 1.0
 	endif
-	RunScriptOnScreenElement id = <id> vocals_message_wait_and_DIE
+	runscriptonscreenelement id = <id> vocals_message_wait_and_die
 endscript
 
-script vocals_message_wait_and_DIE 
-	Wait \{1
+script vocals_message_wait_and_die 
+	wait \{1
 		second}
-	SE_SetProps \{alpha = 0.0
+	se_setprops \{alpha = 0.0
 		time = 0.4}
-	SE_WaitProps
+	se_waitprops
 endscript
 
 script vocals_message_delayed 
-	SpawnScriptLater vocals_message_delayed_spawn params = <...>
+	spawnscriptlater vocals_message_delayed_spawn params = <...>
 endscript
 
 script vocals_message_delayed_spawn 
-	Wait \{1
+	wait \{1
 		second}
 	vocals_message <...>
 endscript
 
 script vocals_freeform_score_message 
-	FormatText TextName = text qs("%d Points") d = <points>
+	formattext textname = text qs(0x00ce9d08) d = <points>
 	vocals_message {
 		player = <player>
 		text = <text>
@@ -1064,15 +1064,15 @@ script vocals_freeform_score_message
 endscript
 
 script vocals_end_phrase 
-	if <vocals_highway_id> :Desc_ResolveAlias name = alias_pitch_indicator param = pitch_indicator
-		RunScriptOnScreenElement {
+	if <vocals_highway_id> :desc_resolvealias name = alias_pitch_indicator param = pitch_indicator
+		runscriptonscreenelement {
 			id = <pitch_indicator>
 			<fx_script>
 			params = {player = <player> rgba = <rgba>}
 		}
 	endif
-	RunScriptOnScreenElement id = <vocals_highway_id> vocals_highway_border_flash_spawned params = {rgba = <rgba>}
-	if GotParam \{freeform}
+	runscriptonscreenelement id = <vocals_highway_id> vocals_highway_border_flash_spawned params = {rgba = <rgba>}
+	if gotparam \{freeform}
 		return
 	endif
 	vocals_message {
@@ -1083,74 +1083,74 @@ script vocals_end_phrase
 endscript
 
 script vocals_lightning_alert 
-	VocalsHighway_GetId player = <player>
-	if <vocals_highway_id> :Desc_ResolveAlias name = alias_top_lightning param = parent
-		RunScriptOnScreenElement id = <parent> vocals_lightning_alert_spawned
+	vocalshighway_getid player = <player>
+	if <vocals_highway_id> :desc_resolvealias name = alias_top_lightning param = parent
+		runscriptonscreenelement id = <parent> vocals_lightning_alert_spawned
 	endif
 endscript
 
 script vocals_lightning_alert_spawned 
-	Obj_GetID
+	obj_getid
 	lightning_time = 0.2
-	ResolveScreenElementId id = {<ObjID> child = lightning0} param = streak_lightning_01
-	ResolveScreenElementId id = {<ObjID> child = lightning1} param = streak_lightning_03
-	ResolveScreenElementId id = {<ObjID> child = lightning2} param = streak_lightning_05
-	ResolveScreenElementId id = {<ObjID> child = lightning3} param = streak_lightning_07
+	resolvescreenelementid id = {<objid> child = lightning0} param = streak_lightning_01
+	resolvescreenelementid id = {<objid> child = lightning1} param = streak_lightning_03
+	resolvescreenelementid id = {<objid> child = lightning2} param = streak_lightning_05
+	resolvescreenelementid id = {<objid> child = lightning3} param = streak_lightning_07
 	vocals_lightning_hide
-	SetScreenElementProps id = <streak_lightning_01> alpha = 1 time = <lightning_time>
-	Wait <lightning_time> seconds
-	SetScreenElementProps id = <streak_lightning_01> alpha = 0 time = <lightning_time>
-	SetScreenElementProps id = <streak_lightning_03> alpha = 1 time = <lightning_time>
-	Wait <lightning_time> seconds
-	SetScreenElementProps id = <streak_lightning_03> alpha = 0 time = <lightning_time>
-	SetScreenElementProps id = <streak_lightning_05> alpha = 1 time = <lightning_time>
-	Wait <lightning_time> seconds
-	SetScreenElementProps id = <streak_lightning_05> alpha = 0 time = <lightning_time>
-	SetScreenElementProps id = <streak_lightning_07> alpha = 1 time = <lightning_time>
-	Wait <lightning_time> seconds
-	SetScreenElementProps id = <streak_lightning_07> alpha = 0 time = <lightning_time>
-	Wait <lightning_time> seconds
+	setscreenelementprops id = <streak_lightning_01> alpha = 1 time = <lightning_time>
+	wait <lightning_time> seconds
+	setscreenelementprops id = <streak_lightning_01> alpha = 0 time = <lightning_time>
+	setscreenelementprops id = <streak_lightning_03> alpha = 1 time = <lightning_time>
+	wait <lightning_time> seconds
+	setscreenelementprops id = <streak_lightning_03> alpha = 0 time = <lightning_time>
+	setscreenelementprops id = <streak_lightning_05> alpha = 1 time = <lightning_time>
+	wait <lightning_time> seconds
+	setscreenelementprops id = <streak_lightning_05> alpha = 0 time = <lightning_time>
+	setscreenelementprops id = <streak_lightning_07> alpha = 1 time = <lightning_time>
+	wait <lightning_time> seconds
+	setscreenelementprops id = <streak_lightning_07> alpha = 0 time = <lightning_time>
+	wait <lightning_time> seconds
 endscript
 
 script vocals_lightning_hide 
-	Obj_GetID
-	if GetScreenElementChildren id = <ObjID>
-		GetArraySize <children>
+	obj_getid
+	if getscreenelementchildren id = <objid>
+		getarraysize <children>
 		<i> = 0
 		begin
-		SetScreenElementProps id = (<children> [<i>]) alpha = 0
+		setscreenelementprops id = (<children> [<i>]) alpha = 0
 		<i> = (<i> + 1)
 		repeat <array_size>
 	endif
 endscript
 
 script vocals_star_power_changed 
-	VocalsHighway_GetId player = <player>
+	vocalshighway_getid player = <player>
 	if (<enable> = 1)
-		SetArrayElement GlobalArray ArrayName = vocal_star_power index = <player> newvalue = 3
-		<vocals_highway_id> :SE_SetProps fireball_bg_rgba = $vocal_fireball_star_color
-		vocals_flamer_id :SE_SetProps \{rgba = $vocal_fireball_2_star_color}
+		setarrayelement globalarray arrayname = 0x2b35c891 index = <player> newvalue = 3
+		<vocals_highway_id> :se_setprops fireball_bg_rgba = $0xf54ef1db
+		vocals_flamer_id :se_setprops \{rgba = $0x6b5e5f08}
 	else
-		SetArrayElement GlobalArray ArrayName = vocal_star_power index = <player> newvalue = 0
-		if ($Cheat_VocalFireball = 2)
-			<vocals_highway_id> :SE_SetProps fireball_bg_rgba = $vocal_cheat_fireball_start_color
-			vocals_flamer_id :SE_SetProps \{rgba = $vocal_cheat_fireball_start_color}
+		setarrayelement globalarray arrayname = 0x2b35c891 index = <player> newvalue = 0
+		if ($cheat_vocalfireball = 2)
+			<vocals_highway_id> :se_setprops fireball_bg_rgba = $vocal_cheat_fireball_start_color
+			vocals_flamer_id :se_setprops \{rgba = $vocal_cheat_fireball_start_color}
 		else
-			<vocals_highway_id> :SE_SetProps fireball_bg_rgba = $vocal_fireball_color
-			vocals_flamer_id :SE_SetProps \{rgba = $vocal_fireball_2_color}
+			<vocals_highway_id> :se_setprops fireball_bg_rgba = $vocal_fireball_color
+			vocals_flamer_id :se_setprops \{rgba = $0x26f104c4}
 		endif
 	endif
 endscript
 
 script vocals_highway_border_flash_spawned 
-	SE_SetProps border_rgba = <rgba> time = 0.1
-	SE_WaitProps
-	SE_SetProps \{border_rgba = [
+	se_setprops border_rgba = <rgba> time = 0.1
+	se_waitprops
+	se_setprops \{border_rgba = [
 			255
 			255
 			255
 			255
 		]
 		time = 0.35000002}
-	SE_WaitProps
+	se_waitprops
 endscript

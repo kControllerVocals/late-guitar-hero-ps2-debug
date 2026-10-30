@@ -1,33 +1,33 @@
-SE_Brightness = 5
-currentTODSettings = Default_tod_manager
+se_brightness = 5
+currenttodsettings = default_tod_manager
 
-script TOD_Proxim_Create_LightFX 
-	ScreenFX_ClearFXInstances \{viewport = 0}
-	if InSplitScreenGame
-		ScreenFX_ClearFXInstances \{viewport = 0}
+script tod_proxim_create_lightfx 
+	screenfx_clearfxinstances \{viewport = 0}
+	if insplitscreengame
+		screenfx_clearfxinstances \{viewport = 0}
 	endif
-	TOD_Proxim_Update_LightFX \{viewport = bg_viewport
+	tod_proxim_update_lightfx \{viewport = bg_viewport
 		time = 0}
 endscript
 
-script TOD_Proxim_Update_LightFX 
-	TOD_Proxim_Update_LightFX_Viewport viewport = bg_viewport <...>
+script tod_proxim_update_lightfx 
+	tod_proxim_update_lightfx_viewport viewport = bg_viewport <...>
 endscript
 
 script toggle_default_sceenfx 
-	TOD_Proxim_Update_LightFX_Viewport
+	tod_proxim_update_lightfx_viewport
 endscript
 
-script TOD_Proxim_Update_LightFX_Viewport \{fxParam = $Default_tod_manager
+script tod_proxim_update_lightfx_viewport \{fxparam = $default_tod_manager
 		viewport = bg_viewport
 		time = 1}
 
-	ScreenFX_ClearFXInstances viewport = <viewport>
-	if StructureContains \{Structure = fxParam
+	screenfx_clearfxinstances viewport = <viewport>
+	if structurecontains \{structure = fxparam
 			screen_fx}
 		begin
-		if GetNextArrayElement (<fxParam>.screen_fx)
-			ScreenFX_AddFXInstance {
+		if getnextarrayelement (<fxparam>.screen_fx)
+			screenfx_addfxinstance {
 				viewport = <viewport>
 				<element>
 			}
@@ -38,7 +38,7 @@ script TOD_Proxim_Update_LightFX_Viewport \{fxParam = $Default_tod_manager
 	endif
 endscript
 
-script TOD_Proxim_Reapply_LightFX 
-	TOD_Proxim_Update_LightFX \{fxParam = $currentTODSettings
+script tod_proxim_reapply_lightfx 
+	tod_proxim_update_lightfx \{fxparam = $currenttodsettings
 		time = 0.0}
 endscript

@@ -1,37 +1,37 @@
-L_SING_Randy_Stillborn_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_randy_stillborn_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Randy_Stillborn_075_01
+				slow = [
+					sing_randy_stillborn_075_01
 				]
-				Med = [
-					Sing_Randy_Stillborn_100_01
+				med = [
+					sing_randy_stillborn_100_01
 				]
-				Fast = [
-					SING_Randy_Stillborn_120_01
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Randy_Stillborn_075_01
-				]
-				Med = [
-					Sing_Randy_Stillborn_100_01
-				]
-				Fast = [
-					SING_Randy_Stillborn_120_01
+				fast = [
+					sing_randy_stillborn_120_01
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Randy_Stillborn_075_01
+			normal = {
+				slow = [
+					sing_randy_stillborn_075_01
 				]
-				Med = [
-					Sing_Randy_Stillborn_100_01
+				med = [
+					sing_randy_stillborn_100_01
 				]
-				Fast = [
-					SING_Randy_Stillborn_120_01
+				fast = [
+					sing_randy_stillborn_120_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_randy_stillborn_075_01
+				]
+				med = [
+					sing_randy_stillborn_100_01
+				]
+				fast = [
+					sing_randy_stillborn_120_01
 				]
 			}
 		}

@@ -1,6 +1,6 @@
 
 script ui_create_double_bass_popup 
-	CreateScreenElement \{type = DescInterface
+	createscreenelement \{type = descinterface
 		desc = 'setlist_b_db_pop'
 		parent = root_window
 		id = double_bass_popup
@@ -10,27 +10,27 @@ script ui_create_double_bass_popup
 				ui_setlist_go_back
 			}
 		]}
-	SoundEvent \{event = Enter_Band_Name_Finish}
-	spawnscriptnow \{destroy_songpreview}
+	soundevent \{event = enter_band_name_finish}
+	spawnscriptnow \{0xb20ce9b6}
 	spawnscriptnow \{ui_double_bass_wait_and_focus}
 endscript
 
 script ui_double_bass_wait_and_focus 
-	Wait \{2
+	wait \{2
 		gameframes}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = double_bass_popup}
-	setlist_menu :SE_SetProps \{block_events}
+	setlist_menu :se_setprops \{block_events}
 	clean_up_user_control_helpers
-	add_user_control_helper \{text = qs("CONTINUE")
+	add_user_control_helper \{text = qs(0x182f0173)
 		button = green
 		z = 100000}
 endscript
 
 script ui_destroy_double_bass_popup 
-	if ScreenElementExists \{id = double_bass_popup}
-		DestroyScreenElement \{id = double_bass_popup}
+	if screenelementexists \{id = double_bass_popup}
+		destroyscreenelement \{id = double_bass_popup}
 	endif
-	setlist_menu :SE_SetProps \{unblock_events}
-	spawnscriptnow \{create_songpreview}
+	setlist_menu :se_setprops \{unblock_events}
+	spawnscriptnow \{0x1e464d15}
 endscript

@@ -1,74 +1,74 @@
 cas_all_merged_skeleton_bones = [
-	Bone_ACC_Head_01
-	Bone_ACC_Head_02
-	Bone_ACC_Head_03
-	Bone_ACC_Head_04
-	Bone_ACC_Head_05
-	Bone_ACC_Head_06
-	Bone_ACC_Head_07
-	Bone_ACC_Head_08
-	Bone_ACC_Head_09
-	Bone_ACC_Torso_01
-	Bone_ACC_Torso_02
-	Bone_ACC_Torso_03
-	Bone_ACC_Torso_04
-	Bone_ACC_Legs_01
-	Bone_ACC_Legs_02
-	Bone_ACC_Legs_03
-	Bone_ACC_Legs_04
-	Bone_Guitar_Body
-	Bone_Guitar_Fret_Pos
-	Bone_IK_Hand_Guitar_L
-	Bone_IK_Hand_Guitar_R
-	Bone_Guitar_String_1
-	Bone_Guitar_String_2
-	Bone_Guitar_String_3
-	Bone_Guitar_String_4
-	Bone_Guitar_String_5
-	Bone_Guitar_String_6
-	Bone_Mic_Stand
-	Bone_Mic_Adjust_Height
-	Bone_Mic_Adjust_Angle
-	Bone_Mic_Microphone
-	Bone_IK_Hand_Slave_L
-	Bone_IK_Hand_Slave_R
+	bone_acc_head_01
+	bone_acc_head_02
+	bone_acc_head_03
+	bone_acc_head_04
+	bone_acc_head_05
+	bone_acc_head_06
+	bone_acc_head_07
+	bone_acc_head_08
+	bone_acc_head_09
+	bone_acc_torso_01
+	bone_acc_torso_02
+	bone_acc_torso_03
+	bone_acc_torso_04
+	bone_acc_legs_01
+	bone_acc_legs_02
+	bone_acc_legs_03
+	bone_acc_legs_04
+	bone_guitar_body
+	bone_guitar_fret_pos
+	bone_ik_hand_guitar_l
+	bone_ik_hand_guitar_r
+	bone_guitar_string_1
+	bone_guitar_string_2
+	bone_guitar_string_3
+	bone_guitar_string_4
+	bone_guitar_string_5
+	bone_guitar_string_6
+	bone_mic_stand
+	bone_mic_adjust_height
+	bone_mic_adjust_angle
+	bone_mic_microphone
+	bone_ik_hand_slave_l
+	bone_ik_hand_slave_r
 ]
 cas_all_merged_radgoll_bones = [
-	Bone_ACC_Head_01
-	Bone_ACC_Head_02
-	Bone_ACC_Head_03
-	Bone_ACC_Head_04
-	Bone_ACC_Head_05
-	Bone_ACC_Head_06
-	Bone_ACC_Head_07
-	Bone_ACC_Head_08
-	Bone_ACC_Head_09
-	Bone_ACC_Torso_01
-	Bone_ACC_Torso_02
-	Bone_ACC_Torso_03
-	Bone_ACC_Torso_04
-	Bone_ACC_Legs_01
-	Bone_ACC_Legs_02
-	Bone_ACC_Legs_03
-	Bone_ACC_Legs_04
+	bone_acc_head_01
+	bone_acc_head_02
+	bone_acc_head_03
+	bone_acc_head_04
+	bone_acc_head_05
+	bone_acc_head_06
+	bone_acc_head_07
+	bone_acc_head_08
+	bone_acc_head_09
+	bone_acc_torso_01
+	bone_acc_torso_02
+	bone_acc_torso_03
+	bone_acc_torso_04
+	bone_acc_legs_01
+	bone_acc_legs_02
+	bone_acc_legs_03
+	bone_acc_legs_04
 ]
 cas_drummer_bones = [
-	Bone_Guitar_Body
-	Bone_Guitar_Fret_Pos
-	Bone_IK_Hand_Guitar_L
-	Bone_IK_Hand_Guitar_R
-	Bone_Guitar_String_1
-	Bone_Guitar_String_2
-	Bone_Guitar_String_3
-	Bone_Guitar_String_4
-	Bone_Guitar_String_5
-	Bone_Guitar_String_6
-	Bone_Mic_Stand
-	Bone_Mic_Adjust_Height
-	Bone_Mic_Adjust_Angle
-	Bone_Mic_Microphone
-	Bone_IK_Hand_Slave_L
-	Bone_IK_Hand_Slave_R
+	bone_guitar_body
+	bone_guitar_fret_pos
+	bone_ik_hand_guitar_l
+	bone_ik_hand_guitar_r
+	bone_guitar_string_1
+	bone_guitar_string_2
+	bone_guitar_string_3
+	bone_guitar_string_4
+	bone_guitar_string_5
+	bone_guitar_string_6
+	bone_mic_stand
+	bone_mic_adjust_height
+	bone_mic_adjust_angle
+	bone_mic_microphone
+	bone_ik_hand_slave_l
+	bone_ik_hand_slave_r
 ]
 
 script cas_update_accessory_bones \{do_ragdoll = 1}
@@ -84,27 +84,27 @@ script cas_ragdoll_reset
 endscript
 
 script cas_process_accessory_part 
-	GetActualCASOptionStruct part = <part> desc_id = <desc_id>
-	if GotParam \{acc_bones}
+	getactualcasoptionstruct part = <part> desc_id = <desc_id>
+	if gotparam \{acc_bones}
 
-		MemPushContext \{TopDownHeap}
-		PushAssetContext
-		UnpackRawCASAsset asset = <acc_skeleton> type = skeleton
-		PopAssetContext
-		MemPopContext
-		if GotParam \{acc_skeleton}
-			Skeleton_MergeSkeleton SkeletonName = <acc_skeleton> bones = <acc_bones>
+		mempushcontext \{topdownheap}
+		pushassetcontext
+		unpackrawcasasset asset = <acc_skeleton> type = skeleton
+		popassetcontext
+		mempopcontext
+		if gotparam \{acc_skeleton}
+			skeleton_mergeskeleton skeletonname = <acc_skeleton> bones = <acc_bones>
 		else
 
 		endif
 		if (<do_ragdoll> = 1)
-			MemPushContext \{TopDownHeap}
-			PushAssetContext
-			UnpackRawCASAsset asset = <acc_ragdoll> type = ragdoll
-			PopAssetContext
-			MemPopContext
-			if GotParam \{acc_ragdoll}
-				Ragdoll_MergeRagdoll SkeletonName = <acc_skeleton> ragdollName = <acc_ragdoll> bones = <acc_bones>
+			mempushcontext \{topdownheap}
+			pushassetcontext
+			unpackrawcasasset asset = <acc_ragdoll> type = ragdoll
+			popassetcontext
+			mempopcontext
+			if gotparam \{acc_ragdoll}
+				ragdoll_mergeragdoll skeletonname = <acc_skeleton> ragdollname = <acc_ragdoll> bones = <acc_bones>
 			else
 
 			endif
@@ -115,7 +115,7 @@ endscript
 script cas_merge_in_guitar_ragdoll 
 	return
 
-	Ragdoll_MergeRagdoll SkeletonName = <skeleton> ragdollName = GH_Rocker_Guitar_Ragdoll bones = ($cas_drummer_bones)
+	ragdoll_mergeragdoll skeletonname = <skeleton> ragdollname = gh_rocker_guitar_ragdoll bones = ($cas_drummer_bones)
 endscript
 
 script cas_merge_in_drummer_bones 

@@ -1,10 +1,10 @@
 
 script ui_init_pausemenu 
 	if ($is_network_game)
-		EnableAllInput \{off}
+		enableallinput \{off}
 	endif
-	if ScreenElementExists \{id = celeb_intro_ui_cont}
-		celeb_intro_ui_cont :SE_SetProps \{alpha = 0.0
+	if screenelementexists \{id = celeb_intro_ui_cont}
+		celeb_intro_ui_cont :se_setprops \{alpha = 0.0
 			time = 0.1}
 	endif
 endscript
@@ -21,23 +21,23 @@ script ui_create_pausemenu \{for_practice = 0
 	player = 1
 	i = 1
 	begin
-	GetPlayerInfo <i> controller
+	getplayerinfo <i> controller
 	if (<controller> = <player_device>)
 		player = <i>
 		break
 	endif
 	i = (<i> + 1)
 	repeat ($current_num_players)
-	SoundEvent \{Pause_Menu_SFX}
+	soundevent \{pause_menu_sfx}
 	vocals_mute_all_mics \{mute = true}
 	if ($pause_menu_no_bg = 0)
 		if ($g_in_tutorial = 1)
 			title_text = <tutorial_pause_title>
 		else
-			title_text = qs("PAUSED")
+			title_text = qs(0x662aaaf7)
 		endif
-		if NOT isSinglePlayerGame
-			FormatText TextName = title_text qs("P%p PAUSED") p = <player>
+		if NOT issingleplayergame
+			formattext textname = title_text qs(0x6caaee30) p = <player>
 		endif
 		if ($g_in_tutorial = 1)
 			if (<tutorial_failed> = 0)
@@ -51,13 +51,13 @@ script ui_create_pausemenu \{for_practice = 0
 		endif
 		if ($in_tutorial_mode = 1)
 			if (<tutorial_failed> = 1)
-				title_text = qs("TUTORIAL FAILED")
+				title_text = qs(0xdf397aff)
 			else
-				title_text = qs("TUTORIAL PAUSED")
+				title_text = qs(0xe588a6c9)
 			endif
 		endif
 		ui_pausemenu_create_bg title_text = <title_text> extra_z = <extra_z>
-		if pausemenu_bg :Desc_ResolveAlias \{name = alias_menu}
+		if pausemenu_bg :desc_resolvealias \{name = alias_menu}
 			<parent> = <resolved_id>
 		endif
 		make_generic_barrel_menu {
@@ -80,32 +80,32 @@ script ui_create_pausemenu \{for_practice = 0
 	endif
 	if ($g_in_tutorial = 1)
 		if (<tutorial_failed> = 1)
-			add_generic_barrel_menu_text_item \{text = qs("RETRY")
+			add_generic_barrel_menu_text_item \{text = qs(0x5d8b66a0)
 				pad_choose_script = tutorial_restart
 				text_internal_just = [
 					center
 					center
 				]}
-			add_generic_barrel_menu_text_item \{text = qs("SKIP LESSON")
+			add_generic_barrel_menu_text_item \{text = qs(0xfceafb8f)
 				pad_choose_script = tutorial_skip_lesson
 				text_internal_just = [
 					center
 					center
 				]}
 		else
-			add_generic_barrel_menu_text_item \{text = qs("RESUME")
+			add_generic_barrel_menu_text_item \{text = qs(0x4f636726)
 				pad_choose_script = tutorial_resume
 				text_internal_just = [
 					center
 					center
 				]}
-			add_generic_barrel_menu_text_item \{text = qs("RESTART")
+			add_generic_barrel_menu_text_item \{text = qs(0xb8790f2f)
 				pad_choose_script = tutorial_restart_warning
 				text_internal_just = [
 					center
 					center
 				]}
-			add_generic_barrel_menu_text_item \{text = qs("SKIP LESSON")
+			add_generic_barrel_menu_text_item \{text = qs(0xfceafb8f)
 				pad_choose_script = tutorial_skip_warning
 				text_internal_just = [
 					center
@@ -113,7 +113,7 @@ script ui_create_pausemenu \{for_practice = 0
 				]}
 		endif
 	else
-		add_generic_barrel_menu_text_item \{text = qs("RESUME")
+		add_generic_barrel_menu_text_item \{text = qs(0x4f636726)
 			pad_choose_script = ui_pausemenu_exit
 			text_internal_just = [
 				center
@@ -121,7 +121,7 @@ script ui_create_pausemenu \{for_practice = 0
 			]}
 		if ($is_network_game = 0)
 			if ($end_credits = 0)
-				add_generic_barrel_menu_text_item \{text = qs("RESTART")
+				add_generic_barrel_menu_text_item \{text = qs(0xb8790f2f)
 					choose_state = uistate_pausemenu_restart_warning
 					text_internal_just = [
 						center
@@ -131,11 +131,11 @@ script ui_create_pausemenu \{for_practice = 0
 		endif
 	endif
 	if (<for_practice> = 1 || $game_mode = practice)
-		if NOT PlayerInfoEquals <player> part = Vocals
-			add_generic_barrel_menu_text_item \{text = qs("CHANGE SPEED")
+		if NOT playerinfoequals <player> part = vocals
+			add_generic_barrel_menu_text_item \{text = qs(0xcc2da18b)
 				choose_state = uistate_pausemenu_quit_warning
 				choose_state_data = {
-					option2_text = qs("CHANGE SPEED")
+					option2_text = qs(0xcc2da18b)
 					option2_func = quit_warning_select_quit
 					option2_func_params = {
 						callback = generic_event_back
@@ -149,10 +149,10 @@ script ui_create_pausemenu \{for_practice = 0
 					center
 				]}
 		endif
-		add_generic_barrel_menu_text_item \{text = qs("CHANGE SECTION")
+		add_generic_barrel_menu_text_item \{text = qs(0x68bd3039)
 			choose_state = uistate_pausemenu_quit_warning
 			choose_state_data = {
-				option2_text = qs("CHANGE SECTION")
+				option2_text = qs(0x68bd3039)
 				option2_func = quit_warning_select_quit
 				option2_func_params = {
 					callback = generic_event_back
@@ -166,10 +166,10 @@ script ui_create_pausemenu \{for_practice = 0
 				center
 			]}
 		if ($came_to_practice_from = main_menu)
-			add_generic_barrel_menu_text_item \{text = qs("NEW SONG")
+			add_generic_barrel_menu_text_item \{text = qs(0x3e482764)
 				choose_state = uistate_pausemenu_quit_warning
 				choose_state_data = {
-					option2_text = qs("NEW SONG")
+					option2_text = qs(0x3e482764)
 					option2_func = quit_warning_select_quit
 					option2_func_params = {
 						callback = song_ended_menu_select_new_song
@@ -181,24 +181,24 @@ script ui_create_pausemenu \{for_practice = 0
 				]}
 		endif
 		add_generic_barrel_menu_text_item {
-			text = qs("OPTIONS")
+			text = qs(0x976cf9e7)
 			choose_state = uistate_pause_options
 			choose_state_data = {player_device = <player_device> player = <player>}
 			text_internal_just = [center center]
 		}
 	elseif NOT ($g_in_tutorial = 1)
 		if ($is_network_game = 0)
-			GameMode_GetType
+			gamemode_gettype
 			if ($current_song = jamsession)
 				if NOT ui_event_exists_in_stack \{name = 'jam'}
 					if (<type> = quickplay)
-						if (($num_quickplay_song_list > 1) || ($is_partyplay_mode = 1))
+						if (($num_quickplay_song_list > 1) || ($0xc7e670d7 = 1))
 							add_generic_barrel_menu_text_item \{choose_state = uistate_pausemenu_quit_warning
 								choose_state_data = {
-									skip_song = true
+									0xe0bfc5fc = true
 									failed_song
 								}
-								text = qs("SKIP SONG")
+								text = qs(0xef74f7d2)
 								text_internal_just = [
 									center
 									center
@@ -210,14 +210,14 @@ script ui_create_pausemenu \{for_practice = 0
 				if NOT ($game_mode = p2_pro_faceoff)
 					if ($end_credits = 0)
 						if ui_event_exists_in_stack \{name = 'band_difficulty'}
-							choose_state = UIstate_pausemenu_change_difficulty_warning
+							choose_state = uistate_pausemenu_change_difficulty_warning
 							choose_state_data = {player_device = <player_device> player = <player> band_mode = 1}
 						else
-							choose_state = UIstate_pausemenu_change_difficulty
+							choose_state = uistate_pausemenu_change_difficulty
 							choose_state_data = {player_device = <player_device> player = <player>}
 						endif
 						add_generic_barrel_menu_text_item {
-							text = qs("DIFFICULTY")
+							text = qs(0x9f281c76)
 							text_internal_just = [center center]
 							choose_state = <choose_state>
 							choose_state_data = <choose_state_data>
@@ -225,23 +225,23 @@ script ui_create_pausemenu \{for_practice = 0
 					endif
 				endif
 				if (<type> = quickplay)
-					if (($num_quickplay_song_list > 1) || ($is_partyplay_mode = 1))
+					if (($num_quickplay_song_list > 1) || ($0xc7e670d7 = 1))
 						add_generic_barrel_menu_text_item \{choose_state = uistate_pausemenu_quit_warning
 							choose_state_data = {
-								skip_song = true
+								0xe0bfc5fc = true
 								failed_song
 							}
-							text = qs("SKIP SONG")
+							text = qs(0xef74f7d2)
 							text_internal_just = [
 								center
 								center
 							]}
 					endif
 				endif
-				if game_is_scored
+				if 0xf99301bb
 					if ($current_num_players = 1)
 						if ($end_credits = 0)
-							add_generic_barrel_menu_text_item \{text = qs("PRACTICE")
+							add_generic_barrel_menu_text_item \{text = qs(0x3ea7dec9)
 								choose_state = uistate_practice_warning
 								text_internal_just = [
 									center
@@ -253,7 +253,7 @@ script ui_create_pausemenu \{for_practice = 0
 			endif
 			if ($end_credits = 0)
 				add_generic_barrel_menu_text_item {
-					text = qs("OPTIONS")
+					text = qs(0x976cf9e7)
 					choose_state = uistate_pause_options
 					choose_state_data = {player_device = <player_device> player = <player>}
 					text_internal_just = [center center]
@@ -263,18 +263,18 @@ script ui_create_pausemenu \{for_practice = 0
 	endif
 	quit_script = generic_event_choose no_sound = no_sound
 	quit_script_params = {state = uistate_pausemenu_quit_warning}
-	if ($is_partyplay_mode = 1)
+	if ($0xc7e670d7 = 1)
 		quit_script_params = {
 			state = uistate_pausemenu_quit_warning
 			data = {
 				option2_func = quit_warning_select_quit
 				option2_func_params = {
 					callback = generic_event_back
-					data = {state = UIstate_mainmenu}
+					data = {state = uistate_mainmenu}
 				}
 			}
 		}
-	elseif ($is_freeplay_mode = 1)
+	elseif ($0x9b2cba3f = 1)
 		quit_script_params = {
 			state = uistate_pausemenu_quit_warning
 			data = {
@@ -302,14 +302,14 @@ script ui_create_pausemenu \{for_practice = 0
 	endif
 	if ($end_credits = 0)
 		add_generic_barrel_menu_text_item {
-			text = qs("QUIT")
+			text = qs(0x67d9c56d)
 			pad_choose_script = <quit_script>
 			pad_choose_params = <quit_script_params>
 			text_internal_just = [center center]
 		}
 	endif
 	if ($enable_button_cheats = 1)
-		add_generic_barrel_menu_text_item \{text = qs("\LDebug Menu")
+		add_generic_barrel_menu_text_item \{text = qs(0x49a0d144)
 			choose_state = uistate_debug
 			choose_state_data = {
 				from_gameplay = 1
@@ -323,14 +323,14 @@ script ui_create_pausemenu \{for_practice = 0
 	if ($g_in_tutorial = 1)
 		if (<tutorial_failed> = 0)
 			<event_handlers> = [{pad_start tutorial_resume}]
-			generic_barrel_vmenu :SE_SetProps event_handlers = <event_handlers>
+			generic_barrel_vmenu :se_setprops event_handlers = <event_handlers>
 		else
 			generic_barrel_menu_finish \{no_back_button}
 			return
 		endif
 	endif
 	generic_barrel_menu_finish
-	BroadcastEvent \{type = pause_menu_created}
+	broadcastevent \{type = pause_menu_created}
 	destroy_loading_screen
 endscript
 
@@ -338,36 +338,36 @@ script ui_destroy_pausemenu
 	destroy_generic_barrel_menu
 	generic_ui_destroy
 	ui_pausemenu_destroy_bg
-	if ScreenElementExists \{id = celeb_intro_ui_cont}
-		celeb_intro_ui_cont :SE_SetProps \{alpha = 1.0
+	if screenelementexists \{id = celeb_intro_ui_cont}
+		celeb_intro_ui_cont :se_setprops \{alpha = 1.0
 			time = 0.1}
 	endif
 endscript
 
 script ui_deinit_pausemenu 
 	if ($is_network_game)
-		EnableAllInput
+		enableallinput
 	endif
 endscript
 
 script ui_pausemenu_exit 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	if Is_ui_event_running
+	if is_ui_event_running
 		return
 	endif
 	spawnscriptnow \{unpausegh3
 		params = {
 			from_handler
 		}}
-	Block
+	block
 endscript
 
 script ui_pausemenu_create_bg 
-	CreateScreenElement {
+	createscreenelement {
 		parent = root_window
 		id = pausemenu_bg
-		type = DescInterface
+		type = descinterface
 		desc = 'pause_menu'
 		title_text = <title_text>
 		z_priority = <extra_z>
@@ -377,58 +377,58 @@ script ui_pausemenu_create_bg
 	else
 		get_song_title \{song = $current_song}
 	endif
-	pausemenu_bg :SE_SetProps {song_name_text = <song_title>}
+	pausemenu_bg :se_setprops {song_name_text = <song_title>}
 endscript
 
 script ui_pausemenu_destroy_bg 
-	if ScreenElementExists \{id = pausemenu_bg}
-		pausemenu_bg :Die
+	if screenelementexists \{id = pausemenu_bg}
+		pausemenu_bg :die
 	endif
 endscript
 
 script ui_pausemenu_animate_in 
-	if ScreenElementExists \{id = pausemenu_bg}
-		pausemenu_bg :SE_GetProps \{menu_scale}
+	if screenelementexists \{id = pausemenu_bg}
+		pausemenu_bg :se_getprops \{menu_scale}
 		<org_menu_scale> = <menu_scale>
-		pausemenu_bg :SE_SetProps \{menu_scale = 0}
-		pausemenu_bg :SE_GetProps \{ninjastar_rot_angle}
+		pausemenu_bg :se_setprops \{menu_scale = 0}
+		pausemenu_bg :se_getprops \{ninjastar_rot_angle}
 		<org_ninjastar_rot_angle> = <ninjastar_rot_angle>
-		pausemenu_bg :SE_SetProps \{ninjastar_rot_angle = 0}
-		pausemenu_bg :SE_GetProps \{bottom_pos}
+		pausemenu_bg :se_setprops \{ninjastar_rot_angle = 0}
+		pausemenu_bg :se_getprops \{bottom_pos}
 		<org_bottom_pos> = <bottom_pos>
-		pausemenu_bg :SE_SetProps bottom_pos = (<bottom_pos> + (800.0, 700.0))
-		pausemenu_bg :SE_GetProps \{left_pos}
+		pausemenu_bg :se_setprops bottom_pos = (<bottom_pos> + (800.0, 700.0))
+		pausemenu_bg :se_getprops \{left_pos}
 		<org_left_pos> = <left_pos>
-		pausemenu_bg :SE_SetProps left_pos = (<left_pos> + (-700.0, 800.0))
-		pausemenu_bg :SE_GetProps \{top_pos}
+		pausemenu_bg :se_setprops left_pos = (<left_pos> + (-700.0, 800.0))
+		pausemenu_bg :se_getprops \{top_pos}
 		<org_top_pos> = <top_pos>
-		pausemenu_bg :SE_SetProps top_pos = (<top_pos> + (-800.0, -700.0))
-		pausemenu_bg :SE_GetProps \{right_pos}
+		pausemenu_bg :se_setprops top_pos = (<top_pos> + (-800.0, -700.0))
+		pausemenu_bg :se_getprops \{right_pos}
 		<org_right_pos> = <right_pos>
-		pausemenu_bg :SE_SetProps right_pos = (<right_pos> + (700.0, -800.0))
-		pausemenu_bg :SE_GetProps \{center_scale}
+		pausemenu_bg :se_setprops right_pos = (<right_pos> + (700.0, -800.0))
+		pausemenu_bg :se_getprops \{center_scale}
 		<org_center_scale> = <center_scale>
-		pausemenu_bg :SE_SetProps \{center_scale = 0}
+		pausemenu_bg :se_setprops \{center_scale = 0}
 		<anim_time> = 0.120000005
-		pausemenu_bg :SE_SetProps bottom_pos = <org_bottom_pos> time = <anim_time> motion = linear
-		pausemenu_bg :SE_SetProps left_pos = <org_left_pos> time = <anim_time> motion = linear
-		pausemenu_bg :SE_SetProps top_pos = <org_top_pos> time = <anim_time> motion = linear
-		pausemenu_bg :SE_SetProps right_pos = <org_right_pos> time = <anim_time> motion = linear
-		pausemenu_bg :SE_SetProps center_scale = <org_center_scale> time = <anim_time> motion = linear
-		pausemenu_bg :SE_SetProps menu_scale = <org_menu_scale> time = <anim_time> motion = linear
-		pausemenu_bg :SE_WaitProps
-		pausemenu_bg :SE_SetProps ninjastar_rot_angle = <org_ninjastar_rot_angle> time = 0.05 motion = linear
+		pausemenu_bg :se_setprops bottom_pos = <org_bottom_pos> time = <anim_time> motion = linear
+		pausemenu_bg :se_setprops left_pos = <org_left_pos> time = <anim_time> motion = linear
+		pausemenu_bg :se_setprops top_pos = <org_top_pos> time = <anim_time> motion = linear
+		pausemenu_bg :se_setprops right_pos = <org_right_pos> time = <anim_time> motion = linear
+		pausemenu_bg :se_setprops center_scale = <org_center_scale> time = <anim_time> motion = linear
+		pausemenu_bg :se_setprops menu_scale = <org_menu_scale> time = <anim_time> motion = linear
+		pausemenu_bg :se_waitprops
+		pausemenu_bg :se_setprops ninjastar_rot_angle = <org_ninjastar_rot_angle> time = 0.05 motion = linear
 	endif
 endscript
 
-script EnableAllInput 
+script enableallinput 
 	i = 1
 	begin
-	GetPlayerInfo <i> controller
-	if GotParam \{off}
-		EnableInput controller = <controller> off
+	getplayerinfo <i> controller
+	if gotparam \{off}
+		enableinput controller = <controller> off
 	else
-		EnableInput controller = <controller>
+		enableinput controller = <controller>
 	endif
 	i = (<i> + 1)
 	repeat $current_num_players
@@ -447,8 +447,8 @@ script pause_drop_player
 endscript
 
 script unpause_and_drop_player 
-	OnExitRun \{InputHandlerPermit}
-	InputHandlerForbid
+	onexitrun \{0xf00f29a9}
+	0x79db87d7
 	gameplay_drop_player <...>
 endscript
 
@@ -458,8 +458,8 @@ script pause_end_game
 endscript
 
 script unpause_and_endgame 
-	OnExitRun \{InputHandlerPermit}
-	InputHandlerForbid
+	onexitrun \{0xf00f29a9}
+	0x79db87d7
 	ui_pausemenu_exit
 	gameplay_end_game <...>
 endscript

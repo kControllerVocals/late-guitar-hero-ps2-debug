@@ -1,22 +1,22 @@
-ReskinTree = {
-	type = DegenerateBlend
-	id = RootNode
+reskintree = {
+	type = degenerateblend
+	id = rootnode
 }
-ReskinAnimBranch = {
+reskinanimbranch = {
 	type = param_timer_type
-	id = TimerNode
-	Speed = param_speed
+	id = timernode
+	speed = param_speed
 	start = param_start
-	Anim = param_anim
+	anim = param_anim
 	[
 		{
-			type = TweakBones
-			id = TweakBonesNode
+			type = tweakbones
+			id = tweakbonesnode
 			[
 				{
-					type = Source
-					id = SourceNode
-					Anim = param_anim
+					type = source
+					id = sourcenode
+					anim = param_anim
 				}
 			]
 		}
@@ -25,11 +25,11 @@ ReskinAnimBranch = {
 
 script cas_get_bone_slider_value 
 
-	if NOT GetCASAppearancePart part = <part>
+	if NOT getcasappearancepart part = <part>
 
 	else
-		if GotParam \{bones}
-			if StructureContains Structure = <bones> <group_name>
+		if gotparam \{bones}
+			if structurecontains structure = <bones> <group_name>
 				slider = (<bones>.<group_name>)
 			else
 
@@ -37,15 +37,15 @@ script cas_get_bone_slider_value
 		else
 		endif
 	endif
-	if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 	endif
-	GetArraySize <deform_bones> GlobalArray
+	getarraysize <deform_bones> globalarray
 	i = 0
 	begin
 	deform_info = ($<deform_bones> [<i>])
 	if (<group_name> = (<deform_info>.group_name))
-		if NOT GotParam \{slider}
+		if NOT gotparam \{slider}
 			cas_get_default_slider_value deform_info = <deform_info>
 		endif
 		cas_get_min_bone_slider deform_info = <deform_info>
@@ -60,7 +60,7 @@ script cas_get_bone_slider_value
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	if NOT GotParam \{slider}
+	if NOT gotparam \{slider}
 		slider = 0.0
 	endif
 	return {slider = <slider> min_slider = <min_slider> max_slider = <max_slider>}
@@ -68,75 +68,75 @@ endscript
 
 script cas_set_bone_slider 
 
-	GetCASAppearancePart part = <part>
-	if NOT GotParam \{bones}
+	getcasappearancepart part = <part>
+	if NOT gotparam \{bones}
 		bones = {}
 	endif
-	UpdateStructElement struct = <bones> element = <group_name> value = <slider>
-	SetCASAppearanceBones part = <part> bones = <newstruct>
+	updatestructelement struct = <bones> element = <group_name> value = <slider>
+	setcasappearancebones part = <part> bones = <newstruct>
 endscript
 
 script cas_part_reskin_create_object 
-	if CompositeObjectExists name = <id>
+	if compositeobjectexists name = <id>
 		if ($cas_reskin_preview = none)
 
 		else
 			return
 		endif
 	endif
-	if NOT GotParam \{deform_mesh}
+	if NOT gotparam \{deform_mesh}
 
 	endif
-	if NOT GotParam \{deform_skel}
+	if NOT gotparam \{deform_skel}
 
 	endif
-	ExtendCRC <deform_skel> '_default' out = deform_anim
-	MemPushContext \{TopDownHeap}
-	FormatText checksumname = modelcsum '%s' s = <deform_mesh>
+	extendcrc <deform_skel> '_default' out = deform_anim
+	mempushcontext \{topdownheap}
+	formattext checksumname = modelcsum '%s' s = <deform_mesh>
 	if ($cas_reskin_debug = 1)
-		if GetCurrentCASObject
-			<cas_object> :Obj_GetPosition
+		if getcurrentcasobject
+			<cas_object> :obj_getposition
 		endif
 		pos = (<pos> + (-0.45000002, 0.0, 0.0))
 	endif
-	MemPushContext \{heap_cas}
-	PushAssetContext
-	UnpackRawCASAsset asset = <modelcsum> type = skin
-	PopAssetContext
-	MemPopContext \{heap_cas}
-	CreateCompositeObject {
+	mempushcontext \{heap_cas}
+	pushassetcontext
+	unpackrawcasasset asset = <modelcsum> type = skin
+	popassetcontext
+	mempopcontext \{heap_cas}
+	createcompositeobject {
 		params = {
 			name = <id>
-			SkeletonName = <deform_skel>
-			ModelChecksum = <modelcsum>
+			skeletonname = <deform_skel>
+			modelchecksum = <modelcsum>
 			geomname = <part>
 			pos = <pos>
 			allow_reset
 		}
-		Components = [
-			{Component = skeleton}
-			{Component = Model}
-			{Component = AnimTree}
+		components = [
+			{component = skeleton}
+			{component = model}
+			{component = animtree}
 		]
 	}
-	<id> :Anim_InitTree {
-		Tree = $ReskinTree
-		NodeIdDeclaration = [
-			RootNode
-			TimerNode
-			SourceNode
-			FlipNode
-			TweakBonesNode
+	<id> :anim_inittree {
+		tree = $reskintree
+		nodeiddeclaration = [
+			rootnode
+			timernode
+			sourcenode
+			flipnode
+			tweakbonesnode
 		]
 	}
-	<id> :Anim_Command {
-		target = RootNode
-		command = DegenerateBlend_AddBranch
+	<id> :anim_command {
+		target = rootnode
+		command = degenerateblend_addbranch
 		params = {
-			BlendDuration = 0.0
-			Tree = $ReskinAnimBranch
+			blendduration = 0.0
+			tree = $reskinanimbranch
 			params = {
-				param_timer_type = Cycle
+				param_timer_type = cycle
 				param_anim = <deform_anim>
 				param_speed = 1.0
 			}
@@ -145,49 +145,49 @@ script cas_part_reskin_create_object
 	if ($cas_reskin_debug = 0)
 		<id> :hide
 	endif
-	MemPopContext
+	mempopcontext
 endscript
 
 script cas_apply_bone_group_settings 
 
-	GetArraySize <deform_bones> GlobalArray
+	getarraysize <deform_bones> globalarray
 	num_groups = <array_size>
-	iGroup = 0
+	igroup = 0
 	begin
-	deform_info = ($<deform_bones> [<iGroup>])
+	deform_info = ($<deform_bones> [<igroup>])
 	group_name = (<deform_info>.group_name)
-	if StructureContains Structure = <bone_settings> <group_name>
+	if structurecontains structure = <bone_settings> <group_name>
 		slider = (<bone_settings>.<group_name>)
-		GetArraySize (<deform_info>.bones)
-		iBone = 0
+		getarraysize (<deform_info>.bones)
+		ibone = 0
 		begin
 		if (<array_size> < 1)
 			break
 		endif
 		cas_apply_bone_transforms {
-			bone_info = (<deform_info>.bones [<iBone>])
+			bone_info = (<deform_info>.bones [<ibone>])
 			slider = <slider>
 			deform_info = <deform_info>
 			main_skeleton = <main_skeleton>
 			lowres_rig = <lowres_rig>
 			deform_skel = <deform_skel>
 		}
-		iBone = (<iBone> + 1)
+		ibone = (<ibone> + 1)
 		repeat <array_size>
 	endif
-	iGroup = (<iGroup> + 1)
+	igroup = (<igroup> + 1)
 	repeat <num_groups>
 endscript
 
 script cas_apply_bone_transforms_lowres 
-	if Skeleton_HasBone bone = <bone_name>
+	if skeleton_hasbone bone = <bone_name>
 		<transform_script> transform_data = <transform_data> amount = <amount> bone_name = <bone_name>
 	endif
 endscript
 
 script cas_apply_bone_transforms 
-	if GetBoneMappedValue \{name = scaling}
-		if GotParam \{lowres_rig}
+	if getbonemappedvalue \{name = scaling}
+		if gotparam \{lowres_rig}
 			cas_apply_bone_transforms_lowres {
 				transform_script = cas_bone_scaling
 				transform_data = (<bone_info>.scaling)
@@ -200,8 +200,8 @@ script cas_apply_bone_transforms
 			cas_bone_scaling transform_data = (<bone_info>.scaling) amount = <mapped_value> bone_name = (<bone_info>.bone)
 		endif
 	endif
-	if GetBoneMappedValue \{name = translation}
-		if GotParam \{lowres_rig}
+	if getbonemappedvalue \{name = translation}
+		if gotparam \{lowres_rig}
 			cas_apply_bone_transforms_lowres {
 				transform_script = cas_bone_translation
 				transform_data = (<bone_info>.translation)
@@ -213,8 +213,8 @@ script cas_apply_bone_transforms
 			cas_bone_translation transform_data = (<bone_info>.translation) amount = <mapped_value> bone_name = (<bone_info>.bone)
 		endif
 	endif
-	if GetBoneMappedValue \{name = rotation}
-		if GotParam \{lowres_rig}
+	if getbonemappedvalue \{name = rotation}
+		if gotparam \{lowres_rig}
 			cas_apply_bone_transforms_lowres {
 				transform_script = cas_bone_rotation
 				transform_data = (<bone_info>.rotation)
@@ -229,18 +229,18 @@ script cas_apply_bone_transforms
 endscript
 
 script cas_bone_translation 
-	if StructureContains Structure = <transform_data> bone_space
+	if structurecontains structure = <transform_data> bone_space
 		amount = (<amount>.(1.0, 0.0, 0.0))
 	endif
-	if StructureContains Structure = <transform_data> no_propagate
-		if StructureContains Structure = <transform_data> model_space
+	if structurecontains structure = <transform_data> no_propagate
+		if structurecontains structure = <transform_data> model_space
 			flags = {model_space}
 		endif
-		Obj_AddBoneTranslation bone = <bone_name> <amount> <flags>
+		obj_addbonetranslation bone = <bone_name> <amount> <flags>
 	else
-		Anim_Command {
-			target = TweakBonesNode
-			command = TweakBones_TranslateBone
+		anim_command {
+			target = tweakbonesnode
+			command = tweakbones_translatebone
 			params = {
 				bone = <bone_name>
 				<amount>
@@ -251,25 +251,25 @@ endscript
 
 script cas_bone_scaling 
 
-	if NOT StructureContains Structure = <transform_data> no_propagate
+	if NOT structurecontains structure = <transform_data> no_propagate
 		flags = {propagate}
 	endif
-	if StructureContains Structure = <transform_data> stop_propagate
+	if structurecontains structure = <transform_data> stop_propagate
 		flags = {stop_propagate}
 	endif
-	Obj_AddBoneScale bone = <bone_name> <amount> <flags>
+	obj_addbonescale bone = <bone_name> <amount> <flags>
 endscript
 
 script cas_bone_rotation 
-	if StructureContains Structure = <transform_data> no_propagate
-		if StructureContains Structure = <transform_data> model_space
+	if structurecontains structure = <transform_data> no_propagate
+		if structurecontains structure = <transform_data> model_space
 			flags = {model_space}
 		endif
-		Obj_AddBoneRotation bone = <bone_name> <amount> <flags>
+		obj_addbonerotation bone = <bone_name> <amount> <flags>
 	else
-		Anim_Command {
-			target = TweakBonesNode
-			command = TweakBones_RotateBone
+		anim_command {
+			target = tweakbonesnode
+			command = tweakbones_rotatebone
 			params = {
 				bone = <bone_name>
 				<amount>
@@ -279,18 +279,18 @@ script cas_bone_rotation
 endscript
 
 script cas_reset_bones 
-	Obj_ResetBones
-	if Anim_AnimNodeExists \{id = TweakBonesNode}
-		Anim_Command \{target = TweakBonesNode
-			command = TweakBones_Reset}
+	obj_resetbones
+	if anim_animnodeexists \{id = tweakbonesnode}
+		anim_command \{target = tweakbonesnode
+			command = tweakbones_reset}
 	endif
 endscript
 
 script cas_get_default_slider_value 
 	slider_sum = 0.0
 	sliders_checked = 0.0
-	if StructureContains Structure = <deform_info> bones
-		GetArraySize (<deform_info>.bones)
+	if structurecontains structure = <deform_info> bones
+		getarraysize (<deform_info>.bones)
 		i = 0
 		if (<array_size> > 0)
 			begin
@@ -315,17 +315,17 @@ endscript
 script cas_get_default_slider_value_struct 
 	slider_sum = 0.0
 	sliders_checked = 0.0
-	if StructureContains Structure = <deform_map> rotation
+	if structurecontains structure = <deform_map> rotation
 		cas_get_default_slider_value_entry deform_info = <deform_info> map = (<deform_map>.rotation)
 		slider_sum = (<slider_sum> + <slider>)
 		sliders_checked = (<sliders_checked> + 1.0)
 	endif
-	if StructureContains Structure = <deform_map> translation
+	if structurecontains structure = <deform_map> translation
 		cas_get_default_slider_value_entry deform_info = <deform_info> map = (<deform_map>.translation)
 		slider_sum = (<slider_sum> + <slider>)
 		sliders_checked = (<sliders_checked> + 1.0)
 	endif
-	if StructureContains Structure = <deform_map> scaling
+	if structurecontains structure = <deform_map> scaling
 		cas_get_default_slider_value_entry deform_info = <deform_info> map = (<deform_map>.scaling)
 		slider_sum = (<slider_sum> + <slider>)
 		sliders_checked = (<sliders_checked> + 1.0)
@@ -338,42 +338,42 @@ endscript
 
 script cas_get_default_slider_value_entry 
 	cas_get_slider_linearmap_values map = <map> deform_info = <deform_info>
-	if IsVector <from_bone>
-		LinearMap result = x from = <min_slider> to = <max_slider> basedOn = 0.0 lowerBound = (<from_bone>.(1.0, 0.0, 0.0)) upperBound = (<to_bone>.(1.0, 0.0, 0.0))
-		LinearMap result = y from = <min_slider> to = <max_slider> basedOn = 0.0 lowerBound = (<from_bone>.(0.0, 1.0, 0.0)) upperBound = (<to_bone>.(0.0, 1.0, 0.0))
-		LinearMap result = z from = <min_slider> to = <max_slider> basedOn = 0.0 lowerBound = (<from_bone>.(0.0, 0.0, 1.0)) upperBound = (<to_bone>.(0.0, 0.0, 1.0))
+	if isvector <from_bone>
+		linearmap result = x from = <min_slider> to = <max_slider> basedon = 0.0 lowerbound = (<from_bone>.(1.0, 0.0, 0.0)) upperbound = (<to_bone>.(1.0, 0.0, 0.0))
+		linearmap result = y from = <min_slider> to = <max_slider> basedon = 0.0 lowerbound = (<from_bone>.(0.0, 1.0, 0.0)) upperbound = (<to_bone>.(0.0, 1.0, 0.0))
+		linearmap result = z from = <min_slider> to = <max_slider> basedon = 0.0 lowerbound = (<from_bone>.(0.0, 0.0, 1.0)) upperbound = (<to_bone>.(0.0, 0.0, 1.0))
 		return slider = ((<x> + <y> + <z>) / 3.0)
 	else
-		LinearMap result = slider from = <min_slider> to = <max_slider> basedOn = 0.0 lowerBound = <from_bone> upperBound = <to_bone>
+		linearmap result = slider from = <min_slider> to = <max_slider> basedon = 0.0 lowerbound = <from_bone> upperbound = <to_bone>
 		return slider = <slider>
 	endif
 endscript
 
 script cas_get_slider_linearmap_values 
 
-	if NOT StructureContains Structure = <map> to
+	if NOT structurecontains structure = <map> to
 
 		return \{from_bone = 0.0
 			to_bone = 0.0
 			min_slider = 0.0
 			max_slider = 1.0}
 	endif
-	if StructureContains Structure = <map> from
+	if structurecontains structure = <map> from
 		from_bone = (<map>.from)
 	else
-		if IsVector (<map>.to)
+		if isvector (<map>.to)
 			from_bone = (0.0, 0.0, 0.0)
 		else
 			from_bone = 0
 		endif
 	endif
 	to_bone = (<map>.to)
-	if StructureContains Structure = <map> min
+	if structurecontains structure = <map> min
 		min_slider = (<map>.min)
 	else
 		cas_get_min_bone_slider deform_info = <deform_info>
 	endif
-	if StructureContains Structure = <map> max
+	if structurecontains structure = <map> max
 		max_slider = (<map>.max)
 	else
 		cas_get_max_bone_slider deform_info = <deform_info>
@@ -382,7 +382,7 @@ script cas_get_slider_linearmap_values
 endscript
 
 script cas_get_min_bone_slider 
-	if StructureContains Structure = <deform_info> min
+	if structurecontains structure = <deform_info> min
 		return min_slider = (<deform_info>.min)
 	else
 		return \{min_slider = 0.0}
@@ -390,7 +390,7 @@ script cas_get_min_bone_slider
 endscript
 
 script cas_get_max_bone_slider 
-	if StructureContains Structure = <deform_info> max
+	if structurecontains structure = <deform_info> max
 		return max_slider = (<deform_info>.max)
 	else
 		return \{max_slider = 1.0}
@@ -398,37 +398,37 @@ script cas_get_max_bone_slider
 endscript
 
 script cas_part_reskin 
-	if NOT GotParam \{bone_settings}
+	if NOT gotparam \{bone_settings}
 		bone_settings = {}
 	endif
 	cas_part_reskin_create_object id = <reskin_object> part = <part> pos = (0.0, 0.0, 0.0) deform_mesh = <deform_mesh> deform_skel = <deform_skel>
 	<reskin_object> :cas_reset_bones
-	if GotParam \{bone_settings}
+	if gotparam \{bone_settings}
 		<reskin_object> :cas_apply_bone_group_settings bone_settings = <bone_settings> deform_bones = <deform_bones>
 	endif
-	if GotParam \{additional_bone_transforms}
+	if gotparam \{additional_bone_transforms}
 
 		<reskin_object> :cas_apply_additional_bone_transforms additional_bone_transforms = <additional_bone_transforms>
 	endif
-	<reskin_object> :Anim_UpdatePose
+	<reskin_object> :anim_updatepose
 	return \{true}
 endscript
 
 script cas_main_skel_scale 
-	if NOT GotParam \{bone_settings}
+	if NOT gotparam \{bone_settings}
 		bone_settings = {}
 	endif
-	if GotParam \{bone_settings}
+	if gotparam \{bone_settings}
 		cas_apply_bone_group_settings bone_settings = <bone_settings> deform_bones = <deform_bones> main_skeleton = 1
 	endif
-	if GotParam \{additional_bone_transforms}
+	if gotparam \{additional_bone_transforms}
 
 		cas_apply_additional_bone_transforms additional_bone_transforms = <additional_bone_transforms> main_skeleton = 1
 	endif
 endscript
 
 script cas_apply_additional_bone_transforms 
-	GetArraySize <additional_bone_transforms>
+	getarraysize <additional_bone_transforms>
 	i = 0
 	if (<array_size> > 0)
 		begin
@@ -447,175 +447,175 @@ script cas_apply_additional_bone_transforms
 endscript
 
 script cas_lowres_rig_reskin 
-	if GotParam \{bone_settings}
+	if gotparam \{bone_settings}
 		cas_apply_bone_group_settings bone_settings = <bone_settings> deform_bones = <deform_bones> deform_skel = <deform_skel> lowres_rig = 1
 	endif
-	if GotParam \{additional_bone_transforms}
+	if gotparam \{additional_bone_transforms}
 		cas_apply_additional_bone_transforms additional_bone_transforms = <additional_bone_transforms> deform_skel = <deform_skel> lowres_rig = 1
 	endif
-	Anim_UpdatePose
+	anim_updatepose
 	return \{true}
 endscript
 
 script cas_apply_bone_settings 
 
 
-	if NOT GotParam \{deform_bones}
-		if NOT GetActualCASOptionStruct part = <part> desc_id = <desc_id>
+	if NOT gotparam \{deform_bones}
+		if NOT getactualcasoptionstruct part = <part> desc_id = <desc_id>
 
 		endif
 	endif
-	GetArraySize <deform_bones> GlobalArray
+	getarraysize <deform_bones> globalarray
 	num_groups = <array_size>
 	deform_array = (<deform_bones>)
 
 
-	iGroup = 0
+	igroup = 0
 	begin
 
-	group_info = (<deform_array> [<iGroup>])
-	group_name = (<group_info>.group_name)
-	if StructureContains Structure = <bone_settings> <group_name>
+	0x1d2c95d8 = (<deform_array> [<igroup>])
+	group_name = (<0x1d2c95d8>.group_name)
+	if structurecontains structure = <bone_settings> <group_name>
 		slider = (<bone_settings>.<group_name>)
-		GetArraySize (<group_info>.bones)
+		getarraysize (<0x1d2c95d8>.bones)
 		if ((<array_size>) > 0)
-			iBone = 0
+			ibone = 0
 			begin
-			bone_info = (<group_info>.bones [<iBone>])
+			bone_info = (<0x1d2c95d8>.bones [<ibone>])
 			bone_name = (<bone_info>.bone)
-			if StructureContains Structure = <bone_info> scaling
-				cas_get_bone_mapped_value {
+			if structurecontains structure = <bone_info> scaling
+				0x3a5400d5 {
 					map = (<bone_info>.scaling)
 					slider = <slider>
-					deform_info = <group_info>
+					deform_info = <0x1d2c95d8>
 				}
 				flags = {}
-				if NOT StructureContains Structure = (<bone_info>.scaling) no_propagate
+				if NOT structurecontains structure = (<bone_info>.scaling) no_propagate
 					flags = {propagate}
 				endif
-				if StructureContains Structure = (<bone_info>.scaling) propagate_reverse
+				if structurecontains structure = (<bone_info>.scaling) propagate_reverse
 					flags = {propagate_reverse}
 				endif
-				if StructureContains Structure = (<bone_info>.scaling) stop_propagate
+				if structurecontains structure = (<bone_info>.scaling) stop_propagate
 					flags = {<flags> stop_propagate}
 				endif
-				Obj_AddBoneScale bone = <bone_name> <mapped_value> <flags>
+				obj_addbonescale bone = <bone_name> <mapped_value> <flags>
 			endif
-			if StructureContains Structure = <bone_info> translation
-				cas_get_bone_mapped_value {
+			if structurecontains structure = <bone_info> translation
+				0x3a5400d5 {
 					map = (<bone_info>.translation)
 					slider = <slider>
-					deform_info = <group_info>
+					deform_info = <0x1d2c95d8>
 				}
-				if StructureContains Structure = (<bone_info>.translation) no_propagate
+				if structurecontains structure = (<bone_info>.translation) no_propagate
 					flags = {}
-					if StructureContains Structure = (<bone_info>.translation) model_space
+					if structurecontains structure = (<bone_info>.translation) model_space
 						flags = {model_space}
 					endif
-					Obj_AddBoneTranslation bone = <bone_name> <mapped_value> <flags>
+					obj_addbonetranslation bone = <bone_name> <mapped_value> <flags>
 				else
 					flags = {propagate}
-					if StructureContains Structure = <transform_data> model_space
+					if structurecontains structure = <transform_data> model_space
 						flags = {propagate model_space}
 					endif
-					Obj_AddBoneTranslation bone = <bone_name> <amount> <flags>
+					obj_addbonetranslation bone = <bone_name> <amount> <flags>
 				endif
 			endif
-			if StructureContains Structure = <bone_info> rotation
-				cas_get_bone_mapped_value {
+			if structurecontains structure = <bone_info> rotation
+				0x3a5400d5 {
 					map = (<bone_info>.rotation)
 					slider = <slider>
-					deform_info = <group_info>
+					deform_info = <0x1d2c95d8>
 				}
-				if StructureContains Structure = (<bone_info>.rotation) no_propagate
+				if structurecontains structure = (<bone_info>.rotation) no_propagate
 					flags = {}
-					if StructureContains Structure = (<bone_info>.rotation) model_space
+					if structurecontains structure = (<bone_info>.rotation) model_space
 						flags = {model_space}
 					endif
-					Obj_AddBoneRotation bone = <bone_name> <mapped_value> <flags>
+					obj_addbonerotation bone = <bone_name> <mapped_value> <flags>
 				else
-					if Anim_AnimNodeExists \{id = TweakBonesNode}
-						Anim_Command {
-							target = TweakBonesNode
-							command = TweakBones_RotateBone
+					if anim_animnodeexists \{id = tweakbonesnode}
+						anim_command {
+							target = tweakbonesnode
+							command = tweakbones_rotatebone
 							params = {
 								bone = <bone_name>
 								<mapped_value>
 							}
 						}
 					else
-						Obj_GetID
+						obj_getid
 
 					endif
 				endif
 			endif
-			iBone = (<iBone> + 1)
+			ibone = (<ibone> + 1)
 			repeat <array_size>
 		endif
 	endif
-	iGroup = (<iGroup> + 1)
+	igroup = (<igroup> + 1)
 	repeat <num_groups>
-	if GotParam \{additional_bone_transforms}
-		GetArraySize <additional_bone_transforms>
-		iAddBone = 0
+	if gotparam \{additional_bone_transforms}
+		getarraysize <additional_bone_transforms>
+		0x936d20fd = 0
 		begin
-		bone_info = (<additional_bone_transforms> [<iAddBone>])
+		bone_info = (<additional_bone_transforms> [<0x936d20fd>])
 		bone_name = (<bone_info>.bone)
-		if StructureContains Structure = <bone_info> scaling
+		if structurecontains structure = <bone_info> scaling
 			mapped_value = (<bone_info>.scaling.value)
 			flags = {}
-			if NOT StructureContains Structure = (<bone_info>.scaling) no_propagate
+			if NOT structurecontains structure = (<bone_info>.scaling) no_propagate
 				flags = {propagate}
 			endif
-			if StructureContains Structure = (<bone_info>.scaling) propagate_reverse
+			if structurecontains structure = (<bone_info>.scaling) propagate_reverse
 				flags = {propagate_reverse}
 			endif
-			if StructureContains Structure = (<bone_info>.scaling) stop_propagate
+			if structurecontains structure = (<bone_info>.scaling) stop_propagate
 				flags = {<flags> stop_propagate}
 			endif
-			Obj_AddBoneScale bone = <bone_name> <mapped_value> <flags>
+			obj_addbonescale bone = <bone_name> <mapped_value> <flags>
 		endif
-		if StructureContains Structure = <bone_info> translation
+		if structurecontains structure = <bone_info> translation
 			mapped_value = (<bone_info>.translation.value)
-			if StructureContains Structure = (<bone_info>.translation) no_propagate
+			if structurecontains structure = (<bone_info>.translation) no_propagate
 				flags = {}
-				if StructureContains Structure = (<bone_info>.translation) model_space
+				if structurecontains structure = (<bone_info>.translation) model_space
 					flags = {model_space}
 				endif
-				Obj_AddBoneTranslation bone = <bone_name> <mapped_value> <flags>
+				obj_addbonetranslation bone = <bone_name> <mapped_value> <flags>
 			else
 				flags = {propagate}
-				if StructureContains Structure = <transform_data> model_space
+				if structurecontains structure = <transform_data> model_space
 					flags = {propagate model_space}
 				endif
-				Obj_AddBoneTranslation bone = <bone_name> <amount> <flags>
+				obj_addbonetranslation bone = <bone_name> <amount> <flags>
 			endif
 		endif
-		if StructureContains Structure = <bone_info> rotation
+		if structurecontains structure = <bone_info> rotation
 			mapped_value = (<bone_info>.rotation.value)
-			if StructureContains Structure = (<bone_info>.rotation) no_propagate
+			if structurecontains structure = (<bone_info>.rotation) no_propagate
 				flags = {}
-				if StructureContains Structure = (<bone_info>.rotation) model_space
+				if structurecontains structure = (<bone_info>.rotation) model_space
 					flags = {model_space}
 				endif
-				Obj_AddBoneRotation bone = <bone_name> <mapped_value> <flags>
+				obj_addbonerotation bone = <bone_name> <mapped_value> <flags>
 			else
-				if Anim_AnimNodeExists \{id = TweakBonesNode}
-					Anim_Command {
-						target = TweakBonesNode
-						command = TweakBones_RotateBone
+				if anim_animnodeexists \{id = tweakbonesnode}
+					anim_command {
+						target = tweakbonesnode
+						command = tweakbones_rotatebone
 						params = {
 							bone = <bone_name>
 							<mapped_value>
 						}
 					}
 				else
-					Obj_GetID
+					obj_getid
 
 				endif
 			endif
 		endif
-		iAddBone = (<iAddBone> + 1)
+		0x936d20fd = (<0x936d20fd> + 1)
 		repeat <array_size>
 	endif
 endscript

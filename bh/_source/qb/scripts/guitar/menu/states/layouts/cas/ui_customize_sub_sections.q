@@ -1,68 +1,68 @@
-CAS_Temp_Parts = [
+cas_temp_parts = [
 ]
 
 script ui_create_customize_character_sub_sections 
-	draw_gc_logo = false
+	0x9029b767 = false
 	switch (<part>)
-		case CAS_Torso_Art
-		icon = BodyArt_Chest
+		case cas_torso_art
+		icon = bodyart_chest
 		cam_name = 'customize_tat_torso'
-		sections = CAS_Body_Art_Sections
+		sections = cas_body_art_sections
 		scroll_thumb_new_offset = 100
-		case CAS_Right_Arm_Art
-		icon = BodyArt_RightArm
+		case cas_right_arm_art
+		icon = bodyart_rightarm
 		cam_name = 'customize_tat_right_arm'
-		sections = CAS_Body_Art_Sections
+		sections = cas_body_art_sections
 		scroll_thumb_new_offset = 100
-		case CAS_Left_Arm_Art
-		icon = BodyArt_LeftArm
+		case cas_left_arm_art
+		icon = bodyart_leftarm
 		cam_name = 'customize_tat_left_arm'
-		sections = CAS_Body_Art_Sections
+		sections = cas_body_art_sections
 		scroll_thumb_new_offset = 100
-		case CAS_Drum_Detail
+		case cas_drum_detail
 		icon = icon_cadrm_skin
 		cam_name = 'cad_select_skin'
-		sections = CAS_Drum_Skin_Sections
-		inclusion_part = CAS_Drums
-		if GetCurrentCASObject
-			<cas_object> :Anim_Command target = moment_blend command = PartialSwitch_SetState params = {on BlendDuration = 0.0}
-			<cas_object> :Anim_Command target = moment_blend_inner command = PartialSwitch_SetState params = {off BlendDuration = 0.0}
+		sections = cas_drum_skin_sections
+		inclusion_part = cas_drums
+		if getcurrentcasobject
+			<cas_object> :anim_command target = moment_blend command = partialswitch_setstate params = {on blendduration = 0.0}
+			<cas_object> :anim_command target = moment_blend_inner command = partialswitch_setstate params = {off blendduration = 0.0}
 		endif
-		draw_gc_logo = true
-		case CAS_Drum_Finish
+		0x9029b767 = true
+		case cas_drum_finish
 		icon = icon_cadrm_shell
 		cam_name = 'cad_select_shell'
-		sections = CAS_Drum_Shell_Sections
-		inclusion_part = CAS_Drums
-		if GetCurrentCASObject
-			<cas_object> :Anim_Command target = moment_blend command = PartialSwitch_SetState params = {on BlendDuration = 0.0}
-			<cas_object> :Anim_Command target = moment_blend_inner command = PartialSwitch_SetState params = {off BlendDuration = 0.0}
+		sections = cas_drum_shell_sections
+		inclusion_part = cas_drums
+		if getcurrentcasobject
+			<cas_object> :anim_command target = moment_blend command = partialswitch_setstate params = {on blendduration = 0.0}
+			<cas_object> :anim_command target = moment_blend_inner command = partialswitch_setstate params = {off blendduration = 0.0}
 		endif
-		draw_gc_logo = true
+		0x9029b767 = true
 	endswitch
 	make_generic_menu {
 		vmenu_id = create_customize_character_body_art_vmenu
 		title = <text>
 		num_icons = 2
 		show_history
-		cai_bg = <cai_bg>
+		0xc1dc518f = <0xc1dc518f>
 	}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
 	setup_cas_menu_handlers vmenu_id = create_customize_character_body_art_vmenu camera_list = <camera_list> zoom_camera = <zoom_camera> no_rotate = <no_rotate> no_zoom = <no_zoom> pull_back_distance = <pull_back_distance>
-	GetArraySize ($<sections>)
+	getarraysize ($<sections>)
 	i = 0
 	begin
 	show_set = 1
-	if GotParam \{inclusion_part}
+	if gotparam \{inclusion_part}
 		ui_customize_character_sub_sections_get_included_count part = <part> parts_list = ($<sections> [<i>].parts) inclusion_part = <inclusion_part>
 		if (<included_count> < 2)
 			show_set = 0
@@ -78,77 +78,77 @@ script ui_create_customize_character_sub_sections
 	i = (<i> + 1)
 	repeat <array_size>
 	menu_finish \{car_helper_text}
-	if (<draw_gc_logo> = true)
-		draw_guitar_center_logo
+	if (<0x9029b767> = true)
+		0x59249cc9
 	endif
-	if GotParam \{stance}
-		GetCurrentCASObject
-		if (Stance_Select_Drum = <stance>)
-			<cas_object> :Anim_Command target = moment_blend command = PartialSwitch_SetState params = {on BlendDuration = 0.0}
-			<cas_object> :Anim_Command target = moment_blend_inner command = PartialSwitch_SetState params = {off BlendDuration = 0.0}
-			debug_Printf \{qs(0xf57f774b)}
+	if gotparam \{stance}
+		getcurrentcasobject
+		if (stance_select_drum = <stance>)
+			<cas_object> :anim_command target = moment_blend command = partialswitch_setstate params = {on blendduration = 0.0}
+			<cas_object> :anim_command target = moment_blend_inner command = partialswitch_setstate params = {off blendduration = 0.0}
+			0x8dbdaee4 \{qs(0xf57f774b)}
 		endif
 	endif
-	LaunchEvent type = focus target = create_customize_character_body_art_vmenu data = {child_index = <selected_index>}
+	launchevent type = focus target = create_customize_character_body_art_vmenu data = {child_index = <selected_index>}
 endscript
 
 script ui_destroy_customize_character_sub_sections 
-	GetCurrentCASObject
-	if GotParam \{return_stance}
-		BandManager_ChangeStance name = <cas_object> stance = <return_stance> no_wait
+	getcurrentcasobject
+	if gotparam \{return_stance}
+		bandmanager_changestance name = <cas_object> stance = <return_stance> no_wait
 	else
-		BandManager_ChangeStance name = <cas_object> stance = stance_frontend no_wait
+		bandmanager_changestance name = <cas_object> stance = stance_frontend no_wait
 	endif
 	destroy_generic_menu
 endscript
 
 script ui_select_object_subset_and_continue 
-	change \{CAS_Temp_Parts = [
+	change \{cas_temp_parts = [
 		]}
-	GetArraySize (<parts_list>)
+	getarraysize (<parts_list>)
 	i = 0
 	begin
 	temp_desc = (<parts_list> [<i>])
-	GetActualCASOptionStruct part = <part> desc_id = <temp_desc>
+	getactualcasoptionstruct part = <part> desc_id = <temp_desc>
 	temp_struct = {desc_id = <temp_desc> frontend_desc = <frontend_desc>}
-	if GotParam \{materials}
+	if gotparam \{materials}
 		temp_struct = {<temp_struct> materials = <materials>}
 	endif
-	if GotParam \{hidden}
+	if gotparam \{hidden}
 		temp_struct = {<temp_struct> hidden}
 	endif
-	if GotParam \{inclusion_part}
+	if gotparam \{inclusion_part}
 		get_inclusion_list body_part = <inclusion_part>
 		if cas_in_inclusion_list inclusion = <inclusion> part_name = <part> part_desc_id = <temp_desc>
-			AddArrayElement array = ($CAS_Temp_Parts) element = <temp_struct>
-			change CAS_Temp_Parts = <array>
+			addarrayelement array = ($cas_temp_parts) element = <temp_struct>
+			change cas_temp_parts = <array>
 		endif
 	else
-		AddArrayElement array = ($CAS_Temp_Parts) element = <temp_struct>
-		change CAS_Temp_Parts = <array>
+		addarrayelement array = ($cas_temp_parts) element = <temp_struct>
+		change cas_temp_parts = <array>
 	endif
 	i = (<i> + 1)
 	repeat (<array_size>)
-	ui_event event = menu_change data = {state = UIstate_popout_select_part text = <text> cam_name = <cam_name> part = CAS_Temp_Parts surrogate_part = <part> num_icons = 2 is_popup icon_offset = (0.0, 120.0) list_offset = (0.0, 155.0) color_wheel = ($clothing_colorwheel) stance = <stance> return_stance = <stance> camera_list = <camera_list> zoom_camera = <zoom_camera> no_rotate = <no_rotate> no_zoom = <no_zoom> pull_back_distance = <pull_back_distance> play_current_anim = <play_current_anim>}
+	ui_event event = menu_change data = {state = uistate_popout_select_part text = <text> cam_name = <cam_name> part = cas_temp_parts surrogate_part = <part> num_icons = 2 is_popup icon_offset = (0.0, 120.0) list_offset = (0.0, 155.0) color_wheel = ($clothing_colorwheel) stance = <stance> return_stance = <stance> camera_list = <camera_list> zoom_camera = <zoom_camera> no_rotate = <no_rotate> no_zoom = <no_zoom> pull_back_distance = <pull_back_distance> play_current_anim = <play_current_anim>}
 endscript
 
 script ui_init_customize_character_sub_sections 
-	if GotParam \{additional_init_script}
+	if gotparam \{additional_init_script}
 		<additional_init_script>
 	endif
-	if GotParam \{stance}
-		GetCurrentCASObject
-		BandManager_ChangeStance name = <cas_object> stance = <stance> no_wait
-		if (Stance_Select_Drum = <stance>)
-			<cas_object> :Anim_Command target = moment_blend command = PartialSwitch_SetState params = {on BlendDuration = 0.0}
-			<cas_object> :Anim_Command target = moment_blend_inner command = PartialSwitch_SetState params = {off BlendDuration = 0.0}
+	if gotparam \{stance}
+		getcurrentcasobject
+		bandmanager_changestance name = <cas_object> stance = <stance> no_wait
+		if (stance_select_drum = <stance>)
+			<cas_object> :anim_command target = moment_blend command = partialswitch_setstate params = {on blendduration = 0.0}
+			<cas_object> :anim_command target = moment_blend_inner command = partialswitch_setstate params = {off blendduration = 0.0}
 		endif
 	endif
-	if GotParam \{cam_name}
+	if gotparam \{cam_name}
 		spawnscriptnow ui_customize_character_sub_sections_animate_cam_in params = {<...>}
 	endif
-	if NOT GotParam \{surrogate_part}
-		ResolveBodySpecificPartInAppearance part = <part>
+	if NOT gotparam \{surrogate_part}
+		resolvebodyspecificpartinappearance part = <part>
 		surrogate_part = <part>
 	endif
 	if NOT load_part_desc_pak part_type = <surrogate_part>
@@ -157,16 +157,16 @@ script ui_init_customize_character_sub_sections
 endscript
 
 script ui_deinit_customize_character_sub_sections 
-	if GotParam \{additional_deinit_script}
+	if gotparam \{additional_deinit_script}
 		<additional_deinit_script>
 	endif
-	GetCurrentCASObject
-	if GotParam \{return_stance}
-		BandManager_ChangeStance name = <cas_object> stance = <return_stance> no_wait
+	getcurrentcasobject
+	if gotparam \{return_stance}
+		bandmanager_changestance name = <cas_object> stance = <return_stance> no_wait
 	else
-		BandManager_ChangeStance name = <cas_object> stance = stance_frontend no_wait
+		bandmanager_changestance name = <cas_object> stance = stance_frontend no_wait
 	endif
-	if GotParam \{unload_desc_pak_type}
+	if gotparam \{unload_desc_pak_type}
 		unload_part_desc_pak part_type = <unload_desc_pak_type>
 	endif
 endscript
@@ -176,7 +176,7 @@ script ui_return_customize_character_sub_sections
 endscript
 
 script ui_customize_character_sub_sections_get_included_count 
-	GetArraySize (<parts_list>)
+	getarraysize (<parts_list>)
 	included_count = 0
 	i = 0
 	begin

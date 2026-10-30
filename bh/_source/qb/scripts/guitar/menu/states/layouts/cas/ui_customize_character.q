@@ -1,26 +1,26 @@
 debug_allow_modify_preset_characters = 0
-has_entered_CAR_before = 1
+has_entered_car_before = 1
 
 script ui_create_customize_character 
-	spawnscriptnow \{change_cas_to_guitar}
-	ui_state_enable_enable_mini_loading_screen \{false}
+	spawnscriptnow \{0x419cda3a}
+	0x31956c10 \{false}
 	change \{rich_presence_context = presence_rockstar_creator}
 	set_cas_loading_setup \{setup = single}
-	get_frontend_venue_player_start_checksums
-	cas_set_object_node_pos player = ($cas_current_player) node = <Drum_Start>
-	KillSkaterCamAnim \{all}
+	0xce0505af
+	cas_set_object_node_pos player = ($cas_current_player) node = <0xb07e72b1>
+	killskatercamanim \{all}
 	make_generic_menu \{vmenu_id = create_customize_character_vmenu
 		pad_back_script = customize_character_save_prompt
 		title = qs(0x131c0c64)
 		show_history
 		num_icons = 0}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -42,51 +42,51 @@ script ui_create_customize_character
 		focusable_flags = {not_focusable}
 	endif
 	if is_from_singleplayer_hub
-		add_generic_menu_text_item \{text = qs("READY TO ROCK")
+		add_generic_menu_text_item \{text = qs(0x7863365c)
 			pad_choose_script = return_to_singleplayer_hub}
 	endif
 	add_generic_menu_text_item {
 		text = ($cas_current_fullname)
-		choose_state = UIstate_cas_text_entry
+		choose_state = uistate_cas_text_entry
 		choose_state_data = {choose_script = name_entry_choose_script text = ($cas_current_fullname) num_icons = 1 cam_name = 'customize_character'}
 		<focusable_flags>
-		text_case = Original
+		text_case = original
 	}
-	if ((GotParam custom_musician) || ($debug_allow_modify_preset_characters = 1))
-		add_generic_menu_text_item \{text = qs("HEAD")
-			choose_state = UIstate_customize_character_head}
-		add_generic_menu_text_item \{text = qs("BODY")
-			choose_state = UIstate_customize_character_body}
+	if ((gotparam custom_musician) || ($debug_allow_modify_preset_characters = 1))
+		add_generic_menu_text_item \{text = qs(0x888dd748)
+			choose_state = uistate_customize_character_head}
+		add_generic_menu_text_item \{text = qs(0x706474c8)
+			choose_state = uistate_customize_character_body}
 		add_generic_menu_text_item {
-			text = qs("HAIR")
-			choose_state = UIstate_popout_select_part
+			text = qs(0xca300866)
+			choose_state = uistate_popout_select_part
 			choose_state_data = {
-				text = qs("SELECT HAIR STYLE")
+				text = qs(0x8476cb4e)
 				cam_name = 'customize_character_hair'
 				camera_list = ['customize_character_hair' 'customize_character_hair_R' 'customize_character_hair_B' 'customize_character_hair_L']
 				zoom_camera = 'customize_character_Zoom'
-				part = CAS_Hair
+				part = cas_hair
 				num_icons = 1
 				color_wheel = ($hair_colorwheel)
 				hist_tex = icon_hair
 				is_popup
-				stance = Stance_Select_Hair
+				stance = stance_select_hair
 			}
 		}
 	endif
-	if GotParam \{ghrocker}
-		get_ghrocker_outfit_count part = CAS_Full_Body ghrocker = ($cas_current_profile)
-		if (<outfit_count> > 1)
+	if gotparam \{ghrocker}
+		0x84d8355f part = cas_full_body ghrocker = ($cas_current_profile)
+		if (<0xe8e2af61> > 1)
 			add_generic_menu_text_item {
 				icon = icon_outfit
-				text = qs("OUTFIT")
-				choose_state = UIstate_popout_select_part
+				text = qs(0xa946c7b7)
+				choose_state = uistate_popout_select_part
 				choose_state_data = {
-					text = qs("SELECT OUTFIT")
+					text = qs(0x9f86d873)
 					cam_name = 'customize_character_outfit'
 					camera_list = ['customize_character_outfit' 'customize_character_R' 'customize_character_B' 'customize_character_L']
 					zoom_camera = 'customize_character_Zoom'
-					part = CAS_Full_Body
+					part = cas_full_body
 					num_icons = 1
 					hist_tex = icon_outfit
 					is_popup
@@ -95,47 +95,47 @@ script ui_create_customize_character
 			}
 		endif
 	else
-		add_generic_menu_text_item \{text = qs("OUTFIT")
-			choose_state = UIstate_customize_character_outfit}
+		add_generic_menu_text_item \{text = qs(0xa946c7b7)
+			choose_state = uistate_customize_character_outfit}
 	endif
-	add_generic_menu_text_item \{text = qs("INSTRUMENT")
-		choose_state = UIstate_customize_character_instrument}
+	add_generic_menu_text_item \{text = qs(0x8694014b)
+		choose_state = uistate_customize_character_instrument}
 	menu_finish \{car_helper_text}
 	if is_from_singleplayer_hub
-		LaunchEvent \{type = focus
+		launchevent \{type = focus
 			target = create_customize_character_vmenu
 			data = {
 				child_index = 0
 			}}
 	else
-		LaunchEvent type = focus target = create_customize_character_vmenu data = {child_index = <selected_index>}
+		launchevent type = focus target = create_customize_character_vmenu data = {child_index = <selected_index>}
 	endif
-	if (($has_entered_CAR_before) = 0)
-		generic_event_choose \{state = UIstate_helper_dialogue
+	if (($has_entered_car_before) = 0)
+		generic_event_choose \{state = uistate_helper_dialogue
 			data = {
 				is_popup
 			}}
-		change \{has_entered_CAR_before = 1}
+		change \{has_entered_car_before = 1}
 	endif
-	spawnscriptnow \{change_cas_to_guitar}
+	spawnscriptnow \{0x419cda3a}
 endscript
 
-script change_cas_to_guitar 
-	push_loading_screen \{mini}
+script 0x419cda3a 
+	0xd3f993c8 \{0x9fe16047}
 	cas_queue_wait
 	change \{cas_current_instrument = guitar}
-	RebuildCurrentCASModel \{instrument = guitar}
+	rebuildcurrentcasmodel \{instrument = guitar}
 	cas_queue_wait
-	GetCurrentCASObject
-	if GotParam \{cas_object}
-		BandManager_ChangeStance name = <cas_object> stance = stance_frontend no_wait
+	getcurrentcasobject
+	if gotparam \{cas_object}
+		bandmanager_changestance name = <cas_object> stance = stance_frontend no_wait
 	endif
-	pop_loading_screen
+	0xe5a305c6
 endscript
 
 script ui_return_customize_character 
 	menu_finish \{car_helper_text}
-	if GotParam \{text}
+	if gotparam \{text}
 		change cas_current_fullname = <text>
 	endif
 endscript
@@ -147,12 +147,12 @@ endscript
 script ui_init_customize_character 
 	get_musician_profile_struct_by_id id = ($cas_current_profile) savegame = ($cas_current_savegame)
 	change cas_current_fullname = (<profile_struct>.fullname)
-	load_part_desc_pak_list part_list = ($part_def_clusters.ui_customize_character)
-	GetArraySize <parts_loaded>
+	0xbe6e9296 part_list = ($0x44007ccb.0x288ddb10)
+	getarraysize <0x63cedf49>
 	if (<array_size> > 0)
-		ui_event_add_params part_unload_list = <parts_loaded>
+		ui_event_add_params 0x9ae842e9 = <0x63cedf49>
 	endif
-	edit_graphic_load_data_from_global
+	0x9db2b00d
 endscript
 
 script ui_deinit_customize_character 
@@ -172,8 +172,8 @@ script ui_deinit_customize_character
 		change \{cas_current_savegame = -1}
 		change \{cas_current_profile = none}
 	endif
-	if GotParam \{part_unload_list}
-		unload_part_desc_pak_list part_list = <part_unload_list>
+	if gotparam \{0x9ae842e9}
+		0x9219fac2 part_list = <0x9ae842e9>
 	endif
 endscript
 
@@ -187,10 +187,10 @@ script ui_return
 endscript
 
 script customize_character_save_prompt 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = create_customize_character_vmenu}
 	cas_queue_wait
-	ui_state_enable_enable_mini_loading_screen \{true}
+	0x31956c10 \{true}
 	get_musician_profile_struct_by_id id = ($cas_current_profile) savegame = ($cas_current_savegame)
 	struct1 = (<profile_struct>.appearance)
 	struct2 = ($cas_current_appearance)
@@ -198,10 +198,10 @@ script customize_character_save_prompt
 	if (($cas_editing_new_character) = true)
 		made_changes = 1
 	endif
-	if NOT CompareStructs struct1 = <struct1> struct2 = <struct2>
+	if NOT comparestructs struct1 = <struct1> struct2 = <struct2>
 		made_changes = 1
 	endif
-	debug_Printf qs(0x776f4948) n = (<profile_struct>.fullname) m = ($cas_current_fullname)
+	0x8dbdaee4 qs(0x776f4948) n = (<profile_struct>.fullname) m = ($cas_current_fullname)
 	if ((<profile_struct>.fullname) != ($cas_current_fullname))
 		made_changes = 1
 	endif
@@ -210,7 +210,7 @@ script customize_character_save_prompt
 	else
 		ui_event \{event = menu_change
 			data = {
-				state = UIstate_save_changes_dialogue
+				state = uistate_save_changes_dialogue
 				is_popup
 			}}
 	endif
@@ -229,20 +229,20 @@ script is_from_singleplayer_hub
 endscript
 
 script return_to_singleplayer_hub 
-	ui_state_enable_enable_mini_loading_screen \{true}
+	0x31956c10 \{true}
 	get_musician_profile_struct_by_id id = ($cas_current_profile) savegame = ($cas_current_savegame)
 	change \{first_character_hub_enter = 0}
 	struct1 = (<profile_struct>.appearance)
 	struct2 = ($cas_current_appearance)
-	if (($cas_editing_new_character) = false && CompareStructs struct1 = <struct1> struct2 = <struct2>)
+	if (($cas_editing_new_character) = false && comparestructs struct1 = <struct1> struct2 = <struct2>)
 		exit_skip_save \{readytorock = 1}
 	else
 		if NOT is_autosave_on savegame = ($cas_current_savegame)
 			customize_character_save_prompt
 		else
 			cas_get_player_status
-			if isXenon
-				if CheckForSignIn local controller_index = ($<player_status>.controller)
+			if isxenon
+				if checkforsignin local controller_index = ($<player_status>.controller)
 					exit_save_changes \{not_replace
 						readytorock = 1}
 				else
@@ -251,25 +251,25 @@ script return_to_singleplayer_hub
 			else
 				exit_save_changes \{not_replace
 					readytorock = 1
-					need_loading_screen}
+					0x6d221ff1}
 			endif
 		endif
 	endif
 endscript
 
-script get_ghrocker_outfit_count 
-	GetArraySize ($<part>)
-	outfit_count = 0
+script 0x84d8355f 
+	getarraysize ($<part>)
+	0xe8e2af61 = 0
 	i = 0
 	begin
 	if cas_item_is_visible part = <part> part_index = <i>
 		if is_part_unlocked part = <part> desc_id = ((($<part>) [<i>]).desc_id) savegame = ($cas_current_savegame)
 			if ghrocker_body_matches matcheswith = <ghrocker> part = <part> desc_id = ((($<part>) [<i>]).desc_id)
-				outfit_count = (<outfit_count> + 1)
+				0xe8e2af61 = (<0xe8e2af61> + 1)
 			endif
 		endif
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	return outfit_count = <outfit_count>
+	return 0xe8e2af61 = <0xe8e2af61>
 endscript

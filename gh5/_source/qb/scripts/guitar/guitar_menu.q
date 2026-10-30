@@ -429,7 +429,7 @@ g_menu_colors = {
 		210
 		250
 	]
-	Orange = [
+	orange = [
 		255
 		128
 		0
@@ -464,8 +464,8 @@ menu_unfocus_color = [
 ]
 
 script set_focus_color 
-	if GotParam \{color}
-		if StructureContains Structure = ($g_menu_colors) <color>
+	if gotparam \{color}
+		if structurecontains structure = ($g_menu_colors) <color>
 			if NOT ($menu_focus_color = (($g_menu_colors).<color>))
 				change menu_focus_color = (($g_menu_colors).<color>)
 			endif
@@ -474,7 +474,7 @@ script set_focus_color
 
 		endif
 	endif
-	if GotParam \{rgba}
+	if gotparam \{rgba}
 		if NOT ($menu_focus_color = <rgba>)
 			change menu_focus_color = <rgba>
 
@@ -488,8 +488,8 @@ script set_focus_color
 endscript
 
 script set_unfocus_color 
-	if GotParam \{color}
-		if StructureContains Structure = ($g_menu_colors) <color>
+	if gotparam \{color}
+		if structurecontains structure = ($g_menu_colors) <color>
 			if NOT ($menu_unfocus_color = (($g_menu_colors).<color>))
 				change menu_unfocus_color = (($g_menu_colors).<color>)
 			endif
@@ -498,7 +498,7 @@ script set_unfocus_color
 
 		endif
 	endif
-	if GotParam \{rgba}
+	if gotparam \{rgba}
 		if NOT ($menu_unfocus_color = <rgba>)
 			change menu_unfocus_color = <rgba>
 
@@ -517,44 +517,44 @@ script reset_focus_colors
 endscript
 
 script retail_menu_focus 
-	if GotParam \{id}
-		if ScreenElementExists id = <id>
-			<id> :GetSingleTag old_font
-			if NOT GotParam \{old_font}
-				<id> :SE_GetProps
-				<id> :SetTags old_font = <font>
+	if gotparam \{id}
+		if screenelementexists id = <id>
+			<id> :getsingletag old_font
+			if NOT gotparam \{old_font}
+				<id> :se_getprops
+				<id> :settags old_font = <font>
 			endif
-			<id> :SE_SetProps rgba = ($menu_focus_color)
+			<id> :se_setprops rgba = ($menu_focus_color)
 		endif
 	else
-		GetSingleTag \{old_font}
-		if NOT GotParam \{old_font}
-			SE_GetProps
-			SetTags old_font = <font>
+		getsingletag \{old_font}
+		if NOT gotparam \{old_font}
+			se_getprops
+			settags old_font = <font>
 		endif
-		SetProps rgba = ($menu_focus_color)
+		setprops rgba = ($menu_focus_color)
 	endif
 endscript
 
 script retail_menu_unfocus 
-	if GotParam \{id}
-		if ScreenElementExists id = <id>
-			<id> :GetSingleTag old_font
-			if NOT GotParam \{old_font}
-				<id> :SE_GetProps
-				<id> :SetTags old_font = <font>
-				<id> :GetSingleTag old_font
+	if gotparam \{id}
+		if screenelementexists id = <id>
+			<id> :getsingletag old_font
+			if NOT gotparam \{old_font}
+				<id> :se_getprops
+				<id> :settags old_font = <font>
+				<id> :getsingletag old_font
 			endif
-			<id> :SE_SetProps rgba = ($menu_unfocus_color) font = <old_font> material = null
+			<id> :se_setprops rgba = ($menu_unfocus_color) font = <old_font> material = null
 		endif
 	else
-		GetSingleTag \{old_font}
-		if NOT GotParam \{old_font}
-			SE_GetProps
-			SetTags old_font = <font>
-			GetSingleTag \{old_font}
+		getsingletag \{old_font}
+		if NOT gotparam \{old_font}
+			se_getprops
+			settags old_font = <font>
+			getsingletag \{old_font}
 		endif
-		SetProps rgba = ($menu_unfocus_color) font = <old_font> material = null
+		setprops rgba = ($menu_unfocus_color) font = <old_font> material = null
 	endif
 endscript
 
@@ -581,16 +581,16 @@ script new_menu {
 		scrollid = current_scrollmenu
 		vmenuid = current_menu
 	}
-	if ScreenElementExists id = <scrollid>
+	if screenelementexists id = <scrollid>
 
 		return
 	endif
-	if ScreenElementExists id = <vmenuid>
+	if screenelementexists id = <vmenuid>
 
 		return
 	endif
-	CreateScreenElement {
-		type = VScrollingMenu
+	createscreenelement {
+		type = vscrollingmenu
 		parent = <menu_parent>
 		id = <scrollid>
 		just = <just>
@@ -601,9 +601,9 @@ script new_menu {
 	if (<use_backdrop> = 1)
 		create_generic_backdrop
 	endif
-	if GotParam \{name}
-		CreateScreenElement {
-			type = TextElement
+	if gotparam \{name}
+		createscreenelement {
+			type = textelement
 			parent = <scrollid>
 			font = fontgrid_text_a1
 			pos = (0.0, -45.0)
@@ -616,8 +616,8 @@ script new_menu {
 			shadow_rgba [0 0 0 255]
 		}
 	endif
-	CreateScreenElement {
-		type = VMenu
+	createscreenelement {
+		type = vmenu
 		parent = <scrollid>
 		id = <vmenuid>
 		pos = (0.0, 0.0)
@@ -629,42 +629,42 @@ script new_menu {
 		spacing_between = <spacing>
 		position_children = <position_children>
 	}
-	if GotParam \{no_wrap}
-		SetScreenElementProps id = <vmenuid> allow_wrap = false
+	if gotparam \{no_wrap}
+		setscreenelementprops id = <vmenuid> allow_wrap = false
 	endif
-	if GotParam \{text_left}
-		SetScreenElementProps id = <vmenuid> internal_just = [left top]
+	if gotparam \{text_left}
+		setscreenelementprops id = <vmenuid> internal_just = [left top]
 	endif
-	if GotParam \{text_right}
-		SetScreenElementProps id = <vmenuid> internal_just = [right top]
+	if gotparam \{text_right}
+		setscreenelementprops id = <vmenuid> internal_just = [right top]
 	endif
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 		get_all_exclusive_devices
 	endif
-	if NOT GotParam \{exclusive_device}
+	if NOT gotparam \{exclusive_device}
 		exclusive_device = ($primary_controller)
 	endif
 	if NOT (<exclusive_device> = none)
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <scrollid>
 			exclusive_device = <exclusive_device>
 		}
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <vmenuid>
 			exclusive_device = <exclusive_device>
 		}
 	endif
-	if GotParam \{tierlist}
+	if gotparam \{tierlist}
 		tier = 0
 		begin
 		<tier> = (<tier> + 1)
 		setlist_prefix = (<tierlist>.prefix)
-		FormatText checksumname = tiername '%ptier%i' p = <setlist_prefix> i = (<tier>)
-		FormatText checksumname = tier_checksum 'tier%s' s = (<tier>)
+		formattext checksumname = tiername '%ptier%i' p = <setlist_prefix> i = (<tier>)
+		formattext checksumname = tier_checksum 'tier%s' s = (<tier>)
 		<unlocked> = 1
 		if ((<unlocked> = 1) || ($is_network_game))
-			GetArraySize (<tierlist>.<tier_checksum>.songs)
+			getarraysize (<tierlist>.<tier_checksum>.songs)
 			song_count = 0
 			if (<array_size> > 0)
 				begin
@@ -673,10 +673,10 @@ script new_menu {
 				if ($current_tab = tab_bonus)
 					<for_bonus> = 1
 				endif
-				if IsSongAvailable song_checksum = <song_checksum> song = (<tierlist>.<tier_checksum>.songs [<song_count>]) for_bonus = <for_bonus>
+				if issongavailable song_checksum = <song_checksum> song = (<tierlist>.<tier_checksum>.songs [<song_count>]) for_bonus = <for_bonus>
 					get_song_title song = (<tierlist>.<tier_checksum>.songs [<song_count>])
-					CreateScreenElement {
-						type = TextElement
+					createscreenelement {
+						type = textelement
 						parent = <vmenuid>
 						font = <font>
 						scale = <font_size>
@@ -707,9 +707,9 @@ script new_menu {
 endscript
 
 script destroy_menu \{menu_id = current_scrollmenu}
-	if GotParam \{menu_id}
-		if ScreenElementExists id = <menu_id>
-			DestroyScreenElement id = <menu_id>
+	if gotparam \{menu_id}
+		if screenelementexists id = <menu_id>
+			destroyscreenelement id = <menu_id>
 		endif
 		destroy_generic_backdrop
 	endif
@@ -718,18 +718,18 @@ endscript
 script add_new_menu_item \{parent = current_menu
 		focus_script = retail_menu_focus
 		unfocus_script = retail_menu_unfocus}
-	if GlobalExists \{name = massive_build}
+	if globalexists \{name = massive_build}
 		if NOT ($massive_build = 0)
-			if GotParam \{massive_secret_item}
+			if gotparam \{massive_secret_item}
 				return
 			endif
 		endif
 	endif
-	if NOT ScreenElementExists id = <parent>
+	if NOT screenelementexists id = <parent>
 
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = <parent>
 		local_id = text
 		font = fontgrid_title_a1
@@ -744,61 +744,61 @@ script add_new_menu_item \{parent = current_menu
 	return {id = <id>}
 endscript
 
-script guitar_menu_highlighter \{zPri = 50}
-	if GotParam \{text_id}
-		GetScreenElementDims id = <text_id>
-		hilite_dims = (<width> * (1.0, 0.0) + <Height> * (0.0, 0.7) + (20.0, -1.0))
-		bookend_dims = (<Height> * (0.5, 0.5))
-		hilite_pos = ((<hlInfoList> [<hlIndex>]).posH + (-2.0, 2.0))
-		SetScreenElementProps {
-			id = <wthlID>
+script guitar_menu_highlighter \{zpri = 50}
+	if gotparam \{text_id}
+		getscreenelementdims id = <text_id>
+		hilite_dims = (<width> * (1.0, 0.0) + <height> * (0.0, 0.7) + (20.0, -1.0))
+		bookend_dims = (<height> * (0.5, 0.5))
+		hilite_pos = ((<hlinfolist> [<hlindex>]).posh + (-2.0, 2.0))
+		setscreenelementprops {
+			id = <wthlid>
 			pos = <hilite_pos>
 			dims = <hilite_dims>
-			z_priority = <zPri>
+			z_priority = <zpri>
 		}
-		SetScreenElementProps {
-			id = <be1ID>
-			pos = (<hilite_pos> - <bookend_dims>.(1.0, 0.0) * (0.6, 0.0) + <Height> * (0.0, 0.1))
+		setscreenelementprops {
+			id = <be1id>
+			pos = (<hilite_pos> - <bookend_dims>.(1.0, 0.0) * (0.6, 0.0) + <height> * (0.0, 0.1))
 			dims = <bookend_dims>
-			z_priority = <zPri>
+			z_priority = <zpri>
 		}
-		SetScreenElementProps {
-			id = <be2ID>
-			pos = (<hilite_pos> + (<hilite_dims>.(1.0, 0.0) * (1.0, 0.0)) + <Height> * (0.0, 0.1) - (<bookend_dims>.(1.0, 0.0) * (0.1, 0.0)))
+		setscreenelementprops {
+			id = <be2id>
+			pos = (<hilite_pos> + (<hilite_dims>.(1.0, 0.0) * (1.0, 0.0)) + <height> * (0.0, 0.1) - (<bookend_dims>.(1.0, 0.0) * (0.1, 0.0)))
 			dims = <bookend_dims>
-			z_priority = <zPri>
+			z_priority = <zpri>
 			flip_h
 		}
 	else
-		SetScreenElementProps {
-			id = <be1ID>
-			pos = ((<hlInfoList> [<hlIndex>]).posL)
-			dims = ((<hlInfoList> [<hlIndex>]).beDims)
-			z_priority = <zPri>
+		setscreenelementprops {
+			id = <be1id>
+			pos = ((<hlinfolist> [<hlindex>]).posl)
+			dims = ((<hlinfolist> [<hlindex>]).bedims)
+			z_priority = <zpri>
 		}
-		SetScreenElementProps {
-			id = <be2ID>
-			pos = ((<hlInfoList> [<hlIndex>]).posR)
-			dims = ((<hlInfoList> [<hlIndex>]).beDims)
-			z_priority = <zPri>
+		setscreenelementprops {
+			id = <be2id>
+			pos = ((<hlinfolist> [<hlindex>]).posr)
+			dims = ((<hlinfolist> [<hlindex>]).bedims)
+			z_priority = <zpri>
 		}
-		SetScreenElementProps {
-			id = <wthlID>
-			pos = ((<hlInfoList> [<hlIndex>]).posH)
-			dims = ((<hlInfoList> [<hlIndex>]).hdims)
-			z_priority = <zPri>
+		setscreenelementprops {
+			id = <wthlid>
+			pos = ((<hlinfolist> [<hlindex>]).posh)
+			dims = ((<hlinfolist> [<hlindex>]).hdims)
+			z_priority = <zpri>
 		}
 	endif
 endscript
 
 script glow_menu_element \{time = 1}
-	if NOT ScreenElementExists id = <id>
+	if NOT screenelementexists id = <id>
 		return
 	endif
-	Wait RandomInteger (0.0, 2.0) seconds
+	wait RandomInteger (0.0, 2.0) seconds
 	begin
-	<id> :LegacyDoMorph alpha = 1 time = <time> motion = smooth
-	<id> :LegacyDoMorph alpha = 0 time = <time> motion = smooth
+	<id> :legacydomorph alpha = 1 time = <time> motion = smooth
+	<id> :legacydomorph alpha = 0 time = <time> motion = smooth
 	repeat
 endscript
 
@@ -810,14 +810,14 @@ script destroy_play_song_menu
 	hide_highway
 endscript
 
-script isSinglePlayerGame 
-	GameMode_GetProperty \{prop = singleplayer}
+script issingleplayergame 
+	gamemode_getproperty \{prop = singleplayer}
 	return <singleplayer>
 endscript
 
 script options_change_vocals_highway_view 
 
-	ResetScoreUpdateReady
+	resetscoreupdateready
 	vocals_get_highway_view player = <player>
 	<vocals_highway_view> = <highway_view>
 	if (<vocals_highway_view> = static)
@@ -831,21 +831,21 @@ script options_change_vocals_highway_view
 	vocals_set_highway_view player = <i> view = <vocals_highway_view> controller = <device_num>
 	i = (<i> + 1)
 	repeat 4
-	if IsObjectScript
-		Obj_GetID
+	if isobjectscript
+		obj_getid
 		if (<vocals_highway_view> = static)
-			SoundEvent \{event = checkbox_sfx}
-			<ObjID> :SE_SetProps check_alpha = 0
-			<ObjID> :SE_SetProps cross_alpha = 1
+			soundevent \{event = checkbox_sfx}
+			<objid> :se_setprops check_alpha = 0
+			<objid> :se_setprops cross_alpha = 1
 		else
-			SoundEvent \{event = CheckBox_Check_SFX}
-			<ObjID> :SE_SetProps check_alpha = 1
-			<ObjID> :SE_SetProps cross_alpha = 0
+			soundevent \{event = checkbox_check_sfx}
+			<objid> :se_setprops check_alpha = 1
+			<objid> :se_setprops cross_alpha = 0
 		endif
 	endif
-	if NOT GotParam \{no_restart}
-		set_loading_screen \{full}
-		GH3_SFX_fail_song_stop_sounds
+	if NOT gotparam \{no_restart}
+		0xe9384b7a \{full}
+		gh3_sfx_fail_song_stop_sounds
 		if ($game_mode = practice)
 			spawnscriptnow \{practice_restart_song}
 		else
@@ -858,71 +858,71 @@ endscript
 script options_change_vocals_sp_clap \{x_tex = data_settings_xmark
 		check_tex = data_settings_checkmark}
 
-	GetPlayerInfo player = <player> vocals_sp_clap
+	getplayerinfo player = <player> vocals_sp_clap
 	if (<vocals_sp_clap> = 1)
 		<vocals_sp_clap> = 0
 	else
 		<vocals_sp_clap> = 1
 	endif
 	vocals_set_star_power_clap player = <player> clap = <vocals_sp_clap> controller = <device_num>
-	if IsObjectScript
-		Obj_GetID
-		if GotParam \{checkbox_child}
+	if isobjectscript
+		obj_getid
+		if gotparam \{checkbox_child}
 			child = <checkbox_child>
 		else
 			child = check
 		endif
 		if (<vocals_sp_clap> = 0)
-			SoundEvent \{event = checkbox_sfx}
-			<ObjID> :SE_SetProps check_alpha = 0
-			<ObjID> :SE_SetProps cross_alpha = 1
+			soundevent \{event = checkbox_sfx}
+			<objid> :se_setprops check_alpha = 0
+			<objid> :se_setprops cross_alpha = 1
 		else
-			SoundEvent \{event = CheckBox_Check_SFX}
-			<ObjID> :SE_SetProps check_alpha = 1
-			<ObjID> :SE_SetProps cross_alpha = 0
+			soundevent \{event = checkbox_check_sfx}
+			<objid> :se_setprops check_alpha = 1
+			<objid> :se_setprops cross_alpha = 0
 		endif
 	endif
 endscript
 
 script options_change_tilt_star_power 
-	GetPlayerInfo <player> use_tilt_for_starpower
-	GetPlayerInfo <player> checksum
+	getplayerinfo <player> use_tilt_for_starpower
+	getplayerinfo <player> checksum
 	get_savegame_from_player_status player_status = <checksum>
 	if (<use_tilt_for_starpower> = 1)
-		SoundEvent \{event = checkbox_sfx}
-		SetPlayerInfo <player> use_tilt_for_starpower = 0
-		SetGlobalTags savegame = <savegame> user_options params = {use_tilt_for_starpower_save = 0}
-		<new_texture> = Options_Controller_X
+		soundevent \{event = checkbox_sfx}
+		setplayerinfo <player> use_tilt_for_starpower = 0
+		setglobaltags savegame = <savegame> user_options params = {use_tilt_for_starpower_save = 0}
+		<new_texture> = options_controller_x
 	else
-		SoundEvent \{event = CheckBox_Check_SFX}
-		SetPlayerInfo <player> use_tilt_for_starpower = 1
-		SetGlobalTags savegame = <savegame> user_options params = {use_tilt_for_starpower_save = 1}
-		<new_texture> = Options_Controller_Check
+		soundevent \{event = checkbox_check_sfx}
+		setplayerinfo <player> use_tilt_for_starpower = 1
+		setglobaltags savegame = <savegame> user_options params = {use_tilt_for_starpower_save = 1}
+		<new_texture> = options_controller_check
 	endif
-	if IsObjectScript
-		Obj_GetID
-		if ResolveScreenElementId id = {<ObjID> child = tilt_check}
-			<resolved_id> :SetProps texture = <new_texture>
+	if isobjectscript
+		obj_getid
+		if resolvescreenelementid id = {<objid> child = tilt_check}
+			<resolved_id> :setprops texture = <new_texture>
 		else
 			if (<use_tilt_for_starpower> = 1)
 				<use_tilt_for_starpower> = 0
-				SoundEvent \{event = checkbox_sfx}
-				if GotParam \{popup}
-					<ObjID> :SE_SetProps check_alpha = 0
-					<ObjID> :SE_SetProps cross_alpha = 1
+				soundevent \{event = checkbox_sfx}
+				if gotparam \{popup}
+					<objid> :se_setprops check_alpha = 0
+					<objid> :se_setprops cross_alpha = 1
 				else
-					<ObjID> :SE_SetProps check_alpha = 0
-					<ObjID> :SE_SetProps cross_alpha = 1
+					<objid> :se_setprops check_alpha = 0
+					<objid> :se_setprops cross_alpha = 1
 				endif
 			else
 				<use_tilt_for_starpower> = 1
-				SoundEvent \{event = CheckBox_Check_SFX}
-				if GotParam \{popup}
-					<ObjID> :SE_SetProps check_alpha = 1
-					<ObjID> :SE_SetProps cross_alpha = 0
+				soundevent \{event = checkbox_check_sfx}
+				if gotparam \{popup}
+					<objid> :se_setprops check_alpha = 1
+					<objid> :se_setprops cross_alpha = 0
 				else
-					<ObjID> :SE_SetProps check_alpha = 1
-					<ObjID> :SE_SetProps cross_alpha = 0
+					<objid> :se_setprops check_alpha = 1
+					<objid> :se_setprops cross_alpha = 0
 				endif
 			endif
 		endif
@@ -930,44 +930,44 @@ script options_change_tilt_star_power
 endscript
 
 script options_change_touch_strip_option 
-	GetPlayerInfo <player> enable_touch_strip
-	GetPlayerInfo <player> checksum
+	getplayerinfo <player> enable_touch_strip
+	getplayerinfo <player> checksum
 	get_savegame_from_player_status player_status = <checksum>
 	if (<enable_touch_strip> = 1)
-		SoundEvent \{event = checkbox_sfx}
-		SetPlayerInfo <player> enable_touch_strip = 0
-		SetGlobalTags savegame = <savegame> user_options params = {enable_touch_strip_save = 0}
-		<new_texture> = Options_Controller_X
+		soundevent \{event = checkbox_sfx}
+		setplayerinfo <player> enable_touch_strip = 0
+		setglobaltags savegame = <savegame> user_options params = {enable_touch_strip_save = 0}
+		<new_texture> = options_controller_x
 	else
-		SoundEvent \{event = CheckBox_Check_SFX}
-		SetPlayerInfo <player> enable_touch_strip = 1
-		SetGlobalTags savegame = <savegame> user_options params = {enable_touch_strip_save = 1}
-		<new_texture> = Options_Controller_Check
+		soundevent \{event = checkbox_check_sfx}
+		setplayerinfo <player> enable_touch_strip = 1
+		setglobaltags savegame = <savegame> user_options params = {enable_touch_strip_save = 1}
+		<new_texture> = options_controller_check
 	endif
-	if IsObjectScript
-		Obj_GetID
-		if ResolveScreenElementId id = {<ObjID> child = touch_check}
-			<resolved_id> :SetProps texture = <new_texture>
+	if isobjectscript
+		obj_getid
+		if resolvescreenelementid id = {<objid> child = touch_check}
+			<resolved_id> :setprops texture = <new_texture>
 		else
 			if (<enable_touch_strip> = 1)
 				<enable_touch_strip> = 0
-				SoundEvent \{event = checkbox_sfx}
-				if GotParam \{popup}
-					<ObjID> :SE_SetProps check_alpha = 0
-					<ObjID> :SE_SetProps cross_alpha = 1
+				soundevent \{event = checkbox_sfx}
+				if gotparam \{popup}
+					<objid> :se_setprops check_alpha = 0
+					<objid> :se_setprops cross_alpha = 1
 				else
-					<ObjID> :SE_SetProps check_alpha = 0
-					<ObjID> :SE_SetProps cross_alpha = 1
+					<objid> :se_setprops check_alpha = 0
+					<objid> :se_setprops cross_alpha = 1
 				endif
 			else
 				<enable_touch_strip> = 1
-				SoundEvent \{event = CheckBox_Check_SFX}
-				if GotParam \{popup}
-					<ObjID> :SE_SetProps check_alpha = 1
-					<ObjID> :SE_SetProps cross_alpha = 0
+				soundevent \{event = checkbox_check_sfx}
+				if gotparam \{popup}
+					<objid> :se_setprops check_alpha = 1
+					<objid> :se_setprops cross_alpha = 0
 				else
-					<ObjID> :SE_SetProps check_alpha = 1
-					<ObjID> :SE_SetProps cross_alpha = 0
+					<objid> :se_setprops check_alpha = 1
+					<objid> :se_setprops cross_alpha = 0
 				endif
 			endif
 		endif
@@ -979,12 +979,12 @@ script destroy_pause_menu
 	destroy_pause_menu_frame
 	destroy_menu \{menu_id = scrolling_pause}
 	destroy_menu \{menu_id = pause_menu_frame_container}
-	KillSpawnedScript \{name = animate_bunny_flame}
-	if ScreenElementExists \{id = warning_message_container}
-		DestroyScreenElement \{id = warning_message_container}
+	killspawnedscript \{name = animate_bunny_flame}
+	if screenelementexists \{id = warning_message_container}
+		destroyscreenelement \{id = warning_message_container}
 	endif
-	if ScreenElementExists \{id = leaving_lobby_dialog_menu}
-		DestroyScreenElement \{id = leaving_lobby_dialog_menu}
+	if screenelementexists \{id = leaving_lobby_dialog_menu}
+		destroyscreenelement \{id = leaving_lobby_dialog_menu}
 	endif
 	destroy_pause_menu_frame \{container_id = net_quit_warning}
 endscript
@@ -997,10 +997,10 @@ script create_menu_backdrop \{texture = menu_venue_bg
 			255
 		]
 		z_priority = 0}
-	if ScreenElementExists \{id = menu_backdrop_container}
-		DestroyScreenElement \{id = menu_backdrop_container}
+	if screenelementexists \{id = menu_backdrop_container}
+		destroyscreenelement \{id = menu_backdrop_container}
 	endif
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = menu_backdrop_container
 		pos = (0.0, 0.0)
@@ -1008,8 +1008,8 @@ script create_menu_backdrop \{texture = menu_venue_bg
 			left
 			top
 		]}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = menu_backdrop_container
 		id = menu_backdrop
 		texture = <texture>
@@ -1022,8 +1022,8 @@ script create_menu_backdrop \{texture = menu_venue_bg
 endscript
 
 script destroy_menu_backdrop 
-	if ScreenElementExists \{id = menu_backdrop_container}
-		DestroyScreenElement \{id = menu_backdrop_container}
+	if screenelementexists \{id = menu_backdrop_container}
+		destroyscreenelement \{id = menu_backdrop_container}
 	endif
 endscript
 
@@ -1036,8 +1036,8 @@ script create_pause_menu_frame \{x_scale = 1
 		parent = root_window}
 	tile_sprite = 0
 	<alpha> = 1
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = <parent>
 		id = <container_id>
 		pos = (0.0, 0.0)
@@ -1053,8 +1053,8 @@ script create_pause_menu_frame \{x_scale = 1
 	scale_4 = ((1.575, 0.0) * <x_scale> + (0.0, 1.5) * <y_scale>)
 	scale_5 = ((1.5, 0.0) * <x_scale> + (0.0, 1.4) * <y_scale>)
 	if (<tile_sprite> = 1)
-		CreateScreenElement {
-			type = WindowElement
+		createscreenelement {
+			type = windowelement
 			parent = <container_id>
 			id = pause_menu_scrolling_bg_01
 			pos = (642.0, 360.0)
@@ -1062,10 +1062,10 @@ script create_pause_menu_frame \{x_scale = 1
 			just = [center center]
 			z_priority = (<z> - 1)
 		}
-		RunScriptOnScreenElement TileSpriteLoop id = <id> params = {move_x = -2 move_y = -2}
+		runscriptonscreenelement tilespriteloop id = <id> params = {move_x = -2 move_y = -2}
 	else
-		CreateScreenElement {
-			type = SpriteElement
+		createscreenelement {
+			type = spriteelement
 			id = frame_background
 			parent = <container_id>
 			rgba = [0 0 0 255]
@@ -1075,8 +1075,8 @@ script create_pause_menu_frame \{x_scale = 1
 			z_priority = (<z> - 1)
 		}
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_2
 		rgba = [255 255 255 255]
@@ -1085,8 +1085,8 @@ script create_pause_menu_frame \{x_scale = 1
 		just = [bottom right]
 		z_priority = (<z> + 2)
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_2
 		rgba = [255 255 255 255]
@@ -1096,8 +1096,8 @@ script create_pause_menu_frame \{x_scale = 1
 		z_priority = (<z> + 2)
 		flip_v
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_2
 		rgba = [255 255 255 255]
@@ -1108,8 +1108,8 @@ script create_pause_menu_frame \{x_scale = 1
 		flip_v
 		flip_h
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_2
 		rgba = [255 255 255 255]
@@ -1119,8 +1119,8 @@ script create_pause_menu_frame \{x_scale = 1
 		z_priority = (<z> + 2)
 		flip_h
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [255 255 255 255]
@@ -1129,8 +1129,8 @@ script create_pause_menu_frame \{x_scale = 1
 		just = [bottom right]
 		z_priority = (<z> + 2)
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [255 255 255 255]
@@ -1140,8 +1140,8 @@ script create_pause_menu_frame \{x_scale = 1
 		z_priority = (<z> + 2)
 		flip_v
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [255 255 255 255]
@@ -1152,8 +1152,8 @@ script create_pause_menu_frame \{x_scale = 1
 		flip_v
 		flip_h
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [255 255 255 255]
@@ -1163,8 +1163,8 @@ script create_pause_menu_frame \{x_scale = 1
 		z_priority = (<z> + 2)
 		flip_h
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [0 0 0 255]
@@ -1173,8 +1173,8 @@ script create_pause_menu_frame \{x_scale = 1
 		just = [bottom right]
 		z_priority = (<z> + 2)
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [0 0 0 255]
@@ -1184,8 +1184,8 @@ script create_pause_menu_frame \{x_scale = 1
 		z_priority = (<z> + 2)
 		flip_v
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [0 0 0 255]
@@ -1196,8 +1196,8 @@ script create_pause_menu_frame \{x_scale = 1
 		flip_v
 		flip_h
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = <container_id>
 		texture = menu_pause_frame_1
 		rgba = [0 0 0 255]
@@ -1214,7 +1214,7 @@ script destroy_pause_menu_frame \{container_id = pause_menu_frame_container}
 endscript
 
 script fit_text_convert_legacy_params_props 
-	GetScreenElementProps id = <id>
+	getscreenelementprops id = <id>
 	return {scale = <scale>}
 endscript
 
@@ -1225,15 +1225,15 @@ script fit_text_convert_legacy_params
 		<preserve_aspect_ratio> = false
 	endif
 	if (<only_if_larger_x> = 1)
-		RemoveParameter \{only_if_larger_x}
+		removeparameter \{only_if_larger_x}
 		<only_if_larger_x> = true
 	else
-		RemoveParameter \{only_if_larger_x}
+		removeparameter \{only_if_larger_x}
 		<only_if_larger_x> = false
 	endif
-	if GotParam \{start_x_scale}
+	if gotparam \{start_x_scale}
 		<factor_start_scale> = true
-	elseif GotParam \{start_y_scale}
+	elseif gotparam \{start_y_scale}
 		<factor_start_scale> = true
 	else
 		fit_text_convert_legacy_params_props <...>
@@ -1255,19 +1255,19 @@ endscript
 script fit_text_in_rectangle \{dims = (100.0, 100.0)
 		keep_ar = 0
 		only_if_larger_x = 0}
-	if NOT GotParam \{id}
+	if NOT gotparam \{id}
 
 	endif
 	fit_text_convert_legacy_params <...>
-	<id> :SE_FitToDims {
+	<id> :se_fittodims {
 		dims = <dims>
 		factor_start_scale = <factor_start_scale>
 		preserve_aspect_ratio = <preserve_aspect_ratio>
 		only_if_larger_x = <only_if_larger_x>
 		only_if_larger_y = false
 	}
-	if GotParam \{pos}
-		SetScreenElementProps id = <id> pos = <pos>
+	if gotparam \{pos}
+		setscreenelementprops id = <id> pos = <pos>
 	endif
 endscript
 
@@ -1287,120 +1287,120 @@ script set_user_control_color \{text_rgba = [
 	change user_control_pill_text_color = <text_rgba>
 endscript
 
-script user_control_helper_check_disconnect 
-	<up_to_date> = 0
+script 0x65330e0b 
+	<0xa0ac0221> = 0
 	begin
-	GetActiveControllers
+	getactivecontrollers
 	<is_active_controller> = (<active_controllers> [(<controller>)])
-	if ((<up_to_date> = 0) && (<is_active_controller> = 1))
-		user_control_helper_update controller = <controller>
-		<up_to_date> = <updated>
+	if ((<0xa0ac0221> = 0) && (<is_active_controller> = 1))
+		0x356839b2 controller = <controller>
+		<0xa0ac0221> = <0x39646908>
 	endif
 	if NOT (<is_active_controller> = 1)
-		user_control_helper_check_connect controller = <controller>
-		SetScreenElementProps \{id = user_control_container
+		0xaf72357f controller = <controller>
+		setscreenelementprops \{id = user_control_container
 			alpha = 1}
 	endif
-	Wait \{5
+	wait \{5
 		gameframes}
 	repeat
 endscript
 
-script user_control_helper_check_connect 
+script 0xaf72357f 
 	if (<controller> < 0)
 		return
 	endif
 	begin
-	GetActiveControllers
+	getactivecontrollers
 	<is_active_controller> = (<active_controllers> [(<controller>)])
 	if (<is_active_controller> = 1)
-		user_control_helper_update controller = <controller>
+		0x356839b2 controller = <controller>
 		return
 	endif
-	Wait \{5
+	wait \{5
 		gameframes}
 	repeat
 endscript
 
-script user_control_helper_update \{controller = $primary_controller}
-	<updated> = 0
-	if NOT ScreenElementExists \{id = user_control_container}
-		return updated = <updated>
+script 0x356839b2 \{controller = $primary_controller}
+	<0x39646908> = 0
+	if NOT screenelementexists \{id = user_control_container}
+		return 0x39646908 = <0x39646908>
 	endif
-	if GetScreenElementChildren \{id = user_control_container}
-		GetArraySize <children>
+	if getscreenelementchildren \{id = user_control_container}
+		getarraysize <children>
 		if (<array_size> > 0)
 			<index> = 0
 			begin
 			<child> = (<children> [<index>])
-			<child> :GetTags
-			if (GotParam button)
+			<child> :gettags
+			if (gotparam button)
 				user_control_helper_get_buttonchar button = <button> controller = <controller>
-				<child> :SE_SetProps {
-					helper_button_text = <button_char>
+				<child> :se_setprops {
+					helper_button_text = <0x510ca03a>
 				}
-				<child> :Desc_ResolveAlias name = alias_helper_button
-				<resolved_id> :SE_SetProps {
+				<child> :desc_resolvealias name = alias_helper_button
+				<resolved_id> :se_setprops {
 					text = <buttonchar>
 				}
 			endif
 			<index> = (<index> + 1)
 			repeat <array_size>
-			<updated> = 1
+			<0x39646908> = 1
 		endif
-		SpawnScript \{user_control_helper_button_resize}
+		spawnscript \{0xa3509323}
 	endif
-	return updated = <updated>
+	return 0x39646908 = <0x39646908>
 endscript
 
 script hide_user_control_helpers 
-	set_user_control_helper_alpha \{alpha = 0.0}
+	0x0abb709d \{alpha = 0.0}
 endscript
 
-script restore_user_control_helpers 
-	set_user_control_helper_alpha \{alpha = 1.1}
+script 0xd13df5ab 
+	0x0abb709d \{alpha = 1.1}
 endscript
 
-script set_user_control_helper_alpha 
+script 0x0abb709d 
 
-	if ScreenElementExists \{id = user_control_container}
-		user_control_container :SE_SetProps alpha = <alpha>
+	if screenelementexists \{id = user_control_container}
+		user_control_container :se_setprops alpha = <alpha>
 	endif
-	if ScreenElementExists \{id = custom_setlist_continue_helper}
-		custom_setlist_continue_helper :SE_SetProps alpha = <alpha>
+	if screenelementexists \{id = custom_setlist_continue_helper}
+		custom_setlist_continue_helper :se_setprops alpha = <alpha>
 	endif
-	if ScreenElementExists \{id = custom_setlist_second_continue_helper}
-		custom_setlist_second_continue_helper :SE_SetProps alpha = <alpha>
+	if screenelementexists \{id = 0xb0b1d617}
+		0xb0b1d617 :se_setprops alpha = <alpha>
 	endif
-	if ScreenElementExists \{id = custom_setlist_continue_pill}
-		custom_setlist_continue_pill :SE_SetProps alpha = <alpha>
+	if screenelementexists \{id = custom_setlist_continue_pill}
+		custom_setlist_continue_pill :se_setprops alpha = <alpha>
 	endif
-	if ScreenElementExists \{id = calibrate_highway_user_pills_container}
-		calibrate_highway_user_pills_container :SE_SetProps alpha = <alpha>
+	if screenelementexists \{id = calibrate_highway_user_pills_container}
+		calibrate_highway_user_pills_container :se_setprops alpha = <alpha>
 	endif
 endscript
 
 script clean_up_user_control_helpers 
-	if ScriptIsRunning \{user_control_helper_check_disconnect}
-		KillSpawnedScript \{name = user_control_helper_check_disconnect}
+	if scriptisrunning \{0x65330e0b}
+		killspawnedscript \{name = 0x65330e0b}
 	endif
-	if ScriptIsRunning \{user_control_helper_check_connect}
-		KillSpawnedScript \{name = user_control_helper_check_connect}
+	if scriptisrunning \{0xaf72357f}
+		killspawnedscript \{name = 0xaf72357f}
 	endif
-	if ScreenElementExists \{id = user_control_container}
-		DestroyScreenElement \{id = user_control_container}
+	if screenelementexists \{id = user_control_container}
+		destroyscreenelement \{id = user_control_container}
 	endif
-	if ScreenElementExists \{id = custom_setlist_continue_helper}
-		DestroyScreenElement \{id = custom_setlist_continue_helper}
+	if screenelementexists \{id = custom_setlist_continue_helper}
+		destroyscreenelement \{id = custom_setlist_continue_helper}
 	endif
-	if ScreenElementExists \{id = custom_setlist_second_continue_helper}
-		DestroyScreenElement \{id = custom_setlist_second_continue_helper}
+	if screenelementexists \{id = 0xb0b1d617}
+		destroyscreenelement \{id = 0xb0b1d617}
 	endif
-	if ScreenElementExists \{id = custom_setlist_continue_pill}
-		DestroyScreenElement \{id = custom_setlist_continue_pill}
+	if screenelementexists \{id = custom_setlist_continue_pill}
+		destroyscreenelement \{id = custom_setlist_continue_pill}
 	endif
-	if ScreenElementExists \{id = calibrate_highway_user_pills_container}
-		DestroyScreenElement \{id = calibrate_highway_user_pills_container}
+	if screenelementexists \{id = calibrate_highway_user_pills_container}
+		destroyscreenelement \{id = calibrate_highway_user_pills_container}
 	endif
 	change \{user_control_pill_color = [
 			180
@@ -1419,138 +1419,138 @@ script clean_up_user_control_helpers
 endscript
 
 script user_control_helper_get_buttonchar 
-	if GotParam \{controller}
+	if gotparam \{controller}
 		if (<controller> < 0)
-			RemoveParameter \{controller}
+			removeparameter \{controller}
 		endif
 	endif
-	if NOT GotParam \{controller}
+	if NOT gotparam \{controller}
 		controller = $primary_controller
 		if NOT (<controller> = $last_start_pressed_device)
 			controller = $last_start_pressed_device
 		endif
 	endif
 	if NOT (<controller> < 0)
-		if NOT ((IsGuitarController controller = <controller>) || (IsDrumController controller = <controller>))
-			GetActiveControllers
-			GetArraySize <active_controllers>
+		if NOT ((isguitarcontroller controller = <controller>) || (isdrumcontroller controller = <controller>))
+			getactivecontrollers
+			getarraysize <active_controllers>
 			if (<controller> < <array_size>)
 				if (<active_controllers> [<controller>] = 1)
 					standard = 1
 				endif
 			endif
-		elseif IsDrumController controller = <controller>
+		elseif isdrumcontroller controller = <controller>
 			drum = 1
 			standard = 1
 		endif
 	endif
-	if GotParam \{all_buttons}
-		RemoveParameter \{all_buttons}
+	if gotparam \{all_buttons}
+		removeparameter \{all_buttons}
 	endif
-	if GotParam \{button}
+	if gotparam \{button}
 		switch (<button>)
 			case green
-			buttonchar = qs("\L\b4")
-			if GotParam \{standard}
-				buttonchar = qs("\L\b3")
+			buttonchar = qs(0x9026221e)
+			if gotparam \{standard}
+				buttonchar = qs(0xdf67b4d9)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\b3\b4")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0xa11b5a77)
 			endif
 			case red
 			buttonchar = qs(0x893d135f)
-			if GotParam \{standard}
-				buttonchar = qs("\L\m1")
+			if gotparam \{standard}
+				buttonchar = qs(0xb532c60d)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\b2\b5")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0x74aa6ba8)
 			endif
-			case Yellow
-			buttonchar = qs("\L\b6")
-			if GotParam \{standard}
+			case yellow
+			buttonchar = qs(0xa210409c)
+			if gotparam \{standard}
 				buttonchar = qs(0x64f07d44)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\b0\b6")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0x1da23f16)
 			endif
-			case Blue
-			buttonchar = qs("\L\b7")
-			if GotParam \{standard}
-				buttonchar = qs("\L\m3")
+			case blue
+			buttonchar = qs(0xbb0b71dd)
+			if gotparam \{standard}
+				buttonchar = qs(0x8704a48f)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\b1\b7")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0xc8130ec9)
 			endif
-			case Orange
-			buttonchar = qs("\L\b8")
-			if GotParam \{standard}
-				buttonchar = qs("\L\bl")
+			case orange
+			buttonchar = qs(0x3c936d12)
+			if gotparam \{standard}
+				buttonchar = qs(0xe244f542)
 			endif
-			if GotParam \{drum}
-				buttonchar = qs("\L\bo")
+			if gotparam \{drum}
+				buttonchar = qs(0xc969a681)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\b8\bi\bq")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0x667a6f93)
 			endif
 			case strumbar
 			buttonchar = qs(0x7cc7d8cc)
-			if GotParam \{standard}
-				buttonchar = qs("\L\md")
+			if gotparam \{standard}
+				buttonchar = qs(0x72fe6f1c)
 			endif
 			case back
-			buttonchar = qs("\L\b9")
-			if GotParam \{standard}
+			buttonchar = qs(0x25885c53)
+			if gotparam \{standard}
 				buttonchar = qs(0x3dbff9db)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\bo")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0xc969a681)
 			endif
 			case start
-			buttonchar = qs("\L\ba")
-			if GotParam \{standard}
-				buttonchar = qs("\L\mb")
+			buttonchar = qs(0x57ea8b0f)
+			if gotparam \{standard}
+				buttonchar = qs(0x24a4c89a)
 			endif
-			if GotParam \{all_buttons}
-				buttonchar = qs("\L\bp")
+			if gotparam \{all_buttons}
+				buttonchar = qs(0x0433a81f)
 			endif
-			case LB
-			buttonchar = qs("\L\bi")
-			case RB
-			buttonchar = qs("\L\bj")
-			case LT
-			buttonchar = qs("\L\bk")
-			case RT
-			buttonchar = qs("\L\bl")
-			case LBRB
-			buttonchar = qs("\L\b7")
-			if GotParam \{standard}
-				buttonchar = qs("\L\bi\bj")
+			case lb
+			buttonchar = qs(0x9f330107)
+			case rb
+			buttonchar = qs(0xb41e52c4)
+			case lt
+			buttonchar = qs(0xad056385)
+			case rt
+			buttonchar = qs(0xe244f542)
+			case lbrb
+			buttonchar = qs(0xbb0b71dd)
+			if gotparam \{standard}
+				buttonchar = qs(0x41c5c5a3)
 			endif
 			case pad_left
-			buttonchar = qs("\L\be")
-			case DRUM_GREEN
-			buttonchar = qs("\L\br")
+			buttonchar = qs(0x33864e0b)
+			case drum_green
+			buttonchar = qs(0x3605ca9d)
 		endswitch
 	else
-		buttonchar = qs("\L")
+		buttonchar = qs(0x03ac90f0)
 	endif
 	return {buttonchar = <buttonchar> controller_used = <controller>}
 endscript
 
 script should_use_all_buttons 
 	get_all_exclusive_devices
-	if NOT GotParam \{exclusive_device}
+	if NOT gotparam \{exclusive_device}
 		return \{false}
 	endif
 	<standard_buttons> = false
 	<guitar_buttons> = false
-	GetArraySize \{exclusive_device}
+	getarraysize \{exclusive_device}
 	if (<array_size> = 0)
 		return \{false}
 	endif
 	<i> = 0
 	begin
-	if IsGuitarController controller = (<exclusive_device> [<i>])
+	if isguitarcontroller controller = (<exclusive_device> [<i>])
 		<guitar_buttons> = true
 	else
 		<standard_buttons> = true
@@ -1566,22 +1566,22 @@ endscript
 script pulsate_helper_pill \{time = 1
 		delay_time = 1}
 
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = kill_oldest}
-	Wait <delay_time> seconds ignoreslomo
+	wait <delay_time> seconds ignoreslomo
 	begin
-	if ScreenElementExists id = <id>
-		<id> :SE_SetProps {
+	if screenelementexists id = <id>
+		<id> :se_setprops {
 			alpha = 0.5
 			time = <time>
 		}
-		Wait <time> seconds ignoreslomo
-		if ScreenElementExists id = <id>
-			<id> :SE_SetProps {
+		wait <time> seconds ignoreslomo
+		if screenelementexists id = <id>
+			<id> :se_setprops {
 				alpha = 1
 				time = <time>
 			}
-			Wait <time> seconds ignoreslomo
+			wait <time> seconds ignoreslomo
 		else
 			return
 		endif
@@ -1592,19 +1592,19 @@ script pulsate_helper_pill \{time = 1
 endscript
 
 script add_user_control_helper \{z = 10}
-	spawn_disconnect_check = false
-	if NOT ScreenElementExists \{id = user_control_container}
-		<spawn_disconnect_check> = true
-		CreateScreenElement {
+	0x9b2729dd = false
+	if NOT screenelementexists \{id = user_control_container}
+		<0x9b2729dd> = true
+		createscreenelement {
 			id = user_control_container
 			parent = root_window
-			type = MenuElement
+			type = menuelement
 			dims = (1024.0, 36.0)
 			pos = (0.0, -36.0)
 			pos_anchor = [center bottom]
 			just = [center bottom]
 			internal_just = [center center]
-			isVertical = false
+			isvertical = false
 			position_children = true
 			fit_major = `fit content if larger`
 			fit_minor = `keep dims`
@@ -1620,35 +1620,35 @@ script add_user_control_helper \{z = 10}
 			button = <button>
 		}
 	}
-	ExtendCRC <button> '_helper_pill_ID' out = helper_pill_ID
+	extendcrc <button> '_helper_pill_ID' out = helper_pill_id
 	if (<button> != none)
 		user_control_helper_get_buttonchar <...> button = <button>
-		AddParam structure_name = params_struct name = helper_button_text value = <buttonchar>
+		addparam structure_name = params_struct name = helper_button_text value = <buttonchar>
 	endif
 	parent = user_control_container
-	if GotParam \{override_parent}
+	if gotparam \{override_parent}
 		parent = <override_parent>
 	endif
-	if (<spawn_disconnect_check> = true)
-		if NOT ((ScriptIsRunning user_control_helper_check_disconnect) || (ScriptIsRunning user_control_helper_check_connect))
-			if GotParam \{controller}
-				user_control_container :Obj_SpawnScriptNow user_control_helper_check_disconnect params = {controller = (<controller>)}
+	if (<0x9b2729dd> = true)
+		if NOT ((scriptisrunning 0x65330e0b) || (scriptisrunning 0xaf72357f))
+			if gotparam \{controller}
+				user_control_container :obj_spawnscriptnow 0x65330e0b params = {controller = (<controller>)}
 			else
-				user_control_container :Obj_SpawnScriptNow \{user_control_helper_check_disconnect
+				user_control_container :obj_spawnscriptnow \{0x65330e0b
 					params = {
 						controller = $primary_controller
 					}}
 			endif
 		endif
 	endif
-	if ScreenElementExists id = <helper_pill_ID>
-		DestroyScreenElement id = <helper_pill_ID>
+	if screenelementexists id = <helper_pill_id>
+		destroyscreenelement id = <helper_pill_id>
 	endif
-	if GotParam \{leader}
-		CreateScreenElement {
+	if gotparam \{leader}
+		createscreenelement {
 			parent = <parent>
-			id = <helper_pill_ID>
-			type = DescInterface
+			id = <helper_pill_id>
+			type = descinterface
 			desc = 'helper_pill_leader'
 			auto_dims = false
 			dims = (0.0, 36.0)
@@ -1656,10 +1656,10 @@ script add_user_control_helper \{z = 10}
 			<params_struct>
 		}
 	else
-		CreateScreenElement {
+		createscreenelement {
 			parent = <parent>
-			id = <helper_pill_ID>
-			type = DescInterface
+			id = <helper_pill_id>
+			type = descinterface
 			desc = 'helper_pill'
 			auto_dims = false
 			dims = (0.0, 36.0)
@@ -1668,45 +1668,45 @@ script add_user_control_helper \{z = 10}
 		}
 	endif
 	if (<button> != none)
-		if GotParam \{all_buttons}
-			if <id> :Desc_ResolveAlias name = alias_helper_button
-				<resolved_id> :SE_SetProps {
-					metaRemapEnable = false
+		if gotparam \{all_buttons}
+			if <id> :desc_resolvealias name = alias_helper_button
+				<resolved_id> :se_setprops {
+					metaremapenable = false
 					text = <buttonchar>
 				}
 			endif
 		endif
 	endif
-	<id> :SE_GetProps
-	<id> :SE_SetProps {
+	<id> :se_getprops
+	<id> :se_setprops {
 		helper_pill_body_dims = (((0.6, 0.0) * <helper_pill_menu_dims> [0]) + (0.0, 42.0))
 		dims = (((0.6, 0.0) * <helper_pill_menu_dims> [0]) + (64.0, 32.0))
 	}
-	user_control_container :SE_GetProps
-	user_control_container :SE_SetProps {
+	user_control_container :se_getprops
+	user_control_container :se_setprops {
 		helper_pill_body_dims = (((1.0, 0.0) * <helper_pill_menu_dims> [0]) + (0.0, 50.0))
 	}
 	if (<helper_pill_menu_dims> [0] > 950)
-		user_control_container :SE_SetProps scale = (950.0 / <helper_pill_menu_dims> [0])
+		user_control_container :se_setprops scale = (950.0 / <helper_pill_menu_dims> [0])
 	endif
-	return helper_pill_ID = <id>
+	return helper_pill_id = <id>
 endscript
 
-script user_control_helper_button_resize 
-	SetSpawnInstanceLimits \{max = 1
+script 0xa3509323 
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	WaitOneGameFrame
-	if NOT ScreenElementExists \{id = user_control_container}
+	waitonegameframe
+	if NOT screenelementexists \{id = user_control_container}
 		return
 	endif
-	if GetScreenElementChildren \{id = user_control_container}
-		GetArraySize <children>
+	if getscreenelementchildren \{id = user_control_container}
+		getarraysize <children>
 		if (<array_size> > 0)
 			<index> = 0
 			begin
 			<child> = (<children> [<index>])
-			<child> :SE_GetProps
-			<child> :SE_SetProps {
+			<child> :se_getprops
+			<child> :se_setprops {
 				helper_pill_body_dims = (((0.6, 0.0) * <helper_pill_menu_dims> [0]) + (0.0, 42.0))
 				dims = (((0.6, 0.0) * <helper_pill_menu_dims> [0]) + (64.0, 32.0))
 			}
@@ -1718,12 +1718,12 @@ endscript
 
 script user_control_helper_change_text 
 
-	ExtendCRC <button> '_helper_pill_ID' out = helper_pill_ID
-	if ScreenElementExists id = <helper_pill_ID>
-		<helper_pill_ID> :SE_SetProps {
+	extendcrc <button> '_helper_pill_ID' out = helper_pill_id
+	if screenelementexists id = <helper_pill_id>
+		<helper_pill_id> :se_setprops {
 			helper_description_text = <text>
 		}
-		SpawnScript \{user_control_helper_button_resize}
+		spawnscript \{0xa3509323}
 	else
 
 	endif
@@ -1731,16 +1731,16 @@ endscript
 
 script user_control_destroy_helper 
 
-	ExtendCRC <button> '_helper_pill_ID' out = helper_pill_ID
-	if ScreenElementExists id = <helper_pill_ID>
-		DestroyScreenElement id = <helper_pill_ID>
+	extendcrc <button> '_helper_pill_ID' out = helper_pill_id
+	if screenelementexists id = <helper_pill_id>
+		destroyscreenelement id = <helper_pill_id>
 	endif
 endscript
 
 script user_control_helper_exists 
 
-	ExtendCRC <button> '_helper_pill_ID' out = helper_pill_ID
-	if ScreenElementExists id = <helper_pill_ID>
+	extendcrc <button> '_helper_pill_ID' out = helper_pill_id
+	if screenelementexists id = <helper_pill_id>
 		return \{true}
 	else
 		return \{false}
@@ -1750,11 +1750,11 @@ endscript
 script get_diff_completion_text 
 	diff_completion_percentage = [0 0 0 0 0]
 	diff_completion_score = [0 0 0 0 0]
-	diff_completion_text = [qs("\L") qs("\L") qs("\L") qs("\L") qs("\L")]
+	diff_completion_text = [qs(0x03ac90f0) qs(0x03ac90f0) qs(0x03ac90f0) qs(0x03ac90f0) qs(0x03ac90f0)]
 	get_progression_globals game_mode = ($game_mode) ($current_progression_flag)
 	percentage_complete = 0
 	difficulty_index = 0
-	GetArraySize ($difficulty_list)
+	getarraysize ($difficulty_list)
 	diff_size = <array_size>
 	begin
 	setlist_prefix = ($<tier_global>.prefix)
@@ -1763,13 +1763,13 @@ script get_diff_completion_text
 	num_songs = 0
 	tier_num = 1
 	begin
-	FormatText checksumname = tier 'tier%d' d = <tier_num>
-	GetArraySize ($<tier_global>.<tier>.songs)
+	formattext checksumname = tier 'tier%d' d = <tier_num>
+	getarraysize ($<tier_global>.<tier>.songs)
 	songlist_size = <array_size>
 	song_count = 0
 	begin
 	format_globaltag_song_checksum part = ($<tier_global>.part) song = ($<tier_global>.<tier>.songs [<song_count>]) difficulty_index = <difficulty_index>
-	GetGlobalTags <song_checksum> params = {stars score}
+	getglobaltags <song_checksum> params = {stars score}
 	if NOT (<stars> = 0)
 		<songs_completed> = (<songs_completed> + 1)
 		<songs_score> = (<songs_score> + <score>)
@@ -1779,14 +1779,14 @@ script get_diff_completion_text
 	repeat <songlist_size>
 	tier_num = (<tier_num> + 1)
 	repeat ($<tier_global>.num_tiers)
-	FormatText TextName = diff_completion_string qs("%a of %b songs completed") a = <songs_completed> b = <num_songs>
-	SetArrayElement ArrayName = diff_completion_text index = (<difficulty_index>) newvalue = (<diff_completion_string>)
+	formattext textname = diff_completion_string qs(0x18a8b83c) a = <songs_completed> b = <num_songs>
+	setarrayelement arrayname = diff_completion_text index = (<difficulty_index>) newvalue = (<diff_completion_string>)
 	<percentage_complete> = (<percentage_complete> + (100 * <songs_completed>) / <num_songs>)
-	SetArrayElement ArrayName = diff_completion_percentage index = (<difficulty_index>) newvalue = ((100 * <songs_completed>) / <num_songs>)
-	SetArrayElement ArrayName = diff_completion_score index = (<difficulty_index>) newvalue = <songs_score>
+	setarrayelement arrayname = diff_completion_percentage index = (<difficulty_index>) newvalue = ((100 * <songs_completed>) / <num_songs>)
+	setarrayelement arrayname = diff_completion_score index = (<difficulty_index>) newvalue = <songs_score>
 	<difficulty_index> = (<difficulty_index> + 1)
 	repeat <diff_size>
-	if GotParam \{for_get_diff_completion_percentage}
+	if gotparam \{for_get_diff_completion_percentage}
 		return diff_completion_percentage = <diff_completion_percentage> percentage_complete = <percentage_complete> diff_completion_score = <diff_completion_score>
 	else
 		return diff_completion_text = <diff_completion_text>
@@ -1794,11 +1794,11 @@ script get_diff_completion_text
 endscript
 
 script dim_screen 
-	if ScreenElementExists \{id = dim_screen}
-		DestroyScreenElement \{id = dim_screen}
+	if screenelementexists \{id = dim_screen}
+		destroyscreenelement \{id = dim_screen}
 	endif
-	if NOT GotParam \{undim}
-		CreateScreenElement \{type = SpriteElement
+	if NOT gotparam \{undim}
+		createscreenelement \{type = spriteelement
 			id = dim_screen
 			parent = root_window
 			pos = (640.0, 360.0)
@@ -1817,7 +1817,7 @@ script dim_screen
 	endif
 endscript
 
-script displaySprite \{just = [
+script displaysprite \{just = [
 			left
 			top
 		]
@@ -1829,20 +1829,20 @@ script displaySprite \{just = [
 		]
 		dims = {
 		}
-		blendMode = {
+		blendmode = {
 		}
 		internal_just = {
 		}
 		scale = {
 		}
 		alpha = 1}
-	if GotParam \{rot_angle}
+	if gotparam \{rot_angle}
 		rot_struct = {rot_angle = <rot_angle>}
 	else
 		rot_struct = {}
 	endif
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		id = <id>
 		parent = <parent>
 		texture = <tex>
@@ -1854,19 +1854,19 @@ script displaySprite \{just = [
 		z_priority = <z>
 		scale = <scale>
 		<rot_struct>
-		blend = <blendMode>
+		blend = <blendmode>
 		alpha = <alpha>
 	}
-	if GotParam \{flip_v}
-		<id> :SE_SetProps flip_v
+	if gotparam \{flip_v}
+		<id> :se_setprops flip_v
 	endif
-	if GotParam \{flip_h}
-		<id> :SE_SetProps flip_h
+	if gotparam \{flip_h}
+		<id> :se_setprops flip_h
 	endif
 	return id = <id>
 endscript
 
-script displayText \{id = {
+script displaytext \{id = {
 		}
 		just = [
 			left
@@ -1880,8 +1880,8 @@ script displayText \{id = {
 		]
 		font = fontgrid_text_a1
 		rot = 0}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = <parent>
 		font = <font>
 		scale = <scale>
@@ -1894,18 +1894,18 @@ script displayText \{id = {
 		z_priority = <z>
 		font_spacing = <font_spacing>
 	}
-	if GotParam \{noshadow}
-		<id> :SE_SetProps noshadow
+	if gotparam \{noshadow}
+		<id> :se_setprops noshadow
 	else
-		<id> :SE_SetProps shadow shadow_offs = (3.0, 3.0) shadow_rgba = [0 0 0 255]
+		<id> :se_setprops shadow shadow_offs = (3.0, 3.0) shadow_rgba = [0 0 0 255]
 	endif
 	return id = <id>
 endscript
 g_num_scrolling_texts = 0
 
 script scroll_ticker_text {
-		ticker_text = qs("I NEED TICKER TEXT!")
-		ticker_space = qs("\L ")
+		ticker_text = qs(0x73dbd1ae)
+		ticker_space = qs(0x713755f7)
 		ticker_pos = (128.0, 598.0)
 		ticker_just = [left top]
 		ticker_parent = root_window
@@ -1918,11 +1918,11 @@ script scroll_ticker_text {
 		ticker_z_priority = -1
 		time = 5
 	}
-	FormatText \{checksumname = ticker_text_id_1
+	formattext \{checksumname = ticker_text_id_1
 		'scrolling_ticker_text_%i_1'
 		i = $g_num_scrolling_texts}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		just = <ticker_just>
 		id = <ticker_text_id_1>
 		parent = <ticker_parent>
@@ -1934,7 +1934,7 @@ script scroll_ticker_text {
 		alpha = <ticker_alpha>
 		z_priority = <ticker_z_priority>
 	}
-	GetScreenElementDims id = <ticker_text_id_1>
+	getscreenelementdims id = <ticker_text_id_1>
 	if (<width> > 0)
 		multi = (1280 / <width>)
 	else
@@ -1942,28 +1942,28 @@ script scroll_ticker_text {
 	endif
 	ticker_text_with_space = (<ticker_text> + <ticker_space>)
 	long_ticker_text = <ticker_text_with_space>
-	StringLength string = <ticker_text_with_space>
+	stringlength string = <ticker_text_with_space>
 	<ticker_text_with_space_length> = <str_len>
 	begin
-	StringLength string = <long_ticker_text>
+	stringlength string = <long_ticker_text>
 	<long_ticker_text_length> = <str_len>
 	if NOT (<long_ticker_text_length> < (127 - <ticker_text_with_space_length>))
 		break
 	endif
 	<long_ticker_text> = (<long_ticker_text> + <ticker_text_with_space>)
-	<ticker_text_id_1> :SE_SetProps text = <long_band_text>
-	GetScreenElementDims id = <ticker_text_id_1>
+	<ticker_text_id_1> :se_setprops text = <long_band_text>
+	getscreenelementdims id = <ticker_text_id_1>
 	if (<width> > 1280)
 		break
 	endif
 	repeat <multi>
-	<ticker_text_id_1> :SE_SetProps text = <long_ticker_text> pos = <ticker_pos>
-	FormatText \{checksumname = ticker_text_id_2
+	<ticker_text_id_1> :se_setprops text = <long_ticker_text> pos = <ticker_pos>
+	formattext \{checksumname = ticker_text_id_2
 		'scrolling_ticker_text_%i_2'
 		i = $g_num_scrolling_texts}
-	CreateScreenElement {
+	createscreenelement {
 		id = <ticker_text_id_2>
-		type = TextElement
+		type = textelement
 		just = <ticker_just>
 		parent = <ticker_parent>
 		scale = ((<ticker_x_scale> * (1.0, 0.0)) + (<ticker_y_scale> * (0.0, 1.0)))
@@ -1973,26 +1973,26 @@ script scroll_ticker_text {
 		alpha = <ticker_alpha>
 		z_priority = <ticker_z_priority>
 	}
-	GetScreenElementDims id = <ticker_text_id_1>
-	<ticker_text_id_2> :SE_SetProps pos = (((1.0, 0.0) * <width>) + <ticker_pos>)
+	getscreenelementdims id = <ticker_text_id_1>
+	<ticker_text_id_2> :se_setprops pos = (((1.0, 0.0) * <width>) + <ticker_pos>)
 	change g_num_scrolling_texts = ($g_num_scrolling_texts + 1)
 	<first> = 1
 	begin
 	if (<first>)
-		<ticker_text_id_1> :SE_SetProps pos = (((-1.0, 0.0) * <width>) + <ticker_pos>) time = <time>
-		<ticker_text_id_2> :SE_SetProps pos = <ticker_pos> time = <time>
+		<ticker_text_id_1> :se_setprops pos = (((-1.0, 0.0) * <width>) + <ticker_pos>) time = <time>
+		<ticker_text_id_2> :se_setprops pos = <ticker_pos> time = <time>
 	else
-		<ticker_text_id_2> :SE_SetProps pos = (((-1.0, 0.0) * <width>) + <ticker_pos>) time = <time>
-		<ticker_text_id_1> :SE_SetProps pos = <ticker_pos> time = <time>
+		<ticker_text_id_2> :se_setprops pos = (((-1.0, 0.0) * <width>) + <ticker_pos>) time = <time>
+		<ticker_text_id_1> :se_setprops pos = <ticker_pos> time = <time>
 	endif
-	Wait <time> seconds
+	wait <time> seconds
 	if (<first>)
-		<ticker_text_id_1> :SE_SetProps pos = (((1.0, 0.0) * <width>) + <ticker_pos>)
-		<ticker_text_id_2> :SE_SetProps pos = <ticker_pos>
+		<ticker_text_id_1> :se_setprops pos = (((1.0, 0.0) * <width>) + <ticker_pos>)
+		<ticker_text_id_2> :se_setprops pos = <ticker_pos>
 		<first> = 0
 	else
-		<ticker_text_id_2> :SE_SetProps pos = (((1.0, 0.0) * <width>) + <ticker_pos>)
-		<ticker_text_id_1> :SE_SetProps pos = <ticker_pos>
+		<ticker_text_id_2> :se_setprops pos = (((1.0, 0.0) * <width>) + <ticker_pos>)
+		<ticker_text_id_1> :se_setprops pos = <ticker_pos>
 		<first> = 1
 	endif
 	repeat
@@ -2001,39 +2001,39 @@ endscript
 script ui_frazz_something 
 	begin
 	scale = Random (@*10 (1.0, 1.0) @ (1.1, 0.3) @ (0.9, 1.0) )
-	SE_SetProps scale = <scale> rgba = [255 255 255 255] time = 0.2
-	SE_WaitProps
-	SE_SetProps \{scale = (1.0, 1.0)
+	se_setprops scale = <scale> rgba = [255 255 255 255] time = 0.2
+	se_waitprops
+	se_setprops \{scale = (1.0, 1.0)
 		rgba = [
 			200
 			220
 			255
 			255
 		]}
-	SE_WaitProps
+	se_waitprops
 	repeat
 endscript
 
-script ui_frazzmatazz \{glow_brightness = 1.0}
-	if GetSingleTag \{frazzmatazz_running}
+script ui_frazzmatazz \{0xffd05882 = 1.0}
+	if getsingletag \{0x45278e0d}
 		return
 	endif
-	SetTags \{frazzmatazz_running}
-	if (<glow_brightness> > 1.0)
-		<glow_brightness> = 1.0
+	settags \{0x45278e0d}
+	if (<0xffd05882> > 1.0)
+		<0xffd05882> = 1.0
 	else
-		if (<glow_brightness> < 0.0)
-			<glow_brightness> = 0.0
+		if (<0xffd05882> < 0.0)
+			<0xffd05882> = 0.0
 		endif
 	endif
 	begin
 	scale = Random (@*10 (1.0, 1.0) @ (1.2, 1.2) @ (1.1, 1.1) @ (1.15, 1.15) @ (1.05, 1.05) )
 	alpha = Random (@ (0.3) @ (0.4) @ (0.5) @ (0.6) @ (0.8) @ (1) )
-	SE_SetProps alpha = (<alpha> * <glow_brightness>) scale = <scale> time = 1
-	SE_WaitProps
-	SE_SetProps \{scale = (1.0, 1.0)}
-	SE_WaitProps
-	Wait \{1
+	se_setprops alpha = (<alpha> * <0xffd05882>) scale = <scale> time = 1
+	se_waitprops
+	se_setprops \{scale = (1.0, 1.0)}
+	se_waitprops
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -2042,11 +2042,11 @@ script ui_frazzmatazz_02
 	begin
 	scale = Random (@*10 (1.0, 1.0) @ (1.05, 1.05) @ (1.1, 1.1) @ (1.05, 1.05) @ (1.03, 1.03) )
 	alpha = Random (@ (0.25) @ (0.1) @ (0.2) @ (0.15) @ (0.2) @ (0.1) )
-	SE_SetProps alpha = <alpha> scale = <scale> time = 1
-	SE_WaitProps
-	SE_SetProps \{scale = (1.0, 1.0)}
-	SE_WaitProps
-	Wait \{1
+	se_setprops alpha = <alpha> scale = <scale> time = 1
+	se_waitprops
+	se_setprops \{scale = (1.0, 1.0)}
+	se_waitprops
+	wait \{1
 		gameframe}
 	repeat
 endscript
@@ -2054,8 +2054,8 @@ endscript
 script ui_alphaflight 
 	begin
 	alpha = Random (@*10 (1) @ (0.4) @ (0.5) @ (0.6) @ (0.7) @ (0.8) @ (0.9) )
-	SE_SetProps alpha = <alpha> time = 1
-	SE_WaitProps
+	se_setprops alpha = <alpha> time = 1
+	se_waitprops
 	repeat
 endscript
 
@@ -2063,8 +2063,8 @@ script ui_alphablast
 	begin
 	alpha = Random (@ (1) @ (0.5) @ (0.25) @ (0.75) @ (0.0) )
 	scale = Random (@ (1.0, 1.0) @ (1.0, 1.1) @ (1.0, 1.15) @ (1.0, 1.2) @ (1.0, 1.05) )
-	SE_SetProps alpha = <alpha> time = 0.35000002
-	SE_WaitProps
+	se_setprops alpha = <alpha> time = 0.35000002
+	se_waitprops
 	repeat
 endscript
 
@@ -2073,35 +2073,35 @@ script ui_herkyjerky
 	pos = Random (@ (0.0, 0.0) @ (-10.0, -10.0) @ (-30.0, -30.0) @ (-20.0, -20.0) @ (20.0, 20.0) @ (25.0, 25.0) @ (50.0, 50.0) @ (10.0, 10.0) )
 	scale = Random (@ (1.0, 1.0) @ (1.2, 1.2) @ (1.1, 1.1) @ (1.15, 1.15) @ (1.05, 1.05) )
 	alpha = Random (@*100 (1) @ (0.5) @ (0.6) @ (0.7) @ (0.8) @ (0.9) )
-	SE_SetProps pos = <pos> scale = <scale> alpha = <alpha> time = 0.08
-	SE_WaitProps
-	SE_SetProps \{pos = (0.0, 0.0)
+	se_setprops pos = <pos> scale = <scale> alpha = <alpha> time = 0.08
+	se_waitprops
+	se_setprops \{pos = (0.0, 0.0)
 		scale = (1.0, 1.0)}
 	r = Random (@ 1 @ 4 @ 5 @ 3 @ 3 )
-	Wait <r> seconds
+	wait <r> seconds
 	repeat
 endscript
 
 script ui_shakey 
-	if GetSingleTag \{shakey_running}
+	if getsingletag \{0x793d254f}
 		return
 	endif
-	SetTags \{shakey_running}
-	if GotParam \{as_offset}
-		SE_GetProps \{pos}
+	settags \{0x793d254f}
+	if gotparam \{0x4d641ae8}
+		se_getprops \{pos}
 		orig_pos = <pos>
 	else
 		orig_pos = (0.0, 0.0)
 	endif
 	begin
-	shake_pos = Random (@ (0.0, 0.0) @ (-2.0, -2.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (1.0, 1.0) @ (2.0, 1.0) )
-	if GotParam \{scale_movement}
-		shake_pos = (<shake_pos> * <scale_movement>)
+	0x2100cff0 = Random (@ (0.0, 0.0) @ (-2.0, -2.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (1.0, 1.0) @ (2.0, 1.0) )
+	if gotparam \{0xe99089a3}
+		0x2100cff0 = (<0x2100cff0> * <0xe99089a3>)
 	endif
-	shake_pos = (<shake_pos> + <orig_pos>)
-	SE_SetProps pos = <shake_pos> time = 0.08
-	SE_WaitProps
-	Wait \{0.08
+	0x2100cff0 = (<0x2100cff0> + <orig_pos>)
+	se_setprops pos = <0x2100cff0> time = 0.08
+	se_waitprops
+	wait \{0.08
 		seconds}
 	repeat
 endscript
@@ -2109,9 +2109,9 @@ endscript
 script ui_shakey_02 
 	begin
 	pos = Random (@ (0.0, 0.0) @ (-1.0, -1.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (-3.0, 1.0) @ (2.0, 1.0) )
-	SE_SetProps pos = <pos> time = 0.15
-	SE_WaitProps
-	Wait \{0.15
+	se_setprops pos = <pos> time = 0.15
+	se_waitprops
+	wait \{0.15
 		seconds}
 	repeat
 endscript
@@ -2120,107 +2120,107 @@ script ui_roto
 	begin
 	scale = Random (@*2 (1.0, 1.0) @ (1.05, 1.01) @ (1.03, 1.08) @ (1.03, 1.05) @ (1.09, 1.07) )
 	rot_angle = Random (@ 1 @ 2 @ -1 @ -2 )
-	SE_SetProps scale = <scale> rot_angle = <rot_angle> time = 0.05
-	SE_WaitProps
-	Wait \{0.05
+	se_setprops scale = <scale> rot_angle = <rot_angle> time = 0.05
+	se_waitprops
+	wait \{0.05
 		seconds}
 	repeat
 endscript
 
-script ui_roto_02 
-	SE_GetProps \{rot_angle
+script 0xede0dce9 
+	se_getprops \{rot_angle
 		alpha}
-	orig_rot_angle = <rot_angle>
+	0x5e6cd985 = <rot_angle>
 	orig_alpha = <alpha>
 	begin
 	rot_angle = Random (@ 0.2 @ 0.3 @ 0 @ -0.2 @ -0.3 )
-	if GotParam \{change_alpha}
+	if gotparam \{0x73cf7bd8}
 		rand_alpha = <orig_alpha>
 	else
 		rand_alpha = Random (@ (0.6) @ (0.1) @ (0.2) @ (0.3) @ (0.4) @ (0.5) )
 	endif
-	SE_SetProps rot_angle = (<rot_angle> + <orig_rot_angle>) alpha = rand_alpha time = 0.05
-	SE_WaitProps
-	Wait \{0.05
+	se_setprops rot_angle = (<rot_angle> + <0x5e6cd985>) alpha = rand_alpha time = 0.05
+	se_waitprops
+	wait \{0.05
 		seconds}
 	repeat
 endscript
-menu_glow = 0.5
-skulls_move = 0.5
-banner_move = 0.75
+0xddccbea4 = 0.5
+0x52565f88 = 0.5
+0x187899ed = 0.75
 
-script ui_flicker_glow \{scale_movement = 1.0
-		glow_brightness = 1.0}
-	if GotParam \{as_offset}
-		obj_spawnscript ui_shakey params = {as_offset scale_movement = <scale_movement>}
+script 0xa7a510a8 \{0xe99089a3 = 1.0
+		0xffd05882 = 1.0}
+	if gotparam \{0x4d641ae8}
+		obj_spawnscript ui_shakey params = {0x4d641ae8 0xe99089a3 = <0xe99089a3>}
 	else
-		obj_spawnscript ui_shakey params = {scale_movement = <scale_movement>}
+		obj_spawnscript ui_shakey params = {0xe99089a3 = <0xe99089a3>}
 	endif
-	obj_spawnscript ui_frazzmatazz params = {glow_brightness = <glow_brightness>}
+	obj_spawnscript ui_frazzmatazz params = {0xffd05882 = <0xffd05882>}
 endscript
 
-script ui_flicker_highlight 
-	SE_GetProps
+script 0xd5b5a21b 
+	se_getprops
 	orig_pos = <pos>
 	begin
-	shake_pos = Random (@ (0.0, 0.0) @ (-2.0, -2.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (1.0, 1.0) @ (2.0, 1.0) )
-	shake_pos = (<orig_pos> + <shake_pos>)
-	if NOT GotParam \{glow_dimly}
+	0x2100cff0 = Random (@ (0.0, 0.0) @ (-2.0, -2.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (1.0, 1.0) @ (2.0, 1.0) )
+	0x2100cff0 = (<orig_pos> + <0x2100cff0>)
+	if NOT gotparam \{0xc2c7c0e4}
 		glow_alpha = Random (@ 0.6 @ 0.5 @ 0.4 @ 0.3 )
 	else
 		glow_alpha = Random (@ 0.5 @ 0.4 @ 0.3 )
 	endif
 	grow_scale = Random (@*7 (1.0, 1.0) @ (1.01, 1.01) @ (1.02, 1.02) @ (1.03, 1.03) )
 	pulse_time = Random (@ 0.05 @ 0.08 @ 0.1 )
-	pulse_wait_time = Random (@ 0.05 @ 0.08 @ 0.1 )
-	SE_SetProps pos = <shake_pos> alpha = <glow_alpha> scale = <grow_scale> time = <pulse_time>
-	Wait <pulse_wait_time> seconds
+	0x1c307b19 = Random (@ 0.05 @ 0.08 @ 0.1 )
+	se_setprops pos = <0x2100cff0> alpha = <glow_alpha> scale = <grow_scale> time = <pulse_time>
+	wait <0x1c307b19> seconds
 	repeat
 endscript
-projection_power_on_time = 0.1
-projection_fade_in_time = 0.2
+0xb05be3e9 = 0.1
+0x011662b8 = 0.2
 
-script ui_projection_power_on \{power_on_time = $projection_power_on_time
-		fade_in_time = $projection_fade_in_time}
-	SE_GetProps \{alpha
+script 0xdc864d3a \{0x19aef998 = $0xb05be3e9
+		fade_in_time = $0x011662b8}
+	se_getprops \{alpha
 		scale
 		pos}
-	if GotParam \{randomize_pos}
+	if gotparam \{0x82fd4d18}
 		orig_pos = <pos>
-		shake_pos = Random (@ (-2.0, -2.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (1.0, 1.0) @ (2.0, 1.0) )
-		shake_pos = (<shake_pos> * <randomize_pos>)
-		SE_SetProps pos = (<shake_pos> + <orig_pos>)
+		0x2100cff0 = Random (@ (-2.0, -2.0) @ (-3.0, -3.0) @ (-1.0, -1.0) @ (2.5, 2.5) @ (1.0, 1.0) @ (2.0, 1.0) )
+		0x2100cff0 = (<0x2100cff0> * <0x82fd4d18>)
+		se_setprops pos = (<0x2100cff0> + <orig_pos>)
 	endif
 	orig_alpha = <alpha>
 	orig_scale = <scale>
-	SE_SetProps \{alpha = 0.0
+	se_setprops \{alpha = 0.0
 		scale = (0.8, 0.05)}
-	Wait \{0.35000002
+	wait \{0.35000002
 		seconds}
-	if (<power_on_time> = <fade_in_time>)
-		SE_SetProps scale = (1.0, 1.0) alpha = <orig_alpha> time = <power_on_time>
+	if (<0x19aef998> = <fade_in_time>)
+		se_setprops scale = (1.0, 1.0) alpha = <orig_alpha> time = <0x19aef998>
 	else
-		if (<power_on_time> < <fade_in_time>)
-			time_ratio = (<power_on_time> / <fade_in_time>)
-			first_alpha = (<time_ratio> * <orig_alpha>)
-			second_alpha = (<orig_alpha> - <first_alpha>)
-			SE_SetProps alpha = <first_alpha> scale = <orig_scale> time = <power_on_time>
-			SE_WaitProps
-			SE_SetProps alpha = <second_alpha> time = (<fade_in_time> - <power_on_time>)
+		if (<0x19aef998> < <fade_in_time>)
+			0x46eda6fc = (<0x19aef998> / <fade_in_time>)
+			0x0e5cc09f = (<0x46eda6fc> * <orig_alpha>)
+			0x1ef50fc2 = (<orig_alpha> - <0x0e5cc09f>)
+			se_setprops alpha = <0x0e5cc09f> scale = <orig_scale> time = <0x19aef998>
+			se_waitprops
+			se_setprops alpha = <0x1ef50fc2> time = (<fade_in_time> - <0x19aef998>)
 		else
-			time_ratio = (<fade_in_time> / <power_on_time>)
-			first_scale = (<time_ratio> * <orig_scale>)
-			second_scale = (<orig_scale> - <first_scale>)
-			SE_SetProps alpha = <orig_alpha> scale = <first_scale> time = <fade_in_time>
-			SE_WaitProps
-			SE_SetProps scale = <second_scale> time = (<power_on_time> - <fade_in_time>)
+			0x46eda6fc = (<fade_in_time> / <0x19aef998>)
+			0x32fadc71 = (<0x46eda6fc> * <orig_scale>)
+			0x2253132c = (<orig_scale> - <0x32fadc71>)
+			se_setprops alpha = <orig_alpha> scale = <0x32fadc71> time = <fade_in_time>
+			se_waitprops
+			se_setprops scale = <0x2253132c> time = (<0x19aef998> - <fade_in_time>)
 		endif
 	endif
-	SE_WaitProps
-	if GotParam \{randomize_pos}
-		SE_SetProps pos = <orig_pos>
+	se_waitprops
+	if gotparam \{0x82fd4d18}
+		se_setprops pos = <orig_pos>
 	endif
-	if GotParam \{spawn_flicker_highlight}
-		obj_spawnscript ui_flicker_highlight params = <spawn_flicker_highlight>
+	if gotparam \{0x4f5d5a3e}
+		obj_spawnscript 0xd5b5a21b params = <0x4f5d5a3e>
 	endif
 endscript

@@ -1,11 +1,11 @@
 
 script ui_create_tutorial_prompt 
-	if GotParam \{continue_to_gigs}
+	if gotparam \{continue_to_gigs}
 		choose_skip_tutorials
-	elseif isRBDrum controller = ($primary_controller)
+	elseif isrbdrum controller = ($primary_controller)
 		choose_skip_tutorials
 	else
-		GetGlobalTags \{practice}
+		getglobaltags \{practice}
 		player_status = player1_status
 		switch ($<player_status>.part)
 			case guitar
@@ -13,70 +13,70 @@ script ui_create_tutorial_prompt
 				choose_skip_tutorials
 				return
 			else
-				SetGlobalTags \{practice
+				setglobaltags \{practice
 					params = {
 						has_prompt_guitar_tutorial = complete
 					}}
 			endif
-			text = qs("You are starting a new Guitar Career. You'll encounter new stuff such as Extended Sustains and Tapping Solo Sections. Would you like to check out the Guitar Tutorials?")
-			case Bass
+			text = qs(0xfcdbf168)
+			case bass
 			if (<has_prompt_bass_tutorial> = complete)
 				choose_skip_tutorials
 				return
 			else
-				SetGlobalTags \{practice
+				setglobaltags \{practice
 					params = {
 						has_prompt_bass_tutorial = complete
 					}}
 			endif
-			text = qs("You are starting a new Bass Career. You'll encounter new stuff such as Extended Sustains and Open Notes. Would you like to check out the Bass Tutorials?")
+			text = qs(0x0b9838ef)
 			case drum
 			if (<has_prompt_drum_tutorial> = complete)
 				choose_skip_tutorials
 				return
 			else
-				SetGlobalTags \{practice
+				setglobaltags \{practice
 					params = {
 						has_prompt_drum_tutorial = complete
 					}}
 			endif
-			text = qs("You are starting a new Drum Career. To play drums you'll need to know how to use the drums and kick pedal, and trigger star power.  Would you like to check out the Drum Tutorials?")
-			case Vocals
+			text = qs(0xbaf2d153)
+			case vocals
 			if (<has_prompt_vocal_tutorial> = complete)
 				choose_skip_tutorials
 				return
 			else
-				SetGlobalTags \{practice
+				setglobaltags \{practice
 					params = {
 						has_prompt_vocal_tutorial = complete
 					}}
 			endif
-			text = qs("You are starting a new Vocal Career. You'll need to know how to match the pitch, sing freeform sections, and trigger Star Power. Would you like to check out the Vocals Tutorials?")
+			text = qs(0xb3218b2a)
 			default
 			choose_skip_tutorials
 			return
 		endswitch
 		create_dialog_box {
-			heading_text = qs("NEW CAREER")
+			heading_text = qs(0x20cd276e)
 			body_text = <text>
 			options = [
 				{
 					func = choose_skip_tutorials
-					text = qs("CONTINUE")
+					text = qs(0x182f0173)
 				}
 				{
 					func = choose_view_tutorials
-					text = qs("VIEW TUTORIAL")
+					text = qs(0x33764e9f)
 				}
 			]
 			back_button_script = tutorial_prompt_cancel_entry
 		}
 		clean_up_user_control_helpers
-		add_user_control_helper \{text = qs("SELECT")
+		add_user_control_helper \{text = qs(0xc18d5e76)
 			button = green
 			z = 100000
 			all_buttons}
-		add_user_control_helper \{text = qs("BACK")
+		add_user_control_helper \{text = qs(0xaf4d5dd2)
 			button = red
 			z = 100000}
 	endif
@@ -97,8 +97,8 @@ endscript
 script choose_view_tutorials_worker 
 	hide_glitch \{num_frames = 3}
 	destroy_dialog_box
-	Menu_Music_Off
-	BG_Crowd_Front_End_Silence
+	menu_music_off
+	bg_crowd_front_end_silence
 	do_training_loading
 	destroy_loading_screen
 	startrendering
@@ -111,15 +111,15 @@ endscript
 
 script choose_skip_tutorials 
 	if (($player1_status.difficulty) = beginner)
-		GetGlobalTags \{practice}
-		if GotParam \{has_prompt_easy_tutorial}
+		getglobaltags \{practice}
+		if gotparam \{has_prompt_easy_tutorial}
 			ui_event_wait \{event = menu_replace
 				data = {
-					state = UIstate_tutorial_prompt_easy
+					state = uistate_tutorial_prompt_easy
 					is_popup
 				}}
 		else
-			if PakFilesAreCached
+			if pakfilesarecached
 			else
 			endif
 			ui_event_wait \{event = menu_replace
@@ -128,7 +128,7 @@ script choose_skip_tutorials
 				}}
 		endif
 	else
-		if PakFilesAreCached
+		if pakfilesarecached
 		else
 		endif
 		ui_event_wait \{event = menu_replace

@@ -1,1 +1,1 @@
-rock_record_main_stats = ASSERT_ON_USE
+rock_record_main_stats = 0x24d8810d

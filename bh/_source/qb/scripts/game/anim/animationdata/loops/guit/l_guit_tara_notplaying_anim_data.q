@@ -1,37 +1,37 @@
-L_GUIT_Tara_NotPlaying_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_tara_notplaying_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Tara_NotPlaying_075
+				slow = [
+					guit_tara_notplaying_075
 				]
-				Med = [
-					guit_Tara_NotPlaying_100
+				med = [
+					guit_tara_notplaying_100
 				]
-				Fast = [
-					guit_Tara_NotPlaying_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Tara_NotPlaying_075
-				]
-				Med = [
-					guit_Tara_NotPlaying_100
-				]
-				Fast = [
-					guit_Tara_NotPlaying_120
+				fast = [
+					guit_tara_notplaying_120
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Tara_NotPlaying_075
+			normal = {
+				slow = [
+					guit_tara_notplaying_075
 				]
-				Med = [
-					guit_Tara_NotPlaying_100
+				med = [
+					guit_tara_notplaying_100
 				]
-				Fast = [
-					guit_Tara_NotPlaying_120
+				fast = [
+					guit_tara_notplaying_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_tara_notplaying_075
+				]
+				med = [
+					guit_tara_notplaying_100
+				]
+				fast = [
+					guit_tara_notplaying_120
 				]
 			}
 		}

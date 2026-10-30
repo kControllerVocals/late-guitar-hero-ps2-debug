@@ -1,27 +1,27 @@
-DefaultMovingObjectSuspendDistance = 24
-X_AXIS = 1
-Y_AXIS = 2
-Z_AXIS = 4
-XY_AXIS = 3
-XZ_AXIS = 5
-YZ_AXIS = 6
-BOUNCEOBJ_REST_TOP_OR_BOTTOM = 1
-BOUNCEOBJ_REST_ANY_SIDE = 2
-BOUNCEOBJ_REST_TRAFFIC_CONE = 3
-GameObjExceptions = [
-	SkaterLanded
-	SkaterBailed
-	ObjectInRadius
-	ObjectOutOfRadius
-	AnyObjectInRadius
+defaultmovingobjectsuspenddistance = 24
+x_axis = 1
+y_axis = 2
+z_axis = 4
+xy_axis = 3
+xz_axis = 5
+yz_axis = 6
+bounceobj_rest_top_or_bottom = 1
+bounceobj_rest_any_side = 2
+bounceobj_rest_traffic_cone = 3
+gameobjexceptions = [
+	skaterlanded
+	skaterbailed
+	objectinradius
+	objectoutofradius
+	anyobjectinradius
 ]
-CarExceptions = [
-	ObjectInRadius
-	ObjectOutOfRadius
+carexceptions = [
+	objectinradius
+	objectoutofradius
 ]
-BouncyObjExceptions = [
-	ObjectInRadius
-	ObjectOutOfRadius
+bouncyobjexceptions = [
+	objectinradius
+	objectoutofradius
 	bounce
-	DoneBouncing
+	donebouncing
 ]

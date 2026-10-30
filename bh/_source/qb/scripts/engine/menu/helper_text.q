@@ -12,11 +12,11 @@ script create_helper_text \{anchor_id = helper_text_anchor
 		z_priority = 1000
 		font = debug
 		scale = 1.5}
-	if ObjectExists id = <anchor_id>
-		DestroyScreenElement id = <anchor_id>
+	if objectexists id = <anchor_id>
+		destroyscreenelement id = <anchor_id>
 	endif
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = <parent>
 		id = <anchor_id>
 		just = [center center]
@@ -24,9 +24,9 @@ script create_helper_text \{anchor_id = helper_text_anchor
 		dims = (1280.0, 720.0)
 		rot_angle = 0
 	}
-	if NOT GotParam \{no_bar}
-		CreateScreenElement {
-			type = SpriteElement
+	if NOT gotparam \{no_bar}
+		createscreenelement {
+			type = spriteelement
 			parent = <anchor_id>
 			texture = white
 			pos = <helper_pos>
@@ -37,8 +37,8 @@ script create_helper_text \{anchor_id = helper_text_anchor
 			rot_angle = -0.125
 		}
 	endif
-	CreateScreenElement {
-		type = HMenu
+	createscreenelement {
+		type = hmenu
 		parent = <anchor_id>
 		pos = (<helper_pos> - (0.0, 20.0))
 		just = [center bottom]
@@ -48,28 +48,28 @@ script create_helper_text \{anchor_id = helper_text_anchor
 		scale = <scale>
 	}
 	<menu_id> = <id>
-	if GotParam \{helper_text_elements}
-		ForEachIn <helper_text_elements> do = helper_text_update_element params = {font = <font> menu_id = <menu_id> z_priority = <z_priority>}
+	if gotparam \{helper_text_elements}
+		foreachin <helper_text_elements> do = helper_text_update_element params = {font = <font> menu_id = <menu_id> z_priority = <z_priority>}
 	endif
 endscript
 
 script helper_text_update_element 
-	if GotParam \{id}
-		if ObjectExists <id>
-			SetScreenElementProps {
+	if gotparam \{id}
+		if objectexists <id>
+			setscreenelementprops {
 				id = <id>
 				text = <text>
 			}
 			return
 		endif
 	endif
-	GetUpperCaseString <text>
-	CreateScreenElement {
-		type = TextElement
+	getuppercasestring <text>
+	createscreenelement {
+		type = textelement
 		parent = <menu_id>
 		id = <id>
 		font = <font>
-		text = <UpperCaseString>
+		text = <uppercasestring>
 		rgba = [90 90 90 255]
 		scale = 0.4
 		z_priority = <z_priority>
@@ -82,7 +82,7 @@ generic_helper_text = {
 			text = qs(0xf1cf2105)
 		}
 		{
-			text = qs("\m1 BACK")
+			text = qs(0xb259548b)
 		}
 		{
 			text = qs(0xed28e635)
@@ -109,7 +109,7 @@ generic_dialog_helper_text2 = {
 generic_dialog_helper_text3 = {
 	helper_text_elements = [
 		{
-			text = qs("\m1 BACK")
+			text = qs(0xb259548b)
 		}
 		{
 			text = qs(0xed28e635)

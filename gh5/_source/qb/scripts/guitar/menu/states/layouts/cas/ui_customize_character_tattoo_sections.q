@@ -1,4 +1,4 @@
-CAS_Body_Art_Sections = [
+cas_body_art_sections = [
 	{
 		text = qs(0xaa36cf82)
 		parts = [
@@ -24,7 +24,7 @@ CAS_Body_Art_Sections = [
 		]
 	}
 	{
-		text = qs("Rock")
+		text = qs(0xdbe68323)
 		parts = [
 			none
 			cag_arms_graphics009_torso
@@ -60,7 +60,7 @@ CAS_Body_Art_Sections = [
 		]
 	}
 	{
-		text = qs("Tribal")
+		text = qs(0x89a1ac4a)
 		parts = [
 			none
 			cag_arms_graphics064_torso
@@ -111,9 +111,9 @@ CAS_Body_Art_Sections = [
 			cag_arms_graphics062_torso
 			cag_arms_graphics063_torso
 			cag_arms_graphics066_torso
-			cag_arms_icon_Insect002_torso
-			cag_arms_icon_Mammal001_torso
-			cag_arms_icon_Mammal002_torso
+			cag_arms_icon_insect002_torso
+			cag_arms_icon_mammal001_torso
+			cag_arms_icon_mammal002_torso
 		]
 	}
 	{

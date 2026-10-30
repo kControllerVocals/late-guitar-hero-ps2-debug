@@ -10,15 +10,15 @@ num_rigidbody_destructors_per_frame_us = 0
 threaded_animation = 1
 viewer_buttons_enabled = 1
 wireframe_skins = 0
-SHOWPOLYS_ONQUICKVIEW = 1
+showpolys_onquickview = 1
 particle_heap_size = 0
-particle_options_DEBUG = {
+particle_options_debug = {
 	show_particle_heap = 0
-	particle_warning_script = FlexParticleWarning
+	particle_warning_script = flexparticlewarning
 }
-AssertOnMissingAnims = 0
-RAILNODE_ASSETS_ENABLED = 1
-RAILNODE_ASSETS_VEH_ENABLED = 1
+assertonmissinganims = 0
+railnode_assets_enabled = 1
+railnode_assets_veh_enabled = 1
 navmeshpolys = 2000
 navmeshradius = 4000
 navmeshalpha = 64
@@ -27,15 +27,15 @@ profile_time_font_scale = 0.4
 profile_time_offset = -35
 use_custom_proxim_code = 1
 enable_playlist = 1
-LightCachePool = 5000
-All_Levels_Unlocked = 1
+lightcachepool = 5000
+all_levels_unlocked = 1
 
 script network_driver_startup 
 
-	NetSessionFunc \{func = write_dnas_binary}
+	netsessionfunc \{func = write_dnas_binary}
 
 
-	if LoadNetworkDrivers \{viewer_ip = $viewer_ip
+	if loadnetworkdrivers \{viewer_ip = $viewer_ip
 			viewer_subnet = $viewer_subnet
 			viewer_gateway = $viewer_gateway}
 
@@ -45,15 +45,15 @@ script network_driver_startup
 
 endscript
 
-script Set_Outline_Shader_to_Default 
-	SetOutlineShaderColor \{red = 210
+script set_outline_shader_to_default 
+	setoutlineshadercolor \{red = 210
 		green = 80
-		Blue = 0
+		blue = 0
 		alpha = 180}
-	SetOutlineShaderParams \{min = 0.01
+	setoutlineshaderparams \{min = 0.01
 		max = 0.06
 		rate = 1.0
 		zscale = 0.001
 		filldist = 17
-		blendMode = 0}
+		blendmode = 0}
 endscript

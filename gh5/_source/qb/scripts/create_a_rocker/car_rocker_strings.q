@@ -1,189 +1,189 @@
-CAS_Guitar_Strings = [
+cas_guitar_strings = [
 	{
-		desc_id = Super_Slinky
-		frontend_desc = qs("\LSuper Slinky")
+		desc_id = super_slinky
+		frontend_desc = qs(0x2e59e956)
 		preview_texture = strings_super_slinky
 	}
 	{
-		desc_id = Regular_Slinky
-		frontend_desc = qs("\LRegular Slinky")
-		preview_texture = Regular_Slinky
+		desc_id = regular_slinky
+		frontend_desc = qs(0x79a4d7a5)
+		preview_texture = regular_slinky
 		locked
 	}
 	{
-		desc_id = Power_Slinky
-		frontend_desc = qs("\LPower Slinky")
+		desc_id = power_slinky
+		frontend_desc = qs(0xa9e7432c)
 		preview_texture = strings_power_slinky
 		locked
 	}
 	{
-		desc_id = Skinny_Top
-		frontend_desc = qs("\LSkinny Top Heavy Bottom")
+		desc_id = skinny_top
+		frontend_desc = qs(0x4d0bbefa)
 		preview_texture = strings_skin_top
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Extra_Slinky
-		frontend_desc = qs("\LExtra Slinky")
+		desc_id = extra_slinky
+		frontend_desc = qs(0x5d4a22b2)
 		preview_texture = strings_extra_slinky
 		locked
 	}
 	{
-		desc_id = Hybrid_SLINKY
-		frontend_desc = qs("\LHybrid Slinky")
-		preview_texture = strings_Hybrid_slinky
+		desc_id = hybrid_slinky
+		frontend_desc = qs(0x64719d58)
+		preview_texture = strings_hybrid_slinky
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Beefy_Slinky
-		frontend_desc = qs("\LBeefy Slinky")
-		preview_texture = strings_Beefy_slinky
+		desc_id = beefy_slinky
+		frontend_desc = qs(0x02f134e8)
+		preview_texture = strings_beefy_slinky
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = NotEven_Slinky
-		frontend_desc = qs("\LNot Even Slinky")
-		preview_texture = strings_NotEven_slinky
+		desc_id = noteven_slinky
+		frontend_desc = qs(0x3bf3b8c8)
+		preview_texture = strings_noteven_slinky
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
 		desc_id = coat_reg_slinky
-		frontend_desc = qs("\LCoated Regular Slinky")
+		frontend_desc = qs(0x57202149)
 		preview_texture = coat_slinky_reg
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
 		desc_id = coat_super_slinky
-		frontend_desc = qs("\LCoated Super Slinky")
+		frontend_desc = qs(0x304a851c)
 		preview_texture = coat_slinky_super
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
 		desc_id = coat_power_slinky
-		frontend_desc = qs("\LCoated Power Slinky")
+		frontend_desc = qs(0xb7f42f66)
 		preview_texture = coat_slinky_power
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
 		desc_id = coat_hybrid_slinky
-		frontend_desc = qs("\LCoated Hybrid Slinky")
+		frontend_desc = qs(0x2ae309b7)
 		preview_texture = coat_slinky_hybrid
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Nickel_Lite
-		frontend_desc = qs("\LNickel Light")
-		preview_texture = strings_NickelLite
+		desc_id = nickel_lite
+		frontend_desc = qs(0x9d442a02)
+		preview_texture = strings_nickellite
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Nickel_Med_Lite
-		frontend_desc = qs("\LNickel Medium-Light")
-		preview_texture = strings_NickelMedLite
+		desc_id = nickel_med_lite
+		frontend_desc = qs(0x95564619)
+		preview_texture = strings_nickelmedlite
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Nickel_Medium
-		frontend_desc = qs("\LNickel Medium")
-		preview_texture = strings_NickelMed
+		desc_id = nickel_medium
+		frontend_desc = qs(0x45283c38)
+		preview_texture = strings_nickelmed
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = 7_String_Slinky
-		frontend_desc = qs("\L7-String Regular Slinky")
-		preview_texture = Strings_Seven_String_Slinky
+		desc_id = 7_string_slinky
+		frontend_desc = qs(0x227862f3)
+		preview_texture = strings_seven_string_slinky
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = 7_String_Slinky_2
-		frontend_desc = qs("\L7-String Super Slinky")
-		preview_texture = strings_Seven_String_Slinky_2
+		desc_id = 7_string_slinky_2
+		frontend_desc = qs(0x012cbcd0)
+		preview_texture = strings_seven_string_slinky_2
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Earthwood_Acoustic_Light
-		frontend_desc = qs("\LEarthwood Acoustic Light")
-		preview_texture = strings_Earthwood_Ac_Lite
+		desc_id = earthwood_acoustic_light
+		frontend_desc = qs(0x4c7cd7de)
+		preview_texture = strings_earthwood_ac_lite
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Earthwood_Acoustic_Medium
-		frontend_desc = qs("\LEarthwood Acoustic Medium")
-		preview_texture = strings_Earthwood_Ac_Med
+		desc_id = earthwood_acoustic_medium
+		frontend_desc = qs(0xaba9e9b2)
+		preview_texture = strings_earthwood_ac_med
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Earthwood_Acoustic_MediumLite
-		frontend_desc = qs("\LEarthwood Acoustic Medium-Light")
-		preview_texture = strings_Earthwood_Ac_MedLite
+		desc_id = earthwood_acoustic_mediumlite
+		frontend_desc = qs(0x9a9dbd27)
+		preview_texture = strings_earthwood_ac_medlite
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Super_Slinky_Acoustic
-		frontend_desc = qs("\LSuper Slinky Acoustic")
-		preview_texture = strings_Supr_Slink_Ac
+		desc_id = super_slinky_acoustic
+		frontend_desc = qs(0x9fc1f9d2)
+		preview_texture = strings_supr_slink_ac
 		locked
 	}
 	{
-		desc_id = Reg_Slinky_Acoustic
-		frontend_desc = qs("\LRegular Slinky Acoustic")
-		preview_texture = strings_Reg_Slink_Ac
+		desc_id = reg_slinky_acoustic
+		frontend_desc = qs(0xf5dbf2f4)
+		preview_texture = strings_reg_slink_ac
 		locked
-		polaroid = sponsor_photo_ernieBall
+		polaroid = sponsor_photo_ernieball
 	}
 	{
-		desc_id = Power_Slinky_Acoustic
-		frontend_desc = qs("\LPower Slinky Acoustic")
-		preview_texture = strings_Powr_Slink_Ac
+		desc_id = power_slinky_acoustic
+		frontend_desc = qs(0xbace2f43)
+		preview_texture = strings_powr_slink_ac
 		locked
 	}
 ]
-CAS_Bass_Strings = [
+cas_bass_strings = [
 	{
-		desc_id = Super_Slinky
-		frontend_desc = qs("\LSuper Slinky")
+		desc_id = super_slinky
+		frontend_desc = qs(0x2e59e956)
 		preview_texture = bass_slink_super
 		locked
 	}
 	{
-		desc_id = Regular_Slinky
-		frontend_desc = qs("\LRegular Slinky")
-		preview_texture = strings_BASS_Slink_REG01
+		desc_id = regular_slinky
+		frontend_desc = qs(0x79a4d7a5)
+		preview_texture = strings_bass_slink_reg01
 	}
 	{
-		desc_id = Power_Slinky
-		frontend_desc = qs("\LPower Slinky")
-		preview_texture = strings_BASS_Power_Slinky
+		desc_id = power_slinky
+		frontend_desc = qs(0xa9e7432c)
+		preview_texture = strings_bass_power_slinky
 		locked
-		polaroid = Bass_Rward_Ernie_Ball
+		polaroid = bass_rward_ernie_ball
 	}
 	{
-		desc_id = Hybrid_SLINKY
-		frontend_desc = qs("\LHybrid Slinky")
+		desc_id = hybrid_slinky
+		frontend_desc = qs(0x64719d58)
 		preview_texture = strings_bass_slink_hybrid
 		locked
-		polaroid = Bass_Rward_Ernie_Ball
+		polaroid = bass_rward_ernie_ball
 	}
 	{
-		desc_id = Five_String_Slinky
-		frontend_desc = qs("\LFive String Slinky")
-		preview_texture = strings_BASS_5String
+		desc_id = five_string_slinky
+		frontend_desc = qs(0x47f5a3f2)
+		preview_texture = strings_bass_5string
 		locked
 	}
 ]

@@ -1,160 +1,160 @@
-jowBlue = 717488127
-jowGreen = 771697407
-jowOrange = -6149377
-jowRed = -15061505
-jowYellow = -3267073
+jowblue = 717488127
+jowgreen = 771697407
+joworange = -6149377
+jowred = -15061505
+jowyellow = -3267073
 
-script JOW_Stars 
+script jow_stars 
 
 
 
 endscript
 
-script SafeGetUniqueCompositeObjectID \{preferredID = safeFXID01}
-	if NOT GotParam \{ObjID}
-		GetUniqueCompositeObjectID preferredID = <preferredID>
-		return uniqueID = <uniqueID>
+script safegetuniquecompositeobjectid \{preferredid = safefxid01}
+	if NOT gotparam \{objid}
+		getuniquecompositeobjectid preferredid = <preferredid>
+		return uniqueid = <uniqueid>
 	endif
 	i = 0
-	FormatText TextName = index '%i' i = <i>
-	ExtendCRC <preferredID> <index> out = preferredID
+	formattext textname = index '%i' i = <i>
+	extendcrc <preferredid> <index> out = preferredid
 	begin
-	MangleChecksums a = <preferredID> b = <ObjID>
-	if NOT ObjectExists id = <mangled_ID>
-		return uniqueID = <preferredID>
+	manglechecksums a = <preferredid> b = <objid>
+	if NOT objectexists id = <mangled_id>
+		return uniqueid = <preferredid>
 	else
 		i = (<i> + 1)
-		FormatText TextName = index '%i' i = <i>
-		ExtendCRC <preferredID> <index> out = preferredID
+		formattext textname = index '%i' i = <i>
+		extendcrc <preferredid> <index> out = preferredid
 	endif
 	repeat
 endscript
 
-script SetLightIntensityOverTime \{i = 1.0
+script setlightintensityovertime \{i = 1.0
 		time = 2.0
-		stepTime = 0.05}
-	targetI = <i>
-	GetLightIntensity name = <name>
-	numSteps = (<time> / <stepTime>)
-	CastToInteger \{numSteps}
-	stepSize = ((<targetI> - <i>) / <numSteps>)
+		steptime = 0.05}
+	targeti = <i>
+	getlightintensity name = <name>
+	numsteps = (<time> / <steptime>)
+	casttointeger \{numsteps}
+	stepsize = ((<targeti> - <i>) / <numsteps>)
 	begin
-	i = (<i> + <stepSize>)
-	SetLightIntensity name = <name> intensity = <i>
-	Wait <stepTime> seconds
-	repeat (<numSteps> -1)
-	SetLightIntensity name = <name> intensity = <targetI>
+	i = (<i> + <stepsize>)
+	setlightintensity name = <name> intensity = <i>
+	wait <steptime> seconds
+	repeat (<numsteps> -1)
+	setlightintensity name = <name> intensity = <targeti>
 endscript
 
 script anim_key 
-	Obj_MoveToPos (<mov>) time = <time>
-	Obj_Rotate absolute = <rot> time = <time>
-	Obj_WaitMove
+	obj_movetopos (<mov>) time = <time>
+	obj_rotate absolute = <rot> time = <time>
+	obj_waitmove
 endscript
 
-script ChangePassColor \{parameter = m_psPass0MaterialColor
+script changepasscolor \{parameter = m_pspass0materialcolor
 		time = 1.0
-		stepTime = 0.05}
-	numSteps = (<time> / <stepTime>)
-	CastToInteger \{numSteps}
-	stepR = ((<endcolor> [0] - <startcolor> [0]) / <numSteps>)
-	stepG = ((<endcolor> [1] - <startcolor> [1]) / <numSteps>)
-	stepB = ((<endcolor> [2] - <startcolor> [2]) / <numSteps>)
-	stepA = ((<endcolor> [3] - <startcolor> [3]) / <numSteps>)
+		steptime = 0.05}
+	numsteps = (<time> / <steptime>)
+	casttointeger \{numsteps}
+	stepr = ((<endcolor> [0] - <startcolor> [0]) / <numsteps>)
+	stepg = ((<endcolor> [1] - <startcolor> [1]) / <numsteps>)
+	stepb = ((<endcolor> [2] - <startcolor> [2]) / <numsteps>)
+	stepa = ((<endcolor> [3] - <startcolor> [3]) / <numsteps>)
 	begin
-	SetArrayElement ArrayName = startcolor index = 0 newvalue = (<startcolor> [0] + <stepR>)
-	SetArrayElement ArrayName = startcolor index = 1 newvalue = (<startcolor> [1] + <stepG>)
-	SetArrayElement ArrayName = startcolor index = 2 newvalue = (<startcolor> [2] + <stepB>)
-	SetArrayElement ArrayName = startcolor index = 3 newvalue = (<startcolor> [3] + <stepA>)
-	UpdateMaterialProperty {
-		object = <ObjID>
+	setarrayelement arrayname = startcolor index = 0 newvalue = (<startcolor> [0] + <stepr>)
+	setarrayelement arrayname = startcolor index = 1 newvalue = (<startcolor> [1] + <stepg>)
+	setarrayelement arrayname = startcolor index = 2 newvalue = (<startcolor> [2] + <stepb>)
+	setarrayelement arrayname = startcolor index = 3 newvalue = (<startcolor> [3] + <stepa>)
+	updatematerialproperty {
+		object = <objid>
 		material = <material>
 		parameter = <parameter>
 		value = <startcolor>
 	}
-	Wait <stepTime> seconds
-	repeat (<numSteps> -1)
-	UpdateMaterialProperty {
-		object = <ObjID>
+	wait <steptime> seconds
+	repeat (<numsteps> -1)
+	updatematerialproperty {
+		object = <objid>
 		material = <material>
 		parameter = <parameter>
 		value = <endcolor>
 	}
 endscript
 
-script Light_UpdatePosition \{offset = (0.0, 0.0, 0.0)}
-	Obj_GetID
+script light_updateposition \{offset = (0.0, 0.0, 0.0)}
+	obj_getid
 	begin
-	if NOT IsCreated <attachObjID>
-		Die
+	if NOT iscreated <attachobjid>
+		die
 	endif
-	<attachObjID> :Obj_GetPosition
-	MoveLight name = <ObjID> pos = (<pos> + <offset>)
-	Wait \{1
+	<attachobjid> :obj_getposition
+	movelight name = <objid> pos = (<pos> + <offset>)
+	wait \{1
 		frame}
 	repeat
 endscript
 
-script Obj_Scale \{scale = (2.0, 2.0, 2.0)
+script obj_scale \{scale = (2.0, 2.0, 2.0)
 		time = 2.0}
-	if GotParam \{Cycle}
+	if gotparam \{cycle}
 		begin
-		Obj_MorphScaling target_scale = <scale> blend_duration = <time>
-		Wait <time> seconds
-		Obj_MorphScaling target_scale = (1.0, 1.0, 1.0) blend_duration = <time>
-		Wait <time> seconds
+		obj_morphscaling target_scale = <scale> blend_duration = <time>
+		wait <time> seconds
+		obj_morphscaling target_scale = (1.0, 1.0, 1.0) blend_duration = <time>
+		wait <time> seconds
 		repeat
 	else
-		Obj_MorphScaling target_scale = <scale> blend_duration = <time>
+		obj_morphscaling target_scale = <scale> blend_duration = <time>
 	endif
 endscript
 
-script Obj_SetMaterialColor_Spawner 
-	Obj_KillSpawnedScript \{name = Obj_SetMaterialColor}
-	Obj_SpawnScriptLater Obj_SetMaterialColor params = {<...>}
+script obj_setmaterialcolor_spawner 
+	obj_killspawnedscript \{name = obj_setmaterialcolor}
+	obj_spawnscriptlater obj_setmaterialcolor params = {<...>}
 endscript
 
-script Blend_RGBA 
-	LinearMap result = bR from = (<a> [0]) to = (<b> [0]) basedOn = <i> lowerBound = 0 upperBound = 1
-	LinearMap result = bG from = (<a> [1]) to = (<b> [1]) basedOn = <i> lowerBound = 0 upperBound = 1
-	LinearMap result = bB from = (<a> [2]) to = (<b> [2]) basedOn = <i> lowerBound = 0 upperBound = 1
-	LinearMap result = bA from = (<a> [3]) to = (<b> [3]) basedOn = <i> lowerBound = 0 upperBound = 1
+script blend_rgba 
+	linearmap result = br from = (<a> [0]) to = (<b> [0]) basedon = <i> lowerbound = 0 upperbound = 1
+	linearmap result = bg from = (<a> [1]) to = (<b> [1]) basedon = <i> lowerbound = 0 upperbound = 1
+	linearmap result = bb from = (<a> [2]) to = (<b> [2]) basedon = <i> lowerbound = 0 upperbound = 1
+	linearmap result = ba from = (<a> [3]) to = (<b> [3]) basedon = <i> lowerbound = 0 upperbound = 1
 	rgba = [0.0 0.0 0.0 0.0]
-	SetArrayElement ArrayName = rgba index = 0 newvalue = <bR>
-	SetArrayElement ArrayName = rgba index = 1 newvalue = <bG>
-	SetArrayElement ArrayName = rgba index = 2 newvalue = <bB>
-	SetArrayElement ArrayName = rgba index = 3 newvalue = <bA>
+	setarrayelement arrayname = rgba index = 0 newvalue = <br>
+	setarrayelement arrayname = rgba index = 1 newvalue = <bg>
+	setarrayelement arrayname = rgba index = 2 newvalue = <bb>
+	setarrayelement arrayname = rgba index = 3 newvalue = <ba>
 	return rgba = <rgba>
 endscript
 
-script Create_AVEdit_FX \{viewport = bg_viewport
-		clearColor = [
+script create_avedit_fx \{viewport = bg_viewport
+		clearcolor = [
 			0
 			0
 			0
 			255
 		]
-		blendMode = blend
-		alphaFromGray = 1}
-	ScreenFX_ClearFXInstances viewport = <viewport>
+		blendmode = blend
+		alphafromgray = 1}
+	screenfx_clearfxinstances viewport = <viewport>
 	change \{visualizer_events_enabled = false}
-	if GotParam \{primitives}
-		ScreenFX_AddFXInstance {
+	if gotparam \{primitives}
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = AVFX01
-			scefName = AVFX01
-			type = AudioVisualize
+			name = avfx01
+			scefname = avfx01
+			type = audiovisualize
 			on = 1
 			primitives = <primitives>
-			clearColor = <clearColor>
-			blendMode = <blendMode>
-			alphaFromGrayscale = <alphaFromGray>
-			audio_Params = $Default_Visualizer_Audio_Params
+			clearcolor = <clearcolor>
+			blendmode = <blendmode>
+			alphafromgrayscale = <alphafromgray>
+			audio_params = $default_visualizer_audio_params
 		}
-		ScreenFX_AddFXInstance {
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = AVFX_Bloom01
-			scefName = AVFX_Bloom01
+			name = avfx_bloom01
+			scefname = avfx_bloom01
 			type = bloom2
 			on = 1
 			materialfilter = 0
@@ -164,58 +164,58 @@ script Create_AVEdit_FX \{viewport = bg_viewport
 			saturation = 1.0
 			equation = eq2
 		}
-		ScreenFX_AddFXInstance {
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 			on = 1
 		}
 	endif
 endscript
 
-script Create_AVFX \{viewport = bg_viewport}
-	if NOT ViewportExists id = <viewport>
+script create_avfx \{viewport = bg_viewport}
+	if NOT viewportexists id = <viewport>
 		return
 	endif
-	if ScreenFX_FxInstanceExists viewport = <viewport> name = Bloom__simplified_
-		ScreenFX_RemoveFXInstance viewport = <viewport> name = Bloom__simplified_
+	if screenfx_fxinstanceexists viewport = <viewport> name = bloom__simplified_
+		screenfx_removefxinstance viewport = <viewport> name = bloom__simplified_
 	endif
-	if ScreenFX_FxInstanceExists viewport = <viewport> name = Godray
-		ScreenFX_RemoveFXInstance viewport = <viewport> name = Godray
+	if screenfx_fxinstanceexists viewport = <viewport> name = godray
+		screenfx_removefxinstance viewport = <viewport> name = godray
 	endif
-	if ScreenFX_FxInstanceExists viewport = <viewport> name = Noise_Lite type = noise2
-		ScreenFX_RemoveFXInstance viewport = <viewport> name = Noise_Lite type = noise2
+	if screenfx_fxinstanceexists viewport = <viewport> name = noise_lite type = noise2
+		screenfx_removefxinstance viewport = <viewport> name = noise_lite type = noise2
 	endif
-	if GotParam \{primitives}
-		if NOT ScreenFX_FxInstanceExists viewport = <viewport> name = AVFX01
-			ScreenFX_AddFXInstance {
+	if gotparam \{primitives}
+		if NOT screenfx_fxinstanceexists viewport = <viewport> name = avfx01
+			screenfx_addfxinstance {
 				viewport = <viewport>
-				name = AVFX01
-				scefName = AVFX01
-				type = AudioVisualize
+				name = avfx01
+				scefname = avfx01
+				type = audiovisualize
 				on = 1
 				primitives = <primitives>
-				clearColor = [0 , 0 , 0 , 255]
-				audio_Params = $Default_Visualizer_Audio_Params
+				clearcolor = [0 , 0 , 0 , 255]
+				audio_params = $default_visualizer_audio_params
 			}
 		else
-			ScreenFX_UpdateFXInstanceParams {
+			screenfx_updatefxinstanceparams {
 				viewport = <viewport>
-				name = AVFX01
-				scefName = AVFX01
-				type = AudioVisualize
+				name = avfx01
+				scefname = avfx01
+				type = audiovisualize
 				on = 1
 				primitives = <primitives>
-				clearColor = [0 , 0 , 0 , 255]
-				audio_Params = $Default_Visualizer_Audio_Params
+				clearcolor = [0 , 0 , 0 , 255]
+				audio_params = $default_visualizer_audio_params
 			}
 		endif
-		if NOT ScreenFX_FxInstanceExists viewport = <viewport> name = AVFX_Bloom01
-			ScreenFX_AddFXInstance {
+		if NOT screenfx_fxinstanceexists viewport = <viewport> name = avfx_bloom01
+			screenfx_addfxinstance {
 				viewport = <viewport>
-				name = AVFX_Bloom01
-				scefName = AVFX_Bloom01
+				name = avfx_bloom01
+				scefname = avfx_bloom01
 				type = bloom2
 				on = 1
 				materialfilter = 0
@@ -226,39 +226,39 @@ script Create_AVFX \{viewport = bg_viewport}
 				equation = eq2
 			}
 		endif
-	elseif GotParam \{profile}
-		ScreenFX_ClearFXInstances viewport = <viewport>
-		avPreset = ($Default_tod_manager.avPreset)
-		fxParam = ($Default_tod_manager.fxParam)
-		if StructureContains \{Structure = profile
-				avPreset}
-			avPreset = (<profile>.avPreset)
+	elseif gotparam \{profile}
+		screenfx_clearfxinstances viewport = <viewport>
+		avpreset = ($default_tod_manager.avpreset)
+		fxparam = ($default_tod_manager.fxparam)
+		if structurecontains \{structure = profile
+				avpreset}
+			avpreset = (<profile>.avpreset)
 		endif
 		i = 0
-		GetArraySize <avPreset>
+		getarraysize <avpreset>
 		begin
-		FormatText checksumname = avName 'AVFX_%i' i = <i> DontAssertForChecksums
-		ScreenFX_AddFXInstance {
+		formattext checksumname = avname 'AVFX_%i' i = <i> dontassertforchecksums
+		screenfx_addfxinstance {
 			viewport = <viewport>
-			name = <avName>
-			scefName = <avName>
-			type = AudioVisualize
+			name = <avname>
+			scefname = <avname>
+			type = audiovisualize
 			on = 1
-			primitives = (<avPreset> [<i>])
-			clearColor = [0 , 0 , 0 , 255]
-			audio_Params = $Default_Visualizer_Audio_Params
+			primitives = (<avpreset> [<i>])
+			clearcolor = [0 , 0 , 0 , 255]
+			audio_params = $default_visualizer_audio_params
 		}
 		i = (<i> + 1)
 		repeat <array_size>
-		if StructureContains \{Structure = profile
-				fxParam}
-			fxParam = (<profile>.fxParam)
+		if structurecontains \{structure = profile
+				fxparam}
+			fxparam = (<profile>.fxparam)
 		endif
-		if StructureContains \{Structure = fxParam
+		if structurecontains \{structure = fxparam
 				screen_fx}
 			begin
-			if GetNextArrayElement (<fxParam>.screen_fx)
-				ScreenFX_AddFXInstance {
+			if getnextarrayelement (<fxparam>.screen_fx)
+				screenfx_addfxinstance {
 					viewport = <viewport>
 					<element>
 				}
@@ -270,76 +270,76 @@ script Create_AVFX \{viewport = bg_viewport}
 	endif
 endscript
 
-script Destroy_AVFX \{primitives = $OG_BluePhoenix
+script destroy_avfx \{primitives = $og_bluephoenix
 		viewport = bg_viewport}
-	ScreenFX_ClearFXInstances viewport = <viewport>
-	if ViewportExists id = <viewport>
-		if ScreenFX_FxInstanceExists viewport = <viewport> name = AVFX01
-			ScreenFX_RemoveFXInstance viewport = <viewport> name = AVFX01
+	screenfx_clearfxinstances viewport = <viewport>
+	if viewportexists id = <viewport>
+		if screenfx_fxinstanceexists viewport = <viewport> name = avfx01
+			screenfx_removefxinstance viewport = <viewport> name = avfx01
 		endif
 	endif
 endscript
 
-script Display_AVFX_Message \{text = qs("pass text param")
+script display_avfx_message \{text = qs(0x7223952e)
 		time = 10
 		pos = (640.0, 640.0)}
-	FormatText TextName = newText qs("%t") t = <text>
-	if ScreenElementExists \{id = mb_text_container}
-		DestroyScreenElement \{id = mb_text_container}
+	formattext textname = newtext qs(0x0204c31d) t = <text>
+	if screenelementexists \{id = mb_text_container}
+		destroyscreenelement \{id = mb_text_container}
 	endif
-	CreateScreenElement \{id = mb_text_container
-		type = ContainerElement
+	createscreenelement \{id = mb_text_container
+		type = containerelement
 		parent = root_window}
-	CreateScreenElement {
+	createscreenelement {
 		id = mb_text
-		type = TextElement
+		type = textelement
 		parent = mb_text_container
 		font = debug
-		text = <newText>
+		text = <newtext>
 		scale = 1.5
 		pos = <pos>
 		just = [center center]
 		rgba = [150 185 200 255]
 		z_priority = 80
 	}
-	CreateScreenElement {
+	createscreenelement {
 		id = mb_text_shadow
-		type = TextElement
+		type = textelement
 		parent = mb_text_container
 		font = debug
-		text = <newText>
+		text = <newtext>
 		scale = 1.5
 		pos = (<pos> + (1.0, 1.0))
 		just = [center center]
 		rgba = [0 0 0 255]
 		z_priority = 79
 	}
-	mb_text :SE_SetProps \{alpha = 0}
-	mb_text_shadow :SE_SetProps \{alpha = 0}
-	mb_text :SE_SetProps \{alpha = 1
+	mb_text :se_setprops \{alpha = 0}
+	mb_text_shadow :se_setprops \{alpha = 0}
+	mb_text :se_setprops \{alpha = 1
 		time = 0.1}
-	mb_text_shadow :SE_SetProps \{alpha = 1
+	mb_text_shadow :se_setprops \{alpha = 1
 		time = 0.1}
-	mb_text :SE_WaitProps
-	Wait <time> seconds
-	mb_text :SE_SetProps \{alpha = 0
+	mb_text :se_waitprops
+	wait <time> seconds
+	mb_text :se_setprops \{alpha = 0
 		time = 0.1}
-	mb_text_shadow :SE_SetProps \{alpha = 0
+	mb_text_shadow :se_setprops \{alpha = 0
 		time = 0.1}
-	mb_text :SE_WaitProps
-	if ScreenElementExists \{id = mb_text_container}
-		DestroyScreenElement \{id = mb_text_container}
+	mb_text :se_waitprops
+	if screenelementexists \{id = mb_text_container}
+		destroyscreenelement \{id = mb_text_container}
 	endif
 endscript
 
-script HandofGod_ElectricCenter_Glow 
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow}
-	Wait \{1
+script handofgod_electriccenter_glow 
+	destroyscreenelement \{id = hog_electriccenter_glow}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter_Glow
-		texture = PH_RadialGlow_01
+		id = hog_electriccenter_glow
+		texture = ph_radialglow_01
 		alpha = 1
 		scale = (2.0, 2.0)
 		dims = (800.0, 800.0)
@@ -348,7 +348,7 @@ script HandofGod_ElectricCenter_Glow
 			center
 		]
 		pos = (640.0, 120.0)
-		blend = Add
+		blend = add
 		z_priority = 4
 		rgba = [
 			140
@@ -358,14 +358,14 @@ script HandofGod_ElectricCenter_Glow
 		]}
 endscript
 
-script HandofGod_ElectricCenter_Glow_02 
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow_02}
-	Wait \{1
+script handofgod_electriccenter_glow_02 
+	destroyscreenelement \{id = hog_electriccenter_glow_02}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter_Glow_02
-		texture = PH_RadialGlow_01
+		id = hog_electriccenter_glow_02
+		texture = ph_radialglow_01
 		alpha = 1
 		scale = (2.0, 2.0)
 		dims = (800.0, 800.0)
@@ -374,7 +374,7 @@ script HandofGod_ElectricCenter_Glow_02
 			center
 		]
 		pos = (640.0, 120.0)
-		blend = Add
+		blend = add
 		z_priority = 4
 		rgba = [
 			140
@@ -382,17 +382,17 @@ script HandofGod_ElectricCenter_Glow_02
 			255
 			255
 		]}
-	HandofGod_ElectricCenter_Glow_Anim_02
+	handofgod_electriccenter_glow_anim_02
 endscript
 
-script HandofGod_ElectricCenter_Glow_03 
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow_03}
-	Wait \{1
+script handofgod_electriccenter_glow_03 
+	destroyscreenelement \{id = hog_electriccenter_glow_03}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter_Glow_03
-		texture = PH_RadialGlow_01
+		id = hog_electriccenter_glow_03
+		texture = ph_radialglow_01
 		alpha = 1
 		scale = (2.0, 2.0)
 		dims = (800.0, 800.0)
@@ -401,7 +401,7 @@ script HandofGod_ElectricCenter_Glow_03
 			center
 		]
 		pos = (640.0, 120.0)
-		blend = Add
+		blend = add
 		z_priority = 4
 		rgba = [
 			140
@@ -409,17 +409,17 @@ script HandofGod_ElectricCenter_Glow_03
 			255
 			255
 		]}
-	HandofGod_ElectricCenter_Glow_Anim_03
+	handofgod_electriccenter_glow_anim_03
 endscript
 
-script HandofGod_ElectricCenter_Flare 
-	DestroyScreenElement \{id = HOG_ElectricCenter_Flare}
-	Wait \{1
+script handofgod_electriccenter_flare 
+	destroyscreenelement \{id = hog_electriccenter_flare}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter_Flare
-		texture = JOW_Flare02
+		id = hog_electriccenter_flare
+		texture = jow_flare02
 		alpha = 1
 		scale = (1.0, 1.0)
 		dims = (800.0, 800.0)
@@ -428,7 +428,7 @@ script HandofGod_ElectricCenter_Flare
 			center
 		]
 		pos = (640.0, 120.0)
-		blend = Add
+		blend = add
 		rot_angle = 45
 		z_priority = 3
 		rgba = [
@@ -437,19 +437,19 @@ script HandofGod_ElectricCenter_Flare
 			255
 			255
 		]}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	DestroyScreenElement \{id = HOG_ElectricCenter_Flare}
+	destroyscreenelement \{id = hog_electriccenter_flare}
 endscript
 
-script HandofGod_ElectricCenter_Flare_02 
-	DestroyScreenElement \{id = HOG_ElectricCenter_Flare_02}
-	Wait \{1
+script handofgod_electriccenter_flare_02 
+	destroyscreenelement \{id = hog_electriccenter_flare_02}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter_Flare_02
-		texture = JOW_ButtonFlare01
+		id = hog_electriccenter_flare_02
+		texture = jow_buttonflare01
 		alpha = 1
 		scale = (1.0, 1.0)
 		dims = (20.0, 20.0)
@@ -458,7 +458,7 @@ script HandofGod_ElectricCenter_Flare_02
 			center
 		]
 		pos = (640.0, 120.0)
-		blend = Add
+		blend = add
 		z_priority = 3
 		rgba = [
 			220
@@ -466,17 +466,17 @@ script HandofGod_ElectricCenter_Flare_02
 			255
 			255
 		]}
-	HandofGod_ElectricCenter_Flare_02_Anim
+	handofgod_electriccenter_flare_02_anim
 endscript
 
-script HandofGod_ElectricCenter 
-	DestroyScreenElement \{id = HOG_ElectricCenter}
-	Wait \{1
+script handofgod_electriccenter 
+	destroyscreenelement \{id = hog_electriccenter}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter
-		texture = PH_Electricity_01
+		id = hog_electriccenter
+		texture = ph_electricity_01
 		alpha = 1
 		scale = (2.0, 2.0)
 		dims = (300.0, 300.0)
@@ -485,7 +485,7 @@ script HandofGod_ElectricCenter
 			center
 		]
 		pos = (640.0, 120.0)
-		blend = Add
+		blend = add
 		z_priority = 2
 		rgba = [
 			146
@@ -493,19 +493,19 @@ script HandofGod_ElectricCenter
 			255
 			255
 		]}
-	Wait \{1
+	wait \{1
 		frame}
-	spawnscriptnow \{HandofGod_ElectricCenter_Anim_Scale}
+	spawnscriptnow \{handofgod_electriccenter_anim_scale}
 endscript
 
-script HandofGod_ElectricCenter_02 
-	DestroyScreenElement \{id = HOG_ElectricCenter_02}
-	Wait \{1
+script handofgod_electriccenter_02 
+	destroyscreenelement \{id = hog_electriccenter_02}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_ElectricCenter_02
-		texture = PH_Electricity_01
+		id = hog_electriccenter_02
+		texture = ph_electricity_01
 		alpha = 1
 		scale = (2.0, 2.0)
 		dims = (300.0, 300.0)
@@ -515,7 +515,7 @@ script HandofGod_ElectricCenter_02
 		]
 		pos = (640.0, 120.0)
 		rot_angle = 45
-		blend = Add
+		blend = add
 		z_priority = 2
 		rgba = [
 			146
@@ -523,128 +523,128 @@ script HandofGod_ElectricCenter_02
 			255
 			255
 		]}
-	Wait \{1
+	wait \{1
 		frame}
-	HandofGod_ElectricCenter_Anim_Scale_02
+	handofgod_electriccenter_anim_scale_02
 endscript
 
-script HandofGod_ElectricCenter_Glow_Anim 
-	HandofGod_ElectricCenter_Glow
+script handofgod_electriccenter_glow_anim 
+	handofgod_electriccenter_glow
 	begin
-	HOG_ElectricCenter_Glow :SE_SetProps scale = (2.2, 2.2) alpha = 0.4 time = 0.05 motion = Random (@ ease_in @ ease_out )
-	HOG_ElectricCenter_Glow :SE_WaitProps
-	HOG_ElectricCenter_Glow :SE_SetProps scale = (2.0, 2.0) alpha = 0.6 time = 0.1 motion = Random (@ ease_in @ ease_out )
-	HOG_ElectricCenter_Glow :SE_WaitProps
+	hog_electriccenter_glow :se_setprops scale = (2.2, 2.2) alpha = 0.4 time = 0.05 motion = Random (@ ease_in @ ease_out )
+	hog_electriccenter_glow :se_waitprops
+	hog_electriccenter_glow :se_setprops scale = (2.0, 2.0) alpha = 0.6 time = 0.1 motion = Random (@ ease_in @ ease_out )
+	hog_electriccenter_glow :se_waitprops
 	repeat 8
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow}
+	destroyscreenelement \{id = hog_electriccenter_glow}
 endscript
 
-script HandofGod_ElectricCenter_Glow_Anim_02 
+script handofgod_electriccenter_glow_anim_02 
 	begin
-	HOG_ElectricCenter_Glow_02 :SE_SetProps \{scale = (0.5, 0.5)
+	hog_electriccenter_glow_02 :se_setprops \{scale = (0.5, 0.5)
 		alpha = 1}
-	HOG_ElectricCenter_Glow_02 :SE_SetProps \{scale = (3.0, 3.0)
+	hog_electriccenter_glow_02 :se_setprops \{scale = (3.0, 3.0)
 		alpha = 0
 		time = 0.2}
-	HOG_ElectricCenter_Glow_02 :SE_WaitProps
+	hog_electriccenter_glow_02 :se_waitprops
 	repeat 7
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow_02}
+	destroyscreenelement \{id = hog_electriccenter_glow_02}
 endscript
 
-script HandofGod_ElectricCenter_Glow_Anim_03 
-	HOG_ElectricCenter_Glow_03 :SE_SetProps \{scale = (5.0, 5.0)
+script handofgod_electriccenter_glow_anim_03 
+	hog_electriccenter_glow_03 :se_setprops \{scale = (5.0, 5.0)
 		alpha = 0.4}
-	HOG_ElectricCenter_Glow_03 :SE_SetProps \{scale = (1.0, 1.0)
+	hog_electriccenter_glow_03 :se_setprops \{scale = (1.0, 1.0)
 		alpha = 0
 		time = 1}
-	HOG_ElectricCenter_Glow_03 :SE_WaitProps
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow_03}
+	hog_electriccenter_glow_03 :se_waitprops
+	destroyscreenelement \{id = hog_electriccenter_glow_03}
 endscript
 
-script HandofGod_ElectricCenter_Anim_Scale 
+script handofgod_electriccenter_anim_scale 
 	<rot> = 0
 	begin
 	<rot> = (<rot> + 45)
-	HOG_ElectricCenter :SE_SetProps rot_angle = <rot> alpha = 0
-	HOG_ElectricCenter :SE_SetProps \{scale = (1.0, 1.0)
+	hog_electriccenter :se_setprops rot_angle = <rot> alpha = 0
+	hog_electriccenter :se_setprops \{scale = (1.0, 1.0)
 		alpha = 0.3
 		time = 0.1}
-	HOG_ElectricCenter :SE_WaitProps
-	HOG_ElectricCenter :SE_SetProps \{scale = (1.3, 1.3)
+	hog_electriccenter :se_waitprops
+	hog_electriccenter :se_setprops \{scale = (1.3, 1.3)
 		alpha = 1
 		time = 0.1}
-	HOG_ElectricCenter :SE_WaitProps
+	hog_electriccenter :se_waitprops
 	repeat 4
-	DestroyScreenElement \{id = HOG_ElectricCenter}
+	destroyscreenelement \{id = hog_electriccenter}
 endscript
 
-script HandofGod_ElectricCenter_Anim_Scale_02 
+script handofgod_electriccenter_anim_scale_02 
 	<rot> = 0
 	begin
 	<rot> = (<rot> + 45)
-	HOG_ElectricCenter_02 :SE_SetProps rot_angle = <rot>
-	HOG_ElectricCenter_02 :SE_SetProps \{scale = (1.0, 1.0)
+	hog_electriccenter_02 :se_setprops rot_angle = <rot>
+	hog_electriccenter_02 :se_setprops \{scale = (1.0, 1.0)
 		alpha = 1}
-	HOG_ElectricCenter_02 :SE_WaitProps
-	HOG_ElectricCenter_02 :SE_SetProps \{scale = (2.0, 2.0)
+	hog_electriccenter_02 :se_waitprops
+	hog_electriccenter_02 :se_setprops \{scale = (2.0, 2.0)
 		alpha = 0
 		time = 0.2}
-	HOG_ElectricCenter_02 :SE_WaitProps
+	hog_electriccenter_02 :se_waitprops
 	repeat 4
-	DestroyScreenElement \{id = HOG_ElectricCenter_02}
+	destroyscreenelement \{id = hog_electriccenter_02}
 endscript
 
-script HandofGod_ElectricCenter_Flare_02_Anim 
-	HOG_ElectricCenter_Flare_02 :SE_SetProps \{scale = (200.0, 200.0)
+script handofgod_electriccenter_flare_02_anim 
+	hog_electriccenter_flare_02 :se_setprops \{scale = (200.0, 200.0)
 		rot_angle = -360
 		alpha = 0.5
 		time = 0.1}
-	HOG_ElectricCenter_Flare_02 :SE_WaitProps
-	DestroyScreenElement \{id = HOG_ElectricCenter_Flare_02}
+	hog_electriccenter_flare_02 :se_waitprops
+	destroyscreenelement \{id = hog_electriccenter_flare_02}
 endscript
 
-script HandofGod_ElectricCenter_Combo 
-	spawnscriptnow \{HandofGod_ElectricCenter_Glow_Anim}
-	spawnscriptnow \{HandofGod_ElectricCenter}
-	spawnscriptnow \{HandofGod_ElectricCenter_02}
-	spawnscriptnow \{HandofGod_ElectricCenter_Flare}
-	spawnscriptnow \{HandofGod_Smoke_01}
-	spawnscriptnow \{HandofGod_ElectricCenter_Sparks_01}
+script handofgod_electriccenter_combo 
+	spawnscriptnow \{handofgod_electriccenter_glow_anim}
+	spawnscriptnow \{handofgod_electriccenter}
+	spawnscriptnow \{handofgod_electriccenter_02}
+	spawnscriptnow \{handofgod_electriccenter_flare}
+	spawnscriptnow \{handofgod_smoke_01}
+	spawnscriptnow \{handofgod_electriccenter_sparks_01}
 endscript
 
-script HandofGod_FX_01 
-	Wait \{2.0
+script handofgod_fx_01 
+	wait \{2.0
 		second}
-	spawnscriptnow \{HandofGod_ElectricCenter_Glow_Anim}
-	spawnscriptnow \{HandofGod_ElectricCenter}
-	spawnscriptnow \{HandofGod_ElectricCenter_02}
-	spawnscriptnow \{HandofGod_ElectricCenter_Flare}
-	spawnscriptnow \{HandofGod_Smoke_01}
-	spawnscriptnow \{HandofGod_ElectricCenter_Sparks_01}
-	spawnscriptnow \{HandofGod_Lightning_Combo}
-	Wait \{1.0
+	spawnscriptnow \{handofgod_electriccenter_glow_anim}
+	spawnscriptnow \{handofgod_electriccenter}
+	spawnscriptnow \{handofgod_electriccenter_02}
+	spawnscriptnow \{handofgod_electriccenter_flare}
+	spawnscriptnow \{handofgod_smoke_01}
+	spawnscriptnow \{handofgod_electriccenter_sparks_01}
+	spawnscriptnow \{handofgod_lightning_combo}
+	wait \{1.0
 		second}
-	HandofGod_ElectricCenter_Flare_02
+	handofgod_electriccenter_flare_02
 endscript
 
-script HandofGod_FX_02 
-	Wait \{2.0
+script handofgod_fx_02 
+	wait \{2.0
 		second}
-	spawnscriptnow \{HandofGod_ElectricCenter_Glow_02}
-	spawnscriptnow \{HandofGod_ElectricCenter_Sparks_02}
-	Wait \{0.0
+	spawnscriptnow \{handofgod_electriccenter_glow_02}
+	spawnscriptnow \{handofgod_electriccenter_sparks_02}
+	wait \{0.0
 		second}
-	HandofGod_Smoke_02
-	HandofGod_ElectricCenter_Glow_03
+	handofgod_smoke_02
+	handofgod_electriccenter_glow_03
 endscript
 
-script HandofGod_Lightning_God 
-	DestroyScreenElement \{id = HOG_Lightning_God}
-	Wait \{1
+script handofgod_lightning_god 
+	destroyscreenelement \{id = hog_lightning_god}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_Lightning_God
+		id = hog_lightning_god
 		alpha = 1
 		scale = (1.1, 1.1)
 		just = [
@@ -653,25 +653,25 @@ script HandofGod_Lightning_God
 		]
 		pos = (1000.0, 140.0)
 		rot_angle = 80
-		material = sys_Big_Bolt01_sys_Big_Bolt01
-		blend = Add
+		material = sys_big_bolt01_sys_big_bolt01
+		blend = add
 		use_animated_uvs = true
 		top_down_v
 		frame_length = 0.08
 		num_uv_frames = (8.0, 1.0)
 		z_priority = 1}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	DestroyScreenElement \{id = HOG_Lightning_God}
+	destroyscreenelement \{id = hog_lightning_god}
 endscript
 
-script HandofGod_Lighting_Devil 
-	DestroyScreenElement \{id = HOG_Lighting_Devil}
-	Wait \{1
+script handofgod_lighting_devil 
+	destroyscreenelement \{id = hog_lighting_devil}
+	wait \{1
 		frame}
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
-		id = HOG_Lighting_Devil
+		id = hog_lighting_devil
 		alpha = 1
 		scale = (1.1, 1.1)
 		just = [
@@ -680,39 +680,39 @@ script HandofGod_Lighting_Devil
 		]
 		pos = (210.0, 70.0)
 		rot_angle = 280
-		material = sys_Big_Bolt01_sys_Big_Bolt01
-		blend = Add
+		material = sys_big_bolt01_sys_big_bolt01
+		blend = add
 		use_animated_uvs = true
 		top_down_v
 		frame_length = 0.08
 		num_uv_frames = (8.0, 1.0)
 		z_priority = 1}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	DestroyScreenElement \{id = HOG_Lighting_Devil}
+	destroyscreenelement \{id = hog_lighting_devil}
 endscript
 
-script HandofGod_Lightning_Combo 
-	spawnscriptnow \{HandofGod_Lightning_God}
-	spawnscriptnow \{HandofGod_Lighting_Devil}
+script handofgod_lightning_combo 
+	spawnscriptnow \{handofgod_lightning_god}
+	spawnscriptnow \{handofgod_lighting_devil}
 endscript
 
-script HandofGod_FX_Kill 
-	DestroyScreenElement \{id = HOG_ElectricCenter_Glow}
-	DestroyScreenElement \{id = HOG_ElectricCenter_Flare}
-	DestroyScreenElement \{id = HOG_ElectricCenter}
-	DestroyScreenElement \{id = HOG_Lightning_God}
-	DestroyScreenElement \{id = HOG_Lighting_Devil}
+script handofgod_fx_kill 
+	destroyscreenelement \{id = hog_electriccenter_glow}
+	destroyscreenelement \{id = hog_electriccenter_flare}
+	destroyscreenelement \{id = hog_electriccenter}
+	destroyscreenelement \{id = hog_lightning_god}
+	destroyscreenelement \{id = hog_lighting_devil}
 endscript
 
-script HandofGod_ElectricCenter_Sparks_01 
-	Destroy2DParticleSystem \{id = ElectricCenter_Sparks_01}
-	Wait \{1
+script handofgod_electriccenter_sparks_01 
+	destroy2dparticlesystem \{id = electriccenter_sparks_01}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = ElectricCenter_Sparks_01
+	create2dparticlesystem \{id = electriccenter_sparks_01
 		pos = (640.0, 260.0)
 		z_priority = 2
-		material = sys_Particle_Spark01_sys_Particle_Spark01
+		material = sys_particle_spark01_sys_particle_spark01
 		parent = root_window
 		start_color = [
 			100
@@ -739,19 +739,19 @@ script HandofGod_ElectricCenter_Sparks_01
 		velocity = 10
 		friction = (0.0, 20.0)
 		time = 0.5}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	Destroy2DParticleSystem \{id = ElectricCenter_Sparks_01}
+	destroy2dparticlesystem \{id = electriccenter_sparks_01}
 endscript
 
-script HandofGod_ElectricCenter_Sparks_02 
-	Destroy2DParticleSystem \{id = ElectricCenter_Sparks_02}
-	Wait \{1
+script handofgod_electriccenter_sparks_02 
+	destroy2dparticlesystem \{id = electriccenter_sparks_02}
+	wait \{1
 		frame}
-	Create2DParticleSystem \{id = ElectricCenter_Sparks_02
+	create2dparticlesystem \{id = electriccenter_sparks_02
 		pos = (640.0, 260.0)
 		z_priority = 2
-		material = sys_Particle_Spark01_sys_Particle_Spark01
+		material = sys_particle_spark01_sys_particle_spark01
 		parent = root_window
 		start_color = [
 			100
@@ -778,17 +778,17 @@ script HandofGod_ElectricCenter_Sparks_02
 		velocity = 20
 		friction = (0.0, 20.0)
 		time = 0.5}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	Destroy2DParticleSystem \{id = ElectricCenter_Sparks_02}
+	destroy2dparticlesystem \{id = electriccenter_sparks_02}
 endscript
 
-script HandofGod_Smoke_01 
-	Destroy2DParticleSystem \{id = HOG_Smoke_01}
-	Create2DParticleSystem \{id = HOG_Smoke_01
+script handofgod_smoke_01 
+	destroy2dparticlesystem \{id = hog_smoke_01}
+	create2dparticlesystem \{id = hog_smoke_01
 		pos = (640.0, 260.0)
 		z_priority = 20.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = root_window
 		start_color = [
 			140
@@ -815,17 +815,17 @@ script HandofGod_Smoke_01
 		velocity = 4
 		friction = (0.0, 0.0)
 		time = 0.5}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	Destroy2DParticleSystem \{id = HOG_Smoke_01}
+	destroy2dparticlesystem \{id = hog_smoke_01}
 endscript
 
-script HandofGod_Smoke_02 
-	Destroy2DParticleSystem \{id = HOG_Smoke_02}
-	Create2DParticleSystem \{id = HOG_Smoke_02
+script handofgod_smoke_02 
+	destroy2dparticlesystem \{id = hog_smoke_02}
+	create2dparticlesystem \{id = hog_smoke_02
 		pos = (640.0, 260.0)
 		z_priority = 20.0
-		material = Mat_HOG_Smoke
+		material = mat_hog_smoke
 		parent = root_window
 		start_color = [
 			140
@@ -852,60 +852,60 @@ script HandofGod_Smoke_02
 		velocity = 10
 		friction = (0.0, 0.0)
 		time = 1}
-	Wait \{1.0
+	wait \{1.0
 		second}
-	Destroy2DParticleSystem \{id = HOG_Smoke_02
+	destroy2dparticlesystem \{id = hog_smoke_02
 		kill_when_empty}
 endscript
 
-script CameraBlur_FastZoom_InandOut 
-	if NOT BG_fx_get_start_params \{viewport = bg_viewport
-			effectName = Depth_of_Field__simplified_}
+script camerablur_fastzoom_inandout 
+	if NOT bg_fx_get_start_params \{viewport = bg_viewport
+			effectname = depth_of_field__simplified_}
 		return
 	endif
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0.1}
-	Wait \{0.2
+	wait \{0.2
 		seconds}
-	BG_fx_set_blur \{appendStrength = 0
+	bg_fx_set_blur \{appendstrength = 0
 		time = 0.3}
-	Wait \{0.2
+	wait \{0.2
 		seconds}
-	BG_fx_set_blur \{appendStrength = 0.5
+	bg_fx_set_blur \{appendstrength = 0.5
 		time = 0.1}
-	Wait \{0.1
+	wait \{0.1
 		second}
-	BG_fx_set_blur effectParams = <startValue> time = 0.4
+	bg_fx_set_blur effectparams = <startvalue> time = 0.4
 endscript
 
-script CameraBlur_SlowZoom_InandOut 
-	if NOT BG_fx_get_start_params \{viewport = bg_viewport
-			effectName = Depth_of_Field__simplified_}
+script camerablur_slowzoom_inandout 
+	if NOT bg_fx_get_start_params \{viewport = bg_viewport
+			effectname = depth_of_field__simplified_}
 		return
 	endif
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0.5}
-	Wait \{0.4
+	wait \{0.4
 		seconds}
-	BG_fx_set_blur \{appendStrength = 0
+	bg_fx_set_blur \{appendstrength = 0
 		time = 0.4}
-	Wait \{0.5
+	wait \{0.5
 		seconds}
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0.3}
-	Wait \{0.3
+	wait \{0.3
 		second}
-	BG_fx_set_blur effectParams = <startValue> time = 0.4
+	bg_fx_set_blur effectparams = <startvalue> time = 0.4
 endscript
 
-script CameraBlur_FocusIn 
-	if NOT BG_fx_get_start_params \{viewport = bg_viewport
-			effectName = Depth_of_Field__simplified_}
+script camerablur_focusin 
+	if NOT bg_fx_get_start_params \{viewport = bg_viewport
+			effectname = depth_of_field__simplified_}
 		return
 	endif
-	BG_fx_set_blur \{appendStrength = 1
+	bg_fx_set_blur \{appendstrength = 1
 		time = 0}
-	Wait \{0.1
+	wait \{0.1
 		second}
-	BG_fx_set_blur effectParams = <startValue> time = 0.5
+	bg_fx_set_blur effectparams = <startvalue> time = 0.5
 endscript

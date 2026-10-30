@@ -1,37 +1,37 @@
-L_SING_Morgan_4horseNS_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_morgan_4horsens_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					sing_morgan_4horsemen_150_NS
+				slow = [
+					sing_morgan_4horsemen_150_ns
 				]
-				Med = [
-					sing_morgan_4horsemen_100_NS
+				med = [
+					sing_morgan_4horsemen_100_ns
 				]
-				Fast = [
-					sing_morgan_4horsemen_120_NS
-				]
-			}
-			Normal = {
-				Slow = [
-					sing_morgan_4horsemen_150_NS
-				]
-				Med = [
-					sing_morgan_4horsemen_100_NS
-				]
-				Fast = [
-					sing_morgan_4horsemen_120_NS
+				fast = [
+					sing_morgan_4horsemen_120_ns
 				]
 			}
-			Bad = {
-				Slow = [
-					sing_morgan_4horsemen_150_NS
+			normal = {
+				slow = [
+					sing_morgan_4horsemen_150_ns
 				]
-				Med = [
-					sing_morgan_4horsemen_100_NS
+				med = [
+					sing_morgan_4horsemen_100_ns
 				]
-				Fast = [
-					sing_morgan_4horsemen_120_NS
+				fast = [
+					sing_morgan_4horsemen_120_ns
+				]
+			}
+			bad = {
+				slow = [
+					sing_morgan_4horsemen_150_ns
+				]
+				med = [
+					sing_morgan_4horsemen_100_ns
+				]
+				fast = [
+					sing_morgan_4horsemen_120_ns
 				]
 			}
 		}

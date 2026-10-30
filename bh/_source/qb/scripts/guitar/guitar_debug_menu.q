@@ -1,9 +1,9 @@
 menu_pos = (150.0, 100.0)
-debug_unlock_all = 0
+0xbba7b735 = 0
 
 script create_debug_backdrop 
 	destroy_debug_backdrop
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		parent = root_window
 		id = debug_backdrop
 		pos = (640.0, 0.0)
@@ -29,8 +29,8 @@ script create_debugging_menu
 	safe_create_gh3_pause_menu
 	ui_fx_set_blur \{amount = 0.0
 		time = 0.0}
-	CreateScreenElement \{type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement \{type = vscrollingmenu
+		parent = pause_menu
 		id = debug_scrolling_menu
 		just = [
 			left
@@ -38,7 +38,7 @@ script create_debugging_menu
 		]
 		dims = (400.0, 480.0)
 		pos = $menu_pos}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = debug_scrolling_menu
 		id = debug_vmenu
 		pos = (0.0, 0.0)
@@ -67,7 +67,7 @@ script create_debugging_menu
 			}
 		]}
 	disable_pause
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		id = toggle_botp1_menuitem
 		font = text_a1
@@ -99,7 +99,7 @@ script create_debugging_menu
 			}
 		]}
 	toggle_botp1_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		id = toggle_botp2_menuitem
 		font = text_a1
@@ -131,9 +131,9 @@ script create_debugging_menu
 			}
 		]}
 	toggle_botp2_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
-		id = toggle_botp3_menuitem
+		id = 0x937569a0
 		font = text_a1
 		scale = 0.75
 		rgba = [
@@ -163,9 +163,9 @@ script create_debugging_menu
 			}
 		]}
 	toggle_botp3_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
-		id = toggle_botp4_menuitem
+		id = 0x71a972d9
 		font = text_a1
 		scale = 0.75
 		rgba = [
@@ -195,7 +195,7 @@ script create_debugging_menu
 			}
 		]}
 	toggle_botp4_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -205,7 +205,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LUnlock All (be patient, make yourself a cup of tea...)")
+		text = qs(0x627d1426)
 		z_priority = 100.0
 		just = [
 			left
@@ -225,9 +225,9 @@ script create_debugging_menu
 				playday_unlockall
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
-		id = Debug_Aspect_Toggle
+		id = 0x4b78eec8
 		font = text_a1
 		scale = 0.75
 		rgba = [
@@ -263,17 +263,17 @@ script create_debugging_menu
 				toggle_aspect_ratio
 			}
 		]}
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<ps2_widescreen> = 0)
-		SetScreenElementProps \{id = Debug_Aspect_Toggle
+		setscreenelementprops \{id = 0x4b78eec8
 			text = qs(0x1d1f28ae)}
 	else
-		SetScreenElementProps \{id = Debug_Aspect_Toggle
+		setscreenelementprops \{id = 0x4b78eec8
 			text = qs(0x97cccfc3)}
 	endif
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
-		id = Debug_Progressive_Scan
+		id = 0x2c140bc5
 		font = text_a1
 		scale = 0.75
 		rgba = [
@@ -309,20 +309,20 @@ script create_debugging_menu
 				toggle_progressive_scan
 			}
 		]}
-	if ($PS2_ProgressiveScan = 0)
-		SetScreenElementProps \{id = Debug_Progressive_Scan
+	if ($ps2_progressivescan = 0)
+		setscreenelementprops \{id = 0x2c140bc5
 			text = qs(0xc3953146)}
 	else
-		SetScreenElementProps \{id = Debug_Progressive_Scan
+		setscreenelementprops \{id = 0x2c140bc5
 			text = qs(0x7e6fcd6d)}
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LRepeat Last Song")
+		text = qs(0xbeef52ab)
 		z_priority = 100.0
 		just = [left top]
 		shadow
@@ -334,14 +334,14 @@ script create_debugging_menu
 			{pad_choose select_start_song params = {uselaststarttime forceintro from_gameplay = <from_gameplay>}}
 		]
 	}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = debug_vmenu
 		id = toggle_playermode_menuitem
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LPlay Song: 1p_quickplay")
+		text = qs(0x51f6e6c3)
 		z_priority = 100.0
 		just = [left top]
 		shadow
@@ -356,7 +356,7 @@ script create_debugging_menu
 		]
 	}
 	toggle_playermode_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -366,7 +366,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LSettings")
+		text = qs(0x3eee694e)
 		z_priority = 100.0
 		just = [
 			left
@@ -394,9 +394,9 @@ script create_debugging_menu
 				create_settings_menu
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
-		id = Debug_Toggle_Audible_HitNote
+		id = 0x7471cfe8
 		font = text_a1
 		scale = 0.75
 		rgba = [
@@ -432,14 +432,14 @@ script create_debugging_menu
 				toggle_on_audible_hitnote
 			}
 		]}
-	if ($Debug_Audible_HitNote = 1)
-		SetScreenElementProps \{id = Debug_Toggle_Audible_HitNote
+	if ($debug_audible_hitnote = 1)
+		setscreenelementprops \{id = 0x7471cfe8
 			text = qs(0x93c0f15c)}
 	else
-		SetScreenElementProps \{id = Debug_Toggle_Audible_HitNote
+		setscreenelementprops \{id = 0x7471cfe8
 			text = qs(0xbf23837e)}
 	endif
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -449,7 +449,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LCheck CAS Assets")
+		text = qs(0x79aee6c5)
 		just = [
 			left
 			top
@@ -477,7 +477,7 @@ script create_debugging_menu
 				debug_checkcasassets
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -487,7 +487,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LDump Heaps")
+		text = qs(0xbc1f222f)
 		just = [
 			left
 			top
@@ -515,7 +515,7 @@ script create_debugging_menu
 				debug_dumpheaps
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -525,7 +525,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LCharacter Select")
+		text = qs(0xd37611a5)
 		just = [
 			left
 			top
@@ -553,7 +553,7 @@ script create_debugging_menu
 				create_character_viewer_menu
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -563,7 +563,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LPlay Credits")
+		text = qs(0x72718c0c)
 		just = [
 			left
 			top
@@ -591,7 +591,7 @@ script create_debugging_menu
 				debug_playcredits
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		id = toggle_rolandkit_menuitem
 		font = debug
@@ -602,7 +602,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LRoland Drumkit: Off")
+		text = qs(0x7e35767a)
 		z_priority = 100.0
 		just = [
 			left
@@ -639,7 +639,7 @@ script create_debugging_menu
 			}
 		]}
 	toggle_rolandkit_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		id = toggle_lsinfo_menuitem
 		font = debug
@@ -650,7 +650,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LToggle Lightshow debug")
+		text = qs(0x3fd0ccc7)
 		z_priority = 100.0
 		just = [
 			left
@@ -675,10 +675,10 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				LightShow_ToggleDebugInfo
+				lightshow_toggledebuginfo
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -688,7 +688,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LColor Calibration")
+		text = qs(0xdb091893)
 		z_priority = 100.0
 		just = [
 			left
@@ -715,11 +715,11 @@ script create_debugging_menu
 				pad_choose
 				generic_event_choose
 				params = {
-					state = UIstate_debug_color_calibration
+					state = uistate_debug_color_calibration
 				}
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -729,7 +729,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LUI Physics Test")
+		text = qs(0xc939b12e)
 		just = [
 			left
 			top
@@ -760,13 +760,13 @@ script create_debugging_menu
 				}
 			}
 		]}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LRepeat Last Song With Intro")
+		text = qs(0x04a9d108)
 		z_priority = 100.0
 		just = [left top]
 		shadow
@@ -778,7 +778,7 @@ script create_debugging_menu
 			{pad_choose select_start_song params = {uselaststarttime forceintro from_gameplay = <from_gameplay>}}
 		]
 	}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		id = toggle_intro_select
 		font = debug
@@ -789,7 +789,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LPlay intro_lemmy")
+		text = qs(0x5f5a1f13)
 		z_priority = 100.0
 		just = [
 			left
@@ -825,7 +825,7 @@ script create_debugging_menu
 				start_song_with_intro
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -835,7 +835,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LIncrease Band Money by 100k Credits")
+		text = qs(0x8f190e86)
 		just = [
 			left
 			top
@@ -863,7 +863,7 @@ script create_debugging_menu
 				increase_band_money_by_100000
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -873,7 +873,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LBankrupt Band")
+		text = qs(0xbd0b859f)
 		just = [
 			left
 			top
@@ -901,7 +901,7 @@ script create_debugging_menu
 				bankrupt_band
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -911,7 +911,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LToggle FPS Display")
+		text = qs(0x84494418)
 		just = [
 			left
 			top
@@ -936,10 +936,10 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				ToggleFPS
+				togglefps
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -949,7 +949,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LRockstar Creator")
+		text = qs(0x8cb71f71)
 		just = [
 			left
 			top
@@ -974,10 +974,10 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				debug_menu_RockstarCreator
+				debug_menu_rockstarcreator
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -987,7 +987,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LRockstar Creator (w/ObjViewer)")
+		text = qs(0xb481179d)
 		just = [
 			left
 			top
@@ -1012,10 +1012,10 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				debug_menu_RockstarCreatorObjViewer
+				debug_menu_rockstarcreatorobjviewer
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -1025,7 +1025,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LSkip Career Intros")
+		text = qs(0x323fca95)
 		just = [
 			left
 			top
@@ -1050,10 +1050,10 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				SkipCareerIntros
+				skipcareerintros
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -1063,7 +1063,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LDebug Career Intros")
+		text = qs(0x63a19b9e)
 		just = [
 			left
 			top
@@ -1088,10 +1088,10 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				DebugCareerIntros
+				debugcareerintros
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -1101,7 +1101,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LSpawn menu test script")
+		text = qs(0x05d65352)
 		just = [
 			left
 			top
@@ -1129,7 +1129,7 @@ script create_debugging_menu
 				select_debug_menu_loop
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
 		font = debug
 		scale = 0.75
@@ -1139,7 +1139,7 @@ script create_debugging_menu
 			210
 			250
 		]
-		text = qs("\LCycle Next Lighting Snapshot")
+		text = qs(0xe883e62d)
 		just = [
 			left
 			top
@@ -1164,12 +1164,12 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				LightShow_DebugCycle
+				lightshow_debugcycle
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = debug_vmenu
-		id = force_quickplay_venue_menuitem
+		id = 0x9d49def0
 		font = debug
 		scale = 0.75
 		rgba = [
@@ -1203,17 +1203,17 @@ script create_debugging_menu
 			}
 			{
 				pad_choose
-				toggle_force_quickplay_venue
+				0xd0d754bc
 			}
 		]}
-	toggle_force_quickplay_venue_setprop
-	LaunchEvent \{type = focus
+	0x5bcab44e
+	launchevent \{type = focus
 		target = debug_vmenu}
 endscript
 
 script destroy_debugging_menu 
-	if ScreenElementExists \{id = debug_scrolling_menu}
-		DestroyScreenElement \{id = debug_scrolling_menu}
+	if screenelementexists \{id = debug_scrolling_menu}
+		destroyscreenelement \{id = debug_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 	destroy_debug_backdrop
@@ -1245,14 +1245,14 @@ endscript
 debug_playcredits_active = 0
 
 script debug_playcredits 
-	Menu_Music_Off
+	menu_music_off
 	kill_gem_scroller
 	destroy_debugging_menu
 	reset_score \{player_status = player1_status}
 	change \{end_credits = 1}
 	change \{debug_playcredits_active = 1}
 	change \{game_mode = gh4_p1_career}
-	Progression_EndCredits
+	progression_endcredits
 endscript
 
 script debug_quitcredits 
@@ -1274,15 +1274,15 @@ script debug_difficulty_analyzer
 		]
 		z_priority = 90}
 	x_pos = 500
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = song_scrolling_menu
 		just = [left top]
 		dims = (400.0, 500.0)
 		pos = ($menu_pos - (520.0, 0.0) + (<x_pos> * (1.0, 0.0)))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = song_scrolling_menu
 		id = song_vmenu
 		pos = (0.0, 0.0)
@@ -1317,8 +1317,8 @@ script debug_difficulty_analyzer
 	song_checksum = (<sorted_songlist> [<array_entry>])
 	get_song_struct song = <song_checksum>
 	get_song_title song = <song_checksum>
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = song_vmenu
 		font = debug
 		scale = 0.75
@@ -1330,53 +1330,53 @@ script debug_difficulty_analyzer
 			{focus menu_focus}
 			{unfocus menu_unfocus}
 			{focus wait_for_diff_analyzer params = {<...>}}
-			{pad_choose KillSpawnedScript params = {name = wait_for_diff_analyzer_spawned}}
+			{pad_choose killspawnedscript params = {name = wait_for_diff_analyzer_spawned}}
 			{pad_choose create_difficulty_analyzer_instrument_menu params = {song_name = <song_checksum>}}
 		]
 	}
 	<array_entry> = (<array_entry> + 1)
 	repeat <array_size>
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = song_vmenu
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LOUTPUT ALL SCORE DATA")
+		text = qs(0x2c1db66a)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
 			{focus menu_focus}
 			{unfocus menu_unfocus}
 			{focus wait_for_diff_analyzer params = {<...>}}
-			{focus KillSpawnedScript params = {name = wait_for_diff_analyzer_spawned}}
+			{focus killspawnedscript params = {name = wait_for_diff_analyzer_spawned}}
 			{pad_choose create_difficulty_analyzer_instrument_menu params = {difficulty = all song_name = debug_output}}
 		]
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = song_vmenu}
 endscript
 
 script difficulty_analyzer_back 
-	KillSpawnedScript \{name = wait_for_diff_analyzer_spawned}
+	killspawnedscript \{name = wait_for_diff_analyzer_spawned}
 	destroy_difficulty_analyzer
 	generic_menu_pad_back \{callback = back_to_debug_menu}
 endscript
 
 script destroy_difficulty_analyzer_menu 
-	if ScreenElementExists \{id = song_scrolling_menu}
-		DestroyScreenElement \{id = song_scrolling_menu}
+	if screenelementexists \{id = song_scrolling_menu}
+		destroyscreenelement \{id = song_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
 
 script wait_for_diff_analyzer 
-	KillSpawnedScript \{name = wait_for_diff_analyzer_spawned}
+	killspawnedscript \{name = wait_for_diff_analyzer_spawned}
 	spawnscriptnow wait_for_diff_analyzer_spawned params = {<...>}
 endscript
 
 script wait_for_diff_analyzer_spawned 
-	Wait \{0.5
+	wait \{0.5
 		seconds}
 	difficulty_analyzer_show instrument = guitar difficulty = all song_name = <song_checksum>
 endscript
@@ -1394,15 +1394,15 @@ script create_difficulty_analyzer_instrument_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = difficulty_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = difficulty_menu
 		id = difficulty_vmenu
 		pos = (0.0, 0.0)
@@ -1434,7 +1434,7 @@ script create_difficulty_analyzer_instrument_menu
 			}
 		]}
 	array_entry = 0
-	GetArraySize \{$instrument_checksums}
+	getarraysize \{$instrument_checksums}
 	begin
 	instrument = ($instrument_text [<array_entry>])
 	<events> = [
@@ -1449,8 +1449,8 @@ script create_difficulty_analyzer_instrument_menu
 			{pad_choose create_difficulty_analyzer_difficulty_menu params = {instrument = ($instrument_checksums [<array_entry>]) song_name = <song_name>}}
 		]
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = difficulty_vmenu
 		font = debug
 		scale = 0.75
@@ -1468,19 +1468,19 @@ script create_difficulty_analyzer_instrument_menu
 			{unfocus menu_unfocus}
 			{pad_choose create_difficulty_analyzer_difficulty_menu params = {all instrument = all song_name = <song_name>}}
 		]
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = difficulty_vmenu
 			font = debug
 			scale = 0.75
 			rgba = [210 210 210 250]
-			text = qs("\LALL")
+			text = qs(0x886518a8)
 			just = [left top]
 			z_priority = 100.0
 			event_handlers = <events>
 		}
 	endif
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = difficulty_vmenu}
 endscript
 
@@ -1496,15 +1496,15 @@ script create_difficulty_analyzer_difficulty_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = difficulty_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = difficulty_menu
 		id = difficulty_vmenu
 		pos = (0.0, 0.0)
@@ -1536,7 +1536,7 @@ script create_difficulty_analyzer_difficulty_menu
 			}
 		]}
 	array_entry = 0
-	GetArraySize \{$difficulty_list}
+	getarraysize \{$difficulty_list}
 	begin
 	difficulty_count = ($difficulty_list [<array_entry>])
 	get_difficulty_text difficulty = <difficulty_count>
@@ -1552,8 +1552,8 @@ script create_difficulty_analyzer_difficulty_menu
 			{pad_choose output_diff_scores params = {instrument = <instrument> ($difficulty_list [<array_entry>])}}
 		]
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = difficulty_vmenu
 		font = debug
 		scale = 0.75
@@ -1571,59 +1571,59 @@ script create_difficulty_analyzer_difficulty_menu
 			{unfocus menu_unfocus}
 			{pad_choose output_diff_scores params = {all instrument = <instrument>}}
 		]
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = difficulty_vmenu
 			font = debug
 			scale = 0.75
 			rgba = [210 210 210 250]
-			text = qs("\LALL")
+			text = qs(0x886518a8)
 			just = [left top]
 			z_priority = 100.0
 			event_handlers = <events>
 		}
 	endif
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = difficulty_vmenu}
 endscript
 
 script sort_songlist_metallica_first 
-	GetArraySize \{$gh5_songlist}
+	getarraysize \{$gh5_songlist}
 	sortable_songlist = []
 	i = 0
 	begin
 	song = ($gh5_songlist [<i>])
 	get_song_title song = <song>
 	get_song_artist song = <song> with_year = 0
-	if ((<song_artist> = qs("\LMETALLICA")) || (<song_artist> = qs("\LMetallica")))
-		song_artist = qs("a")
+	if ((<song_artist> = qs(0x0d03c6a5)) || (<song_artist> = qs(0x4b58f1d4)))
+		song_artist = qs(0xc2c0b7e6)
 	endif
 
 	element_to_add = {song_checksum = <song> song_title = <song_title> song_artist = <song_artist>}
-	AddArrayElement array = <sortable_songlist> element = <element_to_add>
+	addarrayelement array = <sortable_songlist> element = <element_to_add>
 	sortable_songlist = <array>
 	i = (<i> + 1)
 	repeat (<array_size>)
-	if GlobalExists \{name = GH4_download_songlist
+	if globalexists \{name = gh4_download_songlist
 			type = array}
-		GetArraySize \{$GH4_download_songlist}
+		getarraysize \{$gh4_download_songlist}
 		if (<array_size> > 0)
 			i = 0
 			begin
-			song = ($GH4_download_songlist [<i>])
+			song = ($gh4_download_songlist [<i>])
 			get_song_title song = <song>
 			get_song_artist song = <song> with_year = 0
-			if ((<song_artist> = qs("\LMETALLICA")) || (<song_artist> = qs("\LMetallica")))
-				song_artist = qs("a")
+			if ((<song_artist> = qs(0x0d03c6a5)) || (<song_artist> = qs(0x4b58f1d4)))
+				song_artist = qs(0xc2c0b7e6)
 			endif
 			element_to_add = {song_checksum = <song> song_title = <song_title> song_artist = <song_artist>}
-			AddArrayElement array = <sortable_songlist> element = <element_to_add>
+			addarrayelement array = <sortable_songlist> element = <element_to_add>
 			sortable_songlist = <array>
 			i = (<i> + 1)
 			repeat (<array_size>)
 		endif
 	endif
-	SortAndBuildSonglist songlist = <sortable_songlist> sortby = artist_alphabetical
+	sortandbuildsonglist songlist = <sortable_songlist> sortby = artist_alphabetical
 	return {sorted_songlist = <sorted_songlist>}
 endscript
 
@@ -1638,15 +1638,15 @@ script create_song_menu \{version = gh3}
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = song_scrolling_menu
 		just = [left top]
 		dims = (400.0, 550.0)
 		pos = ($menu_pos - (200.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = song_scrolling_menu
 		id = song_vmenu
 		pos = (0.0, 0.0)
@@ -1685,8 +1685,8 @@ script create_song_menu \{version = gh3}
 	get_song_struct song = <song_checksum>
 	get_song_version song = <song_checksum>
 	<available> = 1
-	if StructureContains Structure = <song_struct> dlc_stream_name
-		if NOT SongCheckIfDownloaded filename = (<song_struct>.dlc_stream_name)
+	if structurecontains structure = <song_struct> dlc_stream_name
+		if NOT songcheckifdownloaded filename = (<song_struct>.dlc_stream_name)
 			<available> = 0
 		endif
 	endif
@@ -1694,8 +1694,8 @@ script create_song_menu \{version = gh3}
 		if (<song_version> = <version>)
 			get_song_artist song = <song_checksum> with_year = 0
 			get_song_title song = <song_checksum>
-			CreateScreenElement {
-				type = TextElement
+			createscreenelement {
+				type = textelement
 				parent = song_vmenu
 				font = debug
 				scale = 0.75
@@ -1713,7 +1713,7 @@ script create_song_menu \{version = gh3}
 	endif
 	<array_entry> = (<array_entry> + 1)
 	repeat <array_size>
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = song_vmenu}
 endscript
 
@@ -1732,8 +1732,8 @@ script back_to_part_menu
 endscript
 
 script destroy_song_menu 
-	if ScreenElementExists \{id = song_scrolling_menu}
-		DestroyScreenElement \{id = song_scrolling_menu}
+	if screenelementexists \{id = song_scrolling_menu}
+		destroyscreenelement \{id = song_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -1748,24 +1748,24 @@ script create_difficulty_menu \{player = 1}
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = difficulty_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	FormatText TextName = title qs("Player %p") p = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext textname = title qs(0x5c5cedaa) p = <player>
+	createscreenelement {
+		type = textelement
 		parent = difficulty_menu
 		pos = (-200.0, 0.0)
 		font = fontgrid_text_a8
 		text = <title>
 	}
-	CreateScreenElement {
-		type = VMenu
+	createscreenelement {
+		type = vmenu
 		parent = difficulty_menu
 		id = difficulty_vmenu
 		pos = (0.0, 0.0)
@@ -1776,15 +1776,15 @@ script create_difficulty_menu \{player = 1}
 		]
 	}
 	array_entry = 0
-	GetArraySize \{$difficulty_list}
+	getarraysize \{$difficulty_list}
 	num_diffs = <array_size>
-	GetPlayerInfo <player> part
+	getplayerinfo <player> part
 	if (<part> = drum)
 		num_diffs = (<array_size> + 1)
 	endif
 	begin
 	if (<array_entry> = <array_size>)
-		difficulty_text = qs("EXPERT+")
+		difficulty_text = qs(0x7a19b5f7)
 		current_difficulty = ($difficulty_list [<array_size> -1])
 		double_kick = 1
 	else
@@ -1798,8 +1798,8 @@ script create_difficulty_menu \{player = 1}
 	else
 		<choose_params> = {callback = create_difficulty_menu double_kick = <double_kick> player = <player> difficulty = <current_difficulty> callback_params = {song_name = <song_name> version = <version> player = (<player> + 1) from_gameplay = <from_gameplay>}}
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = difficulty_vmenu
 		font = debug
 		scale = 0.75
@@ -1816,13 +1816,13 @@ script create_difficulty_menu \{player = 1}
 	<array_entry> = (<array_entry> + 1)
 	repeat <num_diffs>
 	if (<player> = 1 && $current_num_players = 4)
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = difficulty_vmenu
 			font = debug
 			scale = 0.75
 			rgba = [210 210 210 250]
-			text = qs("All Easy Bot")
+			text = qs(0x720df1fc)
 			z_priority = 100.0
 			just = [left top]
 			event_handlers = [
@@ -1831,13 +1831,13 @@ script create_difficulty_menu \{player = 1}
 				{pad_choose debug_quick_bot_band params = {difficulty = easy callback = select_start_song callback_params = {song_name = <song_name> from_gameplay = <from_gameplay>}}}
 			]
 		}
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = difficulty_vmenu
 			font = debug
 			scale = 0.75
 			rgba = [210 210 210 250]
-			text = qs("All Expert Bot")
+			text = qs(0x7f19da59)
 			z_priority = 100.0
 			just = [left top]
 			event_handlers = [
@@ -1847,35 +1847,35 @@ script create_difficulty_menu \{player = 1}
 			]
 		}
 	endif
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = difficulty_vmenu}
 endscript
 
 script debug_menu_set_double_kick 
-	SetPlayerInfo <player> difficulty = <difficulty>
-	SetPlayerInfo <player> double_kick_drum = <double_kick>
+	setplayerinfo <player> difficulty = <difficulty>
+	setplayerinfo <player> double_kick_drum = <double_kick>
 	<callback> <callback_params>
 endscript
 
 script debug_quick_bot_band \{difficulty = expert}
-	SetPlayerInfo 1 difficulty = <difficulty>
-	SetPlayerInfo 2 difficulty = <difficulty>
-	SetPlayerInfo 3 difficulty = <difficulty>
-	SetPlayerInfo 4 difficulty = <difficulty>
-	SetPlayerInfo \{1
+	setplayerinfo 1 difficulty = <difficulty>
+	setplayerinfo 2 difficulty = <difficulty>
+	setplayerinfo 3 difficulty = <difficulty>
+	setplayerinfo 4 difficulty = <difficulty>
+	setplayerinfo \{1
 		bot_play = 1}
-	SetPlayerInfo \{2
+	setplayerinfo \{2
 		bot_play = 1}
-	SetPlayerInfo \{3
+	setplayerinfo \{3
 		bot_play = 1}
-	SetPlayerInfo \{4
+	setplayerinfo \{4
 		bot_play = 1}
 	<callback> <callback_params>
 endscript
 
 script destroy_difficulty_menu 
-	if ScreenElementExists \{id = difficulty_menu}
-		DestroyScreenElement \{id = difficulty_menu}
+	if screenelementexists \{id = difficulty_menu}
+		destroyscreenelement \{id = difficulty_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -1890,24 +1890,24 @@ script create_bot_menu \{player = 1}
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = bot_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	FormatText TextName = title qs("Player %p") p = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext textname = title qs(0x5c5cedaa) p = <player>
+	createscreenelement {
+		type = textelement
 		parent = bot_menu
 		pos = (-200.0, 0.0)
 		font = fontgrid_text_a8
 		text = <title>
 	}
-	CreateScreenElement {
-		type = VMenu
+	createscreenelement {
+		type = vmenu
 		parent = bot_menu
 		id = bot_vmenu
 		pos = (0.0, 0.0)
@@ -1922,13 +1922,13 @@ script create_bot_menu \{player = 1}
 	else
 		<choose_params> = {callback = create_bot_menu double_kick = <double_kick> player = <player> callback_params = {song_name = <song_name> version = <version> player = (<player> + 1) from_gameplay = <from_gameplay>}}
 	endif
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = bot_vmenu
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("Player")
+		text = qs(0x5217670b)
 		z_priority = 100.0
 		just = [left top]
 		event_handlers = [
@@ -1937,13 +1937,13 @@ script create_bot_menu \{player = 1}
 			{pad_choose debug_menu_set_bot params = {<choose_params> bot = 0}}
 		]
 	}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = bot_vmenu
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("Bot")
+		text = qs(0x24bbae9c)
 		z_priority = 100.0
 		just = [left top]
 		event_handlers = [
@@ -1952,18 +1952,18 @@ script create_bot_menu \{player = 1}
 			{pad_choose debug_menu_set_bot params = {<choose_params> bot = 1}}
 		]
 	}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = bot_vmenu}
 endscript
 
 script debug_menu_set_bot 
-	SetPlayerInfo <player> bot_play = <bot>
+	setplayerinfo <player> bot_play = <bot>
 	<callback> <callback_params>
 endscript
 
 script destroy_bot_menu 
-	if ScreenElementExists \{id = bot_menu}
-		DestroyScreenElement \{id = bot_menu}
+	if screenelementexists \{id = bot_menu}
+		destroyscreenelement \{id = bot_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -1975,39 +1975,39 @@ endscript
 part_list = [
 	guitar
 	drum
-	Bass
-	Vocals
+	bass
+	vocals
 ]
 part_list_props = {
 	guitar = {
 		index = 0
 		text_nl = 'guitar'
-		text = qs("Guitar")
-		text_upper = qs("GUITAR")
+		text = qs(0x11355666)
+		text_upper = qs(0x9504b94a)
 	}
 	drum = {
 		index = 1
 		text_nl = 'drum'
-		text = qs("Drum")
-		text_upper = qs("DRUM")
+		text = qs(0xfd52050f)
+		text_upper = qs(0xcf488ba5)
 	}
-	Bass = {
+	bass = {
 		index = 2
 		text_nl = 'bass'
-		text = qs("Bass")
-		text_upper = qs("BASS")
+		text = qs(0x4f551cbe)
+		text_upper = qs(0x7d4f9214)
 	}
-	Vocals = {
+	vocals = {
 		index = 3
 		text_nl = 'vocals'
-		text = qs("Vocals")
-		text_upper = qs("VOCALS")
+		text = qs(0x9fae80a8)
+		text_upper = qs(0x1b9f6f84)
 	}
-	Band = {
+	band = {
 		index = 3
 		text_nl = 'band'
-		text = qs("Band")
-		text_upper = qs("BAND")
+		text = qs(0xe8a5176a)
+		text_upper = qs(0xdabf99c0)
 	}
 }
 
@@ -2021,14 +2021,14 @@ endscript
 
 script create_part_menu \{player = 1}
 	if ($current_num_players = 4)
-		SetPlayerInfo \{1
+		setplayerinfo \{1
 			part = guitar}
-		SetPlayerInfo \{2
-			part = Bass}
-		SetPlayerInfo \{3
+		setplayerinfo \{2
+			part = bass}
+		setplayerinfo \{3
 			part = drum}
-		SetPlayerInfo \{4
-			part = Vocals}
+		setplayerinfo \{4
+			part = vocals}
 		create_difficulty_menu {song_name = <song_name> version = <version> player = 1 from_gameplay = <from_gameplay>}
 		return
 	endif
@@ -2041,24 +2041,24 @@ script create_part_menu \{player = 1}
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = part_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	FormatText TextName = title qs("Player %p") p = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext textname = title qs(0x5c5cedaa) p = <player>
+	createscreenelement {
+		type = textelement
 		parent = part_menu
 		pos = (-200.0, 0.0)
 		font = fontgrid_text_a8
 		text = <title>
 	}
-	CreateScreenElement {
-		type = VMenu
+	createscreenelement {
+		type = vmenu
 		parent = part_menu
 		id = part_vmenu
 		pos = (0.0, 0.0)
@@ -2070,13 +2070,13 @@ script create_part_menu \{player = 1}
 		]
 	}
 	array_entry = 0
-	GetArraySize \{$part_list}
+	getarraysize \{$part_list}
 	begin
 	part_count = ($part_list [<array_entry>])
 	get_part_text part = <part_count>
 	if (<player> = $current_num_players)
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = part_vmenu
 			font = debug
 			scale = 0.75
@@ -2091,8 +2091,8 @@ script create_part_menu \{player = 1}
 			]
 		}
 	else
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = part_vmenu
 			font = debug
 			scale = 0.75
@@ -2109,18 +2109,18 @@ script create_part_menu \{player = 1}
 	endif
 	<array_entry> = (<array_entry> + 1)
 	repeat <array_size>
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = part_vmenu}
 endscript
 
 script debug_menu_set_part 
-	SetPlayerInfo <player> part = <part>
+	setplayerinfo <player> part = <part>
 	<callback> <callback_params>
 endscript
 
 script destroy_part_menu 
-	if ScreenElementExists \{id = part_menu}
-		DestroyScreenElement \{id = part_menu}
+	if screenelementexists \{id = part_menu}
+		destroyscreenelement \{id = part_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -2136,15 +2136,15 @@ script create_settings_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = settings_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos - (30.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = settings_scrolling_menu
 		id = settings_vmenu
 		pos = (0.0, 0.0)
@@ -2175,7 +2175,7 @@ script create_settings_menu
 				}
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_allowcontroller_menuitem
 		font = debug
@@ -2186,7 +2186,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LUse Controller for All Instruments: ")
+		text = qs(0x5bdead88)
 		just = [
 			left
 			top
@@ -2207,7 +2207,7 @@ script create_settings_menu
 			}
 		]}
 	toggle_allowcontroller_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		font = debug
 		scale = 0.75
@@ -2217,7 +2217,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LChange Venue")
+		text = qs(0x0606bdb8)
 		just = [
 			left
 			top
@@ -2237,7 +2237,7 @@ script create_settings_menu
 				create_changevenue_menu
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_visibility_menuitem
 		font = debug
@@ -2248,7 +2248,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LToggle visibility. . .")
+		text = qs(0x4bf88204)
 		just = [
 			left
 			top
@@ -2268,7 +2268,7 @@ script create_settings_menu
 				create_togglevisibility_menu
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = select_slomo_menuitem
 		font = debug
@@ -2279,7 +2279,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LSelect Slomo : 1.0")
+		text = qs(0xb124b270)
 		just = [
 			left
 			top
@@ -2300,7 +2300,7 @@ script create_settings_menu
 			}
 		]}
 	select_slomo_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_showmeasures_menuitem
 		font = debug
@@ -2311,7 +2311,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LShow Measures")
+		text = qs(0x680492d0)
 		just = [
 			left
 			top
@@ -2332,7 +2332,7 @@ script create_settings_menu
 			}
 		]}
 	toggle_showmeasures_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_showsongstars_menuitem
 		font = debug
@@ -2343,7 +2343,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LShow Song Stars")
+		text = qs(0xdae59d1c)
 		just = [
 			left
 			top
@@ -2364,9 +2364,9 @@ script create_settings_menu
 			}
 		]}
 	toggle_showsongstars_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
-		id = Debug_BCSND_Audio_Stereo
+		id = 0x9c3673da
 		font = text_a1
 		scale = 0.75
 		rgba = [
@@ -2399,11 +2399,11 @@ script create_settings_menu
 			}
 			{
 				pad_choose
-				debug_toggle_stereo_sound
+				0xdb79f598
 			}
 		]}
-	toggle_stereo_sound_setprop
-	CreateScreenElement \{type = TextElement
+	0x22729eb0
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_rockmeterdebug_menuitem
 		font = debug
@@ -2414,7 +2414,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LRock Meter Debug")
+		text = qs(0x0979628f)
 		just = [
 			left
 			top
@@ -2435,7 +2435,7 @@ script create_settings_menu
 			}
 		]}
 	toggle_rockmeterdebug_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_viewvolumesonscreen_menuitem
 		font = debug
@@ -2446,7 +2446,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LView Volumes On Screen")
+		text = qs(0xe280d18b)
 		just = [
 			left
 			top
@@ -2467,9 +2467,9 @@ script create_settings_menu
 			}
 		]}
 	toggle_viewvolumesonscreen_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
-		id = toggle_LagTestPart1_menuitem
+		id = toggle_lagtestpart1_menuitem
 		font = debug
 		scale = 0.75
 		rgba = [
@@ -2478,7 +2478,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LLag Test Part 1")
+		text = qs(0xa596cd4e)
 		just = [
 			left
 			top
@@ -2499,9 +2499,9 @@ script create_settings_menu
 			}
 		]}
 	toggle_lagtestpart1_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
-		id = toggle_LagTestPart2_menuitem
+		id = toggle_lagtestpart2_menuitem
 		font = debug
 		scale = 0.75
 		rgba = [
@@ -2510,7 +2510,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LLag Test Part 2")
+		text = qs(0x8ebb9e8d)
 		just = [
 			left
 			top
@@ -2531,9 +2531,9 @@ script create_settings_menu
 			}
 		]}
 	toggle_lagtestpart2_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
-		id = toggle_LagTestPart3_menuitem
+		id = toggle_lagtestpart3_menuitem
 		font = debug
 		scale = 0.75
 		rgba = [
@@ -2542,7 +2542,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LLag Test Part 3")
+		text = qs(0x97a0afcc)
 		just = [
 			left
 			top
@@ -2563,7 +2563,7 @@ script create_settings_menu
 			}
 		]}
 	toggle_lagtestpart3_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = edit_inputlagvalue_menuitem
 		font = debug
@@ -2574,7 +2574,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LInput Logic Lag Value")
+		text = qs(0x3cf0ba39)
 		just = [
 			left
 			top
@@ -2599,7 +2599,7 @@ script create_settings_menu
 			}
 		]}
 	edit_inputlagvalue_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = edit_gemlagvalue_menuitem
 		font = debug
@@ -2610,7 +2610,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LVisual Gem Lag Value")
+		text = qs(0xce5672c6)
 		just = [
 			left
 			top
@@ -2635,7 +2635,7 @@ script create_settings_menu
 			}
 		]}
 	edit_gemlagvalue_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = edit_audiolagvalue_menuitem
 		font = debug
@@ -2646,7 +2646,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LAudio Lag Value")
+		text = qs(0xd949c36e)
 		just = [
 			left
 			top
@@ -2673,15 +2673,15 @@ script create_settings_menu
 	edit_audiolagvalue_setprop
 	player = 1
 	begin
-	FormatText checksumname = togglebot 'toggle_botp%d_menuitem' d = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext checksumname = togglebot 'toggle_botp%d_menuitem' d = <player>
+	createscreenelement {
+		type = textelement
 		parent = settings_vmenu
 		id = <togglebot>
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LToggle Bot")
+		text = qs(0xbf872413)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
@@ -2695,15 +2695,15 @@ script create_settings_menu
 	repeat 4
 	player = 1
 	begin
-	FormatText checksumname = togglestar 'toggle_starp%d_menuitem' d = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext checksumname = togglestar 'toggle_starp%d_menuitem' d = <player>
+	createscreenelement {
+		type = textelement
 		parent = settings_vmenu
 		id = <togglestar>
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LToggle Star Power")
+		text = qs(0xdfaad110)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
@@ -2717,15 +2717,15 @@ script create_settings_menu
 	repeat 4
 	player = 1
 	begin
-	FormatText checksumname = togglehyperspeed 'toggle_hyperspeedp%d_menuitem' d = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext checksumname = togglehyperspeed 'toggle_hyperspeedp%d_menuitem' d = <player>
+	createscreenelement {
+		type = textelement
 		parent = settings_vmenu
 		id = <togglehyperspeed>
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LSet Hyperspeed: X.X")
+		text = qs(0x1a66c532)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
@@ -2740,15 +2740,15 @@ script create_settings_menu
 	repeat 4
 	player = 1
 	begin
-	FormatText checksumname = togglekick 'toggle_kickp%d_menuitem' d = <player>
-	CreateScreenElement {
-		type = TextElement
+	formattext checksumname = togglekick 'toggle_kickp%d_menuitem' d = <player>
+	createscreenelement {
+		type = textelement
 		parent = settings_vmenu
 		id = <togglekick>
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("\LToggle Double Kick")
+		text = qs(0x25dba15f)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
@@ -2760,7 +2760,7 @@ script create_settings_menu
 	toggle_double_kick_setprop player = <player>
 	player = (<player> + 1)
 	repeat 4
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = edit_inputlog_lines_menuitem
 		font = debug
@@ -2771,7 +2771,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LInput Log Lines")
+		text = qs(0x5ad98d77)
 		just = [
 			left
 			top
@@ -2796,7 +2796,7 @@ script create_settings_menu
 			}
 		]}
 	edit_inputlog_lines_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_leftyflip_menuitem
 		font = debug
@@ -2807,7 +2807,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LLeftyflip")
+		text = qs(0x8b8321bb)
 		just = [
 			left
 			top
@@ -2828,7 +2828,7 @@ script create_settings_menu
 			}
 		]}
 	toggle_leftyflip_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = create_cameracut_menuitem
 		font = debug
@@ -2839,7 +2839,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LSelect CameraCut")
+		text = qs(0xa6526c61)
 		just = [
 			left
 			top
@@ -2859,7 +2859,7 @@ script create_settings_menu
 				create_cameracut_group_menu
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		font = debug
 		scale = 0.75
@@ -2869,7 +2869,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LToggle GPU Time")
+		text = qs(0xf8c4f04f)
 		just = [
 			left
 			top
@@ -2892,7 +2892,7 @@ script create_settings_menu
 				}
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		font = debug
 		scale = 0.75
@@ -2902,7 +2902,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LToggle CPU Time")
+		text = qs(0x2cf5bcc8)
 		just = [
 			left
 			top
@@ -2925,7 +2925,7 @@ script create_settings_menu
 				}
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_forcescore_menuitem
 		font = debug
@@ -2936,7 +2936,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LForce Score")
+		text = qs(0xd7f64bb0)
 		just = [
 			left
 			top
@@ -2957,7 +2957,7 @@ script create_settings_menu
 			}
 		]}
 	toggle_forcescore_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = settings_vmenu
 		id = toggle_vocalsfreeform_menuitem
 		font = debug
@@ -2968,7 +2968,7 @@ script create_settings_menu
 			210
 			250
 		]
-		text = qs("\LVocals Freeform Always: Off")
+		text = qs(0x1af80ceb)
 		just = [
 			left
 			top
@@ -2989,77 +2989,77 @@ script create_settings_menu
 			}
 		]}
 	toggle_vocalsfreeform_setprop
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = settings_vmenu}
 endscript
 
 script toggle_aspect_ratio 
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<ps2_widescreen> = 1)
-		SetScreenElementProps \{id = Debug_Aspect_Toggle
+		setscreenelementprops \{id = 0x4b78eec8
 			text = qs(0x1d1f28ae)}
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				ps2_widescreen = 0
 			}}
-		SetScreen \{widescreen = 0}
+		setscreen \{widescreen = 0}
 	else
-		SetScreenElementProps \{id = Debug_Aspect_Toggle
+		setscreenelementprops \{id = 0x4b78eec8
 			text = qs(0x97cccfc3)}
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				ps2_widescreen = 1
 			}}
-		SetScreen \{widescreen = 1}
+		setscreen \{widescreen = 1}
 	endif
 endscript
 
 script toggle_progressive_scan 
-	if ($PS2_ProgressiveScan = 1)
-		SetScreenElementProps \{id = Debug_Progressive_Scan
+	if ($ps2_progressivescan = 1)
+		setscreenelementprops \{id = 0x2c140bc5
 			text = qs(0xc3953146)}
-		change \{PS2_ProgressiveScan = 0}
-		SetProgressive \{on = 0}
+		change \{ps2_progressivescan = 0}
+		setprogressive \{on = 0}
 	else
-		SetScreenElementProps \{id = Debug_Progressive_Scan
+		setscreenelementprops \{id = 0x2c140bc5
 			text = qs(0x7e6fcd6d)}
-		change \{PS2_ProgressiveScan = 1}
-		SetProgressive \{on = 1}
+		change \{ps2_progressivescan = 1}
+		setprogressive \{on = 1}
 	endif
 endscript
 
 script toggle_on_audible_hitnote 
-	if ($Debug_Audible_HitNote = 1)
-		change \{Debug_Audible_HitNote = 0}
-		SetScreenElementProps \{id = Debug_Toggle_Audible_HitNote
+	if ($debug_audible_hitnote = 1)
+		change \{debug_audible_hitnote = 0}
+		setscreenelementprops \{id = 0x7471cfe8
 			text = qs(0x576b2a3b)}
 	else
-		change \{Debug_Audible_HitNote = 1}
-		SetScreenElementProps \{id = Debug_Toggle_Audible_HitNote
+		change \{debug_audible_hitnote = 1}
+		setscreenelementprops \{id = 0x7471cfe8
 			text = qs(0x93c0f15c)}
 	endif
 endscript
 
-script debug_toggle_stereo_sound 
-	GetGlobalTags \{user_options}
-	if (<PS2_Stereo_Sound> = 1)
-		SetGlobalTags \{user_options
+script 0xdb79f598 
+	getglobaltags \{user_options}
+	if (<ps2_stereo_sound> = 1)
+		setglobaltags \{user_options
 			params = {
-				PS2_Stereo_Sound = 0
+				ps2_stereo_sound = 0
 			}}
-		SetStereoSound \{0}
+		0xf2b96a22 \{0}
 	else
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
-				PS2_Stereo_Sound = 1
+				ps2_stereo_sound = 1
 			}}
-		SetStereoSound \{1}
+		0xf2b96a22 \{1}
 	endif
-	toggle_stereo_sound_setprop
+	0x22729eb0
 endscript
 
-script unlock_cheats 
-	GetArraySize \{$guitar_hero_cheats}
+script 0x31737106 
+	getarraysize \{$guitar_hero_cheats}
 	i = 0
 	begin
 	unlock_cheat cheat_index = <i>
@@ -3068,55 +3068,55 @@ script unlock_cheats
 endscript
 
 script playday_unlockall 
-	unlock_cheats
+	0x31737106
 	difficulties = [easy medium hard expert]
-	GetArraySize <difficulties>
+	getarraysize <difficulties>
 	diff_size = <array_size>
-	Menu_Music_Off
-	GetArraySize ($gh5_songlist)
+	menu_music_off
+	getarraysize ($gh5_songlist)
 	i = 0
 	begin
 	song = ($gh5_songlist [<i>])
 	get_song_saved_in_globaltags song = <song>
 	if (<saved_in_globaltags> = 1)
-		SetGlobalTags <song> params = {unlocked = 1}
+		setglobaltags <song> params = {unlocked = 1}
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
 	get_current_band_info
-	SetGlobalTags <band_info> params = {career_guitar_prev_total_songs = <array_size>}
-	SetGlobalTags <band_info> params = {career_bass_prev_total_songs = <array_size>}
-	SetGlobalTags <band_info> params = {career_drum_prev_total_songs = <array_size>}
-	SetGlobalTags <band_info> params = {career_vocals_prev_total_songs = <array_size>}
-	SetGlobalTags <band_info> params = {career_band_prev_total_songs = <array_size>}
-	GetArraySize ($instrument_progression_list)
+	setglobaltags <band_info> params = {career_guitar_prev_total_songs = <array_size>}
+	setglobaltags <band_info> params = {career_bass_prev_total_songs = <array_size>}
+	setglobaltags <band_info> params = {career_drum_prev_total_songs = <array_size>}
+	setglobaltags <band_info> params = {career_vocals_prev_total_songs = <array_size>}
+	setglobaltags <band_info> params = {career_band_prev_total_songs = <array_size>}
+	getarraysize ($instrument_progression_list)
 	instrument_size = <array_size>
 	instrument_index = 0
 	begin
 	diff_index = 0
 	begin
 	get_progression_globals ($instrument_progression_list [<instrument_index>])
-	GlobalTags_UnlockAll songlist = <tier_global> difficulty = (<difficulties> [<diff_index>])
+	globaltags_unlockall songlist = <tier_global> difficulty = (<difficulties> [<diff_index>])
 	<diff_index> = (<diff_index> + 1)
 	repeat <diff_size>
 	get_progression_globals ($instrument_progression_list [<instrument_index>])
-	setup_gigtags SetList_Songs = <tier_global> unlock_order = ($unlock_order_list [<instrument_index>]) use_cheat_tags = 1
+	setup_gigtags setlist_songs = <tier_global> unlock_order = ($unlock_order_list [<instrument_index>]) use_cheat_tags = 1
 	<instrument_index> = (<instrument_index> + 1)
 	repeat <instrument_size>
 	i = 0
-	GetArraySize ($Bonus_Videos)
+	getarraysize ($bonus_videos)
 	begin
-	video_checksum = ($Bonus_Videos [<i>].id)
-	SetGlobalTags <video_checksum> params = {unlocked = 1}
+	video_checksum = ($bonus_videos [<i>].id)
+	setglobaltags <video_checksum> params = {unlocked = 1}
 	<i> = (<i> + 1)
 	repeat <array_size>
-	get_LevelZoneArray_size
+	get_levelzonearray_size
 	index = 0
 	begin
-	get_LevelZoneArray_checksum index = <index>
-	FormatText checksumname = venue_checksum 'venue_%s' s = ($LevelZones.<level_checksum>.name)
-	if NOT StructureContains Structure = ($LevelZones.<level_checksum>) debug_only
-		SetGlobalTags <venue_checksum> params = {unlocked = 1}
+	get_levelzonearray_checksum index = <index>
+	formattext checksumname = venue_checksum 'venue_%s' s = ($levelzones.<level_checksum>.name)
+	if NOT structurecontains structure = ($levelzones.<level_checksum>) debug_only
+		setglobaltags <venue_checksum> params = {unlocked = 1}
 	endif
 	index = (<index> + 1)
 	repeat <array_size>
@@ -3124,8 +3124,8 @@ script playday_unlockall
 		new_cash = 0}
 	change \{progression_play_completion_movie = 0}
 	change \{progression_unlock_tier_last_song = 0}
-	if GlobalExists \{name = debug_bypass_intro}
-		SetGlobalTags <band_info> params = {
+	if globalexists \{name = debug_bypass_intro}
+		setglobaltags <band_info> params = {
 			career_intro_guitar_complete = 1
 			career_intro_bass_complete = 1
 			career_intro_drum_complete = 1
@@ -3137,21 +3137,21 @@ script playday_unlockall
 	purchase_all_profiles
 	unlock_purchase_all_cas_parts
 	spawnscriptnow \{menu_music_on}
-	change \{debug_unlock_all = 1}
+	change \{0xbba7b735 = 1}
 endscript
 
 script hide_band_members 
-	Guitarist :hide
+	guitarist :hide
 	bassist :hide
 	vocalist :hide
-	Drummer :hide
+	drummer :hide
 endscript
 
 script show_band_members 
-	Guitarist :unhide
+	guitarist :unhide
 	bassist :unhide
 	vocalist :unhide
-	Drummer :unhide
+	drummer :unhide
 endscript
 
 script back_to_settings_menu 
@@ -3169,12 +3169,12 @@ script back_to_cameracut_group_menu
 endscript
 
 script destroy_settings_menu 
-	if ScreenElementExists \{id = settings_scrolling_menu}
-		DestroyScreenElement \{id = settings_scrolling_menu}
+	if screenelementexists \{id = settings_scrolling_menu}
+		destroyscreenelement \{id = settings_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
-CameraCutPrefixArray = [
+cameracutprefixarray = [
 	'cameras'
 	'cameras_guitarist'
 	'cameras_singer'
@@ -3244,15 +3244,15 @@ CameraCutPrefixArray = [
 script create_cameracut_group_menu 
 	ui_menu_select_sfx
 	destroy_settings_menu
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = selectcameracut_scrolling_group_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos - (30.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = selectcameracut_scrolling_group_menu
 		id = selectcameracut_group_vmenu
 		pos = (0.0, 0.0)
@@ -3283,7 +3283,7 @@ script create_cameracut_group_menu
 				}
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = selectcameracut_group_vmenu
 		font = debug
 		scale = 0.75
@@ -3293,7 +3293,7 @@ script create_cameracut_group_menu
 			210
 			250
 		]
-		text = qs("\Loff")
+		text = qs(0x1527ff9c)
 		just = [
 			left
 			top
@@ -3312,29 +3312,29 @@ script create_cameracut_group_menu
 				pad_choose
 				select_cameracut
 				params = {
-					Camera_Array_pakname = none
-					Camera_Array = none
+					camera_array_pakname = none
+					camera_array = none
 					array_count = none
 				}
 			}
 		]}
-	GetPakManCurrentName \{map = zones}
+	getpakmancurrentname \{map = zones}
 	camera_count = 0
-	GetArraySize \{$CameraCutPrefixArray}
+	getarraysize \{$cameracutprefixarray}
 	camera_array_size = <array_size>
 	begin
-	FormatText checksumname = Camera_Array '%s_%p' s = <pakname> p = ($CameraCutPrefixArray [<camera_count>])
-	if GlobalExists name = <Camera_Array>
-		GetArraySize $<Camera_Array>
+	formattext checksumname = camera_array '%s_%p' s = <pakname> p = ($cameracutprefixarray [<camera_count>])
+	if globalexists name = <camera_array>
+		getarraysize $<camera_array>
 		if (<array_size>)
-			FormatText TextName = Camera_Group qs("\L%p") p = ($CameraCutPrefixArray [<camera_count>])
-			CreateScreenElement {
-				type = TextElement
+			formattext textname = camera_group qs(0x581d2af2) p = ($cameracutprefixarray [<camera_count>])
+			createscreenelement {
+				type = textelement
 				parent = selectcameracut_group_vmenu
 				font = debug
 				scale = 0.75
 				rgba = [210 210 210 250]
-				text = <Camera_Group>
+				text = <camera_group>
 				z_priority = 100.0
 				just = [left top]
 				event_handlers = [
@@ -3348,26 +3348,26 @@ script create_cameracut_group_menu
 	endif
 	camera_count = (<camera_count> + 1)
 	repeat <camera_array_size>
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = selectcameracut_group_vmenu}
 endscript
 
 script create_cameracut_menu 
-	if NOT GotParam \{camera_count}
+	if NOT gotparam \{camera_count}
 		create_cameracut_group_menu
 		return
 	endif
 	ui_menu_select_sfx
 	destroy_cameracut_group_menu
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = selectcameracut_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos - (30.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = selectcameracut_scrolling_menu
 		id = selectcameracut_vmenu
 		pos = (0.0, 0.0)
@@ -3398,22 +3398,22 @@ script create_cameracut_menu
 				}
 			}
 		]}
-	GetPakManCurrentName \{map = zones}
-	FormatText checksumname = Camera_Array '%s_%p' s = <pakname> p = ($CameraCutPrefixArray [<camera_count>])
-	if GlobalExists name = <Camera_Array>
-		GetArraySize $<Camera_Array>
+	getpakmancurrentname \{map = zones}
+	formattext checksumname = camera_array '%s_%p' s = <pakname> p = ($cameracutprefixarray [<camera_count>])
+	if globalexists name = <camera_array>
+		getarraysize $<camera_array>
 		array_count = 0
 		begin
-		FormatText TextName = camera_name qs("\L%s_%p_%i") s = <pakname> p = ($CameraCutPrefixArray [<camera_count>]) i = <array_count>
-		if StructureContains Structure = ($<Camera_Array> [<array_count>]) name
-			FormatText TextName = camera_name qs("\L%s") s = ($<Camera_Array> [<array_count>].name) DontAssertForChecksums
-		elseif StructureContains Structure = ($<Camera_Array> [<array_count>]) params
-			if StructureContains Structure = ($<Camera_Array> [<array_count>].params) name
-				FormatText TextName = camera_name qs("\L%s") s = ($<Camera_Array> [<array_count>].params.name) DontAssertForChecksums
+		formattext textname = camera_name qs(0x3efec28c) s = <pakname> p = ($cameracutprefixarray [<camera_count>]) i = <array_count>
+		if structurecontains structure = ($<camera_array> [<array_count>]) name
+			formattext textname = camera_name qs(0x73307931) s = ($<camera_array> [<array_count>].name) dontassertforchecksums
+		elseif structurecontains structure = ($<camera_array> [<array_count>]) params
+			if structurecontains structure = ($<camera_array> [<array_count>].params) name
+				formattext textname = camera_name qs(0x73307931) s = ($<camera_array> [<array_count>].params.name) dontassertforchecksums
 			endif
 		endif
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = selectcameracut_vmenu
 			font = debug
 			scale = 0.75
@@ -3424,28 +3424,28 @@ script create_cameracut_menu
 			event_handlers = [
 				{focus menu_focus}
 				{unfocus menu_unfocus}
-				{pad_choose select_cameracut params = {Camera_Array_pakname = <pakname> Camera_Array = ($CameraCutPrefixArray [<camera_count>]) array_count = <array_count>}}
-				{pad_square select_cameracut params = {Camera_Array_pakname = <pakname> Camera_Array = ($CameraCutPrefixArray [<camera_count>]) array_count = <array_count> jumptoviewer}}
-				{pad_option2 select_cameracut_video params = {Camera_Array_pakname = <pakname> Camera_Array = ($CameraCutPrefixArray [<camera_count>]) array_count = <array_count> name = <camera_name>}}
+				{pad_choose select_cameracut params = {camera_array_pakname = <pakname> camera_array = ($cameracutprefixarray [<camera_count>]) array_count = <array_count>}}
+				{pad_square select_cameracut params = {camera_array_pakname = <pakname> camera_array = ($cameracutprefixarray [<camera_count>]) array_count = <array_count> jumptoviewer}}
+				{pad_option2 select_cameracut_video params = {camera_array_pakname = <pakname> camera_array = ($cameracutprefixarray [<camera_count>]) array_count = <array_count> name = <camera_name>}}
 			]
 		}
 		<array_count> = (<array_count> + 1)
 		repeat <array_size>
 	endif
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = selectcameracut_vmenu}
 endscript
 
 script destroy_cameracut_menu 
-	if ScreenElementExists \{id = selectcameracut_scrolling_menu}
-		DestroyScreenElement \{id = selectcameracut_scrolling_menu}
+	if screenelementexists \{id = selectcameracut_scrolling_menu}
+		destroyscreenelement \{id = selectcameracut_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
 
 script destroy_cameracut_group_menu 
-	if ScreenElementExists \{id = selectcameracut_scrolling_group_menu}
-		DestroyScreenElement \{id = selectcameracut_scrolling_group_menu}
+	if screenelementexists \{id = selectcameracut_scrolling_group_menu}
+		destroyscreenelement \{id = selectcameracut_scrolling_group_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -3455,39 +3455,39 @@ debug_camera_array_count = 0
 
 script select_cameracut 
 	ui_menu_select_sfx
-	change debug_camera_array = <Camera_Array>
-	change debug_camera_array_pakname = <Camera_Array_pakname>
+	change debug_camera_array = <camera_array>
+	change debug_camera_array_pakname = <camera_array_pakname>
 	change debug_camera_array_count = <array_count>
 	destroy_cameracuts
-	Wait \{3
+	wait \{3
 		gameframes}
 	create_cameracuts
-	if GotParam \{jumptoviewer}
+	if gotparam \{jumptoviewer}
 		destroy_all_debug_menus
 		unpausegh3
 		enable_pause
 		change \{viewer_buttons_enabled = 1}
-		ToggleViewMode
+		toggleviewmode
 	endif
 endscript
 
 script select_cameracut_video 
 	ui_menu_select_sfx
 
-	FormatText TextName = file_name qs("\L%a_%i") a = <Camera_Array> i = <array_count>
-	if GlobalExists \{name = Capture_File_Name}
-		change Capture_File_Name = <file_name>
+	formattext textname = file_name qs(0x7ded7b88) a = <camera_array> i = <array_count>
+	if globalexists \{name = capture_file_name}
+		change capture_file_name = <file_name>
 	endif
-	change debug_camera_array = <Camera_Array>
-	change debug_camera_array_pakname = <Camera_Array_pakname>
+	change debug_camera_array = <camera_array>
+	change debug_camera_array_pakname = <camera_array_pakname>
 	change debug_camera_array_count = <array_count>
 	destroy_cameracuts
 	hide_band_members
-	Wait \{3
+	wait \{3
 		gameframes}
 	create_cameracuts
 	unpausegh3
-	root_window :LegacyDoMorph \{alpha = 0}
+	root_window :legacydomorph \{alpha = 0}
 	change \{select_cameracut_video_end_enable = 1}
 endscript
 select_cameracut_video_end_enable = 0
@@ -3495,13 +3495,13 @@ capture_frame_count = 0
 
 script select_cameracut_video_end 
 
-	root_window :LegacyDoMorph \{alpha = 1}
+	root_window :legacydomorph \{alpha = 1}
 	if ($capture_frame_count = 0)
 		if ($select_cameracut_video_end_enable = 1)
 			pausegh3
 			change \{select_cameracut_video_end_enable = 0}
 			show_band_members
-			if GlobalExists \{name = is_video_capture_session}
+			if globalexists \{name = is_video_capture_session}
 				if ($is_video_capture_session = 1)
 					video_capture_session_end
 				endif
@@ -3521,15 +3521,15 @@ script create_character_viewer_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = character_viewer_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos - (30.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = character_viewer_scrolling_menu
 		id = character_viewer_vmenu
 		pos = (0.0, 0.0)
@@ -3560,7 +3560,7 @@ script create_character_viewer_menu
 				}
 			}
 		]}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = character_viewer_vmenu
 		font = debug
 		scale = 0.75
@@ -3570,7 +3570,7 @@ script create_character_viewer_menu
 			210
 			250
 		]
-		text = qs("\LChange Guitarist")
+		text = qs(0x3eaa1c82)
 		z_priority = 100.0
 		just = [
 			left
@@ -3590,7 +3590,7 @@ script create_character_viewer_menu
 				create_changeguitarist_menu
 			}
 		]}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = character_viewer_vmenu}
 endscript
 
@@ -3603,8 +3603,8 @@ script back_to_character_viewer_menu
 endscript
 
 script destroy_character_viewer_menu 
-	if ScreenElementExists \{id = character_viewer_scrolling_menu}
-		DestroyScreenElement \{id = character_viewer_scrolling_menu}
+	if screenelementexists \{id = character_viewer_scrolling_menu}
+		destroyscreenelement \{id = character_viewer_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -3620,15 +3620,15 @@ script create_changeguitarist_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = changeguitarist_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = changeguitarist_scrolling_menu
 		id = changeguitarist_vmenu
 		pos = (0.0, 0.0)
@@ -3664,8 +3664,8 @@ script create_changeguitarist_menu
 	index = 0
 	begin
 	get_musician_profile_struct_by_index index = <index> savegame = <savegame>
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = changeguitarist_vmenu
 		font = debug
 		scale = 0.75
@@ -3681,13 +3681,13 @@ script create_changeguitarist_menu
 	}
 	index = (<index> + 1)
 	repeat <array_size>
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = changeguitarist_vmenu}
 endscript
 
 script destroy_changeguitarist_menu 
-	if ScreenElementExists \{id = changeguitarist_scrolling_menu}
-		DestroyScreenElement \{id = changeguitarist_scrolling_menu}
+	if screenelementexists \{id = changeguitarist_scrolling_menu}
+		destroyscreenelement \{id = changeguitarist_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -3699,12 +3699,12 @@ script debug_menu_choose_guitarist
 	get_musician_profile_struct_by_index index = <index> savegame = <savegame>
 	guitarist_id = (<profile_struct>.name)
 	change structurename = player1_status character_id = <guitarist_id>
-	if NOT create_guitarist \{useOldPos
+	if NOT create_guitarist \{useoldpos
 			player_status = player1_status
 			savegame = 0}
-		DownloadContentLost
+		downloadcontentlost
 	endif
-	restart_gem_scroller song_name = ($current_song) difficulty = ($player1_status.difficulty) difficulty2 = ($player2_status.difficulty) StartTime = ($current_starttime) device_num = <device_num>
+	restart_gem_scroller song_name = ($current_song) difficulty = ($player1_status.difficulty) difficulty2 = ($player2_status.difficulty) starttime = ($current_starttime) device_num = <device_num>
 	generic_event_choose \{state = uistate_gameplay}
 endscript
 
@@ -3757,13 +3757,13 @@ endscript
 script toggle_hyperspeed_left 
 	ui_menu_select_sfx
 	kill_debug_elements
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	<new_value> = (($<player_status>.hyperspeed) - 0.01)
-	if (<new_value> > $Hyperspeed_Slowest)
-		<new_value> = $Hyperspeed_Slowest
+	if (<new_value> > $hyperspeed_slowest)
+		<new_value> = $hyperspeed_slowest
 	endif
-	if (<new_value> < $Hyperspeed_Fastest)
-		<new_value> = $Hyperspeed_Fastest
+	if (<new_value> < $hyperspeed_fastest)
+		<new_value> = $hyperspeed_fastest
 	endif
 	change structurename = <player_status> hyperspeed = <new_value>
 	toggle_hyperspeed_setprop player = <player>
@@ -3772,13 +3772,13 @@ endscript
 script toggle_hyperspeed_right 
 	ui_menu_select_sfx
 	kill_debug_elements
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	<new_value> = (($<player_status>.hyperspeed) + 0.01)
-	if (<new_value> > $Hyperspeed_Slowest)
-		<new_value> = $Hyperspeed_Slowest
+	if (<new_value> > $hyperspeed_slowest)
+		<new_value> = $hyperspeed_slowest
 	endif
-	if (<new_value> < $Hyperspeed_Fastest)
-		<new_value> = $Hyperspeed_Fastest
+	if (<new_value> < $hyperspeed_fastest)
+		<new_value> = $hyperspeed_fastest
 	endif
 	change structurename = <player_status> hyperspeed = <new_value>
 	toggle_hyperspeed_setprop player = <player>
@@ -3839,13 +3839,13 @@ endscript
 script toggle_playermode_setprop 
 	switch $game_mode
 		case p1_quickplay
-		text = qs("\LPlay Song: p1_quickplay")
+		text = qs(0x2b693e56)
 		case p2_quickplay
-		text = qs("\LPlay Song: p2_quickplay")
+		text = qs(0x12119316)
 		case p3_quickplay
-		text = qs("\LPlay Song: p3_quickplay")
+		text = qs(0x0539f7d6)
 		case p4_quickplay
-		text = qs("\LPlay Song: p4_quickplay")
+		text = qs(0x60e0c996)
 		case gh4_p1_career
 		text = qs(0x71f5fc56)
 		case gh4_p2_career
@@ -3855,11 +3855,11 @@ script toggle_playermode_setprop
 		case gh4_p4_career
 		text = qs(0x0bac2140)
 		case p2_pro_faceoff
-		text = qs("\LPlay Song: p2_pro_faceoff")
+		text = qs(0x290eb588)
 		case practice
 		text = qs(0xeb45639d)
 	endswitch
-	toggle_playermode_menuitem :SE_SetProps text = <text>
+	toggle_playermode_menuitem :se_setprops text = <text>
 endscript
 
 script toggle_rolandkit 
@@ -3873,14 +3873,14 @@ endscript
 
 script toggle_rolandkit_setprop 
 	if ($roland_drumkit = 1)
-		toggle_rolandkit_menuitem :SE_SetProps \{text = qs("\LRoland Drumkit: On")}
+		toggle_rolandkit_menuitem :se_setprops \{text = qs(0x7c5f597d)}
 	else
-		toggle_rolandkit_menuitem :SE_SetProps \{text = qs("\LRoland Drumkit: Off")}
+		toggle_rolandkit_menuitem :se_setprops \{text = qs(0x7e35767a)}
 	endif
 endscript
 
 script toggle_guitar_touch_test 
-	if ScriptIsRunning \{touch_sensor_spawned}
+	if scriptisrunning \{touch_sensor_spawned}
 		end_touch_sensor_test
 	else
 		start_touch_sensor_test
@@ -3889,10 +3889,10 @@ script toggle_guitar_touch_test
 endscript
 
 script toggle_guitar_touch_test_setprop 
-	if ScriptIsRunning \{touch_sensor_spawned}
-		toggle_guitar_touch_test_menuitem :SE_SetProps \{text = qs("\LGuitar Touch: On")}
+	if scriptisrunning \{touch_sensor_spawned}
+		toggle_guitar_touch_test_menuitem :se_setprops \{text = qs(0x9748009f)}
 	else
-		toggle_guitar_touch_test_menuitem :SE_SetProps \{text = qs("\LGuitar Touch: Off")}
+		toggle_guitar_touch_test_menuitem :se_setprops \{text = qs(0x00cae553)}
 	endif
 endscript
 
@@ -3916,7 +3916,7 @@ script update_slomo
 	setslomo_song \{slomo = $current_speedfactor}
 	player = 1
 	begin
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	change structurename = <player_status> check_time_early = ($check_time_early * $current_speedfactor)
 	change structurename = <player_status> check_time_late = ($check_time_late * $current_speedfactor)
 	player = (<player> + 1)
@@ -3924,25 +3924,25 @@ script update_slomo
 endscript
 
 script select_slomo_setprop 
-	FormatText \{TextName = slomo_text
-		qs("\LSelect Slomo : %s")
+	formattext \{textname = slomo_text
+		qs(0xe4465fdd)
 		s = $current_speedfactor}
-	select_slomo_menuitem :SE_SetProps text = <slomo_text>
+	select_slomo_menuitem :se_setprops text = <slomo_text>
 endscript
 debug_showmeasures = off
 
 script toggle_showmeasures 
 	ui_menu_select_sfx
-	if ScreenElementExists \{id = debug_measures_text}
-		DestroyScreenElement \{id = debug_measures_text}
+	if screenelementexists \{id = debug_measures_text}
+		destroyscreenelement \{id = debug_measures_text}
 	endif
 	if ($debug_showmeasures = off)
 		change \{debug_showmeasures = on}
-		CreateScreenElement \{type = TextElement
+		createscreenelement \{type = textelement
 			parent = root_window
 			id = debug_measures_text
 			font = debug
-			text = qs("\LM: 0 : B: 00")
+			text = qs(0xaa4c0def)
 			scale = 1
 			pos = (850.0, 400.0)
 			rgba = [
@@ -3966,27 +3966,27 @@ script toggle_showmeasures
 			hide
 			z_priority = 1000}
 		if ($playing_song = 1)
-			debug_measures_text :SE_SetProps \{unhide}
+			debug_measures_text :se_setprops \{unhide}
 		endif
 	else
 		change \{debug_showmeasures = off}
 	endif
-	if NOT GotParam \{for_autolaunch}
+	if NOT gotparam \{for_autolaunch}
 		toggle_showmeasures_setprop
 	endif
 endscript
 
 script toggle_showmeasures_setprop 
 	if ($debug_showmeasures = off)
-		toggle_showmeasures_menuitem :SE_SetProps \{text = qs("\LShow Measures : off")}
+		toggle_showmeasures_menuitem :se_setprops \{text = qs(0x79498c91)}
 	else
-		toggle_showmeasures_menuitem :SE_SetProps \{text = qs("\LShow Measures : on")}
+		toggle_showmeasures_menuitem :se_setprops \{text = qs(0x43a601a6)}
 	endif
 endscript
 
 script print_measures_text \{channel = drum_starpower_attempts}
-	if ScreenElementExists \{id = debug_measures_text}
-		debug_measures_text :SE_GetProps \{text}
+	if screenelementexists \{id = debug_measures_text}
+		debug_measures_text :se_getprops \{text}
 
 	endif
 endscript
@@ -3994,16 +3994,16 @@ debug_showsongstars = off
 
 script toggle_showsongstars 
 	ui_menu_select_sfx
-	if ScreenElementExists \{id = debug_songstars_text}
-		DestroyScreenElement \{id = debug_songstars_text}
+	if screenelementexists \{id = debug_songstars_text}
+		destroyscreenelement \{id = debug_songstars_text}
 	endif
 	if ($debug_showsongstars = off)
 		change \{debug_showsongstars = on}
-		CreateScreenElement \{type = TextElement
+		createscreenelement \{type = textelement
 			parent = root_window
 			id = debug_songstars_text
 			font = debug
-			text = qs("\LStars: 0.0")
+			text = qs(0xfbf320c8)
 			scale = 1
 			pos = (850.0, 300.0)
 			rgba = [
@@ -4027,7 +4027,7 @@ script toggle_showsongstars
 			hide
 			z_priority = 1000}
 		if ($playing_song = 1)
-			debug_songstars_text :SE_SetProps \{unhide}
+			debug_songstars_text :se_setprops \{unhide}
 		endif
 	else
 		change \{debug_showsongstars = off}
@@ -4036,23 +4036,23 @@ script toggle_showsongstars
 endscript
 
 script toggle_showsongstars_setprop 
-	if NOT ScreenElementExists \{id = toggle_showsongstars_menuitem}
+	if NOT screenelementexists \{id = toggle_showsongstars_menuitem}
 		return
 	endif
 	if ($debug_showsongstars = off)
-		toggle_showsongstars_menuitem :SE_SetProps \{text = qs("\LShow Song Stars : off")}
+		toggle_showsongstars_menuitem :se_setprops \{text = qs(0x01ad6392)}
 	else
-		toggle_showsongstars_menuitem :SE_SetProps \{text = qs("\LShow Song Stars : on")}
+		toggle_showsongstars_menuitem :se_setprops \{text = qs(0x060c5b2e)}
 	endif
 endscript
 
-script toggle_stereo_sound_setprop 
-	GetGlobalTags \{user_options}
-	if (<PS2_Stereo_Sound> = 1)
-		SetScreenElementProps \{id = Debug_BCSND_Audio_Stereo
+script 0x22729eb0 
+	getglobaltags \{user_options}
+	if (<ps2_stereo_sound> = 1)
+		setscreenelementprops \{id = 0x9c3673da
 			text = qs(0x315f9c01)}
 	else
-		SetScreenElementProps \{id = Debug_BCSND_Audio_Stereo
+		setscreenelementprops \{id = 0x9c3673da
 			text = qs(0x83351f1d)}
 	endif
 endscript
@@ -4089,10 +4089,10 @@ script toggle_lagtestpart1
 	kill_debug_elements
 	if ($lagtestpart1 = 0)
 		change \{lagtestpart1 = 1}
-		change \{Debug_Audible_HitNote = 1}
+		change \{debug_audible_hitnote = 1}
 	else
 		change \{lagtestpart1 = 0}
-		change \{Debug_Audible_HitNote = 0}
+		change \{debug_audible_hitnote = 0}
 	endif
 	toggle_lagtestpart1_setprop
 endscript
@@ -4115,10 +4115,10 @@ script toggle_lagtestpart3
 	kill_debug_elements
 	if ($lagtestpart3 = 0)
 		change \{lagtestpart3 = 1}
-		change \{Debug_Audible_Open = 1}
+		change \{debug_audible_open = 1}
 	else
 		change \{lagtestpart3 = 0}
-		change \{Debug_Audible_Open = 0}
+		change \{debug_audible_open = 0}
 	endif
 	toggle_lagtestpart3_setprop
 endscript
@@ -4126,12 +4126,12 @@ endscript
 script edit_inputlagvalue_left 
 	ui_menu_select_sfx
 	kill_debug_elements
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		ps2_props = ($default_lag_settings.Ps2)
+		case ps2
+		ps2_props = ($default_lag_settings.ps2)
 		ps2_props = {<ps2_props> input_lag_ms = (<ps2_props>.input_lag_ms - 1)}
-		change default_lag_settings = {($default_lag_settings) Ps2 = <ps2_props>}
+		change default_lag_settings = {($default_lag_settings) ps2 = <ps2_props>}
 		case ps3
 		ps3_props = ($default_lag_settings.ps3)
 		ps3_props = {<ps3_props> input_lag_ms = (<ps3_props>.input_lag_ms - 1)}
@@ -4153,12 +4153,12 @@ endscript
 script edit_inputlagvalue_right 
 	ui_menu_select_sfx
 	kill_debug_elements
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		ps2_props = ($default_lag_settings.Ps2)
+		case ps2
+		ps2_props = ($default_lag_settings.ps2)
 		ps2_props = {<ps2_props> input_lag_ms = (<ps2_props>.input_lag_ms + 1)}
-		change default_lag_settings = {($default_lag_settings) Ps2 = <ps2_props>}
+		change default_lag_settings = {($default_lag_settings) ps2 = <ps2_props>}
 		case ps3
 		ps3_props = ($default_lag_settings.ps3)
 		ps3_props = {<ps3_props> input_lag_ms = (<ps3_props>.input_lag_ms + 1)}
@@ -4180,12 +4180,12 @@ endscript
 script edit_gemlagvalue_left 
 	ui_menu_select_sfx
 	kill_debug_elements
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		ps2_props = ($default_lag_settings.Ps2)
+		case ps2
+		ps2_props = ($default_lag_settings.ps2)
 		ps2_props = {<ps2_props> gem_lag_ms = (<ps2_props>.gem_lag_ms - 1)}
-		change default_lag_settings = {($default_lag_settings) Ps2 = <ps2_props>}
+		change default_lag_settings = {($default_lag_settings) ps2 = <ps2_props>}
 		case ps3
 		ps3_props = ($default_lag_settings.ps3)
 		ps3_props = {<ps3_props> gem_lag_ms = (<ps3_props>.gem_lag_ms - 1)}
@@ -4207,12 +4207,12 @@ endscript
 script edit_gemlagvalue_right 
 	ui_menu_select_sfx
 	kill_debug_elements
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		ps2_props = ($default_lag_settings.Ps2)
+		case ps2
+		ps2_props = ($default_lag_settings.ps2)
 		ps2_props = {<ps2_props> gem_lag_ms = (<ps2_props>.gem_lag_ms + 1)}
-		change default_lag_settings = {($default_lag_settings) Ps2 = <ps2_props>}
+		change default_lag_settings = {($default_lag_settings) ps2 = <ps2_props>}
 		case ps3
 		ps3_props = ($default_lag_settings.ps3)
 		ps3_props = {<ps3_props> gem_lag_ms = (<ps3_props>.gem_lag_ms + 1)}
@@ -4235,12 +4235,12 @@ script edit_audiolagvalue_left
 
 	ui_menu_select_sfx
 	kill_debug_elements
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		ps2_props = ($default_lag_settings.Ps2)
+		case ps2
+		ps2_props = ($default_lag_settings.ps2)
 		ps2_props = {<ps2_props> audio_lag_ms = (<ps2_props>.audio_lag_ms - 1)}
-		change default_lag_settings = {($default_lag_settings) Ps2 = <ps2_props>}
+		change default_lag_settings = {($default_lag_settings) ps2 = <ps2_props>}
 		case ps3
 		ps3_props = ($default_lag_settings.ps3)
 		ps3_props = {<ps3_props> audio_lag_ms = (<ps3_props>.audio_lag_ms - 1)}
@@ -4263,12 +4263,12 @@ script edit_audiolagvalue_right
 
 	ui_menu_select_sfx
 	kill_debug_elements
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		ps2_props = ($default_lag_settings.Ps2)
+		case ps2
+		ps2_props = ($default_lag_settings.ps2)
 		ps2_props = {<ps2_props> audio_lag_ms = (<ps2_props>.audio_lag_ms + 1)}
-		change default_lag_settings = {($default_lag_settings) Ps2 = <ps2_props>}
+		change default_lag_settings = {($default_lag_settings) ps2 = <ps2_props>}
 		case ps3
 		ps3_props = ($default_lag_settings.ps3)
 		ps3_props = {<ps3_props> audio_lag_ms = (<ps3_props>.audio_lag_ms + 1)}
@@ -4290,7 +4290,7 @@ endscript
 script toggle_bot \{player = 1}
 	ui_menu_select_sfx
 	kill_debug_elements
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	change structurename = <player_status> bot_play = (1 - ($<player_status>.bot_play))
 	toggle_bot_setprop player = <player>
 endscript
@@ -4298,7 +4298,7 @@ endscript
 script toggle_double_kick \{player = 1}
 	ui_menu_select_sfx
 	kill_debug_elements
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	change structurename = <player_status> double_kick_drum = (1 - ($<player_status>.double_kick_drum))
 	toggle_double_kick_setprop player = <player>
 endscript
@@ -4306,7 +4306,7 @@ endscript
 script toggle_star \{player = 1}
 	ui_menu_select_sfx
 	kill_debug_elements
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	<new_value> = (($<player_status>.star_power_debug_mode) + 1)
 	if (<new_value> > 3)
 		<new_value> = 0
@@ -4342,17 +4342,17 @@ endscript
 
 script toggle_showcameraname_setprop 
 	if ($debug_showcameraname = off)
-		toggle_showcameraname_menuitem :SE_SetProps \{text = qs("\LShow Camera Name : off")}
+		toggle_showcameraname_menuitem :se_setprops \{text = qs(0xd0f8552a)}
 	else
-		toggle_showcameraname_menuitem :SE_SetProps \{text = qs("\LShow Camera Name : on")}
+		toggle_showcameraname_menuitem :se_setprops \{text = qs(0x5924d32c)}
 	endif
 endscript
 
 script toggle_rockmeterdebug_setprop 
 	if ($rock_meter_debug = 0)
-		toggle_rockmeterdebug_menuitem :SE_SetProps \{text = qs("\LRock Meter Debug : off")}
+		toggle_rockmeterdebug_menuitem :se_setprops \{text = qs(0xf6cab54f)}
 	else
-		toggle_rockmeterdebug_menuitem :SE_SetProps \{text = qs("\LRock Meter Debug : on")}
+		toggle_rockmeterdebug_menuitem :se_setprops \{text = qs(0x87dbdce9)}
 	endif
 endscript
 
@@ -4374,71 +4374,71 @@ endscript
 
 script toggle_viewvolumesonscreen_setprop 
 	if ($viewvolumesonscreen = 0)
-		toggle_viewvolumesonscreen_menuitem :SE_SetProps \{text = qs("\LVolumes On Screen : off")}
+		toggle_viewvolumesonscreen_menuitem :se_setprops \{text = qs(0xc341e7e7)}
 	else
-		toggle_viewvolumesonscreen_menuitem :SE_SetProps \{text = qs("\LVolumes On Screen : on")}
+		toggle_viewvolumesonscreen_menuitem :se_setprops \{text = qs(0x13fe2f0e)}
 	endif
 endscript
 
 script toggle_lagtestpart1_setprop 
 	if ($lagtestpart1 = 0)
-		toggle_LagTestPart1_menuitem :SE_SetProps \{text = qs("\LLag Test Part 1 : off")}
+		toggle_lagtestpart1_menuitem :se_setprops \{text = qs(0x9b3748ba)}
 	else
-		toggle_LagTestPart1_menuitem :SE_SetProps \{text = qs("\LLag Test Part 1 : on")}
+		toggle_lagtestpart1_menuitem :se_setprops \{text = qs(0xf1407a9c)}
 	endif
 endscript
 
 script toggle_lagtestpart2_setprop 
 	if ($lagtestpart2 = 0)
-		toggle_LagTestPart2_menuitem :SE_SetProps \{text = qs("\LLag Test Part 2 : off")}
+		toggle_lagtestpart2_menuitem :se_setprops \{text = qs(0xe7566d61)}
 	else
-		toggle_LagTestPart2_menuitem :SE_SetProps \{text = qs("\LLag Test Part 2 : on")}
+		toggle_lagtestpart2_menuitem :se_setprops \{text = qs(0x86dea86c)}
 	endif
 endscript
 
 script toggle_lagtestpart3_setprop 
 	if ($lagtestpart3 = 0)
-		toggle_LagTestPart3_menuitem :SE_SetProps \{text = qs("\LLag Test Part 3 : off")}
+		toggle_lagtestpart3_menuitem :se_setprops \{text = qs(0x7a598c17)}
 	else
-		toggle_LagTestPart3_menuitem :SE_SetProps \{text = qs("\LLag Test Part 3 : on")}
+		toggle_lagtestpart3_menuitem :se_setprops \{text = qs(0x1d7be403)}
 	endif
 endscript
 
 script edit_inputlagvalue_setprop 
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		FormatText TextName = text qs("\LPS2 Input Logic Lag Value: %l") l = ($default_lag_settings.Ps2.input_lag_ms)
-		edit_inputlagvalue_menuitem :SE_SetProps text = <text>
+		case ps2
+		formattext textname = text qs(0x519b5d83) l = ($default_lag_settings.ps2.input_lag_ms)
+		edit_inputlagvalue_menuitem :se_setprops text = <text>
 		case ps3
-		FormatText TextName = text qs("\LPS3 Input Logic Lag Value: %l") l = ($default_lag_settings.ps3.input_lag_ms)
-		edit_inputlagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x503ef435) l = ($default_lag_settings.ps3.input_lag_ms)
+		edit_inputlagvalue_menuitem :se_setprops text = <text>
 		case xenon
-		FormatText TextName = text qs("\LXenon Input Logic Lag Value: %l") l = ($default_lag_settings.xenon.input_lag_ms)
-		edit_inputlagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x6bb70bb2) l = ($default_lag_settings.xenon.input_lag_ms)
+		edit_inputlagvalue_menuitem :se_setprops text = <text>
 		case wii
-		FormatText TextName = text qs("\LWii Input Logic Lag Value: %l") l = ($default_lag_settings.wii.input_lag_ms)
-		edit_inputlagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0xd3aec0f4) l = ($default_lag_settings.wii.input_lag_ms)
+		edit_inputlagvalue_menuitem :se_setprops text = <text>
 		default
 
 	endswitch
 endscript
 
 script edit_gemlagvalue_setprop 
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		FormatText TextName = text qs("\LPS2 Gem Lag Value: %l") l = ($default_lag_settings.Ps2.gem_lag_ms)
-		edit_gemlagvalue_menuitem :SE_SetProps text = <text>
+		case ps2
+		formattext textname = text qs(0x97202262) l = ($default_lag_settings.ps2.gem_lag_ms)
+		edit_gemlagvalue_menuitem :se_setprops text = <text>
 		case ps3
-		FormatText TextName = text qs("\LPS3 Gem Lag Value: %l") l = ($default_lag_settings.ps3.gem_lag_ms)
-		edit_gemlagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x1aa8df80) l = ($default_lag_settings.ps3.gem_lag_ms)
+		edit_gemlagvalue_menuitem :se_setprops text = <text>
 		case xenon
-		FormatText TextName = text qs("\LXenon Gem Lag Value: %l") l = ($default_lag_settings.xenon.gem_lag_ms)
-		edit_gemlagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x353caad1) l = ($default_lag_settings.xenon.gem_lag_ms)
+		edit_gemlagvalue_menuitem :se_setprops text = <text>
 		case wii
-		FormatText TextName = text qs("\LWii Gem Lag Value: %l") l = ($default_lag_settings.wii.gem_lag_ms)
-		edit_gemlagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x8bdedff2) l = ($default_lag_settings.wii.gem_lag_ms)
+		edit_gemlagvalue_menuitem :se_setprops text = <text>
 		default
 
 	endswitch
@@ -4446,113 +4446,113 @@ endscript
 
 script edit_audiolagvalue_setprop 
 
-	GetPlatform
+	getplatform
 	switch <platform>
-		case Ps2
-		FormatText TextName = text qs("\LPS2 Audio Lag Value: %l") l = ($default_lag_settings.Ps2.audio_lag_ms)
-		edit_audiolagvalue_menuitem :SE_SetProps text = <text>
+		case ps2
+		formattext textname = text qs(0xf30d4cd4) l = ($default_lag_settings.ps2.audio_lag_ms)
+		edit_audiolagvalue_menuitem :se_setprops text = <text>
 		case ps3
-		FormatText TextName = text qs("\LPS3 Audio Lag Value: %l") l = ($default_lag_settings.ps3.audio_lag_ms)
-		edit_audiolagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x5234c83a) l = ($default_lag_settings.ps3.audio_lag_ms)
+		edit_audiolagvalue_menuitem :se_setprops text = <text>
 		case xenon
-		FormatText TextName = text qs("\LXenon Audio Lag Value: %l") l = ($default_lag_settings.xenon.audio_lag_ms)
-		edit_audiolagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0xcd437801) l = ($default_lag_settings.xenon.audio_lag_ms)
+		edit_audiolagvalue_menuitem :se_setprops text = <text>
 		case wii
-		FormatText TextName = text qs("\LWii Audio Lag Value: %l") l = ($default_lag_settings.wii.audio_lag_ms)
-		edit_audiolagvalue_menuitem :SE_SetProps text = <text>
+		formattext textname = text qs(0x6d6fdd8f) l = ($default_lag_settings.wii.audio_lag_ms)
+		edit_audiolagvalue_menuitem :se_setprops text = <text>
 		default
 
 	endswitch
 endscript
 
 script toggle_bot_setprop \{player = 1}
-	<player_status> = ($player_status_array [<player>])
-	FormatText TextName = toggletext_off qs("\LToggle Bot P%d: Off") d = <player>
-	FormatText TextName = toggletext_on qs("\LToggle Bot P%d: On") d = <player>
-	FormatText checksumname = togglebot 'toggle_botp%d_menuitem' d = <player>
+	<player_status> = ($0x2994109a [<player>])
+	formattext textname = toggletext_off qs(0x4ced8e4f) d = <player>
+	formattext textname = toggletext_on qs(0xe889757d) d = <player>
+	formattext checksumname = togglebot 'toggle_botp%d_menuitem' d = <player>
 	if (($<player_status>.bot_play) = 0)
-		<togglebot> :SE_SetProps text = <toggletext_off>
+		<togglebot> :se_setprops text = <toggletext_off>
 	else
-		<togglebot> :SE_SetProps text = <toggletext_on>
+		<togglebot> :se_setprops text = <toggletext_on>
 	endif
 endscript
 
 script toggle_double_kick_setprop \{player = 1}
-	<player_status> = ($player_status_array [<player>])
-	FormatText TextName = toggletext_off qs("\LToggle Double Kick P%d: Off") d = <player>
-	FormatText TextName = toggletext_on qs("\LToggle Double Kick P%d: On") d = <player>
-	FormatText checksumname = togglekick 'toggle_kickp%d_menuitem' d = <player>
+	<player_status> = ($0x2994109a [<player>])
+	formattext textname = toggletext_off qs(0xa62aa90f) d = <player>
+	formattext textname = toggletext_on qs(0x3f19a124) d = <player>
+	formattext checksumname = togglekick 'toggle_kickp%d_menuitem' d = <player>
 	if (($<player_status>.double_kick_drum) = 0)
-		<togglekick> :SE_SetProps text = <toggletext_off>
+		<togglekick> :se_setprops text = <toggletext_off>
 	else
-		<togglekick> :SE_SetProps text = <toggletext_on>
+		<togglekick> :se_setprops text = <toggletext_on>
 	endif
 endscript
 
 script toggle_star_setprop \{player = 1}
-	<player_status> = ($player_status_array [<player>])
-	FormatText checksumname = togglestar 'toggle_starp%d_menuitem' d = <player>
+	<player_status> = ($0x2994109a [<player>])
+	formattext checksumname = togglestar 'toggle_starp%d_menuitem' d = <player>
 	switch ($<player_status>.star_power_debug_mode)
 		case 0
-		FormatText TextName = toggletext qs("\LToggle Star P%d: Off") d = <player>
+		formattext textname = toggletext qs(0x77b03841) d = <player>
 		case 1
-		FormatText TextName = toggletext qs("\LToggle Star P%d: Always on") d = <player>
+		formattext textname = toggletext qs(0x319bbd50) d = <player>
 		case 2
-		FormatText TextName = toggletext qs("\LToggle Star P%d: Auto Trigger") d = <player>
+		formattext textname = toggletext qs(0x61b3e268) d = <player>
 		case 3
-		FormatText TextName = toggletext qs("\LToggle Star P%d: Auto Full") d = <player>
+		formattext textname = toggletext qs(0x6b7bdf66) d = <player>
 		default
-		FormatText TextName = toggletext qs("\LToggle Star P%d: ???") d = <player>
+		formattext textname = toggletext qs(0xa1ee93b5) d = <player>
 	endswitch
-	<togglestar> :SE_SetProps text = <toggletext>
+	<togglestar> :se_setprops text = <toggletext>
 endscript
 
 script toggle_hyperspeed_setprop \{player = 1}
-	<player_status> = ($player_status_array [<player>])
-	FormatText checksumname = togglehyperspeed 'toggle_hyperspeedp%d_menuitem' d = <player>
-	FormatText TextName = toggletext qs("\LSet Hyperspeed P%p: %d") p = <player> d = ($<player_status>.hyperspeed)
-	<togglehyperspeed> :SE_SetProps text = <toggletext>
+	<player_status> = ($0x2994109a [<player>])
+	formattext checksumname = togglehyperspeed 'toggle_hyperspeedp%d_menuitem' d = <player>
+	formattext textname = toggletext qs(0x81671d3d) p = <player> d = ($<player_status>.hyperspeed)
+	<togglehyperspeed> :se_setprops text = <toggletext>
 endscript
 
 script edit_inputlog_lines_setprop 
-	FormatText TextName = text qs("\LInput Log Lines: %l") l = ($play_log_lines)
-	edit_inputlog_lines_menuitem :SE_SetProps text = <text>
+	formattext textname = text qs(0x45c3b812) l = ($play_log_lines)
+	edit_inputlog_lines_menuitem :se_setprops text = <text>
 endscript
 
 script toggle_tilt_setprop 
 	if ($show_guitar_tilt = 0)
-		toggle_tilt_menuitem :SE_SetProps \{text = qs("\LShow Tilt : off")}
+		toggle_tilt_menuitem :se_setprops \{text = qs(0x86f42ef4)}
 	else
-		toggle_tilt_menuitem :SE_SetProps \{text = qs("\LShow Tilt : on")}
+		toggle_tilt_menuitem :se_setprops \{text = qs(0x36b8f01f)}
 	endif
 endscript
 
 script toggle_leftyflip 
 	ui_menu_select_sfx
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<lefty_flip_p1> = 0)
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				lefty_flip_p1 = 1
 			}}
 	else
-		SetGlobalTags \{user_options
+		setglobaltags \{user_options
 			params = {
 				lefty_flip_p1 = 0
 			}}
 	endif
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	change structurename = <player_status> lefthanded_gems = <lefty_flip_p1>
 	change structurename = <player_status> lefthanded_button_ups = <lefty_flip_p1>
 	toggle_leftyflip_setprop
 endscript
 
 script toggle_leftyflip_setprop 
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	if (<lefty_flip_p1> = 0)
-		toggle_leftyflip_menuitem :SE_SetProps \{text = qs("\LLefty Flip : off")}
+		toggle_leftyflip_menuitem :se_setprops \{text = qs(0xc0ad14be)}
 	else
-		toggle_leftyflip_menuitem :SE_SetProps \{text = qs("\LLefty Flip : on")}
+		toggle_leftyflip_menuitem :se_setprops \{text = qs(0x0774b6f0)}
 	endif
 endscript
 debug_forcescore = off
@@ -4572,22 +4572,22 @@ script toggle_forcescore
 		default
 		change \{debug_forcescore = off}
 	endswitch
-	CrowdIncrease \{player_status = player1_status}
+	crowdincrease \{player_status = player1_status}
 	toggle_forcescore_setprop
 endscript
 
 script toggle_forcescore_setprop 
 	switch $debug_forcescore
 		case off
-		toggle_forcescore_menuitem :SE_SetProps \{text = qs("\LForce Score : off")}
+		toggle_forcescore_menuitem :se_setprops \{text = qs(0xa66d654f)}
 		case poor
-		toggle_forcescore_menuitem :SE_SetProps \{text = qs("\LForce Score : poor")}
+		toggle_forcescore_menuitem :se_setprops \{text = qs(0xa8ac46c1)}
 		case medium
-		toggle_forcescore_menuitem :SE_SetProps \{text = qs("\LForce Score : medium")}
+		toggle_forcescore_menuitem :se_setprops \{text = qs(0x5d0577bf)}
 		case good
-		toggle_forcescore_menuitem :SE_SetProps \{text = qs("\LForce Score : good")}
+		toggle_forcescore_menuitem :se_setprops \{text = qs(0xc24acb24)}
 		default
-		toggle_forcescore_menuitem :SE_SetProps \{text = qs("\LForce Score : off")}
+		toggle_forcescore_menuitem :se_setprops \{text = qs(0xa66d654f)}
 	endswitch
 endscript
 
@@ -4603,9 +4603,9 @@ endscript
 
 script toggle_vocalsfreeform_setprop 
 	if ($vocal_enable_freeform_always = 1)
-		toggle_vocalsfreeform_menuitem :SE_SetProps \{text = qs("\LVocals Freeform Always: On")}
+		toggle_vocalsfreeform_menuitem :se_setprops \{text = qs(0x125927d8)}
 	else
-		toggle_vocalsfreeform_menuitem :SE_SetProps \{text = qs("\LVocals Freeform Always: Off")}
+		toggle_vocalsfreeform_menuitem :se_setprops \{text = qs(0x1af80ceb)}
 	endif
 endscript
 
@@ -4620,9 +4620,9 @@ endscript
 
 script toggle_allowcontroller_setprop 
 	if ($allow_controller_for_all_instruments = 1)
-		toggle_allowcontroller_menuitem :SE_SetProps \{text = qs("\LAllow Controller for All Instruments: On")}
+		toggle_allowcontroller_menuitem :se_setprops \{text = qs(0x5de37df9)}
 	else
-		toggle_allowcontroller_menuitem :SE_SetProps \{text = qs("\LAllow Controller for All Instruments: Off")}
+		toggle_allowcontroller_menuitem :se_setprops \{text = qs(0x1dd9ee58)}
 	endif
 endscript
 
@@ -4637,15 +4637,15 @@ script create_changevenue_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = changevenue_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = changevenue_scrolling_menu
 		id = changevenue_vmenu
 		pos = (0.0, 0.0)
@@ -4676,17 +4676,17 @@ script create_changevenue_menu
 				}
 			}
 		]}
-	get_LevelZoneArray_size
+	get_levelzonearray_size
 	array_count = 0
 	begin
-	get_LevelZoneArray_checksum index = <array_count>
-	CreateScreenElement {
-		type = TextElement
+	get_levelzonearray_checksum index = <array_count>
+	createscreenelement {
+		type = textelement
 		parent = changevenue_vmenu
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = ($LevelZones.<level_checksum>.title)
+		text = ($levelzones.<level_checksum>.title)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
@@ -4697,7 +4697,7 @@ script create_changevenue_menu
 	}
 	<array_count> = (<array_count> + 1)
 	repeat <array_size>
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = changevenue_vmenu}
 endscript
 
@@ -4706,8 +4706,8 @@ script back_to_changevenue_menu
 endscript
 
 script destroy_changevenue_menu 
-	if ScreenElementExists \{id = changevenue_scrolling_menu}
-		DestroyScreenElement \{id = changevenue_scrolling_menu}
+	if screenelementexists \{id = changevenue_scrolling_menu}
+		destroyscreenelement \{id = changevenue_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -4715,48 +4715,48 @@ endscript
 script select_venue 
 	ui_menu_select_sfx
 	kill_gem_scroller
-	if GotParam \{level}
+	if gotparam \{level}
 		change current_level = <level>
 	endif
-	SetPakManCurrentBlock \{map = zones
+	setpakmancurrentblock \{map = zones
 		pak = none
 		block_scripts = 1}
-	ChangeNodeFlag \{LS_3_5_PRE
+	changenodeflag \{ls_3_5_pre
 		1}
-	ChangeNodeFlag \{LS_3_5_POST
+	changenodeflag \{ls_3_5_post
 		0}
-	ChangeNodeFlag \{LS_ENCORE_PRE
+	changenodeflag \{ls_encore_pre
 		1}
-	ChangeNodeFlag \{LS_ENCORE_POST
+	changenodeflag \{ls_encore_post
 		0}
-	ChangeNodeFlag \{LS_ENCORE_POST2
+	changenodeflag \{ls_encore_post2
 		0}
-	MemPushContext \{heap_zones}
-	CreatePakManMap \{map = zones
-		links = GHZones
+	mempushcontext \{heap_zones}
+	createpakmanmap \{map = zones
+		links = ghzones
 		folder = 'zones/'
 		uselinkslots}
-	MemPopContext
-	Load_Venue \{block_scripts = 1}
+	mempopcontext
+	load_venue \{block_scripts = 1}
 	setup_bg_viewport
 	restore_dummy_bg_camera
 	disable_bg_viewport_properties
 	create_movie_viewport
 	enable_pause
-	if GotParam \{norestart}
+	if gotparam \{norestart}
 		gh_start_pressed
-		restart_gem_scroller song_name = ($current_song) difficulty = ($player1_status.difficulty) difficulty2 = ($player2_status.difficulty) StartTime = ($current_starttime) device_num = <device_num>
+		restart_gem_scroller song_name = ($current_song) difficulty = ($player1_status.difficulty) difficulty2 = ($player2_status.difficulty) starttime = ($current_starttime) device_num = <device_num>
 	else
-		ToggleViewMode \{viewerreload}
-		ToggleViewMode \{viewerreload}
+		toggleviewmode \{viewerreload}
+		toggleviewmode \{viewerreload}
 	endif
 	destroy_changevenue_menu
 	generic_event_choose \{state = uistate_gameplay}
 endscript
 
 script destroy_changehighway_menu 
-	if ScreenElementExists \{id = changehighway_scrolling_menu}
-		DestroyScreenElement \{id = changehighway_scrolling_menu}
+	if screenelementexists \{id = changehighway_scrolling_menu}
+		destroyscreenelement \{id = changehighway_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -4772,15 +4772,15 @@ script create_changeguitar_menu \{type = guitar}
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = changeguitar_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = changeguitar_scrolling_menu
 		id = changeguitar_vmenu
 		pos = (0.0, 0.0)
@@ -4817,8 +4817,8 @@ script create_changeguitar_menu \{type = guitar}
 	get_musician_instrument_struct index = <array_count>
 	if (<type> = (<info_struct>.type))
 
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = changeguitar_vmenu
 			font = debug
 			scale = 0.75
@@ -4835,7 +4835,7 @@ script create_changeguitar_menu \{type = guitar}
 	endif
 	<array_count> = (<array_count> + 1)
 	repeat <array_size>
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = changeguitar_vmenu}
 endscript
 
@@ -4844,8 +4844,8 @@ script back_to_changeguitar_menu
 endscript
 
 script destroy_changeguitar_menu 
-	if ScreenElementExists \{id = changeguitar_scrolling_menu}
-		DestroyScreenElement \{id = changeguitar_scrolling_menu}
+	if screenelementexists \{id = changeguitar_scrolling_menu}
+		destroyscreenelement \{id = changeguitar_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -4855,7 +4855,7 @@ script select_guitar \{type = guitar}
 	kill_gem_scroller
 	select_start_song
 endscript
-HideByType_List = [
+hidebytype_list = [
 	'guitarist'
 	'bassist'
 	'vocalist'
@@ -4873,15 +4873,15 @@ script create_togglevisibility_menu
 			128
 		]
 		z_priority = 90}
-	CreateScreenElement {
-		type = VScrollingMenu
-		parent = Pause_Menu
+	createscreenelement {
+		type = vscrollingmenu
+		parent = pause_menu
 		id = togglevisibility_scrolling_menu
 		just = [left top]
 		dims = (400.0, 480.0)
 		pos = ($menu_pos + (70.0, 0.0))
 	}
-	CreateScreenElement \{type = VMenu
+	createscreenelement \{type = vmenu
 		parent = togglevisibility_scrolling_menu
 		id = togglevisibility_vmenu
 		pos = (0.0, 0.0)
@@ -4912,19 +4912,19 @@ script create_togglevisibility_menu
 				}
 			}
 		]}
-	GetArraySize \{$HideByType_List}
+	getarraysize \{$hidebytype_list}
 	array_count = 0
 	begin
-	FormatText checksumname = type_checksum '%s' s = ($HideByType_List [<array_count>])
-	FormatText checksumname = menuitem_checksum 'toggle_hidebytype_menuitem_%s' s = ($HideByType_List [<array_count>])
-	CreateScreenElement {
-		type = TextElement
+	formattext checksumname = type_checksum '%s' s = ($hidebytype_list [<array_count>])
+	formattext checksumname = menuitem_checksum 'toggle_hidebytype_menuitem_%s' s = ($hidebytype_list [<array_count>])
+	createscreenelement {
+		type = textelement
 		parent = togglevisibility_vmenu
 		id = <menuitem_checksum>
 		font = debug
 		scale = 0.75
 		rgba = [210 210 210 250]
-		text = qs("")
+		text = qs(0x00000000)
 		just = [left top]
 		z_priority = 100.0
 		event_handlers = [
@@ -4936,7 +4936,7 @@ script create_togglevisibility_menu
 	array_count = (<array_count> + 1)
 	repeat <array_size>
 	toggle_hidebytype_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = togglevisibility_vmenu
 		id = toggle_highway_menuitem
 		font = debug
@@ -4947,7 +4947,7 @@ script create_togglevisibility_menu
 			210
 			250
 		]
-		text = qs("\LToggle highway and HUD")
+		text = qs(0xc36d1281)
 		z_priority = 100.0
 		just = [
 			left
@@ -4968,7 +4968,7 @@ script create_togglevisibility_menu
 			}
 		]}
 	toggle_highway_setprop
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = togglevisibility_vmenu
 		font = debug
 		scale = 0.75
@@ -4978,7 +4978,7 @@ script create_togglevisibility_menu
 			210
 			250
 		]
-		text = qs("\LHide crowd now")
+		text = qs(0x398f3ab9)
 		z_priority = 100.0
 		just = [
 			left
@@ -4995,19 +4995,19 @@ script create_togglevisibility_menu
 			}
 			{
 				pad_choose
-				HideObjectByType
+				hideobjectbytype
 				params = {
-					type = Crowd
+					type = crowd
 				}
 			}
 		]}
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = togglevisibility_vmenu}
 endscript
 
 script destroy_togglevisibility_menu 
-	if ScreenElementExists \{id = togglevisibility_scrolling_menu}
-		DestroyScreenElement \{id = togglevisibility_scrolling_menu}
+	if screenelementexists \{id = togglevisibility_scrolling_menu}
+		destroyscreenelement \{id = togglevisibility_scrolling_menu}
 	endif
 	destroy_menu_backdrop
 endscript
@@ -5016,56 +5016,56 @@ highwayvisible = on
 script toggle_highway 
 	ui_menu_select_sfx
 	if ($highwayvisible = off)
-		if ScreenElementExists \{id = gem_containerp1}
-			LegacyDoScreenElementMorph \{id = gem_containerp1
+		if screenelementexists \{id = gem_containerp1}
+			legacydoscreenelementmorph \{id = gem_containerp1
 				alpha = 1}
 		endif
-		if ScreenElementExists \{id = gem_containerp2}
-			LegacyDoScreenElementMorph \{id = gem_containerp2
+		if screenelementexists \{id = gem_containerp2}
+			legacydoscreenelementmorph \{id = gem_containerp2
 				alpha = 1}
 		endif
-		if ScreenElementExists \{id = gem_containerp3}
-			LegacyDoScreenElementMorph \{id = gem_containerp3
+		if screenelementexists \{id = gem_containerp3}
+			legacydoscreenelementmorph \{id = gem_containerp3
 				alpha = 1}
 		endif
-		if ScreenElementExists \{id = gem_containerp4}
-			LegacyDoScreenElementMorph \{id = gem_containerp4
+		if screenelementexists \{id = gem_containerp4}
+			legacydoscreenelementmorph \{id = gem_containerp4
 				alpha = 1}
 		endif
-		if ScreenElementExists \{id = vocals_highway_p1}
-			LegacyDoScreenElementMorph \{id = vocals_highway_p1
+		if screenelementexists \{id = vocals_highway_p1}
+			legacydoscreenelementmorph \{id = vocals_highway_p1
 				alpha = 1}
 		endif
-		if ScreenElementExists \{id = vocals_highway_p2}
-			LegacyDoScreenElementMorph \{id = vocals_highway_p2
+		if screenelementexists \{id = vocals_highway_p2}
+			legacydoscreenelementmorph \{id = vocals_highway_p2
 				alpha = 1}
 		endif
 		enable_highway_prepass
 		change \{highwayvisible = on}
 		show_hud
 	else
-		if ScreenElementExists \{id = gem_containerp1}
-			LegacyDoScreenElementMorph \{id = gem_containerp1
+		if screenelementexists \{id = gem_containerp1}
+			legacydoscreenelementmorph \{id = gem_containerp1
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = gem_containerp2}
-			LegacyDoScreenElementMorph \{id = gem_containerp2
+		if screenelementexists \{id = gem_containerp2}
+			legacydoscreenelementmorph \{id = gem_containerp2
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = gem_containerp3}
-			LegacyDoScreenElementMorph \{id = gem_containerp3
+		if screenelementexists \{id = gem_containerp3}
+			legacydoscreenelementmorph \{id = gem_containerp3
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = gem_containerp4}
-			LegacyDoScreenElementMorph \{id = gem_containerp4
+		if screenelementexists \{id = gem_containerp4}
+			legacydoscreenelementmorph \{id = gem_containerp4
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = vocals_highway_p1}
-			LegacyDoScreenElementMorph \{id = vocals_highway_p1
+		if screenelementexists \{id = vocals_highway_p1}
+			legacydoscreenelementmorph \{id = vocals_highway_p1
 				alpha = 0}
 		endif
-		if ScreenElementExists \{id = vocals_highway_p2}
-			LegacyDoScreenElementMorph \{id = vocals_highway_p2
+		if screenelementexists \{id = vocals_highway_p2}
+			legacydoscreenelementmorph \{id = vocals_highway_p2
 				alpha = 0}
 		endif
 		disable_highway_prepass
@@ -5076,11 +5076,11 @@ script toggle_highway
 endscript
 
 script toggle_highway_setprop 
-	if ScreenElementExists \{id = toggle_highway_menuitem}
+	if screenelementexists \{id = toggle_highway_menuitem}
 		if ($highwayvisible = off)
-			toggle_highway_menuitem :SE_SetProps \{text = qs("\LToggle highway and HUD : off")}
+			toggle_highway_menuitem :se_setprops \{text = qs(0xe2759ce6)}
 		else
-			toggle_highway_menuitem :SE_SetProps \{text = qs("\LToggle highway and HUD : on")}
+			toggle_highway_menuitem :se_setprops \{text = qs(0xf92dd09b)}
 		endif
 	endif
 endscript
@@ -5099,117 +5099,117 @@ endscript
 
 script set_bandvisible 
 	if ($bandvisible = off)
-		if CompositeObjectExists \{Guitarist}
-			Guitarist :hide
+		if compositeobjectexists \{guitarist}
+			guitarist :hide
 		endif
-		if CompositeObjectExists \{vocalist}
+		if compositeobjectexists \{vocalist}
 			vocalist :hide
 		endif
-		if CompositeObjectExists \{bassist}
+		if compositeobjectexists \{bassist}
 			bassist :hide
 		endif
-		if CompositeObjectExists \{rhythm}
+		if compositeobjectexists \{rhythm}
 			rhythm :hide
 		endif
-		if CompositeObjectExists \{Drummer}
-			Drummer :hide
+		if compositeobjectexists \{drummer}
+			drummer :hide
 		endif
 	else
-		if CompositeObjectExists \{Guitarist}
-			Guitarist :unhide
+		if compositeobjectexists \{guitarist}
+			guitarist :unhide
 		endif
-		if CompositeObjectExists \{vocalist}
+		if compositeobjectexists \{vocalist}
 			vocalist :unhide
 		endif
-		if CompositeObjectExists \{bassist}
+		if compositeobjectexists \{bassist}
 			bassist :unhide
 		endif
-		if CompositeObjectExists \{rhythm}
+		if compositeobjectexists \{rhythm}
 			rhythm :unhide
 		endif
-		if CompositeObjectExists \{Drummer}
-			Drummer :unhide
+		if compositeobjectexists \{drummer}
+			drummer :unhide
 		endif
 	endif
 endscript
 
 script toggle_bandvisible_setprop 
 	if ($bandvisible = off)
-		toggle_bandvisible_menuitem :SE_SetProps \{text = qs("\LToggle band : off")}
+		toggle_bandvisible_menuitem :se_setprops \{text = qs(0x7fd280d2)}
 	else
-		toggle_bandvisible_menuitem :SE_SetProps \{text = qs("\LToggle band : on")}
+		toggle_bandvisible_menuitem :se_setprops \{text = qs(0xf815c959)}
 	endif
 endscript
 
 script toggle_hidebytype 
 	ui_menu_select_sfx
-	FormatText checksumname = ObjName ($HideByType_List [<array_count>])
-	if CompositeObjectExists <ObjName>
-		if <ObjName> :IsHidden
-			<ObjName> :unhide
-			BandManager_ShowStrings name = <ObjName>
+	formattext checksumname = objname ($hidebytype_list [<array_count>])
+	if compositeobjectexists <objname>
+		if <objname> :ishidden
+			<objname> :unhide
+			bandmanager_showstrings name = <objname>
 		else
-			<ObjName> :hide
-			BandManager_HideStrings name = <ObjName>
+			<objname> :hide
+			bandmanager_hidestrings name = <objname>
 		endif
 	endif
 	toggle_hidebytype_setprop
 endscript
 
 script toggle_hidebytype_setprop 
-	GetArraySize \{$HideByType_List}
+	getarraysize \{$hidebytype_list}
 	array_count = 0
 	begin
-	FormatText checksumname = ObjName ($HideByType_List [<array_count>])
-	if CompositeObjectExists <ObjName>
-		if <ObjName> :IsHidden
-			FormatText TextName = menutext qs("\LToggle %s : off") s = ($HideByType_List [<array_count>])
+	formattext checksumname = objname ($hidebytype_list [<array_count>])
+	if compositeobjectexists <objname>
+		if <objname> :ishidden
+			formattext textname = menutext qs(0x792a4ad8) s = ($hidebytype_list [<array_count>])
 		else
-			FormatText TextName = menutext qs("\LToggle %s : on") s = ($HideByType_List [<array_count>])
+			formattext textname = menutext qs(0x8383d8bb) s = ($hidebytype_list [<array_count>])
 		endif
 	else
-		FormatText TextName = menutext qs("\LToggle %s : not found") s = ($HideByType_List [<array_count>])
+		formattext textname = menutext qs(0x93590b29) s = ($hidebytype_list [<array_count>])
 	endif
-	FormatText checksumname = menuitem_checksum 'toggle_hidebytype_menuitem_%s' s = ($HideByType_List [<array_count>])
-	<menuitem_checksum> :SE_SetProps text = <menutext>
+	formattext checksumname = menuitem_checksum 'toggle_hidebytype_menuitem_%s' s = ($hidebytype_list [<array_count>])
+	<menuitem_checksum> :se_setprops text = <menutext>
 	array_count = (<array_count> + 1)
 	repeat <array_size>
 endscript
 
 script select_start_song 
-	if GotParam \{forceintro}
+	if gotparam \{forceintro}
 		change \{current_transition = forceintro}
 	endif
-	if GotParam \{song_name}
+	if gotparam \{song_name}
 		change current_song = <song_name>
 	endif
-	if GotParam \{StartTime}
-		change current_starttime = <StartTime>
+	if gotparam \{starttime}
+		change current_starttime = <starttime>
 	endif
-	if GotParam \{from_gameplay}
+	if gotparam \{from_gameplay}
 		restart_warning_select_restart \{dont_save_song_data}
 	else
 		change \{quickplay_song_list_current = 0}
-		generic_event_choose data = {state = uistate_play_song StartTime = <StartTime> uselaststarttime = <uselaststarttime>}
+		generic_event_choose data = {state = uistate_play_song starttime = <starttime> uselaststarttime = <uselaststarttime>}
 	endif
 	vocals_distribute_mics
 	destroy_all_debug_menus
 endscript
 
 script start_song_with_intro 
-	SkipCareerIntros
+	skipcareerintros
 	change \{game_mode = gh4_p1_career}
 	if ($selected_intro = -1)
 
 		select_start_song uselaststarttime from_gameplay = <from_gameplay>
 		return
 	endif
-	song_name = ($Celeb_Intro_Transitions [$selected_intro].song)
-	venue = ($Celeb_Intro_Transitions [$selected_intro].debug_preview_in_venue)
-	intro = ($Celeb_Intro_Transitions [$selected_intro].intro)
+	song_name = ($celeb_intro_transitions [$selected_intro].song)
+	venue = ($celeb_intro_transitions [$selected_intro].debug_preview_in_venue)
+	intro = ($celeb_intro_transitions [$selected_intro].intro)
 
 
-	FormatText checksumname = transition '%s' s = <intro>
+	formattext checksumname = transition '%s' s = <intro>
 	change current_transition = <transition>
 	change current_song = <song_name>
 	change current_level = <venue>
@@ -5221,7 +5221,7 @@ selected_intro = 0
 script toggle_intro_select_left 
 	change selected_intro = ($selected_intro - 1)
 	if ($selected_intro < 0)
-		GetArraySize \{$Celeb_Intro_Transitions}
+		getarraysize \{$celeb_intro_transitions}
 		change selected_intro = (<array_size> - 1)
 	endif
 	toggle_intro_select_setprop
@@ -5229,7 +5229,7 @@ endscript
 
 script toggle_intro_select_right 
 	change selected_intro = ($selected_intro + 1)
-	GetArraySize \{$Celeb_Intro_Transitions}
+	getarraysize \{$celeb_intro_transitions}
 	if ($selected_intro >= <array_size>)
 		change \{selected_intro = 0}
 	endif
@@ -5238,34 +5238,34 @@ endscript
 
 script toggle_intro_select_setprop 
 	if ($selected_intro = -1)
-		toggle_intro_select :SE_SetProps \{text = qs("\LRepeat Last Song With Intro")}
+		toggle_intro_select :se_setprops \{text = qs(0x04a9d108)}
 		return
 	endif
-	intro_name = ($Celeb_Intro_Transitions [$selected_intro].intro)
+	intro_name = ($celeb_intro_transitions [$selected_intro].intro)
 
-	FormatText TextName = select_string qs("\LPlay %a") a = <intro_name>
-	toggle_intro_select :SE_SetProps text = <select_string>
+	formattext textname = select_string qs(0xf2a04fcf) a = <intro_name>
+	toggle_intro_select :se_setprops text = <select_string>
 endscript
 
 script ui_menu_scroll_sfx 
-	SoundEvent \{event = UI_SFX_Scroll_Down}
+	soundevent \{event = ui_sfx_scroll_down}
 endscript
 
 script ui_menu_select_sfx 
-	SoundEvent \{Generic_Menu_Select_SFX}
+	soundevent \{0x5ea1b4e0}
 endscript
 
 script menu_focus 
-	Obj_GetID
-	<id> = <ObjID>
+	obj_getid
+	<id> = <objid>
 
-	SetScreenElementProps id = <id> rgba = [210 130 0 250]
+	setscreenelementprops id = <id> rgba = [210 130 0 250]
 endscript
 
 script menu_unfocus 
-	Obj_GetID
-	<id> = <ObjID>
-	SetScreenElementProps id = <id> rgba = [210 210 210 250]
+	obj_getid
+	<id> = <objid>
+	setscreenelementprops id = <id> rgba = [210 210 210 250]
 endscript
 
 script back_to_retail_menu 
@@ -5274,7 +5274,7 @@ endscript
 
 script toggle_global 
 
-	if GotParam \{global_toggle}
+	if gotparam \{global_toggle}
 		if ($<global_toggle> = 1)
 			change globalname = <global_toggle> newvalue = 0
 		else
@@ -5289,28 +5289,28 @@ script debug_checkcasassets
 endscript
 
 script debug_dumpheaps 
-	FinalBuildMemReport
+	finalbuildmemreport
 endscript
 toggled_fps_on = 0
 framerate_warning = 57.5
 
-script ToggleFPS 
+script togglefps 
 	if ($toggled_fps_on = 1)
 		change \{toggled_fps_on = 0}
-		KillSpawnedScript \{name = RefreshFPSDisplay}
-		Wait \{0.2
+		killspawnedscript \{name = refreshfpsdisplay}
+		wait \{0.2
 			seconds}
-		if ObjectExists \{id = fps_anchor}
-			DestroyScreenElement \{id = fps_anchor}
+		if objectexists \{id = fps_anchor}
+			destroyscreenelement \{id = fps_anchor}
 		endif
 	else
 		change \{toggled_fps_on = 1}
-		SetScreenElementLock \{id = root_window
+		setscreenelementlock \{id = root_window
 			off}
-		if ObjectExists \{id = fps_anchor}
-			DestroyScreenElement \{id = fps_anchor}
+		if objectexists \{id = fps_anchor}
+			destroyscreenelement \{id = fps_anchor}
 		endif
-		CreateScreenElement \{type = ContainerElement
+		createscreenelement \{type = containerelement
 			parent = root_window
 			id = fps_anchor
 			pos = (30.0, 140.0)
@@ -5322,11 +5322,11 @@ script ToggleFPS
 				left
 				center
 			]}
-		CreateScreenElement \{type = TextElement
+		createscreenelement \{type = textelement
 			parent = fps_anchor
 			id = fps_text
 			pos = (20.0, -15.0)
-			text = qs("\LFPS: ")
+			text = qs(0x5059e4e6)
 			font = debug
 			rgba = [
 				120
@@ -5340,7 +5340,7 @@ script ToggleFPS
 			]
 			scale = 0.75
 			z_priority = 100}
-		CreateScreenElement \{type = SpriteElement
+		createscreenelement \{type = spriteelement
 			parent = fps_anchor
 			pos = (16.0, -34.0)
 			texture = white2
@@ -5356,31 +5356,31 @@ script ToggleFPS
 			]
 			scale = (2.55, 0.6)
 			z_priority = 99}
-		SetScreenElementLock \{id = root_window
+		setscreenelementlock \{id = root_window
 			on}
-		SpawnScriptLater \{RefreshFPSDisplay}
+		spawnscriptlater \{refreshfpsdisplay}
 	endif
 endscript
 
-script debug_menu_RockstarCreator 
+script debug_menu_rockstarcreator 
 	change \{autolaunch_cas_artist = 0}
 	main_menu_select_cas device_num = <device_num>
 endscript
 
-script debug_menu_RockstarCreatorObjViewer 
+script debug_menu_rockstarcreatorobjviewer 
 	change \{autolaunch_cas_artist = 1}
 	main_menu_select_cas device_num = <device_num>
 endscript
 fps_display_hold_red = 0
 
-script RefreshFPSDisplay \{interval = 0.1}
+script refreshfpsdisplay \{interval = 0.1}
 	begin
-	if ObjectExists \{id = fps_anchor}
-		FormatText TextName = fps qs("\LFPS: %d") d = ($framerate_value)
-		SetScreenElementProps id = fps_text text = <fps>
+	if objectexists \{id = fps_anchor}
+		formattext textname = fps qs(0xcb9020de) d = ($framerate_value)
+		setscreenelementprops id = fps_text text = <fps>
 		if (($framerate_value) < $framerate_warning)
 			change \{fps_display_hold_red = 60}
-			SetScreenElementProps \{id = fps_text
+			setscreenelementprops \{id = fps_text
 				rgba = [
 					160
 					20
@@ -5388,7 +5388,7 @@ script RefreshFPSDisplay \{interval = 0.1}
 					255
 				]}
 		elseif ($fps_display_hold_red > 0)
-			SetScreenElementProps \{id = fps_text
+			setscreenelementprops \{id = fps_text
 				rgba = [
 					160
 					20
@@ -5397,7 +5397,7 @@ script RefreshFPSDisplay \{interval = 0.1}
 				]}
 			change fps_display_hold_red = ($fps_display_hold_red - 1)
 		else
-			SetScreenElementProps \{id = fps_text
+			setscreenelementprops \{id = fps_text
 				rgba = [
 					100
 					100
@@ -5406,42 +5406,42 @@ script RefreshFPSDisplay \{interval = 0.1}
 				]}
 		endif
 	else
-		KillSpawnedScript \{id = RefreshFPSDisplay}
+		killspawnedscript \{id = refreshfpsdisplay}
 		change \{toggled_fps_on = 0}
 	endif
-	Wait \{1
+	wait \{1
 		frame}
 	repeat
 endscript
 
-script SkipCareerIntros 
+script skipcareerintros 
 	get_current_band_info
-	GetGlobalTags <band_info>
-	SetGlobalTags <band_info> params = {career_intro_guitar_complete = 1}
-	SetGlobalTags <band_info> params = {career_intro_bass_complete = 1}
-	SetGlobalTags <band_info> params = {career_intro_drum_complete = 1}
-	SetGlobalTags <band_info> params = {career_intro_vocals_complete = 1}
-	SetGlobalTags <band_info> params = {career_intro_band_complete = 1}
+	getglobaltags <band_info>
+	setglobaltags <band_info> params = {career_intro_guitar_complete = 1}
+	setglobaltags <band_info> params = {career_intro_bass_complete = 1}
+	setglobaltags <band_info> params = {career_intro_drum_complete = 1}
+	setglobaltags <band_info> params = {career_intro_vocals_complete = 1}
+	setglobaltags <band_info> params = {career_intro_band_complete = 1}
 endscript
 
-script DebugCareerIntros 
+script debugcareerintros 
 	get_current_band_info
-	GetGlobalTags <band_info>
-	SetGlobalTags <band_info> params = {career_intro_guitar_complete = 0}
-	SetGlobalTags <band_info> params = {career_intro_bass_complete = 0}
-	SetGlobalTags <band_info> params = {career_intro_drum_complete = 0}
-	SetGlobalTags <band_info> params = {career_intro_vocals_complete = 0}
-	SetGlobalTags <band_info> params = {career_intro_band_complete = 0}
+	getglobaltags <band_info>
+	setglobaltags <band_info> params = {career_intro_guitar_complete = 0}
+	setglobaltags <band_info> params = {career_intro_bass_complete = 0}
+	setglobaltags <band_info> params = {career_intro_drum_complete = 0}
+	setglobaltags <band_info> params = {career_intro_vocals_complete = 0}
+	setglobaltags <band_info> params = {career_intro_band_complete = 0}
 	change \{game_mode = gh4_p1_career}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		part = guitar}
-	SetPlayerInfo \{1
+	setplayerinfo \{1
 		difficulty = expert}
-	change \{current_progression_flag = Career_Guitar}
-	spawnscriptnow \{DebugCareerIntros_spawned}
+	change \{current_progression_flag = career_guitar}
+	spawnscriptnow \{debugcareerintros_spawned}
 endscript
 
-script DebugCareerIntros_spawned 
+script debugcareerintros_spawned 
 	event = menu_change
 	if ui_event_exists_in_stack \{name = 'gameplay'}
 		ui_event_block \{event = menu_back
@@ -5454,67 +5454,67 @@ script DebugCareerIntros_spawned
 endscript
 
 script select_debug_menu_loop 
-	KillSpawnedScript \{name = setlist_quit_song_menu_input}
+	killspawnedscript \{name = setlist_quit_song_menu_input}
 	spawnscriptnow \{setlist_quit_song_menu_input}
 endscript
-bc_forced_quickplay_venue = none
+0x1fac9708 = none
 
-script toggle_force_quickplay_venue_setprop 
-	force_quickplay_venue_menuitem :SetProps \{text = qs(0xdd18ba9c)}
-	if ($bc_forced_quickplay_venue = none)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x164f9d15)}
-	elseif ($bc_forced_quickplay_venue = load_z_mall)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0xdb7217cb)}
-	elseif ($bc_forced_quickplay_venue = load_z_cube)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x67a2890e)}
-	elseif ($bc_forced_quickplay_venue = load_z_montreux)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x23e8baf4)}
-	elseif ($bc_forced_quickplay_venue = load_z_cabo)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x050a2109)}
-	elseif ($bc_forced_quickplay_venue = load_z_centralpark)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0xeedc8a06)}
-	elseif ($bc_forced_quickplay_venue = load_z_tokyo)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0xfd4b085d)}
-	elseif ($bc_forced_quickplay_venue = load_z_easterisland)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0xbbad6786)}
-	elseif ($bc_forced_quickplay_venue = load_z_awardshow)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0xe99ccc5f)}
-	elseif ($bc_forced_quickplay_venue = load_z_gorge)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x5f22a9c3)}
-	elseif ($bc_forced_quickplay_venue = load_z_paris)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x739de384)}
-	elseif ($bc_forced_quickplay_venue = load_z_space)
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0xdedc4cb4)}
+script 0x5bcab44e 
+	0x9d49def0 :setprops \{text = qs(0xdd18ba9c)}
+	if ($0x1fac9708 = none)
+		0x9d49def0 :setprops \{text = qs(0x164f9d15)}
+	elseif ($0x1fac9708 = 0x39914645)
+		0x9d49def0 :setprops \{text = qs(0xdb7217cb)}
+	elseif ($0x1fac9708 = load_z_cube)
+		0x9d49def0 :setprops \{text = qs(0x67a2890e)}
+	elseif ($0x1fac9708 = load_z_montreux)
+		0x9d49def0 :setprops \{text = qs(0x23e8baf4)}
+	elseif ($0x1fac9708 = load_z_cabo)
+		0x9d49def0 :setprops \{text = qs(0x050a2109)}
+	elseif ($0x1fac9708 = load_z_centralpark)
+		0x9d49def0 :setprops \{text = qs(0xeedc8a06)}
+	elseif ($0x1fac9708 = load_z_tokyo)
+		0x9d49def0 :setprops \{text = qs(0xfd4b085d)}
+	elseif ($0x1fac9708 = load_z_easterisland)
+		0x9d49def0 :setprops \{text = qs(0xbbad6786)}
+	elseif ($0x1fac9708 = 0xa72a91a6)
+		0x9d49def0 :setprops \{text = qs(0xe99ccc5f)}
+	elseif ($0x1fac9708 = load_z_gorge)
+		0x9d49def0 :setprops \{text = qs(0x5f22a9c3)}
+	elseif ($0x1fac9708 = load_z_paris)
+		0x9d49def0 :setprops \{text = qs(0x739de384)}
+	elseif ($0x1fac9708 = 0x8362270b)
+		0x9d49def0 :setprops \{text = qs(0xdedc4cb4)}
 	else
-		force_quickplay_venue_menuitem :SetProps \{text = qs(0x0d6d5453)}
+		0x9d49def0 :setprops \{text = qs(0x0d6d5453)}
 	endif
 endscript
 
-script toggle_force_quickplay_venue 
-	if ($bc_forced_quickplay_venue = none)
-		change \{bc_forced_quickplay_venue = load_z_mall}
-	elseif ($bc_forced_quickplay_venue = load_z_mall)
-		change \{bc_forced_quickplay_venue = load_z_montreux}
-	elseif ($bc_forced_quickplay_venue = load_z_montreux)
-		change \{bc_forced_quickplay_venue = load_z_cabo}
-	elseif ($bc_forced_quickplay_venue = load_z_cabo)
-		change \{bc_forced_quickplay_venue = load_z_centralpark}
-	elseif ($bc_forced_quickplay_venue = load_z_centralpark)
-		change \{bc_forced_quickplay_venue = load_z_cube}
-	elseif ($bc_forced_quickplay_venue = load_z_cube)
-		change \{bc_forced_quickplay_venue = load_z_tokyo}
-	elseif ($bc_forced_quickplay_venue = load_z_tokyo)
-		change \{bc_forced_quickplay_venue = load_z_easterisland}
-	elseif ($bc_forced_quickplay_venue = load_z_easterisland)
-		change \{bc_forced_quickplay_venue = load_z_awardshow}
-	elseif ($bc_forced_quickplay_venue = load_z_awardshow)
-		change \{bc_forced_quickplay_venue = load_z_gorge}
-	elseif ($bc_forced_quickplay_venue = load_z_gorge)
-		change \{bc_forced_quickplay_venue = load_z_paris}
-	elseif ($bc_forced_quickplay_venue = load_z_paris)
-		change \{bc_forced_quickplay_venue = load_z_space}
+script 0xd0d754bc 
+	if ($0x1fac9708 = none)
+		change \{0x1fac9708 = 0x39914645}
+	elseif ($0x1fac9708 = 0x39914645)
+		change \{0x1fac9708 = load_z_montreux}
+	elseif ($0x1fac9708 = load_z_montreux)
+		change \{0x1fac9708 = load_z_cabo}
+	elseif ($0x1fac9708 = load_z_cabo)
+		change \{0x1fac9708 = load_z_centralpark}
+	elseif ($0x1fac9708 = load_z_centralpark)
+		change \{0x1fac9708 = load_z_cube}
+	elseif ($0x1fac9708 = load_z_cube)
+		change \{0x1fac9708 = load_z_tokyo}
+	elseif ($0x1fac9708 = load_z_tokyo)
+		change \{0x1fac9708 = load_z_easterisland}
+	elseif ($0x1fac9708 = load_z_easterisland)
+		change \{0x1fac9708 = 0xa72a91a6}
+	elseif ($0x1fac9708 = 0xa72a91a6)
+		change \{0x1fac9708 = load_z_gorge}
+	elseif ($0x1fac9708 = load_z_gorge)
+		change \{0x1fac9708 = load_z_paris}
+	elseif ($0x1fac9708 = load_z_paris)
+		change \{0x1fac9708 = 0x8362270b}
 	else
-		change \{bc_forced_quickplay_venue = none}
+		change \{0x1fac9708 = none}
 	endif
-	toggle_force_quickplay_venue_setprop
+	0x5bcab44e
 endscript

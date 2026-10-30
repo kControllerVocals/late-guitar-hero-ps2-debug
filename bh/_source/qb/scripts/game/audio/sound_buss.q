@@ -1,180 +1,180 @@
-BussTree = {
-	Master = {
-		User_LeadVox = {
-			LeadVox_Balance = {
-				LeafNodes = [
-					Lead_Vox
-					JamMode_Vox
+busstree = {
+	master = {
+		user_leadvox = {
+			leadvox_balance = {
+				leafnodes = [
+					lead_vox
+					jammode_vox
 				]
 			}
 		}
-		User_Mic = {
-			LeafNodes = [
-				User_Mic_Dummy
-				Options_Vox
+		0xcb23ff19 = {
+			leafnodes = [
+				0xb5ce52ae
+				options_vox
 			]
 		}
-		User_Drums = {
-			Drums_Balance = {
-				Drums_Total = {
-					LeafNodes = [
-						Drums_Kick
-						Drums_Snare
-						Drums_Tom
-						Drums_Cymbal
+		user_drums = {
+			drums_balance = {
+				drums_total = {
+					leafnodes = [
+						drums_kick
+						drums_snare
+						drums_tom
+						drums_cymbal
 					]
 				}
-				LeafNodes = [
-					Options_Drums
+				leafnodes = [
+					options_drums
 				]
 			}
-			Drums_InGame = {
-				Drums_InGame_Cymbals = {
-					LeafNodes = [
-						Drums_InGame_Cymbals_Crash
-						Drums_InGame_Cymbals_Hats
+			drums_ingame = {
+				drums_ingame_cymbals = {
+					leafnodes = [
+						drums_ingame_cymbals_crash
+						drums_ingame_cymbals_hats
 					]
 				}
-				LeafNodes = [
-					InGame_Drums
-					Drums_InGame_Hats
-					Drums_InGame_Toms
-					Drums_InGame_Kick
-					Drums_InGame_Snare
+				leafnodes = [
+					ingame_drums
+					drums_ingame_hats
+					drums_ingame_toms
+					drums_ingame_kick
+					drums_ingame_snare
 				]
 			}
-			Drums_JamMode = {
-				JamMode_Drums = {
-					JamMode_Drums_Cymbals = {
-						LeafNodes = [
-							JamMode_Drums_Cymbals_Crash
-							JamMode_Drums_Cymbals_Hats
+			drums_jammode = {
+				jammode_drums = {
+					jammode_drums_cymbals = {
+						leafnodes = [
+							jammode_drums_cymbals_crash
+							jammode_drums_cymbals_hats
 						]
 					}
-					LeafNodes = [
-						JamMode_Drums_Hats
-						JamMode_Drums_Toms
-						JamMode_Drums_Kick
-						JamMode_Drums_Snare
+					leafnodes = [
+						jammode_drums_hats
+						jammode_drums_toms
+						jammode_drums_kick
+						jammode_drums_snare
 					]
 				}
 			}
-			LeafNodes = [
-				PracticeMode_Drums
+			leafnodes = [
+				practicemode_drums
 			]
 		}
-		User_LeadGTR = {
-			leadGTR_balance = {
-				Guitar_JamMode = {
-					LeafNodes = [
-						JamMode_LeadGuitar
-						JamMode_RhythmGuitar
+		user_leadgtr = {
+			leadgtr_balance = {
+				guitar_jammode = {
+					leafnodes = [
+						jammode_leadguitar
+						jammode_rhythmguitar
 					]
 				}
-				LeafNodes = [
-					User_LeadGTR_Dummy
-					Options_Guitar
+				leafnodes = [
+					user_leadgtr_dummy
+					options_guitar
 				]
 			}
 		}
-		User_Bass = {
+		user_bass = {
 			bass_balance = {
-				LeafNodes = [
-					User_Bass_Dummy
-					Options_Bass
+				leafnodes = [
+					user_bass_dummy
+					options_bass
 				]
 			}
-			Bass_JamMode = {
-				LeafNodes = [
-					JamMode_Bass
-				]
-			}
-		}
-		User_RhythmGTR = {
-			RhythmGTR_Balance = {
-				LeafNodes = [
-					User_RhythmGTR_Dummy
+			bass_jammode = {
+				leafnodes = [
+					jammode_bass
 				]
 			}
 		}
-		User_Crowd = {
-			Crowd_Balance = {
-				Crowd = {
-					Crowd_W_Reverb = {
-						LeafNodes = [
-							Crowd_One_Shots
+		user_rhythmgtr = {
+			rhythmgtr_balance = {
+				leafnodes = [
+					user_rhythmgtr_dummy
+				]
+			}
+		}
+		user_crowd = {
+			crowd_balance = {
+				crowd = {
+					crowd_w_reverb = {
+						leafnodes = [
+							crowd_one_shots
 						]
 					}
-					LeafNodes = [
-						Crowd_Beds
-						Crowd_Cheers
-						Crowd_Boos
-						Crowd_Nuetral
-						Crowd_Star_Power
-						Crowd_PreEncore_Building
-						Crowd_PreSong_Intro
-						Crowd_Applause
-						Crowd_Transitions
+					leafnodes = [
+						crowd_beds
+						crowd_cheers
+						crowd_boos
+						crowd_nuetral
+						crowd_star_power
+						crowd_preencore_building
+						crowd_presong_intro
+						crowd_applause
+						crowd_transitions
 					]
 				}
-				LeafNodes = [
-					User_Crowd_Dummy
-					Options_Crowd
+				leafnodes = [
+					user_crowd_dummy
+					options_crowd
 				]
 			}
 		}
-		User_Sfx = {
-			SFX_Balance = {
+		user_sfx = {
+			sfx_balance = {
 				ui = {
-					LeafNodes = [
+					leafnodes = [
 						front_end
-						Pause_Menu
-						UI_Star_Power
-						UI_Battle_Mode
-						Wrong_Notes_Bass
-						Wrong_Notes_Drums
-						Wrong_Notes_Guitar
+						pause_menu
+						ui_star_power
+						ui_battle_mode
+						wrong_notes_bass
+						wrong_notes_drums
+						wrong_notes_guitar
 					]
 				}
-				LeafNodes = [
+				leafnodes = [
 					`default`
-					Test_Tones
-					Encore_Events
-					Encore_Loops
-					Practice_Band_Playback
-					Training_VO
+					test_tones
+					encore_events
+					encore_loops
+					practice_band_playback
+					training_vo
 				]
 			}
 		}
-		User_Band = {
-			Band_Balance = {
-				LeafNodes = [
-					Band_Playback
-					Single_Player_Rhythm_Playback
-					Countoffs
+		user_band = {
+			band_balance = {
+				leafnodes = [
+					band_playback
+					single_player_rhythm_playback
+					countoffs
 				]
 			}
 		}
-		User_CrowdSingalong = {
-			CrowdSingalong_Balance = {
-				LeafNodes = [
-					Crowd_Singalong
+		user_crowdsingalong = {
+			crowdsingalong_balance = {
+				leafnodes = [
+					crowd_singalong
 				]
 			}
 		}
-		User_Misc = {
-			Misc_Balance = {
-				LeafNodes = [
-					Music_FrontEnd
-					Music_Setlist
+		user_misc = {
+			misc_balance = {
+				leafnodes = [
+					music_frontend
+					music_setlist
 					binkcutscenes
 				]
 			}
 		}
 	}
 }
-Default_BussSet = {
-	Master = {
+default_bussset = {
+	master = {
 		priority = 5
 		vol = 2
 		pitch = 0
@@ -186,12 +186,12 @@ Default_BussSet = {
 		vol = -4
 		pitch = 0
 	}
-	Test_Tones = {
+	test_tones = {
 		priority = 5
 		vol = 0
 		pitch = 0
 	}
-	User_Sfx = {
+	user_sfx = {
 		priority = 1
 		vol = -4
 		pitch = 0
@@ -203,72 +203,72 @@ Default_BussSet = {
 		vol = 0
 		pitch = 0
 	}
-	User_Band = {
+	user_band = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	Band_Balance = {
+	band_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Guitar_JamMode = {
+	guitar_jammode = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_LeadGuitar = {
+	jammode_leadguitar = {
 		priority = 1
 		vol = 1
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 2
 	}
-	Bass_JamMode = {
+	bass_jammode = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_Bass = {
+	jammode_bass = {
 		priority = 1
 		vol = -2
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 3
 	}
-	JamMode_RhythmGuitar = {
+	jammode_rhythmguitar = {
 		priority = 1
 		vol = -12
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 2
 	}
-	Wrong_Notes_Guitar = {
+	wrong_notes_guitar = {
 		priority = 1
 		vol = -5
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 2
 	}
-	Wrong_Notes_Bass = {
+	wrong_notes_bass = {
 		priority = 1
 		vol = -5
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 2
 	}
-	Band_Playback = {
+	band_playback = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Countoffs = {
+	countoffs = {
 		priority = 1
 		vol = -7
 		pitch = 0
 	}
-	Practice_Band_Playback = {
+	practice_band_playback = {
 		priority = 1
 		vol = -3
 		pitch = 0
@@ -278,104 +278,104 @@ Default_BussSet = {
 		vol = -6
 		pitch = 0
 	}
-	Pause_Menu = {
+	pause_menu = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	UI_Star_Power = {
+	ui_star_power = {
 		priority = 1
 		vol = -6
 		pitch = 0
 	}
-	UI_Battle_Mode = {
+	ui_battle_mode = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Crowd = {
+	crowd = {
 		priority = 1
 		vol = -7
 		pitch = 0
 	}
-	Crowd_Beds = {
+	crowd_beds = {
 		priority = 1
 		vol = -7
 		pitch = 0
 	}
-	Crowd_Cheers = {
+	crowd_cheers = {
 		priority = 1
 		vol = -6
 		pitch = 0
 	}
-	Crowd_Boos = {
+	crowd_boos = {
 		priority = 1
 		vol = -6
 		pitch = 0
 	}
-	Crowd_Nuetral = {
+	crowd_nuetral = {
 		priority = 1
 		vol = -6
 		pitch = 0
 	}
-	Crowd_Star_Power = {
+	crowd_star_power = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Crowd_PreEncore_Building = {
+	crowd_preencore_building = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Crowd_PreSong_Intro = {
+	crowd_presong_intro = {
 		priority = 1
 		vol = -6
 		pitch = 0
 	}
-	Crowd_Applause = {
+	crowd_applause = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Crowd_Transitions = {
+	crowd_transitions = {
 		priority = 1
 		vol = -8
 		pitch = 0
 	}
-	Crowd_Singalong = {
+	crowd_singalong = {
 		priority = 1
 		vol = -100
 		pitch = 0
 	}
-	Crowd_W_Reverb = {
+	crowd_w_reverb = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Crowd_One_Shots = {
+	crowd_one_shots = {
 		priority = 1
 		vol = -7
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 20
 	}
-	Music_FrontEnd = {
+	music_frontend = {
 		priority = 1
 		vol = -11
 		pitch = 0
 	}
-	Music_Setlist = {
+	music_setlist = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Encore_Events = {
+	encore_events = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Encore_Loops = {
+	encore_loops = {
 		priority = 1
 		vol = 0
 		pitch = 0
@@ -385,232 +385,232 @@ Default_BussSet = {
 		vol = 0
 		pitch = 0
 	}
-	Training_VO = {
+	training_vo = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_LeadVox = {
+	user_leadvox = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	Lead_Vox = {
+	lead_vox = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_Mic = {
+	0xcb23ff19 = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_Mic_Dummy = {
+	0xb5ce52ae = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_Vox = {
+	jammode_vox = {
 		priority = 1
 		vol = 0
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 2
 	}
-	User_Drums = {
+	user_drums = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	Drums_JamMode = {
+	drums_jammode = {
 		priority = 1
 		vol = -8
 		pitch = 0
 	}
-	JamMode_Drums = {
+	jammode_drums = {
 		priority = 1
 		vol = -5
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 5
 	}
-	JamMode_Drums_Cymbals = {
+	jammode_drums_cymbals = {
 		priority = 1
 		vol = 0
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 3
 	}
-	JamMode_Drums_Cymbals_Crash = {
+	jammode_drums_cymbals_crash = {
 		priority = 2
 		vol = 0
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 2
 	}
-	JamMode_Drums_Cymbals_Hats = {
+	jammode_drums_cymbals_hats = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_Drums_Hats = {
+	jammode_drums_hats = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_Drums_Toms = {
+	jammode_drums_toms = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_Drums_Kick = {
+	jammode_drums_kick = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	JamMode_Drums_Snare = {
+	jammode_drums_snare = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	PracticeMode_Drums = {
+	practicemode_drums = {
 		priority = 1
 		vol = -15
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 8
 	}
-	Drums_Total = {
+	drums_total = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_Kick = {
+	drums_kick = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_Snare = {
+	drums_snare = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_Tom = {
+	drums_tom = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_Cymbal = {
+	drums_cymbal = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_LeadGTR = {
+	user_leadgtr = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	User_LeadGTR_Dummy = {
+	user_leadgtr_dummy = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_Bass = {
+	user_bass = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	User_Bass_Dummy = {
+	user_bass_dummy = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_RhythmGTR = {
+	user_rhythmgtr = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	User_Crowd = {
+	user_crowd = {
 		priority = 1
 		vol = -1.5
 		pitch = 0
 	}
-	User_Crowd_Dummy = {
+	user_crowd_dummy = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	LeadVox_Balance = {
+	leadvox_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_Balance = {
+	drums_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Wrong_Notes_Drums = {
+	wrong_notes_drums = {
 		priority = 5
 		vol = -4
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 4
 	}
-	Drums_InGame = {
+	drums_ingame = {
 		priority = 1
 		vol = -7
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 8
 	}
-	Drums_InGame_Kick = {
+	drums_ingame_kick = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_InGame_Snare = {
+	drums_ingame_snare = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_InGame_Toms = {
+	drums_ingame_toms = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_InGame_Hats = {
+	drums_ingame_hats = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Drums_InGame_Cymbals = {
+	drums_ingame_cymbals = {
 		priority = 1
 		vol = 0
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 4
 	}
-	Drums_InGame_Cymbals_Crash = {
+	drums_ingame_cymbals_crash = {
 		priority = 2
 		vol = 0
 		pitch = 0
 		instance_rule = oldest
 		max_instances = 2
 	}
-	Drums_InGame_Cymbals_Hats = {
+	drums_ingame_cymbals_hats = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	InGame_Drums = {
+	ingame_drums = {
 		priority = 1
 		vol = 0
 		pitch = 0
 		instance_rule = oldest_with_priority
 		max_instances = 8
 	}
-	leadGTR_balance = {
+	leadgtr_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
@@ -620,67 +620,67 @@ Default_BussSet = {
 		vol = 0
 		pitch = 0
 	}
-	RhythmGTR_Balance = {
+	rhythmgtr_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_RhythmGTR_Dummy = {
+	user_rhythmgtr_dummy = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Crowd_Balance = {
+	crowd_balance = {
 		priority = 1
 		vol = -1.0
 		pitch = 0
 	}
-	SFX_Balance = {
+	sfx_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Options_Vox = {
+	options_vox = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Options_Drums = {
+	options_drums = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Options_Guitar = {
+	options_guitar = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Options_Bass = {
+	options_bass = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	Options_Crowd = {
+	options_crowd = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_Misc = {
+	user_misc = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	Misc_Balance = {
+	misc_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0
 	}
-	User_CrowdSingalong = {
+	user_crowdsingalong = {
 		priority = 1
 		vol = -3.5
 		pitch = 0
 	}
-	CrowdSingalong_Balance = {
+	crowdsingalong_balance = {
 		priority = 1
 		vol = 0
 		pitch = 0

@@ -1,28 +1,28 @@
 
 script ui_create_customize_character_instrument 
-	spawnscriptnow \{change_cas_to_guitar}
+	spawnscriptnow \{0x419cda3a}
 	spawnscriptnow ui_create_customize_character_instrument_spawned params = {<...>}
 endscript
 
 script ui_create_customize_character_instrument_spawned 
-	OnExitRun \{InputHandlerPermit}
-	InputHandlerForbid
+	onexitrun \{0xf00f29a9}
+	0x79db87d7
 	change \{rich_presence_context = presence_band_logo_edit_and_instrument_edit}
-	CASBlockForLoading
-	CASWaitForComposite
+	casblockforloading
+	caswaitforcomposite
 	cas_queue_wait
 	make_generic_menu \{vmenu_id = create_customize_character_instrument_vmenu
-		title = qs("EDIT INSTRUMENTS")
+		title = qs(0x83e71211)
 		num_icons = 1
 		show_history
-		cai_bg = 1}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+		0xc1dc518f = 1}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -30,40 +30,40 @@ script ui_create_customize_character_instrument_spawned
 		no_rotate = 1
 		no_zoom}
 	change \{cas_current_instrument = none}
-	get_frontend_venue_player_start_checksums
-	cas_set_object_node_pos player = ($cas_current_player) node = <Drum_Start>
+	0xce0505af
+	cas_set_object_node_pos player = ($cas_current_player) node = <0xb07e72b1>
 	i = 0
 	begin
 	add_generic_menu_text_item {
 		text = ((($cag_instruments) [<i>]).text)
-		choose_state = UIstate_cag_main
+		choose_state = uistate_cag_main
 		choose_state_data = {instrument_info = (($cag_instruments) [<i>]) hist_tex = ((($cag_instruments) [<i>]).icon)}
 	}
 	i = (<i> + 1)
 	repeat 2
 	add_generic_menu_text_item {
-		text = qs("DRUMS")
-		choose_state = UIstate_cadrm_main
+		text = qs(0x388cd3db)
+		choose_state = uistate_cadrm_main
 		choose_state_data = {instrument_info = (($cag_instruments) [2])}
 	}
 	add_generic_menu_text_item {
-		text = qs("MIC")
-		choose_state = UIstate_customize_character_mic
+		text = qs(0xc0b34c9f)
+		choose_state = uistate_customize_character_mic
 		choose_state_data = {instrument_info = (($cag_instruments) [3])}
 	}
 	menu_finish \{car_helper_text
 		no_rotate_text
 		no_zoom_text}
 
-	if GetCurrentCASObject
-		BandManager_ChangeStance name = <cas_object> stance = stance_frontend no_wait
+	if getcurrentcasobject
+		bandmanager_changestance name = <cas_object> stance = stance_frontend no_wait
 	endif
-	LaunchEvent type = focus target = create_customize_character_instrument_vmenu data = {child_index = <selected_index>}
-	draw_guitar_center_logo
+	launchevent type = focus target = create_customize_character_instrument_vmenu data = {child_index = <selected_index>}
+	0x59249cc9
 endscript
 
 script ui_destroy_customize_character_instrument 
-	KillSpawnedScript \{name = ui_create_customize_character_instrument_spawned}
+	killspawnedscript \{name = ui_create_customize_character_instrument_spawned}
 	destroy_generic_menu
 endscript
 
@@ -75,14 +75,14 @@ endscript
 
 script change_cas_instrument_if_necessary 
 	if NOT ($cas_current_instrument = <instrument>)
-		get_frontend_venue_player_start_checksums
-		cas_set_object_node_pos player = ($cas_current_player) node = <Drum_Start>
-		if GetCurrentCASObject
+		0xce0505af
+		cas_set_object_node_pos player = ($cas_current_player) node = <0xb07e72b1>
+		if getcurrentcasobject
 			<cas_object> :hide
 		endif
 		if NOT (<instrument> = none)
 		endif
 		change cas_current_instrument = <instrument>
-		RebuildCurrentCASModel instrument = <instrument>
+		rebuildcurrentcasmodel instrument = <instrument>
 	endif
 endscript

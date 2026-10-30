@@ -1,24 +1,24 @@
 agora_materials = [
 ]
 cas_agora_parts = [
-	CAS_Guitar_Body
-	CAS_Bass_Body
-	CAS_Drums
-	CAS_Mic
+	cas_guitar_body
+	cas_bass_body
+	cas_drums
+	cas_mic
 ]
 
 script create_agora_character_struct 
 
-	<player_status> = ($player_status_array [<player>])
+	<player_status> = ($0x2994109a [<player>])
 	net_get_character_name player = <player> check_profanity = 0
 	savegame = 0
-	if isXenon
+	if isxenon
 		if (($<player_status>.is_local_client) = 1)
 			get_savegame_from_controller controller = ($<player_status>.controller)
 		endif
 	endif
 	if get_musician_profile_struct_by_id id = ($<player_status>.character_id) savegame = <savegame> dont_assert
-		if StructureContains Structure = <profile_struct> appearance
+		if structurecontains structure = <profile_struct> appearance
 			create_agora_appearance_struct appearance = (<profile_struct>.appearance) instrument = ($<player_status>.part)
 		endif
 	endif
@@ -31,22 +31,22 @@ endscript
 
 script create_agora_appearance_struct 
 
-	FilterAppearance appearance_name = appearance part_set = $instrument_part_sets chosen_set = <instrument>
+	filterappearance appearance_name = appearance part_set = $instrument_part_sets chosen_set = <instrument>
 	get_is_female_from_appearance appearance = <appearance>
 	appearance_data = {is_female = <is_female>}
 	array = []
-	GetArraySize \{$master_editable_list}
+	getarraysize \{$master_editable_list}
 	i = 0
 	begin
 	part_name = ((($master_editable_list) [<i>]).part)
-	if ArrayContains array = ($cas_agora_parts) contains = <part_name>
-		if StructureContains Structure = <appearance> <part_name>
-			if StructureContains Structure = (<appearance>.<part_name>) desc_id
+	if arraycontains array = ($cas_agora_parts) contains = <part_name>
+		if structurecontains structure = <appearance> <part_name>
+			if structurecontains structure = (<appearance>.<part_name>) desc_id
 				part_def = {
 					part = <part_name>
 					choice = ((<appearance>.<part_name>).desc_id)
 				}
-				AddArrayElement array = <array> element = <part_def>
+				addarrayelement array = <array> element = <part_def>
 			endif
 		endif
 	endif
@@ -67,12 +67,12 @@ script agora_material_reformat
 		eyes
 	]
 	array = []
-	GetArraySize <material_names>
+	getarraysize <material_names>
 	i = 0
 	begin
 	matname = (<material_names> [<i>])
-	if StructureContains Structure = <chosen_materials> <matname>
-		AddArrayElement array = <array> element = (<chosen_materials>.<matname>)
+	if structurecontains structure = <chosen_materials> <matname>
+		addarrayelement array = <array> element = (<chosen_materials>.<matname>)
 	endif
 	i = (<i> + 1)
 	repeat <array_size>

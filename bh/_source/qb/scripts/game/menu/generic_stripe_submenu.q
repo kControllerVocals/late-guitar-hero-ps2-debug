@@ -1,61 +1,61 @@
 
-script make_generic_stripe_submenu {
+script 0x2ea532a9 {
 		pad_back_script = generic_event_back
 		exclusive_device = ($primary_controller)
 	}
 	set_focus_color
 	set_unfocus_color
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 	else
 		add_gamertag_helper exclusive_device = <exclusive_device>
 	endif
-	if ScreenElementExists \{id = current_submenu_anchor}
-		DestroyScreenElement \{id = current_submenu_anchor}
+	if screenelementexists \{id = 0x4a7ca801}
+		destroyscreenelement \{id = 0x4a7ca801}
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		parent = root_window
-		id = current_submenu_anchor
+		id = 0x4a7ca801
 		desc = 'generic_stripe_submenu'
 		just = [center center]
 		exclusive_device = <exclusive_device>
 	}
-	<stripe_sub_id> = <id>
-	if <stripe_sub_id> :Desc_ResolveAlias name = alias_submenu
-		AssignAlias id = <resolved_id> alias = current_submenu
+	<0x52db101a> = <id>
+	if <0x52db101a> :desc_resolvealias name = 0x67fed5c0
+		assignalias id = <resolved_id> alias = current_submenu
 	else
 
 	endif
-	if NOT <stripe_sub_id> :Desc_ResolveAlias name = alias_submenu_window param = submenu_window_id
+	if NOT <0x52db101a> :desc_resolvealias name = 0x30a0f2b1 param = 0x074b0076
 
 	endif
-	if NOT <stripe_sub_id> :Desc_ResolveAlias name = alias_submenu_up param = submenu_up_id
+	if NOT <0x52db101a> :desc_resolvealias name = 0x5248ed64 param = 0x34ed1f27
 
 	endif
-	if NOT <stripe_sub_id> :Desc_ResolveAlias name = alias_submenu_down param = submenu_down_id
+	if NOT <0x52db101a> :desc_resolvealias name = 0xea8115f7 param = 0xde5c8feb
 
 	endif
-	if GotParam \{option_arrows}
-		current_submenu :SetTags \{smooth_morph_time = 0.1}
-		current_submenu :SE_SetProps {
+	if gotparam \{option_arrows}
+		current_submenu :settags \{smooth_morph_time = 0.1}
+		current_submenu :se_setprops {
 			event_handlers = [
-				{pad_up generic_stripe_menu_scroll params = {arrow_id = <submenu_up_id> up}}
-				{pad_up SmoothMenuScroll params = {dir = -1 isVertical = true}}
-				{pad_down generic_stripe_menu_scroll params = {arrow_id = <submenu_down_id> down}}
-				{pad_down SmoothMenuScroll params = {dir = 1 isVertical = true}}
+				{pad_up 0x8b8c56fa params = {arrow_id = <0x34ed1f27> up}}
+				{pad_up smoothmenuscroll params = {dir = -1 isvertical = true}}
+				{pad_down 0x8b8c56fa params = {arrow_id = <0xde5c8feb> down}}
+				{pad_down smoothmenuscroll params = {dir = 1 isvertical = true}}
 				{pad_back <pad_back_script> params = <pad_back_params>}
 			]
 			loop_view = true
 			loop_center = true
 		}
 	else
-		SetScreenElementProps {id = <submenu_up_id> alpha = 0.0}
-		SetScreenElementProps {id = <submenu_down_id> alpha = 0.0}
-		GetScreenElementDims id = <submenu_window_id>
+		setscreenelementprops {id = <0x34ed1f27> alpha = 0.0}
+		setscreenelementprops {id = <0xde5c8feb> alpha = 0.0}
+		getscreenelementdims id = <0x074b0076>
 		dims = ((<width> * (1.0, 0.0)) + (0.0, 512.0))
-		SetScreenElementProps {id = <submenu_window_id> dims = <dims>}
-		current_submenu :SE_SetProps {
+		setscreenelementprops {id = <0x074b0076> dims = <dims>}
+		current_submenu :se_setprops {
 			event_handlers = [
 				{pad_up generic_menu_up_or_down_sound params = {up}}
 				{pad_down generic_menu_up_or_down_sound params = {down}}
@@ -63,12 +63,12 @@ script make_generic_stripe_submenu {
 			]
 		}
 	endif
-	return \{VMenu = current_submenu_anchor}
+	return \{vmenu = 0x4a7ca801}
 endscript
 
-script destroy_generic_stripe_submenu 
-	if ScreenElementExists \{id = current_submenu_anchor}
-		DestroyScreenElement \{id = current_submenu_anchor}
+script 0x7f9ab085 
+	if screenelementexists \{id = 0x4a7ca801}
+		destroyscreenelement \{id = 0x4a7ca801}
 	endif
 	clean_up_user_control_helpers
 endscript

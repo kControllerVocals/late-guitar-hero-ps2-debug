@@ -10,7 +10,7 @@ crowd_ped_camera_dist = 3.5
 crowd_ped_camera_height = 1.07
 crowd_ped_camera_fov = 21
 crowd_base_viewport_id = crowd_base_viewport
-crowd_base_viewport_texture = `tex/models/Real_Crowd/crowd_atlas0.dds`
+crowd_base_viewport_texture = `tex/models/real_crowd/crowd_atlas0.dds`
 
 script crowd_reset \{loading_transition = 0
 		restarting = 0}
@@ -22,57 +22,57 @@ script crowd_reset \{loading_transition = 0
 	change \{max_crowd = 0.0}
 	change \{last_time_in_lead = 0.0}
 	change \{last_time_in_lead_player = -1}
-	if GetNodeFlag \{LS_ENCORE_POST}
-		start_at_high = 1
-	elseif NOT game_is_scored
-		start_at_high = 1
+	if getnodeflag \{ls_encore_post}
+		0x45261787 = 1
+	elseif NOT 0xf99301bb
+		0x45261787 = 1
 	elseif ($end_credits = 1)
-		start_at_high = 1
+		0x45261787 = 1
 	elseif ($is_attract_mode = 1)
-		start_at_high = 1
+		0x45261787 = 1
 	else
-		start_at_high = 0
+		0x45261787 = 0
 	endif
 	if (<player> = 1)
-		if (<start_at_high> = 1)
+		if (<0x45261787> = 1)
 			change \{current_crowd = 1.6666}
 			change \{average_crowd = 1.6666}
 		else
 			change \{current_crowd = 1.0}
 			change \{average_crowd = 1.0}
 		endif
-		if (<start_at_high> = 1)
-			looping_state = good
+		if (<0x45261787> = 1)
+			0xe8b8a61e = good
 		else
-			looping_state = neutral
+			0xe8b8a61e = neutral
 		endif
-		StopSoundEvent \{$CurrentlyPlayingOneShotSoundEvent}
+		stopsoundevent \{$currentlyplayingoneshotsoundevent}
 		if ($current_playing_transition = loading)
-			Change_Crowd_Looping_SFX crowd_looping_state = <looping_state>
+			change_crowd_looping_sfx crowd_looping_state = <0xe8b8a61e>
 		elseif ($game_mode = practice)
-			BG_Crowd_Front_End_Silence \{immediate = 1}
-		elseif (<start_at_high> = 1)
-			if ScriptExists \{Loading_Screen_Crowd_Swell}
-				KillSpawnedScript \{name = Loading_Screen_Crowd_Swell}
-				SetSoundBussParams {Crowd_Beds = {vol = ($Default_BussSet.Crowd_Beds.vol)} time = 1}
+			bg_crowd_front_end_silence \{immediate = 1}
+		elseif (<0x45261787> = 1)
+			if scriptexists \{loading_screen_crowd_swell}
+				killspawnedscript \{name = loading_screen_crowd_swell}
+				setsoundbussparams {crowd_beds = {vol = ($default_bussset.crowd_beds.vol)} time = 1}
 			endif
-			Change_Crowd_Looping_SFX crowd_looping_state = <looping_state>
+			change_crowd_looping_sfx crowd_looping_state = <0xe8b8a61e>
 		elseif (<restarting> = 1)
-			Change_Crowd_Looping_SFX crowd_looping_state = <looping_state>
+			change_crowd_looping_sfx crowd_looping_state = <0xe8b8a61e>
 		else
-			Change_Crowd_Looping_SFX crowd_looping_state = <looping_state> loading_transition = <loading_transition> restarting = <restarting>
+			change_crowd_looping_sfx crowd_looping_state = <0xe8b8a61e> loading_transition = <loading_transition> restarting = <restarting>
 		endif
 	endif
-	GetBandIndexByPlayer player = ($<player_status>.player)
+	getbandindexbyplayer player = ($<player_status>.player)
 	band_id = ($band_ids [<band_index>])
-	if (<start_at_high> = 1)
+	if (<0x45261787> = 1)
 		change structurename = <player_status> current_health = 1.6666
 		change structurename = <band_id> current_health = 1.6666
 	else
 		change structurename = <player_status> current_health = 1.0
 		change structurename = <band_id> current_health = 1.0
 	endif
-	CrowdReset
+	crowdreset
 endscript
 
 script forcescore 
@@ -95,95 +95,95 @@ script create_crowd_models
 	if ($disable_crowd = 1)
 		return
 	endif
-	GetPakManCurrentName \{map = zones}
-	FormatText checksumname = crowd_models '%s_crowd_models' s = <pakname>
-	if NOT GlobalExists name = <crowd_models>
+	getpakmancurrentname \{map = zones}
+	formattext checksumname = crowd_models '%s_crowd_models' s = <pakname>
+	if NOT globalexists name = <crowd_models>
 		return
 	endif
 	change crowd_model_array = $<crowd_models>
-	GetArraySize $<crowd_models>
+	getarraysize $<crowd_models>
 	array_count = 0
 	begin
 	pos = ((-500.0, -200.0, 0.0) + (0.0, -100.0, 0.0) * <array_count>)
 	viewport = ($<crowd_models> [<array_count>].id)
 	camera = ($<crowd_models> [<array_count>].camera)
 	bb_sector_name = ($<crowd_models> [<array_count>].bb_mesh_id)
-	if NOT StructureContains Structure = ($<crowd_models> [<array_count>]) remap_only
-		MemPushContext \{BottomUpHeap}
-		CreateFromStructure {
-			Spouse = <viewport>
+	if NOT structurecontains structure = ($<crowd_models> [<array_count>]) remap_only
+		mempushcontext \{bottomupheap}
+		createfromstructure {
+			spouse = <viewport>
 			pos = <pos>
-			Quat = (0.0, 1.0, 0.0)
-			Class = GameObject
-			type = Ghost
-			CreatedAtStart
+			quat = (0.0, 1.0, 0.0)
+			class = gameobject
+			type = ghost
+			createdatstart
 			($<crowd_models> [<array_count>])
-			SuspendDistance = 0
+			suspenddistance = 0
 			lod_dist1 = 400
 			lod_dist2 = 401
-			profile = $Profile_Ped_Crowd_Obj
-			lightgroup = Crowd
+			profile = $profile_ped_crowd_obj
+			lightgroup = crowd
 			interleave_animations
-			object_type = Crowd
-			ProfileColor = 49344
+			object_type = crowd
+			profilecolor = 49344
 			profilebudget = 200
 			use_jq
 		}
 		model_id = ($<crowd_models> [<array_count>].name)
 		extra_model = 'Real_Crowd\\Crowd_HandL_Lighter.skin'
-		<model_id> :AddGeom lhand_lighter Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom lhand_lighter model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandL_Rock.skin'
-		<model_id> :AddGeom lhand_rock Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom lhand_rock model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandL_Clap.skin'
-		<model_id> :AddGeom lhand_clap Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom lhand_clap model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandL_Fist.skin'
-		<model_id> :AddGeom lhand_fist Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom lhand_fist model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandR_Lighter.skin'
-		<model_id> :AddGeom rhand_lighter Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom rhand_lighter model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandR_Rock.skin'
-		<model_id> :AddGeom rhand_rock Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom rhand_rock model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandR_Clap.skin'
-		<model_id> :AddGeom rhand_clap Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
+		<model_id> :addgeom rhand_clap model = <extra_model> lightgroup = crowd spouse = <viewport>
 		extra_model = 'Real_Crowd\\Crowd_HandR_Fist.skin'
-		<model_id> :AddGeom rhand_fist Model = <extra_model> lightgroup = Crowd Spouse = <viewport>
-		<model_id> :SwitchOffAtomic lhand_lighter
-		<model_id> :SwitchOffAtomic lhand_rock
-		<model_id> :SwitchOffAtomic lhand_fist
-		<model_id> :SwitchOnAtomic lhand_clap
-		<model_id> :SwitchOffAtomic rhand_lighter
-		<model_id> :SwitchOffAtomic rhand_rock
-		<model_id> :SwitchOffAtomic rhand_fist
-		<model_id> :SwitchOnAtomic rhand_clap
+		<model_id> :addgeom rhand_fist model = <extra_model> lightgroup = crowd spouse = <viewport>
+		<model_id> :switchoffatomic lhand_lighter
+		<model_id> :switchoffatomic lhand_rock
+		<model_id> :switchoffatomic lhand_fist
+		<model_id> :switchonatomic lhand_clap
+		<model_id> :switchoffatomic rhand_lighter
+		<model_id> :switchoffatomic rhand_rock
+		<model_id> :switchoffatomic rhand_fist
+		<model_id> :switchonatomic rhand_clap
 		roty = 0
-		if StructureContains Structure = ($<crowd_models> [<array_count>]) roty
+		if structurecontains structure = ($<crowd_models> [<array_count>]) roty
 			roty = ($<crowd_models> [<array_count>].roty)
 		endif
-		if ($Cheat_SnobCrowd = 1)
+		if ($cheat_snobcrowd = 1)
 			roty = (<roty> + 180)
 		endif
 		if (<roty> = 0)
 			apply_correction = 1
 		else
 			apply_correction = 0
-			($<crowd_models> [<array_count>].name) :Obj_SetOrientation y = (180 + <roty>)
+			($<crowd_models> [<array_count>].name) :obj_setorientation y = (180 + <roty>)
 		endif
 		if NOT (<bb_sector_name> = 0)
-			ToggleIntraMeshSorting on = 1 ObjID = <bb_sector_name>
+			toggleintrameshsorting on = 1 objid = <bb_sector_name>
 		endif
-		MemPopContext \{BottomUpHeap}
+		mempopcontext \{bottomupheap}
 		style = imposter_rendering
-		if StructureContains Structure = ($<crowd_models> [<array_count>]) ViewportParams
-			<style> = ($<crowd_models> [<array_count>].ViewportParams)
+		if structurecontains structure = ($<crowd_models> [<array_count>]) viewportparams
+			<style> = ($<crowd_models> [<array_count>].viewportparams)
 		endif
 		use_resource = 0x00000000
-		if StructureContains Structure = ($<crowd_models> [<array_count>]) ResourceViewport
-			<use_resource> = ($<crowd_models> [<array_count>].ResourceViewport)
+		if structurecontains structure = ($<crowd_models> [<array_count>]) resourceviewport
+			<use_resource> = ($<crowd_models> [<array_count>].resourceviewport)
 		endif
 
-		CreateScreenElement {
+		createscreenelement {
 			parent = root_window
 			just = [center center]
-			type = ViewportElement
+			type = viewportelement
 			id = <viewport>
 			texture = ($<crowd_models> [<array_count>].texture)
 			pos = (2000.0, 200.0)
@@ -191,39 +191,39 @@ script create_crowd_models
 			alpha = 1
 			style = <style>
 		}
-		CreateCompositeObjectInstance {
-			priority = $COIM_Priority_Permanent
+		createcompositeobjectinstance {
+			priority = $coim_priority_permanent
 			heap = generic
-			Components = [
-				{Component = camera}
+			components = [
+				{component = camera}
 			]
 			params = {
 				name = <camera>
 				viewport = <viewport>
-				object_type = Crowd
-				ProfileColor = 12632064
+				object_type = crowd
+				profilecolor = 12632064
 				profilebudget = 10
 				use_jq
 				far_clip = 20
 			}
 		}
-		SetActiveCamera viewport = <viewport> id = <camera>
-		<camera> :SetHFov hfov = $crowd_ped_camera_fov
-		if StructureContains Structure = ($<crowd_models> [<array_count>]) no_resolve_colorbuffer
-			SetViewportProperties viewport = <viewport> no_resolve_colorbuffer = true no_resolve_depthstencilbuffer = true crowd_impostor = true
+		setactivecamera viewport = <viewport> id = <camera>
+		<camera> :sethfov hfov = $crowd_ped_camera_fov
+		if structurecontains structure = ($<crowd_models> [<array_count>]) no_resolve_colorbuffer
+			setviewportproperties viewport = <viewport> no_resolve_colorbuffer = true no_resolve_depthstencilbuffer = true crowd_impostor = true
 		else
-			SetViewportProperties viewport = <viewport> no_resolve_depthstencilbuffer = true crowd_impostor = true
+			setviewportproperties viewport = <viewport> no_resolve_depthstencilbuffer = true crowd_impostor = true
 		endif
-		AddCrowdModelCam camera = <camera> pos = <pos> viewport = <viewport> apply_correction = <apply_correction>
+		addcrowdmodelcam camera = <camera> pos = <pos> viewport = <viewport> apply_correction = <apply_correction>
 	endif
-	SetSearchAllAssetContexts
-	CreateViewportTextureOverride {
+	setsearchallassetcontexts
+	createviewporttextureoverride {
 		id = <viewport>
 		viewportid = <viewport>
 		texture = ($<crowd_models> [<array_count>].textureasset)
 		texdict = ($<crowd_models> [<array_count>].texdict)
 	}
-	SetSearchAllAssetContexts \{off}
+	setsearchallassetcontexts \{off}
 	<array_count> = (<array_count> + 1)
 	repeat <array_size>
 endscript
@@ -231,21 +231,21 @@ endscript
 script update_crowd_model_cam 
 	crowd_scaler = 25
 	begin
-	GetViewportCameraOrient \{viewport = bg_viewport}
-	GetVectorComponents <at>
-	Angle = (<x> * <crowd_scaler>)
-	RotateVector vector = <at> ry = <Angle>
+	getviewportcameraorient \{viewport = bg_viewport}
+	getvectorcomponents <at>
+	angle = (<x> * <crowd_scaler>)
+	rotatevector vector = <at> ry = <angle>
 	at = <result_vector>
-	RotateVector vector = <left> ry = <Angle>
+	rotatevector vector = <left> ry = <angle>
 	left = <result_vector>
-	RotateVector vector = <up> ry = <Angle>
+	rotatevector vector = <up> ry = <angle>
 	up = <result_vector>
 	posdir = (<model_pos> + (0.0, 1.0, 0.0) + (<at> * 3.5))
-	<camera> :Obj_SetPosition position = <posdir>
-	<camera> :Obj_SetOrientation dir = <at> Only handles upright cameras
-	SetViewportCameraOrient viewport = <viewport> at = <at> left = <left> up = <up>
-	<camera> :UnPause
-	WaitOneGameFrame
+	<camera> :obj_setposition position = <posdir>
+	<camera> :obj_setorientation dir = <at> only handles upright cameras
+	setviewportcameraorient viewport = <viewport> at = <at> left = <left> up = <up>
+	<camera> :unpause
+	waitonegameframe
 	repeat
 endscript
 
@@ -254,16 +254,16 @@ script hide_crowd_models \{active = true}
 	if (<crowd_models> = none)
 		return
 	endif
-	GetArraySize <crowd_models>
+	getarraysize <crowd_models>
 	array_count = 0
 	begin
 	viewport = (<crowd_models> [<array_count>].id)
-	ObjID = (<crowd_models> [<array_count>].name)
-	if NOT StructureContains Structure = (<crowd_models> [<array_count>]) remap_only
+	objid = (<crowd_models> [<array_count>].name)
+	if NOT structurecontains structure = (<crowd_models> [<array_count>]) remap_only
 		if (<active> = true)
-			<ObjID> :hide
+			<objid> :hide
 		else
-			<ObjID> :unhide
+			<objid> :unhide
 		endif
 	endif
 	<array_count> = (<array_count> + 1)
@@ -271,49 +271,49 @@ script hide_crowd_models \{active = true}
 endscript
 
 script destroy_crowd_models 
-	ClearCrowdModelCams
-	ClearCrowdsFromVisibilityTest
+	clearcrowdmodelcams
+	clearcrowdsfromvisibilitytest
 	crowd_models = $crowd_model_array
 	if (<crowd_models> = none)
 		return
 	endif
-	GetArraySize <crowd_models>
+	getarraysize <crowd_models>
 	array_count = 0
 	begin
-	if NOT StructureContains Structure = (<crowd_models> [<array_count>]) remap_only
-		KillSpawnedScript \{name = update_crowd_model_cam}
-		if CompositeObjectExists name = (<crowd_models> [<array_count>].camera)
-			(<crowd_models> [<array_count>].camera) :Die
+	if NOT structurecontains structure = (<crowd_models> [<array_count>]) remap_only
+		killspawnedscript \{name = update_crowd_model_cam}
+		if compositeobjectexists name = (<crowd_models> [<array_count>].camera)
+			(<crowd_models> [<array_count>].camera) :die
 		endif
-		if ScreenElementExists id = (<crowd_models> [<array_count>].id)
-			SetSearchAllAssetContexts
-			DestroyViewportTextureOverride id = (<crowd_models> [<array_count>].id)
-			SetSearchAllAssetContexts \{off}
-			DestroyScreenElement id = (<crowd_models> [<array_count>].id)
+		if screenelementexists id = (<crowd_models> [<array_count>].id)
+			setsearchallassetcontexts
+			destroyviewporttextureoverride id = (<crowd_models> [<array_count>].id)
+			setsearchallassetcontexts \{off}
+			destroyscreenelement id = (<crowd_models> [<array_count>].id)
 		endif
-		SetSearchAllAssetContexts
-		DestroyViewportTextureOverride id = (<crowd_models> [<array_count>].id)
-		SetSearchAllAssetContexts \{off}
-		DestroyViewport id = (<crowd_models> [<array_count>].id)
-		if CompositeObjectExists name = (<crowd_models> [<array_count>].name)
-			(<crowd_models> [<array_count>].name) :Die
+		setsearchallassetcontexts
+		destroyviewporttextureoverride id = (<crowd_models> [<array_count>].id)
+		setsearchallassetcontexts \{off}
+		destroyviewport id = (<crowd_models> [<array_count>].id)
+		if compositeobjectexists name = (<crowd_models> [<array_count>].name)
+			(<crowd_models> [<array_count>].name) :die
 		endif
 	endif
 	<array_count> = (<array_count> + 1)
 	repeat <array_size>
-	DestroyViewport id = ($crowd_base_viewport_id)
+	destroyviewport id = ($crowd_base_viewport_id)
 	change \{crowd_model_array = none}
 endscript
 
-script set_crowd_hand \{Hand = left
+script set_crowd_hand \{hand = left
 		type = clap}
-	Obj_GetID
-	name = <ObjID>
-	if (<Hand> = left)
+	obj_getid
+	name = <objid>
+	if (<hand> = left)
 		switch (<type>)
 			case lighter
 			part = lhand_lighter
-			case Rock
+			case rock
 			part = lhand_rock
 			case clap
 			part = lhand_clap
@@ -322,16 +322,16 @@ script set_crowd_hand \{Hand = left
 			default
 			return
 		endswitch
-		<name> :SwitchOffAtomic lhand_lighter
-		<name> :SwitchOffAtomic lhand_rock
-		<name> :SwitchOffAtomic lhand_clap
-		<name> :SwitchOffAtomic lhand_fist
-		<name> :SwitchOnAtomic <part>
+		<name> :switchoffatomic lhand_lighter
+		<name> :switchoffatomic lhand_rock
+		<name> :switchoffatomic lhand_clap
+		<name> :switchoffatomic lhand_fist
+		<name> :switchonatomic <part>
 	else
 		switch (<type>)
 			case lighter
 			part = rhand_lighter
-			case Rock
+			case rock
 			part = rhand_rock
 			case clap
 			part = rhand_clap
@@ -340,24 +340,24 @@ script set_crowd_hand \{Hand = left
 			default
 			return
 		endswitch
-		<name> :SwitchOffAtomic rhand_lighter
-		<name> :SwitchOffAtomic rhand_rock
-		<name> :SwitchOffAtomic rhand_clap
-		<name> :SwitchOffAtomic rhand_fist
-		<name> :SwitchOnAtomic <part>
+		<name> :switchoffatomic rhand_lighter
+		<name> :switchoffatomic rhand_rock
+		<name> :switchoffatomic rhand_clap
+		<name> :switchoffatomic rhand_fist
+		<name> :switchonatomic <part>
 	endif
 endscript
 
-script Crowd_SetHand \{name = crowd1
-		Hand = left
+script crowd_sethand \{name = crowd1
+		hand = left
 		type = clap}
-	if CompositeObjectExists <name>
-		<name> :set_crowd_hand Hand = <Hand> type = <type>
+	if compositeobjectexists <name>
+		<name> :set_crowd_hand hand = <hand> type = <type>
 	endif
 endscript
 
-script Crowd_StartLighters 
-	KillSpawnedScript \{name = crowd_monitor_performance}
+script crowd_startlighters 
+	killspawnedscript \{name = crowd_monitor_performance}
 	spawnscriptnow \{crowd_monitor_performance}
 endscript
 
@@ -365,100 +365,100 @@ script crowd_monitor_performance
 	lighters_on = false
 	begin
 	get_skill_level
-	if (<skill> != Bad)
+	if (<skill> != bad)
 		if (<lighters_on> = false)
-			Crowd_AllSetHand \{Hand = right
+			crowd_allsethand \{hand = right
 				type = lighter}
-			Crowd_AllPlayAnim \{Anim = special}
+			crowd_allplayanim \{anim = special}
 			lighters_on = true
-			Crowd_ToggleLighters \{on}
+			crowd_togglelighters \{on}
 		endif
 	else
 		if (<lighters_on> = true)
-			Crowd_AllSetHand \{Hand = right
+			crowd_allsethand \{hand = right
 				type = clap}
-			Crowd_AllPlayAnim \{Anim = Idle}
+			crowd_allplayanim \{anim = idle}
 			lighters_on = false
-			Crowd_ToggleLighters \{off}
+			crowd_togglelighters \{off}
 		endif
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript
 
-script Crowd_StopLighters 
-	KillSpawnedScript \{name = crowd_monitor_performance}
-	Crowd_AllSetHand \{Hand = right
+script crowd_stoplighters 
+	killspawnedscript \{name = crowd_monitor_performance}
+	crowd_allsethand \{hand = right
 		type = clap}
-	Crowd_AllPlayAnim \{Anim = Idle}
-	Crowd_ToggleLighters \{off}
+	crowd_allplayanim \{anim = idle}
+	crowd_togglelighters \{off}
 endscript
 
-script Crowd_AllSetHand 
-	Crowd_SetHand name = crowd1 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd2 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd3 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd4 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd5 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd6 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd7 Hand = <Hand> type = <type>
-	Crowd_SetHand name = crowd8 Hand = <Hand> type = <type>
+script crowd_allsethand 
+	crowd_sethand name = crowd1 hand = <hand> type = <type>
+	crowd_sethand name = crowd2 hand = <hand> type = <type>
+	crowd_sethand name = crowd3 hand = <hand> type = <type>
+	crowd_sethand name = crowd4 hand = <hand> type = <type>
+	crowd_sethand name = crowd5 hand = <hand> type = <type>
+	crowd_sethand name = crowd6 hand = <hand> type = <type>
+	crowd_sethand name = crowd7 hand = <hand> type = <type>
+	crowd_sethand name = crowd8 hand = <hand> type = <type>
 endscript
 
-script Crowd_AllPlayAnim \{playonce = false}
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd1 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd2 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd3 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd4 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd5 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd6 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd7 Anim = <Anim> playonce = <playonce>
-	WaitOneGameFrame
-	Crowd_PlayAnim name = crowd8 Anim = <Anim> playonce = <playonce>
+script crowd_allplayanim \{playonce = false}
+	waitonegameframe
+	crowd_playanim name = crowd1 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd2 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd3 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd4 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd5 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd6 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd7 anim = <anim> playonce = <playonce>
+	waitonegameframe
+	crowd_playanim name = crowd8 anim = <anim> playonce = <playonce>
 endscript
 
-script Crowd_PlayAnim \{name = crowd1
-		Anim = Idle
+script crowd_playanim \{name = crowd1
+		anim = idle
 		playonce = false}
-	if NOT CompositeObjectExists <name>
+	if NOT compositeobjectexists <name>
 		return
 	endif
-	if StructureContains Structure = ($Crowd_Profiles) name = <name>
-		anim_set = ($Crowd_Profiles.<name>.anim_set)
-		<name> :Obj_KillSpawnedScript name = crowd_play_adjusting_random_anims
-		<name> :Obj_SpawnScriptNow crowd_play_adjusting_random_anims params = {anim_set = <anim_set> Anim = <Anim> playonce = <playonce>}
+	if structurecontains structure = ($crowd_profiles) name = <name>
+		anim_set = ($crowd_profiles.<name>.anim_set)
+		<name> :obj_killspawnedscript name = crowd_play_adjusting_random_anims
+		<name> :obj_spawnscriptnow crowd_play_adjusting_random_anims params = {anim_set = <anim_set> anim = <anim> playonce = <playonce>}
 	else
 
 	endif
 endscript
 
 script crowd_create_lighters 
-	GetPakManCurrent \{map = zones}
+	getpakmancurrent \{map = zones}
 	if (<pak> = z_artdeco)
 		return
 	endif
-	GetPakManCurrentName \{map = zones}
+	getpakmancurrentname \{map = zones}
 	index = 0
 	begin
 	if (<index> < 10)
-		FormatText checksumname = crowd_lighter '%s_LIGHTER_Geo0%a' s = <pakname> a = <index>
+		formattext checksumname = crowd_lighter '%s_LIGHTER_Geo0%a' s = <pakname> a = <index>
 	else
-		FormatText checksumname = crowd_lighter '%s_LIGHTER_Geo%a' s = <pakname> a = <index>
+		formattext checksumname = crowd_lighter '%s_LIGHTER_Geo%a' s = <pakname> a = <index>
 	endif
-	if CompositeObjectExists name = <crowd_lighter>
+	if compositeobjectexists name = <crowd_lighter>
 		<crowd_lighter> :hide
 	else
-		if IsInNodeArray <crowd_lighter>
-			if NOT IsCreated <crowd_lighter>
+		if isinnodearray <crowd_lighter>
+			if NOT iscreated <crowd_lighter>
 				create name = <crowd_lighter>
-				if CompositeObjectExists name = <crowd_lighter>
+				if compositeobjectexists name = <crowd_lighter>
 					<crowd_lighter> :hide
 				else
 
@@ -475,19 +475,19 @@ script crowd_create_lighters
 	repeat
 endscript
 
-script Crowd_ToggleLighters 
-	GetPakManCurrentName \{map = zones}
+script crowd_togglelighters 
+	getpakmancurrentname \{map = zones}
 	index = 0
 	begin
 	if (<index> < 10)
-		FormatText checksumname = crowd_lighter '%s_LIGHTER_Geo0%a' s = <pakname> a = <index>
+		formattext checksumname = crowd_lighter '%s_LIGHTER_Geo0%a' s = <pakname> a = <index>
 	else
-		FormatText checksumname = crowd_lighter '%s_LIGHTER_Geo%a' s = <pakname> a = <index>
+		formattext checksumname = crowd_lighter '%s_LIGHTER_Geo%a' s = <pakname> a = <index>
 	endif
-	if CompositeObjectExists name = <crowd_lighter>
-		if GotParam \{on}
+	if compositeobjectexists name = <crowd_lighter>
+		if gotparam \{on}
 			<crowd_lighter> :unhide
-		elseif GotParam \{off}
+		elseif gotparam \{off}
 			<crowd_lighter> :hide
 		endif
 	endif
@@ -498,31 +498,31 @@ script Crowd_ToggleLighters
 	repeat
 endscript
 
-script Crowd_StageDiver_Hide \{index = 1}
-	GetPakManCurrentName \{map = zones}
-	FormatText checksumname = stagediver '%s_TRG_Ped_StageDive0%a' s = <pakname> a = <index>
-	if CompositeObjectExists name = <stagediver>
+script crowd_stagediver_hide \{index = 1}
+	getpakmancurrentname \{map = zones}
+	formattext checksumname = stagediver '%s_TRG_Ped_StageDive0%a' s = <pakname> a = <index>
+	if compositeobjectexists name = <stagediver>
 		<stagediver> :hide
 	endif
 endscript
 
-script Crowd_StageDiver_Jump \{index = 1}
-	GetPakManCurrentName \{map = zones}
-	FormatText checksumname = stagediver '%s_TRG_Ped_StageDive0%a' s = <pakname> a = <index>
-	if CompositeObjectExists name = <stagediver>
+script crowd_stagediver_jump \{index = 1}
+	getpakmancurrentname \{map = zones}
+	formattext checksumname = stagediver '%s_TRG_Ped_StageDive0%a' s = <pakname> a = <index>
+	if compositeobjectexists name = <stagediver>
 		<stagediver> :unhide
-		GetPakManCurrent \{map = zones}
-		if StructureContains Structure = ($stagediver_anims) name = <pak>
+		getpakmancurrent \{map = zones}
+		if structurecontains structure = ($stagediver_anims) name = <pak>
 			anims = ($stagediver_anims.<pak>)
 		else
 			anims = ($stagediver_anims.`default`)
 		endif
-		GetArraySize <anims>
-		GetRandomValue name = anim_index Integer a = 0 b = (<array_size> - 1)
+		getarraysize <anims>
+		getrandomvalue name = anim_index integer a = 0 b = (<array_size> - 1)
 		anim_name = (<anims> [<anim_index>])
 
-		<stagediver> :GameObj_PlayAnim Anim = <anim_name>
-		<stagediver> :GameObj_WaitAnimFinished
+		<stagediver> :gameobj_playanim anim = <anim_name>
+		<stagediver> :gameobj_waitanimfinished
 		<stagediver> :hide
 	else
 

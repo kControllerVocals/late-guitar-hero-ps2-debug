@@ -1,37 +1,37 @@
-L_GUIT_Davdics_Damnit_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_davdics_damnit_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Davidicus_Damnit_75_F
+				slow = [
+					guit_davidicus_damnit_75_f
 				]
-				Med = [
-					Guit_Davidicus_Damnit_100_F
+				med = [
+					guit_davidicus_damnit_100_f
 				]
-				Fast = [
-					Guit_Davidicus_Damnit_120_F
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Davidicus_Damnit_75_F
-				]
-				Med = [
-					Guit_Davidicus_Damnit_100_F
-				]
-				Fast = [
-					Guit_Davidicus_Damnit_120_F
+				fast = [
+					guit_davidicus_damnit_120_f
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Davidicus_Damnit_75_F
+			normal = {
+				slow = [
+					guit_davidicus_damnit_75_f
 				]
-				Med = [
-					Guit_Davidicus_Damnit_100_F
+				med = [
+					guit_davidicus_damnit_100_f
 				]
-				Fast = [
-					Guit_Davidicus_Damnit_120_F
+				fast = [
+					guit_davidicus_damnit_120_f
+				]
+			}
+			bad = {
+				slow = [
+					guit_davidicus_damnit_75_f
+				]
+				med = [
+					guit_davidicus_damnit_100_f
+				]
+				fast = [
+					guit_davidicus_damnit_120_f
 				]
 			}
 		}

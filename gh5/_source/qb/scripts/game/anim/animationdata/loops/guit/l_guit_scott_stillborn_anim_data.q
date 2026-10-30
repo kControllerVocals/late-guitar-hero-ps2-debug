@@ -1,37 +1,37 @@
-L_GUIT_Scott_Stillborn_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_scott_stillborn_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Scott_Stillborn_075
+				slow = [
+					guit_scott_stillborn_075
 				]
-				Med = [
-					Guit_Scott_Stillborn_100
+				med = [
+					guit_scott_stillborn_100
 				]
-				Fast = [
-					Guit_Scott_Stillborn_120
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Scott_Stillborn_075
-				]
-				Med = [
-					Guit_Scott_Stillborn_100
-				]
-				Fast = [
-					Guit_Scott_Stillborn_120
+				fast = [
+					guit_scott_stillborn_120
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Scott_Stillborn_075
+			normal = {
+				slow = [
+					guit_scott_stillborn_075
 				]
-				Med = [
-					Guit_Scott_Stillborn_100
+				med = [
+					guit_scott_stillborn_100
 				]
-				Fast = [
-					Guit_Scott_Stillborn_120
+				fast = [
+					guit_scott_stillborn_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_scott_stillborn_075
+				]
+				med = [
+					guit_scott_stillborn_100
+				]
+				fast = [
+					guit_scott_stillborn_120
 				]
 			}
 		}

@@ -1,112 +1,112 @@
-GameObj_AnimTree = {
-	type = DegenerateBlend
-	id = Body
+gameobj_animtree = {
+	type = degenerateblend
+	id = body
 }
-GameObj_StandardAnimBranch = {
-	type = TimerType
-	id = BodyTimer
-	Anim = Anim
-	anim_events = AnimEvents
-	Speed = Speed
+gameobj_standardanimbranch = {
+	type = timertype
+	id = bodytimer
+	anim = anim
+	anim_events = animevents
+	speed = speed
 	start = start
 	[
 		{
-			type = Source
-			Anim = Anim
+			type = source
+			anim = anim
 		}
 	]
 }
-Ped_Flip = ASSERT_ON_USE
-Ped_SetAnimCycleMode = ASSERT_ON_USE
-Ped_GetAnimDuration = ASSERT_ON_USE
-Ped_AnimComplete = ASSERT_ON_USE
-Ped_WaitAnim = ASSERT_ON_USE
-Ped_WaitAnimFinished = ASSERT_ON_USE
-Ped_Anim_Command = ASSERT_ON_USE
-Ped_PlayAnim = ASSERT_ON_USE
-Ped_AddDegenerateBlendBranch = ASSERT_ON_USE
-Ped_InitStaticAnimTree = ASSERT_ON_USE
+ped_flip = 0x24d8810d
+ped_setanimcyclemode = 0x24d8810d
+ped_getanimduration = 0x24d8810d
+ped_animcomplete = 0x24d8810d
+ped_waitanim = 0x24d8810d
+ped_waitanimfinished = 0x24d8810d
+ped_anim_command = 0x24d8810d
+ped_playanim = 0x24d8810d
+ped_adddegenerateblendbranch = 0x24d8810d
+ped_initstaticanimtree = 0x24d8810d
 
 script gameobj_init_animtree 
-	if GotParam \{profile}
-		AddParams <profile>
+	if gotparam \{profile}
+		addparams <profile>
 	endif
-	if GotParam \{AnimTargets}
-		Anim_InitTree {
-			Tree = <Tree>
-			DefaultCommandTarget = <DefaultCommandTarget>
-			NodeIdDeclaration = <AnimTargets>
-			params = <AnimTreeParams>
-			AnimEventTableName = <AnimEventTableName>
+	if gotparam \{animtargets}
+		anim_inittree {
+			tree = <tree>
+			defaultcommandtarget = <defaultcommandtarget>
+			nodeiddeclaration = <animtargets>
+			params = <animtreeparams>
+			animeventtablename = <animeventtablename>
 		}
-		Anim_Enable \{off}
+		anim_enable \{off}
 	endif
 endscript
 
-script GameObj_PlayAnim \{target = Body
-		Tree = $GameObj_StandardAnimBranch
-		TimerType = Play
-		Speed = 1.0
+script gameobj_playanim \{target = body
+		tree = $gameobj_standardanimbranch
+		timertype = play
+		speed = 1.0
 		start = 0.0
-		AnimEvents = off
-		BlendDuration = -1.0}
-	if NOT GotParam \{Anim}
-		Anim_GetDefaultAnimName
-		Anim = <DefaultAnimName>
+		animevents = off
+		blendduration = -1.0}
+	if NOT gotparam \{anim}
+		anim_getdefaultanimname
+		anim = <defaultanimname>
 	endif
-	Anim_Enable
-	Anim_Command target = <target> command = DegenerateBlend_AddBranch params = {
-		Tree = <Tree>
-		BlendDuration = <BlendDuration>
+	anim_enable
+	anim_command target = <target> command = degenerateblend_addbranch params = {
+		tree = <tree>
+		blendduration = <blendduration>
 		params = {
-			Anim = <Anim>
-			Speed = <Speed>
-			TimerType = <TimerType>
+			anim = <anim>
+			speed = <speed>
+			timertype = <timertype>
 			start = <start>
-			AnimEvents = <AnimEvents>
+			animevents = <animevents>
 		}
 	}
 endscript
 
-script GameObj_WaitAnimFinished \{Timer = BodyTimer}
-	Anim_Command target = <Timer> command = Timer_WaitAnimComplete
+script gameobj_waitanimfinished \{timer = bodytimer}
+	anim_command target = <timer> command = timer_waitanimcomplete
 endscript
 
-script GameObj_WaitAnim 
-	Anim_Command target = BodyTimer command = Timer_Wait params = {<...>}
+script gameobj_waitanim 
+	anim_command target = bodytimer command = timer_wait params = {<...>}
 endscript
 
-script GameObj_AnimComplete \{Timer = BodyTimer}
-	if Anim_Command target = <Timer> command = Timer_IsAnimComplete
+script gameobj_animcomplete \{timer = bodytimer}
+	if anim_command target = <timer> command = timer_isanimcomplete
 		return \{scriptresult = 1}
 	else
 		return \{scriptresult = 0}
 	endif
 endscript
 
-script CreateObjLabel 
-	Obj_GetID
-	SpawnScriptLater MaintainObjLabel params = {ObjID = <ObjID>}
+script createobjlabel 
+	obj_getid
+	spawnscriptlater maintainobjlabel params = {objid = <objid>}
 endscript
 
-script MaintainObjLabel 
-	<id> = (<ObjID> + 5)
+script maintainobjlabel 
+	<id> = (<objid> + 5)
 	begin
-	if CompositeObjectExists name = <ObjID>
-		<ObjID> :Obj_GetPosition
-		FormatText TextName = text qs("\L%a") a = <ObjID> nowarning
-		if ObjectExists id = <id>
-			SetScreenElementProps id = <id> text = <text> pos3D = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
+	if compositeobjectexists name = <objid>
+		<objid> :obj_getposition
+		formattext textname = text qs(0x0bc409e2) a = <objid> nowarning
+		if objectexists id = <id>
+			setscreenelementprops id = <id> text = <text> pos3d = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
 		else
-			create_object_label id = <id> text = <text> pos3D = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
+			create_object_label id = <id> text = <text> pos3d = (<pos> + (0.0, 80.0, 0.0)) rgba = [100 0 0 128]
 		endif
 	else
-		if ScreenElementExists id = <id>
-			DestroyScreenElement id = <id>
+		if screenelementexists id = <id>
+			destroyscreenelement id = <id>
 		endif
 		break
 	endif
-	Wait \{1
+	wait \{1
 		frame}
 	repeat
 endscript
@@ -117,21 +117,21 @@ endscript
 script ped_enable_bones 
 endscript
 
-script Ped_InitBehaviorFromProfile 
-	if GotParam \{BehaviorInitScript}
-		<BehaviorInitScript>
+script ped_initbehaviorfromprofile 
+	if gotparam \{behaviorinitscript}
+		<behaviorinitscript>
 	endif
 endscript
 
 script create_ped_label 
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	CreateScreenElement {
+	createscreenelement {
 		id = <id>
-		type = TextBlockElement
+		type = textblockelement
 		parent = root_window
 		font = fontgrid_text_a3
-		text = qs("\L")
+		text = qs(0x03ac90f0)
 		scale = 1.0
 		pos = (0.0, 0.0)
 		rgba = [0 128 0 128]
@@ -142,17 +142,17 @@ script create_ped_label
 endscript
 
 script destroy_ped_label 
-	if ObjectExists id = <id>
-		DestroyScreenElement id = <id>
+	if objectexists id = <id>
+		destroyscreenelement id = <id>
 	endif
 endscript
 
 script destroy_global_peds_in_zone 
 	if NOT ($disable_global_pedestrians = 1)
-		if NOT InNetGame
-			if IsCOIMInited
+		if NOT innetgame
+			if iscoiminited
 
-				CleanupGlobalPedNodeArray name = 'zones/z_peds/z_peds.qb' zone = <zone>
+				cleanupglobalpednodearray name = 'zones/z_peds/z_peds.qb' zone = <zone>
 			endif
 		endif
 	endif
@@ -160,10 +160,10 @@ endscript
 
 script spawn_global_peds_in_zone 
 	if NOT ($disable_global_pedestrians = 1)
-		if NOT InNetGame
-			if IsCOIMInited
+		if NOT innetgame
+			if iscoiminited
 
-				ParseGlobalPedNodeArray name = 'zones/z_peds/z_peds.qb' zone = <zone>
+				parseglobalpednodearray name = 'zones/z_peds/z_peds.qb' zone = <zone>
 			endif
 		endif
 	endif

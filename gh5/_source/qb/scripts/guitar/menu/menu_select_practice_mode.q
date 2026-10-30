@@ -1,13 +1,13 @@
 menu_select_practice_mode_font = fontgrid_title_a1
 training_mode = tutorials
 
-script MaybeAllowTutorials 
+script maybeallowtutorials 
 	if (
-			(IsGuitarController controller = $primary_controller)
+			(isguitarcontroller controller = $primary_controller)
 			||
-			(IsDrumController controller = $primary_controller)
+			(isdrumcontroller controller = $primary_controller)
 			||
-			((IsPs3) && $enable_button_cheats = 1)
+			((isps3) && $enable_button_cheats = 1)
 		)
 		return \{allow_tutorials = 1}
 	endif
@@ -16,15 +16,15 @@ endscript
 script create_select_practice_mode_menu 
 	change \{rich_presence_context = presence_menus}
 	spawnscriptnow \{menu_music_on}
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		id = spm_container
 		parent = root_window
 		pos = (0.0, 0.0)
 		exclusive_device = ($primary_controller)
 	}
 	create_menu_backdrop \{texture = menu_venue_bg}
-	displaySprite \{texture = practice_poster_2
+	displaysprite \{texture = practice_poster_2
 		id = spm_poster
 		parent = spm_container
 		pos = (640.0, 340.0)
@@ -34,7 +34,7 @@ script create_select_practice_mode_menu
 			center
 			center
 		]}
-	displaySprite \{tex = practice_typebar_1
+	displaysprite \{tex = practice_typebar_1
 		parent = spm_container
 		pos = (710.0, 240.0)
 		dims = (192.0, 75.0)
@@ -50,7 +50,7 @@ script create_select_practice_mode_menu
 			255
 		]
 		z = 5}
-	displaySprite \{tex = practice_typebar_2
+	displaysprite \{tex = practice_typebar_2
 		parent = spm_container
 		pos = (555.0, 320.0)
 		dims = (220.0, 75.0)
@@ -66,7 +66,7 @@ script create_select_practice_mode_menu
 			255
 		]
 		z = 5}
-	displaySprite \{tex = Tape_H_02
+	displaysprite \{tex = tape_h_02
 		parent = spm_container
 		pos = (775.0, 60.0)
 		dims = (160.0, 64.0)
@@ -76,14 +76,14 @@ script create_select_practice_mode_menu
 			center
 		]
 		z = 7}
-	displaySprite {
-		tex = Tape_H_02
+	displaysprite {
+		tex = tape_h_02
 		parent = <id>
 		pos = (5.0, 5.0)
 		rgba = [0 0 0 128]
 		z = 6
 	}
-	displaySprite \{tex = Tape_H_02
+	displaysprite \{tex = tape_h_02
 		parent = spm_container
 		pos = (500.0, 640.0)
 		dims = (160.0, 64.0)
@@ -94,14 +94,14 @@ script create_select_practice_mode_menu
 		]
 		z = 7
 		flip_v}
-	displaySprite {
-		tex = Tape_H_02
+	displaysprite {
+		tex = tape_h_02
 		parent = <id>
 		pos = (5.0, 5.0)
 		rgba = [0 0 0 128]
 		z = 6
 	}
-	displaySprite \{tex = tape_V_02
+	displaysprite \{tex = tape_v_02
 		parent = spm_container
 		pos = (430.0, 120.0)
 		dims = (160.0, 96.0)
@@ -111,17 +111,17 @@ script create_select_practice_mode_menu
 			center
 		]
 		z = 7}
-	displaySprite {
-		tex = tape_V_02
+	displaysprite {
+		tex = tape_v_02
 		parent = <id>
 		pos = (-5.0, 5.0)
 		rgba = [0 0 0 128]
 		z = 6
 	}
-	CreateScreenElement \{type = TextElement
+	createscreenelement \{type = textelement
 		parent = spm_container
 		id = current_menu
-		text = qs("TUTORIALS")
+		text = qs(0xc6510dd1)
 		font = fontgrid_text_a6
 		pos = (555.0, 320.0)
 		scale = 0.7
@@ -149,9 +149,9 @@ script create_select_practice_mode_menu
 			}
 		]
 		z_priority = 10}
-	displayText \{id = practice_text
+	displaytext \{id = practice_text
 		parent = spm_container
-		text = qs("PRACTICE")
+		text = qs(0x3ea7dec9)
 		font = fontgrid_text_a6
 		pos = (710.0, 245.0)
 		scale = 0.7
@@ -161,8 +161,8 @@ script create_select_practice_mode_menu
 		]
 		rot = -5
 		z = 10}
-	displayText \{parent = spm_container
-		text = qs("SELECT PRACTICE MODE")
+	displaytext \{parent = spm_container
+		text = qs(0x42622a8d)
 		font = fontgrid_text_a11
 		pos = (655.0, 540.0)
 		rgba = [
@@ -180,8 +180,8 @@ script create_select_practice_mode_menu
 		]}
 	fit_text_in_rectangle id = <id> only_if_larger_x = 1 dims = (320.0, 70.0)
 	update_training_menu
-	MaybeAllowTutorials
-	if NOT GotParam \{allow_tutorials}
+	maybeallowtutorials
+	if NOT gotparam \{allow_tutorials}
 		change \{training_mode = practice}
 		update_training_menu
 	endif
@@ -197,11 +197,11 @@ script create_select_practice_mode_menu
 			0
 			200
 		]}
-	add_user_control_helper \{text = qs("SELECT")
+	add_user_control_helper \{text = qs(0xc18d5e76)
 		button = green
 		z = 100
 		all_buttons}
-	add_user_control_helper \{text = qs("BACK")
+	add_user_control_helper \{text = qs(0xaf4d5dd2)
 		button = red
 		z = 100}
 endscript
@@ -214,8 +214,8 @@ script destroy_select_practice_mode_menu
 endscript
 
 script switch_training_mode 
-	MaybeAllowTutorials
-	if GotParam \{allow_tutorials}
+	maybeallowtutorials
+	if gotparam \{allow_tutorials}
 		generic_menu_up_or_down_sound
 		if ($training_mode = tutorials)
 			change \{training_mode = practice}
@@ -229,8 +229,8 @@ endscript
 script choose_training_mode 
 	generic_menu_pad_choose_sound
 	if ($training_mode = tutorials)
-		MaybeAllowTutorials
-		if GotParam \{allow_tutorials}
+		maybeallowtutorials
+		if gotparam \{allow_tutorials}
 			generic_event_choose \{state = uistate_select_tutorial}
 		endif
 	else
@@ -243,12 +243,12 @@ endscript
 
 script update_training_menu 
 	if ($training_mode = tutorials)
-		if ScreenElementExists \{id = spm_poster}
-			SetScreenElementProps \{id = spm_poster
+		if screenelementexists \{id = spm_poster}
+			setscreenelementprops \{id = spm_poster
 				texture = practice_poster_1}
 		endif
-		if ScreenElementExists \{id = current_menu}
-			SetScreenElementProps \{id = current_menu
+		if screenelementexists \{id = current_menu}
+			setscreenelementprops \{id = current_menu
 				rgba = [
 					150
 					140
@@ -257,8 +257,8 @@ script update_training_menu
 				]
 				scale = 0.75}
 		endif
-		if ScreenElementExists \{id = practice_text}
-			SetScreenElementProps \{id = practice_text
+		if screenelementexists \{id = practice_text}
+			setscreenelementprops \{id = practice_text
 				rgba = [
 					145
 					145
@@ -268,12 +268,12 @@ script update_training_menu
 				scale = 0.6}
 		endif
 	else
-		if ScreenElementExists \{id = spm_poster}
-			SetScreenElementProps \{id = spm_poster
+		if screenelementexists \{id = spm_poster}
+			setscreenelementprops \{id = spm_poster
 				texture = practice_poster_2}
 		endif
-		if ScreenElementExists \{id = current_menu}
-			SetScreenElementProps \{id = current_menu
+		if screenelementexists \{id = current_menu}
+			setscreenelementprops \{id = current_menu
 				rgba = [
 					145
 					145
@@ -282,8 +282,8 @@ script update_training_menu
 				]
 				scale = 0.6}
 		endif
-		if ScreenElementExists \{id = practice_text}
-			SetScreenElementProps \{id = practice_text
+		if screenelementexists \{id = practice_text}
+			setscreenelementprops \{id = practice_text
 				rgba = [
 					220
 					25

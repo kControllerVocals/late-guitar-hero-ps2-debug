@@ -4,22 +4,22 @@ script ui_create_play_tutorial
 endscript
 
 script ui_destroy_play_tutorial 
-	change \{ps2_training_gem_scroller_paused = 0}
-	if IsPakLoaded \{'pak/oogame/oogame.pak'
+	change \{0xd441408d = 0}
+	if ispakloaded \{'pak/oogame/oogame.pak'
 			heap = heap_cas}
-		UnloadPak \{'pak/oogame/oogame.pak'
+		unloadpak \{'pak/oogame/oogame.pak'
 			heap = heap_cas}
-	elseif IsPakLoaded \{'pak/oogame/oogamebattle.pak'
+	elseif ispakloaded \{'pak/oogame/oogamebattle.pak'
 			heap = heap_cas}
-		UnloadPak \{'pak/oogame/oogamebattle.pak'
+		unloadpak \{'pak/oogame/oogamebattle.pak'
 			heap = heap_cas}
-	elseif IsPakLoaded \{'pak/oogame/oogameband.pak'
+	elseif ispakloaded \{'pak/oogame/oogameband.pak'
 			heap = heap_cas}
-		UnloadPak \{'pak/oogame/oogameband.pak'
+		unloadpak \{'pak/oogame/oogameband.pak'
 			heap = heap_cas}
-	elseif IsPakLoaded \{'pak/oogame/oogamevs.pak'
+	elseif ispakloaded \{'pak/oogame/oogamevs.pak'
 			heap = heap_cas}
-		UnloadPak \{'pak/oogame/oogamevs.pak'
+		unloadpak \{'pak/oogame/oogamevs.pak'
 			heap = heap_cas}
 	endif
 	startrendering
@@ -30,28 +30,28 @@ script ui_play_tutorial_anim_out
 endscript
 
 script ui_return_play_tutorial 
-	if ScreenElementExists \{id = menu_tutorial}
-		LaunchEvent \{type = focus
+	if screenelementexists \{id = menu_tutorial}
+		launchevent \{type = focus
 			target = menu_tutorial}
 	else
 		create_training_pause_handler
 	endif
 endscript
-ui_create_play_tutorial_advanced_techniques = $ui_create_play_tutorial
-ui_destroy_play_tutorial_advanced_techniques = $ui_destroy_play_tutorial
-ui_create_play_tutorial_band = $ui_create_play_tutorial
-ui_destroy_play_tutorial_band = $ui_destroy_play_tutorial
-ui_create_play_tutorial_basic = $ui_create_play_tutorial
-ui_destroy_play_tutorial_basic = $ui_destroy_play_tutorial
-ui_create_play_tutorial_drum_basic = $ui_create_play_tutorial
-ui_destroy_play_tutorial_drum_basic = $ui_destroy_play_tutorial
-ui_create_play_tutorial_drum_int = $ui_create_play_tutorial
-ui_destroy_play_tutorial_drum_int = $ui_destroy_play_tutorial
-ui_create_play_tutorial_new_features = $ui_create_play_tutorial
-ui_destroy_play_tutorial_new_features = $ui_destroy_play_tutorial
-ui_create_play_tutorial_star_power = $ui_create_play_tutorial
-ui_destroy_play_tutorial_star_power = $ui_destroy_play_tutorial
-ui_create_play_tutorial_versus = $ui_create_play_tutorial
-ui_destroy_play_tutorial_versus = $ui_destroy_play_tutorial
-ui_create_play_tutorial_vocals = $ui_create_play_tutorial
-ui_destroy_play_tutorial_vocals = $ui_destroy_play_tutorial
+0xd1d0c3ce = $ui_create_play_tutorial
+0x9782b6ba = $ui_destroy_play_tutorial
+0x4216c847 = $ui_create_play_tutorial
+0xd150a5b2 = $ui_destroy_play_tutorial
+0x9d11bc77 = $ui_create_play_tutorial
+0x5055fc89 = $ui_destroy_play_tutorial
+0x4acd9612 = $ui_create_play_tutorial
+0x2f1aac0c = $ui_destroy_play_tutorial
+0x911331bd = $ui_create_play_tutorial
+0xaf81a526 = $ui_destroy_play_tutorial
+0x33f839e3 = $ui_create_play_tutorial
+0x21b5ba59 = $ui_destroy_play_tutorial
+0xae31d20c = $ui_create_play_tutorial
+0xcbe6e812 = $ui_destroy_play_tutorial
+0xdfa2c7fc = $ui_create_play_tutorial
+0x856a5ca7 = $ui_destroy_play_tutorial
+0xf91531a1 = $ui_create_play_tutorial
+0xa3ddaafa = $ui_destroy_play_tutorial

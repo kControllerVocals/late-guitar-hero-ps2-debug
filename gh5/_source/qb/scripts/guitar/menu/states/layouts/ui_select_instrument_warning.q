@@ -4,15 +4,15 @@ script ui_create_select_instrument_warning controller = ($primary_controller)
 	set_unfocus_color
 	switch (<instrument>)
 		case guitar
-		case Bass
-		text = qs("You must use a Guitar Controller to continue.")
+		case bass
+		text = qs(0x9aef203e)
 		case drum
-		text = qs("You must use a Drum Controller to continue.")
-		case Vocals
-		if isXenon
-			text = qs("You must connect a microphone or Xbox 360 Headset to continue.")
+		text = qs(0x514a4c71)
+		case vocals
+		if isxenon
+			text = qs(0xec4dbd17)
 		else
-			text = qs("You must plug in a microphone with your controller to continue.")
+			text = qs(0xe2f3f704)
 		endif
 	endswitch
 	create_dialog_box {
@@ -20,12 +20,12 @@ script ui_create_select_instrument_warning controller = ($primary_controller)
 		options = [
 			{
 				func = generic_event_back
-				text = qs("GO BACK")
+				text = qs(0x320a8d1c)
 			}
 			{
 				func = generic_event_back
-				func_params = {state = UIstate_mainmenu}
-				text = qs("RETURN TO MAIN MENU")
+				func_params = {state = uistate_mainmenu}
+				text = qs(0xd95645dd)
 			}
 		]
 	}

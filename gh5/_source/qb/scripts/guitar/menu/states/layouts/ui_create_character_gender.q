@@ -2,60 +2,60 @@ gender_create_script_done = 0
 
 script ui_create_create_character_gender 
 	change \{gender_create_script_done = 0}
-	change \{Achievements_creating_character = 1}
-	KillSkaterCamAnim \{all}
-	get_frontend_venue_player_start_checksums
-	cas_set_object_node_pos player = ($cas_current_player) node = <Drum_Start>
+	change \{achievements_creating_character = 1}
+	killskatercamanim \{all}
+	0xce0505af
+	cas_set_object_node_pos player = ($cas_current_player) node = <0xb07e72b1>
 	make_generic_menu \{title = qs(0x564b27df)
 		vmenu_id = create_create_character_gender_vmenu
 		pad_back_script = exit_gender_cleanup}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	ResolveBodySpecificPartInAppearance \{part = CAS_Body}
+	resolvebodyspecificpartinappearance \{part = cas_body}
 	current_part = 0
-	GetArraySize ($CAS_Body)
+	getarraysize ($cas_body)
 	i = 0
 	begin
-	get_part_current_desc_id \{part = CAS_Body}
-	if GotParam \{current_desc_id}
-		if (((($CAS_Body) [<i>]).desc_id) = <current_desc_id>)
+	get_part_current_desc_id \{part = cas_body}
+	if gotparam \{current_desc_id}
+		if (((($cas_body) [<i>]).desc_id) = <current_desc_id>)
 			current_part = <i>
 		endif
 	endif
-	if cas_item_is_visible part = CAS_Body part_index = <i>
+	if cas_item_is_visible part = cas_body part_index = <i>
 		add_generic_menu_text_item {
-			text = ((($CAS_Body) [<i>]).frontend_desc)
-			pad_choose_script = load_character_before_state
-			pad_choose_params = {state = UIstate_create_character_genre unfocus_menu = create_create_character_gender_vmenu}
+			text = ((($cas_body) [<i>]).frontend_desc)
+			pad_choose_script = 0xea169d59
+			pad_choose_params = {state = uistate_create_character_genre 0xeec2d226 = create_create_character_gender_vmenu}
 			additional_focus_script = cas_gender_focus_change
-			additional_focus_params = {part = CAS_Body new_desc_id = (($CAS_Body) [<i>].desc_id) price = (($CAS_Body) [<i>].price)}
+			additional_focus_params = {part = cas_body new_desc_id = (($cas_body) [<i>].desc_id) price = (($cas_body) [<i>].price)}
 		}
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
 	menu_finish \{no_rotate_zoom_text}
-	LaunchEvent type = focus target = create_create_character_gender_vmenu data = {child_index = <current_part>}
+	launchevent type = focus target = create_create_character_gender_vmenu data = {child_index = <current_part>}
 	change \{gender_create_script_done = 1}
 	cas_get_is_female player = ($cas_current_player)
 	change cas_current_is_female = <is_female>
 	if ($autolaunch_cas_artist = 1)
-		Z_ObjViewer_TRG_01 :hide
+		z_objviewer_trg_01 :hide
 	endif
-	if GetCurrentCASObject
-		BandManager_ChangeStance name = <cas_object> stance = Stance_Old no_wait
+	if getcurrentcasobject
+		bandmanager_changestance name = <cas_object> stance = stance_old no_wait
 	endif
 endscript
 
-script load_character_before_state 
-	wait_for_character_generation
+script 0xea169d59 
+	0x40cc48b1
 	cas_queue_wait
 	ui_event_block event = menu_change data = {state = <state>}
 endscript
@@ -65,7 +65,7 @@ script ui_destroy_create_character_gender
 endscript
 
 script ui_deinit_create_character_gender 
-	KillSpawnedScript \{name = cas_gender_focus_change_spawned}
+	killspawnedscript \{name = 0xb38c95de}
 	if NOT (($invite_controller) = -1)
 		exit_discard_changes
 		change \{cas_current_savegame = -1}
@@ -74,9 +74,9 @@ script ui_deinit_create_character_gender
 endscript
 
 script exit_gender_cleanup 
-	KillSpawnedScript \{name = generate_random_character}
+	killspawnedscript \{name = 0x4ec30caf}
 	destroy_generic_menu
-	if Is_ui_event_running
+	if is_ui_event_running
 		return \{false}
 	endif
 	if ($cas_heap_state = in_game)
@@ -92,7 +92,7 @@ script cas_gender_focus_change
 	if ($gender_create_script_done = 0)
 		return
 	endif
-	if (<new_desc_id> = GH4_CAR_Female)
+	if (<new_desc_id> = gh4_car_female)
 		if ($cas_current_is_female = 1)
 			return
 		endif
@@ -102,24 +102,24 @@ script cas_gender_focus_change
 		endif
 	endif
 	cancel_all_cas_loads
-	KillSpawnedScript \{name = generate_random_character}
-	if (<new_desc_id> = GH4_CAR_Female)
+	killspawnedscript \{name = 0x4ec30caf}
+	if (<new_desc_id> = gh4_car_female)
 		change \{cas_current_is_female = 1}
 	else
 		change \{cas_current_is_female = 0}
 	endif
 	generate_random_genre
-	spawnscriptnow generate_random_character params = {is_female = ($cas_current_is_female) genre = <genre> Wait}
-	wait_for_character_load_then_force_stance \{stance = Stance_Old}
+	spawnscriptnow 0x4ec30caf params = {is_female = ($cas_current_is_female) genre = <genre> wait}
+	0x361b76b3 \{stance = stance_old}
 endscript
 
-script generate_random_character 
-	if GotParam \{Wait}
-		Wait ($car_wait_before_load) second
+script 0x4ec30caf 
+	if gotparam \{wait}
+		wait ($0xc7b81333) second
 	endif
 	cas_start_loading_anim \{player_index = 0}
 	wanted_is_female = <is_female>
-	if GotParam \{genre_select}
+	if gotparam \{genre_select}
 		cas_flag = {in_cas}
 	endif
 	cas_queue_wait
@@ -130,19 +130,19 @@ script generate_random_character
 	else
 		cas_change_current_character_gender is_female = <wanted_is_female> genre = <genre>
 	endif
-	if GotParam \{Anim}
+	if gotparam \{anim}
 		cas_queue_wait
-		if GetCurrentCASObject
-			Band_PlayAnim name = <cas_object> Anim = <Anim> no_wait
+		if getcurrentcasobject
+			band_playanim name = <cas_object> anim = <anim> no_wait
 		endif
 	endif
 endscript
 
-script wait_for_character_generation 
+script 0x40cc48b1 
 	begin
-	if NOT ScriptIsRunning \{generate_random_character}
+	if NOT scriptisrunning \{0x4ec30caf}
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript

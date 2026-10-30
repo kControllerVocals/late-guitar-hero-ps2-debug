@@ -1,68 +1,68 @@
 guitar_hand_event_time_offset = -100
 
-script WatchForStartPlaying_iterator 
+script watchforstartplaying_iterator 
 	begin
-	GetSongTimeMs time_offset = <time_offset>
+	getsongtimems time_offset = <time_offset>
 	if (<time> >= 0)
 		wait_for_next_even_frame
-		Wait \{1
+		wait \{1
 			gameframe}
-		BandManager_EndIntroAnims
-		BandManager_StartAllFacialAnims
-		Crowd_AllPlayAnim \{Anim = Idle}
+		bandmanager_endintroanims
+		bandmanager_startallfacialanims
+		crowd_allplayanim \{anim = idle}
 		return
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
-script Drumkit_anim_iterator 
+script drumkit_anim_iterator 
 	return
 endscript
 
 script drumkit_input_playanim 
 endscript
 
-script AE_DrumKit_play_hiHat 
+script ae_drumkit_play_hihat 
 endscript
 
-script AE_DrumKit_play_Snare 
+script ae_drumkit_play_snare 
 endscript
 
-script AE_DrumKit_play_Crash1 
+script ae_drumkit_play_crash1 
 endscript
 
-script AE_DrumKit_play_Crash2 
+script ae_drumkit_play_crash2 
 endscript
 
-script AE_DrumKit_play_Tom1 
+script ae_drumkit_play_tom1 
 endscript
 
-script AE_DrumKit_play_tom2 
+script ae_drumkit_play_tom2 
 endscript
 
-script AE_DrumKit_play_Ride 
+script ae_drumkit_play_ride 
 endscript
 
-script AE_DrumKit_Stop_Crash1 
+script ae_drumkit_stop_crash1 
 endscript
 
-script AE_DrumKit_Stop_Crash2 
+script ae_drumkit_stop_crash2 
 endscript
 
-script handle_change_stance \{Speed = 1.0}
-	Obj_GetID
-	ExtendCRC <ObjID> '_Info' out = info_struct
+script handle_change_stance \{speed = 1.0}
+	obj_getid
+	extendcrc <objid> '_Info' out = info_struct
 	display_debug_info = false
 	if (should_display_debug_info)
 		display_debug_info = true
 	endif
-	if GotParam \{no_wait}
+	if gotparam \{no_wait}
 		anim_set = ($<info_struct>.anim_set)
 		old_stance = ($<info_struct>.stance)
 		if play_stance_transition_cfunc anim_set = <anim_set> old_stance = <old_stance> new_stance = <stance>
-			hero_play_anim Anim = <anim_to_run> Speed = <Speed>
+			hero_play_anim anim = <anim_to_run> speed = <speed>
 			hero_wait_until_anim_finished
 		else
 		endif
@@ -71,7 +71,7 @@ script handle_change_stance \{Speed = 1.0}
 		if (<display_debug_info> = true)
 
 		endif
-		if (<ObjID> = Guitarist || <ObjID> = bassist)
+		if (<objid> = guitarist || <objid> = bassist)
 			if (<stance> = intro || <stance> = intro_smstg || <stance> = stance_frontend || <stance> = stance_frontend_guitar)
 				change structurename = <info_struct> disable_arms = 2
 				change structurename = <info_struct> next_anim_disable_arms = 2
@@ -79,16 +79,16 @@ script handle_change_stance \{Speed = 1.0}
 				change structurename = <info_struct> disable_arms = 0
 				change structurename = <info_struct> next_anim_disable_arms = 0
 			endif
-			Obj_SwitchScript \{guitarist_idle}
+			obj_switchscript \{guitarist_idle}
 		else
-			Obj_SwitchScript \{BandMember_Idle}
+			obj_switchscript \{bandmember_idle}
 		endif
 	else
 		if (<display_debug_info> = true)
 
 		endif
 		change structurename = <info_struct> next_stance = <stance>
-		if (<ObjID> = Guitarist || <ObjID> = bassist)
+		if (<objid> = guitarist || <objid> = bassist)
 			if (<stance> = intro || <stance> = intro_smstg || <stance> = stance_frontend || <stance> = stance_frontend_guitar)
 				change structurename = <info_struct> next_anim_disable_arms = 2
 			else
@@ -99,55 +99,55 @@ script handle_change_stance \{Speed = 1.0}
 	return
 endscript
 
-script Output_Camera_Sync_Warnings 
-	GMan_SongTool_GetCurrentSong
+script output_camera_sync_warnings 
+	gman_songtool_getcurrentsong
 
 
-	GMan_SongTool_GetCurrentSong
+	gman_songtool_getcurrentsong
 	get_song_prefix song = <current_song>
-	FormatText checksumname = event_array '%s_cameras_notes' s = <song_prefix> AddToStringLookup = true
-	Sync_Cameras_To_Performance song_name = <current_song> Camera_Array = <event_array> output_results = 1
+	formattext checksumname = event_array '%s_cameras_notes' s = <song_prefix> addtostringlookup = true
+	sync_cameras_to_performance song_name = <current_song> camera_array = <event_array> output_results = 1
 endscript
 
-script Print_Camera_Sync_Warning 
-	if NOT GotParam \{output_results}
+script print_camera_sync_warning 
+	if NOT gotparam \{output_results}
 		return
 	endif
 	if (<output_results> = 1)
-		TextOutput text = <warning>
+		textoutput text = <warning>
 	endif
 
 endscript
 
-script Show_PlayClip_Time 
+script show_playclip_time 
 	if (<playclip_time_displayed> = 1)
 		return
 	endif
 	if (<end_frame> = -1)
-		FormatText TextName = warning qs("\L%a: Band_PlayClip") a = <next_anim_time>
+		formattext textname = warning qs(0x3e77c172) a = <next_anim_time>
 	else
 		length_in_frames = (<end_frame> - <start_frame>)
-		FormatText TextName = warning qs("\L%a: Band_PlayClip start-%b end-%c (length %d)  ") a = <next_anim_time> b = <start_frame> c = <end_frame> d = <length_in_frames>
+		formattext textname = warning qs(0xc191d5ab) a = <next_anim_time> b = <start_frame> c = <end_frame> d = <length_in_frames>
 	endif
-	Print_Camera_Sync_Warning <...>
+	print_camera_sync_warning <...>
 	return \{playclip_time_displayed = 1}
 endscript
 
-script Sync_Cameras_To_Performance \{output_results = 0}
+script sync_cameras_to_performance \{output_results = 0}
 endscript
 
 script check_for_short_anims_in_clip 
-	if NOT GlobalExists name = <clip> type = Structure
+	if NOT globalexists name = <clip> type = structure
 		return
 	endif
-	if NOT StructureContains Structure = $<clip> name = anims
+	if NOT structurecontains structure = $<clip> name = anims
 		return
 	endif
 	found_problem = false
-	check_anim_length clip = <clip> name = Guitarist endtime = <endtime> <...>
+	check_anim_length clip = <clip> name = guitarist endtime = <endtime> <...>
 	check_anim_length clip = <clip> name = bassist endtime = <endtime> <...>
 	check_anim_length clip = <clip> name = vocalist endtime = <endtime> <...>
-	check_anim_length clip = <clip> name = Drummer endtime = <endtime> <...>
+	check_anim_length clip = <clip> name = drummer endtime = <endtime> <...>
 	if (<found_problem> = true)
 		return \{true}
 	endif
@@ -155,20 +155,20 @@ script check_for_short_anims_in_clip
 endscript
 
 script check_anim_length 
-	if StructureContains Structure = ($<clip>.anims) name = <name>
-		Anim = ($<clip>.anims.<name>)
-		if Anim_AnimExists Anim = <Anim>
-			anim_Getanimlength Anim = <Anim>
+	if structurecontains structure = ($<clip>.anims) name = <name>
+		anim = ($<clip>.anims.<name>)
+		if anim_animexists anim = <anim>
+			anim_getanimlength anim = <anim>
 			if (<length> < <endtime>)
-				Show_PlayClip_Time {
+				show_playclip_time {
 					output_results = <output_results>
 					playclip_time_displayed = <playclip_time_displayed>
 					start_frame = <start_frame>
 					end_frame = <end_frame>
 					next_anim_time = <next_anim_time>
 				}
-				FormatText TextName = warning qs("  Am anim has a length %b which is shorter than clip length %c ") a = <Anim> b = <length> c = <endtime>
-				Print_Camera_Sync_Warning warning = <warning> output_results = <output_results>
+				formattext textname = warning qs(0xd2acb46c) a = <anim> b = <length> c = <endtime>
+				print_camera_sync_warning warning = <warning> output_results = <output_results>
 				found_problem = true
 			endif
 		endif
@@ -176,9 +176,9 @@ script check_anim_length
 	return found_problem = <found_problem>
 endscript
 use_guitar_strum_script = true
-Short_Strum = 800
-Short_Pick = 666
-Init_Blend_Curve = [
+short_strum = 800
+short_pick = 666
+init_blend_curve = [
 	1.0
 	0.9936329
 	0.97541296
@@ -211,7 +211,7 @@ Init_Blend_Curve = [
 	0.000607445
 	0.0
 ]
-Idle_Blend_Curve = [
+idle_blend_curve = [
 	1.0
 	0.9916719
 	0.967925
@@ -246,12 +246,12 @@ Idle_Blend_Curve = [
 ]
 
 script handle_guitar_strum 
-	Obj_KillSpawnedScript \{name = fire_off_Idle}
-	Obj_GetID
-	<ObjID> :GetSingleTag is_female
-	<ObjID> :GetSingleTag large_hands
-	<ObjID> :GetSingleTag lefty
-	ExtendCRC <ObjID> '_Info' out = info_struct
+	obj_killspawnedscript \{name = fire_off_idle}
+	obj_getid
+	<objid> :getsingletag is_female
+	<objid> :getsingletag large_hands
+	<objid> :getsingletag lefty
+	extendcrc <objid> '_Info' out = info_struct
 	part = ($<info_struct>.part)
 	if (<is_female> = 1)
 		gender = 'GH_Female'
@@ -262,7 +262,7 @@ script handle_guitar_strum
 	endif
 	if (<part> = guitar)
 		strumtype = 'G'
-	elseif (<part> = Bass)
+	elseif (<part> = bass)
 		strumtype = 'B'
 	else
 		return
@@ -271,143 +271,143 @@ script handle_guitar_strum
 		gender = 'GH_Male'
 		strumtype = 'GL'
 	endif
-	<ObjID> :GetTags LastBasePose
-	<ObjID> :GetTags LastType
-	<ObjID> :GetTags LastNoteValue
+	<objid> :gettags lastbasepose
+	<objid> :gettags lasttype
+	<objid> :gettags lastnotevalue
 	switch (<color_combo>)
 		case green
 		type = pick
 		newbaseanim = 'Strum_String_1'
-		noteValue = 1
+		notevalue = 1
 		case red
 		type = pick
 		newbaseanim = 'Strum_String_2'
-		noteValue = 2
-		case Yellow
+		notevalue = 2
+		case yellow
 		type = pick
 		newbaseanim = 'Strum_String_3'
-		noteValue = 3
-		case Blue
+		notevalue = 3
+		case blue
 		type = pick
 		newbaseanim = 'Strum_String_4'
-		noteValue = 4
-		case Orange
+		notevalue = 4
+		case orange
 		type = pick
 		newbaseanim = 'Strum_String_5'
-		noteValue = 5
+		notevalue = 5
 		default
 		type = strum
 	endswitch
 	if (<type> = pick)
-		if (<time_to_next_note> < $Short_Pick)
-			if (<LastNoteValue> > <noteValue>)
-				type = upPick
-			elseif (<LastNoteValue> = <noteValue>)
-				if (<LastType> = pick)
-					type = upPick
+		if (<time_to_next_note> < $short_pick)
+			if (<lastnotevalue> > <notevalue>)
+				type = uppick
+			elseif (<lastnotevalue> = <notevalue>)
+				if (<lasttype> = pick)
+					type = uppick
 				endif
 			endif
 		endif
 	else
-		if (<time_to_next_note> < $Short_Strum)
-			if (<LastNoteValue> > 4)
+		if (<time_to_next_note> < $short_strum)
+			if (<lastnotevalue> > 4)
 				type = upstrum
 			endif
 		endif
 	endif
 	switch <type>
 		case pick
-		Init_Length = 1.0
+		init_length = 1.0
 		total_length = 1.7666659
-		NewStrumanim = Random (@ 'Pick1' @ 'Pick2' )
-		case upPick
-		Init_Length = 1.0
+		newstrumanim = Random (@ 'Pick1' @ 'Pick2' )
+		case uppick
+		init_length = 1.0
 		total_length = 1.7666659
-		NewStrumanim = Random (@ 'upPick1' @ 'upPick2' )
+		newstrumanim = Random (@ 'upPick1' @ 'upPick2' )
 		case strum
-		Init_Length = 1.0
+		init_length = 1.0
 		total_length = 2.333333
-		NewStrumanim = Random (@ 'Strum1' @ 'Strum2' )
+		newstrumanim = Random (@ 'Strum1' @ 'Strum2' )
 		newbaseanim = 'Strum_String_1'
-		noteValue = 6
+		notevalue = 6
 		case upstrum
-		Init_Length = 1.0
+		init_length = 1.0
 		total_length = 2.333333
-		NewStrumanim = Random (@ 'UpStrum1' @ 'UpStrum2' )
+		newstrumanim = Random (@ 'UpStrum1' @ 'UpStrum2' )
 		newbaseanim = 'Strum_String_5'
-		noteValue = 0
+		notevalue = 0
 		default
-		Init_Length = 1.0
+		init_length = 1.0
 		total_length = 2.333333
-		NewStrumanim = 'Blank'
-		noteValue = 666
+		newstrumanim = 'Blank'
+		notevalue = 666
 	endswitch
-	switch <LastType>
+	switch <lasttype>
 		case pick
-		Wait_For_Idle = 0.3
-		Idle_Blend_Time = 0.7
-		case upPick
-		Wait_For_Idle = 0.3
-		Idle_Blend_Time = 0.7
+		wait_for_idle = 0.3
+		idle_blend_time = 0.7
+		case uppick
+		wait_for_idle = 0.3
+		idle_blend_time = 0.7
 		case strum
-		Wait_For_Idle = 0.8
-		Idle_Blend_Time = 0.7
+		wait_for_idle = 0.8
+		idle_blend_time = 0.7
 		case upstrum
-		Wait_For_Idle = 0.8
-		Idle_Blend_Time = 0.7
+		wait_for_idle = 0.8
+		idle_blend_time = 0.7
 		default
-		Wait_For_Idle = 0.0
-		Idle_Blend_Time = 0.0
+		wait_for_idle = 0.0
+		idle_blend_time = 0.0
 	endswitch
-	if ((<time_to_next_note> / 1000.0) > <Init_Length>)
+	if ((<time_to_next_note> / 1000.0) > <init_length>)
 		startanim = 0.0
-		blend = (<Init_Length> * 0.8)
-		waittime = ((<time_to_next_note> / 1000.0) - <Init_Length>)
+		blend = (<init_length> * 0.8)
+		waittime = ((<time_to_next_note> / 1000.0) - <init_length>)
 	else
 		blend = (<time_to_next_note> / 1000.0)
-		startanim = ((1 - ((<time_to_next_note> / 1000.0) / <Init_Length>)) * (<Init_Length> / <total_length>))
+		startanim = ((1 - ((<time_to_next_note> / 1000.0) / <init_length>)) * (<init_length> / <total_length>))
 		waittime = 0.0
 	endif
-	if (<Wait_For_Idle> < <waittime>)
-		Wait <Wait_For_Idle> seconds
-		Obj_SpawnScriptNow fire_off_Idle params = {idletype = rest waittime = <Wait_For_Idle> LastBasePose = <LastBasePose> blend = <Idle_Blend_Time> gender = <gender> strumtype = <strumtype>}
-		waittime = (<waittime> - <Wait_For_Idle>)
+	if (<wait_for_idle> < <waittime>)
+		wait <wait_for_idle> seconds
+		obj_spawnscriptnow fire_off_idle params = {idletype = rest waittime = <wait_for_idle> lastbasepose = <lastbasepose> blend = <idle_blend_time> gender = <gender> strumtype = <strumtype>}
+		waittime = (<waittime> - <wait_for_idle>)
 	endif
-	Wait <waittime> seconds
-	FormatText checksumname = baseanim '%a_%b_%c' a = <gender> b = <strumtype> c = <newbaseanim>
-	FormatText checksumname = Strumanim '%a_%b_%c' a = <gender> b = <strumtype> c = <NewStrumanim>
-	Anim_Command target = Dynamic_strums command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <blend>
-		blendcurve = $Init_Blend_Curve
-		Tree = $Dynamic_Strum_Branch
+	wait <waittime> seconds
+	formattext checksumname = baseanim '%a_%b_%c' a = <gender> b = <strumtype> c = <newbaseanim>
+	formattext checksumname = strumanim '%a_%b_%c' a = <gender> b = <strumtype> c = <newstrumanim>
+	anim_command target = dynamic_strums command = degenerateblend_addbranch params = {
+		blendduration = <blend>
+		blendcurve = $init_blend_curve
+		tree = $dynamic_strum_branch
 		params = {
 			startanim = <startanim>
 			baseanim = <baseanim>
-			Strumanim = <Strumanim>
+			strumanim = <strumanim>
 		}
 	}
-	<ObjID> :SetTags LastBasePose = <newbaseanim>
-	<ObjID> :SetTags LastType = <type>
-	<ObjID> :SetTags LastNoteValue = <noteValue>
+	<objid> :settags lastbasepose = <newbaseanim>
+	<objid> :settags lasttype = <type>
+	<objid> :settags lastnotevalue = <notevalue>
 endscript
 
-script fire_off_Idle 
+script fire_off_idle 
 	if (<idletype> = rest)
-		Idle = 'Strum_Idle_Rest'
+		idle = 'Strum_Idle_Rest'
 	endif
-	GetRandomFloat \{a = 0.0
+	getrandomfloat \{a = 0.0
 		b = 1.0}
 	startanim = <random_float>
-	FormatText checksumname = Strumanim '%a_%b_%c' a = <gender> b = <strumtype> c = <Idle>
-	FormatText checksumname = baseanim '%a_%b_%c' a = <gender> b = <strumtype> c = <LastBasePose>
-	Anim_Command target = Dynamic_strums command = DegenerateBlend_AddBranch params = {
-		BlendDuration = <blend>
-		blendcurve = $Idle_Blend_Curve
-		Tree = $Dynamic_Strum_Idle_Branch
+	formattext checksumname = strumanim '%a_%b_%c' a = <gender> b = <strumtype> c = <idle>
+	formattext checksumname = baseanim '%a_%b_%c' a = <gender> b = <strumtype> c = <lastbasepose>
+	anim_command target = dynamic_strums command = degenerateblend_addbranch params = {
+		blendduration = <blend>
+		blendcurve = $idle_blend_curve
+		tree = $dynamic_strum_idle_branch
 		params = {
 			startanim = <startanim>
 			baseanim = <baseanim>
-			Strumanim = <Strumanim>
+			strumanim = <strumanim>
 		}
 	}
 endscript

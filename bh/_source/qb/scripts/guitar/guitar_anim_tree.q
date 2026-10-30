@@ -1,20 +1,20 @@
 cache_build_band_members = 0
 nondrummer_anim_node_ids = [
-	Body
-	BodyTimer
+	body
+	bodytimer
 	moment_blend
 	moment_branch
 	momenttimer
-	StrumTimer
-	FretTimer
-	FingerTimer
-	FacialTimer
-	Ik
-	LeftHandPartial
-	LeftArm
-	LeftHand
-	RightArm
-	Face
+	strumtimer
+	frettimer
+	fingertimer
+	facialtimer
+	ik
+	lefthandpartial
+	leftarm
+	lefthand
+	rightarm
+	face
 	strum_anim_mod
 	fret_anim_mod
 	chord_anim_mod
@@ -23,32 +23,32 @@ nondrummer_anim_node_ids = [
 	low_chord
 	med_chord
 	high_chord
-	MaleAnimAdjust
-	MaleAnimAdjust_Moment
-	TweakBonesNode
-	MirrorNode
-	FemaleDiff
+	maleanimadjust
+	maleanimadjust_moment
+	tweakbonesnode
+	mirrornode
+	femalediff
 	vocal_face_mod
-	Heel
-	MiscTimer
-	misc_diff
-	misc_diff_strength
-	Enable_New_Strum
-	Dynamic_strums
-	RightHandPartial
-	Dynamic_Strum_Base
-	Dynamic_Strum_Roll_High
-	Dynamic_Strum_Roll_Mid
-	Dynamic_Strum_Roll_Low
+	heel
+	0x846ca877
+	0xf6e941dd
+	0x4bfccdcb
+	enable_new_strum
+	dynamic_strums
+	righthandpartial
+	dynamic_strum_base
+	dynamic_strum_roll_high
+	dynamic_strum_roll_mid
+	dynamic_strum_roll_low
 ]
 
 script get_anim_struct_member 
-	if GotParam \{loading_into_song}
+	if gotparam \{loading_into_song}
 		get_song_prefix song = <loading_into_song>
-		GameMode_GetType
+		gamemode_gettype
 		if (<type> = career)
 			get_band_configuration song = <loading_into_song>
-			if (<Band> != default_band)
+			if (<band> != default_band)
 				if (<anim_struct> = car_female_anim_struct)
 					anim_struct = car_female_alt_anim_struct
 				else
@@ -56,33 +56,33 @@ script get_anim_struct_member
 				endif
 			endif
 		endif
-		ExtendCRC <anim_struct> '_' out = song_anim_struct
-		ExtendCRC <song_anim_struct> <song_prefix> out = song_anim_struct
+		extendcrc <anim_struct> '_' out = song_anim_struct
+		extendcrc <song_anim_struct> <song_prefix> out = song_anim_struct
 		if (<member> = vocals_and_guitar)
 			member = guitar
 		endif
-		if GlobalExists name = <song_anim_struct> type = Structure
-			if StructureContains Structure = ($<song_anim_struct>) <member>
+		if globalexists name = <song_anim_struct> type = structure
+			if structurecontains structure = ($<song_anim_struct>) <member>
 
 
 				return true anim_struct_member = (($<song_anim_struct>).<member>)
-			elseif (<member> = Bass || <member> = rhythm)
+			elseif (<member> = bass || <member> = rhythm)
 
-				if StructureContains Structure = ($<song_anim_struct>) guitar
+				if structurecontains structure = ($<song_anim_struct>) guitar
 
 					return true anim_struct_member = (($<song_anim_struct>).guitar)
 				endif
 			endif
 		endif
 	endif
-	if GlobalExists name = <anim_struct> type = Structure
-		if StructureContains Structure = ($<anim_struct>) <member>
+	if globalexists name = <anim_struct> type = structure
+		if structurecontains structure = ($<anim_struct>) <member>
 
 
 			return true anim_struct_member = (($<anim_struct>).<member>)
-		elseif (<member> = Bass)
+		elseif (<member> = bass)
 
-			if StructureContains Structure = ($<anim_struct>) guitar
+			if structurecontains structure = ($<anim_struct>) guitar
 
 				return true anim_struct_member = (($<anim_struct>).guitar)
 			endif
@@ -105,33 +105,33 @@ script unload_band_song_anims \{song = unknown}
 	band_unload_song_anim_paks song = <song> async = <async>
 endscript
 
-script EmptyScript 
+script emptyscript 
 endscript
 
 script hero_pause_anim 
-	if Anim_AnimNodeExists \{id = BodyTimer}
-		Anim_Command \{target = BodyTimer
-			command = Timer_SetSpeed
+	if anim_animnodeexists \{id = bodytimer}
+		anim_command \{target = bodytimer
+			command = timer_setspeed
 			params = {
-				Speed = 0.0
+				speed = 0.0
 			}}
 	endif
 endscript
 
 script hero_unpause_anim 
-	if Anim_AnimNodeExists \{id = BodyTimer}
-		Anim_Command \{target = BodyTimer
-			command = Timer_SetSpeed
+	if anim_animnodeexists \{id = bodytimer}
+		anim_command \{target = bodytimer
+			command = timer_setspeed
 			params = {
-				Speed = 1.0
+				speed = 1.0
 			}}
 	endif
 endscript
 
 script hero_enable_mirroring 
-	if Anim_AnimNodeExists \{id = MirrorNode}
-		Anim_Command \{target = MirrorNode
-			command = Mirror_SetState
+	if anim_animnodeexists \{id = mirrornode}
+		anim_command \{target = mirrornode
+			command = mirror_setstate
 			params = {
 				on
 			}}
@@ -139,9 +139,9 @@ script hero_enable_mirroring
 endscript
 
 script hero_disable_mirroring 
-	if Anim_AnimNodeExists \{id = MirrorNode}
-		Anim_Command \{target = MirrorNode
-			command = Mirror_SetState
+	if anim_animnodeexists \{id = mirrornode}
+		anim_command \{target = mirrornode
+			command = mirror_setstate
 			params = {
 				off
 			}}
@@ -149,122 +149,122 @@ script hero_disable_mirroring
 endscript
 
 script band_play_fret_anim 
-	if CompositeObjectExists name = <name>
-		<name> :hero_play_fret_anim Anim = <Anim>
+	if compositeobjectexists name = <name>
+		<name> :hero_play_fret_anim anim = <anim>
 	endif
 endscript
 
-script hero_play_facial_anim \{BlendDuration = 0.0}
-	if Anim_AnimNodeExists \{id = Face}
-		Obj_GetID
-		if ((<ObjID> = vocalist) || (<ObjID> = vocalist2))
-			Tree = $vocalist_face_branch
+script hero_play_facial_anim \{blendduration = 0.0}
+	if anim_animnodeexists \{id = face}
+		obj_getid
+		if ((<objid> = vocalist) || (<objid> = vocalist2))
+			tree = $vocalist_face_branch
 		else
-			Tree = $hero_face_branch
+			tree = $hero_face_branch
 		endif
-		Anim_Command {
-			target = Face
-			command = DegenerateBlend_AddBranch
+		anim_command {
+			target = face
+			command = degenerateblend_addbranch
 			params = {
-				Tree = <Tree>
-				BlendDuration = <BlendDuration>
+				tree = <tree>
+				blendduration = <blendduration>
 				params = {
-					facial_anim = <Anim>
+					facial_anim = <anim>
 				}
 			}
 		}
 	endif
 endscript
 
-script hero_clear_facial_anim \{BlendDuration = 0.0}
-	if Anim_AnimNodeExists \{id = Face}
-		Anim_Command {
-			target = Face
-			command = DegenerateBlend_AddBranch
+script hero_clear_facial_anim \{blendduration = 0.0}
+	if anim_animnodeexists \{id = face}
+		anim_command {
+			target = face
+			command = degenerateblend_addbranch
 			params = {
-				Tree = $hero_empty_branch
-				BlendDuration = <BlendDuration>
+				tree = $hero_empty_branch
+				blendduration = <blendduration>
 			}
 		}
 	endif
 endscript
 
 script hero_add_clothing_difference_anim 
-	if NOT GotParam \{Anim}
+	if NOT gotparam \{anim}
 		return
 	endif
-	Anim_Command target = Heel command = ApplyHeelDifference_SetAnim params = {Anim = <Anim>}
+	anim_command target = heel command = applyheeldifference_setanim params = {anim = <anim>}
 endscript
 
-script hero_wait_until_anim_finished \{Timer = BodyTimer}
-	Anim_Command target = <Timer> command = Timer_WaitAnimComplete
+script hero_wait_until_anim_finished \{timer = bodytimer}
+	anim_command target = <timer> command = timer_waitanimcomplete
 endscript
 
 script killanim 
 	obj_killallspawnedscripts
-	Skeleton_GetSkeletonName
-	ExtendCRC <SkeletonName> '_default' out = Anim
-	hero_play_anim Anim = <Anim> BlendDuration = 0.0
+	skeleton_getskeletonname
+	extendcrc <skeletonname> '_default' out = anim
+	hero_play_anim anim = <anim> blendduration = 0.0
 endscript
 
 script handle_moment_anim_blending 
-	Obj_GetID
-	Anim_Command \{target = moment_blend
-		command = PartialSwitch_SetState
+	obj_getid
+	anim_command \{target = moment_blend
+		command = partialswitch_setstate
 		params = {
 			on
-			BlendDuration = 0.0
+			blendduration = 0.0
 		}}
-	Anim_Command \{target = BodyTimer
-		command = TempoMatch_Pause}
-	Anim_Command \{target = momenttimer
-		command = Timer_WaitAnimComplete}
-	if GlobalExists \{name = debug_pops
+	anim_command \{target = bodytimer
+		command = tempomatch_pause}
+	anim_command \{target = momenttimer
+		command = timer_waitanimcomplete}
+	if globalexists \{name = 0x9f26bd2b
 			type = int}
-		if ($debug_pops = 1)
-			GetSongTimeMs
-			CastToInteger \{time}
-			finalprintf qs(0x26d868fe) a = <time> b = <ObjID>
+		if ($0x9f26bd2b = 1)
+			getsongtimems
+			casttointeger \{time}
+			finalprintf qs(0x26d868fe) a = <time> b = <objid>
 		endif
 	endif
-	Wait \{2
+	wait \{2
 		gameframes}
 	end_moment_anim
 endscript
 
 script end_moment_anim 
-	Obj_GetID
-	Obj_KillSpawnedScript \{name = handle_drummer_moment_anim_blending}
-	if Anim_AnimNodeExists \{id = moment_blend}
-		Anim_Command \{target = moment_blend
-			command = PartialSwitch_SetState
+	obj_getid
+	obj_killspawnedscript \{name = handle_drummer_moment_anim_blending}
+	if anim_animnodeexists \{id = moment_blend}
+		anim_command \{target = moment_blend
+			command = partialswitch_setstate
 			params = {
 				off
-				BlendDuration = 0.0
+				blendduration = 0.0
 			}}
-		Anim_Command \{target = moment_branch
-			command = DegenerateBlend_AddBranch
+		anim_command \{target = moment_branch
+			command = degenerateblend_addbranch
 			params = {
-				Tree = $hero_empty_branch
-				BlendDuration = 0.0
+				tree = $hero_empty_branch
+				blendduration = 0.0
 			}}
 	endif
-	Anim_Command \{target = BodyTimer
-		command = TempoMatch_Unpause}
-	ExtendCRC <ObjID> '_Info' out = info_struct
+	anim_command \{target = bodytimer
+		command = tempomatch_unpause}
+	extendcrc <objid> '_Info' out = info_struct
 	part = ($<info_struct>.part)
-	if (<part> = guitar || <part> = Bass || <part> = rhythm)
+	if (<part> = guitar || <part> = bass || <part> = rhythm)
 		chain = guitar
 	else
 		chain = slave
 	endif
-	Band_SetIKChain name = <ObjID> chain = <chain>
+	band_setikchain name = <objid> chain = <chain>
 	increase_band_bounding_spheres
-	Wait \{1
+	wait \{1
 		gameframe}
-	GetPakManCurrent \{map = zones}
-	if NOT is_frontend_venue venue = <pak>
-		Band_MoveToStartNode name = <ObjID>
+	getpakmancurrent \{map = zones}
+	if NOT 0x078ad386 venue = <pak>
+		band_movetostartnode name = <objid>
 	endif
 endscript
 
@@ -272,19 +272,19 @@ script set_timer_node_speed
 endscript
 
 script handle_drummer_moment_anim_blending 
-	Anim_Command \{target = moment_blend
-		command = PartialSwitch_SetState
+	anim_command \{target = moment_blend
+		command = partialswitch_setstate
 		params = {
 			on
-			BlendDuration = 0.1
+			blendduration = 0.1
 		}}
-	Anim_Command \{target = momenttimer
-		command = Timer_WaitAnimComplete}
-	Anim_Command \{target = moment_blend
-		command = PartialSwitch_SetState
+	anim_command \{target = momenttimer
+		command = timer_waitanimcomplete}
+	anim_command \{target = moment_blend
+		command = partialswitch_setstate
 		params = {
 			off
-			BlendDuration = 0.1
+			blendduration = 0.1
 		}}
 endscript
 
@@ -292,121 +292,121 @@ script end_drummer_moment_anim
 endscript
 
 script drummer_faceoff_rest 
-	Anim = Drum_HTH_Loop_NoTempo
-	Anim_Command {
+	anim = drum_hth_loop_notempo
+	anim_command {
 		target = faceoff_branch
-		command = DegenerateBlend_AddBranch
+		command = degenerateblend_addbranch
 		params = {
-			Tree = $faceoff_drummer_notempo
-			BlendDuration = 0.0
+			tree = $faceoff_drummer_notempo
+			blendduration = 0.0
 			params = {
-				Anim = <Anim>
+				anim = <anim>
 			}
 		}
 	}
-	Anim_Command \{target = faceoff_blend
-		command = PartialSwitch_SetState
+	anim_command \{target = faceoff_blend
+		command = partialswitch_setstate
 		params = {
 			on
-			BlendDuration = 0.3
+			blendduration = 0.3
 		}}
 endscript
 
 script drummer_faceoff_play 
-	Anim_Command \{target = faceoff_blend
-		command = PartialSwitch_SetState
+	anim_command \{target = faceoff_blend
+		command = partialswitch_setstate
 		params = {
 			off
-			BlendDuration = 0.3
+			blendduration = 0.3
 		}}
 endscript
 faceoff_drummer_notempo = {
-	type = Cycle
+	type = cycle
 	id = faceoff_timer
-	Anim = Anim
+	anim = anim
 	[
 		{
-			type = Source
-			Anim = Anim
+			type = source
+			anim = anim
 		}
 	]
 }
 
 script hide_mic 
-	SwitchOffAtomic \{CAS_Mic}
-	SwitchOffAtomic \{CAS_Mic_Stand}
+	switchoffatomic \{cas_mic}
+	switchoffatomic \{cas_mic_stand}
 endscript
 
 script show_mic 
-	SwitchOnAtomic \{CAS_Mic}
-	SwitchOnAtomic \{CAS_Mic_Stand}
+	switchonatomic \{cas_mic}
+	switchonatomic \{cas_mic_stand}
 endscript
 
 script hide_mic_stand 
-	SwitchOffAtomic \{CAS_Mic_Stand}
+	switchoffatomic \{cas_mic_stand}
 endscript
 
 script show_mic_stand 
-	SwitchOnAtomic \{CAS_Mic_Stand}
+	switchonatomic \{cas_mic_stand}
 endscript
 
 script hide_mic_microphone 
-	SwitchOffAtomic \{CAS_Mic}
+	switchoffatomic \{cas_mic}
 endscript
 
 script show_mic_microphone 
-	SwitchOnAtomic \{CAS_Mic}
+	switchonatomic \{cas_mic}
 endscript
 
-script hide_Drumkit 
-	SwitchOffAtomic \{CAS_Drums}
+script hide_drumkit 
+	switchoffatomic \{cas_drums}
 endscript
 
-script show_Drumkit 
-	SwitchOnAtomic \{CAS_Drums}
+script show_drumkit 
+	switchonatomic \{cas_drums}
 endscript
 
-script vocalist_facial_animations_start \{Blendtime = 0.3}
-	Anim_Command target = vocal_face_mod command = Modulate_StartBlend params = {Blendtime = <Blendtime> blendcurve = [1 0]}
+script vocalist_facial_animations_start \{blendtime = 0.3}
+	anim_command target = vocal_face_mod command = modulate_startblend params = {blendtime = <blendtime> blendcurve = [1 0]}
 endscript
 
-script vocalist_facial_animations_stop \{Blendtime = 0.3}
-	Anim_Command target = vocal_face_mod command = Modulate_StartBlend params = {Blendtime = <Blendtime> blendcurve = [0 1]}
+script vocalist_facial_animations_stop \{blendtime = 0.3}
+	anim_command target = vocal_face_mod command = modulate_startblend params = {blendtime = <blendtime> blendcurve = [0 1]}
 endscript
 generic_static_tree = {
-	type = DegenerateBlend
-	id = Body
+	type = degenerateblend
+	id = body
 }
 guitarist_static_tree = {
-	type = ConstraintBones
-	ConstraintBones = hero_ConstraintBones
+	type = constraintbones
+	constraintbones = hero_constraintbones
 	[
 		{
-			type = ApplyHeelDifference
-			id = Heel
+			type = applyheeldifference
+			id = heel
 			[
 				{
-					type = Ik
+					type = ik
 					two_bone_chains = ik_params
-					id = Ik
+					id = ik
 					[
 						{
 							type = applydifference
-							id = misc_diff
+							id = 0xf6e941dd
 							[
 								{
 									type = modulate
 									strength = 0.0
-									id = misc_diff_strength
+									id = 0x4bfccdcb
 									[
 										{
-											type = Cycle
-											id = MiscTimer
-											Anim = misc_anim
+											type = cycle
+											id = 0x846ca877
+											anim = 0xd432622d
 											[
 												{
-													type = Source
-													Anim = misc_anim
+													type = source
+													anim = 0xd432622d
 												}
 											]
 										}
@@ -419,29 +419,29 @@ guitarist_static_tree = {
 									max_twist = 145.40999
 									min_roll = -7.3700004
 									max_roll = 169.1
-									hand_bone = Bone_Guitar_Fret_Pos
+									hand_bone = bone_guitar_fret_pos
 									elbow_bone = elbow_bone_chord
 									negate_rolls = negate_rolls
 									[
 										{
-											type = Ik
-											two_bone_chains = hero_IK_Hand_L_Params
+											type = ik
+											two_bone_chains = hero_ik_hand_l_params
 											[
 												{
-													type = TweakBones
-													id = TweakBonesNode
+													type = tweakbones
+													id = tweakbonesnode
 													[
 														{
-															type = PartialSwitch
+															type = partialswitch
 															state = on
 															[
 																{
-																	type = DegenerateBlend
-																	id = Face
+																	type = degenerateblend
+																	id = face
 																}
 																{
 																	type = applydifference
-																	id = LeftHandPartial
+																	id = lefthandpartial
 																	[
 																		{
 																			$hero_arm_branch
@@ -453,46 +453,46 @@ guitarist_static_tree = {
 																			max_twist = 150.0
 																			min_roll = -0.0
 																			max_roll = 65.0
-																			hand_bone = Bone_Guitar_Body
+																			hand_bone = bone_guitar_body
 																			elbow_bone = elbow_bone_strum
 																			[
 																				{
-																					type = Ik
-																					two_bone_chains = hero_IK_Hand_R_Params
+																					type = ik
+																					two_bone_chains = hero_ik_hand_r_params
 																					[
 																						{
 																							type = applypartial
-																							id = RightHandPartial
+																							id = righthandpartial
 																							strength = 1.0
 																							[
 																								{
-																									type = DegenerateBlend
-																									id = Dynamic_Strum_Base
+																									type = degenerateblend
+																									id = dynamic_strum_base
 																								}
 																								{
-																									type = Switch
+																									type = switch
 																									state = off
 																									id = moment_blend
 																									[
 																										{
-																											type = ApplyFemaleDifference
-																											id = MaleAnimAdjust_Moment
-																											Anim = GH_Rocker_Female_GuitarRaise_D
+																											type = applyfemaledifference
+																											id = maleanimadjust_moment
+																											anim = gh_rocker_female_guitarraise_d
 																											[
 																												{
-																													type = DegenerateBlend
+																													type = degenerateblend
 																													id = moment_branch
 																												}
 																											]
 																										}
 																										{
-																											type = ApplyFemaleDifference
-																											id = MaleAnimAdjust
-																											Anim = GH_Rocker_Female_GuitarRaise_D
+																											type = applyfemaledifference
+																											id = maleanimadjust
+																											anim = gh_rocker_female_guitarraise_d
 																											[
 																												{
-																													type = DegenerateBlend
-																													id = Body
+																													type = degenerateblend
+																													id = body
 																												}
 																											]
 																										}
@@ -503,16 +503,16 @@ guitarist_static_tree = {
 																					]
 																				}
 																				{
-																					type = DegenerateBlend
-																					id = Dynamic_Strum_Roll_High
+																					type = degenerateblend
+																					id = dynamic_strum_roll_high
 																				}
 																				{
-																					type = DegenerateBlend
-																					id = Dynamic_Strum_Roll_Mid
+																					type = degenerateblend
+																					id = dynamic_strum_roll_mid
 																				}
 																				{
-																					type = DegenerateBlend
-																					id = Dynamic_Strum_Roll_Low
+																					type = degenerateblend
+																					id = dynamic_strum_roll_low
 																				}
 																			]
 																		}
@@ -525,15 +525,15 @@ guitarist_static_tree = {
 											]
 										}
 										{
-											type = DegenerateBlend
+											type = degenerateblend
 											id = low_chord
 										}
 										{
-											type = DegenerateBlend
+											type = degenerateblend
 											id = med_chord
 										}
 										{
-											type = DegenerateBlend
+											type = degenerateblend
 											id = high_chord
 										}
 									]
@@ -546,18 +546,18 @@ guitarist_static_tree = {
 		}
 	]
 }
-lefty_guitarist_static_tree = {
-	type = ConstraintBones
-	ConstraintBones = hero_ConstraintBones
+0xb67a972f = {
+	type = constraintbones
+	constraintbones = hero_constraintbones
 	[
 		{
-			type = ApplyHeelDifference
-			id = Heel
+			type = applyheeldifference
+			id = heel
 			[
 				{
-					type = Ik
+					type = ik
 					two_bone_chains = ik_params
-					id = Ik
+					id = ik
 					[
 						{
 							type = chordhand
@@ -566,29 +566,29 @@ lefty_guitarist_static_tree = {
 							max_twist = 150.0
 							min_roll = -0.0
 							max_roll = 65.0
-							hand_bone = Bone_Guitar_Fret_Pos
+							hand_bone = bone_guitar_fret_pos
 							elbow_bone = elbow_bone_chord
 							negate_rolls = negate_rolls
 							[
 								{
-									type = Ik
-									two_bone_chains = hero_IK_Hand_L_Params
+									type = ik
+									two_bone_chains = hero_ik_hand_l_params
 									[
 										{
-											type = TweakBones
-											id = TweakBonesNode
+											type = tweakbones
+											id = tweakbonesnode
 											[
 												{
-													type = PartialSwitch
+													type = partialswitch
 													state = on
 													[
 														{
-															type = DegenerateBlend
-															id = Face
+															type = degenerateblend
+															id = face
 														}
 														{
 															type = applydifference
-															id = LeftHandPartial
+															id = lefthandpartial
 															[
 																{
 																	$hero_arm_branch
@@ -601,46 +601,46 @@ lefty_guitarist_static_tree = {
 																	min_roll = -7.3700004
 																	max_roll = 169.1
 																	negate_rolls = 1
-																	hand_bone = Bone_Guitar_Body
+																	hand_bone = bone_guitar_body
 																	elbow_bone = elbow_bone_strum
 																	[
 																		{
-																			type = Ik
-																			two_bone_chains = lefty_IK_Hand_R_Params
+																			type = ik
+																			two_bone_chains = 0x055926f9
 																			[
 																				{
 																					type = applypartial
-																					id = RightHandPartial
+																					id = righthandpartial
 																					strength = 1.0
 																					[
 																						{
-																							type = DegenerateBlend
-																							id = Dynamic_Strum_Base
+																							type = degenerateblend
+																							id = dynamic_strum_base
 																						}
 																						{
-																							type = Switch
+																							type = switch
 																							state = off
 																							id = moment_blend
 																							[
 																								{
-																									type = ApplyFemaleDifference
-																									id = MaleAnimAdjust_Moment
-																									Anim = GH_Rocker_Female_GuitarRaise_D
+																									type = applyfemaledifference
+																									id = maleanimadjust_moment
+																									anim = gh_rocker_female_guitarraise_d
 																									[
 																										{
-																											type = DegenerateBlend
+																											type = degenerateblend
 																											id = moment_branch
 																										}
 																									]
 																								}
 																								{
-																									type = ApplyFemaleDifference
-																									id = MaleAnimAdjust
-																									Anim = GH_Rocker_Female_GuitarRaise_D
+																									type = applyfemaledifference
+																									id = maleanimadjust
+																									anim = gh_rocker_female_guitarraise_d
 																									[
 																										{
-																											type = DegenerateBlend
-																											id = Body
+																											type = degenerateblend
+																											id = body
 																										}
 																									]
 																								}
@@ -651,16 +651,16 @@ lefty_guitarist_static_tree = {
 																			]
 																		}
 																		{
-																			type = DegenerateBlend
-																			id = Dynamic_Strum_Roll_High
+																			type = degenerateblend
+																			id = dynamic_strum_roll_high
 																		}
 																		{
-																			type = DegenerateBlend
-																			id = Dynamic_Strum_Roll_Mid
+																			type = degenerateblend
+																			id = dynamic_strum_roll_mid
 																		}
 																		{
-																			type = DegenerateBlend
-																			id = Dynamic_Strum_Roll_Low
+																			type = degenerateblend
+																			id = dynamic_strum_roll_low
 																		}
 																	]
 																}
@@ -673,15 +673,15 @@ lefty_guitarist_static_tree = {
 									]
 								}
 								{
-									type = DegenerateBlend
+									type = degenerateblend
 									id = low_chord
 								}
 								{
-									type = DegenerateBlend
+									type = degenerateblend
 									id = med_chord
 								}
 								{
-									type = DegenerateBlend
+									type = degenerateblend
 									id = high_chord
 								}
 							]
@@ -693,70 +693,70 @@ lefty_guitarist_static_tree = {
 	]
 }
 frontend_static_tree = {
-	type = ConstraintBones
-	ConstraintBones = hero_ConstraintBones
+	type = constraintbones
+	constraintbones = hero_constraintbones
 	[
 		{
-			type = ApplyHeelDifference
-			id = Heel
+			type = applyheeldifference
+			id = heel
 			[
 				{
-					type = Ik
+					type = ik
 					two_bone_chains = ik_params
-					id = Ik
+					id = ik
 					[
 						{
 							type = applydifference
-							id = misc_diff
+							id = 0xf6e941dd
 							[
 								{
 									type = modulate
 									strength = 0.0
-									id = misc_diff_strength
+									id = 0x4bfccdcb
 									[
 										{
-											type = Cycle
-											id = MiscTimer
-											Anim = misc_anim
+											type = cycle
+											id = 0x846ca877
+											anim = 0xd432622d
 											[
 												{
-													type = Source
-													Anim = misc_anim
+													type = source
+													anim = 0xd432622d
 												}
 											]
 										}
 									]
 								}
 								{
-									type = ApplyFemaleDifference
-									id = MaleAnimAdjust
-									Anim = GH_Rocker_Female_GuitarRaise_D
+									type = applyfemaledifference
+									id = maleanimadjust
+									anim = gh_rocker_female_guitarraise_d
 									[
 										{
-											type = TweakBones
-											id = TweakBonesNode
+											type = tweakbones
+											id = tweakbonesnode
 											[
 												{
-													type = PartialSwitch
+													type = partialswitch
 													state = on
 													[
 														{
-															type = DegenerateBlend
-															id = Face
+															type = degenerateblend
+															id = face
 														}
 														{
-															type = DegenerateBlend
-															type = PartialSwitch
+															type = degenerateblend
+															type = partialswitch
 															state = off
 															id = moment_blend
 															[
 																{
-																	type = DegenerateBlend
+																	type = degenerateblend
 																	id = moment_branch
 																}
 																{
-																	type = DegenerateBlend
-																	id = Body
+																	type = degenerateblend
+																	id = body
 																}
 															]
 														}
@@ -775,7 +775,7 @@ frontend_static_tree = {
 	]
 }
 hero_arm_branch = {
-	type = Add
+	type = add
 	[
 		{
 			type = modulate
@@ -783,8 +783,8 @@ hero_arm_branch = {
 			id = fret_anim_mod
 			[
 				{
-					type = DegenerateBlend
-					id = LeftArm
+					type = degenerateblend
+					id = leftarm
 				}
 			]
 		}
@@ -794,60 +794,60 @@ hero_arm_branch = {
 			id = strum_anim_mod
 			[
 				{
-					type = DegenerateBlend
-					id = Dynamic_strums
+					type = degenerateblend
+					id = dynamic_strums
 				}
 			]
 		}
 	]
 }
-Dynamic_Strum_Source = {
-	type = Source
-	Anim = Anim
+dynamic_strum_source = {
+	type = source
+	anim = anim
 }
-Dynamic_Strum_Branch = {
-	type = Add
+dynamic_strum_branch = {
+	type = add
 	[
 		{
-			type = Play
+			type = play
 			start = startanim
 			[
 				{
-					type = Source
-					Anim = Strumanim
+					type = source
+					anim = strumanim
 				}
 			]
 		}
 		{
-			type = Source
-			Anim = baseanim
+			type = source
+			anim = baseanim
 		}
 	]
 }
-Dynamic_Strum_Idle_Branch = {
-	type = Add
+dynamic_strum_idle_branch = {
+	type = add
 	[
 		{
-			type = Cycle
+			type = cycle
 			start = startanim
 			[
 				{
-					type = Source
-					Anim = Strumanim
+					type = source
+					anim = strumanim
 				}
 			]
 		}
 		{
-			type = Source
-			Anim = baseanim
+			type = source
+			anim = baseanim
 		}
 	]
 }
 hero_body_branch = {
 	type = timer_type
-	id = BodyTimer
-	Anim = anim_name
-	Speed = Speed
+	id = bodytimer
+	anim = anim_name
+	speed = speed
 	start = start
 	end = end
 	tempo_anim = tempo_anim
@@ -859,15 +859,15 @@ hero_body_branch = {
 	[
 		{
 			type = source_type
-			Anim = anim_name
+			anim = anim_name
 		}
 	]
 }
 hero_moment_branch = {
 	type = timer_type
 	id = momenttimer
-	Anim = anim_name
-	Speed = Speed
+	anim = anim_name
+	speed = speed
 	start = start
 	end = end
 	tempo_anim = tempo_anim
@@ -879,132 +879,132 @@ hero_moment_branch = {
 	[
 		{
 			type = source_type
-			Anim = anim_name
+			anim = anim_name
 		}
 	]
 }
 hero_fret_branch = {
-	type = Play
-	id = FretTimer
-	Anim = fret_anim
+	type = play
+	id = frettimer
+	anim = fret_anim
 	[
 		{
-			type = Source
-			Anim = fret_anim
+			type = source
+			anim = fret_anim
 		}
 	]
 }
 hero_finger_branch = {
-	type = Play
-	id = FingerTimer
-	Anim = finger_anim
+	type = play
+	id = fingertimer
+	anim = finger_anim
 	[
 		{
-			type = Source
-			Anim = finger_anim
+			type = source
+			anim = finger_anim
 		}
 	]
 }
 hero_face_branch = {
-	type = Play
-	id = FacialTimer
-	Anim = facial_anim
+	type = play
+	id = facialtimer
+	anim = facial_anim
 	[
 		{
-			type = FacialHackSource
-			Anim = facial_anim
+			type = facialhacksource
+			anim = facial_anim
 		}
 	]
 }
 vocalist_face_branch = {
-	type = Play
-	id = FacialTimer
-	Anim = facial_anim
+	type = play
+	id = facialtimer
+	anim = facial_anim
 	[
 		{
-			type = FacialHackSource
-			Anim = facial_anim
+			type = facialhacksource
+			anim = facial_anim
 		}
 	]
 }
 hero_play_branch = {
-	type = Play
+	type = play
 	id = timer_id
-	Anim = anim_name
+	anim = anim_name
 	[
 		{
-			type = Source
-			Anim = anim_name
+			type = source
+			anim = anim_name
 		}
 	]
 }
 hero_cycle_branch = {
-	type = Cycle
+	type = cycle
 	id = timer_id
-	Anim = anim_name
+	anim = anim_name
 	[
 		{
-			type = Source
-			Anim = anim_name
+			type = source
+			anim = anim_name
 		}
 	]
 }
 hero_empty_branch = {
-	type = Blank
+	type = blank
 }
 hero_drumming_branch = {
 	type = timer_type
 	id = timer_id
-	Anim = anim_name
-	Speed = Speed
+	anim = anim_name
+	speed = speed
 	[
 		{
-			type = Source
-			Anim = anim_name
+			type = source
+			anim = anim_name
 		}
 	]
 }
 vocalist_static_tree = {
-	type = ConstraintBones
-	ConstraintBones = hero_ConstraintBones
+	type = constraintbones
+	constraintbones = hero_constraintbones
 	[
 		{
-			type = Ik
-			two_bone_chains = singer_IK_Params
-			id = Ik
+			type = ik
+			two_bone_chains = singer_ik_params
+			id = ik
 			[
 				{
 					type = applydifference
-					id = misc_diff
+					id = 0xf6e941dd
 					[
 						{
 							type = modulate
 							strength = 0.0
-							id = misc_diff_strength
+							id = 0x4bfccdcb
 							[
 								{
-									type = Cycle
-									id = MiscTimer
-									Anim = misc_anim
+									type = cycle
+									id = 0x846ca877
+									anim = 0xd432622d
 									[
 										{
-											type = Source
-											Anim = misc_anim
+											type = source
+											anim = 0xd432622d
 										}
 									]
 								}
 							]
 						}
 						{
-							type = ApplyHeelDifference
-							id = Heel
+							type = applyheeldifference
+							id = heel
 							[
 								{
-									type = TweakBones
-									id = TweakBonesNode
+									type = tweakbones
+									id = tweakbonesnode
 									[
 										{
-											type = PartialSwitch
+											type = partialswitch
 											state = on
 											[
 												{
@@ -1013,23 +1013,23 @@ vocalist_static_tree = {
 													strength = 1
 													[
 														{
-															type = DegenerateBlend
-															id = Face
+															type = degenerateblend
+															id = face
 														}
 													]
 												}
 												{
-													type = Switch
+													type = switch
 													state = off
 													id = moment_blend
 													[
 														{
-															type = DegenerateBlend
+															type = degenerateblend
 															id = moment_branch
 														}
 														{
-															type = DegenerateBlend
-															id = Body
+															type = degenerateblend
+															id = body
 														}
 													]
 												}
@@ -1046,47 +1046,47 @@ vocalist_static_tree = {
 	]
 }
 drummer_static_tree = {
-	type = TweakBones
-	id = TweakBonesNode
+	type = tweakbones
+	id = tweakbonesnode
 	[
 		{
-			type = PartialSwitch
+			type = partialswitch
 			state = on
 			[
 				{
-					type = DegenerateBlend
-					id = Face
+					type = degenerateblend
+					id = face
 				}
 				{
-					type = Switch
+					type = switch
 					state = off
 					id = moment_blend
 					[
 						{
-							type = Ik
-							two_bone_chains = drummer_IK_params
-							id = Ik
+							type = ik
+							two_bone_chains = drummer_ik_params
+							id = ik
 							[
 								{
-									type = ApplyFemaleDrummerDifference
-									id = FemaleDiff
+									type = applyfemaledrummerdifference
+									id = femalediff
 									[
 										{
-											type = ApplyHeelDifference
-											id = Heel
+											type = applyheeldifference
+											id = heel
 											[
 												{
-													type = Switch
+													type = switch
 													state = on
 													id = moment_blend_inner
 													[
 														{
-															type = DegenerateBlend
+															type = degenerateblend
 															id = moment_branch
 														}
 														{
-															type = DegenerateBlend
-															id = Body
+															type = degenerateblend
+															id = body
 														}
 													]
 												}
@@ -1108,8 +1108,8 @@ drummer_static_tree = {
 drummer_moment_branch = {
 	type = timer_type
 	id = momenttimer
-	Anim = anim_name
-	Speed = Speed
+	anim = anim_name
+	speed = speed
 	start = start
 	end = end
 	skip_beats = skip_beats
@@ -1118,384 +1118,384 @@ drummer_moment_branch = {
 	[
 		{
 			type = source_type
-			Anim = anim_name
+			anim = anim_name
 		}
 	]
 }
 hero_cymbal_branch = {
-	type = Play
+	type = play
 	id = cymbal_timer_id
-	Anim = cymbal_anim
+	anim = cymbal_anim
 	[
 		{
-			type = Source
-			Anim = cymbal_anim
+			type = source
+			anim = cymbal_anim
 		}
 	]
 }
 hero_simple_source = {
-	type = Play
-	Anim = Anim
+	type = play
+	anim = anim
 	[
 		{
-			type = Source
-			Anim = Anim
+			type = source
+			anim = anim
 		}
 	]
 }
 hero_source_only = {
-	type = Source
-	Anim = Anim
+	type = source
+	anim = anim
 }
 empty_ik_params = [
 ]
-CAR_IK_Params = [
+car_ik_params = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_r
 	}
 	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_L
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_l
 	}
 	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.1483, 0.0, 0.98889995)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.1483, 0.0, 0.98889995)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
 	}
 	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (-0.1483, 0.0, 0.98889995)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (-0.1483, 0.0, 0.98889995)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
 	}
 ]
-hero_IK_Hand_R_Params = [
+hero_ik_hand_r_params = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_R
-		NewTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_r
+		newtarget = bone_ik_hand_slave_r
 		stretch = 0.0
 	}
 ]
-lefty_IK_Hand_R_Params = [
+0x055926f9 = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_R
-		NewTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_r
+		newtarget = bone_ik_hand_slave_r
 		stretch = 0.0
 	}
 ]
-hero_IK_Hand_L_Params = [
+hero_ik_hand_l_params = [
 	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_L
-		NewTarget = Bone_IK_Hand_Slave_L
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_l
+		newtarget = bone_ik_hand_slave_l
 		stretch = 0.0
 	}
 ]
-lefty_IK_Params = [
+0xf56342fc = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.25, 0.0, -0.968246)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_R
-		NewTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.25, 0.0, -0.968246)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_r
+		newtarget = bone_ik_hand_slave_r
 		stretch = 1.0
 	}
 	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_L
-		NewTarget = Bone_IK_Hand_Slave_L
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_l
+		newtarget = bone_ik_hand_slave_l
 		stretch = 1.0
 	}
 	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
 	}
 	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
 	}
 ]
-Hero_Ik_params = [
+hero_ik_params = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_R
-		NewTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_r
+		newtarget = bone_ik_hand_slave_r
 		stretch = 1.0
 	}
 	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Guitar_L
-		NewTarget = Bone_IK_Hand_Slave_L
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_guitar_l
+		newtarget = bone_ik_hand_slave_l
 		stretch = 1.0
 	}
 	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
 	}
 	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
-	}
-]
-Hero_Feet_IK_Params = [
-	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
-	}
-	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
 	}
 ]
-singer_IK_Params = [
+hero_feet_ik_params = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
+	}
+	{
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
+	}
+]
+singer_ik_params = [
+	{
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_r
 		stretch = 1.0
 	}
 	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_L
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_l
 		stretch = 1.0
 	}
 	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.1483, 0.0, 0.98889995)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.1483, 0.0, 0.98889995)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
 	}
 	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (-0.1483, 0.0, 0.98889995)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
-	}
-]
-drummer_IK_Feet_Params = [
-	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
-	}
-	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (-0.3511, 0.0, 0.9362999)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (-0.1483, 0.0, 0.98889995)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
 	}
 ]
-drummer_IK_Hand_R_Params = [
+drummer_ik_feet_params = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_R
-		stretch = 1.0
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
+	}
+	{
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (-0.3511, 0.0, 0.9362999)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
 	}
 ]
-drummer_IK_Hand_L_Params = [
+drummer_ik_hand_r_params = [
 	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_L
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_r
 		stretch = 1.0
 	}
 ]
-drummer_IK_params = [
+drummer_ik_hand_l_params = [
 	{
-		bone0 = Bone_Bicep_R
-		bone1 = Bone_Forearm_R
-		bone2 = Bone_Palm_R
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_R
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_l
 		stretch = 1.0
-	}
-	{
-		bone0 = Bone_Bicep_L
-		bone1 = Bone_Forearm_L
-		bone2 = Bone_Palm_L
-		HingeAxis = (0.0, 0.0, -1.0)
-		CosMaxHingeAngle = -0.96999997
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Hand_Slave_L
-		stretch = 1.0
-	}
-	{
-		bone0 = Bone_Thigh_L
-		bone1 = Bone_Knee_L
-		bone2 = Bone_Ankle_L
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_L
-	}
-	{
-		bone0 = Bone_Thigh_R
-		bone1 = Bone_Knee_R
-		bone2 = Bone_Ankle_R
-		HingeAxis = (0.0, 0.0, 1.0)
-		CosMaxHingeAngle = -0.98999995
-		CosMinHingeAngle = 0.96999997
-		boneTarget = Bone_IK_Foot_Slave_R
 	}
 ]
-hero_ConstraintBones = [
+drummer_ik_params = [
 	{
-		type = Twistchild
-		bone = Bone_Twist_Wrist_L
-		target = Bone_Palm_L
+		bone0 = bone_bicep_r
+		bone1 = bone_forearm_r
+		bone2 = bone_palm_r
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_r
+		stretch = 1.0
+	}
+	{
+		bone0 = bone_bicep_l
+		bone1 = bone_forearm_l
+		bone2 = bone_palm_l
+		hingeaxis = (0.0, 0.0, -1.0)
+		cosmaxhingeangle = -0.96999997
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_hand_slave_l
+		stretch = 1.0
+	}
+	{
+		bone0 = bone_thigh_l
+		bone1 = bone_knee_l
+		bone2 = bone_ankle_l
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_l
+	}
+	{
+		bone0 = bone_thigh_r
+		bone1 = bone_knee_r
+		bone2 = bone_ankle_r
+		hingeaxis = (0.0, 0.0, 1.0)
+		cosmaxhingeangle = -0.98999995
+		cosminhingeangle = 0.96999997
+		bonetarget = bone_ik_foot_slave_r
+	}
+]
+hero_constraintbones = [
+	{
+		type = twistchild
+		bone = bone_twist_wrist_l
+		target = bone_palm_l
 		amount = 0.5
 	}
 	{
-		type = Twistchild
-		bone = Bone_Twist_Wrist_R
-		target = Bone_Palm_R
+		type = twistchild
+		bone = bone_twist_wrist_r
+		target = bone_palm_r
 		amount = 0.5
 	}
 	{
-		type = Twist
-		bone = Bone_Twist_Bicep_Mid_R
-		target = Bone_Bicep_R
+		type = twist
+		bone = bone_twist_bicep_mid_r
+		target = bone_bicep_r
 		amount = 0.5
 	}
 	{
-		type = Twist
-		bone = Bone_Twist_Bicep_Mid_L
-		target = Bone_Bicep_L
+		type = twist
+		bone = bone_twist_bicep_mid_l
+		target = bone_bicep_l
 		amount = 0.5
 	}
 	{
-		type = Twist
-		bone = Bone_Twist_Bicep_Top_R
-		target = Bone_Bicep_R
+		type = twist
+		bone = bone_twist_bicep_top_r
+		target = bone_bicep_r
 		amount = 1.0
 	}
 	{
-		type = Twist
-		bone = Bone_Twist_Bicep_Top_L
-		target = Bone_Bicep_L
+		type = twist
+		bone = bone_twist_bicep_top_l
+		target = bone_bicep_l
 		amount = 1.0
 	}
 ]
 
 script ps2_get_musician_context_data 
 	switch (<name>)
-		case Guitarist
+		case guitarist
 		case cas_musician1
 		case bassist2
 		case vocalist2
@@ -1514,7 +1514,7 @@ script ps2_get_musician_context_data
 		asset_heap = heap_musician3
 		bandmember_appearance = vocalist_appearance
 		asset_slot_num = 2
-		case Drummer
+		case drummer
 		case cas_musician4
 		asset_heap = heap_musician4
 		bandmember_appearance = drummer_appearance

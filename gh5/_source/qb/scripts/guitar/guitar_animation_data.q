@@ -49,21 +49,21 @@ drum_hard_hit_time = 500
 enable_tempo_matching = true
 use_band_manager = true
 camera_snap_threshold = 166
-female_playing_male_anim_diff = GH_Rocker_Female_GuitarRaise_D
-female_playing_female_anim_diff = GH_Rocker_Female_Empty_D
+female_playing_male_anim_diff = gh_rocker_female_guitarraise_d
+female_playing_female_anim_diff = gh_rocker_female_empty_d
 female_anim_list = [
-	Guit_Adam_Lokey_075_F
-	Guit_Adam_Lokey_100_F
-	Guit_Adam_Lokey_120_F
-	GUIT_Chris_Stillborn_075_F
-	GUIT_Chris_Stillborn_100_F
-	GUIT_Chris_Stillborn_120_F
-	GUIT_Chris_stranglehold_075_F
-	GUIT_Chris_stranglehold_100_F
-	GUIT_Chris_stranglehold_120_F
-	guit_Ginger_areyou_075_01
-	guit_Ginger_areyou_100_01
-	guit_Ginger_areyou_120_01
+	guit_adam_lokey_075_f
+	guit_adam_lokey_100_f
+	guit_adam_lokey_120_f
+	guit_chris_stillborn_075_f
+	guit_chris_stillborn_100_f
+	guit_chris_stillborn_120_f
+	guit_chris_stranglehold_075_f
+	guit_chris_stranglehold_100_f
+	guit_chris_stranglehold_120_f
+	guit_ginger_areyou_075_01
+	guit_ginger_areyou_100_01
+	guit_ginger_areyou_120_01
 	guit_ginger_bulls_075_01
 	guit_ginger_bulls_100_01
 	guit_ginger_bulls_120_01
@@ -71,191 +71,191 @@ female_anim_list = [
 	guit_ginger_joker_100_01
 	guit_ginger_joker_120_01
 	guit_greg_notempo_01
-	Guit_Greg_NoTempo_01_F
-	Guit_Greg_NoTempo_02
-	Guit_Greg_NoTempo_02_F
-	guit_Ivy_BleedMe_075_F
-	guit_Ivy_BleedMe_100_F
-	guit_Ivy_BleedMe_120_F
-	guit_Ivy_4horsemen_075_F
-	guit_Ivy_4horsemen_100_F
-	guit_Ivy_4horsemen_120_F
-	guit_Jeff_Lowkey_075_F_01
-	guit_Jeff_Lowkey_075_F_02
-	guit_Jeff_Lowkey_100_F_01
-	guit_Jeff_Lowkey_100_F_02
-	guit_Jeff_Lowkey_120_F_01
-	guit_Jeff_Lowkey_120_F_02
-	guit_joer_hot_075_F
-	guit_joer_hot_100_F
-	guit_joer_hot_120_F
-	guit_joer_areyou_75_F
-	guit_joer_areyou_100_F
-	guit_joer_areyou_120_F
-	guit_joes_areyou_075_F_01
-	guit_joes_areyou_100_F_01
-	guit_joes_areyou_120_F_01
-	guit_Judita_areyou_075
-	guit_Judita_areyou_100
-	guit_Judita_areyou_120
-	guit_Judita_bulls_075
-	guit_Judita_bulls_100
-	guit_Judita_bulls_120
-	guit_Judita_joker_075
-	guit_Judita_joker_100
-	guit_Judita_joker_120
-	guit_Matt_Bulls_075_F_01
-	guit_Matt_Bulls_100_F_01
-	guit_Matt_Bulls_120_F_01
-	guit_Matt_stillborn_075_F_01
-	guit_Matt_stillborn_100_F_01
-	guit_Matt_stillborn_120_F_01
-	Guit_Morgan_4Horsemen_075
-	Guit_Morgan_4Horsemen_100
-	Guit_Morgan_4Horsemen_120
-	Guit_Morgan_BleedingMe_075
-	Guit_Morgan_BleedingMe_100
-	Guit_Morgan_BleedingMe_120
-	Guit_Sonny_Bulls_075_F_01
-	guit_Sonny_bulls_100_F_01
-	guit_Sonny_bulls_120_F_01
-	guit_Sonny_stillborn_075_F_01
-	guit_Sonny_stillborn_100_F_01
-	guit_Tara_BleedMe_075_F
-	guit_Tara_BleedMe_100_F
-	guit_Tara_BleedMe_120_F
-	guit_Tara_4horsemen_075_F
-	guit_Tara_4horsemen_100_F
-	guit_Tara_4horsemen_120_F
-	guit_Tara_NotPlaying_075_F
-	guit_Tara_NotPlaying_100_F
-	guit_Tara_NotPlaying_120_F
-	Guit_Scott_Stranglehold_100
-	Guit_Scott_Stranglehold_120
-	Sing_Natalie_AreYou_075_1
-	Sing_Natalie_AreYou_100_1
-	Sing_Natalie_AreYou_120_1
-	sing_Jason_AreYou_075_F_1
-	sing_Jason_AreYou_100_F_1
-	sing_Jason_AreYou_120_F_1
-	sing_Jason_Walk_75_F_1
-	sing_Jason_Walk_100_F_1
-	sing_Jason_Walk_120_F_1
-	sing_Jason_Walk_Mic_075_F_1
-	sing_Jason_Walk_mic_100_F_1
-	sing_Jason_Walk_mic_120_F_1
-	SING_amanda_notempo_01
-	SING_amanda_notempo_02
-	SING_amanda_notempo_03
-	G_Wind_Cries_Mary_01
-	G_Wind_Cries_Mary_02
-	G_Wind_Cries_Mary_03
-	G_Wind_Cries_Mary_04
-	CAR_female_idles_01
-	CAR_female_idles_02
-	CAR_female_idles_04
-	CAR_female_idles_05
-	CAR_female_idles_06
-	CAR_female_idles_07
-	CAR_female_idles_08
-	CAR_female_idles_09
-	CAR_female_ready2rock_blkmetal_01
-	CAR_female_readytorock_classic_01
-	CAR_female_readytorock_glam_01
-	CAR_female_readytorock_goth_01
-	CAR_female_readytorock_metal_01
-	CAR_female_readytorock_punk_01
-	GH_FE_Female_DrumStix_Idle_01
-	GH_FE_Female_DrumStix_Init_01
-	GH_FE_Female_DrumStix_Out_01
-	GH_FE_Female_Fingers_Idle_01
-	GH_FE_Female_Fingers_Init_01
-	GH_FE_Female_Fingers_Out_01
-	GH_FE_Female_Guitar_Idle_01
-	GH_FE_Female_Guitar_Init_01
-	GH_FE_Female_Guitar_Out_01
-	GH_FE_Female_Idle_075_01
-	GH_FE_Female_Idle_075_02
-	GH_FE_Female_Idle_075_03
-	GH_FE_Female_Idle_100_01
-	GH_FE_Female_Idle_100_02
-	GH_FE_Female_Idle_100_03
-	GH_FE_Female_Idle_100_04
-	GH_FE_Female_Idle_100_05
-	GH_FE_Female_Idle_120_01
-	GH_FE_Female_Idle_120_02
-	GH_FE_Female_Idle_120_03
-	GH_FE_Female_Idle_120_04
-	GH_FE_Female_Idle_120_05
-	GH_FE_Female_Idle_Body_01
-	GH_FE_Female_Idle_Body_02
-	GH_FE_Female_Idle_Glasses_01
-	GH_FE_Female_Idle_Hair_01
-	GH_FE_Female_Idle_Hair_02
-	GH_FE_Female_Idle_Hair_03
-	GH_FE_Female_Idle_Hair_04
-	GH_FE_Female_Idle_Hat_01
-	GH_FE_Female_L_ArmACC_Idle_01
-	GH_FE_Female_L_ArmACC_Idle_02
-	GH_FE_Female_L_ArmACC_Init_01
-	GH_FE_Female_L_ArmACC_Out_01
-	GH_FE_Female_L_Tat_Idle_01
-	GH_FE_Female_L_Tat_Init_01
-	GH_FE_Female_L_Tat_Out_01
-	GH_FE_Female_Mic_Idle_075_01
-	GH_FE_Female_Mic_Idle_075_02
-	GH_FE_Female_Mic_Idle_075_03
-	GH_FE_Female_Mic_Idle_100_01
-	GH_FE_Female_Mic_Idle_100_02
-	GH_FE_Female_Mic_Idle_100_03
-	GH_FE_Female_Mic_Idle_120_01
-	GH_FE_Female_Mic_Idle_120_02
-	GH_FE_Female_Mic_Idle_120_03
-	GH_FE_Female_Mic_Idle_120_04
-	GH_FE_Female_Mic_Init_01
-	GH_FE_Female_Mic_Out_01
-	GH_FE_Female_MicHold_Idle_01
-	GH_FE_Female_MicHold_Init_01
-	GH_FE_Female_MicHold_Out_01
-	GH_FE_Female_Pants_Idle_01
-	GH_FE_Female_Pants_Out_01
-	GH_FE_Female_R_ArmACC_Idle_01
-	GH_FE_Female_R_ArmACC_Idle_02
-	GH_FE_Female_R_ArmACC_Init_01
-	GH_FE_Female_R_ArmACC_Out_01
-	GH_FE_Female_R_Tat_Idle_01
-	GH_FE_Female_R_Tat_Init_01
-	GH_FE_Female_R_Tat_Out_01
-	GH_FE_Female_Shirt_Idle_01
-	GH_FE_Female_Shirt_Idle_02
-	GH_FE_Female_Shirt_Init_01
-	GH_FE_Female_Shirt_Out_01
-	GH_FE_Female_Shoes_Idle_01
-	GH_FE_Female_Shoes_Init_01
-	GH_FE_Female_Shoes_Out_01
+	guit_greg_notempo_01_f
+	guit_greg_notempo_02
+	guit_greg_notempo_02_f
+	guit_ivy_bleedme_075_f
+	guit_ivy_bleedme_100_f
+	guit_ivy_bleedme_120_f
+	guit_ivy_4horsemen_075_f
+	guit_ivy_4horsemen_100_f
+	guit_ivy_4horsemen_120_f
+	guit_jeff_lowkey_075_f_01
+	guit_jeff_lowkey_075_f_02
+	guit_jeff_lowkey_100_f_01
+	guit_jeff_lowkey_100_f_02
+	guit_jeff_lowkey_120_f_01
+	guit_jeff_lowkey_120_f_02
+	guit_joer_hot_075_f
+	guit_joer_hot_100_f
+	guit_joer_hot_120_f
+	guit_joer_areyou_75_f
+	guit_joer_areyou_100_f
+	guit_joer_areyou_120_f
+	guit_joes_areyou_075_f_01
+	guit_joes_areyou_100_f_01
+	guit_joes_areyou_120_f_01
+	guit_judita_areyou_075
+	guit_judita_areyou_100
+	guit_judita_areyou_120
+	guit_judita_bulls_075
+	guit_judita_bulls_100
+	guit_judita_bulls_120
+	guit_judita_joker_075
+	guit_judita_joker_100
+	guit_judita_joker_120
+	guit_matt_bulls_075_f_01
+	guit_matt_bulls_100_f_01
+	guit_matt_bulls_120_f_01
+	guit_matt_stillborn_075_f_01
+	guit_matt_stillborn_100_f_01
+	guit_matt_stillborn_120_f_01
+	guit_morgan_4horsemen_075
+	guit_morgan_4horsemen_100
+	guit_morgan_4horsemen_120
+	guit_morgan_bleedingme_075
+	guit_morgan_bleedingme_100
+	guit_morgan_bleedingme_120
+	guit_sonny_bulls_075_f_01
+	guit_sonny_bulls_100_f_01
+	guit_sonny_bulls_120_f_01
+	guit_sonny_stillborn_075_f_01
+	guit_sonny_stillborn_100_f_01
+	guit_tara_bleedme_075_f
+	guit_tara_bleedme_100_f
+	guit_tara_bleedme_120_f
+	guit_tara_4horsemen_075_f
+	guit_tara_4horsemen_100_f
+	guit_tara_4horsemen_120_f
+	guit_tara_notplaying_075_f
+	guit_tara_notplaying_100_f
+	guit_tara_notplaying_120_f
+	guit_scott_stranglehold_100
+	guit_scott_stranglehold_120
+	sing_natalie_areyou_075_1
+	sing_natalie_areyou_100_1
+	sing_natalie_areyou_120_1
+	sing_jason_areyou_075_f_1
+	sing_jason_areyou_100_f_1
+	sing_jason_areyou_120_f_1
+	sing_jason_walk_75_f_1
+	sing_jason_walk_100_f_1
+	sing_jason_walk_120_f_1
+	sing_jason_walk_mic_075_f_1
+	sing_jason_walk_mic_100_f_1
+	sing_jason_walk_mic_120_f_1
+	sing_amanda_notempo_01
+	sing_amanda_notempo_02
+	sing_amanda_notempo_03
+	g_wind_cries_mary_01
+	g_wind_cries_mary_02
+	g_wind_cries_mary_03
+	g_wind_cries_mary_04
+	car_female_idles_01
+	car_female_idles_02
+	car_female_idles_04
+	car_female_idles_05
+	car_female_idles_06
+	car_female_idles_07
+	car_female_idles_08
+	car_female_idles_09
+	car_female_ready2rock_blkmetal_01
+	car_female_readytorock_classic_01
+	car_female_readytorock_glam_01
+	car_female_readytorock_goth_01
+	car_female_readytorock_metal_01
+	car_female_readytorock_punk_01
+	gh_fe_female_drumstix_idle_01
+	gh_fe_female_drumstix_init_01
+	gh_fe_female_drumstix_out_01
+	gh_fe_female_fingers_idle_01
+	gh_fe_female_fingers_init_01
+	gh_fe_female_fingers_out_01
+	gh_fe_female_guitar_idle_01
+	gh_fe_female_guitar_init_01
+	gh_fe_female_guitar_out_01
+	gh_fe_female_idle_075_01
+	gh_fe_female_idle_075_02
+	gh_fe_female_idle_075_03
+	gh_fe_female_idle_100_01
+	gh_fe_female_idle_100_02
+	gh_fe_female_idle_100_03
+	gh_fe_female_idle_100_04
+	gh_fe_female_idle_100_05
+	gh_fe_female_idle_120_01
+	gh_fe_female_idle_120_02
+	gh_fe_female_idle_120_03
+	gh_fe_female_idle_120_04
+	gh_fe_female_idle_120_05
+	gh_fe_female_idle_body_01
+	gh_fe_female_idle_body_02
+	gh_fe_female_idle_glasses_01
+	gh_fe_female_idle_hair_01
+	gh_fe_female_idle_hair_02
+	gh_fe_female_idle_hair_03
+	gh_fe_female_idle_hair_04
+	gh_fe_female_idle_hat_01
+	gh_fe_female_l_armacc_idle_01
+	gh_fe_female_l_armacc_idle_02
+	gh_fe_female_l_armacc_init_01
+	gh_fe_female_l_armacc_out_01
+	gh_fe_female_l_tat_idle_01
+	gh_fe_female_l_tat_init_01
+	gh_fe_female_l_tat_out_01
+	gh_fe_female_mic_idle_075_01
+	gh_fe_female_mic_idle_075_02
+	gh_fe_female_mic_idle_075_03
+	gh_fe_female_mic_idle_100_01
+	gh_fe_female_mic_idle_100_02
+	gh_fe_female_mic_idle_100_03
+	gh_fe_female_mic_idle_120_01
+	gh_fe_female_mic_idle_120_02
+	gh_fe_female_mic_idle_120_03
+	gh_fe_female_mic_idle_120_04
+	gh_fe_female_mic_init_01
+	gh_fe_female_mic_out_01
+	gh_fe_female_michold_idle_01
+	gh_fe_female_michold_init_01
+	gh_fe_female_michold_out_01
+	gh_fe_female_pants_idle_01
+	gh_fe_female_pants_out_01
+	gh_fe_female_r_armacc_idle_01
+	gh_fe_female_r_armacc_idle_02
+	gh_fe_female_r_armacc_init_01
+	gh_fe_female_r_armacc_out_01
+	gh_fe_female_r_tat_idle_01
+	gh_fe_female_r_tat_init_01
+	gh_fe_female_r_tat_out_01
+	gh_fe_female_shirt_idle_01
+	gh_fe_female_shirt_idle_02
+	gh_fe_female_shirt_init_01
+	gh_fe_female_shirt_out_01
+	gh_fe_female_shoes_idle_01
+	gh_fe_female_shoes_init_01
+	gh_fe_female_shoes_out_01
 	gh_drummer_female_heels_high_d
 	gh_drummer_female_heels_med_d
 	gh_drummer_female_heels_highplat_d
-	GH_FE_Female_Drums_Waiting_InOut
+	gh_fe_female_drums_waiting_inout
 	gh_rocker_female_guitarcenter
-	gh_rocker_female_select_Drums
-	gh_rocker_female_select_Drums_03
-	GH_Rocker_female_Select_Mic
-	GH_Rocker_female_Select_into_idle
-	GH_Rocker_female_Select_idle
-	GH_Rocker_female_Select_outof_idle
+	gh_rocker_female_select_drums
+	gh_rocker_female_select_drums_03
+	gh_rocker_female_select_mic
+	gh_rocker_female_select_into_idle
+	gh_rocker_female_select_idle
+	gh_rocker_female_select_outof_idle
 	car_lose_kickinstrument
 	car_female_lose_smash
 	car_female_lose_tantrum
 	car_lose_walkoff
 	s_haley_lose_01
 	s_haley_win
-	GH_Rocker_female_Select_Mic
-	GH_Rocker_female_Select_into_idle
-	GH_Rocker_female_Select_idle
-	GH_Rocker_female_Select_outof_idle
-	gh_rocker_female_select_Drums
-	gh_rocker_female_select_Drums_03
+	gh_rocker_female_select_mic
+	gh_rocker_female_select_into_idle
+	gh_rocker_female_select_idle
+	gh_rocker_female_select_outof_idle
+	gh_rocker_female_select_drums
+	gh_rocker_female_select_drums_03
 	b_alla_win_generic
 	b_alla_win_jump
 	b_kris_win_crowdhype01
@@ -299,10 +299,10 @@ female_anim_list = [
 	g_kris_win_scary
 	g_kris_win_stagedive
 	g_kris_win_waving
-	G_Solo33_S0N1
+	g_solo33_s0n1
 	s_alla_win_generic
 	s_alla_win_jump
-	S_Billy_Win_Boss
+	s_billy_win_boss
 	s_haley_win
 	s_haley_win_pointbass
 	s_haley_win_pointdrum
@@ -321,68 +321,68 @@ female_anim_list = [
 	s_kris_win_stagedive
 	s_kris_win_waving
 	bdgs_b_bassist_lose_01
-	B_Kris_Lose_AngryAtCrowd
-	B_Kris_Lose_Depressed
-	B_Kris_Lose_PointBass
-	B_Kris_Lose_PointDrum
-	B_Kris_Lose_PointGuit
-	B_Kris_Lose_PointSing
+	b_kris_lose_angryatcrowd
+	b_kris_lose_depressed
+	b_kris_lose_pointbass
+	b_kris_lose_pointdrum
+	b_kris_lose_pointguit
+	b_kris_lose_pointsing
 	b_kris_lose_pretentious
 	b_kris_lose_tantrum
-	D_Kris_Lose_AngryAtCrowd
-	D_Kris_Lose_Depressed
-	D_Kris_Lose_PointBass
-	D_Kris_Lose_PointDrum
-	D_Kris_Lose_PointGuit
-	D_Kris_Lose_PointSing
+	d_kris_lose_angryatcrowd
+	d_kris_lose_depressed
+	d_kris_lose_pointbass
+	d_kris_lose_pointdrum
+	d_kris_lose_pointguit
+	d_kris_lose_pointsing
 	d_kris_lose_pretentious
 	d_kris_lose_tantrum
-	G_Kris_Lose_AngryAtCrowd
-	G_Kris_Lose_Depressed
-	G_Kris_Lose_PointBass
-	G_Kris_Lose_PointDrum
-	G_Kris_Lose_PointGuit
-	G_Kris_Lose_PointSing
+	g_kris_lose_angryatcrowd
+	g_kris_lose_depressed
+	g_kris_lose_pointbass
+	g_kris_lose_pointdrum
+	g_kris_lose_pointguit
+	g_kris_lose_pointsing
 	g_kris_lose_pretentious
 	g_kris_lose_tantrum
-	S_Kris_Lose_AngryAtCrowd
-	S_Kris_Lose_Depressed
-	S_Kris_Lose_PointBass
-	S_Kris_Lose_PointDrum
-	S_Kris_Lose_PointGuit
-	S_Kris_Lose_PointSing
+	s_kris_lose_angryatcrowd
+	s_kris_lose_depressed
+	s_kris_lose_pointbass
+	s_kris_lose_pointdrum
+	s_kris_lose_pointguit
+	s_kris_lose_pointsing
 	s_kris_lose_pretentious
 	s_kris_lose_tantrum
 	s_metalrockin01_f
 ]
 stances_disabling_ik = [
-	Stance_Old
+	stance_old
 	stance_frontend
 	stance_frontend_guitar
-	stance_frontEnd_instrument
-	Stance_Select_P1
-	Stance_Select_P2
-	Stance_Select_P3
-	Stance_Select_P4
-	Stance_Select_Head
-	Stance_Select_Profile
-	Stance_Select_Tat_Chest
-	Stance_Select_Tat_Arm_R
-	Stance_Select_Tat_Arm_L
-	Stance_Select_Hair
-	Stance_Select_Glasses
-	Stance_Select_Hat
-	Stance_Select_Arm_R
-	Stance_Select_Arm_L
-	Stance_Select_Piercings
-	Stance_Select_Torso
-	Stance_Select_Pants
-	Stance_Select_Shoes
-	Stance_Select_Guitar
-	Stance_Select_Mic
-	Stance_Select_Microphone
-	Stance_Select_Drum
-	Stance_Select_DrumSticks
+	stance_frontend_instrument
+	stance_select_p1
+	stance_select_p2
+	stance_select_p3
+	stance_select_p4
+	stance_select_head
+	stance_select_profile
+	stance_select_tat_chest
+	stance_select_tat_arm_r
+	stance_select_tat_arm_l
+	stance_select_hair
+	stance_select_glasses
+	stance_select_hat
+	stance_select_arm_r
+	stance_select_arm_l
+	stance_select_piercings
+	stance_select_torso
+	stance_select_pants
+	stance_select_shoes
+	stance_select_guitar
+	stance_select_mic
+	stance_select_microphone
+	stance_select_drum
+	stance_select_drumsticks
 	intro
 	intro_smstg
 	win
@@ -391,34 +391,34 @@ stances_disabling_ik = [
 	lose_smstg
 ]
 stance_chains = {
-	Stance_Old = slave
+	stance_old = slave
 	stance_frontend = slave
 	stance_frontend_guitar = slave
-	stance_frontEnd_instrument = slave
-	Stance_Select_P1 = slave
-	Stance_Select_P2 = slave
-	Stance_Select_P3 = slave
-	Stance_Select_P4 = slave
-	Stance_Select_Head = slave
-	Stance_Select_Profile = slave
-	Stance_Select_Tat_Chest = slave
-	Stance_Select_Tat_Arm_R = slave
-	Stance_Select_Tat_Arm_L = slave
-	Stance_Select_Hair = slave
-	Stance_Select_Glasses = slave
-	Stance_Select_Hat = slave
-	Stance_Select_Arm_R = slave
-	Stance_Select_Arm_L = slave
-	Stance_Select_Piercings = slave
-	Stance_Select_Torso = slave
-	Stance_Select_Pants = slave
-	Stance_Select_Shoes = slave
-	Stance_Select_Guitar = slave
-	Stance_Select_Mic = slave
-	Stance_Select_Microphone = slave
-	Stance_Select_Drum = slave
-	Stance_Select_DrumSticks = slave
-	Stance_Select_Fingernails = slave
+	stance_frontend_instrument = slave
+	stance_select_p1 = slave
+	stance_select_p2 = slave
+	stance_select_p3 = slave
+	stance_select_p4 = slave
+	stance_select_head = slave
+	stance_select_profile = slave
+	stance_select_tat_chest = slave
+	stance_select_tat_arm_r = slave
+	stance_select_tat_arm_l = slave
+	stance_select_hair = slave
+	stance_select_glasses = slave
+	stance_select_hat = slave
+	stance_select_arm_r = slave
+	stance_select_arm_l = slave
+	stance_select_piercings = slave
+	stance_select_torso = slave
+	stance_select_pants = slave
+	stance_select_shoes = slave
+	stance_select_guitar = slave
+	stance_select_mic = slave
+	stance_select_microphone = slave
+	stance_select_drum = slave
+	stance_select_drumsticks = slave
+	stance_select_fingernails = slave
 	intro = slave
 	intro_smstg = slave
 	win = slave
@@ -428,244 +428,244 @@ stance_chains = {
 }
 normal_walk_data = {
 	start_anim = {
-		Slow = GH3_Guitarist_Judy_A_Med_Wlk_Start
-		Med = GH3_Guitarist_Judy_A_Med_Wlk_Start
-		Fast = GH3_Guitarist_Judy_A_Med_Wlk_Start
+		slow = gh3_guitarist_judy_a_med_wlk_start
+		med = gh3_guitarist_judy_a_med_wlk_start
+		fast = gh3_guitarist_judy_a_med_wlk_start
 	}
 	cycle_anim = {
-		Slow = GH3_Guitarist_Judy_A_Med_Wlk_Loop
-		Med = GH3_Guitarist_Judy_A_Med_Wlk_Loop
-		Fast = GH3_Guitarist_Judy_A_Med_Wlk_Loop
+		slow = gh3_guitarist_judy_a_med_wlk_loop
+		med = gh3_guitarist_judy_a_med_wlk_loop
+		fast = gh3_guitarist_judy_a_med_wlk_loop
 	}
 	stop_left_anim = {
-		Slow = GH3_Guitarist_Judy_A_Med_Wlk_EndL
-		Med = GH3_Guitarist_Judy_A_Med_Wlk_EndL
-		Fast = GH3_Guitarist_Judy_A_Med_Wlk_EndL
+		slow = gh3_guitarist_judy_a_med_wlk_endl
+		med = gh3_guitarist_judy_a_med_wlk_endl
+		fast = gh3_guitarist_judy_a_med_wlk_endl
 	}
 	stop_right_anim = {
-		Slow = GH3_Guitarist_Judy_A_Med_Wlk_EndR
-		Med = GH3_Guitarist_Judy_A_Med_Wlk_EndR
-		Fast = GH3_Guitarist_Judy_A_Med_Wlk_EndR
+		slow = gh3_guitarist_judy_a_med_wlk_endr
+		med = gh3_guitarist_judy_a_med_wlk_endr
+		fast = gh3_guitarist_judy_a_med_wlk_endr
 	}
 }
 default_turn_data = {
-	turn_left = GH3_Guitarist_Judy_A_Med_Turn_L
-	turn_idle = GH3_Guitarist_Judy_A_Med_Wlk_inPlc
-	turn_right = GH3_Guitarist_Judy_A_Med_Turn_R
+	turn_left = gh3_guitarist_judy_a_med_turn_l
+	turn_idle = gh3_guitarist_judy_a_med_wlk_inplc
+	turn_right = gh3_guitarist_judy_a_med_turn_r
 	min_turn = 45
 	max_turn = 180
 }
-Normal_Strums = {
-	no_strum_anim = GH_Rocker_Female_Empty_D
-	Short = [
-		GH_Rocker_Female_Empty_D
+normal_strums = {
+	no_strum_anim = gh_rocker_female_empty_d
+	short = [
+		gh_rocker_female_empty_d
 	]
-	Med = [
-		GH_Rocker_Female_Empty_D
+	med = [
+		gh_rocker_female_empty_d
 	]
-	Long = [
-		GH_Rocker_Female_Empty_D
+	long = [
+		gh_rocker_female_empty_d
 	]
 }
-CAR_Empty_Strums = {
-	no_strum_anim = GH_Rocker_Female_Empty_D
-	Short = [
-		GH_Rocker_Female_Empty_D
+car_empty_strums = {
+	no_strum_anim = gh_rocker_female_empty_d
+	short = [
+		gh_rocker_female_empty_d
 	]
-	Med = [
-		GH_Rocker_Female_Empty_D
+	med = [
+		gh_rocker_female_empty_d
 	]
-	Long = [
-		GH_Rocker_Female_Empty_D
+	long = [
+		gh_rocker_female_empty_d
 	]
 }
 guitarist_chord_anims = {
-	green = Guit_Chord_Roll1
-	red = Guit_Chord_Roll2
-	Yellow = Guit_Chord_Roll3
-	Blue = Guit_Chord_Roll4
-	Orange = Guit_Chord_Bar5
-	green_red = Guit_Chord_Bar2
-	green_yellow = Guit_Chord_Bar2
-	green_blue = Guit_Chord_Bar4
-	green_orange = Guit_Chord_Empty
-	red_yellow = Guit_Chord_Bar2
-	red_blue = Guit_Chord_Bar2
-	red_orange = Guit_Chord_Bar4
-	yellow_blue = Guit_Chord_Bar5
-	yellow_orange = Guit_Chord_Bar2
-	blue_orange = Guit_Chord_Bar5
-	green_red_yellow = Guit_Chord_Bar1
-	green_red_blue = Guit_Chord_Bar3
-	green_red_orange = Guit_Chord_Empty
-	green_yellow_blue = Guit_Chord_Bar3
-	green_yellow_orange = Guit_Chord_Bar3
-	green_blue_orange = Guit_Chord_Empty
-	red_yellow_blue = Guit_Chord_Bar1
-	red_yellow_orange = Guit_Chord_Bar3
-	red_blue_orange = Guit_Chord_Bar3
-	yellow_blue_orange = Guit_Chord_Bar1
-	green_red_yellow_blue = Guit_Chord_Empty
-	green_red_yellow_orange = Guit_Chord_Empty
-	green_red_blue_orange = Guit_Chord_Empty
-	green_yellow_blue_orange = Guit_Chord_Empty
-	green_red_yellow_blue_orange = Guit_Chord_Empty
-	none = Guit_Chord_Empty
-	track_none = Guit_Chord_Empty
+	green = guit_chord_roll1
+	red = guit_chord_roll2
+	yellow = guit_chord_roll3
+	blue = guit_chord_roll4
+	orange = guit_chord_bar5
+	green_red = guit_chord_bar2
+	green_yellow = guit_chord_bar2
+	green_blue = guit_chord_bar4
+	green_orange = guit_chord_empty
+	red_yellow = guit_chord_bar2
+	red_blue = guit_chord_bar2
+	red_orange = guit_chord_bar4
+	yellow_blue = guit_chord_bar5
+	yellow_orange = guit_chord_bar2
+	blue_orange = guit_chord_bar5
+	green_red_yellow = guit_chord_bar1
+	green_red_blue = guit_chord_bar3
+	green_red_orange = guit_chord_empty
+	green_yellow_blue = guit_chord_bar3
+	green_yellow_orange = guit_chord_bar3
+	green_blue_orange = guit_chord_empty
+	red_yellow_blue = guit_chord_bar1
+	red_yellow_orange = guit_chord_bar3
+	red_blue_orange = guit_chord_bar3
+	yellow_blue_orange = guit_chord_bar1
+	green_red_yellow_blue = guit_chord_empty
+	green_red_yellow_orange = guit_chord_empty
+	green_red_blue_orange = guit_chord_empty
+	green_yellow_blue_orange = guit_chord_empty
+	green_red_yellow_blue_orange = guit_chord_empty
+	none = guit_chord_empty
+	track_none = guit_chord_empty
 }
 guitarist_chord_anims_debug = {
-	green = Guit_Chord_Roll3
-	red = Guit_Chord_Roll3
-	Yellow = Guit_Chord_Roll3
-	Blue = Guit_Chord_Roll3
-	Orange = Guit_Chord_Roll3
-	green_red = Guit_Chord_Roll3
-	green_yellow = Guit_Chord_Roll3
-	green_blue = Guit_Chord_Roll3
+	green = guit_chord_roll3
+	red = guit_chord_roll3
+	yellow = guit_chord_roll3
+	blue = guit_chord_roll3
+	orange = guit_chord_roll3
+	green_red = guit_chord_roll3
+	green_yellow = guit_chord_roll3
+	green_blue = guit_chord_roll3
 	green_orange = unknown
-	red_yellow = Guit_Chord_Roll3
-	red_blue = Guit_Chord_Roll3
-	red_orange = Guit_Chord_Roll3
-	yellow_blue = Guit_Chord_Roll3
-	yellow_orange = Guit_Chord_Roll3
-	blue_orange = Guit_Chord_Roll3
-	green_red_yellow = Guit_Chord_Roll3
-	green_red_blue = Guit_Chord_Roll3
+	red_yellow = guit_chord_roll3
+	red_blue = guit_chord_roll3
+	red_orange = guit_chord_roll3
+	yellow_blue = guit_chord_roll3
+	yellow_orange = guit_chord_roll3
+	blue_orange = guit_chord_roll3
+	green_red_yellow = guit_chord_roll3
+	green_red_blue = guit_chord_roll3
 	green_red_orange = unknown
-	green_yellow_blue = Guit_Chord_Roll3
-	green_yellow_orange = Guit_Chord_Roll3
+	green_yellow_blue = guit_chord_roll3
+	green_yellow_orange = guit_chord_roll3
 	green_blue_orange = unknown
-	red_yellow_blue = Guit_Chord_Roll3
-	red_yellow_orange = Guit_Chord_Roll3
-	red_blue_orange = Guit_Chord_Roll3
-	yellow_blue_orange = Guit_Chord_Roll3
+	red_yellow_blue = guit_chord_roll3
+	red_yellow_orange = guit_chord_roll3
+	red_blue_orange = guit_chord_roll3
+	yellow_blue_orange = guit_chord_roll3
 	green_red_yellow_blue = unknown
 	green_red_yellow_orange = unknown
 	green_red_blue_orange = unknown
 	green_yellow_blue_orange = unknown
 	green_red_yellow_blue_orange = unknown
-	none = Guit_Chord_Roll3
-	track_none = Guit_Chord_Roll3
+	none = guit_chord_roll3
+	track_none = guit_chord_roll3
 }
 main_menu_loops_guitarist = {
-	Stance_A = {
-		Idle = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Adam_Lowkey_100
+				slow = [
+					guit_adam_lowkey_100
 				]
-				Med = [
-					Guit_Adam_Lowkey_100
+				med = [
+					guit_adam_lowkey_100
 				]
-				Fast = [
-					Guit_Adam_Lowkey_100
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Adam_Lowkey_100
-				]
-				Med = [
-					Guit_Adam_Lowkey_100
-				]
-				Fast = [
-					Guit_Adam_Lowkey_100
+				fast = [
+					guit_adam_lowkey_100
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Adam_Lowkey_100
+			normal = {
+				slow = [
+					guit_adam_lowkey_100
 				]
-				Med = [
-					Guit_Adam_Lowkey_100
+				med = [
+					guit_adam_lowkey_100
 				]
-				Fast = [
-					Guit_Adam_Lowkey_100
+				fast = [
+					guit_adam_lowkey_100
+				]
+			}
+			bad = {
+				slow = [
+					guit_adam_lowkey_100
+				]
+				med = [
+					guit_adam_lowkey_100
+				]
+				fast = [
+					guit_adam_lowkey_100
 				]
 			}
 		}
 	}
 }
 main_menu_loops_bassist = {
-	Stance_A = {
-		Idle = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Jeff_Lowkey_100_01
+				slow = [
+					guit_jeff_lowkey_100_01
 				]
-				Med = [
-					guit_Jeff_Lowkey_100_01
+				med = [
+					guit_jeff_lowkey_100_01
 				]
-				Fast = [
-					guit_Jeff_Lowkey_100_01
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Jeff_Lowkey_100_01
-				]
-				Med = [
-					guit_Jeff_Lowkey_100_01
-				]
-				Fast = [
-					guit_Jeff_Lowkey_100_01
+				fast = [
+					guit_jeff_lowkey_100_01
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Jeff_Lowkey_100_01
+			normal = {
+				slow = [
+					guit_jeff_lowkey_100_01
 				]
-				Med = [
-					guit_Jeff_Lowkey_100_01
+				med = [
+					guit_jeff_lowkey_100_01
 				]
-				Fast = [
-					guit_Jeff_Lowkey_100_01
+				fast = [
+					guit_jeff_lowkey_100_01
+				]
+			}
+			bad = {
+				slow = [
+					guit_jeff_lowkey_100_01
+				]
+				med = [
+					guit_jeff_lowkey_100_01
+				]
+				fast = [
+					guit_jeff_lowkey_100_01
 				]
 			}
 		}
 	}
 }
 main_menu_loops_vocalist = {
-	Stance_A = {
-		Idle = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					SING_Jeff_Lowkey_100_01
+				slow = [
+					sing_jeff_lowkey_100_01
 				]
-				Med = [
-					SING_Jeff_Lowkey_100_01
+				med = [
+					sing_jeff_lowkey_100_01
 				]
-				Fast = [
-					SING_Jeff_Lowkey_100_01
-				]
-			}
-			Normal = {
-				Slow = [
-					SING_Jeff_Lowkey_100_01
-				]
-				Med = [
-					SING_Jeff_Lowkey_100_01
-				]
-				Fast = [
-					SING_Jeff_Lowkey_100_01
+				fast = [
+					sing_jeff_lowkey_100_01
 				]
 			}
-			Bad = {
-				Slow = [
-					SING_Jeff_Lowkey_100_01
+			normal = {
+				slow = [
+					sing_jeff_lowkey_100_01
 				]
-				Med = [
-					SING_Jeff_Lowkey_100_01
+				med = [
+					sing_jeff_lowkey_100_01
 				]
-				Fast = [
-					SING_Jeff_Lowkey_100_01
+				fast = [
+					sing_jeff_lowkey_100_01
+				]
+			}
+			bad = {
+				slow = [
+					sing_jeff_lowkey_100_01
+				]
+				med = [
+					sing_jeff_lowkey_100_01
+				]
+				fast = [
+					sing_jeff_lowkey_100_01
 				]
 			}
 		}
 	}
 }
-Lose_Anims = {
-	Male = {
+lose_anims = {
+	male = {
 		guitar = [
 			bdgs_g_guitarist_lose_01
 			g_jeff_lose_depressed
@@ -673,7 +673,7 @@ Lose_Anims = {
 			g_jeff_lose_pretentious
 			g_jeff_lose_walkoff
 		]
-		Bass = [
+		bass = [
 			b_jeff_lose_depressed
 			b_jeff_lose_fearful
 			b_jeff_lose_pretentious
@@ -681,7 +681,7 @@ Lose_Anims = {
 			bdgs_b_bassist_lose_01
 			gsbd_b_lose_angryatcrowd01
 		]
-		Vocals = [
+		vocals = [
 			s_jeff_lose_depressed
 			s_jeff_lose_fearful
 			s_jeff_lose_pretentious
@@ -697,34 +697,34 @@ Lose_Anims = {
 			d_jeff_lose_fearful
 		]
 	}
-	Female = {
+	female = {
 		guitar = [
 			g_kris_lose_pretentious
-			G_Kris_Lose_AngryAtCrowd
-			G_Kris_Lose_Depressed
+			g_kris_lose_angryatcrowd
+			g_kris_lose_depressed
 		]
-		Bass = [
+		bass = [
 			b_kris_lose_pretentious
-			B_Kris_Lose_PointBass
-			B_Kris_Lose_AngryAtCrowd
-			B_Kris_Lose_Depressed
+			b_kris_lose_pointbass
+			b_kris_lose_angryatcrowd
+			b_kris_lose_depressed
 		]
-		Vocals = [
-			S_Kris_Lose_Depressed
-			S_Kris_Lose_AngryAtCrowd
-			S_Kris_Lose_PointSing
+		vocals = [
+			s_kris_lose_depressed
+			s_kris_lose_angryatcrowd
+			s_kris_lose_pointsing
 			s_kris_lose_pretentious
 		]
 		drum = [
 			d_kris_lose_pretentious
-			D_Kris_Lose_PointDrum
-			D_Kris_Lose_AngryAtCrowd
-			D_Kris_Lose_Depressed
+			d_kris_lose_pointdrum
+			d_kris_lose_angryatcrowd
+			d_kris_lose_depressed
 		]
 	}
 }
-Win_Anims = {
-	Male = {
+win_anims = {
+	male = {
 		guitar = [
 			gsbd_g_win_pointing01
 			g_jeff_win_waving
@@ -732,13 +732,13 @@ Win_Anims = {
 			g_ringers_take02_wins01
 			g_jeff_win_kick
 		]
-		Bass = [
+		bass = [
 			b_jeff_win_kick
 			b_jeff_win_waving
 			b_june_win_pointbass
 			g_ringers_take03_wins02
 		]
-		Vocals = [
+		vocals = [
 			gsbd_s_win_pointing01
 			s_jeff_win_waving
 			s_june_win_pointsing
@@ -753,7 +753,7 @@ Win_Anims = {
 			gsbd_d_win_pointing01
 		]
 	}
-	Female = {
+	female = {
 		guitar = [
 			g_alla_win_generic
 			g_alla_win_jump
@@ -761,7 +761,7 @@ Win_Anims = {
 			g_kris_win_pretentious
 			g_kris_win_waving
 		]
-		Bass = [
+		bass = [
 			b_alla_win_generic
 			b_alla_win_jump
 			b_kris_win_kick
@@ -769,7 +769,7 @@ Win_Anims = {
 			b_kris_win_pretentious
 			b_kris_win_waving
 		]
-		Vocals = [
+		vocals = [
 			s_alla_win_generic
 			s_alla_win_jump
 			s_kris_win_pointsing
@@ -792,81 +792,81 @@ drum_sets = {
 	`default` = drum_kit001
 }
 drumkit_anims = [
-	GH_Drum_Kick
-	GH_Drum_Tom_3
-	GH_Drum_Tom_2
-	GH_Drum_Tom_1
-	GH_Drum_Snare
-	GH_Drum_Cymbal_HH_Closed
-	GH_Drum_Cymbal_HH_Open
-	GH_Drum_Cymbal_3
-	GH_Drum_Cymbal_1
-	GH_Drum_Cymbal_2
-	GH_Drum_Stop_Cymbal_1
-	GH_Drum_Stop_Cymbal_2
+	gh_drum_kick
+	gh_drum_tom_3
+	gh_drum_tom_2
+	gh_drum_tom_1
+	gh_drum_snare
+	gh_drum_cymbal_hh_closed
+	gh_drum_cymbal_hh_open
+	gh_drum_cymbal_3
+	gh_drum_cymbal_1
+	gh_drum_cymbal_2
+	gh_drum_stop_cymbal_1
+	gh_drum_stop_cymbal_2
 ]
 queued_clip = none
-Song_Loading = {
+song_loading = {
 	anims = {
-		Guitarist = GSB_G_NoTempo_UJ_01
-		bassist = GSB_B_NoTempo_UJ_01
-		vocalist = GSB_S_NoTempo_UJ_01
+		guitarist = gsb_g_notempo_uj_01
+		bassist = gsb_b_notempo_uj_01
+		vocalist = gsb_s_notempo_uj_01
 	}
-	Arms = {
-		Guitarist = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+	arms = {
+		guitarist = {
+			ik_targetl = slave
+			ik_targetr = slave
 			strum = off
 			fret = off
 			chord = off
 		}
 		bassist = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+			ik_targetl = slave
+			ik_targetr = slave
 			strum = off
 			fret = off
 			chord = off
 		}
 		vocalist = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+			ik_targetl = slave
+			ik_targetr = slave
 			strum = off
 			fret = off
 			chord = off
 		}
 	}
 }
-Song_Loading_Singing_Guitarist = {
+song_loading_singing_guitarist = {
 	anims = {
-		Guitarist = GSB_G_NoTempo_UJ_01
-		bassist = GSB_B_NoTempo_UJ_01
-		vocalist = GSB_G_NoTempo_UJ_01
+		guitarist = gsb_g_notempo_uj_01
+		bassist = gsb_b_notempo_uj_01
+		vocalist = gsb_g_notempo_uj_01
 	}
-	Arms = {
-		Guitarist = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+	arms = {
+		guitarist = {
+			ik_targetl = slave
+			ik_targetr = slave
 			strum = off
 			fret = off
 			chord = off
 		}
 		bassist = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+			ik_targetl = slave
+			ik_targetr = slave
 			strum = off
 			fret = off
 			chord = off
 		}
 		vocalist = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+			ik_targetl = slave
+			ik_targetr = slave
 			strum = off
 			fret = off
 			chord = off
 		}
-		Drummer = {
-			IK_TargetL = slave
-			IK_TargetR = slave
+		drummer = {
+			ik_targetl = slave
+			ik_targetr = slave
 		}
 	}
 }

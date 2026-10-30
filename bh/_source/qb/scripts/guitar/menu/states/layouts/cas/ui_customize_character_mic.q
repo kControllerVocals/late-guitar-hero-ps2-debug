@@ -1,22 +1,22 @@
 
 script ui_create_customize_character_mic 
-	if NOT GotParam \{old_save_checksum}
+	if NOT gotparam \{old_save_checksum}
 		globaltag_getarraychecksum savegame = ($cas_current_savegame) array_name = player_mic_save
 		old_save_checksum = <array_checksum>
 		ui_event_add_params old_save_checksum = <old_save_checksum>
 	endif
 	make_generic_menu \{vmenu_id = create_customize_character_mic_vmenu
-		title = qs("MIC")
+		title = qs(0xc0b34c9f)
 		num_icons = 2
 		show_history
-		cai_bg = 1}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+		0xc1dc518f = 1}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -29,53 +29,53 @@ script ui_create_customize_character_mic
 		]
 		zoom_camera = 'customize_mic_Zoom'}
 	add_generic_menu_text_item {
-		text = qs("CUSTOMIZE")
-		choose_state = UIstate_customize_character_mic_main
+		text = qs(0xc23883c4)
+		choose_state = uistate_customize_character_mic_main
 		choose_state_data = {instrument_info = <instrument_info>}
 	}
 	dim_save_option_for_guest <...>
 	add_generic_menu_text_item {
-		text = qs("SAVE")
-		choose_state = UIstate_cas_save_slots
-		choose_state_data = {savegame = ($cas_current_savegame) text = qs("SAVE") slot_list = player_mic_save instrument_info = <instrument_info> save_guitar loaded_index = <loaded_index> hist_tex = icon_save}
+		text = qs(0xe618e644)
+		choose_state = uistate_cas_save_slots
+		choose_state_data = {savegame = ($cas_current_savegame) text = qs(0xe618e644) slot_list = player_mic_save instrument_info = <instrument_info> save_guitar loaded_index = <loaded_index> hist_tex = icon_save}
 		not_focusable = <not_focusable>
 	}
 	add_generic_menu_text_item {
-		text = qs("LOAD")
-		choose_state = UIstate_generic_dialogue
+		text = qs(0xad5cfad4)
+		choose_state = uistate_generic_dialogue
 		choose_state_data = {
-			title = qs("Load Mic?")
-			text = qs("By loading, your old design will be lost. Would you like to continue?")
+			title = qs(0x10ce12e2)
+			text = qs(0x7b18be62)
 			choose_yes_func = generic_event_replace
-			choose_yes_params = {data = {state = UIstate_cas_save_slots savegame = ($cas_current_savegame) text = qs("LOAD MIC") slot_list = player_mic_save instrument_info = <instrument_info> load_guitar hist_tex = icon_load}}
+			choose_yes_params = {data = {state = uistate_cas_save_slots savegame = ($cas_current_savegame) text = qs(0xc65afe4f) slot_list = player_mic_save instrument_info = <instrument_info> load_guitar hist_tex = icon_load}}
 		}
 		not_focusable = <not_focusable>
 	}
-	add_generic_menu_text_item \{text = qs("RANDOM")
-		choose_state = UIstate_generic_dialogue
+	add_generic_menu_text_item \{text = qs(0x0b6c701b)
+		choose_state = uistate_generic_dialogue
 		choose_state_data = {
-			title = qs("RANDOM DESIGN?")
-			text = qs("By selecting random your old design will be lost. Would you like to continue?")
-			choose_yes_func = generate_then_back
+			title = qs(0x49127634)
+			text = qs(0xcb2b7871)
+			choose_yes_func = 0x547c82c9
 			choose_yes_params = {
-				type = Vocals
+				type = vocals
 				rebuild
 			}
 		}}
 	menu_finish \{car_helper_text}
-	spawnscriptnow \{force_mic_idle}
-	LaunchEvent type = focus target = create_customize_character_mic_vmenu data = {child_index = <selected_index>}
-	draw_guitar_center_logo
+	spawnscriptnow \{0x743910b6}
+	launchevent type = focus target = create_customize_character_mic_vmenu data = {child_index = <selected_index>}
+	0x59249cc9
 endscript
 
-script force_mic_idle 
+script 0x743910b6 
 	cas_queue_wait
-	change \{cas_current_instrument = Vocals}
-	RebuildCurrentCASModel \{instrument = Vocals}
+	change \{cas_current_instrument = vocals}
+	rebuildcurrentcasmodel \{instrument = vocals}
 	cas_queue_wait
-	GetCurrentCASObject
-	if GotParam \{cas_object}
-		BandManager_ChangeStance name = <cas_object> stance = Stance_Select_Mic no_wait
+	getcurrentcasobject
+	if gotparam \{cas_object}
+		bandmanager_changestance name = <cas_object> stance = stance_select_mic no_wait
 	endif
 endscript
 
@@ -88,18 +88,18 @@ script ui_destroy_customize_character_mic
 endscript
 
 script ui_init_customize_character_mic 
-	change_cas_instrument_if_necessary \{instrument = Vocals}
-	load_part_desc_pak_list part_list = ($instrument_part_sets.Vocals)
-	GetArraySize <parts_loaded>
+	change_cas_instrument_if_necessary \{instrument = vocals}
+	0xbe6e9296 part_list = ($instrument_part_sets.vocals)
+	getarraysize <0x63cedf49>
 	if (<array_size> > 0)
-		ui_event_add_params part_unload_list = <parts_loaded>
+		ui_event_add_params 0x9ae842e9 = <0x63cedf49>
 	endif
 endscript
 
 script ui_deinit_customize_character_mic 
 	change_cas_instrument_if_necessary \{instrument = guitar}
-	if GotParam \{part_unload_list}
-		unload_part_desc_pak_list part_list = <part_unload_list>
+	if gotparam \{0x9ae842e9}
+		0x9219fac2 part_list = <0x9ae842e9>
 	endif
 endscript
 
@@ -107,7 +107,7 @@ script customize_character_mic_exit_save
 	globaltag_getarraychecksum savegame = ($cas_current_savegame) array_name = player_mic_save
 	if NOT (<old_save_checksum> = <array_checksum>)
 		cas_get_player_status
-		if CheckForSignIn local controller_index = ($<player_status>.controller)
+		if checkforsignin local controller_index = ($<player_status>.controller)
 			ui_memcard_autosave event = menu_back data = {num_states = 2 savegame = ($cas_current_savegame)}
 		else
 			generic_event_back

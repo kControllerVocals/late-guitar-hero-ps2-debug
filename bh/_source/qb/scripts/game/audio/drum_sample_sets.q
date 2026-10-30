@@ -8,39 +8,39 @@ drum_pads = [
 	{
 		id = snare
 		string_id = 'snare'
-		name_text = qs("Snare")
+		name_text = qs(0x91233341)
 	}
 	{
 		id = kick
 		string_id = 'kick'
-		name_text = qs("Kick")
+		name_text = qs(0x6e4b4a3e)
 	}
 	{
 		id = tom1
 		string_id = 'tom1'
-		name_text = qs("Tom1")
+		name_text = qs(0xbd024849)
 	}
 	{
 		id = tom2
 		string_id = 'tom2'
-		name_text = qs("Tom2")
+		name_text = qs(0x962f1b8a)
 	}
 	{
 		id = hihat
 		string_id = 'hihat'
-		name_text = qs("Hi-Hat")
+		name_text = qs(0xd6060436)
 	}
 	{
 		id = cymbal
 		string_id = 'cymbal'
-		name_text = qs("cymbal")
+		name_text = qs(0x95ba86cc)
 	}
 ]
 drum_kits = [
 	{
 		id = heavyrock
 		string_id = 'heavyrock'
-		name_text = qs("\LHeavy Rock")
+		name_text = qs(0x083da487)
 		percussion_id = rockpercussion
 		percussion_string_id = 'heavyrock'
 	}
@@ -49,14 +49,14 @@ drum_kits = [
 script play_drum_sample 
 	if ($game_mode = practice)
 		if NOT ($current_speedfactor = 1.0)
-			if GotParam \{song_note}
+			if gotparam \{0x43d1d31e}
 				if (($current_time - 1) * 1000 < $current_starttime)
 					return
 				endif
 			endif
 		endif
 	endif
-	PlayDrumSample_CFunc <...>
+	playdrumsample_cfunc <...>
 	return drum_sample = <drum_sample>
 endscript
 
@@ -64,7 +64,7 @@ script play_drum_sample_unoptimized \{drum_set = heavyrock
 		pad = snare
 		velocity = 127
 		second_pedal_position = 127
-		buss = Drums_InGame
+		buss = drums_ingame
 		scale_volume = 5
 		loop_pitch = 0
 		pan_left = -1.0
@@ -72,20 +72,20 @@ script play_drum_sample_unoptimized \{drum_set = heavyrock
 		pan_mono = 0.0}
 	drum_set = heavyrock
 	slot = 7
-	if ((<buss> = Drums_InGame) || (<buss> = Drums_InGame_Kick) || (<buss> = Drums_InGame_Toms) || (<buss> = Drums_InGame_Hats) || (<buss> = Drums_InGame_Cymbals) || (<buss> = Drums_InGame_Snare))
+	if ((<buss> = drums_ingame) || (<buss> = drums_ingame_kick) || (<buss> = drums_ingame_toms) || (<buss> = drums_ingame_hats) || (<buss> = drums_ingame_cymbals) || (<buss> = drums_ingame_snare))
 		slot = 2
 	endif
-	if (<buss> = PracticeMode_Drums)
+	if (<buss> = practicemode_drums)
 		return
 	endif
-	CastToInteger \{velocity}
+	casttointeger \{velocity}
 	if (<velocity> < 0)
 		<velocity> = 0
 	endif
 	if (<velocity> > 127)
 		<velocity> = 127
 	endif
-	if IsTrue \{$DebugSoundFX}
+	if istrue \{$debugsoundfx}
 
 
 
@@ -94,9 +94,9 @@ script play_drum_sample_unoptimized \{drum_set = heavyrock
 
 		return
 	endif
-	if NOT GotParam \{drum_checksum}
-		if NOT GotParam \{drum_kit_string}
-			GetArraySize \{$drum_kits}
+	if NOT gotparam \{drum_checksum}
+		if NOT gotparam \{drum_kit_string}
+			getarraysize \{$drum_kits}
 			index = ($jam_current_drum_kit)
 			drum_kit_string = ''
 			<drum_kit_string> = ($drum_kits [<index>].string_id)
@@ -105,7 +105,7 @@ script play_drum_sample_unoptimized \{drum_set = heavyrock
 
 			return
 		endif
-		GetArraySize \{$drum_pads}
+		getarraysize \{$drum_pads}
 		index = 0
 		pad_string = ''
 		begin
@@ -118,91 +118,91 @@ script play_drum_sample_unoptimized \{drum_set = heavyrock
 
 			return
 		endif
-		FormatText checksumname = drum_sampleset_array '%a_%b_sampleset' a = <drum_kit_string> b = <pad_string>
+		formattext checksumname = 0x42515ef6 '%a_%b_sampleset' a = <drum_kit_string> b = <pad_string>
 	else
-		drum_sampleset_array = <drum_checksum>
+		0x42515ef6 = <drum_checksum>
 	endif
-	GetArraySize ($<drum_sampleset_array>)
-	if NOT GlobalExists name = <drum_sampleset_array> type = array
+	getarraysize ($<0x42515ef6>)
+	if NOT globalexists name = <0x42515ef6> type = array
 
 		return
 	endif
 	index = 0
-	velocity_cutoff_low = 0.0
-	velocity_cutoff_high = 0.0
+	0x28da71e4 = 0.0
+	0x250becce = 0.0
 	begin
-	if (($<drum_sampleset_array> [<index>].velocity_cutoff) > <velocity>)
-		<velocity_cutoff_high> = (1.0 * ($<drum_sampleset_array> [<index>].velocity_cutoff))
+	if (($<0x42515ef6> [<index>].velocity_cutoff) > <velocity>)
+		<0x250becce> = (1.0 * ($<0x42515ef6> [<index>].velocity_cutoff))
 		break
 	endif
-	<velocity_cutoff_low> = (1.0 * ($<drum_sampleset_array> [<index>].velocity_cutoff))
-	<velocity_index> = <index>
+	<0x28da71e4> = (1.0 * ($<0x42515ef6> [<index>].velocity_cutoff))
+	<0xe132fcd1> = <index>
 	<index> = (<index> + 1)
 	if (<index> >= <array_size>)
-		<velocity_cutoff_high> = 127.0
+		<0x250becce> = 127.0
 		break
 	endif
 	repeat
-	adjusted_volume = 0.0
-	adjusted_pitch = 0.0
-	volume_low = ($<drum_sampleset_array> [<velocity_index>].volume_low)
-	volume_high = ($<drum_sampleset_array> [<velocity_index>].volume_high)
-	pitch_low = ($<drum_sampleset_array> [<velocity_index>].pitch_low)
-	pitch_high = ($<drum_sampleset_array> [<velocity_index>].pitch_high)
-	<adjusted_volume> = (((<volume_high> - <volume_low>) * ((<velocity> - <velocity_cutoff_low>) / (<velocity_cutoff_high> - <velocity_cutoff_low>))) + <volume_low>)
-	<adjusted_pitch> = (((<pitch_high> - <pitch_low>) * ((<velocity> - <velocity_cutoff_low>) / (<velocity_cutoff_high> - <velocity_cutoff_low>))) + <pitch_low>)
-	GetArraySize ($<drum_sampleset_array> [<velocity_index>].sample_array)
-	GetRandomValue name = random_sample_index Integer a = 0 b = (<array_size> -1)
-	random_sample = ($<drum_sampleset_array> [<velocity_index>].sample_array [<random_sample_index>])
+	0xc92fa624 = 0.0
+	0xf76abbfa = 0.0
+	volume_low = ($<0x42515ef6> [<0xe132fcd1>].volume_low)
+	volume_high = ($<0x42515ef6> [<0xe132fcd1>].volume_high)
+	pitch_low = ($<0x42515ef6> [<0xe132fcd1>].pitch_low)
+	pitch_high = ($<0x42515ef6> [<0xe132fcd1>].pitch_high)
+	<0xc92fa624> = (((<volume_high> - <volume_low>) * ((<velocity> - <0x28da71e4>) / (<0x250becce> - <0x28da71e4>))) + <volume_low>)
+	<0xf76abbfa> = (((<pitch_high> - <pitch_low>) * ((<velocity> - <0x28da71e4>) / (<0x250becce> - <0x28da71e4>))) + <pitch_low>)
+	getarraysize ($<0x42515ef6> [<0xe132fcd1>].sample_array)
+	getrandomvalue name = 0x0eb9b057 integer a = 0 b = (<array_size> -1)
+	0x1e1afcc0 = ($<0x42515ef6> [<0xe132fcd1>].sample_array [<0x0eb9b057>])
 	if ($drum_sample_test = 1)
-		<random_sample> = Drum_Snare5
+		<0x1e1afcc0> = drum_snare5
 	endif
-	if IsTrue \{$DebugSoundFX}
-		<print_struct> = 1
+	if istrue \{$debugsoundfx}
+		<0x49aa5663> = 1
 	endif
 	if ($jam_reverb = 1)
-		if StructureContains Structure = ($<drum_sampleset_array> [<velocity_index>]) pan_left
-			pan_left = ($<drum_sampleset_array> [<velocity_index>].pan_left)
-			pan_right = ($<drum_sampleset_array> [<velocity_index>].pan_right)
-			PlaySound print_struct = <print_struct> <random_sample> vol = (<adjusted_volume> + <scale_volume>) pitch = (<adjusted_pitch> + <loop_pitch>) pan1x = <pan_left> pan1y = 1.0 pan2x = <pan_right> pan2y = 1.0 buss = <buss> send_vol2 = -9 slot = <slot>
-		elseif StructureContains Structure = ($<drum_sampleset_array> [<velocity_index>]) pan_mono
-			pan_mono = ($<drum_sampleset_array> [<velocity_index>].pan_mono)
-			PlaySound print_struct = <print_struct> <random_sample> vol = (<adjusted_volume> + <scale_volume>) pitch = (<adjusted_pitch> + <loop_pitch>) pan1x = <pan_mono> pan1y = 1.0 buss = <buss> send_vol2 = -9 slot = <slot>
+		if structurecontains structure = ($<0x42515ef6> [<0xe132fcd1>]) pan_left
+			pan_left = ($<0x42515ef6> [<0xe132fcd1>].pan_left)
+			pan_right = ($<0x42515ef6> [<0xe132fcd1>].pan_right)
+			playsound 0x49aa5663 = <0x49aa5663> <0x1e1afcc0> vol = (<0xc92fa624> + <scale_volume>) pitch = (<0xf76abbfa> + <loop_pitch>) pan1x = <pan_left> pan1y = 1.0 pan2x = <pan_right> pan2y = 1.0 buss = <buss> send_vol2 = -9 slot = <slot>
+		elseif structurecontains structure = ($<0x42515ef6> [<0xe132fcd1>]) pan_mono
+			pan_mono = ($<0x42515ef6> [<0xe132fcd1>].pan_mono)
+			playsound 0x49aa5663 = <0x49aa5663> <0x1e1afcc0> vol = (<0xc92fa624> + <scale_volume>) pitch = (<0xf76abbfa> + <loop_pitch>) pan1x = <pan_mono> pan1y = 1.0 buss = <buss> send_vol2 = -9 slot = <slot>
 		else
-			PlaySound print_struct = <print_struct> <random_sample> vol = (<adjusted_volume> + <scale_volume>) pitch = (<adjusted_pitch> + <loop_pitch>) buss = <buss> send_vol2 = -9 slot = <slot>
+			playsound 0x49aa5663 = <0x49aa5663> <0x1e1afcc0> vol = (<0xc92fa624> + <scale_volume>) pitch = (<0xf76abbfa> + <loop_pitch>) buss = <buss> send_vol2 = -9 slot = <slot>
 		endif
 	else
-		if StructureContains Structure = ($<drum_sampleset_array> [<velocity_index>]) pan_left
-			pan_left = ($<drum_sampleset_array> [<velocity_index>].pan_left)
-			pan_right = ($<drum_sampleset_array> [<velocity_index>].pan_right)
-			PlaySound print_struct = <print_struct> <random_sample> vol = (<adjusted_volume> + <scale_volume>) pitch = (<adjusted_pitch> + <loop_pitch>) pan1x = <pan_left> pan1y = 1.0 pan2x = <pan_right> pan2y = 1.0 buss = <buss> slot = <slot>
-		elseif StructureContains Structure = ($<drum_sampleset_array> [<velocity_index>]) pan_mono
-			pan_mono = ($<drum_sampleset_array> [<velocity_index>].pan_mono)
-			PlaySound print_struct = <print_struct> <random_sample> vol = (<adjusted_volume> + <scale_volume>) pitch = (<adjusted_pitch> + <loop_pitch>) pan1x = <pan_mono> pan1y = 1.0 buss = <buss> slot = <slot>
+		if structurecontains structure = ($<0x42515ef6> [<0xe132fcd1>]) pan_left
+			pan_left = ($<0x42515ef6> [<0xe132fcd1>].pan_left)
+			pan_right = ($<0x42515ef6> [<0xe132fcd1>].pan_right)
+			playsound 0x49aa5663 = <0x49aa5663> <0x1e1afcc0> vol = (<0xc92fa624> + <scale_volume>) pitch = (<0xf76abbfa> + <loop_pitch>) pan1x = <pan_left> pan1y = 1.0 pan2x = <pan_right> pan2y = 1.0 buss = <buss> slot = <slot>
+		elseif structurecontains structure = ($<0x42515ef6> [<0xe132fcd1>]) pan_mono
+			pan_mono = ($<0x42515ef6> [<0xe132fcd1>].pan_mono)
+			playsound 0x49aa5663 = <0x49aa5663> <0x1e1afcc0> vol = (<0xc92fa624> + <scale_volume>) pitch = (<0xf76abbfa> + <loop_pitch>) pan1x = <pan_mono> pan1y = 1.0 buss = <buss> slot = <slot>
 		else
-			PlaySound print_struct = <print_struct> <random_sample> vol = (<adjusted_volume> + <scale_volume>) pitch = (<adjusted_pitch> + <loop_pitch>) buss = <buss> slot = <slot>
+			playsound 0x49aa5663 = <0x49aa5663> <0x1e1afcc0> vol = (<0xc92fa624> + <scale_volume>) pitch = (<0xf76abbfa> + <loop_pitch>) buss = <buss> slot = <slot>
 		endif
 	endif
-	if IsTrue \{$DebugSoundFX}
+	if istrue \{$debugsoundfx}
 
 
 
 	endif
-	return drum_sample = <drum_sampleset_array>
+	return drum_sample = <0x42515ef6>
 endscript
-LoadedDrumKitPaks_cymbal = 'none'
-LoadedDrumKitPaks_floortom = 'none'
-LoadedDrumKitPaks_hihat = 'none'
-LoadedDrumKitPaks_hitom = 'none'
-LoadedDrumKitPaks_kick = 'none'
-LoadedDrumKitPaks_snare = 'none'
-LoadedDrumKitPaks_cymbal_percussion = 'none'
-LoadedDrumKitPaks_floortom_percussion = 'none'
-LoadedDrumKitPaks_hihat_percussion = 'none'
-LoadedDrumKitPaks_hitom_percussion = 'none'
-LoadedDrumKitPaks_kick_percussion = 'none'
-LoadedDrumKitPaks_snare_percussion = 'none'
-DrumKitParts = {
+loadeddrumkitpaks_cymbal = 'none'
+loadeddrumkitpaks_floortom = 'none'
+loadeddrumkitpaks_hihat = 'none'
+loadeddrumkitpaks_hitom = 'none'
+loadeddrumkitpaks_kick = 'none'
+loadeddrumkitpaks_snare = 'none'
+loadeddrumkitpaks_cymbal_percussion = 'none'
+loadeddrumkitpaks_floortom_percussion = 'none'
+loadeddrumkitpaks_hihat_percussion = 'none'
+loadeddrumkitpaks_hitom_percussion = 'none'
+loadeddrumkitpaks_kick_percussion = 'none'
+loadeddrumkitpaks_snare_percussion = 'none'
+drumkitparts = {
 	cymbal = 'cymbal'
 	floortom = 'floortom'
 	hihat = 'hihat'
@@ -213,17 +213,17 @@ DrumKitParts = {
 }
 last_drum_kit_loaded = 'none'
 
-script LoadDrumKitAll \{drum_kit = 'heavyrock'
+script loaddrumkitall \{drum_kit = 'heavyrock'
 		async = 1
 		reset_percussion = 1
-		heap = heap_bottom_up}
+		heap = 0xc39f2ba1}
 	if (<reset_percussion> = 1)
 		change \{is_percussion_kit = 0}
 	endif
 	return
 	if (<drum_kit> = $last_drum_kit_loaded)
-		if GotParam \{percussion_kit}
-			if (<percussion_kit> = $last_percussion_kit_loaded)
+		if gotparam \{percussion_kit}
+			if (<percussion_kit> = $0x2fbd45b0)
 
 				return
 			endif
@@ -232,41 +232,41 @@ script LoadDrumKitAll \{drum_kit = 'heavyrock'
 			return
 		endif
 	endif
-	UnLoadDrumKitAll
-	if NOT GotParam \{heap}
-		<heap> = heap_bottom_up
+	unloaddrumkitall
+	if NOT gotparam \{heap}
+		<heap> = 0xc39f2ba1
 	endif
-	LoadDrumKit type = cymbal drum_kit = <drum_kit> async = <async> heap = <heap>
-	LoadDrumKit type = floortom drum_kit = <drum_kit> async = <async> heap = <heap>
-	LoadDrumKit type = hihat drum_kit = <drum_kit> async = <async> heap = <heap>
-	LoadDrumKit type = hitom drum_kit = <drum_kit> async = <async> heap = <heap>
-	LoadDrumKit type = kick drum_kit = <drum_kit> async = <async> heap = <heap>
-	LoadDrumKit type = snare drum_kit = <drum_kit> async = <async> heap = <heap>
+	loaddrumkit type = cymbal drum_kit = <drum_kit> async = <async> heap = <heap>
+	loaddrumkit type = floortom drum_kit = <drum_kit> async = <async> heap = <heap>
+	loaddrumkit type = hihat drum_kit = <drum_kit> async = <async> heap = <heap>
+	loaddrumkit type = hitom drum_kit = <drum_kit> async = <async> heap = <heap>
+	loaddrumkit type = kick drum_kit = <drum_kit> async = <async> heap = <heap>
+	loaddrumkit type = snare drum_kit = <drum_kit> async = <async> heap = <heap>
 	change last_drum_kit_loaded = <drum_kit>
-	change last_drum_kit_set = <drum_kit>
-	if GotParam \{percussion_kit}
-		LoadDrumKit type = cymbal drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
-		LoadDrumKit type = floortom drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
-		LoadDrumKit type = hihat drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
-		LoadDrumKit type = hitom drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
-		LoadDrumKit type = kick drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
-		LoadDrumKit type = snare drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
-		change last_percussion_kit_loaded = <percussion_kit>
-		change last_percussion_kit_set = <percussion_kit>
+	change 0x11afd57c = <drum_kit>
+	if gotparam \{percussion_kit}
+		loaddrumkit type = cymbal drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
+		loaddrumkit type = floortom drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
+		loaddrumkit type = hihat drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
+		loaddrumkit type = hitom drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
+		loaddrumkit type = kick drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
+		loaddrumkit type = snare drum_kit = <percussion_kit> async = <async> percussion heap = <heap>
+		change 0x2fbd45b0 = <percussion_kit>
+		change 0x5c345721 = <percussion_kit>
 	endif
 endscript
 
-script LoadDrumKit \{type = snare
+script loaddrumkit \{type = snare
 		drum_kit = 'heavyrock'
 		async = 1
-		heap = heap_bottom_up}
+		heap = 0xc39f2ba1}
 	return
 endscript
 
-script UnLoadDrumKitAll 
+script unloaddrumkitall 
 	return
 endscript
 
-script UnLoadDrumKit \{type = snare}
+script unloaddrumkit \{type = snare}
 	return
 endscript

@@ -21,15 +21,15 @@ script create_encore_confirmation_menu
 		{pad_down generic_menu_up_or_down_sound params = {down}}
 	]
 	new_menu scrollid = ec_scroll vmenuid = ec_vmenu menu_pos = <menu_pos> event_handlers = <ec_eh> spacing = -45
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = ec_vmenu}
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		id = ec_container
 		parent = root_window
 		pos = (0.0, 0.0)}
 	offwhite = [223 223 223 255]
 	menu_z = 100
-	CreateScreenElement \{type = SpriteElement
+	createscreenelement \{type = spriteelement
 		id = encore_gradient
 		parent = ec_container
 		texture = gradient_128
@@ -46,14 +46,14 @@ script create_encore_confirmation_menu
 			top
 		]
 		z_priority = -1}
-	encore_text = qs("ENCORE!")
-	StringLength string = <encore_text>
-	StringToCharArray string = <encore_text>
+	encore_text = qs(0xd62f03b8)
+	stringlength string = <encore_text>
+	stringtochararray string = <encore_text>
 	space_between = (50.0, 0.0)
 	i = 0
 	begin
-	FormatText checksumname = encore_id 'ec_encore_text_%d' d = (<i> + 1)
-	displayText {
+	formattext checksumname = encore_id 'ec_encore_text_%d' d = (<i> + 1)
+	displaytext {
 		id = <encore_id>
 		parent = ec_container
 		pos = <pos>
@@ -65,18 +65,18 @@ script create_encore_confirmation_menu
 		noshadow
 		z = <menu_z>
 	}
-	GetScreenElementDims id = <id>
+	getscreenelementdims id = <id>
 	if (<i> = 0)
 		<pos> = ((660.0, 165.0) - (((<str_len> - 1) * <width>) * (0.5, 0.0)))
-		SetScreenElementProps id = <id> pos = <pos>
+		setscreenelementprops id = <id> pos = <pos>
 	endif
 	<pos> = (<pos> + <space_between>)
 	<i> = (<i> + 1)
 	repeat <str_len>
 	spawnscriptnow ec_raise_headline params = {str_len = <str_len>}
-	displaySprite \{id = ec_flash
+	displaysprite \{id = ec_flash
 		parent = ec_container
-		tex = Encore_Flash
+		tex = encore_flash
 		alpha = 0
 		dims = (128.0, 128.0)
 		just = [
@@ -88,14 +88,14 @@ script create_encore_confirmation_menu
 	arm_z = [1 3 5 7 8 6 4 2]
 	arm_index = 0
 	begin
-	FormatText checksumname = arm_id 'ec_arm_0%d' d = <arm_index>
+	formattext checksumname = arm_id 'ec_arm_0%d' d = <arm_index>
 	rand_arm = Random (@ 1 @ 2 @ 3 @ 4 @ 5 @ 6 @ 7 @ 8 )
-	FormatText checksumname = arm_tex 'Encore_Arm_0%d' d = <rand_arm>
-	displaySprite id = <arm_id> parent = ec_container tex = <arm_tex> pos = <arm_pos> dims = (180.0, 340.0) z = (<menu_z> + 10 + (<arm_z> [<arm_index>]))
+	formattext checksumname = arm_tex 'Encore_Arm_0%d' d = <rand_arm>
+	displaysprite id = <arm_id> parent = ec_container tex = <arm_tex> pos = <arm_pos> dims = (180.0, 340.0) z = (<menu_z> + 10 + (<arm_z> [<arm_index>]))
 	if (<rand_arm> = 4 || <rand_arm> = 8)
-		<arm_id> :SetTags higher = 1
+		<arm_id> :settags higher = 1
 	else
-		<arm_id> :SetTags higher = 0
+		<arm_id> :settags higher = 0
 	endif
 	<arm_pos> = (<arm_pos> + <arm_add>)
 	<arm_index> = (<arm_index> + 1)
@@ -103,7 +103,7 @@ script create_encore_confirmation_menu
 	spawnscriptnow \{ec_raise_fists}
 	spawnscriptnow \{ec_flashes}
 	stars = ($player1_status.stars)
-	Cash = ($player1_status.new_cash)
+	cash = ($player1_status.new_cash)
 	change \{structurename = player1_status
 		new_cash = 0}
 	if ($game_mode = gh4_p2_career)
@@ -114,12 +114,12 @@ script create_encore_confirmation_menu
 	if (<stars> < 3)
 		<stars> = 3
 	endif
-	CastToInteger \{score}
-	FormatText TextName = scoretext qs("\L%d") d = <score> usecommas
-	FormatText TextName = moneytext qs("\L$%d") d = <Cash> usecommas
+	casttointeger \{score}
+	formattext textname = scoretext qs(0x76b3fda7) d = <score> usecommas
+	formattext textname = moneytext qs(0xcb2f9062) d = <cash> usecommas
 	textscale = 0.8
 	starscale = 0.125
-	displayText {
+	displaytext {
 		id = ec_scoretext
 		font = fontgrid_text_a6
 		parent = ec_container
@@ -132,15 +132,15 @@ script create_encore_confirmation_menu
 	}
 	i = 0
 	begin
-	FormatText checksumname = starchecksum 'star_id0%d' d = <i>
-	GetRandomValue \{a = 0
+	formattext checksumname = starchecksum 'star_id0%d' d = <i>
+	getrandomvalue \{a = 0
 		b = 360
 		name = rot}
-	displaySprite {
+	displaysprite {
 		parent = ec_container
 		id = <starchecksum>
 		pos = (20000.0, 20000.0)
-		tex = Encore_Star_Outline
+		tex = encore_star_outline
 		just = [center center]
 		scale = 10
 		rgba = [223 223 223 255]
@@ -148,12 +148,12 @@ script create_encore_confirmation_menu
 		z = (<menu_z> + 20)
 		relative_scale
 	}
-	FormatText checksumname = starchecksum 'star_id0%d_2' d = <i>
-	displaySprite {
+	formattext checksumname = starchecksum 'star_id0%d_2' d = <i>
+	displaysprite {
 		parent = ec_container
 		id = <starchecksum>
 		pos = (20000.0, 20000.0)
-		tex = Encore_Star_Outline
+		tex = encore_star_outline
 		just = [center center]
 		scale = 10
 		rgba = [110 30 20 255]
@@ -163,7 +163,7 @@ script create_encore_confirmation_menu
 	}
 	<i> = (<i> + 1)
 	repeat <stars>
-	displayText {
+	displaytext {
 		id = ec_moneytext
 		font = fontgrid_text_a6
 		parent = ec_container
@@ -174,17 +174,17 @@ script create_encore_confirmation_menu
 		just = [left center]
 		z = (<menu_z> + 20)
 	}
-	SetScreenElementProps \{id = ec_scoretext
+	setscreenelementprops \{id = ec_scoretext
 		pos = (520.0, 220.0)
 		alpha = 0}
-	LegacyDoScreenElementMorph id = ec_scoretext scale = <textscale> time = 0.5 alpha = 1
-	SoundEvent \{event = GH3_Score_FlyIn}
-	SetScreenElementProps \{id = ec_moneytext
+	legacydoscreenelementmorph id = ec_scoretext scale = <textscale> time = 0.5 alpha = 1
+	soundevent \{event = gh3_score_flyin}
+	setscreenelementprops \{id = ec_moneytext
 		pos = (760.0, 220.0)
 		alpha = 0}
-	LegacyDoScreenElementMorph id = ec_moneytext scale = <textscale> time = 0.5 alpha = 1
-	SoundEvent \{event = GH3_Cash_FlyIn}
-	SoundEvent \{event = GH3_Cash_FlyIn_Hit}
+	legacydoscreenelementmorph id = ec_moneytext scale = <textscale> time = 0.5 alpha = 1
+	soundevent \{event = gh3_cash_flyin}
+	soundevent \{event = gh3_cash_flyin_hit}
 	star_add = (40.0, 0.0)
 	star_pos = (600.0, 220.0)
 	switch <stars>
@@ -195,27 +195,27 @@ script create_encore_confirmation_menu
 	endswitch
 	<i> = 0
 	begin
-	SoundEvent \{event = GH3_Star_FlyIn}
-	FormatText checksumname = starchecksum 'star_id0%d' d = <i>
-	SetScreenElementProps id = <starchecksum> pos = <star_pos>
-	LegacyDoScreenElementMorph id = <starchecksum> scale = <starscale> time = 0.25 relative_scale
-	FormatText checksumname = starchecksum 'star_id0%d_2' d = <i>
-	SetScreenElementProps id = <starchecksum> pos = <star_pos>
-	LegacyDoScreenElementMorph id = <starchecksum> scale = (<starscale> - 0.025) time = 0.25 relative_scale
+	soundevent \{event = gh3_star_flyin}
+	formattext checksumname = starchecksum 'star_id0%d' d = <i>
+	setscreenelementprops id = <starchecksum> pos = <star_pos>
+	legacydoscreenelementmorph id = <starchecksum> scale = <starscale> time = 0.25 relative_scale
+	formattext checksumname = starchecksum 'star_id0%d_2' d = <i>
+	setscreenelementprops id = <starchecksum> pos = <star_pos>
+	legacydoscreenelementmorph id = <starchecksum> scale = (<starscale> - 0.025) time = 0.25 relative_scale
 	<star_pos> = (<star_pos> + <star_add>)
 	<i> = (<i> + 1)
 	repeat <stars>
-	displaySprite parent = ec_container id = ec_crowd_1 pos = (-2000.0, -2000.0) tex = Encore_Balloon just = [center center] scale = 2 z = (<menu_z> + 50)
-	displaySprite parent = ec_container id = ec_crowd_2 pos = (-2000.0, -2000.0) tex = Encore_Balloon just = [center center] scale = 2 z = (<menu_z> + 50)
-	displaySprite parent = ec_container id = ec_crowd_3 pos = (-2000.0, -2000.0) tex = Encore_Balloon just = [center center] scale = 2 z = (<menu_z> + 50)
-	displaySprite parent = ec_container id = ec_crowd_4 pos = (-2000.0, -2000.0) tex = Encore_Balloon just = [center center] scale = 2 z = (<menu_z> + 50)
-	displayText id = ec_crowd_text_1 parent = ec_crowd_1 text = qs("yay!") pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
-	displayText id = ec_crowd_text_2 parent = ec_crowd_2 text = qs("yay!") pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
-	displayText id = ec_crowd_text_3 parent = ec_crowd_3 text = qs("yay!") pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
-	displayText id = ec_crowd_text_4 parent = ec_crowd_4 text = qs("yay!") pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
+	displaysprite parent = ec_container id = ec_crowd_1 pos = (-2000.0, -2000.0) tex = encore_balloon just = [center center] scale = 2 z = (<menu_z> + 50)
+	displaysprite parent = ec_container id = ec_crowd_2 pos = (-2000.0, -2000.0) tex = encore_balloon just = [center center] scale = 2 z = (<menu_z> + 50)
+	displaysprite parent = ec_container id = ec_crowd_3 pos = (-2000.0, -2000.0) tex = encore_balloon just = [center center] scale = 2 z = (<menu_z> + 50)
+	displaysprite parent = ec_container id = ec_crowd_4 pos = (-2000.0, -2000.0) tex = encore_balloon just = [center center] scale = 2 z = (<menu_z> + 50)
+	displaytext id = ec_crowd_text_1 parent = ec_crowd_1 text = qs(0x70c28c27) pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
+	displaytext id = ec_crowd_text_2 parent = ec_crowd_2 text = qs(0x70c28c27) pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
+	displaytext id = ec_crowd_text_3 parent = ec_crowd_3 text = qs(0x70c28c27) pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
+	displaytext id = ec_crowd_text_4 parent = ec_crowd_4 text = qs(0x70c28c27) pos = (60.0, 35.0) rgba = [0 0 0 255] z = (<menu_z> + 51) just = [center center] scale = 0.8 noshadow
 	spawnscriptnow \{encore_crowd_shout}
 	change \{g_encore_ready = 1}
-	displaySprite parent = ec_container id = options_bg_1 tex = Encore_Menu_BG pos = (640.0, 550.0) dims = (384.0, 192.0) just = [center center] z = (<menu_z> + 50)
+	displaysprite parent = ec_container id = options_bg_1 tex = encore_menu_bg pos = (640.0, 550.0) dims = (384.0, 192.0) just = [center center] z = (<menu_z> + 50)
 	set_focus_color \{rgba = [
 			110
 			30
@@ -228,11 +228,11 @@ script create_encore_confirmation_menu
 			200
 			255
 		]}
-	if NOT GotParam \{exclusive_device}
+	if NOT gotparam \{exclusive_device}
 		exclusive_device = ($primary_controller)
 	endif
 	largest_width = 0
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = ec_vmenu
 		dims = (0.0, 100.0)
 		event_handlers = [
@@ -255,26 +255,26 @@ script create_encore_confirmation_menu
 				encore_play
 			}
 		]}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		id = ec_play_encore
 		parent = <id>
 		font = fontgrid_title_a1
-		text = qs("PLAY ENCORE")
+		text = qs(0xc29d34aa)
 		scale = (0.9, 1.0)
 		rgba = [135 170 200 255]
 		just = [center center]
 		z_priority = (<menu_z> + 51)
 	}
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <id>
 		exclusive_device = <exclusive_device>
 	}
-	GetScreenElementDims id = <id>
+	getscreenelementdims id = <id>
 	if (<width> > <largest_width>)
 		<largest_width> = <width>
 	endif
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = ec_vmenu
 		dims = (0.0, 100.0)
 		event_handlers = [
@@ -297,29 +297,29 @@ script create_encore_confirmation_menu
 				encore_leave
 			}
 		]}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		id = ec_leave_encore
 		parent = <id>
 		font = fontgrid_title_a1
-		text = qs("LEAVE")
+		text = qs(0x5ee28ed9)
 		scale = (0.9, 1.0)
 		rgba = [135 170 200 255]
 		just = [center center]
 		z_priority = (<menu_z> + 51)
 	}
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <id>
 		exclusive_device = <exclusive_device>
 	}
-	GetScreenElementDims id = <id>
+	getscreenelementdims id = <id>
 	if (<width> > <largest_width>)
 		<largest_width> = <width>
 	endif
-	GetScreenElementDims \{id = options_bg_1}
-	SetScreenElementProps id = options_bg_1 dims = (<largest_width> * (1.0, 0.0) + (150.0, 0.0) + (0.0, 192.0))
-	displaySprite id = ec_hi_left parent = ec_container tex = Encore_Menu_Bookend rgba = [110 30 20 255] z = (<menu_z> + 51)
-	displaySprite id = ec_hi_right parent = ec_container tex = Encore_Menu_Bookend rgba = [110 30 20 255] z = (<menu_z> + 51)
+	getscreenelementdims \{id = options_bg_1}
+	setscreenelementprops id = options_bg_1 dims = (<largest_width> * (1.0, 0.0) + (150.0, 0.0) + (0.0, 192.0))
+	displaysprite id = ec_hi_left parent = ec_container tex = encore_menu_bookend rgba = [110 30 20 255] z = (<menu_z> + 51)
+	displaysprite id = ec_hi_right parent = ec_container tex = encore_menu_bookend rgba = [110 30 20 255] z = (<menu_z> + 51)
 	set_user_control_color \{text_rgba = [
 			200
 			200
@@ -333,39 +333,39 @@ script create_encore_confirmation_menu
 			200
 		]}
 	ec_yes_highlight_focus \{id = ec_play_encore}
-	if ((($is_network_game = 1) && (IsHost)) || ($is_network_game = 0))
-		LaunchEvent \{type = focus
+	if ((($is_network_game = 1) && (ishost)) || ($is_network_game = 0))
+		launchevent \{type = focus
 			target = ec_vmenu}
 	endif
 	get_progression_globals game_mode = ($game_mode) ($current_progression_flag)
 	format_globaltag_gigname setlist_prefix = ($<tier_global>.prefix) gignum = ($current_gig_number)
-	SetGlobalTags <gig_name> params = {started = 1 encore_unlocked = 1}
-	add_user_control_helper text = qs("SELECT") button = green z = (<menu_z> + 100) all_buttons
+	setglobaltags <gig_name> params = {started = 1 encore_unlocked = 1}
+	add_user_control_helper text = qs(0xc18d5e76) button = green z = (<menu_z> + 100) all_buttons
 endscript
 
 script destroy_encore_confirmation_menu 
 	clean_up_user_control_helpers
-	KillSpawnedScript \{name = ec_flashes}
-	KillSpawnedScript \{name = ec_raise_fists}
+	killspawnedscript \{name = ec_flashes}
+	killspawnedscript \{name = ec_raise_fists}
 	change \{g_encore_ready = 0}
 	destroy_menu \{menu_id = ec_scroll}
 	destroy_menu \{menu_id = ec_container}
 	destroy_pause_menu_frame
-	KillSpawnedScript \{name = encore_crowd_shout}
+	killspawnedscript \{name = encore_crowd_shout}
 endscript
 
 script ec_yes_highlight_focus 
 	retail_menu_focus <...>
-	GetScreenElementDims id = <id>
-	SetScreenElementProps id = ec_hi_left pos = ((630.0, 500.0) - (<width> * (0.5, 0.0))) flip_v just = [right top]
-	SetScreenElementProps id = ec_hi_right pos = ((650.0, 500.0) + (<width> * (0.5, 0.0))) just = [left top]
+	getscreenelementdims id = <id>
+	setscreenelementprops id = ec_hi_left pos = ((630.0, 500.0) - (<width> * (0.5, 0.0))) flip_v just = [right top]
+	setscreenelementprops id = ec_hi_right pos = ((650.0, 500.0) + (<width> * (0.5, 0.0))) just = [left top]
 endscript
 
 script ec_no_highlight_focus 
 	retail_menu_focus <...>
-	GetScreenElementDims id = <id>
-	SetScreenElementProps id = ec_hi_left pos = ((630.0, 560.0) - (<width> * (0.5, 0.0))) flip_v just = [right top]
-	SetScreenElementProps id = ec_hi_right pos = ((650.0, 560.0) + (<width> * (0.5, 0.0))) just = [left top]
+	getscreenelementdims id = <id>
+	setscreenelementprops id = ec_hi_left pos = ((630.0, 560.0) - (<width> * (0.5, 0.0))) flip_v just = [right top]
+	setscreenelementprops id = ec_hi_right pos = ((650.0, 560.0) + (<width> * (0.5, 0.0))) just = [left top]
 endscript
 
 script encore_play 
@@ -383,8 +383,8 @@ script encore_leave
 		kill_gem_scroller
 		if ($is_network_game = 0)
 			spawnscriptnow \{xenon_singleplayer_session_complete_uninit}
-		elseif (($is_network_game = 1) && (IsHost))
-			SendStructure \{callback = net_career_goto_band_lobby
+		elseif (($is_network_game = 1) && (ishost))
+			sendstructure \{callback = net_career_goto_band_lobby
 				data_to_send = {
 					from_encore = 1
 				}}
@@ -403,19 +403,19 @@ endscript
 
 script encore_crowd_shout 
 	shout_text = [
-		qs("yeah!")
-		qs("rock!")
-		qs("again!")
-		qs("whoo!")
-		qs("yay!")
-		qs("more!")
+		qs(0x3f8781f4)
+		qs(0x09da682e)
+		qs(0x603a6d9a)
+		qs(0x1d96fd5f)
+		qs(0x70c28c27)
+		qs(0xf72a1446)
 	]
-	GetArraySize <shout_text>
+	getarraysize <shout_text>
 	begin
 	i = 0
 	begin
-	FormatText checksumname = balloon_id 'ec_crowd_%d' d = <i>
-	FormatText checksumname = balloon_text 'ec_crowd_text_%d' d = <i>
+	formattext checksumname = balloon_id 'ec_crowd_%d' d = <i>
+	formattext checksumname = balloon_text 'ec_crowd_text_%d' d = <i>
 	side = Random (@ 1 @ 2 )
 	rand = Random (@ 0 @ 1 @ 2 @ 3 )
 	if (<side> = 1)
@@ -423,23 +423,23 @@ script encore_crowd_shout
 	else
 		balloon_array = g_ec_balloons_pos_right
 	endif
-	GetRandomValue a = 0 b = (<array_size> - 1) name = rand_text Integer
-	if ScreenElementExists id = <balloon_id>
-		SetScreenElementProps id = <balloon_id> pos = ($<balloon_array> [<rand>])
-		if ScreenElementExists id = <balloon_text>
-			SetScreenElementProps id = <balloon_text> text = (<shout_text> [<rand_text>]) scale = 1
+	getrandomvalue a = 0 b = (<array_size> - 1) name = rand_text integer
+	if screenelementexists id = <balloon_id>
+		setscreenelementprops id = <balloon_id> pos = ($<balloon_array> [<rand>])
+		if screenelementexists id = <balloon_text>
+			setscreenelementprops id = <balloon_text> text = (<shout_text> [<rand_text>]) scale = 1
 			fit_text_in_rectangle id = <balloon_text> only_if_larger_x = 1 dims = (90.0, 50.0) keep_ar = 1
 		endif
-		LegacyDoScreenElementMorph id = <balloon_id> alpha = 1 time = 0.125
-		Wait \{0.5
+		legacydoscreenelementmorph id = <balloon_id> alpha = 1 time = 0.125
+		wait \{0.5
 			seconds}
-		LegacyDoScreenElementMorph id = <balloon_id> alpha = 0 time = 0.5
-		Wait \{0.5
+		legacydoscreenelementmorph id = <balloon_id> alpha = 0 time = 0.5
+		wait \{0.5
 			seconds}
 	endif
-	Mod a = <i> b = 2
-	if (<Mod> = 0)
-		Wait \{1
+	mod a = <i> b = 2
+	if (<mod> = 0)
+		wait \{1
 			second}
 	endif
 	<i> = (<i> + 1)
@@ -451,39 +451,39 @@ script ec_raise_fists
 	begin
 	i = 0
 	begin
-	GetRandomValue \{a = 0.1
+	getrandomvalue \{a = 0.1
 		b = 0.3
 		name = wait_time}
 	rand_arm = Random (@ 1 @ 2 @ 3 @ 4 @ 5 @ 6 @ 7 @ 8 )
-	FormatText checksumname = arm_id 'ec_arm_0%d' d = <i>
-	GetScreenElementProps id = <arm_id>
-	if ScreenElementExists id = <arm_id>
-		<arm_id> :GetTags
-		<arm_id> :SetTags pos = <pos> chance = <rand_arm>
+	formattext checksumname = arm_id 'ec_arm_0%d' d = <i>
+	getscreenelementprops id = <arm_id>
+	if screenelementexists id = <arm_id>
+		<arm_id> :gettags
+		<arm_id> :settags pos = <pos> chance = <rand_arm>
 		if (<higher> = 1)
 			up_pos = (<pos> - (0.0, 80.0))
 		else
 			up_pos = (<pos> - (0.0, 50.0))
 		endif
-		LegacyDoScreenElementMorph id = <arm_id> pos = <up_pos> time = <wait_time> motion = ease_in
+		legacydoscreenelementmorph id = <arm_id> pos = <up_pos> time = <wait_time> motion = ease_in
 	endif
 	<i> = (<i> + 1)
 	repeat 8
-	Wait \{0.3
+	wait \{0.3
 		seconds}
 	<i> = 0
 	begin
-	GetRandomValue \{a = 0.1
+	getrandomvalue \{a = 0.1
 		b = 0.3
 		name = wait_time}
-	FormatText checksumname = arm_id 'ec_arm_0%d' d = <i>
-	if ScreenElementExists id = <arm_id>
-		<arm_id> :GetTags
-		LegacyDoScreenElementMorph id = <arm_id> pos = (<pos>) time = (<wait_time> * 2.0) motion = ease_out
+	formattext checksumname = arm_id 'ec_arm_0%d' d = <i>
+	if screenelementexists id = <arm_id>
+		<arm_id> :gettags
+		legacydoscreenelementmorph id = <arm_id> pos = (<pos>) time = (<wait_time> * 2.0) motion = ease_out
 	endif
 	<i> = (<i> + 1)
 	repeat 8
-	Wait \{0.3
+	wait \{0.3
 		seconds}
 	repeat
 endscript
@@ -492,57 +492,57 @@ script ec_raise_headline
 	begin
 	i = 0
 	begin
-	GetRandomValue \{a = 0.05
+	getrandomvalue \{a = 0.05
 		b = 0.15
 		name = wait_time}
-	FormatText checksumname = text_id 'ec_encore_text_%d' d = (<i> + 1)
-	if ScreenElementExists id = <text_id>
-		GetScreenElementProps id = <text_id>
-		<text_id> :GetTags
-		<text_id> :SetTags pos = <pos>
-		LegacyDoScreenElementMorph id = <text_id> pos = (<pos> - (0.0, 22.0)) time = <wait_time>
+	formattext checksumname = text_id 'ec_encore_text_%d' d = (<i> + 1)
+	if screenelementexists id = <text_id>
+		getscreenelementprops id = <text_id>
+		<text_id> :gettags
+		<text_id> :settags pos = <pos>
+		legacydoscreenelementmorph id = <text_id> pos = (<pos> - (0.0, 22.0)) time = <wait_time>
 	endif
 	<i> = (<i> + 1)
 	repeat <str_len>
-	Wait \{0.15
+	wait \{0.15
 		seconds}
 	<i> = 0
 	begin
-	GetRandomValue \{a = 0.05
+	getrandomvalue \{a = 0.05
 		b = 0.15
 		name = wait_time}
-	FormatText checksumname = text_id 'ec_encore_text_%d' d = (<i> + 1)
-	if ScreenElementExists id = <text_id>
-		<text_id> :GetTags
-		LegacyDoScreenElementMorph id = <text_id> pos = <pos> time = (<wait_time> * 2.0)
+	formattext checksumname = text_id 'ec_encore_text_%d' d = (<i> + 1)
+	if screenelementexists id = <text_id>
+		<text_id> :gettags
+		legacydoscreenelementmorph id = <text_id> pos = <pos> time = (<wait_time> * 2.0)
 	endif
 	<i> = (<i> + 1)
 	repeat <str_len>
-	Wait \{0.15
+	wait \{0.15
 		seconds}
 	repeat
 endscript
 
 script ec_flashes 
 	begin
-	GetRandomValue \{a = 400
+	getrandomvalue \{a = 400
 		b = 900
 		name = x_pos}
-	GetRandomValue \{a = 400
+	getrandomvalue \{a = 400
 		b = 500
 		name = y_pos}
-	GetRandomValue \{a = 96
+	getrandomvalue \{a = 96
 		b = 256
 		name = rand_dim}
-	GetRandomValue \{a = 0
+	getrandomvalue \{a = 0
 		b = 360
 		name = rand_rot}
 	pos = (<x_pos> * (1.0, 0.0) + <y_pos> * (0.0, 1.0))
 	dims = (<rand_dim> * (1.0, 0.0) + <rand_dim> * (0.0, 1.0))
-	if ScreenElementExists \{id = ec_flash}
-		SetScreenElementProps id = ec_flash pos = <pos> dims = <dims> rot_angle = <rand_rot> alpha = 1
-		ec_flash :LegacyDoMorph alpha = 0 dims = (<dims> * 0.5) time = 0.2
-		ec_flash :LegacyDoMorph dims = <dims>
+	if screenelementexists \{id = ec_flash}
+		setscreenelementprops id = ec_flash pos = <pos> dims = <dims> rot_angle = <rand_rot> alpha = 1
+		ec_flash :legacydomorph alpha = 0 dims = (<dims> * 0.5) time = 0.2
+		ec_flash :legacydomorph dims = <dims>
 	endif
 	repeat
 endscript

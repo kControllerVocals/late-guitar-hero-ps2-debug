@@ -1,16 +1,16 @@
 
 script ui_create_customize_character_mic_main 
 	make_generic_menu \{vmenu_id = create_customize_character_mic_vmenu
-		title = qs("CHOOSE MIC")
+		title = qs(0x3490b188)
 		show_history
 		hist_tex = icon_customize}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -22,11 +22,11 @@ script ui_create_customize_character_mic_main
 			'customize_character_mic_L'
 		]
 		zoom_camera = 'customize_mic_Zoom'}
-	add_generic_menu_text_item \{text = qs("MIC")
-		choose_state = UIstate_popout_select_part
+	add_generic_menu_text_item \{text = qs(0xc0b34c9f)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("MIC")
-			part = CAS_Mic
+			text = qs(0xc0b34c9f)
+			part = cas_mic
 			hist_tex = icon_mic
 			is_popup
 			cam_name = 'customize_microphone'
@@ -37,14 +37,14 @@ script ui_create_customize_character_mic_main
 				'customize_microphone_L'
 			]
 			zoom_camera = 'customize_mic_Zoom'
-			stance = Stance_Select_Microphone
-			return_stance = Stance_Select_Mic
+			stance = stance_select_microphone
+			return_stance = stance_select_mic
 		}}
-	add_generic_menu_text_item \{text = qs("MIC STAND")
-		choose_state = UIstate_popout_select_part
+	add_generic_menu_text_item \{text = qs(0xafbbc27e)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("MIC STAND")
-			part = CAS_Mic_Stand
+			text = qs(0xafbbc27e)
+			part = cas_mic_stand
 			hist_tex = icon_mic_stand
 			is_popup
 			cam_name = 'customize_character_mic'
@@ -55,15 +55,15 @@ script ui_create_customize_character_mic_main
 				'customize_character_mic_L'
 			]
 			zoom_camera = 'customize_mic_Zoom'
-			stance = Stance_Select_Mic
-			return_stance = Stance_Select_Mic
+			stance = stance_select_mic
+			return_stance = stance_select_mic
 		}}
 	menu_finish \{car_helper_text}
-	GetCurrentCASObject
+	getcurrentcasobject
 
-	BandManager_ChangeStance name = <cas_object> stance = Stance_Select_Mic no_wait
-	LaunchEvent type = focus target = create_customize_character_mic_vmenu data = {child_index = <selected_index>}
-	draw_guitar_center_logo
+	bandmanager_changestance name = <cas_object> stance = stance_select_mic no_wait
+	launchevent type = focus target = create_customize_character_mic_vmenu data = {child_index = <selected_index>}
+	0x59249cc9
 endscript
 
 script ui_destroy_customize_character_mic_main 

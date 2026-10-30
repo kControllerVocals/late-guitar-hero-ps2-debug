@@ -1,12 +1,12 @@
 max_memcard_filename_length = 15
-SavingOrLoading = Saving
+savingorloading = saving
 memcard_default_title = 'Band Hero'
 memcard_content_name = 'Progress'
 memcard_content_jamsession_name = 'CustomSongs'
 save_data_dirty = 0
-current_save_file_type = 0x00000000
+0x64fa86d1 = 0x00000000
 memcard_file_types = {
-	Progress = {
+	progress = {
 		file_name = 'BH_Progress'
 		suffix = 'Progress'
 		folder_name = 'Band Hero'
@@ -26,17 +26,17 @@ memcard_file_types = {
 	}
 }
 memcard_folder_desc = {
-	GuitarContent = {
+	guitarcontent = {
 		icon_xen = 'memcard\\gh.png'
 		icon_ps3 = 'memcard\\ICON0.PNG'
 		file_types = [
 			{
-				name = Progress
+				name = progress
 				slots_reserve = 1
 			}
 		]
 	}
-	JamSessionsContent = {
+	jamsessionscontent = {
 		icon_xen = 'memcard\\gh.png'
 		icon_ps3 = 'memcard\\ICON0.PNG'
 		file_types = [
@@ -47,17 +47,17 @@ memcard_folder_desc = {
 		]
 	}
 }
-MemcardDoneScript = nullscript
-MemcardRetryScript = nullscript
-MemcardSavingOrLoading = Saving
-MemcardSuccess = false
-MemcardController = $primary_controller
-MemcardInitialBoot = false
-MemcardJamOrDefault = `default`
+memcarddonescript = nullscript
+memcardretryscript = nullscript
+memcardsavingorloading = saving
+memcardsuccess = false
+memcardcontroller = $primary_controller
+memcardinitialboot = false
+memcardjamordefault = `default`
 
 script memcard_check_for_existing_save 
 	memcard_choose_storage_device
-	GetMemCardDirectoryListing \{FileType = $current_save_file_type}
+	getmemcarddirectorylisting \{filetype = $0x64fa86d1}
 	if (<totalthps4filesoncard> = 1)
 
 		return \{found = 1
@@ -69,17 +69,17 @@ endscript
 
 script memcard_wait_for_timer \{time = 3.0}
 	begin
-	if TimeGreaterThan <time>
+	if timegreaterthan <time>
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 endscript
 
 script is_autosave_on 
 
-	GetGlobalTags user_options savegame = <savegame>
+	getglobaltags user_options savegame = <savegame>
 	if (<autosave> = 1)
 		return \{true}
 	endif
@@ -90,26 +90,26 @@ script memcard_pre_save_progress
 endscript
 
 script memcard_post_load_progress 
-	if (($primary_controller) = $MemcardController)
+	if (($primary_controller) = $memcardcontroller)
 		restore_globals_from_global_tags
 	endif
 	scan_globaltag_downloads
 	refresh_autokick_cheat
-	get_savegame_from_controller \{controller = $MemcardController}
+	get_savegame_from_controller \{controller = $memcardcontroller}
 	reset_transient_tags savegame = <savegame>
 endscript
 
 script refresh_autokick_cheat 
 	controller = 0
-	GetSavegameFromController controller = <controller>
-	GetGlobalTags user_options savegame = <savegame>
-	GetArraySize \{$guitar_hero_cheats}
+	getsavegamefromcontroller controller = <controller>
+	getglobaltags user_options savegame = <savegame>
+	getarraysize \{$guitar_hero_cheats}
 	i = 0
 	begin
 	var = ($guitar_hero_cheats [<i>].var)
-	FormatText checksumname = cheat_unlocked 'unlock_Cheat_%a' a = ($guitar_hero_cheats [<i>].name)
-	if GotParam <cheat_unlocked>
-		FormatText checksumname = cheat_idx 'cheat_index%a' a = <i>
+	formattext checksumname = cheat_unlocked 'unlock_Cheat_%a' a = ($guitar_hero_cheats [<i>].name)
+	if gotparam <cheat_unlocked>
+		formattext checksumname = cheat_idx 'cheat_index%a' a = <i>
 		change globalname = <var> newvalue = (<...>.<cheat_idx>)
 	else
 		change globalname = <var> newvalue = 0
@@ -123,50 +123,50 @@ script memcard_cleanup_messages
 endscript
 
 script memcard_sequence_generic_done 
-	if ($MemcardSavingOrLoading = Saving)
-		if ($MemcardSuccess = true)
+	if ($memcardsavingorloading = saving)
+		if ($memcardsuccess = true)
 
-			ui_memcard_finish success = save controller = ($MemcardController)
+			ui_memcard_finish success = save controller = ($memcardcontroller)
 		else
 
-			MC_SetActiveFolder \{FolderIndex = -1}
-			ui_memcard_finish failed = save controller = ($MemcardController)
+			mc_setactivefolder \{folderindex = -1}
+			ui_memcard_finish failed = save controller = ($memcardcontroller)
 		endif
 	else
-		if ($MemcardSuccess = true)
+		if ($memcardsuccess = true)
 
-			ui_memcard_finish success = load controller = ($MemcardController)
+			ui_memcard_finish success = load controller = ($memcardcontroller)
 		else
 
-			MC_SetActiveFolder \{FolderIndex = -1}
-			ui_memcard_finish failed = load controller = ($MemcardController)
+			mc_setactivefolder \{folderindex = -1}
+			ui_memcard_finish failed = load controller = ($memcardcontroller)
 		endif
 	endif
-	if ($current_save_file_type = jamsession)
+	if ($0x64fa86d1 = jamsession)
 		change \{jam_selected_song = $memcard_jamsession_file_name}
 	endif
 endscript
 
 script memcard_sequence_retry 
 
-	MC_WaitAsyncOpsFinished
-	goto $MemcardRetryScript params = {<...> controller = ($MemcardController)}
+	mc_waitasyncopsfinished
+	goto $memcardretryscript params = {<...> controller = ($memcardcontroller)}
 endscript
 
 script memcard_disable_saves_and_quit 
-	get_savegame_from_controller controller = ($MemcardController)
-	SetGlobalTags user_options savegame = <savegame> params = {autosave = 0}
+	get_savegame_from_controller controller = ($memcardcontroller)
+	setglobaltags user_options savegame = <savegame> params = {autosave = 0}
 	memcard_sequence_quit
 endscript
 
 script memcard_sequence_quit 
 
 	mark_safe_for_shutdown
-	goto $MemcardDoneScript params = <...>
+	goto $memcarddonescript params = <...>
 endscript
 
 script memcard_check_for_card 
-	if NOT CardIsInSlot
+	if NOT cardisinslot
 		goto create_storagedevice_warning_menu params = <...>
 	endif
 endscript
@@ -179,22 +179,22 @@ script memcard_error
 endscript
 
 script memcard_sequence_cleanup_generic 
-	if ($restartMenuMusic = 1)
-		change \{restartMenuMusic = 0}
+	if ($restartmenumusic = 1)
+		change \{restartmenumusic = 0}
 
-		if ($Menu_Music_On_Flag = 1)
-			Menu_Music_Off
+		if ($menu_music_on_flag = 1)
+			menu_music_off
 		endif
 		spawnscriptnow \{menu_music_on}
 	endif
-	change \{MemcardDoneScript = nullscript}
+	change \{memcarddonescript = nullscript}
 	return
-	MC_WaitAsyncOpsFinished
+	mc_waitasyncopsfinished
 	memcard_cleanup_messages
-	change \{MemcardDoneScript = nullscript}
-	change \{MemcardRetryScript = nullscript}
-	change \{MemcardController = $primary_controller}
-	MC_SetActivePlayer \{QueryDefault}
+	change \{memcarddonescript = nullscript}
+	change \{memcardretryscript = nullscript}
+	change \{memcardcontroller = $primary_controller}
+	mc_setactiveplayer \{querydefault}
 endscript
 
 script memcard_sequence_begin_bootup 
@@ -205,8 +205,8 @@ script memcard_sequence_begin_save
 	spawnscriptnow memcard_sequence_begin_save_logic params = <...>
 endscript
 
-script waitandfinishautosave 
-	WaitOneGameFrame
+script 0x57db8579 
+	waitonegameframe
 	ui_flow_manager_respond_to_action \{action = memcard_sequence_save_success}
 endscript
 
@@ -244,150 +244,150 @@ endscript
 
 script memcard_sequence_begin_bootup_logic \{controller = $primary_controller}
 
-	MC_WaitAsyncOpsFinished
+	mc_waitasyncopsfinished
 	mark_unsafe_for_shutdown
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_bootup_logic}
-	change \{MemcardSavingOrLoading = Saving}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = true}
-	change \{MemcardJamOrDefault = `default`}
-	change \{current_save_file_type = Progress}
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_bootup_logic}
+	change \{memcardsavingorloading = saving}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = true}
+	change \{memcardjamordefault = `default`}
+	change \{0x64fa86d1 = progress}
 	spawnscriptnow \{start_flow_manager
 		params = {
 			flow_state = ps2_memcard_autosave_warning_boot_fs
 		}}
 	return
-	memcard_validate_card_data StorageSelectorForce = <StorageSelectorForce> ValidatePrev = 0
+	memcard_validate_card_data storageselectorforce = <storageselectorforce> validateprev = 0
 	if (<found> = 1)
 		goto \{memcard_load_file
 			params = {
-				LoadConfirmed = 1
+				loadconfirmed = 1
 			}}
 	else
 		if ($memcard_initial_boot = 0)
 			goto \{memcard_save_file}
 		else
-			goto \{$MemcardDoneScript}
+			goto \{$memcarddonescript}
 		endif
 	endif
 endscript
 
-script memcard_sequence_begin_save_logic \{StorageSelectorForce = 1
+script memcard_sequence_begin_save_logic \{storageselectorforce = 1
 		controller = $primary_controller}
 	mark_unsafe_for_shutdown
-	MC_WaitAsyncOpsFinished
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_save_logic}
-	change \{MemcardSavingOrLoading = Saving}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = false}
-	change \{MemcardJamOrDefault = `default`}
+	mc_waitasyncopsfinished
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_save_logic}
+	change \{memcardsavingorloading = saving}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = false}
+	change \{memcardjamordefault = `default`}
 	ps2_memcard_set_autosave \{autosave = 0}
-	change \{current_save_file_type = Progress}
+	change \{0x64fa86d1 = progress}
 	spawnscriptnow \{start_flow_manager
 		params = {
-			flow_state = ps2_memcard_save_start_ingame_fs
+			flow_state = 0x9d327bc2
 		}}
 	return
-	memcard_validate_card_data StorageSelectorForce = <StorageSelectorForce> ValidatePrev = 0
+	memcard_validate_card_data storageselectorforce = <storageselectorforce> validateprev = 0
 	goto \{memcard_save_file}
 endscript
 
 script memcard_sequence_begin_autosave_logic \{controller = $primary_controller}
-	push_loading_screen \{freeze}
-	OnExitRun \{pop_loading_screen}
+	0xd3f993c8 \{freeze}
+	onexitrun \{0xe5a305c6}
 	mark_unsafe_for_shutdown
-	MC_WaitAsyncOpsFinished
+	mc_waitasyncopsfinished
 	disable_pause
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_save_logic}
-	change \{MemcardSavingOrLoading = Saving}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = false}
-	change \{MemcardJamOrDefault = `default`}
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_save_logic}
+	change \{memcardsavingorloading = saving}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = false}
+	change \{memcardjamordefault = `default`}
 	get_savegame_from_controller controller = <controller>
-	GetGlobalTags user_options savegame = <savegame>
+	getglobaltags user_options savegame = <savegame>
 	if (<autosave> = 0 && <requested_autosave> = 0)
 
 		goto \{memcard_sequence_quit}
 	endif
-	GetGlobalTags \{user_options}
+	getglobaltags \{user_options}
 	ps2_memcard_set_autosave autosave = <autosave>
-	change \{current_save_file_type = Progress}
+	change \{0x64fa86d1 = progress}
 	destroy_loading_screen
-	Wait \{16
+	wait \{16
 		gameframes}
 	spawnscriptnow \{start_flow_manager
 		params = {
-			flow_state = ps2_memcard_save_start_ingame_fs
+			flow_state = 0x9d327bc2
 		}}
 	return
-	MC_SetActivePlayer userid = <controller>
-	if NOT CardIsInSlot
+	mc_setactiveplayer userid = <controller>
+	if NOT cardisinslot
 		goto \{create_storagedevice_warning_menu}
 	endif
-	memcard_validate_card_data \{StorageSelectorForce = 0
-		ValidatePrev = 1}
+	memcard_validate_card_data \{storageselectorforce = 0
+		validateprev = 1}
 	if (<found> = 1)
 		goto \{memcard_save_file
 			params = {
-				OverwriteConfirmed = 1
+				overwriteconfirmed = 1
 			}}
 	else
 		memcard_sequence_retry
 	endif
 endscript
 
-script memcard_sequence_begin_load_logic \{StorageSelectorForce = 1
+script memcard_sequence_begin_load_logic \{storageselectorforce = 1
 		controller = $primary_controller}
 	mark_unsafe_for_shutdown
-	MC_WaitAsyncOpsFinished
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_load_logic}
-	change \{MemcardSavingOrLoading = loading}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = false}
-	change \{MemcardJamOrDefault = `default`}
-	change \{current_save_file_type = Progress}
+	mc_waitasyncopsfinished
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_load_logic}
+	change \{memcardsavingorloading = loading}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = false}
+	change \{memcardjamordefault = `default`}
+	change \{0x64fa86d1 = progress}
 	spawnscriptnow \{start_flow_manager
 		params = {
 			flow_state = ps2_memcard_load_check_status_ingame_fs
 		}}
 	return
-	memcard_validate_card_data StorageSelectorForce = <StorageSelectorForce> ValidatePrev = 0
+	memcard_validate_card_data storageselectorforce = <storageselectorforce> validateprev = 0
 	goto \{memcard_load_file}
 endscript
 
-script jam_memcard_validate_card_data \{StorageSelectorForce = 0}
-	memcard_validate_card_data StorageSelectorForce = <StorageSelectorForce> ValidatePrev = 1 FileType = jamsession
+script jam_memcard_validate_card_data \{storageselectorforce = 0}
+	memcard_validate_card_data storageselectorforce = <storageselectorforce> validateprev = 1 filetype = jamsession
 	return <...>
 endscript
 
-script memcard_sequence_begin_save_jam_logic \{StorageSelectorForce = 0
+script memcard_sequence_begin_save_jam_logic \{storageselectorforce = 0
 		controller = $primary_controller}
 
 	mark_unsafe_for_shutdown
-	MC_WaitAsyncOpsFinished
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_save_jam_logic}
-	change \{MemcardSavingOrLoading = Saving}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = false}
-	change \{MemcardJamOrDefault = jam}
+	mc_waitasyncopsfinished
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_save_jam_logic}
+	change \{memcardsavingorloading = saving}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = false}
+	change \{memcardjamordefault = jam}
 	jam_publish_update_playback_track \{guitar_num = 1}
 	jam_publish_update_playback_track \{guitar_num = 2}
 	jam_publish_update_playback_drumvocal_track
 	downloaded = 0
-	GetSongInfo
+	getsonginfo
 	change memcard_jamsession_song_version = <song_version>
 	change memcard_jamsession_downloaded = <downloaded>
-	if GotParam \{file_id}
+	if gotparam \{file_id}
 		change memcard_jamsession_fileid = <file_id>
 	endif
 	change memcard_jamsession_playback_track1 = <playback_track1>
@@ -395,14 +395,14 @@ script memcard_sequence_begin_save_jam_logic \{StorageSelectorForce = 0
 	change memcard_jamsession_playback_track_drums = <playback_track_drums>
 	change memcard_jamsession_playback_track_vocals = <playback_track_vocals>
 	ps2_memcard_set_autosave \{autosave = 0}
-	change \{current_save_file_type = jamsession}
+	change \{0x64fa86d1 = jamsession}
 	spawnscriptnow \{start_flow_manager
 		params = {
-			flow_state = ps2_memcard_save_start_ingame_fs
+			flow_state = 0x9d327bc2
 		}}
 	return
 	<card_was_in_slot> = false
-	if CardIsInSlot
+	if cardisinslot
 		<card_was_in_slot> = true
 	endif
 	jam_memcard_validate_card_data <...>
@@ -411,19 +411,19 @@ script memcard_sequence_begin_save_jam_logic \{StorageSelectorForce = 0
 	endif
 endscript
 
-script memcard_sequence_begin_load_jam_logic \{StorageSelectorForce = 0
+script memcard_sequence_begin_load_jam_logic \{storageselectorforce = 0
 		controller = $primary_controller}
 
 	mark_unsafe_for_shutdown
-	MC_WaitAsyncOpsFinished
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_load_jam_logic}
-	change \{MemcardSavingOrLoading = loading}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = false}
-	change \{MemcardJamOrDefault = jam}
-	change \{current_save_file_type = jamsession}
+	mc_waitasyncopsfinished
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_load_jam_logic}
+	change \{memcardsavingorloading = loading}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = false}
+	change \{memcardjamordefault = jam}
+	change \{0x64fa86d1 = jamsession}
 	spawnscriptnow \{start_flow_manager
 		params = {
 			flow_state = ps2_memcard_load_check_status_ingame_fs
@@ -436,15 +436,15 @@ endscript
 script memcard_sequence_begin_delete_jam_logic \{controller = $primary_controller}
 
 	mark_unsafe_for_shutdown
-	MC_WaitAsyncOpsFinished
-	change \{MemcardDoneScript = memcard_sequence_generic_done}
-	change \{MemcardRetryScript = memcard_sequence_begin_delete_jam_logic}
-	change \{MemcardSavingOrLoading = Saving}
-	change \{MemcardSuccess = false}
-	change MemcardController = <controller>
-	change \{MemcardInitialBoot = false}
-	change \{MemcardJamOrDefault = jam}
-	change \{current_save_file_type = jamsession}
+	mc_waitasyncopsfinished
+	change \{memcarddonescript = memcard_sequence_generic_done}
+	change \{memcardretryscript = memcard_sequence_begin_delete_jam_logic}
+	change \{memcardsavingorloading = saving}
+	change \{memcardsuccess = false}
+	change memcardcontroller = <controller>
+	change \{memcardinitialboot = false}
+	change \{memcardjamordefault = jam}
+	change \{0x64fa86d1 = jamsession}
 	spawnscriptnow \{start_flow_manager
 		params = {
 			flow_state = ps2_memcard_delete_check_status_ingame_fs
@@ -455,7 +455,7 @@ script memcard_sequence_begin_delete_jam_logic \{controller = $primary_controlle
 endscript
 
 script guitar_memcard_save_success_sound 
-	SoundEvent \{event = Save_Confirmed_SFX}
+	soundevent \{event = save_confirmed_sfx}
 endscript
 
 script dim_save_option_for_guest 

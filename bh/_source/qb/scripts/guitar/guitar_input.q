@@ -16,17 +16,17 @@ g_revert_p2_bot_to_off = 0
 g_revert_p3_bot_to_off = 0
 g_revert_p4_bot_to_off = 0
 
-script InputHandlerPermit 
-	c_InputHandlerPermit
+script 0xf00f29a9 
+	0x05b98152
 endscript
 
-script InputHandlerForbid 
-	c_InputHandlerForbid
+script 0x79db87d7 
+	0x8c6d2f2c
 endscript
 
 script setup_bot_controller 
-	<player_status> = ($player_status_array [<player>])
-	GetInputHandlerBotIndex player = <player>
+	<player_status> = ($0x2994109a [<player>])
+	getinputhandlerbotindex player = <player>
 	if NOT (<controller> = ($<player_status>.controller))
 		change structurename = <player_status> bot_original_controller = ($<player_status>.controller)
 		change structurename = <player_status> controller = <controller>
@@ -38,7 +38,7 @@ script bot_star_power \{player_status = player1_status}
 endscript
 
 script check_buttons_bot 
-	CheckButtonsBot player = <player> array_entry = <array_entry> player_status = <player_status>
+	checkbuttonsbot player = <player> array_entry = <array_entry> player_status = <player_status>
 endscript
 
 script strip_single_note_strum 
@@ -91,12 +91,12 @@ button_up_pixel_arrayp4 = [
 ]
 
 script button_checker 
-	ButtonCheckerInit <...>
+	buttoncheckerinit <...>
 	begin
-	ButtonCheckerPerFrame
-	WaitOneGameFrame
+	buttoncheckerperframe
+	waitonegameframe
 	repeat
-	ButtonCheckerCleanup
+	buttoncheckercleanup
 endscript
 currently_holding = [
 	0
@@ -131,10 +131,10 @@ script check_for_star_power
 	if check_for_star_power_cfunc
 		break
 	else
-		if GotParam \{ScriptToRun}
-			<ScriptToRun> <ScriptToRun_Params>
+		if gotparam \{scripttorun}
+			<scripttorun> <scripttorun_params>
 		else
-			Wait \{1
+			wait \{1
 				gameframe}
 		endif
 	endif
@@ -143,7 +143,7 @@ script check_for_star_power
 endscript
 
 script print_guitar_analogue_info 
-	GuitarGetAnalogueInfo controller = ($primary_controller)
+	guitargetanalogueinfo controller = ($primary_controller)
 
 endscript
 
@@ -151,13 +151,13 @@ script wait_for_inactive
 	change structurename = <player_status> star_power_usable = 0
 	<frames_under> = 0
 	controller = ($<player_status>.controller)
-	if IsGuitarController controller = <controller>
+	if isguitarcontroller controller = <controller>
 		if (<guitar_used_select> = 0)
 			begin
-			WaitOneGameFrame
-			if GuitarGetAnalogueInfo controller = <controller>
-				if (<VerticalDist> > 128.0)
-					Increment \{frames_under}
+			waitonegameframe
+			if guitargetanalogueinfo controller = <controller>
+				if (<verticaldist> > 128.0)
+					increment \{frames_under}
 					if (<frames_under> >= 30)
 						break
 					endif
@@ -172,8 +172,8 @@ script wait_for_inactive
 endscript
 
 script star_power_activate_and_drain 
-	if (GameMode_IsBandScoring)
-		GetBandIndexByPlayer player = ($<player_status>.player)
+	if (gamemode_isbandscoring)
+		getbandindexbyplayer player = ($<player_status>.player)
 		band_id = ($band_ids [<band_index>])
 		band_power = ($<band_id>.star_power_amount)
 		star_usage = (100.0 / 6.0)
@@ -189,16 +189,16 @@ script star_power_activate_and_drain
 		initial_power_time = (($<player_status>.playline_song_measure_time * 50.0) / $star_power_drain_rate)
 		power_time = <initial_power_time>
 		begin
-		Wait \{1
+		wait \{1
 			gameframe}
-		GetFrameLength
+		getframelength
 		power_time = (<power_time> - (1000.0 * <frame_length>))
 		drain = (((1000.0 * <frame_length>) / <initial_power_time>) * <star_usage>)
 		change structurename = <band_id> star_power_display_amount = ($<band_id>.star_power_display_amount - <drain>)
 		if ($<band_id>.star_power_display_amount <= 0)
 			change structurename = <band_id> star_power_display_amount = 0
 		endif
-		if NOT GotParam \{infinite_drain}
+		if NOT gotparam \{infinite_drain}
 			if (<power_time> <= 0)
 				break
 			endif
@@ -207,7 +207,7 @@ script star_power_activate_and_drain
 	else
 		star_power_activate <...>
 		begin
-		Wait \{1
+		wait \{1
 			gameframe}
 		if ($drum_solo_songtime_paused = 0)
 			change structurename = <player_status> star_power_used = 1
@@ -222,7 +222,7 @@ script star_power_activate_and_drain
 			change structurename = <player_status> star_power_amount = ($<player_status>.star_power_amount - <drain>)
 			if ($<player_status>.star_power_amount < 50)
 				if (<old_amount> >= 50)
-					BroadcastEvent \{type = starpower_bulbs_hide}
+					broadcastevent \{type = starpower_bulbs_hide}
 				endif
 			endif
 			if ($<player_status>.star_power_amount <= 0)
@@ -240,56 +240,56 @@ script star_power_activate_and_drain
 endscript
 
 script star_power_activate 
-	if NOT GotParam \{drumfill}
+	if NOT gotparam \{drumfill}
 		change structurename = <player_status> star_power_used = 1
 	endif
 	spawnscriptnow hud_activated_star_power params = {player = <player> player_text = <player_text>}
-	Wait \{1
+	wait \{1
 		gameframe}
-	if NOT GotParam \{drumfill}
-		LaunchGemEvent event = star_power_on player = <player>
-		BandManager_StarPowerOn player = <player>
+	if NOT gotparam \{drumfill}
+		launchgemevent event = star_power_on player = <player>
+		bandmanager_starpoweron player = <player>
 	endif
-	ExtendCRC star_power_on <player_text> out = type
-	BroadcastEvent type = <type> data = {player_text = <player_text> player = <player> player_status = <player_status>}
-	spawnscriptnow \{Crowd_AllPlayAnim
+	extendcrc star_power_on <player_text> out = type
+	broadcastevent type = <type> data = {player_text = <player_text> player = <player> player_status = <player_status>}
+	spawnscriptnow \{crowd_allplayanim
 		params = {
-			Anim = starpower
+			anim = starpower
 		}}
 endscript
 
 script star_power_deactivate 
-	if NOT GotParam \{drumfill}
+	if NOT gotparam \{drumfill}
 		change structurename = <player_status> star_power_used = 0
 	endif
-	UpdateNixie player = <player>
-	WaitOneGameFrame
-	if NOT GotParam \{drumfill}
+	updatenixie player = <player>
+	waitonegameframe
+	if NOT gotparam \{drumfill}
 		if ($playing_song_for_real = 1)
-			LaunchGemEvent event = star_power_off player = <player>
+			launchgemevent event = star_power_off player = <player>
 		endif
 	endif
-	ExtendCRC star_power_off <player_text> out = type
-	BroadcastEvent type = <type> data = {player_text = <player_text> player_status = <player_status>}
-	spawnscriptnow \{Crowd_AllPlayAnim
+	extendcrc star_power_off <player_text> out = type
+	broadcastevent type = <type> data = {player_text = <player_text> player_status = <player_status>}
+	spawnscriptnow \{crowd_allplayanim
 		params = {
-			Anim = Idle
+			anim = idle
 		}}
 endscript
 
 script star_power_boost_other_band_members 
 	booster_band_index = <band_index>
-	GetMaxPlayers
+	getmaxplayers
 	p = 1
 	begin
 	if NOT (<p> = <player>)
-		GetBandIndexByPlayer player = <p>
+		getbandindexbyplayer player = <p>
 		if (<band_index> = <booster_band_index>)
-			GetPlayerInfo <p> current_health
+			getplayerinfo <p> current_health
 			if (<current_health> < 1.0)
 				mult = (1.0 - <current_health>)
 				current_health = (<current_health> + ($band_max_star_power_health_boost * <mult>))
-				SetPlayerInfo <p> current_health = <current_health>
+				setplayerinfo <p> current_health = <current_health>
 			endif
 		endif
 	endif
@@ -299,7 +299,7 @@ endscript
 
 script reset_whammy_pitchshift 
 	set_whammy_pitchshift control = 0.0 player_status = <player_status>
-	SetAllWhammyValues value = 1.0 player = <player>
+	setallwhammyvalues value = 1.0 player = <player>
 endscript
 
 script autodetectleftys 
@@ -310,13 +310,13 @@ endscript
 resting_whammy_tolerance = 0.1
 
 script is_whammy_resting 
-	if GotParam \{controller}
+	if gotparam \{controller}
 		get_resting_whammy_position <...>
 	else
 		controller = ($<player_status>.controller)
 		resting_whammy_position = ($<player_status>.resting_whammy_position)
 	endif
-	if GuitarGetAnalogueInfo controller = <controller>
+	if guitargetanalogueinfo controller = <controller>
 		if (<rightx> < <resting_whammy_position>)
 			return \{true}
 		elseif ((<rightx> - <resting_whammy_position>) < ($resting_whammy_tolerance))
@@ -327,7 +327,7 @@ script is_whammy_resting
 endscript
 
 script get_resting_whammy_position 
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
 	switch (<controller>)
 		case 0
@@ -348,7 +348,7 @@ script get_resting_whammy_position
 endscript
 
 script get_star_power_position 
-	GetGlobalTags \{user_options
+	getglobaltags \{user_options
 		attract_mode_fix = 1}
 	switch (<controller>)
 		case 0

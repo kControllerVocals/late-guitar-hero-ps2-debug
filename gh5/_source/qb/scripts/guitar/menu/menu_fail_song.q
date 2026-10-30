@@ -11,12 +11,12 @@ script menu_replace_to_fail_song
 endscript
 
 script create_fail_song_menu 
-	SoundEvent \{event = Fail_Screen_SFX}
-	SoundEvent \{event = Menu_Warning_SFX_softer}
+	soundevent \{event = fail_screen_sfx}
+	soundevent \{event = menu_warning_sfx_softer}
 	change \{last_start_pressed_device = $primary_controller}
 	menu_font = fontgrid_title_a1
 	<menu_pos> = (640.0, 420.0)
-	GMan_SongTool_GetCurrentSong
+	gman_songtool_getcurrentsong
 	completion = 0
 	get_song_end_time song = <current_song>
 	if (<total_end_time> > 0)
@@ -25,41 +25,41 @@ script create_fail_song_menu
 			completion = 99
 		endif
 	endif
-	CastToInteger \{completion}
+	casttointeger \{completion}
 	<menu_pos> = (<menu_pos> + (0.0, 45.0))
 	if ($game_mode = gh4_p2_career || $game_mode = p2_coop || $game_mode = p2_quickplay)
-		GetPlayerInfo \{1
+		getplayerinfo \{1
 			difficulty
 			out = difficulty1}
-		GetPlayerInfo \{2
+		getplayerinfo \{2
 			difficulty
 			out = difficulty2}
 		min = ($difficulty_list_props.<difficulty1>.index)
-		MathMin a = <min> b = ($difficulty_list_props.<difficulty2>.index)
-		CastToInteger \{min}
+		mathmin a = <min> b = ($difficulty_list_props.<difficulty2>.index)
+		casttointeger \{min}
 		difficulty_index = <min>
 		get_difficulty_text_upper difficulty = ($difficulty_list [<difficulty_index>])
 	else
 		if (($player1_status.double_kick_drum) = 1)
-			if StructureContains Structure = ($permanent_songlist_props.($current_song)) double_kick
+			if structurecontains structure = ($permanent_songlist_props.($current_song)) double_kick
 				if ($permanent_songlist_props.($current_song).double_kick = 1)
-					difficulty_text = qs("EXPERT+")
+					difficulty_text = qs(0x7a19b5f7)
 				else
-					difficulty_text = qs("EXPERT")
+					difficulty_text = qs(0x334908ac)
 				endif
 			endif
 		else
-			GetPlayerInfo \{1
+			getplayerinfo \{1
 				difficulty
 				out = difficulty1}
 			get_difficulty_text_upper difficulty = <difficulty1>
 		endif
 	endif
 	get_song_title song = <current_song>
-	GetUpperCaseString <song_title>
-	FormatText TextName = completion_text qs("\L%d") d = <completion>
+	getuppercasestring <song_title>
+	formattext textname = completion_text qs(0x76b3fda7) d = <completion>
 	z = 100.0
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = fail_song_static_text_container
 		internal_just = [
@@ -68,12 +68,12 @@ script create_fail_song_menu
 		]
 		pos = (0.0, 0.0)
 		z_priority = 2}
-	title = qs("FAILED")
-	if NOT InInternetMode
+	title = qs(0x5c9b76c1)
+	if NOT ininternetmode
 		popup_options = [
 			{
 				func = fail_song_menu_select_retry_song
-				text = qs("RETRY SONG")
+				text = qs(0x647b5a84)
 			}
 		]
 	else
@@ -83,108 +83,108 @@ script create_fail_song_menu
 	set_focus_color \{color = reddish_grey}
 	set_unfocus_color \{color = black}
 	text_scale = (0.9, 0.95)
-	if NOT English
+	if NOT english
 		text_scale = (0.9, 0.85)
 	endif
-	if NOT GotParam \{exclusive_device}
+	if NOT gotparam \{exclusive_device}
 		exclusive_device = ($primary_controller)
 	endif
 	demo_mode_disable = {}
-	GameMode_GetType
+	gamemode_gettype
 	if (<type> = quickplay)
 		if NOT ui_event_exists_in_stack \{name = 'jam'}
-			if (($num_quickplay_song_list > 1) || ($is_partyplay_mode = 1))
+			if (($num_quickplay_song_list > 1) || ($0xc7e670d7 = 1))
 				<quickplay_skip_song_option> = {
 					func = quickplay_skip_song
 					func_params = {failed_song}
-					text = qs("SKIP SONG")
+					text = qs(0xef74f7d2)
 				}
-				AddArrayElement array = <popup_options> element = <quickplay_skip_song_option>
+				addarrayelement array = <popup_options> element = <quickplay_skip_song_option>
 				<popup_options> = <array>
 			endif
 		endif
 	endif
 	if NOT ((<current_song> = jamsession) || ($is_network_game = 1))
-		if NOT GameMode_IsBandScoring
+		if NOT gamemode_isbandscoring
 			<change_diff_option> = {
 				func = fail_song_menu_select_change_diff
-				text = qs("CHANGE DIFFICULTY")
+				text = qs(0xa717ca5b)
 			}
-			AddArrayElement array = <popup_options> element = <change_diff_option>
+			addarrayelement array = <popup_options> element = <change_diff_option>
 			<popup_options> = <array>
 		endif
 	endif
 	change \{is_guitar_controller = 0}
 	player_device = ($primary_controller)
-	if IsGuitarController controller = <player_device>
+	if isguitarcontroller controller = <player_device>
 		change \{is_guitar_controller = 1}
 	endif
-	GameMode_GetType
+	gamemode_gettype
 	if NOT (<current_song> = jamsession)
 		if (<type> = career || <type> = quickplay)
 			if ($current_num_players = 1)
 				<practice_option> = {
 					func = fail_song_menu_select_practice
-					text = qs("PRACTICE")
+					text = qs(0x3ea7dec9)
 				}
-				AddArrayElement array = <popup_options> element = <practice_option>
+				addarrayelement array = <popup_options> element = <practice_option>
 				<popup_options> = <array>
 			endif
 		endif
 	endif
-	GameMode_GetType
+	gamemode_gettype
 	if (<type> = career)
 		if ($is_network_game = 1)
-			if IsHost
+			if ishost
 				<new_song_option> = {
 					func = fail_song_menu_select_new_song
-					text = qs("QUIT GIG")
+					text = qs(0x79e7750b)
 				}
 			else
 				<new_song_option> = {
 					func = empty_script
-					text = qs("WAITING FOR BAND LEADER")
+					text = qs(0xf40ad470)
 					not_focusable
 				}
 			endif
 		else
 			<new_song_option> = {
 				func = fail_song_menu_select_new_song
-				text = qs("NEW GIG")
+				text = qs(0xe561ef6f)
 			}
 		endif
 	else
 		<new_song_option> = {
 			func = fail_song_menu_select_new_song
-			text = qs("NEW SONG")
+			text = qs(0x3e482764)
 		}
 	endif
-	if GotParam \{new_song_option}
-		AddArrayElement array = <popup_options> element = <new_song_option>
+	if gotparam \{new_song_option}
+		addarrayelement array = <popup_options> element = <new_song_option>
 		<popup_options> = <array>
 	endif
 	if ($is_network_game = 1)
 		<quit_option> = {
 			func = select_quit_network_game
 			func_params = {from_fail_menu = 1}
-			text = qs("QUIT")
+			text = qs(0x67d9c56d)
 		}
 	else
 		<quit_option> = {
 			func = fail_song_menu_select_quit
-			text = qs("MAIN MENU")
+			text = qs(0x793e4d21)
 		}
 	endif
-	AddArrayElement array = <popup_options> element = <quit_option>
+	addarrayelement array = <popup_options> element = <quit_option>
 	<popup_options> = <array>
 	if (($is_network_game = 1 && $net_popup_active = 0) || ($is_network_game = 0))
 		create_dialog_box {
-			Template = fail_song
+			template = fail_song
 			heading_text = <title>
 			no_background
 			options = <popup_options>
 			fail_song_props = {
-				song_title = <UpperCaseString>
+				song_title = <uppercasestring>
 				percent_text = <completion_text>
 				difficulty_text = <difficulty_text>
 			}
@@ -195,7 +195,7 @@ endscript
 
 script fail_song_menu_select_tutorial 
 	player_device = ($primary_controller)
-	if IsGuitarController controller = <player_device>
+	if isguitarcontroller controller = <player_device>
 		kill_gem_scroller
 		generic_event_choose \{state = uistate_select_practice_mode}
 	endif
@@ -212,11 +212,11 @@ script fail_song_menu_select_practice
 endscript
 
 script fail_song_menu_select_retry_song 
-	set_loading_screen \{full}
+	0xe9384b7a \{full}
 	change \{ps2_gameplay_restart_song = 1}
-	GH3_SFX_fail_song_stop_sounds
+	gh3_sfx_fail_song_stop_sounds
 	if ($is_network_game = 1)
-		SendStructure \{callback = net_career_retry_song
+		sendstructure \{callback = net_career_retry_song
 			data_to_send = {
 				none
 			}}
@@ -232,38 +232,38 @@ script fail_song_menu_select_retry_song
 endscript
 
 script fail_song_menu_select_new_song 
-	GH3_SFX_fail_song_stop_sounds
-	if CD
+	gh3_sfx_fail_song_stop_sounds
+	if cd
 		if ($is_in_debug = 1)
 			generic_event_back \{state = uistate_debug}
 			return
 		endif
 	endif
-	GMan_SongTool_GetCurrentSong
+	gman_songtool_getcurrentsong
 	if (<current_song> = jamsession)
 		if ui_event_exists_in_stack \{name = 'jam'}
 			if NOT ($jam_view_cam_created = 1)
 				destroy_bg_viewport
 				setup_bg_viewport
-				PlayIGCCam \{name = jam_view_cam
+				playigccam \{name = jam_view_cam
 					viewport = bg_viewport
 					controlscript = jam_camera_script
 					params = {
 						start_camera = jam_song_select
 					}
-					Play_hold = 1}
+					play_hold = 1}
 				change \{jam_view_cam_created = 1}
 				change \{target_jam_camera_prop = failed_song_cam}
 			endif
-			generic_event_back state = UIstate_jam_select_song player = <player> data = {show_popup = 0}
+			generic_event_back state = uistate_jam_select_song player = <player> data = {show_popup = 0}
 		elseif ui_event_exists_in_stack \{name = 'setlist'}
 			generic_event_back state = uistate_setlist player = <player>
 		endif
 	else
-		GameMode_GetType
+		gamemode_gettype
 		if (<type> = career)
 			if ($is_network_game = 1)
-				SendStructure \{callback = net_career_goto_band_lobby
+				sendstructure \{callback = net_career_goto_band_lobby
 					data_to_send = {
 						none
 					}}
@@ -289,14 +289,14 @@ script fail_song_menu_select_quit
 endscript
 
 script fail_song_menu_select_change_diff 
-	generic_event_choose state = UIstate_pausemenu_change_difficulty data = {<...> no_warning}
+	generic_event_choose state = uistate_pausemenu_change_difficulty data = {<...> no_warning}
 endscript
 
 script quickplay_skip_song 
 	do_gh3_pause
-	GH3_SFX_fail_song_stop_sounds
+	gh3_sfx_fail_song_stop_sounds
 	if quickplay_set_new_song_in_gig_list
-		if ($is_partyplay_mode = 1)
+		if ($0xc7e670d7 = 1)
 			<current_song> = $current_song
 		else
 			<current_song> = ($quickplay_song_list [($quickplay_song_list_current) -1])
@@ -304,9 +304,9 @@ script quickplay_skip_song
 		if (<current_song> = jamsession)
 			jamsession_unload
 		endif
-		if ($is_partyplay_mode = 1)
-			set_random_partyplay_song
-			<next_song> = <new_partyplay_song>
+		if ($0xc7e670d7 = 1)
+			0x587a82d3
+			<next_song> = <0x72fa1922>
 		else
 			<next_song> = ($quickplay_song_list [($quickplay_song_list_current)])
 		endif

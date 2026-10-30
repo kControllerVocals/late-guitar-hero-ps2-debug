@@ -1,17 +1,17 @@
 
 script ui_create_customize_character_outfit_accessories 
-	make_generic_menu \{back_state = UIstate_cas
+	make_generic_menu \{back_state = uistate_cas
 		vmenu_id = create_customize_character_outfit_accessories_vmenu
-		title = qs("ACCESSORIES")
+		title = qs(0x69fb513a)
 		num_icons = 2
 		show_history}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -24,105 +24,105 @@ script ui_create_customize_character_outfit_accessories
 		]
 		zoom_camera = 'customize_character_Zoom'}
 	add_generic_menu_text_item {
-		text = qs("FACE")
-		choose_state = UIstate_popout_select_part
+		text = qs(0xb5847ea6)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("CHOOSE FACE ACCESSORY")
+			text = qs(0xab9965ec)
 			cam_name = 'customize_face'
 			camera_list = ['customize_face' 'customize_character_hair_R' 'customize_character_hair_B' 'customize_character_hair_L']
 			zoom_camera = 'customize_character_Zoom'
-			part = CAS_Acc_Face
-			stance = Stance_Select_Head
+			part = cas_acc_face
+			stance = stance_select_head
 			is_popup
 			hist_tex = icon_face_acc
 			color_wheel = ($clothing_colorwheel)
 			purchase_menu
-			stance = Stance_Select_Glasses
+			stance = stance_select_glasses
 		}
 	}
 	add_generic_menu_text_item {
-		text = qs("HAT")
-		choose_state = UIstate_popout_select_part
+		text = qs(0x50497155)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("CHOOSE HAT")
+			text = qs(0xa46a8c42)
 			cam_name = 'customize_hat'
 			camera_list = ['customize_hat' 'customize_character_hair_R' 'customize_character_hair_B' 'customize_character_hair_L']
 			zoom_camera = 'customize_character_Zoom'
-			part = CAS_Hat
-			hist_tex = AccessoriesHat
-			stance = Stance_Select_Head
+			part = cas_hat
+			hist_tex = accessorieshat
+			stance = stance_select_head
 			is_popup
 			color_wheel = ($clothing_colorwheel)
 			purchase_menu
-			stance = Stance_Select_Hat
+			stance = stance_select_hat
 		}
 	}
 	add_generic_menu_text_item {
-		text = qs("LEFT ARM")
-		choose_state = UIstate_popout_select_part
+		text = qs(0x290271d8)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
-			text = qs("CHOOSE LEFT ARM ACCESSORY")
+			text = qs(0x792507d5)
 			cam_name = 'customize_left_arm'
 			camera_list = ['customize_left_arm' 'customize_left_arm_R' 'customize_left_arm_B' 'customize_left_arm_L']
 			zoom_camera = 'customize_character_Zoom'
-			part = CAS_Acc_Left
-			hist_tex = AccessoriesLeftArm
-			stance = Stance_Select_Arm_L
+			part = cas_acc_left
+			hist_tex = accessoriesleftarm
+			stance = stance_select_arm_l
 			is_popup
 			color_wheel = ($clothing_colorwheel)
 			purchase_menu
-			stance = Stance_Select_Arm_L
+			stance = stance_select_arm_l
 			additional_init_script = hide_car_parts_accessories
 			additional_deinit_script = unhide_car_parts_accessories
 		}
 	}
-	acc_right_state = UIstate_popout_select_part
-	part = CAS_Acc_Right
+	0xee7d431b = uistate_popout_select_part
+	part = cas_acc_right
 	if NOT (is_female_char)
-		acc_right_state = UIstate_cag_select_part_inclusion
-		body_part = CAS_Male_Torso
-		part = CAS_Male_Acc_Right
+		0xee7d431b = uistate_cag_select_part_inclusion
+		body_part = cas_male_torso
+		part = cas_male_acc_right
 	endif
 	add_generic_menu_text_item {
-		text = qs("RIGHT ARM")
-		choose_state = <acc_right_state>
+		text = qs(0x415e789e)
+		choose_state = <0xee7d431b>
 		choose_state_data = {
-			text = qs("CHOOSE RIGHT ARM ACCESSORY")
+			text = qs(0x328a5e9c)
 			cam_name = 'customize_right_arm'
 			camera_list = ['customize_right_arm' 'customize_right_arm_R' 'customize_right_arm_L']
 			zoom_camera = 'customize_character_Zoom'
 			part = <part>
 			body_part = <body_part>
-			hist_tex = AccessoriesRightArm
+			hist_tex = accessoriesrightarm
 			is_popup
 			color_wheel = ($clothing_colorwheel)
 			purchase_menu
-			stance = Stance_Select_Arm_R
-			initial_stance = Stance_Select_Arm_R
+			stance = stance_select_arm_r
+			0x04d6233f = stance_select_arm_r
 			additional_init_script = hide_car_parts_accessories
 			additional_deinit_script = unhide_car_parts_accessories
 		}
 	}
 	add_generic_menu_text_item {
-		text = qs("PIERCINGS")
-		choose_state = UIstate_popout_select_part
+		text = qs(0x0bcdd98b)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
 			hist_tex = icon_face_piercing
 			cam_name = 'customize_character_head'
 			camera_list = ['customize_character_head' 'customize_character_head_R' 'customize_character_head_B' 'customize_character_head_L']
 			zoom_camera = 'customize_character_Zoom'
-			part = CAS_Acc_Ears
-			stance = Stance_Select_Head
+			part = cas_acc_ears
+			stance = stance_select_head
 			is_popup
 			color_wheel = ($clothing_colorwheel)
 			purchase_menu
-			stance = Stance_Select_Head
+			stance = stance_select_head
 			additional_init_script = hide_car_parts_piercings
 			additional_deinit_script = unhide_car_parts_piercings
 		}
 	}
-	if GetCurrentCASObject
-		BandManager_ChangeStance name = <cas_object> stance = stance_frontend no_wait
+	if getcurrentcasobject
+		bandmanager_changestance name = <cas_object> stance = stance_frontend no_wait
 	endif
 	menu_finish \{car_helper_text}
 endscript
@@ -136,51 +136,51 @@ script ui_destroy_customize_character_outfit_accessories
 endscript
 
 script hide_car_parts_accessories 
-	PushTemporaryCASAppearance
+	pushtemporarycasappearance
 	if is_female_char
-		SetCASAppearancePartInstance \{part = CAS_Torso
+		setcasappearancepartinstance \{part = cas_torso
 			part_instance = {
-				desc_id = F_Fun_Torso_BikiniTop
+				desc_id = f_fun_torso_bikinitop
 			}}
 	else
-		SetCASAppearancePartInstance \{part = CAS_Torso
+		setcasappearancepartinstance \{part = cas_torso
 			part_instance = {
 				desc_id = none
 			}}
 	endif
-	RebuildCurrentCASModel
+	rebuildcurrentcasmodel
 endscript
 
 script unhide_car_parts_accessories 
-	MergePartIntoTemporaryCASAppearance \{part_list = [
-			CAS_Acc_Left
-			CAS_Acc_Right
+	mergepartintotemporarycasappearance \{part_list = [
+			cas_acc_left
+			cas_acc_right
 		]}
 endscript
 
 script hide_car_parts_piercings 
-	PushTemporaryCASAppearance
-	SetCASAppearancePartInstance \{part = CAS_Hair
+	pushtemporarycasappearance
+	setcasappearancepartinstance \{part = cas_hair
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Hat_Hair
+	setcasappearancepartinstance \{part = cas_hat_hair
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Hat
+	setcasappearancepartinstance \{part = cas_hat
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Acc_Face
+	setcasappearancepartinstance \{part = cas_acc_face
 		part_instance = {
 			desc_id = none
 		}}
-	RebuildCurrentCASModel
+	rebuildcurrentcasmodel
 endscript
 
 script unhide_car_parts_piercings 
-	MergePartIntoTemporaryCASAppearance \{part_list = [
-			CAS_Acc_Ears
+	mergepartintotemporarycasappearance \{part_list = [
+			cas_acc_ears
 		]}
 endscript

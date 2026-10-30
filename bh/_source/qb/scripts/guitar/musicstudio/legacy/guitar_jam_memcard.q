@@ -14,23 +14,23 @@ script print_jam_directory_listings
 
 
 
-	GetArraySize ($jam_curr_directory_listing)
+	getarraysize ($jam_curr_directory_listing)
 
 
 
-	GetArraySize ($jam_controller_directory_listing_0)
+	getarraysize ($jam_controller_directory_listing_0)
 
 
 
-	GetArraySize ($jam_controller_directory_listing_1)
+	getarraysize ($jam_controller_directory_listing_1)
 
 
 
-	GetArraySize ($jam_controller_directory_listing_2)
+	getarraysize ($jam_controller_directory_listing_2)
 
 
 
-	GetArraySize ($jam_controller_directory_listing_3)
+	getarraysize ($jam_controller_directory_listing_3)
 
 
 
@@ -38,17 +38,17 @@ endscript
 
 script jam_get_controller_directory_listing \{controller = 0}
 	get_savegame_from_controller controller = <controller>
-	FormatText checksumname = controller_directory_listing 'jam_controller_directory_listing_%s' s = <savegame>
+	formattext checksumname = controller_directory_listing 'jam_controller_directory_listing_%s' s = <savegame>
 	directorylisting = ($<controller_directory_listing>)
 	return directorylisting = <directorylisting>
 endscript
 
 script jam_reset_controller_directory_listing \{controller = 0}
-	if NOT GotParam \{savegame}
+	if NOT gotparam \{savegame}
 		get_savegame_from_controller controller = <controller>
 	endif
-	FormatText checksumname = controller_directory_listing 'jam_controller_directory_listing_%s' s = <savegame>
-	if GlobalExists name = <controller_directory_listing>
+	formattext checksumname = controller_directory_listing 'jam_controller_directory_listing_%s' s = <savegame>
+	if globalexists name = <controller_directory_listing>
 		change globalname = <controller_directory_listing> newvalue = []
 	endif
 
@@ -56,11 +56,11 @@ script jam_reset_controller_directory_listing \{controller = 0}
 endscript
 
 script jam_update_controller_directory_listing \{controller = 0}
-	if NOT GotParam \{savegame}
+	if NOT gotparam \{savegame}
 		get_savegame_from_controller controller = <controller>
 	endif
-	FormatText checksumname = controller_directory_listing 'jam_controller_directory_listing_%s' s = <savegame>
-	if GlobalExists name = <controller_directory_listing>
+	formattext checksumname = controller_directory_listing 'jam_controller_directory_listing_%s' s = <savegame>
+	if globalexists name = <controller_directory_listing>
 		change globalname = <controller_directory_listing> newvalue = <directorylisting>
 	endif
 
@@ -70,11 +70,11 @@ endscript
 script jam_get_num_songs 
 	user_song_count = 0
 	downloaded_song_count = 0
-	GetArraySize ($jam_curr_directory_listing)
+	getarraysize ($jam_curr_directory_listing)
 	if (<array_size> > 0)
 		index = 0
 		begin
-		if StructureContains Structure = ($jam_curr_directory_listing [<index>]) downloaded
+		if structurecontains structure = ($jam_curr_directory_listing [<index>]) downloaded
 			if (($jam_curr_directory_listing [<index>].downloaded) = 1)
 				<downloaded_song_count> = (<downloaded_song_count> + 1)
 			else
@@ -89,8 +89,8 @@ script jam_get_num_songs
 
 	return user_song_count = <user_song_count> downloaded_song_count = <downloaded_song_count>
 endscript
-memcard_jamsession_file_name = qs("CustomSong")
-memcard_jamsession_new_file_name = qs("CustomSong")
+memcard_jamsession_file_name = qs(0xef150ff7)
+memcard_jamsession_new_file_name = qs(0xef150ff7)
 memcard_jamsession_actual_file_name = 'Hermaflamingo'
 memcard_jamsession_song_version = 0
 memcard_jamsession_downloaded = 0
@@ -104,11 +104,11 @@ memcard_jamsession_playback_track1 = 0
 memcard_jamsession_playback_track2 = 0
 memcard_jamsession_playback_track_drums = 0
 memcard_jamsession_playback_track_vocals = 0
-memcard_jamsession_content_name = qs("CustomSongs")
+memcard_jamsession_content_name = qs(0xcf50afcb)
 
 script jam_save_song_setup 
 
-	if NOT GotParam \{song}
+	if NOT gotparam \{song}
 		if ($jam_band_new_song = 0)
 			create_overwrite_menu
 			clean_up_user_control_helpers
@@ -122,39 +122,39 @@ script jam_save_song_setup
 		create_save_menu
 		clean_up_user_control_helpers
 	endif
-	GetArraySize \{$jam_tracks}
+	getarraysize \{$jam_tracks}
 	index = 0
 	begin
 	gem_array = ($jam_tracks [<index>].gem_array)
-	ProcessHammerOns name = <gem_array> name_fretbar = editable_fretbars
+	processhammerons name = <gem_array> name_fretbar = editable_fretbars
 	<index> = (<index> + 1)
 	repeat (<array_size> - 1)
 	jam_save_scale
 	jam_save_effect
 	jam_clear_clipboards
-	FormatText \{checksumname = undo_clipboard_array
+	formattext \{checksumname = undo_clipboard_array
 		'undo_clipboard'}
-	if GlobalExists name = <undo_clipboard_array> type = array
+	if globalexists name = <undo_clipboard_array> type = array
 
-		DestroyScriptArray name = <undo_clipboard_array>
+		destroyscriptarray name = <undo_clipboard_array>
 	endif
 	change memcard_jamsession_file_name = <song>
 endscript
 
 script jam_save_song_unload 
 	jamsession_unload \{song_prefix = 'editable'}
-	ClearJamSession
+	clearjamsession
 endscript
 
-script jam_recording_get_unique_name \{prefix = qs("CustomSong")}
+script jam_recording_get_unique_name \{prefix = qs(0xef150ff7)}
 	song_name = <prefix>
 	directorylisting = $jam_curr_directory_listing
-	GetArraySize <directorylisting>
+	getarraysize <directorylisting>
 	if (<array_size> > 0)
 		unique_name = 1
 		index = 0
 		begin
-		if SaveFileNamesAreEquivalent s1 = <song_name> s2 = (<directorylisting> [<index>].filename)
+		if 0x010d8fc7 s1 = <song_name> 0x72e396b5 = (<directorylisting> [<index>].filename)
 			<unique_name> = 0
 			break
 		endif
@@ -163,11 +163,11 @@ script jam_recording_get_unique_name \{prefix = qs("CustomSong")}
 		if NOT (<unique_name> = 1)
 			name_count = 1
 			begin
-			FormatText TextName = song_name qs("%a%s") a = <prefix> s = <name_count>
+			formattext textname = song_name qs(0x7b1de562) a = <prefix> s = <name_count>
 			unique_name = 1
 			index = 0
 			begin
-			if SaveFileNamesAreEquivalent s1 = <song_name> s2 = (<directorylisting> [<index>].filename)
+			if 0x010d8fc7 s1 = <song_name> 0x72e396b5 = (<directorylisting> [<index>].filename)
 				<unique_name> = 0
 				break
 			endif
@@ -180,11 +180,11 @@ script jam_recording_get_unique_name \{prefix = qs("CustomSong")}
 			repeat
 		endif
 	endif
-	StringLength string = <song_name>
+	stringlength string = <song_name>
 
 	if (<str_len> > 17)
-		StringLength string = <prefix>
-		StringNCopy string = <prefix> length = (<str_len> - 1)
+		stringlength string = <prefix>
+		stringncopy string = <prefix> length = (<str_len> - 1)
 		jam_recording_get_unique_name prefix = <new_string>
 		<song_name> = <song>
 	else
@@ -205,34 +205,34 @@ script debug_create_multiple_jam_songs \{num_songs = 1
 	count = 0
 	begin
 	jam_setup_new_song
-	SetSongInfo \{playback_track1 = 0}
-	SetSongInfo \{playback_track2 = 2}
-	SetSongInfo \{playback_track_drums = 1}
-	SetSongInfo \{playback_track_vocals = 1}
-	SetSongInfo downloaded = <downloaded>
+	setsonginfo \{playback_track1 = 0}
+	setsonginfo \{playback_track2 = 2}
+	setsonginfo \{playback_track_drums = 1}
+	setsonginfo \{playback_track_vocals = 1}
+	setsonginfo downloaded = <downloaded>
 	if (<downloaded> = 1)
 		d = 'D'
 	else
 		d = 'L'
 	endif
-	FormatText TextName = filename qs("DEBUGSONG_%d%s") s = <count> d = <d>
+	formattext textname = filename qs(0xf7e8d767) s = <count> d = <d>
 
 	change memcard_jamsession_file_name = <filename>
 	change \{memcard_after_func = debug_create_jam_song_after_func}
 	ui_memcard_save_jam \{event = menu_back
 		data = {
-			state = UIstate_jam_select_song
+			state = uistate_jam_select_song
 			show_popup = 0
 		}}
-	Block \{type = debug_create_jam_song}
+	block \{type = debug_create_jam_song}
 
 	jam_recording_cleanup
-	Wait \{1
+	wait \{1
 		second}
 	<count> = (<count> + 1)
 	repeat <num_songs>
 endscript
 
 script debug_create_jam_song_after_func 
-	BroadcastEvent \{type = debug_create_jam_song}
+	broadcastevent \{type = debug_create_jam_song}
 endscript

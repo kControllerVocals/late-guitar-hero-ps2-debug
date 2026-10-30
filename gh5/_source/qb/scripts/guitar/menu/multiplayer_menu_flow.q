@@ -21,6 +21,6 @@ script create_mp_split_off_flow_for_character_hub
 endscript
 
 script mp_faceoff_song_select_quit 
-	GH3_SFX_fail_song_stop_sounds
+	gh3_sfx_fail_song_stop_sounds
 	kill_gem_scroller
 endscript

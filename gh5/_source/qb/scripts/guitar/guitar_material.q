@@ -23,6 +23,6 @@ script create_highway_material \{player = 1
 endscript
 
 script destroy_highway_material \{player = 1}
-	FormatText checksumname = material_name 'Material_Highway_p%p' p = <player>
-	DestroyMaterial name = <material_name>
+	formattext checksumname = material_name 'Material_Highway_p%p' p = <player>
+	destroymaterial name = <material_name>
 endscript

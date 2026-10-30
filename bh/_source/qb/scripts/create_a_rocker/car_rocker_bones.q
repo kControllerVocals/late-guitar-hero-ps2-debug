@@ -1,12 +1,12 @@
-CAR_Bones_Female_Face = [
+car_bones_female_face = [
 	{
-		frontend_desc = qs("Head")
-		group_name = HeadSize
+		frontend_desc = qs(0xba9759e2)
+		group_name = headsize
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Bone_Jaw
+				bone = bone_jaw
 				scaling = {
 					from = -0.05
 					to = 0.09
@@ -14,7 +14,7 @@ CAR_Bones_Female_Face = [
 				}
 			}
 			{
-				bone = Bone_Head
+				bone = bone_head
 				scaling = {
 					from = -0.025
 					to = 0.05
@@ -24,11 +24,11 @@ CAR_Bones_Female_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Face Fullness")
-		group_name = FaceFullness
+		frontend_desc = qs(0xc53990a7)
+		group_name = facefullness
 		bones = [
 			{
-				bone = Bone_Head
+				bone = bone_head
 				scaling = {
 					from = (0.0, 0.0, -0.003)
 					to = (0.0, 0.0, 0.085)
@@ -36,7 +36,7 @@ CAR_Bones_Female_Face = [
 				}
 			}
 			{
-				bone = Bone_Jaw
+				bone = bone_jaw
 				scaling = {
 					from = (0.0, 0.0, -0.3)
 					to = (0.0, 0.0, 0.2)
@@ -46,11 +46,11 @@ CAR_Bones_Female_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Jaw Scale")
-		group_name = JawScale
+		frontend_desc = qs(0x96c3ca83)
+		group_name = jawscale
 		bones = [
 			{
-				bone = Bone_Jaw
+				bone = bone_jaw
 				scaling = {
 					from = -0.1
 					to = 0.09
@@ -60,41 +60,41 @@ CAR_Bones_Female_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Size")
-		group_name = NoseSize
+		frontend_desc = qs(0x0d17431d)
+		group_name = nosesize
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Tip")
-		group_name = NoseTip
+		frontend_desc = qs(0xa493fadc)
+		group_name = nosetip
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Width")
-		group_name = NoseWidth
+		frontend_desc = qs(0x650f63e5)
+		group_name = nosewidth
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Angle")
-		group_name = NoseAngle
+		frontend_desc = qs(0xe3ede8c0)
+		group_name = noseangle
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Bridge")
-		group_name = NoseBridge
+		frontend_desc = qs(0x647d2a49)
+		group_name = nosebridge
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Upper Lip Thickness")
-		group_name = UpperLipThickness
+		frontend_desc = qs(0x24446c16)
+		group_name = upperlipthickness
 		bones = [
 			{
-				bone = Bone_Lip_Upper_Corner_L
+				bone = bone_lip_upper_corner_l
 				scaling = {
 					from = (-0.2, 0.0, -0.1)
 					to = (0.3, 0.05, 0.15)
@@ -102,7 +102,7 @@ CAR_Bones_Female_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Upper_Corner_R
+				bone = bone_lip_upper_corner_r
 				scaling = {
 					from = (-0.2, 0.0, -0.1)
 					to = (0.3, 0.05, 0.15)
@@ -110,7 +110,7 @@ CAR_Bones_Female_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Upper_Mid
+				bone = bone_lip_upper_mid
 				scaling = {
 					from = (-0.4, 0.0, -0.2)
 					to = (0.4, 0.1, 0.4)
@@ -120,11 +120,11 @@ CAR_Bones_Female_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Lower Lip Thickness")
-		group_name = LowerLipThickness
+		frontend_desc = qs(0x99c1df96)
+		group_name = lowerlipthickness
 		bones = [
 			{
-				bone = Bone_Lip_Lower_Corner_L
+				bone = bone_lip_lower_corner_l
 				scaling = {
 					from = (-0.2, 0.0, -0.1)
 					to = (0.3, 0.05, 0.15)
@@ -132,7 +132,7 @@ CAR_Bones_Female_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Lower_Corner_R
+				bone = bone_lip_lower_corner_r
 				scaling = {
 					from = (-0.2, 0.0, -0.1)
 					to = (0.3, 0.05, 0.15)
@@ -140,7 +140,7 @@ CAR_Bones_Female_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Lower_Mid
+				bone = bone_lip_lower_mid
 				scaling = {
 					from = (-0.4, 0.0, -0.2)
 					to = (0.6, 0.1, 0.3)
@@ -150,45 +150,45 @@ CAR_Bones_Female_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Position")
-		group_name = EyePosition
+		frontend_desc = qs(0x7da8fa24)
+		group_name = eyeposition
 		min = -1.0
 		max = 1.0
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Depth")
-		group_name = EyeDepth
+		frontend_desc = qs(0x99c074ee)
+		group_name = eyedepth
 		min = -1.0
 		max = 1.0
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Scale")
-		group_name = EyeScale
+		frontend_desc = qs(0x725437fb)
+		group_name = eyescale
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Distance")
-		group_name = EyeDistance
+		frontend_desc = qs(0xe550a057)
+		group_name = eyedistance
 		min = -1.0
 		max = 1.0
 		bones = [
 		]
 	}
 ]
-CAR_Bones_Male_Face = [
+car_bones_male_face = [
 	{
-		frontend_desc = qs("Head")
-		group_name = HeadSize
+		frontend_desc = qs(0xba9759e2)
+		group_name = headsize
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Bone_Jaw
+				bone = bone_jaw
 				scaling = {
 					from = -0.05
 					to = 0.1
@@ -196,7 +196,7 @@ CAR_Bones_Male_Face = [
 				}
 			}
 			{
-				bone = Bone_Head
+				bone = bone_head
 				scaling = {
 					from = -0.025
 					to = 0.05
@@ -206,11 +206,11 @@ CAR_Bones_Male_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Face Fullness")
-		group_name = FaceFullness
+		frontend_desc = qs(0xc53990a7)
+		group_name = facefullness
 		bones = [
 			{
-				bone = Bone_Head
+				bone = bone_head
 				scaling = {
 					from = (0.0, 0.0, -0.002)
 					to = (0.0, 0.0, 0.095000006)
@@ -218,7 +218,7 @@ CAR_Bones_Male_Face = [
 				}
 			}
 			{
-				bone = Bone_Jaw
+				bone = bone_jaw
 				scaling = {
 					from = (0.0, 0.0, -0.15)
 					to = (0.0, 0.0, 0.15)
@@ -228,11 +228,11 @@ CAR_Bones_Male_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Jaw Scale")
-		group_name = JawScale
+		frontend_desc = qs(0x96c3ca83)
+		group_name = jawscale
 		bones = [
 			{
-				bone = Bone_Jaw
+				bone = bone_jaw
 				scaling = {
 					from = -0.05
 					to = 0.08
@@ -242,41 +242,41 @@ CAR_Bones_Male_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Size")
-		group_name = NoseSize
+		frontend_desc = qs(0x0d17431d)
+		group_name = nosesize
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Tip")
-		group_name = NoseTip
+		frontend_desc = qs(0xa493fadc)
+		group_name = nosetip
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Width")
-		group_name = NoseWidth
+		frontend_desc = qs(0x650f63e5)
+		group_name = nosewidth
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Angle")
-		group_name = NoseAngle
+		frontend_desc = qs(0xe3ede8c0)
+		group_name = noseangle
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Nose Bridge")
-		group_name = NoseBridge
+		frontend_desc = qs(0x647d2a49)
+		group_name = nosebridge
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Upper Lip Thickness")
-		group_name = UpperLipThickness
+		frontend_desc = qs(0x24446c16)
+		group_name = upperlipthickness
 		bones = [
 			{
-				bone = Bone_Lip_Upper_Corner_L
+				bone = bone_lip_upper_corner_l
 				scaling = {
 					from = (-0.4, 0.0, -0.2)
 					to = (0.3, 0.1, 0.2)
@@ -284,7 +284,7 @@ CAR_Bones_Male_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Upper_Corner_R
+				bone = bone_lip_upper_corner_r
 				scaling = {
 					from = (-0.4, 0.0, -0.2)
 					to = (0.3, 0.1, 0.2)
@@ -292,7 +292,7 @@ CAR_Bones_Male_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Upper_Mid
+				bone = bone_lip_upper_mid
 				scaling = {
 					from = (-0.5, 0.0, -0.25)
 					to = (0.4, 0.15, 0.4)
@@ -302,11 +302,11 @@ CAR_Bones_Male_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Lower Lip Thickness")
-		group_name = LowerLipThickness
+		frontend_desc = qs(0x99c1df96)
+		group_name = lowerlipthickness
 		bones = [
 			{
-				bone = Bone_Lip_Lower_Corner_L
+				bone = bone_lip_lower_corner_l
 				scaling = {
 					from = (-0.4, 0.0, -0.2)
 					to = (0.7, 0.2, 0.3)
@@ -314,7 +314,7 @@ CAR_Bones_Male_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Lower_Corner_R
+				bone = bone_lip_lower_corner_r
 				scaling = {
 					from = (-0.4, 0.0, -0.2)
 					to = (0.7, 0.2, 0.3)
@@ -322,7 +322,7 @@ CAR_Bones_Male_Face = [
 				}
 			}
 			{
-				bone = Bone_Lip_Lower_Mid
+				bone = bone_lip_lower_mid
 				scaling = {
 					from = (-0.35000002, 0.0, -0.2)
 					to = (0.35000002, 0.1, 0.35000002)
@@ -332,45 +332,45 @@ CAR_Bones_Male_Face = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Position")
-		group_name = EyePosition
+		frontend_desc = qs(0x7da8fa24)
+		group_name = eyeposition
 		min = -1.0
 		max = 1.0
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Depth")
-		group_name = EyeDepth
+		frontend_desc = qs(0x99c074ee)
+		group_name = eyedepth
 		min = -1.0
 		max = 1.0
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Scale")
-		group_name = EyeScale
+		frontend_desc = qs(0x725437fb)
+		group_name = eyescale
 		bones = [
 		]
 	}
 	{
-		frontend_desc = qs("Eye Distance")
-		group_name = EyeDistance
+		frontend_desc = qs(0xe550a057)
+		group_name = eyedistance
 		min = -1.0
 		max = 1.0
 		bones = [
 		]
 	}
 ]
-CAR_Bones_Female_Body = [
+car_bones_female_body = [
 	{
-		frontend_desc = qs("Physique")
-		group_name = Physique
+		frontend_desc = qs(0x8bb5c297)
+		group_name = physique
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Bone_Pelvis
+				bone = bone_pelvis
 				scaling = {
 					from = (0.0, -0.2, -0.15)
 					to = (0.0, 0.2, 0.15)
@@ -378,7 +378,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Stomach_Upper
+				bone = bone_stomach_upper
 				scaling = {
 					from = (0.0, -0.1, -0.1)
 					to = (0.0, 0.1, 0.1)
@@ -386,7 +386,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Chest
+				bone = bone_chest
 				scaling = {
 					from = (0.0, -0.05, -0.0125)
 					to = (0.0, 0.05, 0.05)
@@ -394,7 +394,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Neck
+				bone = bone_neck
 				scaling = {
 					from = (0.0, 0.2, 0.2)
 					to = (0.0, -0.4, -0.4)
@@ -402,7 +402,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Twist_Bicep_Top_R
+				bone = bone_twist_bicep_top_r
 				scaling = {
 					from = (-0.2, -0.2, -0.2)
 					to = (0.35000002, 0.2, 0.2)
@@ -410,7 +410,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Twist_Bicep_Top_L
+				bone = bone_twist_bicep_top_l
 				scaling = {
 					from = (-0.2, -0.2, -0.2)
 					to = (0.35000002, 0.2, 0.2)
@@ -418,7 +418,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Bicep_L
+				bone = bone_bicep_l
 				scaling = {
 					from = (0.0, -0.3, -0.3)
 					to = (0.0, 0.1, 0.1)
@@ -426,7 +426,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Bicep_R
+				bone = bone_bicep_r
 				scaling = {
 					from = (0.0, -0.3, -0.3)
 					to = (0.0, 0.1, 0.1)
@@ -434,7 +434,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Thigh_R
+				bone = bone_thigh_r
 				scaling = {
 					from = (0.0, -0.15, -0.15)
 					to = (0.0, 0.15, 0.15)
@@ -442,7 +442,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Thigh_L
+				bone = bone_thigh_l
 				scaling = {
 					from = (0.0, -0.15, -0.15)
 					to = (0.0, 0.15, 0.15)
@@ -450,7 +450,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Knee_R
+				bone = bone_knee_r
 				scaling = {
 					from = (0.0, -0.15, -0.15)
 					to = (0.0, 0.15, 0.15)
@@ -458,7 +458,7 @@ CAR_Bones_Female_Body = [
 				}
 			}
 			{
-				bone = Bone_Knee_L
+				bone = bone_knee_l
 				scaling = {
 					from = (0.0, -0.05, -0.05)
 					to = (0.0, 0.05, 0.05)
@@ -468,13 +468,13 @@ CAR_Bones_Female_Body = [
 		]
 	}
 	{
-		frontend_desc = qs("Height")
-		group_name = Height
+		frontend_desc = qs(0xea1fd0c6)
+		group_name = height
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Control_Root
+				bone = control_root
 				scaling = {
 					from = (-0.025, -0.025, -0.025)
 					to = (0.025, 0.025, 0.025)
@@ -483,13 +483,13 @@ CAR_Bones_Female_Body = [
 		]
 	}
 	{
-		frontend_desc = qs("Chest")
-		group_name = Chest
+		frontend_desc = qs(0x0016bd4d)
+		group_name = chest
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Bone_Chest
+				bone = bone_chest
 				scaling = {
 					from = (-0.015, -0.15, 0.0)
 					to = (0.015, 0.1, 0.0)
@@ -504,15 +504,15 @@ CAR_Bones_Female_Body = [
 		]
 	}
 ]
-CAR_Bones_Male_Body = [
+car_bones_male_body = [
 	{
-		frontend_desc = qs("Physique")
-		group_name = Physique
+		frontend_desc = qs(0x8bb5c297)
+		group_name = physique
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Bone_Pelvis
+				bone = bone_pelvis
 				scaling = {
 					from = (0.0, 0.0, 0.0)
 					to = (0.0, -0.1, -0.1)
@@ -520,7 +520,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Stomach_Lower
+				bone = bone_stomach_lower
 				scaling = {
 					from = (0.0, 0.0, 0.0)
 					to = (0.0, -0.1, -0.1)
@@ -528,7 +528,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Stomach_Upper
+				bone = bone_stomach_upper
 				scaling = {
 					from = (0.0, -0.1, -0.1)
 					to = (0.0, 0.0, 0.0)
@@ -536,7 +536,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Chest
+				bone = bone_chest
 				scaling = {
 					from = (0.0, -0.2, -0.05)
 					to = (0.15, 0.2, 0.2)
@@ -549,7 +549,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Neck
+				bone = bone_neck
 				scaling = {
 					from = (0.0, -0.4, -0.4)
 					to = (0.0, 0.2, 0.2)
@@ -557,7 +557,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Twist_Bicep_Top_R
+				bone = bone_twist_bicep_top_r
 				scaling = {
 					from = (-0.2, -0.2, -0.35000002)
 					to = (0.2, 0.5, 0.75)
@@ -570,7 +570,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Twist_Bicep_Top_L
+				bone = bone_twist_bicep_top_l
 				scaling = {
 					from = (-0.2, -0.2, -0.35000002)
 					to = (0.2, 0.5, 0.75)
@@ -578,7 +578,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Bicep_L
+				bone = bone_bicep_l
 				scaling = {
 					from = (0.0, -0.1, -0.1)
 					to = (0.0, 0.2, 0.2)
@@ -586,7 +586,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Bicep_R
+				bone = bone_bicep_r
 				scaling = {
 					from = (0.0, -0.1, -0.1)
 					to = (0.0, 0.2, 0.2)
@@ -594,7 +594,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Forearm_L
+				bone = bone_forearm_l
 				scaling = {
 					from = (0.0, -0.2, -0.2)
 					to = (0.0, 0.25, 0.25)
@@ -602,7 +602,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Forearm_R
+				bone = bone_forearm_r
 				scaling = {
 					from = (0.0, -0.2, -0.2)
 					to = (0.0, 0.25, 0.25)
@@ -610,7 +610,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Thigh_R
+				bone = bone_thigh_r
 				scaling = {
 					from = (0.0, -0.15, -0.15)
 					to = (0.0, 0.15, 0.15)
@@ -618,7 +618,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Thigh_L
+				bone = bone_thigh_l
 				scaling = {
 					from = (0.0, -0.15, -0.15)
 					to = (0.0, 0.15, 0.15)
@@ -626,7 +626,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Knee_R
+				bone = bone_knee_r
 				scaling = {
 					from = (0.0, -0.15, -0.15)
 					to = (0.0, 0.15, 0.15)
@@ -634,7 +634,7 @@ CAR_Bones_Male_Body = [
 				}
 			}
 			{
-				bone = Bone_Knee_L
+				bone = bone_knee_l
 				scaling = {
 					from = (0.0, -0.05, -0.05)
 					to = (0.0, 0.05, 0.05)
@@ -644,13 +644,13 @@ CAR_Bones_Male_Body = [
 		]
 	}
 	{
-		frontend_desc = qs("Height")
-		group_name = Height
+		frontend_desc = qs(0xea1fd0c6)
+		group_name = height
 		min = -1.0
 		max = 1.0
 		bones = [
 			{
-				bone = Control_Root
+				bone = control_root
 				scaling = {
 					from = (-0.025, -0.025, -0.025)
 					to = (0.025, 0.025, 0.025)

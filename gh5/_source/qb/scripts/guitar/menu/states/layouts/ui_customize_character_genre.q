@@ -1,28 +1,28 @@
 
 script ui_create_customize_character_genre 
-	make_generic_menu \{title = qs("Select Genre")
+	make_generic_menu \{title = qs(0x5f98cef0)
 		vmenu_id = create_customize_character_genre_vmenu}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	create_ui_history_header \{text = qs("Select Genre")
+	create_ui_history_header \{text = qs(0x5f98cef0)
 		num_icons = 1}
 	setup_cas_menu_handlers_restricted \{vmenu_id = create_customize_character_genre_vmenu}
-	GetArraySize ($Genre_List)
+	getarraysize ($genre_list)
 	i = 0
 	begin
 	add_generic_menu_text_item {
-		text = (($Genre_List) [<i>].frontend_desc)
+		text = (($genre_list) [<i>].frontend_desc)
 		pad_choose_script = <choose_script>
 		additional_focus_script = select_genre
-		additional_focus_params = {genre = (($Genre_List) [<i>].desc_id)}
+		additional_focus_params = {genre = (($genre_list) [<i>].desc_id)}
 	}
 	i = (<i> + 1)
 	repeat <array_size>
@@ -35,5 +35,5 @@ endscript
 
 script select_genre 
 
-	EditCASAppearance target = SetGenre targetParams = {genre = <genre>}
+	editcasappearance target = setgenre targetparams = {genre = <genre>}
 endscript

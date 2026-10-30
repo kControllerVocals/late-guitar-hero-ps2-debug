@@ -1,5 +1,5 @@
 
-script ui_init_top_rockers 
+script 0x95fb172c 
 	change menu_flow_locked = ($menu_flow_locked + 1)
 	change menu_flow_locked = ($menu_flow_locked - 1)
 endscript
@@ -12,9 +12,9 @@ endscript
 
 script ui_destroy_top_rockers 
 	change menu_flow_locked = ($menu_flow_locked + 1)
-	if GotParam \{for_options}
+	if gotparam \{for_options}
 		if (<for_options> = 1)
-			if NOT GotParam \{skip_loading_screen}
+			if NOT gotparam \{0xf768bc05}
 				create_loading_screen \{spawn}
 			endif
 		endif

@@ -1,10 +1,10 @@
-g_mini_loading_screen = {
-	show_count = 0
-	busy_show = 0
-	busy_hide = 0
+0x562e2f96 = {
+	0x7897df41 = 0
+	0xd777153f = 0
+	0x41e00715 = 0
 	fade_in_time = 0.15
 	fade_out_time = 0.15
-	minimum_display_time = 0.5
+	0xbf23998d = 0.5
 	pos = (640.0, 360.0)
 	just = [
 		center
@@ -32,7 +32,7 @@ g_mini_loading_screen = {
 		]
 		delay = 1.5
 		fade_in_time = 0.15
-		loading_string = qs("LOADING")
+		0x6b8904f0 = qs(0x37f4c584)
 	}
 	watch_timer = {
 		pos = (0.0, -600.0)
@@ -50,151 +50,151 @@ g_mini_loading_screen = {
 	}
 }
 
-script is_mini_loading_screen_visible 
-	if ($g_mini_loading_screen.show_count > 0)
-		return true show_count = ($g_mini_loading_screen.show_count)
+script 0x16cc1b60 
+	if ($0x562e2f96.0x7897df41 > 0)
+		return true 0x7897df41 = ($0x562e2f96.0x7897df41)
 	endif
-	return false show_count = ($g_mini_loading_screen.show_count)
+	return false 0x7897df41 = ($0x562e2f96.0x7897df41)
 endscript
 
-script show_mini_loading_screen 
-	if ($g_mini_loading_screen.show_count = 0)
-		change \{structurename = g_mini_loading_screen
-			show_count = 1}
-		change \{structurename = g_mini_loading_screen
-			busy_show = 1}
-		spawnscriptnow \{_show_mini_loading_screen_spawned}
-	endif
-endscript
-
-script hide_mini_loading_screen 
-	if ($g_mini_loading_screen.show_count > 0)
-		change \{structurename = g_mini_loading_screen
-			show_count = 0}
-		change \{structurename = g_mini_loading_screen
-			busy_hide = 1}
-		spawnscriptnow \{_hide_mini_loading_screen_spawned}
+script 0x99ad1fc1 
+	if ($0x562e2f96.0x7897df41 = 0)
+		change \{structurename = 0x562e2f96
+			0x7897df41 = 1}
+		change \{structurename = 0x562e2f96
+			0xd777153f = 1}
+		spawnscriptnow \{0xc147cd4b}
 	endif
 endscript
 
-script push_mini_loading_screen 
-	if ($g_mini_loading_screen.show_count < 100)
-		if ($g_mini_loading_screen.show_count = 0)
-			show_mini_loading_screen
+script 0xd8bd876f 
+	if ($0x562e2f96.0x7897df41 > 0)
+		change \{structurename = 0x562e2f96
+			0x7897df41 = 0}
+		change \{structurename = 0x562e2f96
+			0x41e00715 = 1}
+		spawnscriptnow \{0xc4e273cc}
+	endif
+endscript
+
+script 0x10b35a47 
+	if ($0x562e2f96.0x7897df41 < 100)
+		if ($0x562e2f96.0x7897df41 = 0)
+			0x99ad1fc1
 		else
-			change structurename = g_mini_loading_screen show_count = ($g_mini_loading_screen.show_count + 1)
+			change structurename = 0x562e2f96 0x7897df41 = ($0x562e2f96.0x7897df41 + 1)
 		endif
 	else
 
 	endif
 endscript
 
-script pop_mini_loading_screen 
-	if ($g_mini_loading_screen.show_count > 0)
-		if ($g_mini_loading_screen.show_count = 1)
-			hide_mini_loading_screen
+script 0xdf9f604d 
+	if ($0x562e2f96.0x7897df41 > 0)
+		if ($0x562e2f96.0x7897df41 = 1)
+			0xd8bd876f
 		else
-			change structurename = g_mini_loading_screen show_count = ($g_mini_loading_screen.show_count - 1)
+			change structurename = 0x562e2f96 0x7897df41 = ($0x562e2f96.0x7897df41 - 1)
 		endif
 	else
 
 	endif
 endscript
 
-script is_mini_loading_screen_busy 
-	if ($g_mini_loading_screen.busy_show > 0)
+script 0xabacc337 
+	if ($0x562e2f96.0xd777153f > 0)
 		return \{true}
 	endif
-	if ($g_mini_loading_screen.busy_hide > 0)
+	if ($0x562e2f96.0x41e00715 > 0)
 		return \{true}
 	endif
 	return \{false}
 endscript
 
-script wait_mini_loading_screen 
+script 0x628ef00f 
 	begin
-	if NOT is_mini_loading_screen_busy
+	if NOT 0xabacc337
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 
 	repeat
 endscript
 
-script _show_mini_loading_screen_spawned 
-	InputHandlerForbid
-	ui_fx_forbid
-	_mini_loading_screen_create_elements
-	_mini_loading_screen_animate_show
-	change \{structurename = g_mini_loading_screen
-		busy_show = 0}
+script 0xc147cd4b 
+	0x79db87d7
+	0x6f5e5f74
+	0x3c57ed08
+	0x4ddc5c0f
+	change \{structurename = 0x562e2f96
+		0xd777153f = 0}
 endscript
 
-script _hide_mini_loading_screen_spawned 
-	_mini_loading_screen_animate_hide
-	_mini_loading_screen_delete_elements
-	ui_fx_permit
-	InputHandlerPermit
-	change \{structurename = g_mini_loading_screen
-		busy_hide = 0}
+script 0xc4e273cc 
+	0xdb4b4e25
+	0x20ba4529
+	0xe68af10a
+	0xf00f29a9
+	change \{structurename = 0x562e2f96
+		0x41e00715 = 0}
 endscript
 
-script _mini_loading_screen_create_elements 
-	if NOT ScreenElementExists \{id = mini_loading_screen}
-		CreateScreenElement {
-			type = ContainerElement
+script 0x3c57ed08 
+	if NOT screenelementexists \{id = 0x6e4db611}
+		createscreenelement {
+			type = containerelement
 			parent = root_window
-			id = mini_loading_screen
-			pos = ($g_mini_loading_screen.pos)
-			z_priority = ($g_mini_loading_screen.z_priority)
-			just = ($g_mini_loading_screen.just)
-			internal_just = ($g_mini_loading_screen.internal_just)
+			id = 0x6e4db611
+			pos = ($0x562e2f96.pos)
+			z_priority = ($0x562e2f96.z_priority)
+			just = ($0x562e2f96.just)
+			internal_just = ($0x562e2f96.internal_just)
 		}
-		CreateScreenElement {
-			type = SpriteElement
-			parent = mini_loading_screen
-			id = mini_loading_screen_background
+		createscreenelement {
+			type = spriteelement
+			parent = 0x6e4db611
+			id = 0xb2884368
 			texture = black
-			z_priority = ($g_mini_loading_screen.z_priority + 1)
+			z_priority = ($0x562e2f96.z_priority + 1)
 			no_zwrite
-			pos = ($g_mini_loading_screen.background.pos)
-			dims = ($g_mini_loading_screen.background.dims)
-			just = ($g_mini_loading_screen.background.just)
+			pos = ($0x562e2f96.background.pos)
+			dims = ($0x562e2f96.background.dims)
+			just = ($0x562e2f96.background.just)
 			rgba = [0 0 0 255]
 			alpha = 0.0
 		}
-		CreateScreenElement {
-			type = TextElement
-			parent = mini_loading_screen
-			id = mini_loading_screen_text
-			pos = ($g_mini_loading_screen.text.pos)
-			z_priority = ($g_mini_loading_screen.z_priority + 2)
-			just = ($g_mini_loading_screen.text.just)
+		createscreenelement {
+			type = textelement
+			parent = 0x6e4db611
+			id = 0x4629d70f
+			pos = ($0x562e2f96.text.pos)
+			z_priority = ($0x562e2f96.z_priority + 2)
+			just = ($0x562e2f96.text.just)
 			rgba = [127 127 127 255]
 			alpha = 0.0
 			scale = 1.0
 			font = fontgrid_title_a1
-			text = qs("")
+			text = qs(0x00000000)
 		}
-		CreateScreenElement {
-			type = DescInterface
-			parent = mini_loading_screen
-			id = mini_loading_screen_watch_timer
-			pos = ($g_mini_loading_screen.watch_timer.pos)
-			z_priority = ($g_mini_loading_screen.z_priority + 2)
+		createscreenelement {
+			type = descinterface
+			parent = 0x6e4db611
+			id = 0x62ed8a10
+			pos = ($0x562e2f96.watch_timer.pos)
+			z_priority = ($0x562e2f96.z_priority + 2)
 			alpha = 0.0
 			desc = 'watch_timer'
 		}
-		_mini_loading_screen_get_message
-		CreateScreenElement {
-			type = TextBlockElement
-			parent = mini_loading_screen
-			id = mini_loading_screen_message
-			pos = ($g_mini_loading_screen.message.pos)
-			z_priority = ($g_mini_loading_screen.z_priority + 2)
+		0x968edca4
+		createscreenelement {
+			type = textblockelement
+			parent = 0x6e4db611
+			id = 0xc1a795da
+			pos = ($0x562e2f96.message.pos)
+			z_priority = ($0x562e2f96.z_priority + 2)
 			dims = (800.0, 400.0)
 			rot_angle = -5
-			just = ($g_mini_loading_screen.message.just)
+			just = ($0x562e2f96.message.just)
 			internal_just = [center center]
 			rgba = [128 64 64 250]
 			alpha = 0.0
@@ -209,110 +209,110 @@ script _mini_loading_screen_create_elements
 	endif
 endscript
 
-script _mini_loading_screen_delete_elements 
-	if ScreenElementExists \{id = mini_loading_screen}
-		DestroyScreenElement \{id = mini_loading_screen}
+script 0x20ba4529 
+	if screenelementexists \{id = 0x6e4db611}
+		destroyscreenelement \{id = 0x6e4db611}
 	endif
 endscript
 
-script _mini_loading_screen_animate_show 
-	if ScreenElementExists \{id = mini_loading_screen}
-		mini_loading_screen_background :Obj_SpawnScriptNow \{_mini_loading_screen_background_animate}
-		mini_loading_screen_text :Obj_SpawnScriptNow \{_mini_loading_screen_text_animate}
-		mini_loading_screen_watch_timer :Obj_SpawnScriptNow \{_mini_loading_screen_watch_timer_animate}
-		mini_loading_screen_message :Obj_SpawnScriptNow \{_mini_loading_screen_message_animate}
-		change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show + 1)
-		Wait ($g_mini_loading_screen.minimum_display_time) seconds
-		change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show - 1)
+script 0x4ddc5c0f 
+	if screenelementexists \{id = 0x6e4db611}
+		0xb2884368 :obj_spawnscriptnow \{0xd1b27ca2}
+		0x4629d70f :obj_spawnscriptnow \{0x36d6b169}
+		0x62ed8a10 :obj_spawnscriptnow \{0x90f5699a}
+		0xc1a795da :obj_spawnscriptnow \{0x967039b8}
+		change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f + 1)
+		wait ($0x562e2f96.0xbf23998d) seconds
+		change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f - 1)
 	endif
 endscript
 
-script _mini_loading_screen_animate_hide 
-	if ScreenElementExists \{id = mini_loading_screen}
-		mini_loading_screen_background :obj_killallspawnedscripts
-		mini_loading_screen_text :obj_killallspawnedscripts
-		mini_loading_screen_watch_timer :obj_killallspawnedscripts
-		mini_loading_screen_message :obj_killallspawnedscripts
-		mini_loading_screen :SE_SetProps alpha = 0.0 time = ($g_mini_loading_screen.fade_out_time)
-		mini_loading_screen :SE_WaitProps
+script 0xdb4b4e25 
+	if screenelementexists \{id = 0x6e4db611}
+		0xb2884368 :obj_killallspawnedscripts
+		0x4629d70f :obj_killallspawnedscripts
+		0x62ed8a10 :obj_killallspawnedscripts
+		0xc1a795da :obj_killallspawnedscripts
+		0x6e4db611 :se_setprops alpha = 0.0 time = ($0x562e2f96.fade_out_time)
+		0x6e4db611 :se_waitprops
 	endif
 endscript
 
-script _mini_loading_screen_background_animate 
-	SE_SetProps alpha = 1.0 time = ($g_mini_loading_screen.background.fade_in_time)
-	SE_WaitProps
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show + 1)
-	Wait ($g_mini_loading_screen.minimum_display_time) seconds
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show - 1)
+script 0xd1b27ca2 
+	se_setprops alpha = 1.0 time = ($0x562e2f96.background.fade_in_time)
+	se_waitprops
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f + 1)
+	wait ($0x562e2f96.0xbf23998d) seconds
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f - 1)
 endscript
 
-script _mini_loading_screen_text_animate 
-	SE_SetProps \{alpha = 0.0
+script 0x36d6b169 
+	se_setprops \{alpha = 0.0
 		time = 0.0}
-	Wait ($g_mini_loading_screen.text.delay) seconds
-	SE_SetProps text = ($g_mini_loading_screen.text.loading_string)
-	SE_SetProps alpha = 1.0 time = ($g_mini_loading_screen.text.fade_in_time)
-	SE_WaitProps
-	Obj_SpawnScriptNow \{_mini_loading_screen_text_animate_dots}
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show + 1)
-	Wait ($g_mini_loading_screen.minimum_display_time) seconds
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show - 1)
+	wait ($0x562e2f96.text.delay) seconds
+	se_setprops text = ($0x562e2f96.text.0x6b8904f0)
+	se_setprops alpha = 1.0 time = ($0x562e2f96.text.fade_in_time)
+	se_waitprops
+	obj_spawnscriptnow \{0xfe27cc13}
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f + 1)
+	wait ($0x562e2f96.0xbf23998d) seconds
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f - 1)
 endscript
 
-script _mini_loading_screen_text_animate_dots 
+script 0xfe27cc13 
 	begin
-	SE_SetProps text = ($g_mini_loading_screen.text.loading_string)
-	Wait \{0.5
+	se_setprops text = ($0x562e2f96.text.0x6b8904f0)
+	wait \{0.5
 		seconds}
-	FormatText TextName = text '%s.' s = ($g_mini_loading_screen.text.loading_string)
-	SE_SetProps text = <text>
-	Wait \{0.5
+	formattext textname = text '%s.' s = ($0x562e2f96.text.0x6b8904f0)
+	se_setprops text = <text>
+	wait \{0.5
 		seconds}
-	FormatText TextName = text '%s..' s = ($g_mini_loading_screen.text.loading_string)
-	SE_SetProps text = <text>
-	Wait \{0.5
+	formattext textname = text '%s..' s = ($0x562e2f96.text.0x6b8904f0)
+	se_setprops text = <text>
+	wait \{0.5
 		seconds}
-	FormatText TextName = text '%s...' s = ($g_mini_loading_screen.text.loading_string)
-	SE_SetProps text = <text>
-	Wait \{0.5
+	formattext textname = text '%s...' s = ($0x562e2f96.text.0x6b8904f0)
+	se_setprops text = <text>
+	wait \{0.5
 		seconds}
 	repeat
 endscript
 
-script _mini_loading_screen_watch_timer_animate 
-	SE_SetProps \{alpha = 0.0
+script 0x90f5699a 
+	se_setprops \{alpha = 0.0
 		time = 0.0}
-	Wait ($g_mini_loading_screen.watch_timer.delay) seconds
+	wait ($0x562e2f96.watch_timer.delay) seconds
 	animate_watch_timer
-	SE_SetProps alpha = 1.0 time = ($g_mini_loading_screen.watch_timer.fade_in_time)
-	SE_WaitProps
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show + 1)
-	Wait ($g_mini_loading_screen.minimum_display_time) seconds
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show - 1)
+	se_setprops alpha = 1.0 time = ($0x562e2f96.watch_timer.fade_in_time)
+	se_waitprops
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f + 1)
+	wait ($0x562e2f96.0xbf23998d) seconds
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f - 1)
 endscript
 
-script _mini_loading_screen_message_animate 
-	SE_SetProps \{alpha = 0.0
+script 0x967039b8 
+	se_setprops \{alpha = 0.0
 		time = 0.0}
-	Wait ($g_mini_loading_screen.message.delay) seconds
-	SE_SetProps alpha = 1.0 time = ($g_mini_loading_screen.message.fade_in_time)
-	SE_WaitProps
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show + 1)
-	Wait ($g_mini_loading_screen.minimum_display_time) seconds
-	change structurename = g_mini_loading_screen busy_show = ($g_mini_loading_screen.busy_show - 1)
+	wait ($0x562e2f96.message.delay) seconds
+	se_setprops alpha = 1.0 time = ($0x562e2f96.message.fade_in_time)
+	se_waitprops
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f + 1)
+	wait ($0x562e2f96.0xbf23998d) seconds
+	change structurename = 0x562e2f96 0xd777153f = ($0x562e2f96.0xd777153f - 1)
 endscript
 
-script _mini_loading_screen_get_message 
-	GetRandomValue \{name = global_or_not
+script 0x968edca4 
+	getrandomvalue \{name = global_or_not
 		a = 0
 		b = 2
-		Integer}
+		integer}
 	if (<global_or_not> = 1)
 		<tips_array> = ($loading_screen_tips)
 	else
 		if ($current_song = jamsession)
 			<tips_array> = ($loading_screen_tips_jam)
-		elseif GotParam \{leaderboard}
+		elseif gotparam \{leaderboard}
 			<tips_array> = ($loading_screen_tips_leaderboard)
 		elseif ($current_num_players = 1)
 			<part> = ($player1_status.part)
@@ -321,9 +321,9 @@ script _mini_loading_screen_get_message
 				<tips_array> = ($loading_screen_tips_guitar)
 				case drum
 				<tips_array> = ($loading_screen_tips_drum)
-				case Vocals
+				case vocals
 				<tips_array> = ($loading_screen_tips_vocals)
-				case Bass
+				case bass
 				<tips_array> = ($loading_screen_tips_bass)
 				default
 				<tips_array> = ($loading_screen_tips_guitar)
@@ -336,22 +336,22 @@ script _mini_loading_screen_get_message
 			endif
 		endif
 	endif
-	GetArraySize <tips_array>
-	GetRandomValue name = rand_num a = 0 b = (<array_size> - 1) Integer
+	getarraysize <tips_array>
+	getrandomvalue name = rand_num a = 0 b = (<array_size> - 1) integer
 	message = (<tips_array> [<rand_num>])
 	return message = <message>
 endscript
 
-script test_mini_loading_screen \{time = 1.0}
+script 0x04285d75 \{time = 1.0}
 
-	push_mini_loading_screen
+	0x10b35a47
 
-	wait_mini_loading_screen
+	0x628ef00f
 
-	Wait <time> seconds
+	wait <time> seconds
 
-	pop_mini_loading_screen
+	0xdf9f604d
 
-	wait_mini_loading_screen
+	0x628ef00f
 
 endscript

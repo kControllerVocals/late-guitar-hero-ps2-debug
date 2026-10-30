@@ -1,8 +1,8 @@
 
 script ui_create_null \{object = 1}
-	if CD
-		if NOT GotParam \{initing}
-			if ScreenElementExists \{id = root_window}
+	if cd
+		if NOT gotparam \{initing}
+			if screenelementexists \{id = root_window}
 				if (<object> = 1)
 					spawnscriptnow \{ui_null_warning_spawned}
 				endif
@@ -13,28 +13,28 @@ script ui_create_null \{object = 1}
 endscript
 
 script ui_destroy_null 
-	if CD
-		if ScreenElementExists \{id = root_window}
-			KillSpawnedScript \{name = ui_null_warning_spawned}
+	if cd
+		if screenelementexists \{id = root_window}
+			killspawnedscript \{name = ui_null_warning_spawned}
 			destroy_dialog_box
 		endif
 	endif
 endscript
 
 script ui_null_warning_spawned 
-	Wait \{5
+	wait \{5
 		seconds}
-	create_dialog_box \{body_text = qs("\Luistate_null entered. This usually implies menu_back was called on a state that didn't exist in the current stack.")
+	create_dialog_box \{body_text = qs(0x9386c855)
 		options = [
 			{
 				func = generic_event_choose
 				func_params = {
-					state = UIstate_mainmenu
+					state = uistate_mainmenu
 					data = {
 						clear_previous_stack
 					}
 				}
-				text = qs("\LReturn to main menu")
+				text = qs(0x480ec134)
 			}
 		]
 		use_all_controllers}

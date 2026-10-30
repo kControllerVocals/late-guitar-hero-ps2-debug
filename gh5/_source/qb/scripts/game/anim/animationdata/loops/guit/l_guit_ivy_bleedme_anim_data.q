@@ -1,37 +1,37 @@
-L_GUIT_Ivy_BleedMe_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_ivy_bleedme_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					guit_Ivy_BleedMe_075
+				slow = [
+					guit_ivy_bleedme_075
 				]
-				Med = [
-					guit_Ivy_BleedMe_100
+				med = [
+					guit_ivy_bleedme_100
 				]
-				Fast = [
-					guit_Ivy_BleedMe_120
-				]
-			}
-			Normal = {
-				Slow = [
-					guit_Ivy_BleedMe_075
-				]
-				Med = [
-					guit_Ivy_BleedMe_100
-				]
-				Fast = [
-					guit_Ivy_BleedMe_120
+				fast = [
+					guit_ivy_bleedme_120
 				]
 			}
-			Bad = {
-				Slow = [
-					guit_Ivy_BleedMe_075
+			normal = {
+				slow = [
+					guit_ivy_bleedme_075
 				]
-				Med = [
-					guit_Ivy_BleedMe_100
+				med = [
+					guit_ivy_bleedme_100
 				]
-				Fast = [
-					guit_Ivy_BleedMe_120
+				fast = [
+					guit_ivy_bleedme_120
+				]
+			}
+			bad = {
+				slow = [
+					guit_ivy_bleedme_075
+				]
+				med = [
+					guit_ivy_bleedme_100
+				]
+				fast = [
+					guit_ivy_bleedme_120
 				]
 			}
 		}

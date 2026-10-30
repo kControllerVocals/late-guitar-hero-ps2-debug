@@ -1,8 +1,8 @@
-Default_tod_manager = {
+default_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 0
@@ -24,8 +24,8 @@ Default_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -43,8 +43,8 @@ Default_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -54,9 +54,9 @@ Default_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -82,12 +82,12 @@ Default_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -101,8 +101,8 @@ Default_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1
@@ -120,17 +120,17 @@ Default_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-DOF_Off_tod_manager = {
+dof_off_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -141,11 +141,11 @@ DOF_Off_tod_manager = {
 		}
 	]
 }
-DOF_CloseUp01_tod_manager = {
+dof_closeup01_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -156,11 +156,11 @@ DOF_CloseUp01_tod_manager = {
 		}
 	]
 }
-DOF_CloseUp02_tod_manager = {
+dof_closeup02_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -171,11 +171,11 @@ DOF_CloseUp02_tod_manager = {
 		}
 	]
 }
-DOF_CloseUp03_tod_manager = {
+dof_closeup03_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -186,11 +186,11 @@ DOF_CloseUp03_tod_manager = {
 		}
 	]
 }
-DOF_CloseUp04_tod_manager = {
+dof_closeup04_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -201,11 +201,11 @@ DOF_CloseUp04_tod_manager = {
 		}
 	]
 }
-DOF_Medium01_tod_manager = {
+dof_medium01_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.5
@@ -216,11 +216,11 @@ DOF_Medium01_tod_manager = {
 		}
 	]
 }
-DOF_Medium02_tod_manager = {
+dof_medium02_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.75
@@ -231,11 +231,11 @@ DOF_Medium02_tod_manager = {
 		}
 	]
 }
-DOF_Long01_tod_manager = {
+dof_long01_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.8
@@ -246,11 +246,11 @@ DOF_Long01_tod_manager = {
 		}
 	]
 }
-DOF_Stage01_tod_manager = {
+dof_stage01_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.8
@@ -261,11 +261,11 @@ DOF_Stage01_tod_manager = {
 		}
 	]
 }
-DOF_UIblur_tod_manager = {
+dof_uiblur_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.9
@@ -276,11 +276,11 @@ DOF_UIblur_tod_manager = {
 		}
 	]
 }
-DOF_CAR_ACCL_tod_manager = {
+dof_car_accl_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -291,11 +291,11 @@ DOF_CAR_ACCL_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Main_tod_manager = {
+dof_car_main_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -306,11 +306,11 @@ DOF_CAR_Main_tod_manager = {
 		}
 	]
 }
-DOF_CAR_SelChar_tod_manager = {
+dof_car_selchar_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -321,11 +321,11 @@ DOF_CAR_SelChar_tod_manager = {
 		}
 	]
 }
-DOF_CAR_SelGender_tod_manager = {
+dof_car_selgender_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -335,9 +335,9 @@ DOF_CAR_SelGender_tod_manager = {
 			farblurend = 5.13
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 1
 			colormodulate = [
 				1.0
@@ -367,11 +367,11 @@ DOF_CAR_SelGender_tod_manager = {
 		}
 	]
 }
-DOF_CAR_SelectTorso_tod_manager = {
+dof_car_selecttorso_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -382,11 +382,11 @@ DOF_CAR_SelectTorso_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Instr_tod_manager = {
+dof_car_sel_instr_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.75
@@ -397,11 +397,11 @@ DOF_CAR_Sel_Instr_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Glasses_tod_manager = {
+dof_car_sel_glasses_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -412,11 +412,11 @@ DOF_CAR_Sel_Glasses_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_MicStand_tod_manager = {
+dof_car_sel_micstand_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -427,11 +427,11 @@ DOF_CAR_Sel_MicStand_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Microphone_tod_manager = {
+dof_car_sel_microphone_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -442,11 +442,11 @@ DOF_CAR_Sel_Microphone_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Guitar_tod_manager = {
+dof_car_sel_guitar_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.82
@@ -457,11 +457,11 @@ DOF_CAR_Sel_Guitar_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Guitar_Hardware_tod_manager = {
+dof_car_sel_guitar_hardware_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.9
@@ -472,11 +472,11 @@ DOF_CAR_Sel_Guitar_Hardware_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Drums_tod_manager = {
+dof_car_sel_drums_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.5
@@ -487,11 +487,11 @@ DOF_CAR_Sel_Drums_tod_manager = {
 		}
 	]
 }
-DOF_CAR_sel_drumsticks_tod_manager = {
+dof_car_sel_drumsticks_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -502,11 +502,11 @@ DOF_CAR_sel_drumsticks_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Tat_R_tod_manager = {
+dof_car_sel_tat_r_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -517,11 +517,11 @@ DOF_CAR_Sel_Tat_R_tod_manager = {
 		}
 	]
 }
-DOF_CAR_Sel_Tat_L_tod_manager = {
+dof_car_sel_tat_l_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -532,11 +532,11 @@ DOF_CAR_Sel_Tat_L_tod_manager = {
 		}
 	]
 }
-DOF_Band_Select_tod_manager = {
+dof_band_select_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -547,11 +547,11 @@ DOF_Band_Select_tod_manager = {
 		}
 	]
 }
-GigRoom_Section01_tod_manager = {
+gigroom_section01_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.7985
@@ -561,8 +561,8 @@ GigRoom_Section01_tod_manager = {
 			farblurend = 3.6599998
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.08
@@ -580,17 +580,17 @@ GigRoom_Section01_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-GigRoom_Section02_tod_manager = {
+gigroom_section02_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.4945
@@ -600,8 +600,8 @@ GigRoom_Section02_tod_manager = {
 			farblurend = 5.13
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.08
@@ -619,17 +619,17 @@ GigRoom_Section02_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-GigRoom_Section03_tod_manager = {
+gigroom_section03_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.6703
@@ -639,9 +639,9 @@ GigRoom_Section03_tod_manager = {
 			farblurend = 3.6599998
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.674
@@ -655,8 +655,8 @@ GigRoom_Section03_tod_manager = {
 			alpha = 0.5128
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.08
@@ -674,17 +674,17 @@ GigRoom_Section03_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-GigRoom_Section04_tod_manager = {
+gigroom_section04_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.5018
@@ -694,8 +694,8 @@ GigRoom_Section04_tod_manager = {
 			farblurend = 4.7599998
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1
@@ -713,17 +713,17 @@ GigRoom_Section04_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-GigRoom_Section05_tod_manager = {
+gigroom_section05_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.63740003
@@ -733,8 +733,8 @@ GigRoom_Section05_tod_manager = {
 			farblurend = 5.4900002
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.08
@@ -752,17 +752,17 @@ GigRoom_Section05_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-DOF_CAR_Photo_tod_manager = {
+dof_car_photo_tod_manager = {
 	screen_fx = [
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -780,8 +780,8 @@ DOF_CAR_Photo_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -791,8 +791,8 @@ DOF_CAR_Photo_tod_manager = {
 			farblurend = 4.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.98999995
@@ -811,11 +811,11 @@ DOF_CAR_Photo_tod_manager = {
 		}
 	]
 }
-Credits_MinDOF_tod_manager = {
+credits_mindof_tod_manager = {
 	screen_fx = [
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.69229996
@@ -826,11 +826,11 @@ Credits_MinDOF_tod_manager = {
 		}
 	]
 }
-Remove_MetallicaFX_tod_manager = {
+remove_metallicafx_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 0
@@ -852,8 +852,8 @@ Remove_MetallicaFX_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -871,8 +871,8 @@ Remove_MetallicaFX_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -882,9 +882,9 @@ Remove_MetallicaFX_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -910,11 +910,11 @@ Remove_MetallicaFX_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.09
@@ -932,17 +932,17 @@ Remove_MetallicaFX_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-New_Default_tod_manager = {
+new_default_tod_manager = {
 	screen_fx = [
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -960,8 +960,8 @@ New_Default_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -971,9 +971,9 @@ New_Default_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -999,11 +999,11 @@ New_Default_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.09
@@ -1021,17 +1021,17 @@ New_Default_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_Contrast_tod_manager = {
+metal_bw_contrast_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -1053,8 +1053,8 @@ Metal_BW_Contrast_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.209
@@ -1072,8 +1072,8 @@ Metal_BW_Contrast_tod_manager = {
 			blue_mix_b = 1.1
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1083,9 +1083,9 @@ Metal_BW_Contrast_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1111,11 +1111,11 @@ Metal_BW_Contrast_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1319
@@ -1133,17 +1133,17 @@ Metal_BW_Contrast_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_Vignette_tod_manager = {
+metal_vignette_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -1165,8 +1165,8 @@ Metal_Vignette_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -1184,8 +1184,8 @@ Metal_Vignette_tod_manager = {
 			blue_mix_b = 1.2820001
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1195,9 +1195,9 @@ Metal_Vignette_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1223,12 +1223,12 @@ Metal_Vignette_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.7546
@@ -1242,8 +1242,8 @@ Metal_Vignette_tod_manager = {
 			alpha = 0.55
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.13549998
@@ -1261,17 +1261,17 @@ Metal_Vignette_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-GH4_OldFX_tod_manager = {
+gh4_oldfx_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 0
@@ -1293,8 +1293,8 @@ GH4_OldFX_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1304,9 +1304,9 @@ GH4_OldFX_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1332,11 +1332,11 @@ GH4_OldFX_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.08
@@ -1354,17 +1354,17 @@ GH4_OldFX_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_DesatBloom_tod_manager = {
+metal_desatbloom_tod_manager = {
 	screen_fx = [
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -1382,8 +1382,8 @@ Metal_DesatBloom_tod_manager = {
 			blue_mix_b = 0.98919994
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.58239996
@@ -1393,9 +1393,9 @@ Metal_DesatBloom_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1421,11 +1421,11 @@ Metal_DesatBloom_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.2125
@@ -1443,17 +1443,17 @@ Metal_DesatBloom_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BloomSat_tod_manager = {
+metal_bloomsat_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -1475,8 +1475,8 @@ Metal_BloomSat_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -1494,8 +1494,8 @@ Metal_BloomSat_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1505,9 +1505,9 @@ Metal_BloomSat_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1533,12 +1533,12 @@ Metal_BloomSat_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -1552,8 +1552,8 @@ Metal_BloomSat_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.0696
@@ -1571,17 +1571,17 @@ Metal_BloomSat_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_Grainy_tod_manager = {
+metal_bw_grainy_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -1603,8 +1603,8 @@ Metal_BW_Grainy_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.3735
@@ -1622,8 +1622,8 @@ Metal_BW_Grainy_tod_manager = {
 			blue_mix_b = 1.0475999
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1633,9 +1633,9 @@ Metal_BW_Grainy_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1661,11 +1661,11 @@ Metal_BW_Grainy_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.2015
@@ -1683,17 +1683,17 @@ Metal_BW_Grainy_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BlueTint_tod_manager = {
+metal_bluetint_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 0
@@ -1715,8 +1715,8 @@ Metal_BlueTint_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.9705
@@ -1734,8 +1734,8 @@ Metal_BlueTint_tod_manager = {
 			blue_mix_b = 1.502
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1745,9 +1745,9 @@ Metal_BlueTint_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1773,12 +1773,12 @@ Metal_BlueTint_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -1792,8 +1792,8 @@ Metal_BlueTint_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.109900005
@@ -1811,17 +1811,17 @@ Metal_BlueTint_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_InkBlotch_tod_manager = {
+metal_inkblotch_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -1843,8 +1843,8 @@ Metal_InkBlotch_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.9525
@@ -1862,8 +1862,8 @@ Metal_InkBlotch_tod_manager = {
 			blue_mix_b = 0.9744
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -1873,9 +1873,9 @@ Metal_InkBlotch_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -1901,12 +1901,12 @@ Metal_InkBlotch_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -1920,8 +1920,8 @@ Metal_InkBlotch_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.19049999
@@ -1939,8 +1939,8 @@ Metal_InkBlotch_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -1964,17 +1964,17 @@ Metal_InkBlotch_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_TurqPink_tod_manager = {
+metal_turqpink_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -1996,8 +1996,8 @@ Metal_TurqPink_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.89750004
@@ -2015,8 +2015,8 @@ Metal_TurqPink_tod_manager = {
 			blue_mix_b = 1.6632
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -2026,9 +2026,9 @@ Metal_TurqPink_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -2054,12 +2054,12 @@ Metal_TurqPink_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2073,8 +2073,8 @@ Metal_TurqPink_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.17220001
@@ -2092,8 +2092,8 @@ Metal_TurqPink_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -2117,17 +2117,17 @@ Metal_TurqPink_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_Forest_tod_manager = {
+metal_forest_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -2149,8 +2149,8 @@ Metal_Forest_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -2168,8 +2168,8 @@ Metal_Forest_tod_manager = {
 			blue_mix_b = 1.0036
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -2179,9 +2179,9 @@ Metal_Forest_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -2207,12 +2207,12 @@ Metal_Forest_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2226,8 +2226,8 @@ Metal_Forest_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1429
@@ -2245,8 +2245,8 @@ Metal_Forest_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -2270,17 +2270,17 @@ Metal_Forest_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_Yellow_tod_manager = {
+metal_yellow_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -2302,8 +2302,8 @@ Metal_Yellow_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.209
@@ -2321,8 +2321,8 @@ Metal_Yellow_tod_manager = {
 			blue_mix_b = 0.74
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -2332,9 +2332,9 @@ Metal_Yellow_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -2360,12 +2360,12 @@ Metal_Yellow_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2379,8 +2379,8 @@ Metal_Yellow_tod_manager = {
 			alpha = 0.718
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1612
@@ -2398,8 +2398,8 @@ Metal_Yellow_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -2423,17 +2423,17 @@ Metal_Yellow_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_Sepia_tod_manager = {
+metal_sepia_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -2455,8 +2455,8 @@ Metal_Sepia_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.1355
@@ -2474,8 +2474,8 @@ Metal_Sepia_tod_manager = {
 			blue_mix_b = 0.696
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -2485,9 +2485,9 @@ Metal_Sepia_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -2513,12 +2513,12 @@ Metal_Sepia_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2532,8 +2532,8 @@ Metal_Sepia_tod_manager = {
 			alpha = 0.5276
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1575
@@ -2551,8 +2551,8 @@ Metal_Sepia_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -2576,17 +2576,17 @@ Metal_Sepia_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_HotBlue_tod_manager = {
+metal_hotblue_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -2608,8 +2608,8 @@ Metal_HotBlue_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.1539999
@@ -2627,8 +2627,8 @@ Metal_HotBlue_tod_manager = {
 			blue_mix_b = 1.6043999
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -2638,9 +2638,9 @@ Metal_HotBlue_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 1
 			colormodulate = [
 				1.0
@@ -2666,12 +2666,12 @@ Metal_HotBlue_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2685,8 +2685,8 @@ Metal_HotBlue_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.13549998
@@ -2704,17 +2704,17 @@ Metal_HotBlue_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_CareerIntro_tod_manager = {
+metal_careerintro_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -2736,8 +2736,8 @@ Metal_CareerIntro_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.93399996
@@ -2755,8 +2755,8 @@ Metal_CareerIntro_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.52750003
@@ -2766,9 +2766,9 @@ Metal_CareerIntro_tod_manager = {
 			farblurend = 56.039997
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -2794,12 +2794,12 @@ Metal_CareerIntro_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2813,8 +2813,8 @@ Metal_CareerIntro_tod_manager = {
 			alpha = 0.38080004
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1612
@@ -2832,8 +2832,8 @@ Metal_CareerIntro_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -2857,17 +2857,17 @@ Metal_CareerIntro_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_CareerIntro_02_tod_manager = {
+metal_careerintro_02_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -2889,8 +2889,8 @@ Metal_CareerIntro_02_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.93399996
@@ -2908,8 +2908,8 @@ Metal_CareerIntro_02_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -2919,9 +2919,9 @@ Metal_CareerIntro_02_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -2947,12 +2947,12 @@ Metal_CareerIntro_02_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -2966,8 +2966,8 @@ Metal_CareerIntro_02_tod_manager = {
 			alpha = 0.38080004
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1612
@@ -2985,8 +2985,8 @@ Metal_CareerIntro_02_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3010,17 +3010,17 @@ Metal_CareerIntro_02_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_CareerIntro_Cut1_tod_manager = {
+metal_careerintro_cut1_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -3042,8 +3042,8 @@ Metal_CareerIntro_Cut1_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -3061,8 +3061,8 @@ Metal_CareerIntro_Cut1_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -3072,9 +3072,9 @@ Metal_CareerIntro_Cut1_tod_manager = {
 			farblurend = 63.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -3100,12 +3100,12 @@ Metal_CareerIntro_Cut1_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -3119,8 +3119,8 @@ Metal_CareerIntro_Cut1_tod_manager = {
 			alpha = 0.38080004
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1758
@@ -3138,8 +3138,8 @@ Metal_CareerIntro_Cut1_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3163,17 +3163,17 @@ Metal_CareerIntro_Cut1_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_DesatRed_tod_manager = {
+metal_desatred_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -3195,8 +3195,8 @@ Metal_DesatRed_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.3554999
@@ -3214,8 +3214,8 @@ Metal_DesatRed_tod_manager = {
 			blue_mix_b = 0.90119994
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -3225,9 +3225,9 @@ Metal_DesatRed_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -3253,12 +3253,12 @@ Metal_DesatRed_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -3272,8 +3272,8 @@ Metal_DesatRed_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1575
@@ -3291,8 +3291,8 @@ Metal_DesatRed_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3316,17 +3316,17 @@ Metal_DesatRed_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_Green_tod_manager = {
+metal_green_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 0
@@ -3348,8 +3348,8 @@ Metal_Green_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -3367,8 +3367,8 @@ Metal_Green_tod_manager = {
 			blue_mix_b = 0.98919994
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -3378,9 +3378,9 @@ Metal_Green_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -3406,12 +3406,12 @@ Metal_Green_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -3425,8 +3425,8 @@ Metal_Green_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.17220001
@@ -3444,8 +3444,8 @@ Metal_Green_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3469,17 +3469,17 @@ Metal_Green_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_InkBlotch_tod_manager = {
+metal_bw_inkblotch_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -3501,8 +3501,8 @@ Metal_BW_InkBlotch_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.15
@@ -3520,8 +3520,8 @@ Metal_BW_InkBlotch_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -3531,9 +3531,9 @@ Metal_BW_InkBlotch_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -3559,12 +3559,12 @@ Metal_BW_InkBlotch_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.54940003
@@ -3578,8 +3578,8 @@ Metal_BW_InkBlotch_tod_manager = {
 			alpha = 0.2636
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1978
@@ -3597,8 +3597,8 @@ Metal_BW_InkBlotch_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3622,17 +3622,17 @@ Metal_BW_InkBlotch_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_NoisyDefault_tod_manager = {
+metal_noisydefault_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -3654,8 +3654,8 @@ Metal_NoisyDefault_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -3673,8 +3673,8 @@ Metal_NoisyDefault_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -3684,9 +3684,9 @@ Metal_NoisyDefault_tod_manager = {
 			farblurend = 63.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -3712,12 +3712,12 @@ Metal_NoisyDefault_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -3731,8 +3731,8 @@ Metal_NoisyDefault_tod_manager = {
 			alpha = 0.2
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.14
@@ -3750,8 +3750,8 @@ Metal_NoisyDefault_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3775,17 +3775,17 @@ Metal_NoisyDefault_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_InkBlotch3_tod_manager = {
+metal_inkblotch3_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -3807,8 +3807,8 @@ Metal_InkBlotch3_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.172
@@ -3826,8 +3826,8 @@ Metal_InkBlotch3_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -3837,9 +3837,9 @@ Metal_InkBlotch3_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -3865,12 +3865,12 @@ Metal_InkBlotch3_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.54940003
@@ -3884,8 +3884,8 @@ Metal_InkBlotch3_tod_manager = {
 			alpha = 0.2636
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1978
@@ -3903,8 +3903,8 @@ Metal_InkBlotch3_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -3928,17 +3928,17 @@ Metal_InkBlotch3_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_SatRedStreaks_tod_manager = {
+metal_satredstreaks_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -3960,8 +3960,8 @@ Metal_SatRedStreaks_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.9525
@@ -3979,8 +3979,8 @@ Metal_SatRedStreaks_tod_manager = {
 			blue_mix_b = 0.9744
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -3990,9 +3990,9 @@ Metal_SatRedStreaks_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4018,12 +4018,12 @@ Metal_SatRedStreaks_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -4037,8 +4037,8 @@ Metal_SatRedStreaks_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.19409999
@@ -4056,8 +4056,8 @@ Metal_SatRedStreaks_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -4081,17 +4081,17 @@ Metal_SatRedStreaks_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_TurqPinkStreaks_tod_manager = {
+metal_turqpinkstreaks_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4113,8 +4113,8 @@ Metal_TurqPinkStreaks_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.89750004
@@ -4132,8 +4132,8 @@ Metal_TurqPinkStreaks_tod_manager = {
 			blue_mix_b = 1.6632
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4143,9 +4143,9 @@ Metal_TurqPinkStreaks_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4171,12 +4171,12 @@ Metal_TurqPinkStreaks_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -4190,8 +4190,8 @@ Metal_TurqPinkStreaks_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.17220001
@@ -4209,8 +4209,8 @@ Metal_TurqPinkStreaks_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -4234,17 +4234,17 @@ Metal_TurqPinkStreaks_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_Splots_tod_manager = {
+metal_bw_splots_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4266,8 +4266,8 @@ Metal_BW_Splots_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -4285,8 +4285,8 @@ Metal_BW_Splots_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4296,9 +4296,9 @@ Metal_BW_Splots_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4324,12 +4324,12 @@ Metal_BW_Splots_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -4343,8 +4343,8 @@ Metal_BW_Splots_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1758
@@ -4362,8 +4362,8 @@ Metal_BW_Splots_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -4387,17 +4387,17 @@ Metal_BW_Splots_tod_manager = {
 			texture = 'unknown'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_DesatSplots_01_tod_manager = {
+metal_desatsplots_01_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4419,8 +4419,8 @@ Metal_DesatSplots_01_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.15
@@ -4438,8 +4438,8 @@ Metal_DesatSplots_01_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4449,9 +4449,9 @@ Metal_DesatSplots_01_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4477,12 +4477,12 @@ Metal_DesatSplots_01_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.54940003
@@ -4496,8 +4496,8 @@ Metal_DesatSplots_01_tod_manager = {
 			alpha = 0.2636
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1978
@@ -4515,8 +4515,8 @@ Metal_DesatSplots_01_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -4540,17 +4540,17 @@ Metal_DesatSplots_01_tod_manager = {
 			texture = 'tex\\SFX\\InkBlotch.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_ContrastyVignette_tod_manager = {
+metal_contrastyvignette_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4572,8 +4572,8 @@ Metal_ContrastyVignette_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.15
@@ -4591,8 +4591,8 @@ Metal_ContrastyVignette_tod_manager = {
 			blue_mix_b = 1.2820001
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4602,9 +4602,9 @@ Metal_ContrastyVignette_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4630,12 +4630,12 @@ Metal_ContrastyVignette_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.7546
@@ -4649,8 +4649,8 @@ Metal_ContrastyVignette_tod_manager = {
 			alpha = 0.55
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.14649999
@@ -4668,17 +4668,17 @@ Metal_ContrastyVignette_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_Grungy_tod_manager = {
+metal_bw_grungy_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4700,8 +4700,8 @@ Metal_BW_Grungy_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.3299999
@@ -4719,8 +4719,8 @@ Metal_BW_Grungy_tod_manager = {
 			blue_mix_b = 1.0916001
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4730,9 +4730,9 @@ Metal_BW_Grungy_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4758,12 +4758,12 @@ Metal_BW_Grungy_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -4777,8 +4777,8 @@ Metal_BW_Grungy_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.22340001
@@ -4796,8 +4796,8 @@ Metal_BW_Grungy_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -4821,17 +4821,17 @@ Metal_BW_Grungy_tod_manager = {
 			texture = 'tex\\SFX\\Grungy.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_Grainy2_tod_manager = {
+metal_bw_grainy2_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4853,8 +4853,8 @@ Metal_BW_Grainy2_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 0.9
@@ -4872,8 +4872,8 @@ Metal_BW_Grainy2_tod_manager = {
 			blue_mix_b = 1.0475999
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4883,9 +4883,9 @@ Metal_BW_Grainy2_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -4911,11 +4911,11 @@ Metal_BW_Grainy2_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.2015
@@ -4933,17 +4933,17 @@ Metal_BW_Grainy2_tod_manager = {
 			]
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Metal_BW_Streaks_tod_manager = {
+metal_bw_streaks_tod_manager = {
 	screen_fx = [
 		{
-			name = Bloom__simplified_
-			scefName = Bloom__simplified_
+			name = bloom__simplified_
+			scefname = bloom__simplified_
 			type = bloom2
 			on = 1
 			fullscreen = 1
@@ -4965,8 +4965,8 @@ Metal_BW_Streaks_tod_manager = {
 			equation = eq0
 		}
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -4984,8 +4984,8 @@ Metal_BW_Streaks_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 0.0
@@ -4995,9 +4995,9 @@ Metal_BW_Streaks_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Godray
-			scefName = Godray
-			type = Godray
+			name = godray
+			scefname = godray
+			type = godray
 			on = 0
 			colormodulate = [
 				1.0
@@ -5023,12 +5023,12 @@ Metal_BW_Streaks_tod_manager = {
 				1.0
 			]
 			cliplightposition = 1
-			lightsource = Sky
+			lightsource = sky
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 0
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -5042,8 +5042,8 @@ Metal_BW_Streaks_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.1758
@@ -5061,8 +5061,8 @@ Metal_BW_Streaks_tod_manager = {
 			]
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -5086,17 +5086,17 @@ Metal_BW_Streaks_tod_manager = {
 			texture = 'tex\\SFX\\Streaks.dds'
 		}
 		{
-			name = UberScreenFX
-			scefName = UberScreenFX
-			type = UberScreenFX
+			name = uberscreenfx
+			scefname = uberscreenfx
+			type = uberscreenfx
 		}
 	]
 }
-Worst_tod_manager = {
+0x4d3dcd82 = {
 	screen_fx = [
 		{
-			name = Brightness___Saturation
-			scefName = Brightness___Saturation
+			name = brightness___saturation
+			scefname = brightness___saturation
 			type = bright_sat
 			on = 1
 			brightness = 1.0
@@ -5114,8 +5114,8 @@ Worst_tod_manager = {
 			blue_mix_b = 1.0
 		}
 		{
-			name = Depth_of_Field__simplified_
-			scefName = Depth_of_Field__simplified_
+			name = depth_of_field__simplified_
+			scefname = depth_of_field__simplified_
 			type = dof3
 			on = 1
 			strength = 1.0
@@ -5125,9 +5125,9 @@ Worst_tod_manager = {
 			farblurend = 20.0
 		}
 		{
-			name = Vignette
-			scefName = Vignette
-			type = Vignette
+			name = vignette
+			scefname = vignette
+			type = vignette
 			on = 1
 			aspectcorrection = 0
 			inner_radius = 0.5
@@ -5141,8 +5141,8 @@ Worst_tod_manager = {
 			alpha = 0.5
 		}
 		{
-			name = Ink_Blotch
-			scefName = Ink_Blotch
+			name = ink_blotch
+			scefname = ink_blotch
 			type = inkblotch
 			on = 1
 			scratchcolor = [
@@ -5165,8 +5165,8 @@ Worst_tod_manager = {
 			rotationb = 60.0
 		}
 		{
-			name = Noise_Lite
-			scefName = Noise_Lite
+			name = noise_lite
+			scefname = noise_lite
 			type = noise2
 			on = 1
 			intensity = 0.08

@@ -1,37 +1,37 @@
-L_DRUM_Moment_DontSpeak_anims_set = {
-	Stance_A = {
-		Idle = {
+0x5762c634 = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					D_DontSpeak_01
+				slow = [
+					0x28555ed7
 				]
-				Med = [
-					D_DontSpeak_02
+				med = [
+					0xb15c0f6d
 				]
-				Fast = [
-					D_DontSpeak_01
-				]
-			}
-			Normal = {
-				Slow = [
-					D_DontSpeak_01
-				]
-				Med = [
-					D_DontSpeak_02
-				]
-				Fast = [
-					D_DontSpeak_01
+				fast = [
+					0x28555ed7
 				]
 			}
-			Bad = {
-				Slow = [
-					D_DontSpeak_01
+			normal = {
+				slow = [
+					0x28555ed7
 				]
-				Med = [
-					D_DontSpeak_02
+				med = [
+					0xb15c0f6d
 				]
-				Fast = [
-					D_DontSpeak_01
+				fast = [
+					0x28555ed7
+				]
+			}
+			bad = {
+				slow = [
+					0x28555ed7
+				]
+				med = [
+					0xb15c0f6d
+				]
+				fast = [
+					0x28555ed7
 				]
 			}
 		}

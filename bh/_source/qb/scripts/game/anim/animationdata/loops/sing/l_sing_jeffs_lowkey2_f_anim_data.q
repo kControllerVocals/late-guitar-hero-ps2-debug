@@ -1,37 +1,37 @@
-L_SING_JeffS_Lowkey2_F_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_jeffs_lowkey2_f_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					SING_Jeff_Lowkey_075_F_02
+				slow = [
+					sing_jeff_lowkey_075_f_02
 				]
-				Med = [
-					SING_Jeff_Lowkey_100_F_02
+				med = [
+					sing_jeff_lowkey_100_f_02
 				]
-				Fast = [
-					SING_Jeff_Lowkey_120_F_02
-				]
-			}
-			Normal = {
-				Slow = [
-					SING_Jeff_Lowkey_075_F_02
-				]
-				Med = [
-					SING_Jeff_Lowkey_100_F_02
-				]
-				Fast = [
-					SING_Jeff_Lowkey_120_F_02
+				fast = [
+					sing_jeff_lowkey_120_f_02
 				]
 			}
-			Bad = {
-				Slow = [
-					SING_Jeff_Lowkey_075_F_02
+			normal = {
+				slow = [
+					sing_jeff_lowkey_075_f_02
 				]
-				Med = [
-					SING_Jeff_Lowkey_100_F_02
+				med = [
+					sing_jeff_lowkey_100_f_02
 				]
-				Fast = [
-					SING_Jeff_Lowkey_120_F_02
+				fast = [
+					sing_jeff_lowkey_120_f_02
+				]
+			}
+			bad = {
+				slow = [
+					sing_jeff_lowkey_075_f_02
+				]
+				med = [
+					sing_jeff_lowkey_100_f_02
+				]
+				fast = [
+					sing_jeff_lowkey_120_f_02
 				]
 			}
 		}

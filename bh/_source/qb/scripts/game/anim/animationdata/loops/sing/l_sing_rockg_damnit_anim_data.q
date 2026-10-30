@@ -1,37 +1,37 @@
-L_SING_Rockg_Damnit_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_rockg_damnit_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					SING_Rockg_Dammit_075_1
+				slow = [
+					sing_rockg_dammit_075_1
 				]
-				Med = [
-					SING_Rockg_Dammit_100_1
+				med = [
+					sing_rockg_dammit_100_1
 				]
-				Fast = [
-					SING_Rockg_Dammit_120_1
-				]
-			}
-			Normal = {
-				Slow = [
-					SING_Rockg_Dammit_075_1
-				]
-				Med = [
-					SING_Rockg_Dammit_100_1
-				]
-				Fast = [
-					SING_Rockg_Dammit_120_1
+				fast = [
+					sing_rockg_dammit_120_1
 				]
 			}
-			Bad = {
-				Slow = [
-					SING_Rockg_Dammit_075_1
+			normal = {
+				slow = [
+					sing_rockg_dammit_075_1
 				]
-				Med = [
-					SING_Rockg_Dammit_100_1
+				med = [
+					sing_rockg_dammit_100_1
 				]
-				Fast = [
-					SING_Rockg_Dammit_120_1
+				fast = [
+					sing_rockg_dammit_120_1
+				]
+			}
+			bad = {
+				slow = [
+					sing_rockg_dammit_075_1
+				]
+				med = [
+					sing_rockg_dammit_100_1
+				]
+				fast = [
+					sing_rockg_dammit_120_1
 				]
 			}
 		}

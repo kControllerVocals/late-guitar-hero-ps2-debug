@@ -1,10 +1,10 @@
 cas_preset_body_female = [
 	{
-		desc_id = FemalePhysique
+		desc_id = femalephysique
 	}
 ]
 cas_preset_body_male = [
 	{
-		desc_id = MalePhysique
+		desc_id = malephysique
 	}
 ]

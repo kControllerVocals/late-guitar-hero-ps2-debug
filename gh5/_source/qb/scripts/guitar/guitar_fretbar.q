@@ -40,50 +40,50 @@ fretbar_prefix_type = {
 }
 
 script create_fretbar \{scale = (40.0, 0.25)}
-	Create2DFretbar <...>
+	create2dfretbar <...>
 endscript
 
 script kill_fretbar2d 
-	if ScreenElementExists id = <fretbar_id>
-		DestroyGem name = <fretbar_id> player_status = <player_status>
+	if screenelementexists id = <fretbar_id>
+		destroygem name = <fretbar_id> player_status = <player_status>
 	endif
 endscript
 
 script fretbar_events 
-	SetEventHandler response = switch_script event = kill_objects Scr = kill_fretbar2d params = {<...>} group = gem_group
+	seteventhandler response = switch_script event = kill_objects scr = kill_fretbar2d params = {<...>} group = gem_group
 endscript
 
 script fretbar_update_tempo 
-	fretbar_update_tempo_CFunc_Setup
+	fretbar_update_tempo_cfunc_setup
 	begin
-	if fretbar_update_tempo_CFunc
+	if fretbar_update_tempo_cfunc
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
-	fretbar_update_tempo_CFunc_Cleanup
+	fretbar_update_tempo_cfunc_cleanup
 endscript
 
 script fretbar_update_hammer_on_tolerance 
-	fretbar_update_hammer_on_tolerance_CFunc_Setup
+	fretbar_update_hammer_on_tolerance_cfunc_setup
 	begin
-	if fretbar_update_hammer_on_tolerance_CFunc
+	if fretbar_update_hammer_on_tolerance_cfunc
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
-	fretbar_update_hammer_on_tolerance_CFunc_Cleanup
+	fretbar_update_hammer_on_tolerance_cfunc_cleanup
 endscript
 
 script create_debug_measure_text 
 	if NOT (<fretbar_scale> = thick)
 		return
 	endif
-	if NOT ScreenElementExists \{id = hud_destroygroup_windowp1}
+	if NOT screenelementexists \{id = hud_destroygroup_windowp1}
 		return
 	endif
-	if NOT ScreenElementExists \{id = debug_measure_window}
-		CreateScreenElement \{type = ContainerElement
+	if NOT screenelementexists \{id = debug_measure_window}
+		createscreenelement \{type = containerelement
 			parent = hud_destroygroup_windowp1
 			id = debug_measure_window
 			pos = (0.0, 0.0)
@@ -92,10 +92,10 @@ script create_debug_measure_text
 				top
 			]}
 	endif
-	FormatText TextName = measure_text qs("\L%i") i = <measure>
-	FormatText checksumname = measure_checksum 'measuretext_%i' i = <measure>
-	CreateScreenElement {
-		type = TextElement
+	formattext textname = measure_text qs(0xc31d83ea) i = <measure>
+	formattext checksumname = measure_checksum 'measuretext_%i' i = <measure>
+	createscreenelement {
+		type = textelement
 		parent = debug_measure_window
 		id = <measure_checksum>
 		font = debug
@@ -111,23 +111,23 @@ endscript
 
 script move_debug_measure_text 
 	begin
-	if CompositeObjectExists <fretbar_id>
-		<fretbar_id> :Obj_GetPosition
+	if compositeobjectexists <fretbar_id>
+		<fretbar_id> :obj_getposition
 		pos = (<pos> + (2.0, 0.0, 0.0))
-		GetViewport2DPosFrom3D viewport = 1 pos = <pos>
+		getviewport2dposfrom3d viewport = 1 pos = <pos>
 		pos = (<posx> * (1.0, 0.0) + <posy> * (0.0, 1.0))
-		<measure_checksum> :LegacyDoMorph pos = <pos>
-		WaitOneGameFrame
+		<measure_checksum> :legacydomorph pos = <pos>
+		waitonegameframe
 	else
-		DestroyScreenElement id = <measure_checksum>
+		destroyscreenelement id = <measure_checksum>
 		break
 	endif
 	repeat
 endscript
 
 script destroy_debug_measure_text 
-	if ScreenElementExists \{id = debug_measure_window}
-		DestroyScreenElement \{id = debug_measure_window}
+	if screenelementexists \{id = debug_measure_window}
+		destroyscreenelement \{id = debug_measure_window}
 	endif
-	KillSpawnedScript \{id = debug_measure_text}
+	killspawnedscript \{id = debug_measure_text}
 endscript

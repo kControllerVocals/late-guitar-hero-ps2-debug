@@ -1,48 +1,48 @@
 ui_task_menu_default_focus_id = current_menu
 ui_task_menu_default_anim_in_script = task_menu_default_anim_in
 ui_task_menu_default_anim_out_script = task_menu_default_anim_out
-g_ui_event_mini_loading_screen = {
+0x86fdcfea = {
 	enable = true
 	active = false
-	skip_next = false
+	0xd77d3b61 = false
 }
-g_ui_event_use_mini_loading_screen = true
+0x8e314709 = true
 
-script UI_InitializeStateMachine 
-	if ObjectExists \{id = ui}
+script ui_initializestatemachine 
+	if objectexists \{id = ui}
 		return
 	endif
 	<com_disabled> = 0
-	if NOT IsCompositeObjectManagerEnabled
+	if NOT iscompositeobjectmanagerenabled
 		<com_disabled> = 1
-		CompositeObjectManagerSetEnable \{on}
+		compositeobjectmanagersetenable \{on}
 	endif
-	CreateCompositeObject \{params = {
+	createcompositeobject \{params = {
 			name = ui
 			permanent
 		}
-		Components = [
+		components = [
 			{
-				Component = EventCache
+				component = eventcache
 			}
 			{
-				Component = StateMachineManager
+				component = statemachinemanager
 			}
 			{
-				Component = MenuStack
+				component = menustack
 			}
 		]
-		heap = FrontEnd}
+		heap = frontend}
 	if (<com_disabled> = 1)
-		CompositeObjectManagerSetEnable \{off}
+		compositeobjectmanagersetenable \{off}
 	endif
-	RegisterUIStates
-	MemPushContext \{heap_ui_pak_slot}
-	CreatePakManMap \{map = ui_paks
-		links = UIPaks
+	registeruistates
+	mempushcontext \{heap_ui_pak_slot}
+	createpakmanmap \{map = ui_paks
+		links = uipaks
 		folder = 'Pak/ui/'}
-	MemPopContext
-	ui :Fsm_Set \{state = UIstate_Null
+	mempopcontext
+	ui :fsm_set \{state = uistate_null
 		replacement = this
 		params = {
 			base_name = 'null'
@@ -50,13 +50,13 @@ script UI_InitializeStateMachine
 endscript
 
 script ui_print_states 
-	ui :UnPause
-	ui :FSM_PrintStateMachine
-	ui :MenuStack_PrintContents
+	ui :unpause
+	ui :fsm_printstatemachine
+	ui :menustack_printcontents
 endscript
 
-script Is_ui_event_running 
-	if ScriptIsRunning \{ui_event_block}
+script is_ui_event_running 
+	if scriptisrunning \{ui_event_block}
 		return \{true}
 	endif
 	return \{false}
@@ -71,7 +71,7 @@ endscript
 script ui_event \{force_event = false}
 	if NOT ((<event> = menu_anim_in_done) || (<event> = menu_anim_out_done) || (<event> = menu_add_data) || (<event> = menu_remove_data))
 		if (<force_event> = false)
-			if Is_ui_event_running
+			if is_ui_event_running
 				return
 			endif
 		endif
@@ -81,7 +81,7 @@ script ui_event \{force_event = false}
 	endif
 endscript
 
-script ui_event_is_statechange 
+script 0xb68cf6d4 
 
 	if (<event> = menu_back || <event> = menu_change || <event> = menu_replace || <event> = menu_refresh)
 		return \{true}
@@ -89,39 +89,39 @@ script ui_event_is_statechange
 		return \{false}
 	endif
 endscript
-waiting_for_statechange = 0
+0x53308f96 = 0
 
-script ui_event_create_watch 
-	if NOT ui_event_is_statechange event = <event>
+script 0x3f946c68 
+	if NOT 0xb68cf6d4 event = <event>
 		return
 	endif
-	spawnscriptnow \{ui_event_create_watch_spawned}
+	spawnscriptnow \{0xf29cdad1}
 endscript
 
-script ui_event_create_watch_spawned 
-	SetSpawnInstanceLimits \{max = 1
+script 0xf29cdad1 
+	setspawninstancelimits \{max = 1
 		management = kill_oldest}
-	change \{waiting_for_statechange = 0}
-	push_loading_screen \{sustain}
-	OnExitRun \{pop_loading_screen}
-	Block \{type = TaskMenu_StateChanged}
-	if ($waiting_for_statechange = 1)
-		Block
+	change \{0x53308f96 = 0}
+	0xd3f993c8 \{sustain}
+	onexitrun \{0xe5a305c6}
+	block \{type = 0xeac1163e}
+	if ($0x53308f96 = 1)
+		block
 	endif
 endscript
 
 script ui_event_spawned \{event = menu_change
 		data = {
 		}}
-	if StructureContains \{Structure = data
+	if structurecontains \{structure = data
 			name = state}
-		debug_Printf qs("\Lui_event event=%e state=%s") e = <event> s = (<data>.state) channel = ui_event
+		0x8dbdaee4 qs(0xd6e589bd) e = <event> s = (<data>.state) channel = ui_event
 	else
-		debug_Printf qs("\Lui_event event=%e") e = <event> channel = ui_event
+		0x8dbdaee4 qs(0xde330243) e = <event> channel = ui_event
 	endif
-	ui_event_create_watch event = <event>
-	ui :UnPause
-	ui :EventCache_Add event_id = <event> event_data = <data>
+	0x3f946c68 event = <event>
+	ui :unpause
+	ui :eventcache_add event_id = <event> event_data = <data>
 endscript
 
 script ui_event_add_params 
@@ -135,46 +135,46 @@ endscript
 script ui_event_add_continue \{event = menu_change}
 	ui_event event = menu_add data = <add_state_data>
 	begin
-	if NOT Is_ui_event_running
+	if NOT is_ui_event_running
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 	ui_event event = <event> data = <continue_state_data>
 	begin
-	if NOT Is_ui_event_running
+	if NOT is_ui_event_running
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript
 
 script ui_event_block \{event = menu_change
 		data = {
 		}}
-	if GotParam \{state}
+	if gotparam \{state}
 		data = {<data> state = <state>}
 	endif
 	ui_event_spawned event = <event> data = <data>
-	if GotParam \{wait_for_statechange}
-		if NOT ui_event_is_statechange event = <event>
-			debug_ScriptAssert 'Called ui_event_block with wait_for_statechange with event %e' e = <event>
+	if gotparam \{0xd1b494c2}
+		if NOT 0xb68cf6d4 event = <event>
+			0x93d8d5cf 'Called ui_event_block with wait_for_statechange with event %e' e = <event>
 		endif
 		begin
-		if NOT ScriptIsRunning \{ui_event_create_watch_spawned}
+		if NOT scriptisrunning \{0xf29cdad1}
 			return
 		endif
-		WaitOneGameFrame
+		waitonegameframe
 		repeat
 	endif
 	if (<event> = menu_focus)
-		type = TaskMenu_focus
+		type = taskmenu_focus
 	elseif (<event> = menu_unfocus)
-		type = TaskMenu_unfocus
+		type = taskmenu_unfocus
 	else
-		type = TaskMenu_Callback
+		type = taskmenu_callback
 	endif
-	Block type = <type>
+	block type = <type>
 endscript
 
 script ui_event_wait \{event = menu_change
@@ -185,11 +185,11 @@ endscript
 
 script ui_event_wait_spawned 
 
-	if ui_event_is_statechange event = <event>
-		change \{waiting_for_statechange = 1}
+	if 0xb68cf6d4 event = <event>
+		change \{0x53308f96 = 1}
 	endif
 	ui_event_wait_for_safe
-	if GotParam \{state}
+	if gotparam \{state}
 		data = {<data> state = <state>}
 	endif
 	spawnscriptnow ui_event_block params = <...>
@@ -197,16 +197,16 @@ endscript
 
 script ui_event_wait_for_safe 
 	begin
-	if NOT Is_ui_event_running
+	if NOT is_ui_event_running
 		break
 	endif
-	WaitOneGameFrame
+	waitonegameframe
 	repeat
 endscript
 
 script ui_event_exists_in_stack 
 
-	ui :MenuStack_GetStackContents
+	ui :menustack_getstackcontents
 	if (<stack_size> < 1)
 		return \{false}
 	endif
@@ -215,7 +215,7 @@ script ui_event_exists_in_stack
 	if ((<stack> [<i>].base_name) = <name>)
 		return \{true}
 	endif
-	if GotParam \{above}
+	if gotparam \{above}
 		if ((<stack> [<i>].base_name) = <above>)
 			return \{false}
 		endif
@@ -226,13 +226,13 @@ script ui_event_exists_in_stack
 endscript
 
 script ui_event_get_stack 
-	ui :MenuStack_GetStackContents
+	ui :menustack_getstackcontents
 	return {<...>}
 endscript
 
 script ui_state_pak_load 
 
-	SetPakManCurrent map = ui_paks pakname = <pakname>
+	setpakmancurrent map = ui_paks pakname = <pakname>
 endscript
 
 script ui_state_anim_in_done 
@@ -245,7 +245,7 @@ endscript
 
 script ui_event_get_top 
 	ui_event_get_stack
-	GetArraySize <stack>
+	getarraysize <stack>
 	if (<array_size> > 0)
 		return (<stack> [0])
 	endif

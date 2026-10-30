@@ -1,155 +1,155 @@
 default_text_characters = [
 	[
-		qs("\L ")
-		qs("\L ")
+		qs(0x713755f7)
+		qs(0x713755f7)
 	]
 	[
-		qs("\LA")
-		qs("\La")
+		qs(0x0dd10f11)
+		qs(0x98552bb3)
 	]
 	[
-		qs("\LB")
-		qs("\Lb")
+		qs(0x26fc5cd2)
+		qs(0xb3787870)
 	]
 	[
-		qs("\LC")
-		qs("\Lc")
+		qs(0x3fe76d93)
+		qs(0xaa634931)
 	]
 	[
-		qs("\LD")
-		qs("\Ld")
+		qs(0x70a6fb54)
+		qs(0xe522dff6)
 	]
 	[
-		qs("\LE")
-		qs("\Le")
+		qs(0x69bdca15)
+		qs(0xfc39eeb7)
 	]
 	[
-		qs("\LF")
-		qs("\Lf")
+		qs(0x429099d6)
+		qs(0xd714bd74)
 	]
 	[
-		qs("\LG")
-		qs("\Lg")
+		qs(0x5b8ba897)
+		qs(0xce0f8c35)
 	]
 	[
-		qs("\LH")
-		qs("\Lh")
+		qs(0xdc13b458)
+		qs(0x499790fa)
 	]
 	[
-		qs("\LI")
-		qs("\Li")
+		qs(0xc5088519)
+		qs(0x508ca1bb)
 	]
 	[
-		qs("\LJ")
-		qs("\Lj")
+		qs(0xee25d6da)
+		qs(0x7ba1f278)
 	]
 	[
-		qs("\LK")
-		qs("\Lk")
+		qs(0xf73ee79b)
+		qs(0x62bac339)
 	]
 	[
-		qs("\LL")
-		qs("\Ll")
+		qs(0xb87f715c)
+		qs(0x2dfb55fe)
 	]
 	[
-		qs("\LM")
-		qs("\Lm")
+		qs(0xa164401d)
+		qs(0x34e064bf)
 	]
 	[
-		qs("\LN")
-		qs("\Ln")
+		qs(0x8a4913de)
+		qs(0x1fcd377c)
 	]
 	[
-		qs("\LO")
-		qs("\Lo")
+		qs(0x9352229f)
+		qs(0x06d6063d)
 	]
 	[
-		qs("\LP")
-		qs("\Lp")
+		qs(0x5e082c01)
+		qs(0xcb8c08a3)
 	]
 	[
-		qs("\LQ")
-		qs("\Lq")
+		qs(0x47131d40)
+		qs(0xd29739e2)
 	]
 	[
-		qs("\LR")
-		qs("\Lr")
+		qs(0x6c3e4e83)
+		qs(0xf9ba6a21)
 	]
 	[
-		qs("\LS")
-		qs("\Ls")
+		qs(0x75257fc2)
+		qs(0xe0a15b60)
 	]
 	[
-		qs("\LT")
-		qs("\Lt")
+		qs(0x3a64e905)
+		qs(0xafe0cda7)
 	]
 	[
-		qs("\LU")
-		qs("\Lu")
+		qs(0x237fd844)
+		qs(0xb6fbfce6)
 	]
 	[
-		qs("\LV")
-		qs("\Lv")
+		qs(0x08528b87)
+		qs(0x9dd6af25)
 	]
 	[
-		qs("\LW")
-		qs("\Lw")
+		qs(0x1149bac6)
+		qs(0x84cd9e64)
 	]
 	[
-		qs("\LX")
-		qs("\Lx")
+		qs(0x96d1a609)
+		qs(0x035582ab)
 	]
 	[
-		qs("\LY")
-		qs("\Ly")
+		qs(0x8fca9748)
+		qs(0x1a4eb3ea)
 	]
 	[
-		qs("\LZ")
-		qs("\Lz")
+		qs(0xa4e7c48b)
+		qs(0x3163e029)
 	]
 	[
-		qs("\L1")
-		qs("\L1")
+		qs(0x22ee76e7)
+		qs(0x22ee76e7)
 	]
 	[
-		qs("\L2")
-		qs("\L2")
+		qs(0x09c32524)
+		qs(0x09c32524)
 	]
 	[
-		qs("\L3")
-		qs("\L3")
+		qs(0x10d81465)
+		qs(0x10d81465)
 	]
 	[
-		qs("\L4")
-		qs("\L4")
+		qs(0x5f9982a2)
+		qs(0x5f9982a2)
 	]
 	[
-		qs("\L5")
-		qs("\L5")
+		qs(0x4682b3e3)
+		qs(0x4682b3e3)
 	]
 	[
-		qs("\L6")
-		qs("\L6")
+		qs(0x6dafe020)
+		qs(0x6dafe020)
 	]
 	[
-		qs("\L7")
-		qs("\L7")
+		qs(0x74b4d161)
+		qs(0x74b4d161)
 	]
 	[
-		qs("\L8")
-		qs("\L8")
+		qs(0xf32ccdae)
+		qs(0xf32ccdae)
 	]
 	[
-		qs("\L9")
-		qs("\L9")
+		qs(0xea37fcef)
+		qs(0xea37fcef)
 	]
 	[
-		qs("\L0")
-		qs("\L0")
+		qs(0x3bf547a6)
+		qs(0x3bf547a6)
 	]
 	[
-		qs("\L'")
-		qs("\L'")
+		qs(0x3e76c330)
+		qs(0x3e76c330)
 	]
 ]
 default_text_array = [
@@ -243,7 +243,7 @@ default_text_array = [
 	]
 ]
 num_name_size = 20
-default_number_array = [
+0xc76c772a = [
 	[
 		36
 		0
@@ -329,7 +329,7 @@ default_number_array = [
 		0
 	]
 ]
-num_number_size = 12
+0x301e5dc8 = 12
 default_color_scheme = {
 	title_color = [
 		0
@@ -366,18 +366,18 @@ script text_entry_add_item {
 		pos = (12.0, 0.0)
 		text_focus_color = (($cas_color_scheme).text_focus_color)
 		text_unfocus_color = (($cas_color_scheme).text_color)
-		marker_focus_color = (($cas_color_scheme).title_color)
-		marker_unfocus_color = [0 0 0 0]
+		0xb90ddda6 = (($cas_color_scheme).title_color)
+		0xbcd8ee4c = [0 0 0 0]
 		text_offset = (0.0, 0.0)
 		marker_offset = (0.0, 0.0)
-		validity_message = qs("You must enter a Name to proceed!")
+		validity_message = qs(0x40d1d9f7)
 		numbers_only = 0
 	}
-	if GotParam \{text}
+	if gotparam \{text}
 		kill_carats_in_string text = <text>
 	endif
-	CreateScreenElement {
-		type = ContainerElement
+	createscreenelement {
+		type = containerelement
 		parent = current_menu
 		dims = <dims>
 		<focusable_flags>
@@ -386,7 +386,7 @@ script text_entry_add_item {
 		scale = 2.5
 	}
 	text_entry = <id>
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <text_entry>
 		event_handlers = [
 			{focus <focus_script> params = {text_entry = <text_entry> <focus_params>}}
@@ -394,11 +394,11 @@ script text_entry_add_item {
 			{pad_choose initiate_text_entry params = {text_entry = <text_entry>}}
 		]
 	}
-	<text_entry> :SetTags {
+	<text_entry> :settags {
 		numbers_only = <numbers_only>
 	}
-	CreateScreenElement {
-		type = VMenu
+	createscreenelement {
+		type = vmenu
 		parent = <id>
 		dims = <dims>
 		pos = <pos>
@@ -408,8 +408,8 @@ script text_entry_add_item {
 		fit_minor = `fit content`
 	}
 	cont_id = <id>
-	CreateScreenElement {
-		type = TextBlockElement
+	createscreenelement {
+		type = textblockelement
 		parent = <cont_id>
 		font = <font>
 		material = <font_material>
@@ -423,12 +423,12 @@ script text_entry_add_item {
 		pos = <text_offset>
 	}
 	text_entry_text = <id>
-	CreateScreenElement {
-		type = TextBlockElement
+	createscreenelement {
+		type = textblockelement
 		parent = <id>
-		text = qs("\L_")
+		text = qs(0xd99030ce)
 		font = ($test_menu_font)
-		rgba = <marker_unfocus_color>
+		rgba = <0xbcd8ee4c>
 		just = [left top]
 		anchor_pos = [left , top]
 		internal_just = [left , top]
@@ -436,22 +436,22 @@ script text_entry_add_item {
 		fit_height = `expand dims`
 	}
 	text_entry_marker = <id>
-	if GotParam \{linear_flow}
+	if gotparam \{linear_flow}
 		linear_flow = true
 	else
 		linear_flow = false
 	endif
 	if (<numbers_only> = 1)
-		<index_array> = default_number_array
+		<index_array> = 0xc76c772a
 	else
 		<index_array> = default_text_array
 	endif
-	<text_entry> :SetTags {
+	<text_entry> :settags {
 		text_entry_text = <text_entry_text>
 		text_entry_marker = <text_entry_marker>
 		current_index = 0
 		char_index_array = ($<index_array>)
-		default_index_array = <index_array>
+		0x78c98268 = <index_array>
 		caps_lock_state = 0
 		pad_back_script = <pad_back_script>
 		pad_back_params = <pad_back_params>
@@ -463,177 +463,177 @@ script text_entry_add_item {
 		marker_offset = <marker_offset>
 		validity_message = <validity_message>
 		skip_deinit = <skip_deinit>
-		auto_caps = 0
+		0x6b2d5065 = 0
 		text_focus_color = <text_focus_color>
 		text_unfocus_color = <text_unfocus_color>
-		marker_focus_color = <marker_focus_color>
-		marker_unfocus_color = <marker_unfocus_color>
+		0xb90ddda6 = <0xb90ddda6>
+		0xbcd8ee4c = <0xbcd8ee4c>
 	}
-	if GotParam \{text}
+	if gotparam \{text}
 		seed_text_entry text = <text> text_entry = <text_entry> index_array = <index_array>
 	else
 		refresh_text_on_screen char_index_array = ($<index_array>) current_index = 0 caps_lock_state = 0 text_entry = <text_entry>
 	endif
-	RunScriptOnScreenElement id = <text_entry_marker> text_blink params = {id = <text_entry_marker> time = 0.5}
+	runscriptonscreenelement id = <text_entry_marker> text_blink params = {id = <text_entry_marker> time = 0.5}
 	return text_entry = <text_entry>
 endscript
 
 script change_char_up 
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	if (<numbers_only> = 1)
 		<max> = 37
-		<wrap_to> = 27
+		<0x33653539> = 27
 	else
-		GetArraySize ($default_text_characters)
+		getarraysize ($default_text_characters)
 		<max> = <array_size>
-		<wrap_to> = 0
+		<0x33653539> = 0
 	endif
 	character = (<char_index_array> [<current_index>])
-	SetArrayElement ArrayName = character index = 0 newvalue = ((<character> [0]) + 1)
-	SetArrayElement ArrayName = character index = 1 newvalue = <caps_lock_state>
+	setarrayelement arrayname = character index = 0 newvalue = ((<character> [0]) + 1)
+	setarrayelement arrayname = character index = 1 newvalue = <caps_lock_state>
 	if ((<character> [0]) = <max>)
-		SetArrayElement ArrayName = character index = 0 newvalue = <wrap_to>
+		setarrayelement arrayname = character index = 0 newvalue = <0x33653539>
 	endif
-	SetArrayElement ArrayName = char_index_array index = <current_index> newvalue = <character>
-	<text_entry> :SetTags {
+	setarrayelement arrayname = char_index_array index = <current_index> newvalue = <character>
+	<text_entry> :settags {
 		char_index_array = <char_index_array>
 	}
 	refresh_text_on_screen <...>
-	SoundEvent \{event = Enter_Band_Name_Scroll_Down}
+	soundevent \{event = enter_band_name_scroll_down}
 endscript
 
 script change_char_down 
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	if (<numbers_only> = 1)
 		<min> = 27
-		<wrap_to> = 36
+		<0x33653539> = 36
 	else
-		GetArraySize ($default_text_characters)
+		getarraysize ($default_text_characters)
 		<min> = 0
-		<wrap_to> = (<array_size> - 1)
+		<0x33653539> = (<array_size> - 1)
 	endif
-	GetArraySize ($default_text_characters)
+	getarraysize ($default_text_characters)
 	character = (<char_index_array> [<current_index>])
-	SetArrayElement ArrayName = character index = 0 newvalue = ((<character> [0]) -1)
-	SetArrayElement ArrayName = character index = 1 newvalue = <caps_lock_state>
+	setarrayelement arrayname = character index = 0 newvalue = ((<character> [0]) -1)
+	setarrayelement arrayname = character index = 1 newvalue = <caps_lock_state>
 	if ((<character> [0]) < <min>)
-		SetArrayElement ArrayName = character index = 0 newvalue = <wrap_to>
+		setarrayelement arrayname = character index = 0 newvalue = <0x33653539>
 	endif
-	SetArrayElement ArrayName = char_index_array index = <current_index> newvalue = <character>
-	<text_entry> :SetTags {
+	setarrayelement arrayname = char_index_array index = <current_index> newvalue = <character>
+	<text_entry> :settags {
 		char_index_array = <char_index_array>
 	}
 	refresh_text_on_screen <...>
-	SoundEvent \{event = Enter_Band_Name_Scroll_Up}
+	soundevent \{event = enter_band_name_scroll_up}
 endscript
 
 script refresh_text_on_screen 
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	get_string_from_array array = <char_index_array> index = (<current_index> + 1)
-	SetScreenElementProps id = <text_entry_text> text = <text>
-	StringNCopy string = <text> length = <current_index>
+	setscreenelementprops id = <text_entry_text> text = <text>
+	stringncopy string = <text> length = <current_index>
 	text_index = (<char_index_array> [<current_index>] [0])
 	new_string = (<new_string> + (($default_text_characters) [<text_index>] [<caps_lock_state>]))
 	update_text_entry_marker text = <new_string> text_entry = <text_entry> font = <font>
 endscript
 
 script advance_text_pointer \{force_final_char_for_confirm = false}
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	if (<numbers_only> = 1)
-		<max_chars> = $num_number_size
+		<max_chars> = $0x301e5dc8
 	else
 		<max_chars> = $num_name_size
 	endif
-	if ChecksumEquals a = <text_case> b = title
-		current_letter_index = (<char_index_array> [<current_index>] [0])
-		if (<auto_caps> = 1)
+	if checksumequals a = <text_case> b = title
+		0x7dd86e60 = (<char_index_array> [<current_index>] [0])
+		if (<0x6b2d5065> = 1)
 			<caps_lock_state> = 1
-			<auto_caps> = 0
-		elseif (<current_letter_index> = 0)
+			<0x6b2d5065> = 0
+		elseif (<0x7dd86e60> = 0)
 			<caps_lock_state> = 0
-			<auto_caps> = 1
+			<0x6b2d5065> = 1
 		elseif (<current_index> = 0)
 			<caps_lock_state> = 1
 		endif
 	endif
 	current_index = (<current_index> + 1)
 	if ((<current_index> < (<max_chars>)) || (<force_final_char_for_confirm> = true))
-		<text_entry> :SetTags {
+		<text_entry> :settags {
 			current_index = <current_index>
 		}
 		get_string_from_array array = <char_index_array> index = (<current_index> + 1)
-		StringNCopy string = <text> length = <current_index>
+		stringncopy string = <text> length = <current_index>
 		text_index = (<char_index_array> [<current_index>] [0])
 		new_string = (<new_string> + (($default_text_characters) [<text_index>] [<caps_lock_state>]))
 		update_text_entry_marker text = <new_string> text_entry = <text_entry>
-		SetScreenElementProps id = <text_entry_text> text = <new_string>
+		setscreenelementprops id = <text_entry_text> text = <new_string>
 		<character> = (<char_index_array> [<current_index>])
-		SetArrayElement ArrayName = character index = 0 newvalue = ((<character> [0]))
-		SetArrayElement ArrayName = character index = 1 newvalue = <caps_lock_state>
-		SetArrayElement ArrayName = char_index_array index = <current_index> newvalue = <character>
-		<text_entry> :SetTags {
+		setarrayelement arrayname = character index = 0 newvalue = ((<character> [0]))
+		setarrayelement arrayname = character index = 1 newvalue = <caps_lock_state>
+		setarrayelement arrayname = char_index_array index = <current_index> newvalue = <character>
+		<text_entry> :settags {
 			char_index_array = <char_index_array>
 			caps_lock_state = <caps_lock_state>
-			auto_caps = <auto_caps>
+			0x6b2d5065 = <0x6b2d5065>
 		}
-		SoundEvent \{event = enter_band_name_select}
+		soundevent \{event = enter_band_name_select}
 	endif
 endscript
 
 script retreat_text_pointer 
-	<text_entry> :GetTags
-	<auto_caps> = 0
+	<text_entry> :gettags
+	<0x6b2d5065> = 0
 	if (<current_index> = 0)
-		SoundEvent \{event = Menu_Scroll_End}
+		soundevent \{event = menu_scroll_end}
 		if (<pad_back_script> = nullscript)
 			return
 		endif
 		if (<linear_flow> = true)
-			<text_entry> :SetTags {
+			<text_entry> :settags {
 				current_index = 0
-				char_index_array = ($<default_index_array>)
-				auto_caps = <auto_caps>
+				char_index_array = ($<0x78c98268>)
+				0x6b2d5065 = <0x6b2d5065>
 			}
-			if NOT GotParam \{skip_deinit}
+			if NOT gotparam \{skip_deinit}
 				deinitiate_text_entry text_entry = <text_entry>
 			endif
 			<pad_back_script> <pad_back_params>
 		endif
 	else
-		SetArrayElement ArrayName = char_index_array index = <current_index> newvalue = (($<default_index_array>) [<current_index>])
+		setarrayelement arrayname = char_index_array index = <current_index> newvalue = (($<0x78c98268>) [<current_index>])
 		current_index = (<current_index> -1)
 		<caps_lock_state> = (<char_index_array> [<current_index>] [1])
-		<text_entry> :SetTags {
+		<text_entry> :settags {
 			current_index = <current_index>
 			char_index_array = <char_index_array>
 			caps_lock_state = <caps_lock_state>
-			auto_caps = <auto_caps>
+			0x6b2d5065 = <0x6b2d5065>
 		}
 		get_string_from_array array = <char_index_array> index = (<current_index> + 1)
-		SetScreenElementProps id = <text_entry_text> text = <text>
-		StringNCopy string = <text> length = <current_index>
+		setscreenelementprops id = <text_entry_text> text = <text>
+		stringncopy string = <text> length = <current_index>
 		text_index = (<char_index_array> [<current_index>] [0])
 		new_string = (<new_string> + (($default_text_characters) [<text_index>] [<caps_lock_state>]))
 		update_text_entry_marker text = <new_string> text_entry = <text_entry>
-		SoundEvent \{event = Enter_Band_Name_Back}
+		soundevent \{event = enter_band_name_back}
 	endif
 endscript
 
 script confirm_name 
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	if NOT is_text_valid text_entry = <text_entry>
 		change menu_flow_locked = ($menu_flow_locked + 1)
-		if ($one_menu_popup = 0)
-			LaunchEvent type = unfocus target = <text_entry>
-			generic_event_choose no_sound state = UIstate_generic_alert_popup data = {pad_choose_script = return_reinit_text_entry pad_choose_params = {text_entry = <text_entry>} is_popup title = qs("Invalid Name") text = <validity_message>}
-			SoundEvent \{event = Menu_Warning_SFX}
+		if ($0x238076ba = 0)
+			launchevent type = unfocus target = <text_entry>
+			generic_event_choose no_sound state = uistate_generic_alert_popup data = {pad_choose_script = return_reinit_text_entry pad_choose_params = {text_entry = <text_entry>} is_popup title = qs(0x154925b6) text = <validity_message>}
+			soundevent \{event = menu_warning_sfx}
 		endif
 		change menu_flow_locked = ($menu_flow_locked - 1)
 	else
 		advance_text_pointer text_entry = <text_entry> force_final_char_for_confirm = true
-		<text_entry> :GetTags
+		<text_entry> :gettags
 		get_string_from_array array = <char_index_array> index = <current_index>
-		StringRemoveTrailingWhitespace string = <text>
+		stringremovetrailingwhitespace string = <text>
 		deinitiate_text_entry text_entry = <text_entry>
 		pad_choose_params = {<pad_choose_params> text = <new_string>}
 		<pad_choose_script> <pad_choose_params>
@@ -642,9 +642,9 @@ endscript
 
 script get_string_from_array 
 
-	text = qs("")
+	text = qs(0x00000000)
 	if (<index> = 0)
-		return \{text = qs("")}
+		return \{text = qs(0x00000000)}
 	endif
 	i = 0
 	begin
@@ -657,12 +657,12 @@ script get_string_from_array
 endscript
 
 script initiate_text_entry 
-	LaunchEvent \{type = unfocus
+	launchevent \{type = unfocus
 		target = current_menu}
-	LaunchEvent type = focus target = <text_entry>
-	<text_entry> :GetSingleTag text_case
-	<text_entry> :GetSingleTag linear_flow
-	<text_entry> :GetSingleTag pad_back_script
+	launchevent type = focus target = <text_entry>
+	<text_entry> :getsingletag text_case
+	<text_entry> :getsingletag linear_flow
+	<text_entry> :getsingletag pad_back_script
 	if (<linear_flow> = true)
 		event_handlers = [
 			{pad_up change_char_down params = {text_entry = <text_entry>}}
@@ -681,21 +681,21 @@ script initiate_text_entry
 			{pad_back <pad_back_script>}
 		]
 	endif
-	if ChecksumEquals a = <text_case> b = mixed
+	if checksumequals a = <text_case> b = mixed
 		if (<linear_flow> = true)
-			AddArrayElement array = <event_handlers> element = {{pad_option2 toggle_caps_lock params = {text_entry = <text_entry>}}}
+			addarrayelement array = <event_handlers> element = {{pad_option2 toggle_caps_lock params = {text_entry = <text_entry>}}}
 		else
-			if IsGuitarController controller = ($primary_controller)
-				AddArrayElement array = <event_handlers> element = {{pad_square toggle_caps_lock params = {text_entry = <text_entry>}}}
-			elseif IsDrumController controller = ($primary_controller)
-				AddArrayElement array = <event_handlers> element = {{pad_l1 toggle_caps_lock params = {text_entry = <text_entry>}}}
+			if isguitarcontroller controller = ($primary_controller)
+				addarrayelement array = <event_handlers> element = {{pad_square toggle_caps_lock params = {text_entry = <text_entry>}}}
+			elseif isdrumcontroller controller = ($primary_controller)
+				addarrayelement array = <event_handlers> element = {{pad_l1 toggle_caps_lock params = {text_entry = <text_entry>}}}
 			else
-				AddArrayElement array = <event_handlers> element = {{pad_r2 toggle_caps_lock params = {text_entry = <text_entry>}}}
+				addarrayelement array = <event_handlers> element = {{pad_r2 toggle_caps_lock params = {text_entry = <text_entry>}}}
 			endif
 		endif
 		event_handlers = <array>
 	endif
-	SetScreenElementProps {
+	setscreenelementprops {
 		id = <text_entry>
 		event_handlers = <event_handlers>
 		replace_handlers
@@ -703,13 +703,13 @@ script initiate_text_entry
 endscript
 
 script deinitiate_text_entry 
-	if ScreenElementExists id = <text_entry>
-		<text_entry> :SetTags {
+	if screenelementexists id = <text_entry>
+		<text_entry> :settags {
 			current_index = 0
 			char_index_array = ($default_text_array)
 			caps_lock_state = 0
 		}
-		SetScreenElementProps {
+		setscreenelementprops {
 			id = <text_entry>
 			event_handlers = [
 				{pad_choose initiate_text_entry params = {text_entry = <text_entry>}}
@@ -723,28 +723,28 @@ script deinitiate_text_entry
 		}
 	endif
 	refresh_text_on_screen char_index_array = ($default_text_array) current_index = 0 caps_lock_state = 0 text_entry = <text_entry>
-	LaunchEvent type = unfocus target = <text_entry>
-	LaunchEvent \{type = focus
+	launchevent type = unfocus target = <text_entry>
+	launchevent \{type = focus
 		target = current_menu}
 endscript
 
 script is_text_valid 
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	get_string_from_array array = <char_index_array> index = (<current_index> + 1)
-	StringRemoveTrailingWhitespace string = <text>
-	if (<new_string> = qs("\L"))
+	stringremovetrailingwhitespace string = <text>
+	if (<new_string> = qs(0x03ac90f0))
 		return \{false}
 	else
 		return \{true}
 	endif
 endscript
 
-script is_num_valid 
-	<text_entry> :GetTags
-	GetArraySize <char_index_array>
+script 0x33831619 
+	<text_entry> :gettags
+	getarraysize <char_index_array>
 	get_string_from_array array = <char_index_array> index = (<current_index> + 1)
-	StringRemoveTrailingWhitespace string = <text>
-	StringLength string = <new_string>
+	stringremovetrailingwhitespace string = <text>
+	stringlength string = <new_string>
 
 
 	if NOT (<str_len> = 12)
@@ -765,31 +765,31 @@ script seed_text_entry \{index_array = default_text_array}
 
 	caps_lock_state = 0
 	text_array = ($<index_array>)
-	StringToCharArray string = <text>
-	GetArraySize <char_array>
+	stringtochararray string = <text>
+	getarraysize <char_array>
 	string_size = <array_size>
 	if (<string_size> > (($num_name_size) + 1))
 
 	endif
-	<text_entry> :GetSingleTag text_case
-	<text_entry> :GetSingleTag auto_caps
+	<text_entry> :getsingletag text_case
+	<text_entry> :getsingletag 0x6b2d5065
 	if (<string_size> > 0)
 		i = 0
 		begin
-		GetArraySize ($default_text_characters)
+		getarraysize ($default_text_characters)
 		j = 0
 		begin
 		if (<char_array> [<i>] = ($default_text_characters) [<j>] [0])
 			new_val = [0 0]
-			SetArrayElement ArrayName = new_val index = 0 newvalue = <j>
-			SetArrayElement ArrayName = text_array index = <i> newvalue = <new_val>
+			setarrayelement arrayname = new_val index = 0 newvalue = <j>
+			setarrayelement arrayname = text_array index = <i> newvalue = <new_val>
 			caps_lock_state = (<text_array> [<i>] [1])
 			break
 		endif
 		if (<char_array> [<i>] = ($default_text_characters) [<j>] [1])
 			new_val = [0 1]
-			SetArrayElement ArrayName = new_val index = 0 newvalue = <j>
-			SetArrayElement ArrayName = text_array index = <i> newvalue = <new_val>
+			setarrayelement arrayname = new_val index = 0 newvalue = <j>
+			setarrayelement arrayname = text_array index = <i> newvalue = <new_val>
 			caps_lock_state = (<text_array> [<i>] [1])
 			break
 		endif
@@ -803,96 +803,96 @@ script seed_text_entry \{index_array = default_text_array}
 	if (<current_index> < 0)
 		current_index = 0
 	endif
-	if ChecksumEquals a = <text_case> b = upper
+	if checksumequals a = <text_case> b = upper
 		caps_lock_state = 0
 	endif
-	if ChecksumEquals a = <text_case> b = lower
+	if checksumequals a = <text_case> b = lower
 		caps_lock_state = 1
 	endif
-	if ChecksumEquals a = <text_case> b = title
+	if checksumequals a = <text_case> b = title
 		if (<string_size> = 0)
 			caps_lock_state = 1
-			auto_caps = 1
+			0x6b2d5065 = 1
 		endif
 	endif
-	<text_entry> :SetTags {
+	<text_entry> :settags {
 		char_index_array = <text_array>
 		current_index = (<current_index>)
 		caps_lock_state = <caps_lock_state>
-		auto_caps = <auto_caps>
+		0x6b2d5065 = <0x6b2d5065>
 	}
 endscript
 
 script text_blink 
-	if NOT ScreenElementExists id = <id>
+	if NOT screenelementexists id = <id>
 		return
 	endif
 	begin
-	SetScreenElementProps id = <id> alpha = 0 time = <time>
-	Wait <time> seconds
-	SetScreenElementProps id = <id> alpha = 1.0
-	Wait <time> seconds
+	setscreenelementprops id = <id> alpha = 0 time = <time>
+	wait <time> seconds
+	setscreenelementprops id = <id> alpha = 1.0
+	wait <time> seconds
 	repeat
 endscript
 
 script toggle_caps_lock 
-	<text_entry> :GetTags
+	<text_entry> :gettags
 	if (<caps_lock_state> = 0)
 		caps_lock_state = 1
 	else
 		caps_lock_state = 0
 	endif
-	<auto_caps> = 0
+	<0x6b2d5065> = 0
 	character = (<char_index_array> [<current_index>])
-	SetArrayElement ArrayName = character index = 1 newvalue = <caps_lock_state>
-	SetArrayElement ArrayName = char_index_array index = <current_index> newvalue = <character>
-	<text_entry> :SetTags {
+	setarrayelement arrayname = character index = 1 newvalue = <caps_lock_state>
+	setarrayelement arrayname = char_index_array index = <current_index> newvalue = <character>
+	<text_entry> :settags {
 		caps_lock_state = <caps_lock_state>
 		char_index_array = <char_index_array>
-		auto_caps = <auto_caps>
+		0x6b2d5065 = <0x6b2d5065>
 	}
 	get_string_from_array array = <char_index_array> index = (<current_index> + 1)
-	SetScreenElementProps id = <text_entry_text> text = <text>
+	setscreenelementprops id = <text_entry_text> text = <text>
 	if NOT ((($default_text_characters) [(<character> [0])] [0]) = (($default_text_characters) [(<character> [0])] [1]))
-		SoundEvent \{event = Enter_Band_Name_Caps}
+		soundevent \{event = enter_band_name_caps}
 	endif
 endscript
 
 script focus_text_entry 
-	<text_entry> :GetTags
-	SetScreenElementProps id = <text_entry_text> rgba = <text_focus_color>
-	SetScreenElementProps id = <text_entry_marker> rgba = <marker_focus_color>
+	<text_entry> :gettags
+	setscreenelementprops id = <text_entry_text> rgba = <text_focus_color>
+	setscreenelementprops id = <text_entry_marker> rgba = <0xb90ddda6>
 endscript
 
 script unfocus_text_entry 
-	<text_entry> :GetTags
-	SetScreenElementProps id = <text_entry_text> rgba = <text_unfocus_color>
-	SetScreenElementProps id = <text_entry_marker> rgba = <marker_unfocus_color>
+	<text_entry> :gettags
+	setscreenelementprops id = <text_entry_text> rgba = <text_unfocus_color>
+	setscreenelementprops id = <text_entry_marker> rgba = <0xbcd8ee4c>
 endscript
 
 script update_text_entry_marker 
 
-	<text_entry> :GetTags
-	QueryString string = <text> font = <font>
+	<text_entry> :gettags
+	querystring string = <text> font = <font>
 	new_width = <width>
-	StringToCharArray string = <text>
-	GetArraySize <char_array>
-	last_char = qs("\L")
+	stringtochararray string = <text>
+	getarraysize <char_array>
+	last_char = qs(0x03ac90f0)
 	if (<array_size> > 0)
 		last_char = (<char_array> [(<array_size> -1)])
 	endif
-	QueryString string = <last_char> font = <font>
+	querystring string = <last_char> font = <font>
 	new_width = (<new_width> - <width>)
-	SetScreenElementProps id = <text_entry_marker> pos = (<marker_offset> + ((1.0, 0.0) * <new_width>))
+	setscreenelementprops id = <text_entry_marker> pos = (<marker_offset> + ((1.0, 0.0) * <new_width>))
 endscript
 
 script kill_carats_in_string 
 
 
-	StringToCharArray string = <text>
-	GetArraySize <char_array>
+	stringtochararray string = <text>
+	getarraysize <char_array>
 	<src> = 0
-	<out_text> = qs("")
+	<out_text> = qs(0x00000000)
 	begin
 	<this_element> = (<char_array> [<src>])
 	if NOT (<this_element> = qs(0x9a1e9dda))

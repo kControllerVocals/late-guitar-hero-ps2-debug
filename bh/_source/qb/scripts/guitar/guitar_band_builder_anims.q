@@ -1,4 +1,4 @@
-start_animations = 1
+0x19d65371 = 1
 band_builder_anims = {
 }
 
@@ -14,7 +14,7 @@ script band_anim_set_star_power_anim
 endscript
 
 script band_anim_check_star_power_anim 
-	if StructureContains \{Structure = $band_builder_anims
+	if structurecontains \{structure = $band_builder_anims
 			starpower}
 		return true star_power_anim = (($band_builder_anims).starpower)
 	endif
@@ -24,13 +24,13 @@ endscript
 script band_anim_set_appearance 
 
 	struct = ($band_builder_anims)
-	AddParam name = <info_struct> structure_name = struct value = <appearance_checksum>
+	addparam name = <info_struct> structure_name = struct value = <appearance_checksum>
 	change band_builder_anims = <struct>
 endscript
 
 script band_anim_check_appearance 
 
-	if StructureContains Structure = $band_builder_anims <info_struct>
+	if structurecontains structure = $band_builder_anims <info_struct>
 		if (<appearance_checksum> = (($band_builder_anims).<info_struct>))
 			return \{true}
 		endif
@@ -41,12 +41,12 @@ endscript
 script band_load_anim_paks \{song = none}
 	is_training = 0
 	anim_paks_set_state state = ingame async = <async>
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
-		RemoveParameter \{player_status}
-		if StructureContains Structure = ($band_builder_current_setup [<i>]) player_status
+		removeparameter \{player_status}
+		if structurecontains structure = ($band_builder_current_setup [<i>]) player_status
 			player_status = (($band_builder_current_setup [<i>]).player_status)
 		endif
 		band_load_single_anim_pak {
@@ -57,7 +57,7 @@ script band_load_anim_paks \{song = none}
 			async = <async>
 			player_status = <player_status>
 		}
-		if ((($band_builder_current_setup [<i>]).character_id) = EmptyGuy)
+		if ((($band_builder_current_setup [<i>]).character_id) = emptyguy)
 			is_training = 1
 		endif
 		i = (<i> + 1)
@@ -76,19 +76,19 @@ script band_load_single_anim_pak
 		return
 	endif
 	get_musician_profile_struct_by_id id = <character_id> savegame = <savegame>
-	ExtendCRC <name> '_Info' out = info_struct
+	extendcrc <name> '_Info' out = info_struct
 	if get_body_key_from_appearance key = anim_struct appearance = (<profile_struct>.appearance)
 		if get_anim_struct_member anim_struct = <anim_struct> loading_into_song = ($current_song) member = <part>
-			if StructureContains Structure = <anim_struct_member> pak
+			if structurecontains structure = <anim_struct_member> pak
 				pakname = (<anim_struct_member>.pak)
 				map = loop_anims
-				SmartLoadPakman map = <map> pak_name = <pakname> async = <async> tags = {type = looppak part = <part> song = <song>}
+				smartloadpakman map = <map> pak_name = <pakname> async = <async> tags = {type = looppak part = <part> song = <song>}
 			else
 
 			endif
 		endif
 	endif
-	GenerateChecksumFromStruct struct = (<profile_struct>.appearance)
+	generatechecksumfromstruct struct = (<profile_struct>.appearance)
 	appearance_checksum = <structure_checksum>
 	if NOT band_anim_check_appearance appearance_checksum = <appearance_checksum> info_struct = <info_struct>
 
@@ -101,48 +101,48 @@ script band_load_single_anim_pak
 		endif
 		get_is_female_from_appearance appearance = (<profile_struct>.appearance)
 		if (<is_female> = 1)
-			gender = Female
+			gender = female
 		else
-			gender = Male
+			gender = male
 		endif
-		GetArraySize ($Win_Anims.<gender>.<part>)
-		GetRandomValue name = win_index a = 0 b = (<array_size> -1) Integer
-		win_anim_name = ($Win_Anims.<gender>.<part> [<win_index>])
-		GetArraySize ($Lose_Anims.<gender>.<part>)
-		GetRandomValue name = lose_index a = 0 b = (<array_size> -1) Integer
-		lose_anim_name = ($Lose_Anims.<gender>.<part> [<lose_index>])
+		getarraysize ($win_anims.<gender>.<part>)
+		getrandomvalue name = win_index a = 0 b = (<array_size> -1) integer
+		win_anim_name = ($win_anims.<gender>.<part> [<win_index>])
+		getarraysize ($lose_anims.<gender>.<part>)
+		getrandomvalue name = lose_index a = 0 b = (<array_size> -1) integer
+		lose_anim_name = ($lose_anims.<gender>.<part> [<lose_index>])
 		switch <part>
 			case guitar
 			intro_anim_name = guit_greg_notempo_01
-			case Bass
-			intro_anim_name = Guit_Greg_NoTempo_02
-			case Vocals
+			case bass
+			intro_anim_name = guit_greg_notempo_02
+			case vocals
 			intro_anim_name = sing_greg_notempo
 		endswitch
-		if (($is_attract_mode = 1) || (<character_id> = EmptyGuy))
+		if (($is_attract_mode = 1) || (<character_id> = emptyguy))
 			win_anim_name = none
 			lose_anim_name = none
-			if (<character_id> = EmptyGuy)
+			if (<character_id> = emptyguy)
 				intro_anim_name = none
 			endif
 		endif
-		if StructureContains Structure = <profile_struct> intro_anims
+		if structurecontains structure = <profile_struct> intro_anims
 			intro_anims = (<profile_struct>.intro_anims)
-			GetArraySize <intro_anims>
-			GetRandomValue name = index a = 0 b = (<array_size> -1) Integer
+			getarraysize <intro_anims>
+			getrandomvalue name = index a = 0 b = (<array_size> -1) integer
 			intro_anim_name = (<intro_anims> [<index>])
 		endif
-		if StructureContains Structure = <profile_struct> Win_Anims
-			win_array = (<profile_struct>.Win_Anims)
-			GetArraySize (<win_array>)
-			GetRandomValue name = win_index a = 0 b = (<array_size> -1) Integer
-			win_anim_name = (<win_array> [<win_index>])
+		if structurecontains structure = <profile_struct> win_anims
+			0x03ef6aed = (<profile_struct>.win_anims)
+			getarraysize (<0x03ef6aed>)
+			getrandomvalue name = win_index a = 0 b = (<array_size> -1) integer
+			win_anim_name = (<0x03ef6aed> [<win_index>])
 		endif
-		if StructureContains Structure = <profile_struct> Lose_Anims
-			lose_array = (<profile_struct>.Lose_Anims)
-			GetArraySize (<lose_array>)
-			GetRandomValue name = lose_index a = 0 b = (<array_size> -1) Integer
-			lose_anim_name = (<lose_array> [<lose_index>])
+		if structurecontains structure = <profile_struct> lose_anims
+			0x35d36bbb = (<profile_struct>.lose_anims)
+			getarraysize (<0x35d36bbb>)
+			getrandomvalue name = lose_index a = 0 b = (<array_size> -1) integer
+			lose_anim_name = (<0x35d36bbb> [<lose_index>])
 		endif
 		change structurename = <info_struct> intro_anim_name = <intro_anim_name>
 		change structurename = <info_struct> win_anim_name = <win_anim_name>
@@ -158,26 +158,26 @@ script band_load_single_anim_pak
 
 
 	if NOT (<win_anim_name> = none)
-		SmartLoadPakman map = Win_Anims pak_name = <win_anim_name> async = <async> tags = {type = animpak part = <part>}
+		smartloadpakman map = win_anims pak_name = <win_anim_name> async = <async> tags = {type = animpak part = <part>}
 	endif
 	if NOT (<lose_anim_name> = none)
-		SmartLoadPakman map = Lose_Anims pak_name = <lose_anim_name> async = <async> tags = {type = animpak part = <part>}
+		smartloadpakman map = lose_anims pak_name = <lose_anim_name> async = <async> tags = {type = animpak part = <part>}
 	endif
 endscript
 
 script prepare_for_pending_animpaks 
 
 
-	SmartUnloadPak async = <async> tags = {type = looppak}
+	smartunloadpak async = <async> tags = {type = looppak}
 
-	SmartUnloadPak async = <async> tags = {type = nextsongpak}
+	smartunloadpak async = <async> tags = {type = nextsongpak}
 endscript
 
 script band_start_anims 
 	if ($game_mode = practice)
 		return
 	endif
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
@@ -201,60 +201,60 @@ script band_start_anims
 		i = (<i> + 1)
 		repeat <array_size>
 	endif
-	Band_RestartIdles
+	band_restartidles
 endscript
 
 script band_stop_anims 
-	GetArraySize \{$band_builder_current_setup}
+	getarraysize \{$band_builder_current_setup}
 	if (<array_size> > 0)
 		i = 0
 		begin
 		name = (($band_builder_current_setup [<i>]).name)
-		if CompositeObjectExists name = <name>
+		if compositeobjectexists name = <name>
 			<name> :obj_killallspawnedscripts
 		endif
 		i = (<i> + 1)
 		repeat <array_size>
 	endif
-	BandManager_RemoveAllCharacters
+	bandmanager_removeallcharacters
 endscript
 
 script band_unload_anim_paks \{async = 1}
-	SmartUnloadPak async = <async> tags = {type = animpak}
+	smartunloadpak async = <async> tags = {type = animpak}
 endscript
 
 script band_unload_song_anim_paks \{async = 1}
-	SmartUnloadPak async = <async> tags = {type = looppak}
+	smartunloadpak async = <async> tags = {type = looppak}
 endscript
 
-script band_clear_invalid_durations 
-	BandManager_PlayIdle \{name = Guitarist
+script 0xf11ce60b 
+	bandmanager_playidle \{name = guitarist
 		restart}
-	BandManager_PlayIdle \{name = vocalist
+	bandmanager_playidle \{name = vocalist
 		restart}
-	BandManager_PlayIdle \{name = bassist
+	bandmanager_playidle \{name = bassist
 		restart}
 	intro_anim = ($drummer_info.intro_anim_name)
 	if (<intro_anim> = none)
-		Drummer :Anim_Command \{target = moment_blend
-			command = Switch_SetState
+		drummer :anim_command \{target = moment_blend
+			command = switch_setstate
 			params = {
 				off
 			}}
-		Drummer :Anim_Command \{target = moment_blend_inner
-			command = Switch_SetState
+		drummer :anim_command \{target = moment_blend_inner
+			command = switch_setstate
 			params = {
 				on
 			}}
-		Drummer :Anim_Command \{target = moment_branch
-			command = DegenerateBlend_AddBranch
+		drummer :anim_command \{target = moment_branch
+			command = degenerateblend_addbranch
 			params = {
-				Tree = $hero_empty_branch
-				BlendDuration = 0.0
+				tree = $hero_empty_branch
+				blendduration = 0.0
 			}}
 	else
-		Band_PlaysimpleAnim {name = Drummer Anim = <intro_anim> BlendDuration = 0.3}
-		Band_SetIKChain \{name = Drummer
+		band_playsimpleanim {name = drummer anim = <intro_anim> blendduration = 0.3}
+		band_setikchain \{name = drummer
 			chain = slave}
 	endif
 endscript

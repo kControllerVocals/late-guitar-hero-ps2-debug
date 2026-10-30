@@ -1,26 +1,26 @@
 ui_layers_options_hide_highlight = 0
 
 script ui_create_cap_layers_options 
-	if ScreenElementExists \{id = generic_menu}
-		generic_menu :SE_SetProps \{highlight_bars_alpha = 0}
+	if screenelementexists \{id = generic_menu}
+		generic_menu :se_setprops \{highlight_bars_alpha = 0}
 	endif
 	change \{ui_layers_options_hide_highlight = 0}
 	make_layers_options_menu
-	if layers_options_menu :Desc_ResolveAlias \{name = alias_layer_options_vmenu}
+	if layers_options_menu :desc_resolvealias \{name = alias_layer_options_vmenu}
 		add_menu_frontend_item {
 			parent = layers_options_vmenu
-			text = qs("Edit")
+			text = qs(0x65b8a528)
 			pad_choose_script = animate_out_layers_options_menu
 			pad_choose_params = {
 				pad_script = generic_event_replace
-				pad_params = {data = {state = UIstate_cap_shape_edit part = <part> sections = <sections> section_index = <section_index> mask_index = <mask_index> cap_index = <cap_index> layer_index = <layer_index> mask = <mask> camera_list = <camera_list> zoom_camera = <zoom_camera> override_base_name = <cam_name>}}
+				pad_params = {data = {state = uistate_cap_shape_edit part = <part> sections = <sections> section_index = <section_index> mask_index = <mask_index> cap_index = <cap_index> layer_index = <layer_index> mask = <mask> camera_list = <camera_list> zoom_camera = <zoom_camera> override_base_name = <cam_name>}}
 			}
 			focus_script = ui_layers_options_focus
 			unfocus_script = ui_layers_options_unfocus
 		}
 		add_menu_frontend_item {
 			parent = <resolved_id>
-			text = qs("Copy")
+			text = qs(0x51af3a34)
 			pad_choose_script = animate_out_layers_options_menu
 			pad_choose_params = {
 				pad_script = layers_options_copy
@@ -30,11 +30,11 @@ script ui_create_cap_layers_options
 			unfocus_script = ui_layers_options_unfocus
 		}
 		if is_cap_layers_full part = <part> div_id = <div_id>
-			<item_id> :SE_SetProps not_focusable rgba = [110 100 90 175]
+			<item_id> :se_setprops not_focusable rgba = [110 100 90 175]
 		endif
 		add_menu_frontend_item {
 			parent = <resolved_id>
-			text = qs("Re-Order")
+			text = qs(0xd10df936)
 			pad_choose_script = animate_out_layers_options_menu
 			pad_choose_params = {
 				pad_script = layers_options_re_order
@@ -45,7 +45,7 @@ script ui_create_cap_layers_options
 		}
 		add_menu_frontend_item {
 			parent = <resolved_id>
-			text = qs("Delete")
+			text = qs(0xa32bf91f)
 			pad_choose_script = animate_out_layers_options_menu
 			pad_choose_params = {
 				pad_script = ui_delete_layer
@@ -61,18 +61,18 @@ script ui_create_cap_layers_options
 	endif
 	menu_finish \{car_helper_text
 		no_rotate_zoom_text}
-	if ScreenElementExists \{id = current_menu}
-		LaunchEvent \{type = unfocus
+	if screenelementexists \{id = current_menu}
+		launchevent \{type = unfocus
 			target = current_menu}
 	endif
-	LaunchEvent \{type = focus
+	launchevent \{type = focus
 		target = layers_options_vmenu}
 endscript
 
 script ui_destroy_cap_layers_options 
 	if NOT ($ui_layers_options_hide_highlight)
-		if ScreenElementExists \{id = generic_menu}
-			generic_menu :SE_SetProps \{highlight_bars_alpha = 1}
+		if screenelementexists \{id = generic_menu}
+			generic_menu :se_setprops \{highlight_bars_alpha = 1}
 		endif
 	endif
 	destroy_layers_options_menu
@@ -85,7 +85,7 @@ endscript
 
 script layers_options_copy 
 	change \{ui_layers_options_hide_highlight = 1}
-	GetLayer <...>
+	getlayer <...>
 	ui_event_block event = menu_back data = {copy_params = {<...> layer = <layer>}}
 endscript
 
@@ -95,30 +95,30 @@ script make_layers_options_menu {
 		exclusive_device = ($primary_controller)
 	}
 	destroy_layers_options_menu
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 		get_all_exclusive_devices
 	endif
 	if NOT (($menu_over_ride_exclusive_device) = -1)
 		exclusive_device = ($menu_over_ride_exclusive_device)
 	endif
-	if ScreenElementExists \{id = current_menu_anchor}
-		DestroyScreenElement \{id = current_menu_anchor}
+	if screenelementexists \{id = current_menu_anchor}
+		destroyscreenelement \{id = current_menu_anchor}
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		parent = root_window
 		desc = 'layer_options_menu'
 		id = layers_options_menu
 		exclusive_device = <exclusive_device>
 		z_priority = -10
 	}
-	if <id> :Desc_ResolveAlias name = alias_layer_options_vmenu param = generic_smenu
-		AssignAlias id = <generic_smenu> alias = layers_options_vmenu
+	if <id> :desc_resolvealias name = alias_layer_options_vmenu param = generic_smenu
+		assignalias id = <generic_smenu> alias = layers_options_vmenu
 	else
 
 	endif
-	SetScreenElementProps \{id = layers_options_vmenu
+	setscreenelementprops \{id = layers_options_vmenu
 		event_handlers = [
 			{
 				pad_up
@@ -135,24 +135,24 @@ script make_layers_options_menu {
 				}
 			}
 		]}
-	if GotParam \{pad_down_script}
-		SetScreenElementProps {
+	if gotparam \{pad_down_script}
+		setscreenelementprops {
 			id = layers_options_vmenu
 			event_handlers = [
 				{pad_down <pad_down_script> params = <pad_down_params>}
 			]
 		}
 	endif
-	if GotParam \{pad_up_script}
-		SetScreenElementProps {
+	if gotparam \{pad_up_script}
+		setscreenelementprops {
 			id = layers_options_vmenu
 			event_handlers = [
 				{pad_up <pad_up_script> params = <pad_up_params>}
 			]
 		}
 	endif
-	if GotParam \{pad_back_script}
-		SetScreenElementProps {
+	if gotparam \{pad_back_script}
+		setscreenelementprops {
 			id = layers_options_vmenu
 			event_handlers = [
 				{pad_back <pad_back_sound>}
@@ -166,21 +166,21 @@ script make_layers_options_menu {
 endscript
 
 script destroy_layers_options_menu 
-	if ScreenElementExists \{id = layers_options_menu}
-		DestroyScreenElement \{id = layers_options_menu}
+	if screenelementexists \{id = layers_options_menu}
+		destroyscreenelement \{id = layers_options_menu}
 	endif
 	cleanup_cas_menu_handlers
 	clean_up_user_control_helpers
 endscript
 
 script animate_in_layers_options_menu 
-	if ScreenElementExists \{id = layers_options_menu}
-		SetScreenElementProps \{id = layers_options_menu
+	if screenelementexists \{id = layers_options_menu}
+		setscreenelementprops \{id = layers_options_menu
 			pos = {
 				relative
 				(-110.0, 0.0)
 			}}
-		SetScreenElementProps \{id = layers_options_menu
+		setscreenelementprops \{id = layers_options_menu
 			pos = {
 				relative
 				(220.0, 0.0)
@@ -190,15 +190,15 @@ script animate_in_layers_options_menu
 endscript
 
 script animate_out_layers_options_menu 
-	if ScreenElementExists \{id = layers_options_menu}
-		layers_options_menu :SE_SetProps \{block_events}
-		SetScreenElementProps \{id = layers_options_menu
+	if screenelementexists \{id = layers_options_menu}
+		layers_options_menu :se_setprops \{block_events}
+		setscreenelementprops \{id = layers_options_menu
 			pos = {
 				relative
 				(-250.0, 0.0)
 			}
 			time = 0.1}
-		Wait \{0.120000005
+		wait \{0.120000005
 			seconds}
 	endif
 	if (<pad_script> = generic_event_replace)
@@ -208,22 +208,22 @@ script animate_out_layers_options_menu
 endscript
 
 script ui_layers_options_focus 
-	Obj_GetID
-	GetTags
-	if layers_options_menu :Desc_ResolveAlias \{name = alias_highlight}
-		Wait \{2
+	obj_getid
+	gettags
+	if layers_options_menu :desc_resolvealias \{name = alias_highlight}
+		wait \{2
 			gameframe}
-		GetScreenElementDims id = <ObjID>
+		getscreenelementdims id = <objid>
 		scale = (((1.0, 0.0) * (((<width> + 50.0) / 256.0))) + (0.0, 1.3))
-		GetScreenElementPosition id = <ObjID> summed
-		<resolved_id> :SE_SetProps pos = {absolute <screenelementpos>} scale = <scale>
-		<resolved_id> :SE_WaitProps
-		GetScreenElementPosition id = <ObjID> summed
-		<resolved_id> :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
-		<resolved_id> :SE_WaitProps
-		GetScreenElementPosition id = <ObjID> summed
-		<resolved_id> :SE_SetProps pos = {absolute <screenelementpos>} scale = <scale> time = 0.05
-		<resolved_id> :SE_WaitProps
+		getscreenelementposition id = <objid> summed
+		<resolved_id> :se_setprops pos = {absolute <screenelementpos>} scale = <scale>
+		<resolved_id> :se_waitprops
+		getscreenelementposition id = <objid> summed
+		<resolved_id> :se_setprops pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
+		<resolved_id> :se_waitprops
+		getscreenelementposition id = <objid> summed
+		<resolved_id> :se_setprops pos = {absolute <screenelementpos>} scale = <scale> time = 0.05
+		<resolved_id> :se_waitprops
 	endif
 endscript
 

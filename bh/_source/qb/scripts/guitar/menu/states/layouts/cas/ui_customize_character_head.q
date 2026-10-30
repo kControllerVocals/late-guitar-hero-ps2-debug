@@ -1,17 +1,17 @@
 
 script ui_create_customize_character_head 
 	make_generic_menu \{vmenu_id = customize_head_vmenu
-		back_state = UIstate_cas
-		title = qs("HEAD")
+		back_state = uistate_cas
+		title = qs(0x888dd748)
 		num_icons = 1
 		show_history}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
@@ -23,15 +23,15 @@ script ui_create_customize_character_head
 			'customize_character_head_L'
 		]
 		zoom_camera = 'customize_character_Zoom'}
-	add_generic_menu_text_item \{text = qs("FACE")
-		choose_state = UIstate_popout_select_part
+	add_generic_menu_text_item \{text = qs(0xb5847ea6)
+		choose_state = uistate_popout_select_part
 		choose_state_data = {
 			text = qs(0xbae5b37d)
-			part = CAS_Base_Torso
+			part = cas_base_torso
 			num_icons = 2
 			is_popup
-			stance = Stance_Select_Head
-			return_stance = Stance_Select_Head
+			stance = stance_select_head
+			return_stance = stance_select_head
 			camera_list = [
 				'customize_character_head'
 				'customize_character_head_R'
@@ -41,12 +41,12 @@ script ui_create_customize_character_head
 			zoom_camera = 'customize_character_Zoom'
 		}}
 	if NOT (is_female_char)
-		add_generic_menu_text_item \{text = qs("FACIAL HAIR")
-			choose_state = UIstate_cag_select_part_inclusion
+		add_generic_menu_text_item \{text = qs(0xea973ef8)
+			choose_state = uistate_cag_select_part_inclusion
 			choose_state_data = {
-				part = CAS_Male_Facial_Hair
-				body_part = CAS_Male_Base_Torso
-				text = qs("FACIAL HAIR")
+				part = cas_male_facial_hair
+				body_part = cas_male_base_torso
+				text = qs(0xea973ef8)
 				is_popup
 				hist_tex = icon_facial_hair
 				cam_name = 'customize_character_head'
@@ -61,17 +61,17 @@ script ui_create_customize_character_head
 			}}
 	endif
 	if (is_female_char)
-		add_generic_menu_text_item \{text = qs("EYE MAKEUP")
-			choose_state = UIstate_popout_select_part
+		add_generic_menu_text_item \{text = qs(0xa9884efa)
+			choose_state = uistate_popout_select_part
 			choose_state_data = {
-				text = qs("EYE MAKEUP")
-				part = CAS_Eye_Makeup
+				text = qs(0xa9884efa)
+				part = cas_eye_makeup
 				num_icons = 2
 				is_popup
 				additional_deinit_script = unhide_car_parts_for_face_paint
 				additional_init_script = hide_car_parts_for_face_paint
 				hist_tex = icon_makeup
-				return_stance = Stance_Select_Head
+				return_stance = stance_select_head
 				camera_list = [
 					'customize_character_head'
 					'customize_character_head_R'
@@ -80,17 +80,17 @@ script ui_create_customize_character_head
 				]
 				zoom_camera = 'customize_character_Zoom'
 			}}
-		add_generic_menu_text_item \{text = qs("LIP MAKEUP")
-			choose_state = UIstate_popout_select_part
+		add_generic_menu_text_item \{text = qs(0xe3e91c9e)
+			choose_state = uistate_popout_select_part
 			choose_state_data = {
-				text = qs("LIP MAKEUP")
-				part = CAS_Lip_Makeup
+				text = qs(0xe3e91c9e)
+				part = cas_lip_makeup
 				num_icons = 2
 				is_popup
 				additional_deinit_script = unhide_car_parts_for_face_paint
 				additional_init_script = hide_car_parts_for_face_paint
 				hist_tex = icon_lips
-				return_stance = Stance_Select_Head
+				return_stance = stance_select_head
 				camera_list = [
 					'customize_character_head'
 					'customize_character_head_R'
@@ -100,9 +100,9 @@ script ui_create_customize_character_head
 				zoom_camera = 'customize_character_Zoom'
 			}}
 	endif
-	GetCurrentCASObject
-	if GotParam \{cas_object}
-		BandManager_ChangeStance name = <cas_object> stance = Stance_Select_Head no_wait
+	getcurrentcasobject
+	if gotparam \{cas_object}
+		bandmanager_changestance name = <cas_object> stance = stance_select_head no_wait
 	endif
 	menu_finish \{car_helper_text}
 endscript
@@ -116,34 +116,34 @@ script ui_destroy_customize_character_head
 endscript
 
 script ui_init_customize_character_head 
-	ui_load_cas_rawpak \{part = CAS_Body}
+	ui_load_cas_rawpak \{part = cas_body}
 endscript
 
 script hide_car_parts_for_face_paint 
-	PushTemporaryCASAppearance
-	SetCASAppearancePartInstance \{part = CAS_Hair
+	pushtemporarycasappearance
+	setcasappearancepartinstance \{part = cas_hair
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Hat_Hair
+	setcasappearancepartinstance \{part = cas_hat_hair
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Hat
+	setcasappearancepartinstance \{part = cas_hat
 		part_instance = {
 			desc_id = none
 		}}
-	SetCASAppearancePartInstance \{part = CAS_Acc_Face
+	setcasappearancepartinstance \{part = cas_acc_face
 		part_instance = {
 			desc_id = none
 		}}
-	RebuildCurrentCASModel
+	rebuildcurrentcasmodel
 endscript
 
 script unhide_car_parts_for_face_paint 
-	MergePartIntoTemporaryCASAppearance \{part_list = [
-			CAS_Body
-			CAS_Eye_Makeup
-			CAS_Lip_Makeup
+	mergepartintotemporarycasappearance \{part_list = [
+			cas_body
+			cas_eye_makeup
+			cas_lip_makeup
 		]}
 endscript

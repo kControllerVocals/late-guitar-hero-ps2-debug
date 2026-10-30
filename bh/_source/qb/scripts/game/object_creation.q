@@ -1,144 +1,144 @@
 proximobj_composite_structure = [
 	{
-		Component = Sound
+		component = sound
 	}
 ]
 particle_composite_structure = [
 	{
-		Component = Suspend
+		component = suspend
 	}
 	{
-		Component = particle
+		component = particle
 	}
 ]
 moving_particle_composite_structure = [
 	{
-		Component = Suspend
+		component = suspend
 	}
 	{
-		Component = motion
+		component = motion
 	}
 	{
-		Component = particle
+		component = particle
 	}
 ]
 flexparticle_composite_structure = [
 	{
-		Component = Suspend
+		component = suspend
 	}
 	{
-		Component = flexibleparticle
+		component = flexibleparticle
 	}
 ]
 moving_flexparticle_composite_structure = [
 	{
-		Component = Suspend
+		component = suspend
 	}
 	{
-		Component = motion
+		component = motion
 	}
 	{
-		Component = flexibleparticle
+		component = flexibleparticle
 	}
 ]
 viewercam_composite_structure = [
 	{
-		Component = camera
+		component = camera
 		far_clip = $camera_default_far_clip
 	}
 ]
 levellight_composite_structure = [
 	{
-		Component = dynamiclight
+		component = dynamiclight
 	}
 ]
 igc_camera_structure = [
 	{
-		Component = CinematicCamera
-		UpdateWhenCameraInactive = false
+		component = cinematiccamera
+		updatewhencamerainactive = false
 	}
 	{
-		Component = camera
+		component = camera
 	}
 ]
 gridobj_composite_structure = [
 	{
-		Component = Suspend
+		component = suspend
 	}
 ]
-GeometryObject_structure = [
+geometryobject_structure = [
 	{
-		Component = GeometryObject
+		component = geometryobject
 	}
 ]
 master_node_composite_structure = [
 	{
-		Component = EventCache
+		component = eventcache
 	}
 	{
-		Component = StateMachineManager
+		component = statemachinemanager
 	}
 ]
 gameobj_composite_structure = [
 	{
-		Component = lockobj
+		component = lockobj
 		off
 	}
 	{
-		Component = motion
+		component = motion
 	}
 ]
 constraint_composite_structure = [
 	{
-		Component = constraint
+		component = constraint
 	}
 ]
 bouncy_composite_structure = [
 	{
-		Component = Suspend
+		component = suspend
 	}
 	{
-		Component = rigidbody
+		component = rigidbody
 	}
 	{
-		Component = Sound
+		component = sound
 	}
 ]
 
-script ProcessorGroup_RegisterDefault 
-	RegisterProcessorGroupDesc \{name = ProcessorGroup_CompositeSystem
+script processorgroup_registerdefault 
+	registerprocessorgroupdesc \{name = processorgroup_compositesystem
 		processors = [
 			{
-				name = Processor_Default
+				name = processor_default
 				task = {
-					name = PTask_Default
+					name = ptask_default
 				}
 			}
 		]}
-	ProcessorMgr_Init \{group = ProcessorGroup_CompositeSystem}
+	processormgr_init \{group = processorgroup_compositesystem}
 endscript
 
-script PassGroup_RegisterDefault 
-	RegisterPassGroupDesc \{name = PassGroup_CompositeSystem
+script passgroup_registerdefault 
+	registerpassgroupdesc \{name = passgroup_compositesystem
 		passes = [
 			{
-				name = Pass_Default
+				name = pass_default
 				processors = [
-					Processor_Default
+					processor_default
 				]
 			}
 			{
-				name = Pass_Move
+				name = pass_move
 				processors = [
-					Processor_Default
+					processor_default
 				]
 			}
 		]}
-	PassMgr_Init \{group = PassGroup_CompositeSystem}
+	passmgr_init \{group = passgroup_compositesystem}
 endscript
 
-script CompositeObjects_RegisterDefault 
-	AdObject_components = [{name = Model}
+script compositeobjects_registerdefault 
+	adobject_components = [{name = model}
 		{name = motion}
 	]
 endscript

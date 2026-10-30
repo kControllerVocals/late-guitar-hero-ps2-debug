@@ -1,7 +1,7 @@
 
-script ui_create_music_store_unavailible \{text = qs("\L")
-		back_to_state = UIstate_downloads}
-	LaunchEvent \{type = unfocus
+script ui_create_music_store_unavailible \{text = qs(0x03ac90f0)
+		back_to_state = uistate_downloads}
+	launchevent \{type = unfocus
 		target = current_menu}
 	destroy_popup_warning_menu
 	create_popup_warning_menu {
@@ -13,7 +13,7 @@ script ui_create_music_store_unavailible \{text = qs("\L")
 			{
 				func = {music_store_unavailable_return_out}
 				func_params = {back_to_state = <back_to_state>}
-				text = qs("CONTINUE")
+				text = qs(0x182f0173)
 			}
 		]
 	}
@@ -25,7 +25,7 @@ endscript
 
 script music_store_unavailable_return_out 
 	destroy_popup_warning_menu
-	Wait \{3
+	wait \{3
 		gameframes}
 	generic_event_back state = <back_to_state>
 endscript

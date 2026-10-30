@@ -4,10 +4,10 @@ script create_restart_warning_menu \{player = 1
 		cancel_func_params = {
 		}}
 	disable_pause
-	if NOT game_is_scored
+	if NOT 0xf99301bb
 		body_text = qs(0x0be331bb)
 	else
-		body_text = qs("You will lose all unsaved progress if you restart. Are you sure you want to restart this song?")
+		body_text = qs(0x9eff4a71)
 	endif
 	player_device = ($last_start_pressed_device)
 	create_dialog_box {
@@ -18,11 +18,11 @@ script create_restart_warning_menu \{player = 1
 			{
 				func = <cancel_func>
 				func_params = <cancel_func_params>
-				text = qs("CANCEL")
+				text = qs(0xf7723015)
 			}
 			{
 				func = restart_warning_select_restart
-				text = qs("RESTART")
+				text = qs(0xb8790f2f)
 			}
 		]
 	}
@@ -33,28 +33,28 @@ script destroy_restart_warning_menu
 endscript
 
 script restart_warning_select_restart \{player = 1}
-	set_loading_screen \{full}
-	if ($is_partyplay_mode = 1)
+	0xe9384b7a \{full}
+	if ($0xc7e670d7 = 1)
 		change \{gameplay_restart_song = 1}
 		generic_event_back \{state = uistate_gameplay}
 		return
 	endif
 	change \{ps2_gameplay_restart_song = 1}
 	kill_intro_celeb_ui
-	if NOT GotParam \{dont_save_song_data}
-		if isXenon
+	if NOT gotparam \{dont_save_song_data}
+		if isxenon
 			if ($playing_song = 1)
 				if NOT ($current_song = jamsession)
-					WriteSongDataToFile \{incomplete = 1}
+					writesongdatatofile \{incomplete = 1}
 				endif
 			endif
 		endif
 	endif
 	restore_player_part_settings
 	generic_event_back \{state = uistate_gameplay}
-	ResetScoreUpdateReady
-	GH3_SFX_fail_song_stop_sounds
-	StopSoundsByBuss \{Encore_Events}
+	resetscoreupdateready
+	gh3_sfx_fail_song_stop_sounds
+	stopsoundsbybuss \{encore_events}
 	if ($game_mode = practice)
 		spawnscriptnow \{practice_restart_song}
 	else

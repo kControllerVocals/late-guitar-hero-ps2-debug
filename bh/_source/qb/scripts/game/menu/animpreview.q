@@ -1,9 +1,9 @@
 
-script ReloadAnimation 
-	AllowAssetLoading \{on}
-	UpdateAnimCache \{Clear}
-	PushAssetContext
-	ReloadAnim filename = <filename> Anim = <AnimName>
-	PopAssetContext
-	AllowAssetLoading \{off}
+script reloadanimation 
+	allowassetloading \{on}
+	updateanimcache \{clear}
+	pushassetcontext
+	reloadanim filename = <filename> anim = <animname>
+	popassetcontext
+	allowassetloading \{off}
 endscript

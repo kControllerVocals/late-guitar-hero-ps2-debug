@@ -1,11 +1,11 @@
 ps2_trc_menu_font = text_a4
 
 script get_string_ps2 \{message = unknown}
-	format_string = qs("\L")
+	format_string = qs(0x03ac90f0)
 	switch <message>
 		case loading
 		format_string = qs(0xb5fd5f50)
-		case Saving
+		case saving
 		format_string = qs(0x7b9d1538)
 		case autosaving
 		format_string = qs(0xdf8b877a)
@@ -49,7 +49,7 @@ script get_string_ps2 \{message = unknown}
 		format_string = qs(0x3a004164)
 		case is_formatted
 		format_string = qs(0xe69da4f9)
-		case new_memcard_format_boot
+		case 0xb55bb074
 		format_string = qs(0xfb49c678)
 		case disable_autosave
 		format_string = qs(0x932b0827)
@@ -59,7 +59,7 @@ script get_string_ps2 \{message = unknown}
 		format_string = qs(0x321594b1)
 		case corrupt_boot
 		format_string = qs(0x98573884)
-		case corrupt_ingame
+		case 0x8f9625eb
 		format_string = qs(0xace08af7)
 		case confirm_overwrite
 		format_string = qs(0x709d9856)
@@ -73,33 +73,33 @@ script get_string_ps2 \{message = unknown}
 		format_string = qs(0xaec6cab2)
 		default
 
-		format_string = qs("\L")
+		format_string = qs(0x03ac90f0)
 	endswitch
-	if IsPAL
+	if ispal
 		memcard = qs(0xe34669f7)
-		memcard_full = qs(0xe34669f7)
+		0xdd082360 = qs(0xe34669f7)
 	else
 		memcard = qs(0x722a39cd)
-		memcard_full = qs(0x92f2cd71)
+		0xdd082360 = qs(0x92f2cd71)
 	endif
-	slot_1 = qs(0x3a7c6072)
-	memcard_2 = <memcard>
-	game_name = qs("\LBand Hero")
-	GetMemCardSpaceRequired \{Progress}
-	FormatText TextName = progress_size qs(0x13866852) d = <SpaceRequired>
-	FormatText TextName = localized_string <format_string> slot_1 = <slot_1> memcard = <memcard> memcard_2 = <memcard_2> memcard_full = <memcard_full> progress_size = <progress_size> game_name = <game_name>
+	0xc309dd07 = qs(0x3a7c6072)
+	0x979e36a1 = <memcard>
+	0x4ac9edd5 = qs(0xbd6ede51)
+	0x80d82aa7 \{progress}
+	formattext textname = 0x08b6f45c qs(0x13866852) d = <spacerequired>
+	formattext textname = localized_string <format_string> 0xc309dd07 = <0xc309dd07> memcard = <memcard> 0x979e36a1 = <0x979e36a1> 0xdd082360 = <0xdd082360> 0x08b6f45c = <0x08b6f45c> 0x4ac9edd5 = <0x4ac9edd5>
 	return localized_string = <localized_string>
 endscript
 
 script create_ps2_saveload_screen 
 
-	if ($Menu_Music_On_Flag = 1)
-		change \{restartMenuMusic = 1}
+	if ($menu_music_on_flag = 1)
+		change \{restartmenumusic = 1}
 	endif
-	Menu_Music_Off
-	AddParams (<...>.$saveMode)
+	menu_music_off
+	addparams (<...>.$0xafe47fe2)
 
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		parent = root_window
 		id = ps2_trc_container
 		pos = (0.0, 0.0)
@@ -113,7 +113,7 @@ script create_ps2_saveload_screen
 		header = <header>
 		message = <localized_string>
 	}
-	if NOT GotParam \{option1_text}
+	if NOT gotparam \{option1_text}
 		create_dialog_box {
 			heading_text = <header>
 			body_text = <localized_string>
@@ -124,11 +124,11 @@ script create_ps2_saveload_screen
 			body_text = <localized_string>
 			options = [
 				{
-					func = {ui_flow_manager_respond_to_action params = {action = <option1_action>}}
+					func = {ui_flow_manager_respond_to_action params = {action = <0x9c953112>}}
 					text = <option1_text>
 				}
 				{
-					func = {ui_flow_manager_respond_to_action params = {action = <option2_action>}}
+					func = {ui_flow_manager_respond_to_action params = {action = <0x121a36f1>}}
 					text = <option2_text>
 				}
 			]
@@ -147,8 +147,8 @@ endscript
 script refresh_ps2_trc_menu 
 	destroy_ps2_saveload_screen
 	create_ps2_saveload_screen <...>
-	if GotParam \{seconds_before_continue}
-		Wait <seconds_before_continue> seconds
+	if gotparam \{0x81a048de}
+		wait <0x81a048de> seconds
 		spawnscriptnow \{ui_flow_manager_respond_to_action
 			params = {
 				action = continue

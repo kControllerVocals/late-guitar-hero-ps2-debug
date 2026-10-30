@@ -1,37 +1,37 @@
-L_SING_Rob_Bulls_anims_set = {
-	Stance_A = {
-		Idle = {
+l_sing_rob_bulls_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Sing_Rob_Bulls_075_02
+				slow = [
+					sing_rob_bulls_075_02
 				]
-				Med = [
-					Sing_Rob_Bulls_100_02
+				med = [
+					sing_rob_bulls_100_02
 				]
-				Fast = [
-					SING_Rob_Bulls_120_02
-				]
-			}
-			Normal = {
-				Slow = [
-					Sing_Rob_Bulls_075_02
-				]
-				Med = [
-					Sing_Rob_Bulls_100_02
-				]
-				Fast = [
-					SING_Rob_Bulls_120_02
+				fast = [
+					sing_rob_bulls_120_02
 				]
 			}
-			Bad = {
-				Slow = [
-					Sing_Rob_Bulls_075_02
+			normal = {
+				slow = [
+					sing_rob_bulls_075_02
 				]
-				Med = [
-					Sing_Rob_Bulls_100_02
+				med = [
+					sing_rob_bulls_100_02
 				]
-				Fast = [
-					SING_Rob_Bulls_120_02
+				fast = [
+					sing_rob_bulls_120_02
+				]
+			}
+			bad = {
+				slow = [
+					sing_rob_bulls_075_02
+				]
+				med = [
+					sing_rob_bulls_100_02
+				]
+				fast = [
+					sing_rob_bulls_120_02
 				]
 			}
 		}

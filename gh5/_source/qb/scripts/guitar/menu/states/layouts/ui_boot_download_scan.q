@@ -7,19 +7,19 @@ script ui_create_boot_download_scan
 	endif
 	change store_respond_to_signin_changed = ($respond_to_signin_changed)
 	change \{respond_to_signin_changed = 1}
-	GetPlatform
+	getplatform
 	switch <platform>
 		case ps3
 		create_popup_warning_menu {
 			textblock = {
-				text = qs("Checking the HDD. Do not switch off your system.")
+				text = qs(0x75e1afbf)
 			}
 			player_device = <controller>
 		}
 		case xenon
 		create_popup_warning_menu {
 			textblock = {
-				text = qs("Checking for downloadable content. Please don't turn off your Xbox 360 console.")
+				text = qs(0xeef4272c)
 			}
 			player_device = <controller>
 		}
@@ -33,43 +33,43 @@ script boot_download_scan \{event_params = {
 				state = uistate_boot_guitar
 			}
 		}}
-	Wait \{1
+	wait \{1
 		gameframes}
 	if NOT ui_event_exists_in_stack \{name = 'mainmenu'}
-		if ControllerPressed x <controller>
-			if ControllerPressed circle <controller>
-				if ControllerPressed square <controller>
-					if ControllerPressed triangle <controller>
+		if controllerpressed x <controller>
+			if controllerpressed circle <controller>
+				if controllerpressed square <controller>
+					if controllerpressed triangle <controller>
 
-						RemoveContentFiles \{playerid = -1
+						removecontentfiles \{playerid = -1
 							clear_cache}
 					endif
 				endif
 			endif
 		endif
 	endif
-	GetStartTime
-	Downloads_EnumContent controller = <controller>
+	getstarttime
+	downloads_enumcontent controller = <controller>
 	get_current_first_play
 	begin
-	GetElapsedTime StartTime = <StartTime>
-	if (<ElapsedTime> > 1000)
+	getelapsedtime starttime = <starttime>
+	if (<elapsedtime> > 1000)
 		break
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	repeat
 	if ($shutdown_game_for_signin_change_flag = 1)
 		return
 	endif
-	if GotParam \{boot}
+	if gotparam \{boot}
 		if ($invite_controller != -1)
 			spawnscriptnow \{ui_boot_guitar_follow_invite}
 			return
 		endif
 	endif
 	ui_event_wait <event_params>
-	if StructureContains Structure = (<event_params>.data) state
+	if structurecontains structure = (<event_params>.data) state
 		if ((<event_params>.data.state) = uistate_jam)
 			create_loading_screen \{jam_mode = 1}
 		endif
@@ -80,8 +80,8 @@ endscript
 script ui_destroy_boot_download_scan 
 	if NOT ui_event_exists_in_stack \{name = 'mainmenu'}
 		menu_start_transition
-		DestroyScreenElement \{id = current_menu_anchor}
-		CreateScreenElement \{type = SpriteElement
+		destroyscreenelement \{id = current_menu_anchor}
+		createscreenelement \{type = spriteelement
 			id = current_menu_anchor
 			parent = root_window
 			texture = main_menu_bg

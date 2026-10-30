@@ -1,11 +1,11 @@
 
 script ui_create_options_data 
 	change \{ui_options_from_submenu = 1}
-	if ScreenElementExists \{id = settings_submenu}
-		DestroyScreenElement \{id = settings_submenu}
+	if screenelementexists \{id = settings_submenu}
+		destroyscreenelement \{id = settings_submenu}
 	endif
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		desc = 'settings_submenu'
 		parent = <container_id>
 		id = settings_submenu
@@ -13,9 +13,9 @@ script ui_create_options_data
 		scale = 1.2
 		just = [center center]
 	}
-	if <id> :Desc_ResolveAlias name = alias_menu
-		AssignAlias id = <resolved_id> alias = current_submenu
-		current_submenu :SE_SetProps \{event_handlers = [
+	if <id> :desc_resolvealias name = alias_menu
+		assignalias id = <resolved_id> alias = current_submenu
+		current_submenu :se_setprops \{event_handlers = [
 				{
 					pad_up
 					generic_menu_up_or_down_sound
@@ -38,9 +38,9 @@ script ui_create_options_data
 					}
 				}
 			]}
-		GetScreenElementChildren \{id = current_submenu}
-		(<children> [0]) :SE_SetProps {
-			text_text = qs("SAVE GAME")
+		getscreenelementchildren \{id = current_submenu}
+		(<children> [0]) :se_setprops {
+			text_text = qs(0x5d22cc45)
 			checkbox_container_alpha = 0
 			event_handlers = [
 				{pad_choose generic_event_replace params = {state = uistate_memcard data = {type = save}}}
@@ -48,8 +48,8 @@ script ui_create_options_data
 				{unfocus ui_options_data_unfocus}
 			]
 		}
-		(<children> [1]) :SE_SetProps {
-			text_text = qs("LOAD GAME")
+		(<children> [1]) :se_setprops {
+			text_text = qs(0x3da6185d)
 			checkbox_container_alpha = 0
 			event_handlers = [
 				{pad_choose generic_event_replace params = {state = uistate_memcard data = {type = load}}}
@@ -57,8 +57,8 @@ script ui_create_options_data
 				{unfocus ui_options_data_unfocus}
 			]
 		}
-		(<children> [2]) :SE_SetProps {
-			text_text = qs("RESET PROGRESS")
+		(<children> [2]) :se_setprops {
+			text_text = qs(0x75792198)
 			checkbox_container_alpha = 0
 			event_handlers = [
 				{pad_choose generic_event_replace params = {state = uistate_options_data_delete}}
@@ -66,7 +66,7 @@ script ui_create_options_data
 				{unfocus ui_options_data_unfocus}
 			]
 		}
-		GetGlobalTags \{user_options}
+		getglobaltags \{user_options}
 		if (<autosave> = 1)
 			<check_alpha> = 1
 			<cross_alpha> = 0
@@ -74,8 +74,8 @@ script ui_create_options_data
 			<check_alpha> = 0
 			<cross_alpha> = 1
 		endif
-		(<children> [3]) :SE_SetProps {
-			text_text = qs("AUTOSAVE")
+		(<children> [3]) :se_setprops {
+			text_text = qs(0x1cf38dbd)
 			check_alpha = <check_alpha>
 			cross_alpha = <cross_alpha>
 			event_handlers = [
@@ -94,66 +94,66 @@ script ui_create_options_data
 endscript
 
 script ui_destroy_options_data 
-	if ScreenElementExists \{id = settings_submenu}
+	if screenelementexists \{id = settings_submenu}
 		settings_submenu :obj_spawnscript \{ui_options_settings_animate_out}
 	endif
 	clean_up_user_control_helpers
 endscript
 
 script ui_options_data_toggle_autosave \{time = 0.075}
-	SetSpawnInstanceLimits \{max = 1
+	setspawninstancelimits \{max = 1
 		management = ignore_spawn_request}
-	GetTags
-	Obj_GetID
-	GetGlobalTags \{user_options}
+	gettags
+	obj_getid
+	getglobaltags \{user_options}
 	if (<autosave> = 1)
-		SoundEvent \{event = checkbox_sfx}
+		soundevent \{event = checkbox_sfx}
 		<autosave> = 0
-		<ObjID> :SE_SetProps check_alpha = 0
-		<ObjID> :SE_SetProps cross_alpha = 1
+		<objid> :se_setprops check_alpha = 0
+		<objid> :se_setprops cross_alpha = 1
 	else
-		SoundEvent \{event = CheckBox_Check_SFX}
+		soundevent \{event = checkbox_check_sfx}
 		<autosave> = 1
-		<ObjID> :SE_SetProps check_alpha = 1
-		<ObjID> :SE_SetProps cross_alpha = 0
+		<objid> :se_setprops check_alpha = 1
+		<objid> :se_setprops cross_alpha = 0
 	endif
-	SetGlobalTags user_options params = {autosave = <autosave>}
+	setglobaltags user_options params = {autosave = <autosave>}
 endscript
 
 script ui_options_data_focus 
-	Obj_GetID
-	if GotParam \{ObjID}
-		if <ObjID> :Desc_ResolveAlias name = alias_text
-			<resolved_id> :SE_SetProps rgba = (($default_color_scheme).text_focus_color)
+	obj_getid
+	if gotparam \{objid}
+		if <objid> :desc_resolvealias name = alias_text
+			<resolved_id> :se_setprops rgba = (($default_color_scheme).text_focus_color)
 		endif
 	endif
-	GetTags
-	if settings_submenu :Desc_ResolveAlias \{name = alias_highlight}
-		AssignAlias id = <resolved_id> alias = highlight
-		Wait \{2
+	gettags
+	if settings_submenu :desc_resolvealias \{name = alias_highlight}
+		assignalias id = <resolved_id> alias = highlight
+		wait \{2
 			gameframe}
-		if <ObjID> :Desc_ResolveAlias name = alias_text
-			GetScreenElementChildren id = <resolved_id>
-			GetScreenElementDims id = (<children> [0])
+		if <objid> :desc_resolvealias name = alias_text
+			getscreenelementchildren id = <resolved_id>
+			getscreenelementdims id = (<children> [0])
 			scale = (((1.0, 0.0) * (((<width> + 25.0) / 256.0))) + (0.0, 1.5))
-			GetScreenElementPosition id = (<children> [0]) summed
-			highlight :SE_SetProps pos = {absolute (<screenelementpos>)} scale = <scale>
-			highlight :SE_WaitProps
-			GetScreenElementPosition id = (<children> [0]) summed
-			highlight :SE_SetProps pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
-			highlight :SE_WaitProps
-			GetScreenElementPosition id = (<children> [0]) summed
-			highlight :SE_SetProps pos = {absolute (<screenelementpos>)} scale = <scale> time = 0.05
-			highlight :SE_WaitProps
+			getscreenelementposition id = (<children> [0]) summed
+			highlight :se_setprops pos = {absolute (<screenelementpos>)} scale = <scale>
+			highlight :se_waitprops
+			getscreenelementposition id = (<children> [0]) summed
+			highlight :se_setprops pos = {absolute (<screenelementpos> + (0.0, -10.0))} time = 0.05
+			highlight :se_waitprops
+			getscreenelementposition id = (<children> [0]) summed
+			highlight :se_setprops pos = {absolute (<screenelementpos>)} scale = <scale> time = 0.05
+			highlight :se_waitprops
 		endif
 	endif
 endscript
 
 script ui_options_data_unfocus 
-	Obj_GetID
-	if GotParam \{ObjID}
-		if <ObjID> :Desc_ResolveAlias name = alias_text
-			<resolved_id> :SE_SetProps rgba = (($default_color_scheme).text_color)
+	obj_getid
+	if gotparam \{objid}
+		if <objid> :desc_resolvealias name = alias_text
+			<resolved_id> :se_setprops rgba = (($default_color_scheme).text_color)
 		endif
 	endif
 endscript

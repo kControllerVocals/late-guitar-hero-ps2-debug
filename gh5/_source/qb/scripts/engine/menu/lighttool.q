@@ -1,10 +1,10 @@
 
 script run_windows_light_tool_commands 
-	GetArraySize <commands>
+	getarraysize <commands>
 	i = 0
 	if (<array_size> > 0)
 		begin
-		(<commands> [<i>].ScriptName) (<commands> [<i>].params)
+		(<commands> [<i>].scriptname) (<commands> [<i>].params)
 		i = (<i> + 1)
 		repeat <array_size>
 	endif
@@ -21,10 +21,10 @@ screenfx_instances_default_state = [
 ]
 
 script toggle_screenfx_instances 
-	if GotParam \{on}
+	if gotparam \{on}
 		change \{screenfx_instances_state = 1}
 	else
-		if GotParam \{off}
+		if gotparam \{off}
 			change \{screenfx_instances_state = 0}
 		else
 			if ($screenfx_instances_state = 1)
@@ -34,14 +34,14 @@ script toggle_screenfx_instances
 			endif
 		endif
 	endif
-	ScreenFX_GetActiveScreenFXInstances \{viewport = 0}
-	if NOT IsArray <curscreenfx>
+	screenfx_getactivescreenfxinstances \{viewport = 0}
+	if NOT isarray <curscreenfx>
 		return
 	endif
-	GetArraySize <curscreenfx>
+	getarraysize <curscreenfx>
 	i = 0
 	begin
-	ScreenFX_UpdateFXInstanceParams {
+	screenfx_updatefxinstanceparams {
 		viewport = 0
 		name = (<curscreenfx> [<i>].name)
 		time = 0
@@ -54,7 +54,7 @@ endscript
 
 script start_viewer_screen_fx 
 
-	ScreenFX_ClearFXInstances \{viewport = 0}
+	screenfx_clearfxinstances \{viewport = 0}
 	good_saved_screenfx_settings
 	if (<is_good> = 0)
 
@@ -63,8 +63,8 @@ script start_viewer_screen_fx
 
 	temp = ($screenfx_instances_default_state)
 	begin
-	if GetNextArrayElement <temp>
-		ScreenFX_AddFXInstance {
+	if getnextarrayelement <temp>
+		screenfx_addfxinstance {
 			viewport = 0
 			<element>
 		}
@@ -76,10 +76,10 @@ endscript
 
 script save_current_screen_fx_setup 
 
-	if LevelIs \{viewer}
-		Wait \{1
+	if levelis \{viewer}
+		wait \{1
 			second}
-		ScreenFX_GetActiveScreenFXInstances \{viewport = 0}
+		screenfx_getactivescreenfxinstances \{viewport = 0}
 
 		change screenfx_instances_default_state = (<curscreenfx>)
 	endif
@@ -87,11 +87,11 @@ endscript
 
 script good_saved_screenfx_settings 
 
-	if NOT IsArray ($screenfx_instances_default_state)
+	if NOT isarray ($screenfx_instances_default_state)
 
 		return \{is_good = 0}
 	else
-		if ChecksumEquals a = (($screenfx_instances_default_state) [0].name) b = null
+		if checksumequals a = (($screenfx_instances_default_state) [0].name) b = null
 
 			return \{is_good = 0}
 		endif
@@ -99,111 +99,111 @@ script good_saved_screenfx_settings
 	return \{is_good = 1}
 endscript
 
-script ApplyLightColorChange 
-	if IsCreated <lightChecksum>
-		<lightChecksum> :Light_SetParams <...> r = <red> g = <green> b = <Blue>
+script applylightcolorchange 
+	if iscreated <lightchecksum>
+		<lightchecksum> :light_setparams <...> r = <red> g = <green> b = <blue>
 	endif
 endscript
 
-script ApplyLightSpecularIntensityChange 
-	if IsCreated <lightChecksum>
-		<lightChecksum> :Light_SetParams <...>
+script applylightspecularintensitychange 
+	if iscreated <lightchecksum>
+		<lightchecksum> :light_setparams <...>
 	endif
 endscript
 
-script ApplyLightFarAttenChange 
-	SetLightAttenuation name = <lightChecksum> attenstart = <attenstart> attenend = <attenend>
+script applylightfarattenchange 
+	setlightattenuation name = <lightchecksum> attenstart = <attenstart> attenend = <attenend>
 endscript
 
-script UpdateLightTransform 
-	if IsCreated <lightChecksum>
-		SetLightFlag name = <lightChecksum> flag = DYNAMIC
-		if GotParam \{betaplugin}
-			SetLightPos name = <lightChecksum> pos = <pos>
-			if GotParam \{bv_pos}
-				SetLightBoundVol name = <lightChecksum> bv_pos = <bv_pos> bv_size = <bv_size> bv_rot = <bv_rot> bv_trans = <bv_trans>
+script updatelighttransform 
+	if iscreated <lightchecksum>
+		setlightflag name = <lightchecksum> flag = dynamic
+		if gotparam \{betaplugin}
+			setlightpos name = <lightchecksum> pos = <pos>
+			if gotparam \{bv_pos}
+				setlightboundvol name = <lightchecksum> bv_pos = <bv_pos> bv_size = <bv_size> bv_rot = <bv_rot> bv_trans = <bv_trans>
 			endif
 		else
-			MoveLight name = <lightChecksum> pos = <pos>
+			movelight name = <lightchecksum> pos = <pos>
 		endif
-		ClearLightFlag name = <lightChecksum> flag = DYNAMIC
-		CompactIntervals
+		clearlightflag name = <lightchecksum> flag = dynamic
+		compactintervals
 	endif
 endscript
 
-script ApplyGroupIntensityChange 
-	SetLightGroupIntensity name = <GroupChecksum> i = <intensity>
+script applygroupintensitychange 
+	setlightgroupintensity name = <groupchecksum> i = <intensity>
 endscript
 
-script ApplySnapshotToLight 
-	if GotParam \{lightChecksum}
-		if IsCreated <lightChecksum>
-			<lightChecksum> :Light_SetParams <...>
+script applysnapshottolight 
+	if gotparam \{lightchecksum}
+		if iscreated <lightchecksum>
+			<lightchecksum> :light_setparams <...>
 		endif
-	elseif GotParam \{housingchecksum}
-		if IsCreated <housingchecksum>
-			if <housingchecksum> :Obj_HasComponent PositionMorph
-				<housingchecksum> :PM_SetParams <...>
+	elseif gotparam \{housingchecksum}
+		if iscreated <housingchecksum>
+			if <housingchecksum> :obj_hascomponent positionmorph
+				<housingchecksum> :pm_setparams <...>
 			endif
-			<housingchecksum> :LightVolume_SetParams <...>
+			<housingchecksum> :lightvolume_setparams <...>
 		endif
 	endif
 endscript
 
-script UpdateHousingTransform 
-	if IsCreated <housingchecksum>
-		if <housingchecksum> :Obj_HasComponent PositionMorph
-			<housingchecksum> :PM_SetParams <...>
+script updatehousingtransform 
+	if iscreated <housingchecksum>
+		if <housingchecksum> :obj_hascomponent positionmorph
+			<housingchecksum> :pm_setparams <...>
 		endif
 	endif
 endscript
 
-script ApplyHousingParams 
-	if IsCreated <housingchecksum>
-		<housingchecksum> :LightVolume_SetParams <...>
+script applyhousingparams 
+	if iscreated <housingchecksum>
+		<housingchecksum> :lightvolume_setparams <...>
 	endif
 endscript
 
-script ApplyVolumeColorChange 
-	if IsCreated <housingchecksum>
-		if GotParam \{alpha}
-			<housingchecksum> :LightVolume_SetParams {
-				VolumeColorRed = <red>
-				VolumeColorGreen = <green>
-				VolumeColorBlue = <Blue>
-				VolumeColorAlpha = <alpha>
+script applyvolumecolorchange 
+	if iscreated <housingchecksum>
+		if gotparam \{alpha}
+			<housingchecksum> :lightvolume_setparams {
+				volumecolorred = <red>
+				volumecolorgreen = <green>
+				volumecolorblue = <blue>
+				volumecoloralpha = <alpha>
 			}
 		else
-			<housingchecksum> :LightVolume_SetParams {
-				VolumeColorRed = <red>
-				VolumeColorGreen = <green>
-				VolumeColorBlue = <Blue>
+			<housingchecksum> :lightvolume_setparams {
+				volumecolorred = <red>
+				volumecolorgreen = <green>
+				volumecolorblue = <blue>
 			}
 		endif
 	endif
 endscript
 
-script ApplyProjectorColorChange 
-	if IsCreated <housingchecksum>
-		if GotParam \{alpha}
-			<housingchecksum> :LightVolume_SetParams {
-				ProjectorColorRed = <red>
-				ProjectorColorGreen = <green>
-				ProjectorColorBlue = <Blue>
-				ProjectorColorAlpha = <alpha>
+script applyprojectorcolorchange 
+	if iscreated <housingchecksum>
+		if gotparam \{alpha}
+			<housingchecksum> :lightvolume_setparams {
+				projectorcolorred = <red>
+				projectorcolorgreen = <green>
+				projectorcolorblue = <blue>
+				projectorcoloralpha = <alpha>
 			}
 		else
-			<housingchecksum> :LightVolume_SetParams {
-				ProjectorColorRed = <red>
-				ProjectorColorGreen = <green>
-				ProjectorColorBlue = <Blue>
+			<housingchecksum> :lightvolume_setparams {
+				projectorcolorred = <red>
+				projectorcolorgreen = <green>
+				projectorcolorblue = <blue>
 			}
 		endif
 	endif
 endscript
 
-script SetHousingStaticParams 
-	if IsCreated <housingchecksum>
-		<housingchecksum> :LightVolume_SetStaticParams <...>
+script sethousingstaticparams 
+	if iscreated <housingchecksum>
+		<housingchecksum> :lightvolume_setstaticparams <...>
 	endif
 endscript

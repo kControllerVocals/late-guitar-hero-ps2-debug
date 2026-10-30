@@ -2,10 +2,10 @@
 script main_menu_temp_flow 
 	ui_event \{event = menu_choose
 		data = {
-			state = UIstate_mainmenu
+			state = uistate_mainmenu
 			clear_previous_stack
 		}}
-	Wait \{5
+	wait \{5
 		gameframes}
 	ui_event \{event = menu_refresh}
 endscript
@@ -23,8 +23,8 @@ script main_menu_get_any_band_names_exist
 	band_index = 1
 	begin
 	get_band_info band_index = <band_index>
-	GetGlobalTags <band_info> param = name
-	if NOT (<name> = qs("\L"))
+	getglobaltags <band_info> param = name
+	if NOT (<name> = qs(0x03ac90f0))
 		return \{name_exists = 1}
 	endif
 	<band_index> = (<band_index> + 1)
@@ -48,7 +48,7 @@ script controller_disconnect_quit_warning_decider
 	endswitch
 	if ($end_credits = 1)
 		change \{end_credits = 0}
-		Progression_EndCredits_Done
+		progression_endcredits_done
 		career_song_ended_select_quit
 		return \{flow_state = main_menu_fs}
 	endif

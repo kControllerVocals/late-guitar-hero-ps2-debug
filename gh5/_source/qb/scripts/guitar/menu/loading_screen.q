@@ -1,89 +1,89 @@
-loading_screen_exists_flag = 0
-loading_screen_stack = 0
+0x0d66a1df = 0
+0xe7982f25 = 0
 loading_screen_type = 0
 
-script set_loading_screen 
-	if ($loading_screen_stack = 0)
-		debug_ScriptAssert \{'Attempted to change loading screen type when the loading screen was inactive.'}
+script 0xe9384b7a 
+	if ($0xe7982f25 = 0)
+		0x93d8d5cf \{'Attempted to change loading screen type when the loading screen was inactive.'}
 		return
 	endif
-	if GotParam \{sustain}
+	if gotparam \{sustain}
 		return
-	elseif GotParam \{freeze}
-		<desired_type> = 1
-	elseif GotParam \{mini}
-		<desired_type> = 2
-	elseif GotParam \{full}
-		<desired_type> = 3
+	elseif gotparam \{freeze}
+		<0xd0043535> = 1
+	elseif gotparam \{0x9fe16047}
+		<0xd0043535> = 2
+	elseif gotparam \{full}
+		<0xd0043535> = 3
 	else
-		debug_ScriptAssert \{'Unknown loading screen type requested.'}
+		0x93d8d5cf \{'Unknown loading screen type requested.'}
 	endif
-	if (<desired_type> > $loading_screen_type)
-		change loading_screen_type = <desired_type>
-		if loading_screen_exists
-			_destroy_loading_screen
+	if (<0xd0043535> > $loading_screen_type)
+		change loading_screen_type = <0xd0043535>
+		if 0x8658e568
+			0x5bb8b848
 		endif
 	endif
-	if NOT loading_screen_exists
-		_create_loading_screen
+	if NOT 0x8658e568
+		0x22db5e43
 	endif
 endscript
 
-script push_loading_screen 
-	InputHandlerForbid
-	change loading_screen_stack = ($loading_screen_stack + 1)
-	set_loading_screen <...>
+script 0xd3f993c8 
+	0x79db87d7
+	change 0xe7982f25 = ($0xe7982f25 + 1)
+	0xe9384b7a <...>
 endscript
 
-script pop_loading_screen 
-	if ($loading_screen_stack <= 0)
-		debug_ScriptAssert \{'Called pop_loading_screen without a matching push.'}
+script 0xe5a305c6 
+	if ($0xe7982f25 <= 0)
+		0x93d8d5cf \{'Called pop_loading_screen without a matching push.'}
 		return
 	endif
-	spawnscriptnow \{_pop_loading_screen_wait}
+	spawnscriptnow \{0x24966d1f}
 endscript
 
-script _pop_loading_screen_wait 
-	SetScriptCannotPause
-	OnExitRun \{InputHandlerPermit}
-	WaitOneGameFrame
-	if ($loading_screen_stack <= 0)
-		debug_ScriptAssert \{'_pop_loading_screen_wait woke with nothing left to pop.'}
+script 0x24966d1f 
+	setscriptcannotpause
+	onexitrun \{0xf00f29a9}
+	waitonegameframe
+	if ($0xe7982f25 <= 0)
+		0x93d8d5cf \{'_pop_loading_screen_wait woke with nothing left to pop.'}
 		return
 	endif
-	change loading_screen_stack = ($loading_screen_stack - 1)
-	if ($loading_screen_stack = 0)
-		if loading_screen_exists
-			_destroy_loading_screen
+	change 0xe7982f25 = ($0xe7982f25 - 1)
+	if ($0xe7982f25 = 0)
+		if 0x8658e568
+			0x5bb8b848
 		endif
 	endif
 endscript
 
-script _create_loading_screen 
-	if ScriptIsRunning \{guitar_startup}
+script 0x22db5e43 
+	if scriptisrunning \{guitar_startup}
 		return
 	endif
-	if loading_screen_exists
-		debug_ScriptAssert \{'Attempted to recreate loading screen.'}
+	if 0x8658e568
+		0x93d8d5cf \{'Attempted to recreate loading screen.'}
 		return
 	endif
-	if ScriptIsRunning \{_destroy_loading_screen_wait}
-		KillSpawnedScript \{name = _destroy_loading_screen_wait}
+	if scriptisrunning \{0xc4ae5a29}
+		killspawnedscript \{name = 0xc4ae5a29}
 	else
-		StopRendering_C
+		stoprendering_c
 	endif
-	InputHandlerForbid
-	change \{loading_screen_exists_flag = 1}
+	0x79db87d7
+	change \{0x0d66a1df = 1}
 	disable_pause
 	mark_unsafe_for_shutdown
 	switch ($loading_screen_type)
 		case 1
-		DisplayLoadingScreen \{freeze}
+		displayloadingscreen \{freeze}
 		case 2
-		DisplayLoadingScreen \{freeze
+		displayloadingscreen \{freeze
 			animate
-			num_anim_frames = 8
-			anim_paths = [
+			0x91f64d92 = 8
+			0x2374ff6a = [
 				'LoadingScreens/loading_star'
 			]
 			x = [
@@ -107,13 +107,13 @@ script _create_loading_screen
 				]
 			]}
 		case 3
-		if NOT IsPAL
-			DisplayLoadingScreen \{'loading_splash'
-				indexed_color
+		if NOT ispal
+			displayloadingscreen \{'loading_splash'
+				0x9e685e61
 				animate
 				localized
-				num_anim_frames = 8
-				anim_paths = [
+				0x91f64d92 = 8
+				0x2374ff6a = [
 					'LoadingScreens/loading_star'
 				]
 				x = [
@@ -137,12 +137,12 @@ script _create_loading_screen
 					]
 				]}
 		else
-			DisplayLoadingScreen \{'loading_splash'
-				indexed_color
+			displayloadingscreen \{'loading_splash'
+				0x9e685e61
 				animate
 				localized
-				num_anim_frames = 8
-				anim_paths = [
+				0x91f64d92 = 8
+				0x2374ff6a = [
 					'LoadingScreens/loading_star'
 				]
 				x = [
@@ -167,44 +167,44 @@ script _create_loading_screen
 				]}
 		endif
 		default
-		debug_ScriptAssert \{'Unknown loading screen type requested.'}
+		0x93d8d5cf \{'Unknown loading screen type requested.'}
 	endswitch
 endscript
 
-script _destroy_loading_screen 
-	if NOT loading_screen_exists
-		debug_ScriptAssert \{'Attempted to destroy loading screen when it does not exist.'}
+script 0x5bb8b848 
+	if NOT 0x8658e568
+		0x93d8d5cf \{'Attempted to destroy loading screen when it does not exist.'}
 		return
 	endif
 	mark_safe_for_shutdown
 	change \{is_changing_levels = 0}
-	Hideloadingscreen
-	change \{loading_screen_exists_flag = 0}
-	spawnscriptnow \{_destroy_loading_screen_wait}
+	hideloadingscreen
+	change \{0x0d66a1df = 0}
+	spawnscriptnow \{0xc4ae5a29}
 endscript
 
-script _destroy_loading_screen_wait 
-	SetScriptCannotPause
-	OnExitRun \{InputHandlerPermit}
-	WaitOneGameFrame
-	StartRendering_C
-	WaitOneGameFrame
+script 0xc4ae5a29 
+	setscriptcannotpause
+	onexitrun \{0xf00f29a9}
+	waitonegameframe
+	startrendering_c
+	waitonegameframe
 	change \{loading_screen_type = 0}
 endscript
 
-script loading_screen_exists 
-	if ($loading_screen_exists_flag = 1)
+script 0x8658e568 
+	if ($0x0d66a1df = 1)
 		return \{true}
 	else
 		return \{false}
 	endif
 endscript
-should_disable_VV_hack_that_messes_up_loading_screen = 0
+0xa45fc02e = 0
 
-script wait_for_loading_screen 
+script 0x3781e6f3 
 	begin
-	Wait <...>
-	if NOT loading_screen_exists
+	wait <...>
+	if NOT 0x8658e568
 		break
 	endif
 	repeat

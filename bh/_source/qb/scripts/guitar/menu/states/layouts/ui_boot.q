@@ -9,21 +9,21 @@ script ui_destroy_boot_legal
 		time = 0.0
 		z_priority = 100
 		no_wait}
-	Hideloadingscreen
+	hideloadingscreen
 endscript
 
 script ui_boot_legal_wait 
 	ui_event_wait \{event = menu_replace
 		data = {
-			state = UIstate_boot_movie_atvi
+			state = uistate_boot_movie_atvi
 		}}
 endscript
 
-script ui_create_boot_movie_ATVI 
+script ui_create_boot_movie_atvi 
 	spawnscriptnow \{ui_boot_movie_wait
 		params = {
 			movie = 'atvi'
-			state = UIstate_boot_movie_red_octane
+			state = uistate_boot_movie_red_octane
 		}}
 endscript
 
@@ -31,7 +31,7 @@ script ui_create_boot_movie_red_octane
 	spawnscriptnow \{ui_boot_movie_wait
 		params = {
 			movie = 'ro_logo'
-			state = UIstate_boot_movie_neversoft
+			state = uistate_boot_movie_neversoft
 		}}
 endscript
 
@@ -39,7 +39,7 @@ script ui_create_boot_movie_neversoft
 	spawnscriptnow \{ui_boot_movie_wait
 		params = {
 			movie = 'ns_logo'
-			state = UIstate_boot_movie_intro
+			state = uistate_boot_movie_intro
 		}}
 endscript
 
@@ -47,17 +47,17 @@ script ui_create_boot_movie_intro
 	spawnscriptnow \{ui_boot_movie_wait
 		params = {
 			movie = 'GHM_Movie_Intro'
-			state = UIstate_boot_iis
+			state = uistate_boot_iis
 		}}
 endscript
 
 script ui_boot_movie_wait 
-	PushVideoVenues
-	PlayMovieAndWait \{movie = 'GH5_1_Logo_Movie'
+	0x622f875f
+	playmovieandwait \{movie = 'GH5_1_Logo_Movie'
 		noblack}
-	PopVideoVenues
+	popvideovenues
 	ui_event_wait \{event = menu_replace
 		data = {
-			state = UIstate_boot_iis
+			state = uistate_boot_iis
 		}}
 endscript

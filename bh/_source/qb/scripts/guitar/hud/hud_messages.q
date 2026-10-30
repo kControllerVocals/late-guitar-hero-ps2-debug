@@ -2,16 +2,16 @@
 script hud_create_message \{priority = 0
 		style_script = hud_message_wait_and_die
 		font = fontgrid_text_a6}
-	if NOT ScreenElementExists \{id = hud_root}
+	if NOT screenelementexists \{id = hud_root}
 		return
 	endif
-	if NOT GotParam \{Band}
-		if NOT GetHUDMessageParent player = <player>
+	if NOT gotparam \{band}
+		if NOT gethudmessageparent player = <player>
 			return
 		endif
 	else
-		if NOT ScreenElementExists \{id = hud_band_messages}
-			CreateScreenElement \{type = ContainerElement
+		if NOT screenelementexists \{id = hud_band_messages}
+			createscreenelement \{type = containerelement
 				id = hud_band_messages
 				parent = hud_root
 				pos = (640.0, 280.0)
@@ -23,13 +23,13 @@ script hud_create_message \{priority = 0
 		endif
 		message_parent = hud_band_messages
 	endif
-	RunScriptOnScreenElement id = <message_parent> hud_wait_and_create_message params = <...>
+	runscriptonscreenelement id = <message_parent> hud_wait_and_create_message params = <...>
 endscript
 
 script hud_wait_and_create_message 
 	begin
-	if ResolveScreenElementId id = {<message_parent> child = 0}
-		<resolved_id> :GetSingleTag message_priority
+	if resolvescreenelementid id = {<message_parent> child = 0}
+		<resolved_id> :getsingletag message_priority
 		if (<priority> = -1)
 			if (<message_priority> = -1)
 				break
@@ -39,10 +39,10 @@ script hud_wait_and_create_message
 		else
 			if (<priority> <= <message_priority>)
 				begin
-				if NOT ScreenElementExists id = <resolved_id>
+				if NOT screenelementexists id = <resolved_id>
 					break
 				endif
-				Wait \{1
+				wait \{1
 					gameframe}
 				repeat
 			else
@@ -52,15 +52,15 @@ script hud_wait_and_create_message
 	else
 		break
 	endif
-	Wait \{2
+	wait \{2
 		gameframes}
 	repeat
-	DestroyScreenElement id = <message_parent> preserve_parent
-	GetScreenElementDims id = <message_parent>
-	<dims> = ((<width> * (1.0, 0.0)) + (<Height> * (0.0, 1.0)))
-	CreateScreenElement {
+	destroyscreenelement id = <message_parent> preserve_parent
+	getscreenelementdims id = <message_parent>
+	<dims> = ((<width> * (1.0, 0.0)) + (<height> * (0.0, 1.0)))
+	createscreenelement {
 		parent = <message_parent>
-		type = TextBlockElement
+		type = textblockelement
 		font = <font>
 		text = <text>
 		rgba = [255 172 64 255]
@@ -78,7 +78,7 @@ script hud_wait_and_create_message
 		allow_expansion
 		tags = {message_priority = <priority>}
 	}
-	RunScriptOnScreenElement id = <id> <style_script> params = <style_script_params>
+	runscriptonscreenelement id = <id> <style_script> params = <style_script_params>
 endscript
 
 script test_hud_messages 
@@ -90,37 +90,37 @@ script test_hud_messages
 endscript
 
 script test_hud_messages_2 
-	spawnscriptnow hud_create_message params = {player = <player> text = qs("\L50 Note\_Streak!")}
-	Wait \{0.25
+	spawnscriptnow hud_create_message params = {player = <player> text = qs(0xa943996f)}
+	wait \{0.25
 		second}
-	spawnscriptnow hud_create_message params = {player = <player> text = qs("\L100 Note\_Streak!")}
-	Wait \{0.25
+	spawnscriptnow hud_create_message params = {player = <player> text = qs(0x69cc2864)}
+	wait \{0.25
 		second}
-	spawnscriptnow hud_create_message params = {player = <player> text = qs("\L150 Note\_Streak!")}
-	Wait \{0.25
+	spawnscriptnow hud_create_message params = {player = <player> text = qs(0xe99c37e4)}
+	wait \{0.25
 		second}
-	spawnscriptnow hud_create_message params = {player = <player> text = qs("\LStar Power Ready!") priority = 2}
-	Wait \{0.25
+	spawnscriptnow hud_create_message params = {player = <player> text = qs(0x87753db7) priority = 2}
+	wait \{0.25
 		second}
-	spawnscriptnow hud_create_message params = {player = <player> text = qs("\L200 Note\_Streak!")}
+	spawnscriptnow hud_create_message params = {player = <player> text = qs(0x044adb3e)}
 endscript
 
 script hud_message_wait_and_die 
-	SE_SetProps \{alpha = 0}
-	SE_SetProps \{alpha = 1.0
+	se_setprops \{alpha = 0}
+	se_setprops \{alpha = 1.0
 		time = 0.1}
-	SE_WaitProps
-	Wait \{2
+	se_waitprops
+	wait \{2
 		seconds
 		ignoreslomo}
-	Die
+	die
 endscript
 
 script hud_message_band_streak_style 
-	Obj_GetID
+	obj_getid
 	streak_players = 0
 	<i> = 0
-	GameMode_GetNumPlayersShown
+	gamemode_getnumplayersshown
 	if (<num_players_shown> > 0)
 		begin
 		if (<players> [<i>] = 1)
@@ -135,23 +135,23 @@ script hud_message_band_streak_style
 		begin
 		if (<players> [<i>] = 1)
 			p = (<i> + 1)
-			GetPlayerInfo <p> part
+			getplayerinfo <p> part
 			switch <part>
-				case Vocals
-				texture = band_HUD_microphone
-				case Bass
-				texture = band_HUD_bass
+				case vocals
+				texture = band_hud_microphone
+				case bass
+				texture = band_hud_bass
 				case drum
-				texture = band_HUD_drums
+				texture = band_hud_drums
 				case guitar
 				default
-				texture = band_HUD_guitar
+				texture = band_hud_guitar
 			endswitch
 			<center> = ((<streak_players> / 2.0) * (36.0, 0.0))
 			<offs> = ((<icons_displayed> + 0.5) * (36.0, 0.0))
-			CreateScreenElement {
-				type = SpriteElement
-				parent = <ObjID>
+			createscreenelement {
+				type = spriteelement
+				parent = <objid>
 				pos = ((320.0, 28.0) + <offs> - <center>)
 				dims = (64.0, 64.0)
 				pos_anchor = [center top]
@@ -165,7 +165,7 @@ script hud_message_band_streak_style
 		<i> = (<i> + 1)
 		repeat <num_players_shown>
 	endif
-	SE_SetProps \{alpha = 0
+	se_setprops \{alpha = 0
 		scale = 0
 		rgba = [
 			255
@@ -173,7 +173,7 @@ script hud_message_band_streak_style
 			0
 			0
 		]}
-	SE_SetProps \{alpha = 1.0
+	se_setprops \{alpha = 1.0
 		scale = 1.0
 		rgba = [
 			255
@@ -182,11 +182,11 @@ script hud_message_band_streak_style
 			255
 		]
 		time = 0.5}
-	SE_WaitProps
-	Wait \{2
+	se_waitprops
+	wait \{2
 		seconds
 		ignoreslomo}
-	SE_SetProps \{alpha = 0.0
+	se_setprops \{alpha = 0.0
 		scale = 1.1
 		rgba = [
 			255
@@ -195,8 +195,8 @@ script hud_message_band_streak_style
 			0
 		]
 		time = 0.5}
-	SE_WaitProps
-	Die
+	se_waitprops
+	die
 endscript
 
 script hud_message_flame_style_note_streak 
@@ -208,7 +208,7 @@ script hud_message_flame_style_starpower_ready
 endscript
 
 script hud_message_flame_style 
-	SE_SetProps \{alpha = 0
+	se_setprops \{alpha = 0
 		scale = (0.5, 0.5)
 		z_priority = 0.01
 		pos = (0.0, 70.0)
@@ -218,16 +218,16 @@ script hud_message_flame_style
 			64
 			0
 		]}
-	HUD_move_flame_container {pos = (0.0, -60.0) scale = (0.5, 0.0) starpower = <starpower> notestreak = <notestreak> highway_num = <highway_num>}
-	Wait \{0.3
+	hud_move_flame_container {pos = (0.0, -60.0) scale = (0.5, 0.0) starpower = <starpower> notestreak = <notestreak> highway_num = <highway_num>}
+	wait \{0.3
 		seconds}
-	if GotParam \{starpower}
+	if gotparam \{starpower}
 		if NOT ($is_attract_mode = 1)
-			SoundEvent \{event = Star_Power_Available_GH4}
+			soundevent \{event = star_power_available_gh4}
 		endif
 	endif
-	HUD_move_flame_container {scale = (0.9, 1.0) pos = (0.0, 10.0) time = 0.5 highway_num = <highway_num>}
-	SE_SetProps \{alpha = 1
+	hud_move_flame_container {scale = (0.9, 1.0) pos = (0.0, 10.0) time = 0.5 highway_num = <highway_num>}
+	se_setprops \{alpha = 1
 		scale = (0.5, 0.5)
 		rgba = [
 			255
@@ -237,9 +237,9 @@ script hud_message_flame_style
 		]
 		pos = (0.0, 70.0)
 		time = 0.1}
-	Wait \{0.1
+	wait \{0.1
 		seconds}
-	SE_SetProps \{alpha = 1
+	se_setprops \{alpha = 1
 		scale = (0.75, 0.75)
 		pos = (0.0, 0.0)
 		rgba = [
@@ -249,10 +249,10 @@ script hud_message_flame_style
 			255
 		]
 		time = 0.5}
-	Wait \{0.75
+	wait \{0.75
 		seconds}
-	HUD_move_flame_container {scale = (1.0, 0.0) pos = (0.0, -40.0) time = 0.2 highway_num = <highway_num>}
-	SE_SetProps \{alpha = 0
+	hud_move_flame_container {scale = (1.0, 0.0) pos = (0.0, -40.0) time = 0.2 highway_num = <highway_num>}
+	se_setprops \{alpha = 0
 		scale = (0.78999996, 0.78999996)
 		pos = (0.0, 0.0)
 		rgba = [
@@ -262,14 +262,14 @@ script hud_message_flame_style
 			0
 		]
 		time = 1.0}
-	Wait \{1.0
+	wait \{1.0
 		seconds
 		ignoreslomo}
-	Die
+	die
 endscript
 
 script hud_message_flame_style2 
-	SE_SetProps \{alpha = 0
+	se_setprops \{alpha = 0
 		scale = (0.5, 0.5)
 		z_priority = 0.01
 		pos = (0.0, 70.0)
@@ -279,16 +279,16 @@ script hud_message_flame_style2
 			255
 			0
 		]}
-	HUD_move_flame_container {pos = (0.0, -60.0) scale = (0.5, 0.0) starpower = <starpower> notestreak = <notestreak> highway_num = <highway_num>}
-	Wait \{0.3
+	hud_move_flame_container {pos = (0.0, -60.0) scale = (0.5, 0.0) starpower = <starpower> notestreak = <notestreak> highway_num = <highway_num>}
+	wait \{0.3
 		seconds}
-	if GotParam \{starpower}
+	if gotparam \{starpower}
 		if NOT ($is_attract_mode = 1)
-			SoundEvent \{event = Star_Power_Available_GH4}
+			soundevent \{event = star_power_available_gh4}
 		endif
 	endif
-	HUD_move_flame_container {scale = (0.9, 1.0) pos = (0.0, 10.0) time = 0.5 highway_num = <highway_num>}
-	SE_SetProps \{alpha = 1
+	hud_move_flame_container {scale = (0.9, 1.0) pos = (0.0, 10.0) time = 0.5 highway_num = <highway_num>}
+	se_setprops \{alpha = 1
 		scale = (0.5, 0.5)
 		rgba = [
 			0
@@ -298,9 +298,9 @@ script hud_message_flame_style2
 		]
 		pos = (0.0, 70.0)
 		time = 0.1}
-	Wait \{0.1
+	wait \{0.1
 		seconds}
-	SE_SetProps \{alpha = 1
+	se_setprops \{alpha = 1
 		scale = (0.75, 0.75)
 		pos = (0.0, 0.0)
 		rgba = [
@@ -310,10 +310,10 @@ script hud_message_flame_style2
 			255
 		]
 		time = 0.5}
-	Wait \{0.75
+	wait \{0.75
 		seconds}
-	HUD_move_flame_container {scale = (1.0, 0.0) pos = (0.0, -40.0) time = 0.2 highway_num = <highway_num>}
-	SE_SetProps \{alpha = 0
+	hud_move_flame_container {scale = (1.0, 0.0) pos = (0.0, -40.0) time = 0.2 highway_num = <highway_num>}
+	se_setprops \{alpha = 0
 		scale = (0.78999996, 0.78999996)
 		pos = (0.0, 0.0)
 		rgba = [
@@ -323,8 +323,8 @@ script hud_message_flame_style2
 			0
 		]
 		time = 1.0}
-	Wait \{1.0
+	wait \{1.0
 		seconds
 		ignoreslomo}
-	Die
+	die
 endscript

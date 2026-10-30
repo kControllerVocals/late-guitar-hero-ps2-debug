@@ -7,7 +7,7 @@ exclusive_mp_controllers = [
 num_exclusive_mp_controllers = 0
 
 script make_menu_frontend {
-		screen = Drummer
+		screen = drummer
 		pad_back_script = generic_event_back
 		item_scale = 2.0
 		exclusive_device = ($primary_controller)
@@ -15,23 +15,23 @@ script make_menu_frontend {
 	}
 	set_focus_color
 	set_unfocus_color
-	if GotParam \{use_all_controllers}
-		RemoveParameter \{exclusive_device}
+	if gotparam \{use_all_controllers}
+		removeparameter \{exclusive_device}
 	else
 		add_gamertag_helper exclusive_device = <exclusive_device>
 	endif
 	update_ingame_controllers controller = <exclusive_device>
-	CreateScreenElement {
-		type = DescInterface
+	createscreenelement {
+		type = descinterface
 		parent = root_window
 		id = current_menu_anchor
 		desc = 'menu_frontend'
 		just = [center center]
 		exclusive_device = <exclusive_device>
 	}
-	if <id> :Desc_ResolveAlias name = alias_menu
-		AssignAlias id = <resolved_id> alias = current_menu
-		current_menu :SE_SetProps {
+	if <id> :desc_resolvealias name = alias_menu
+		assignalias id = <resolved_id> alias = current_menu
+		current_menu :se_setprops {
 			event_handlers = [
 				{pad_up generic_menu_up_or_down_sound params = {up}}
 				{pad_down generic_menu_up_or_down_sound params = {down}}
@@ -41,9 +41,9 @@ script make_menu_frontend {
 		}
 		current_menu :obj_spawnscript \{highlight_motion}
 	endif
-	if GotParam \{title}
-		CreateScreenElement {
-			type = TextElement
+	if gotparam \{title}
+		createscreenelement {
+			type = textelement
 			parent = current_menu
 			internal_scale = 1.3
 			font = fontgrid_title_a1
@@ -64,37 +64,37 @@ endscript
 
 script add_exclusive_device \{device = 0}
 	if ($num_exclusive_mp_controllers = 0)
-		SetArrayElement \{ArrayName = exclusive_mp_controllers
-			GlobalArray
+		setarrayelement \{arrayname = exclusive_mp_controllers
+			globalarray
 			index = 0
 			newvalue = -1}
-		SetArrayElement \{ArrayName = exclusive_mp_controllers
-			GlobalArray
+		setarrayelement \{arrayname = exclusive_mp_controllers
+			globalarray
 			index = 1
 			newvalue = -1}
-		SetArrayElement \{ArrayName = exclusive_mp_controllers
-			GlobalArray
+		setarrayelement \{arrayname = exclusive_mp_controllers
+			globalarray
 			index = 2
 			newvalue = -1}
-		SetArrayElement \{ArrayName = exclusive_mp_controllers
-			GlobalArray
+		setarrayelement \{arrayname = exclusive_mp_controllers
+			globalarray
 			index = 3
 			newvalue = -1}
 	endif
-	SetArrayElement ArrayName = exclusive_mp_controllers GlobalArray index = ($num_exclusive_mp_controllers) newvalue = <device>
+	setarrayelement arrayname = exclusive_mp_controllers globalarray index = ($num_exclusive_mp_controllers) newvalue = <device>
 	change num_exclusive_mp_controllers = ($num_exclusive_mp_controllers + 1)
 endscript
 
 script get_all_exclusive_devices 
-	GetNumPlayersInGame
+	getnumplayersingame
 	if (<num_players> = 0)
 		return
 	endif
 	exclusive_device = []
 	i = 1
 	begin
-	GetPlayerInfo <i> controller
-	AddArrayElement array = <exclusive_device> element = <controller>
+	getplayerinfo <i> controller
+	addarrayelement array = <exclusive_device> element = <controller>
 	exclusive_device = <array>
 	<i> = (<i> + 1)
 	repeat <num_players>
@@ -123,23 +123,23 @@ script add_menu_frontend_item \{rgba = [
 			left
 			top
 		]}
-	if ScreenElementExists \{id = current_menu}
-		GetScreenElementDims \{id = current_menu}
-		current_menu :GetSingleTag \{item_scale}
-		if GetScreenElementChildren \{id = current_menu}
-			GetArraySize <children>
+	if screenelementexists \{id = current_menu}
+		getscreenelementdims \{id = current_menu}
+		current_menu :getsingletag \{item_scale}
+		if getscreenelementchildren \{id = current_menu}
+			getarraysize <children>
 		else
 			array_size = 0
 		endif
-		if GotParam \{choose_state}
+		if gotparam \{choose_state}
 			pad_choose_script = generic_event_choose
 			pad_choose_params = {state = <choose_state> data = {<choose_state_data>}}
 		endif
-		if GotParam \{not_focusable}
+		if gotparam \{not_focusable}
 			focus = {not_focusable}
 		endif
-		CreateScreenElement {
-			type = TextElement
+		createscreenelement {
+			type = textelement
 			parent = <parent>
 			internal_scale = <internal_scale>
 			font = <font>
@@ -158,8 +158,8 @@ script add_menu_frontend_item \{rgba = [
 			<focus>
 			tags = {index = <array_size>}
 		}
-		if GotParam \{pad_choose_script}
-			SetScreenElementProps {
+		if gotparam \{pad_choose_script}
+			setscreenelementprops {
 				id = <id>
 				event_handlers = [
 					{pad_choose <pad_choose_sound>}
@@ -172,20 +172,20 @@ script add_menu_frontend_item \{rgba = [
 endscript
 
 script menu_frontend_focus 
-	if Desc_ResolveAlias \{name = alias_text}
+	if desc_resolvealias \{name = alias_text}
 		retail_menu_focus id = <resolved_id>
 	endif
 endscript
 
 script menu_frontend_unfocus 
-	GetTags
-	if GotParam \{rgba}
+	gettags
+	if gotparam \{rgba}
 		set_unfocus_color rgba = <rgba>
 	endif
-	if Desc_ResolveAlias \{name = alias_text}
+	if desc_resolvealias \{name = alias_text}
 		retail_menu_unfocus id = <resolved_id>
 	endif
-	if GotParam \{rgba}
+	if gotparam \{rgba}
 		set_unfocus_color
 	endif
 endscript

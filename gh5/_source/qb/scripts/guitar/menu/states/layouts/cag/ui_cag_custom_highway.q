@@ -1,23 +1,23 @@
 
 script ui_create_cag_custom_highway 
 	part = (<instrument_info>.highway_part)
-	make_generic_menu \{title = qs("Highway")
+	make_generic_menu \{title = qs(0xb22af2c1)
 		pad_back_script = generic_exit_restore}
-	if <desc_id> :Desc_ResolveAlias name = alias_banner_art_glow param = banner_glow_id
-		<banner_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $banner_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0x44475582 param = 0x7363d093
+		<0x7363d093> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x187899ed 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
-	if <desc_id> :Desc_ResolveAlias name = alias_skulls_glow param = skulls_glow_id
-		<skulls_glow_id> :obj_spawnscript ui_flicker_glow params = {as_offset scale_movement = $skulls_move glow_brightness = $menu_glow}
+	if <desc_id> :desc_resolvealias name = 0xf313b252 param = 0x7c09a415
+		<0x7c09a415> :obj_spawnscript 0xa7a510a8 params = {0x4d641ae8 0xe99089a3 = $0x52565f88 0xffd05882 = $0xddccbea4}
 	else
 
 	endif
 	add_highway_menu_item \{vmenu_id = highway_vmenu}
-	ResolveBodySpecificPartInAppearance part = <part>
+	resolvebodyspecificpartinappearance part = <part>
 	current_part = 0
 	get_part_current_desc_id part = <part>
-	GetArraySize ($<part>)
+	getarraysize ($<part>)
 	num_parts_added = 0
 	i = 0
 	begin
@@ -38,7 +38,7 @@ script ui_create_cag_custom_highway
 	endif
 	i = (<i> + 1)
 	repeat <array_size>
-	LaunchEvent type = focus target = highway_menu data = {child_index = <current_part>}
+	launchevent type = focus target = highway_menu data = {child_index = <current_part>}
 endscript
 
 script ui_destroy_cag_custom_highway 
@@ -46,11 +46,11 @@ script ui_destroy_cag_custom_highway
 endscript
 
 script ui_init_cag_custom_highway 
-	PushTemporaryCASAppearance
+	pushtemporarycasappearance
 endscript
 
 script ui_deinit_cag_custom_highway 
-	PopTemporaryCASAppearance
+	poptemporarycasappearance
 endscript
 
 script focus_change_highway 
@@ -59,7 +59,7 @@ script focus_change_highway
 		desc_id = (($<part>) [<index>].desc_id)
 		no_rebuild
 	}
-	highway_menu_anchor :SE_SetProps highway_menu_item_highway_texture = ((($<part>) [<index>]).frontend_img)
+	highway_menu_anchor :se_setprops highway_menu_item_highway_texture = ((($<part>) [<index>]).frontend_img)
 	clean_up_user_control_helpers
 	menu_finish \{car_helper_text_cancel
 		no_rotate_zoom_text}

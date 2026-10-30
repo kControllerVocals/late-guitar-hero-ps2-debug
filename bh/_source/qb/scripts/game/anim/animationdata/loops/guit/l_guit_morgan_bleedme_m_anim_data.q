@@ -1,37 +1,37 @@
-L_GUIT_Morgan_BleedMe_M_anims_set = {
-	Stance_A = {
-		Idle = {
+l_guit_morgan_bleedme_m_anims_set = {
+	stance_a = {
+		idle = {
 			good = {
-				Slow = [
-					Guit_Morgan_BleedingMe_075_M
+				slow = [
+					guit_morgan_bleedingme_075_m
 				]
-				Med = [
-					Guit_Morgan_BleedingMe_100_M
+				med = [
+					guit_morgan_bleedingme_100_m
 				]
-				Fast = [
-					Guit_Morgan_BleedingMe_120_M
-				]
-			}
-			Normal = {
-				Slow = [
-					Guit_Morgan_BleedingMe_075_M
-				]
-				Med = [
-					Guit_Morgan_BleedingMe_100_M
-				]
-				Fast = [
-					Guit_Morgan_BleedingMe_120_M
+				fast = [
+					guit_morgan_bleedingme_120_m
 				]
 			}
-			Bad = {
-				Slow = [
-					Guit_Morgan_BleedingMe_075_M
+			normal = {
+				slow = [
+					guit_morgan_bleedingme_075_m
 				]
-				Med = [
-					Guit_Morgan_BleedingMe_100_M
+				med = [
+					guit_morgan_bleedingme_100_m
 				]
-				Fast = [
-					Guit_Morgan_BleedingMe_120_M
+				fast = [
+					guit_morgan_bleedingme_120_m
+				]
+			}
+			bad = {
+				slow = [
+					guit_morgan_bleedingme_075_m
+				]
+				med = [
+					guit_morgan_bleedingme_100_m
+				]
+				fast = [
+					guit_morgan_bleedingme_120_m
 				]
 			}
 		}

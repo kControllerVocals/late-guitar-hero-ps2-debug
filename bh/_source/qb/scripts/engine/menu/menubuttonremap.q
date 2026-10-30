@@ -29,7 +29,7 @@ pad_event_types = [
 	pad_red
 	pad_yellow
 	pad_blue
-	pad_orange
+	0x8c1fa032
 ]
 pad_event_up_inversion = false
 ps3_pad = [
@@ -781,7 +781,7 @@ ps2_guitar = [
 	]
 	[
 		square
-		pad_orange
+		0x8c1fa032
 	]
 ]
 ps2_guitar_flip = [
@@ -903,15 +903,15 @@ ps2_guitar_flip = [
 	]
 	[
 		square
-		pad_orange
+		0x8c1fa032
 	]
 ]
 
 script setup_main_button_event_mappings 
-	SetButtonEventMappings {
+	setbuttoneventmappings {
 		ps3 = ($ps3_pad)
 		xenon = ($xenon_pad)
-		Ps2 = ($ps2_pad)
+		ps2 = ($ps2_pad)
 		gamecube = ($wii_pad)
 	}
 endscript
@@ -921,27 +921,27 @@ script setup_controller_button_event_mappings \{guitar = 0
 	if NOT (<guitar>)
 		<xenon> = $xenon_pad
 		<ps3> = $ps3_pad
-		<Ps2> = $ps2_pad
+		<ps2> = $ps2_pad
 		<wii> = $wii_pad
 	elseif NOT (<flip>)
 		<xenon> = $xenon_guitar
 		<ps3> = $ps3_guitar
-		<Ps2> = $ps2_guitar
+		<ps2> = $ps2_guitar
 		<wii> = $wii_guitar
 	else
 		<xenon> = $xenon_guitar_flip
 		<ps3> = $ps3_guitar_flip
-		<Ps2> = $ps2_guitar_flip
+		<ps2> = $ps2_guitar_flip
 		<wii> = $wii_guitar_flip
 	endif
-	AddArrayElement array = [] element = (<controller>)
-	SetButtonEventMappings {
+	addarrayelement array = [] element = (<controller>)
+	setbuttoneventmappings {
 		ps3 = (<ps3>)
 		xenon = (<xenon>)
-		Ps2 = (<Ps2>)
+		ps2 = (<ps2>)
 		gamecube = (<wii>)
 		devices = (<array>)
-		Clear
+		clear
 	}
 endscript
 

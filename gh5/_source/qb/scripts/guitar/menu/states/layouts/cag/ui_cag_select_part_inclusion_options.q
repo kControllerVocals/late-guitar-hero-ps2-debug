@@ -15,37 +15,37 @@ script ui_create_cag_select_part_inclusion_options_worker
 		}}
 	create_ui_history_header text = <text>
 	setup_cas_menu_handlers \{vmenu_id = create_cag_custom_part_pickguard_options_vmenu}
-	if GetCASAppearancePart part = <part>
-		GetActualCASOptionStruct part = <part> desc_id = <desc_id>
-		if GotParam \{Finishable}
+	if getcasappearancepart part = <part>
+		getactualcasoptionstruct part = <part> desc_id = <desc_id>
+		if gotparam \{finishable}
 			add_generic_menu_text_item {
-				text = qs("Finishes")
-				choose_state = UIstate_cag_select_part_inclusion
-				choose_state_data = {part = (<Finishable>) body_part = <part> text = qs("Finishes") cam_anim = GuitarBody}
+				text = qs(0x6e23fd31)
+				choose_state = uistate_cag_select_part_inclusion
+				choose_state_data = {part = (<finishable>) body_part = <part> text = qs(0x6e23fd31) cam_anim = guitarbody}
 			}
 		endif
-		if GotParam \{Colorable}
+		if gotparam \{0x7f2cf2c2}
 			add_generic_menu_text_item {
-				text = qs("Color")
-				choose_state = UIstate_cas_color_edit
-				choose_state_data = {part = <part> text = qs("Color") cam_anim = GuitarBody part_materials = [skin]}
+				text = qs(0x6149aa3d)
+				choose_state = uistate_cas_color_edit
+				choose_state_data = {part = <part> text = qs(0x6149aa3d) cam_anim = guitarbody part_materials = [skin]}
 			}
 		endif
-		if GotParam \{Detailable}
+		if gotparam \{detailable}
 			add_generic_menu_text_item {
-				text = qs("Details")
-				choose_state = UIstate_cag_select_part_inclusion
-				choose_state_data = {part = CAS_Drum_Detail body_part = <part> text = qs("Details") cam_anim = GuitarBody}
+				text = qs(0x7f5a5c11)
+				choose_state = uistate_cag_select_part_inclusion
+				choose_state_data = {part = cas_drum_detail body_part = <part> text = qs(0x7f5a5c11) cam_anim = guitarbody}
 			}
 		endif
 	endif
 	menu_finish \{car_helper_text}
-	if GotParam \{cam_name}
+	if gotparam \{cam_name}
 		change \{generic_menu_block_input = 1}
 		task_menu_default_anim_in base_name = <cam_name>
 		change \{generic_menu_block_input = 0}
 	endif
-	LaunchEvent type = focus target = create_cag_custom_part_pickguard_options_vmenu data = {child_index = <selected_index>}
+	launchevent type = focus target = create_cag_custom_part_pickguard_options_vmenu data = {child_index = <selected_index>}
 endscript
 
 script ui_destroy_cag_select_part_inclusion_options 

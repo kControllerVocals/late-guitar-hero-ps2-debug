@@ -7,28 +7,28 @@ script ui_create_connection_loss \{no_options = 0}
 		options = [
 			{
 				func = ui_connection_loss_continue
-				text = qs("CONTINUE")
+				text = qs(0x182f0173)
 				scale = (1.0, 1.0)
 			}
 		]
 	endif
-	if isXenon
-		text = qs("You must be signed in to Xbox LIVE to continue.")
+	if isxenon
+		text = qs(0x851ba98a)
 	else
-		if CheckForSignIn \{network_platform_only}
-			text = qs("The game servers are currently unavailable. Please try again later.")
+		if checkforsignin \{network_platform_only}
+			text = qs(0x0f686da5)
 		else
-			text = qs("You must be signed in to the PlayStation®Network to continue.")
+			text = qs(0x14b9b86d)
 		endif
 	endif
-	if GotParam \{cable_unplugged}
-		text = qs("Your network connection has been disconnected. Returning to the main menu.")
-	elseif GotParam \{lost_lobby_connection}
-		text = qs("You have lost connection to the Lobby Server. Returning to the main menu.")
+	if gotparam \{cable_unplugged}
+		text = qs(0xd5c7d8b1)
+	elseif gotparam \{lost_lobby_connection}
+		text = qs(0x3c4b0427)
 	endif
 	startrendering
 	create_popup_warning_menu {
-		title = qs("CONNECTION LOST")
+		title = qs(0x5ce7042a)
 		title_props = {scale = 1.0}
 		textblock = {
 			text = <text>
@@ -50,7 +50,7 @@ endscript
 
 script ui_connection_loss_continue 
 	destroy_popup_warning_menu
-	generic_event_choose \{state = UIstate_mainmenu
+	generic_event_choose \{state = uistate_mainmenu
 		data = {
 			clear_previous_stack
 		}}

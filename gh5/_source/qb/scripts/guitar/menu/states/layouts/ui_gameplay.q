@@ -2,7 +2,7 @@ gameplay_restart_song = 0
 gameplay_loading_transition = 0
 
 script ui_create_gameplay 
-	if GotParam \{from_pause}
+	if gotparam \{from_pause}
 		ui_event_remove_params \{param = from_pause}
 		if NOT ($gameplay_restart_song = 1)
 			vocals_mute_all_mics \{mute = false}
@@ -13,7 +13,7 @@ script ui_create_gameplay
 	if ($gameplay_restart_song = 1)
 		loading_transition = ($gameplay_loading_transition)
 		change \{gameplay_loading_transition = 0}
-		if NOT ScriptIsRunning \{restart_song}
+		if NOT scriptisrunning \{restart_song}
 			spawnscriptnow restart_song params = {loading_transition = <loading_transition>}
 		endif
 		change \{gameplay_restart_song = 0}
@@ -22,31 +22,31 @@ script ui_create_gameplay
 endscript
 
 script ui_destroy_gameplay 
-	if ScreenElementExists \{id = intro_container}
-		DestroyScreenElement \{id = intro_container}
+	if screenelementexists \{id = intro_container}
+		destroyscreenelement \{id = intro_container}
 	endif
 endscript
 
 script ui_create_gameplay_spawned 
-	SetScriptCannotPause
+	setscriptcannotpause
 	spawn_player_drop_listeners \{drop_player_script = gameplay_drop_player
 		end_game_script = gameplay_end_game}
-	Wait \{5
+	wait \{5
 		gameframes}
 	disable_pause
 	begin
-	if NOT ScriptIsRunning \{restart_song}
-		if NOT ScriptIsRunning \{restart_gem_scroller}
+	if NOT scriptisrunning \{restart_song}
+		if NOT scriptisrunning \{restart_gem_scroller}
 			if ($is_changing_levels = 0)
 				break
 			endif
 		endif
 	endif
-	Wait \{1
+	wait \{1
 		gameframe}
 	disable_pause \{nospam}
 	repeat
-	GameMode_GetType
+	gamemode_gettype
 	if (<type> = career)
 		if NOT progression_check_intro_complete
 			if ($transition_playing = true)
@@ -56,7 +56,7 @@ script ui_create_gameplay_spawned
 			endif
 		endif
 	endif
-	ResumeControllerChecking
+	resumecontrollerchecking
 	change \{sysnotify_paused_controllers = [
 		]}
 	change \{unknown_drum_type = 0}
@@ -68,15 +68,15 @@ script ui_create_gameplay_spawned
 endscript
 
 script ui_deinit_gameplay 
-	set_loading_screen \{full}
+	0xe9384b7a \{full}
 	change menu_flow_locked = ($menu_flow_locked + 1)
 
-	KillSpawnedScript \{name = ui_create_gameplay_spawned}
+	killspawnedscript \{name = ui_create_gameplay_spawned}
 	spawnscriptnow \{kill_gem_scroller}
-	if ScreenElementExists \{id = you_rock}
-		DestroyScreenElement \{id = you_rock}
+	if screenelementexists \{id = you_rock}
+		destroyscreenelement \{id = you_rock}
 	endif
-	UnPauseGame
+	unpausegame
 	disable_pause
 	if NOT ui_event_exists_in_stack \{name = 'jam'}
 		if ($game_mode = gh4_p1_career || $game_mode = gh4_p2_career || $band_mode_mode = career)
@@ -87,11 +87,11 @@ script ui_deinit_gameplay
 			endif
 		endif
 	endif
-	UnloadZoneAnims
-	if IsVideoVenuesEnabled
-		DisableVideoVenues
+	0x136c76bb
+	if 0x2e51d96c
+		0x29472091
 	endif
 	change menu_flow_locked = ($menu_flow_locked - 1)
-	KillSpawnedScript \{name = sysnotify_handle_pause_controller}
-	KillSpawnedScript \{name = sysnotify_handle_pause_controller_spawned}
+	killspawnedscript \{name = sysnotify_handle_pause_controller}
+	killspawnedscript \{name = sysnotify_handle_pause_controller_spawned}
 endscript

@@ -100,19 +100,19 @@ script cas_rawpak_setup
 endscript
 
 script cas_rawpak_free 
-	if ExistsPakManMap \{map = cas_rawpaks}
-		BlockPendingPakManLoads \{map = cas_rawpaks
+	if existspakmanmap \{map = cas_rawpaks}
+		blockpendingpakmanloads \{map = cas_rawpaks
 			block_scripts = 1}
-		SetPakManCurrentBlock \{map = cas_rawpaks
+		setpakmancurrentblock \{map = cas_rawpaks
 			pak = none
 			block_scripts = 1}
-		DestroyPakManMap \{map = cas_rawpaks}
+		destroypakmanmap \{map = cas_rawpaks}
 	endif
 endscript
 
 script cas_rawpak_is_loading 
-	if ExistsPakManMap \{map = cas_rawpaks}
-		if IsPakManLoading \{map = cas_rawpaks}
+	if existspakmanmap \{map = cas_rawpaks}
+		if ispakmanloading \{map = cas_rawpaks}
 			return \{true}
 		else
 			return \{false}
@@ -121,7 +121,7 @@ script cas_rawpak_is_loading
 endscript
 
 script cas_rawpak_check_current 
-	GetPakManCurrent \{map = cas_rawpaks}
+	getpakmancurrent \{map = cas_rawpaks}
 	if (<pak> = <check>)
 		return \{true}
 	endif
@@ -134,7 +134,7 @@ script cas_rawpak_wait_for_load
 		if NOT cas_rawpak_is_loading
 			break
 		endif
-		Wait \{1
+		wait \{1
 			gameframe}
 		repeat
 	endif
@@ -142,9 +142,9 @@ endscript
 
 script cas_rawpak_clear 
 	change \{cas_queue_rawpak = none}
-	BlockPendingPakManLoads \{map = cas_rawpaks
+	blockpendingpakmanloads \{map = cas_rawpaks
 		block_scripts = 1}
-	SetPakManCurrentBlock \{map = cas_rawpaks
+	setpakmancurrentblock \{map = cas_rawpaks
 		pak = none
 		block_scripts = 1}
 endscript

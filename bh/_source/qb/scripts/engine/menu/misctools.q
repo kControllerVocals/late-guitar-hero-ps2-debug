@@ -13,15 +13,15 @@ script screen_outline \{rgba = [
 			255
 			100
 		]}
-	if ScreenElementExists \{id = outline_anchor}
-		DestroyScreenElement \{id = outline_anchor}
+	if screenelementexists \{id = outline_anchor}
+		destroyscreenelement \{id = outline_anchor}
 	endif
-	if GotParam \{Die}
+	if gotparam \{die}
 		return
 	endif
-	SetScreenElementLock \{id = root_window
+	setscreenelementlock \{id = root_window
 		off}
-	CreateScreenElement \{type = ContainerElement
+	createscreenelement \{type = containerelement
 		id = outline_anchor
 		parent = root_window
 		tags = {
@@ -40,11 +40,11 @@ script screen_outline \{rgba = [
 		case 2
 		<safe> = 0.8
 		<thick> = 1
-		<text> = qs("\LHD TITLE SAFE")
+		<text> = qs(0x0baa46ef)
 		default
 		<safe> = 0.9
 		<thick> = 3
-		<text> = qs("\LHD ACTION SAFE")
+		<text> = qs(0x3b6189d3)
 	endswitch
 	<width_title> = (<screenwidth> * <safe>)
 	<height_title> = (<screenheight> * <safe>)
@@ -64,8 +64,8 @@ script screen_outline \{rgba = [
 		pos = (((<screenwidth> * (1.0, 0.0)) - (<screenwidth> - <width_title>) * (0.5, 0.0)) + (<screenheight> * (0.0, 0.5)))
 		dims = ((<height_title> * (0.0, 1.0)) + (<thick> * (1.0, 0.0)))
 	}
-	CreateScreenElement {
-		type = TextElement
+	createscreenelement {
+		type = textelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [center top]
@@ -75,32 +75,32 @@ script screen_outline \{rgba = [
 		scale = 0.5
 		text = <text>
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [center top]
 		rgba = <rgba>
 		<title_top>
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [center bottom]
 		rgba = <rgba>
 		<title_bottom>
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [right center]
 		rgba = <rgba>
 		<title_right>
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [left center]
@@ -117,16 +117,16 @@ script screen_outline \{rgba = [
 		pos = ((<screenwidth> * (0.5, 0.0)) + (<screenheight> * (0.0, 0.5)))
 		dims = ((<width_title> * (0.1, 0.0)) + (<thick> * (0.0, 1.0)))
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [center center]
 		rgba = <rgba>
 		<center_vert>
 	}
-	CreateScreenElement {
-		type = SpriteElement
+	createscreenelement {
+		type = spriteelement
 		parent = outline_anchor
 		tags = {hide_from_debugger}
 		just = [center center]
