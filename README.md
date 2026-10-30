@@ -19,3 +19,4 @@ recompile the iso with mkps2iso
 
 MKPS2ISO NEEDS TO BE USED TO EXTRACT AND REMAKE THE ISO IMGBURN WILL NOT WORK
 
+Smash Hits has broken song previews cause Smash Hits is Shits
