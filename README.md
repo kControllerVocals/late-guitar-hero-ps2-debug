@@ -2,6 +2,8 @@
 
 debug q mod for late ps2 gh
 
+these enable every debug features possible with scripting instead of just the debug menu
+
 extract iso with https://github.com/N4gtan/mkps2iso
 ```
  dumps2iso "path to iso"
@@ -9,12 +11,9 @@ extract iso with https://github.com/N4gtan/mkps2iso
 
 extract datap.wad with https://github.com/AddyMills/Honeycomb-GUI
 
-
 replace the qb.pak/pab in pak
 
-
 recompile the WAD EXTRACT folder with honeycomb
-
 
 recompile the iso with mkps2iso
 ```
