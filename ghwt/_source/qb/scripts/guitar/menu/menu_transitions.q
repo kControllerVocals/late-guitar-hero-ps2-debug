@@ -1,0 +1,313 @@
+transitions_locked = 0
+target_menu_camera = 'null'
+current_menu_camera = 'null'
+target_menu_camera_back = 0
+menu_camera_finished = 0
+
+script menu_start_transition 
+
+endscript
+
+script menu_complete_transition 
+
+endscript
+
+script menu_camera_control_script 
+	change \{current_menu_camera = 'none'}
+	begin
+	if NOT ($current_menu_camera = $target_menu_camera)
+		change \{menu_camera_finished = 0}
+		formattext checksumname = camera_name 'ui_%s_camera' s = ($target_menu_camera)
+		formattext checksumname = last_camera_name 'ui_%s_camera' s = ($current_menu_camera)
+		getmenutransitiontime <...>
+		if gotparam \{ignore_time}
+			time = 0
+		endif
+		if NOT (<time> = 0)
+			spawnscriptnow applymenutransitiondof params = {<...> use_transitiondof = 1}
+		endif
+		menucontrolscript = menu_camera_control_standard
+		if globalexists name = <camera_name>
+			if structurecontains structure = ($<camera_name>) controlscript
+				extendcrc ($<camera_name>.controlscript) '_MenuTransition' out = newcontrolscript
+				if scriptexists <newcontrolscript>
+					menucontrolscript = <newcontrolscript>
+				endif
+			endif
+		endif
+		<menucontrolscript> {
+			($default_camera_transition_params)
+			time = <time>
+			($<camera_name>.params)
+		}
+		if NOT (<time> = 0)
+
+			ccam_waitmorph
+		endif
+		spawnscriptnow applymenutransitiondof params = {<...>}
+		change current_menu_camera = ($target_menu_camera)
+	endif
+	change \{menu_camera_finished = 1}
+	wait \{1
+		gameframe}
+	repeat
+endscript
+
+script ps2_launce_menu_video \{camera_name = none}
+	if globalexists name = <camera_name>
+		if structurecontains structure = ($<camera_name>) video_name
+			0xd518ab19 video = ($<camera_name>.video_name)
+			stars
+
+			stars
+		endif
+	endif
+endscript
+
+script menu_camera_control_standard 
+	ccam_enablehandcam \{shakeenabled = false
+		driftenabled = false}
+	ccam_domorph {
+		<...>
+	}
+endscript
+
+script cameracuts_handcam_menutransition \{name = none}
+	ccam_domorph <...>
+	zooming = false
+	if gotparam \{type}
+		if (<type> = longshot)
+			getrandomvalue \{name = random_value
+				integer
+				a = 0
+				b = 100}
+			if (<random_value> < 25)
+				ccam_domorph <...> fov = 62 time = <camera_time>
+				zooming = true
+			endif
+			if (<random_value> > 95)
+				ccam_domorph <...> fov = 78 time = <camera_time>
+				zooming = true
+			endif
+		endif
+		if (<type> = mid)
+			getrandomvalue \{name = random_value
+				integer
+				a = 0
+				b = 100}
+			if (<random_value> < 5)
+				ccam_domorph <...> fov = 64 time = <camera_time>
+				zooming = true
+			endif
+			if (<random_value> > 85)
+				ccam_domorph <...> fov = 82 time = <camera_time>
+				zooming = true
+			endif
+		endif
+	endif
+	if (<zooming> = true)
+		amplitudeposition = 0.01
+		amplituderotation = -0.01
+	else
+		amplitudeposition = 0.05
+		amplituderotation = -0.08
+	endif
+	cameracuts_sethandcamparams <...>
+endscript
+
+script getmenutransitiontime 
+	if globalexists name = <last_camera_name>
+		if globalexists name = <camera_name>
+			if comparestructs struct1 = ($<last_camera_name>.params) struct2 = ($<camera_name>.params)
+				return \{time = 0}
+			endif
+		endif
+	endif
+	if globalexists name = <last_camera_name>
+		if ($target_menu_camera_back = 1)
+			camera_name = <last_camera_name>
+		endif
+	else
+		return \{time = 0}
+	endif
+	time = ($default_camera_transition_time)
+	if globalexists name = <camera_name>
+		if structurecontains structure = ($<camera_name>) time
+			time = ($<camera_name>.time)
+		endif
+	endif
+	return time = <time>
+endscript
+
+script applymenutransitiondof \{use_transitiondof = 0}
+	return
+	dofparam = ($dof_off_tod_manager.screen_fx [0])
+	if (<use_transitiondof> = 1)
+		if ($target_menu_camera_back = 1)
+			if globalexists name = <last_camera_name>
+				camera_name = <last_camera_name>
+			endif
+		endif
+		if globalexists name = <camera_name>
+			if structurecontains structure = ($<camera_name>) transitiondof
+				if structurecontains structure = ($<camera_name>.transitiondof) screen_fx
+					doftype = ($<camera_name>.transitiondof)
+					dofparam = (<doftype>.screen_fx [0])
+				endif
+			endif
+		endif
+	else
+		if globalexists name = <camera_name>
+			if structurecontains structure = ($<camera_name>) dof
+				if structurecontains structure = ($<camera_name>.dof) screen_fx
+					doftype = ($<camera_name>.dof)
+					dofparam = (<doftype>.screen_fx [0])
+				endif
+			endif
+		endif
+	endif
+	if viewportexists \{id = bg_viewport}
+		if NOT screenfx_fxinstanceexists \{viewport = bg_viewport
+				name = venue_dof}
+			screenfx_addfxinstance {
+				viewport = bg_viewport
+				name = venue_dof
+				<dofparam>
+			}
+		else
+			screenfx_updatefxinstanceparams {
+				viewport = bg_viewport
+				name = venue_dof
+				<dofparam>
+			}
+		endif
+	else
+
+	endif
+endscript
+
+script applymenudof 
+	if viewportexists \{id = bg_viewport}
+		if NOT screenfx_fxinstanceexists \{viewport = bg_viewport
+				name = depth_of_field__simplified_}
+			screenfx_addfxinstance {
+				viewport = bg_viewport
+				<dofparam>
+			}
+		else
+			screenfx_updatefxinstanceparams {
+				viewport = bg_viewport
+				<dofparam>
+			}
+		endif
+	else
+
+	endif
+endscript
+
+script task_menu_default_anim_in \{base_name = 'none'}
+
+	if gotparam \{ignore_time}
+		params = {ignore_time = 1}
+	endif
+	if (<base_name> = 'null')
+		return
+	endif
+	if gotparam \{ignore_camera}
+		spawnscriptnow menu_soundevent_in params = <...>
+		return
+	endif
+	if gotparam \{override_base_name}
+		base_name = <override_base_name>
+
+	endif
+	if NOT viewportexists \{id = bg_viewport}
+		setup_bg_viewport
+	endif
+	formattext checksumname = camera_name 'ui_%s_camera' s = <base_name>
+	if globalexists name = <camera_name>
+		killcamanim \{name = ch_view_cam}
+		if camanimfinished \{name = menu_view_cam}
+
+			change target_menu_camera = <base_name>
+			change \{target_menu_camera_back = 0}
+			change \{menu_camera_finished = 0}
+			playigccam {
+				id = cs_view_cam_id
+				name = menu_view_cam
+				viewport = bg_viewport
+				lockto = world
+				pos = (-28.344543, 0.47631302, 7.1957684)
+				quat = (-0.00071999995, -0.99706, -0.07604)
+				play_hold = 1
+				controlscript = menu_camera_control_script
+				params = <params>
+				interrupt_current
+			}
+			spawnscriptnow menu_soundevent_in params = <...>
+			return
+		endif
+		spawnscriptnow menu_soundevent_in params = <...>
+
+		if NOT gotparam \{do_not_hide}
+			root_window :se_setprops \{alpha = 0.0}
+		endif
+		if gotparam \{back}
+			change \{target_menu_camera_back = 1}
+		else
+			change \{target_menu_camera_back = 0}
+		endif
+		change target_menu_camera = <base_name>
+		change \{menu_camera_finished = 0}
+		formattext checksumname = current_camera_name 'ui_%s_camera' s = ($current_menu_camera)
+		if globalexists name = <current_camera_name>
+			if comparestructs struct1 = $<camera_name> struct2 = $<current_camera_name>
+				root_window :se_setprops \{alpha = 1.0}
+				no_camera = 1
+			endif
+		endif
+		change \{generic_menu_block_input = 1}
+		begin
+		if ($menu_camera_finished = 1)
+			break
+		elseif NOT ($view_mode = 0)
+			break
+		endif
+		wait \{1
+			game
+			frame}
+		repeat
+		change \{generic_menu_block_input = 0}
+
+		root_window :se_setprops \{alpha = 1.0}
+	else
+		root_window :se_setprops \{alpha = 1.0}
+		spawnscriptnow menu_soundevent_in params = <...>
+	endif
+endscript
+
+script task_menu_default_anim_out 
+	spawnscriptnow menu_soundevent_out params = <...>
+endscript
+
+script task_menu_retrieve_camera_base_name 
+	return camera_name = ($target_menu_camera)
+endscript
+
+script task_menu_retrieve_camera_params 
+
+	formattext checksumname = camera_fullname 'ui_%s_camera' s = <camera_name>
+	return camera_params = ($<camera_fullname>.params)
+endscript
+
+script task_menu_retrieve_camera_dof_params 
+	return
+endscript
+
+script is_menu_camera_finished 
+	if ($menu_camera_finished = 1)
+		return \{true}
+	else
+		return \{false}
+	endif
+endscript
