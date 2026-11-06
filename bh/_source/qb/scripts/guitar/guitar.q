@@ -62,13 +62,13 @@ script 0xf99301bb
 	endif
 	return \{true}
 endscript
-skip_boot_menu = 0
+skip_boot_menu = 1
 autolaunch_cas = 0
 autolaunch_cas_soak_test = 0
 autolaunch_cas_artist = 0
 autolaunch_jam = 0
 skip_signin = 0
-show_movies = 0
+show_movies = 1
 is_demo_mode = 0
 is_multiplayer_beta = 0
 downloadcontent_enabled = 0
